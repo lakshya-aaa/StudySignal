@@ -21,7 +21,142 @@
       "internal_assessment_marks": 20,
       "total_marks": 100,
       "duration_hours": 3
-    }
+    },
+    "course_structure_overview": "The CBSE Class 10 Mathematics examination assesses conceptual understanding, procedural fluency, mathematical reasoning, and problem-solving through real-world applications. The course integrates arithmetic, geometric, algebraic, and statistical methodologies.",
+    "units": [
+      {
+        "unit_number": "I",
+        "name": "Number Systems",
+        "marks": 6,
+        "chapters": [
+          "Real Numbers (Fundamental Theorem of Arithmetic, Proofs of Irrationality)"
+        ]
+      },
+      {
+        "unit_number": "II",
+        "name": "Algebra",
+        "marks": 20,
+        "chapters": [
+          "Polynomials",
+          "Pair of Linear Equations in Two Variables",
+          "Quadratic Equations",
+          "Arithmetic Progressions (AP)"
+        ]
+      },
+      {
+        "unit_number": "III",
+        "name": "Coordinate Geometry",
+        "marks": 6,
+        "chapters": [
+          "Coordinate Geometry (Distance Formula, Section Formula)"
+        ]
+      },
+      {
+        "unit_number": "IV",
+        "name": "Geometry",
+        "marks": 15,
+        "chapters": [
+          "Triangles (Similarity, Basic Proportionality Theorem)",
+          "Circles (Tangents to a Circle)"
+        ]
+      },
+      {
+        "unit_number": "V",
+        "name": "Trigonometry",
+        "marks": 12,
+        "chapters": [
+          "Introduction to Trigonometry",
+          "Trigonometric Identities (sin²θ + cos²θ = 1)",
+          "Heights and Distances (Angle of Elevation & Depression)"
+        ]
+      },
+      {
+        "unit_number": "VI",
+        "name": "Mensuration",
+        "marks": 10,
+        "chapters": [
+          "Areas Related to Circles",
+          "Surface Areas and Volumes (Combinations of Solids)"
+        ]
+      },
+      {
+        "unit_number": "VII",
+        "name": "Statistics & Probability",
+        "marks": 11,
+        "chapters": [
+          "Statistics (Mean, Median, Mode of Grouped Data)",
+          "Probability (Classical Approach)"
+        ]
+      }
+    ],
+    "question_paper_design": {
+      "format": "Theory Written Paper (80 Marks, 3 Hours)",
+      "typology": [
+        {
+          "category": "Remembering & Understanding",
+          "percentage": "54%",
+          "marks": 43,
+          "description": "Recall facts, basic concepts, and state standard mathematical definitions."
+        },
+        {
+          "category": "Applying",
+          "percentage": "24%",
+          "marks": 19,
+          "description": "Solve mathematical problems using acquired knowledge, facts, techniques, and rules."
+        },
+        {
+          "category": "Analysing, Evaluating & Creating",
+          "percentage": "22%",
+          "marks": 18,
+          "description": "Examine and break information into components, synthesize ideas, and solve multi-step problems."
+        }
+      ],
+      "competency_focus": "Minimum 50% competency-focused questions (MCQs, case-study questions, source-integrated assessments) in accordance with CBSE assessment reforms.",
+      "choice_pattern": "No overall choice across the question paper; approximately 33% internal choices are provided across questions in all sections."
+    },
+    "prescribed_books": [
+      {
+        "title": "Mathematics - Textbook for Class X",
+        "publisher": "NCERT",
+        "type": "Core Textbook"
+      },
+      {
+        "title": "Guidelines for Mathematics Laboratory in Schools, Class X",
+        "publisher": "CBSE / NCERT",
+        "type": "Laboratory Manual"
+      },
+      {
+        "title": "Mathematics Exemplar Problems for Class X",
+        "publisher": "NCERT",
+        "type": "Problem Practice"
+      }
+    ],
+    "practical_guidance": {
+      "component_name": "Internal Assessment (20 Marks)",
+      "breakdown": [
+        {
+          "item": "Pen-Paper Tests & Multiple Assessments",
+          "marks": 10,
+          "details": "Continuous school-level periodic tests and diverse assessments (quizzes, oral tests)."
+        },
+        {
+          "item": "Portfolio & Notebook Submission",
+          "marks": 5,
+          "details": "Neatness, regular completion of classwork and homework assignments, student reflection."
+        },
+        {
+          "item": "Lab Practical Activities",
+          "marks": 5,
+          "details": "Hands-on activities performed from the official NCERT Laboratory Manual."
+        }
+      ],
+      "guidelines": "Students must complete at least 10 hands-on math laboratory activities throughout the academic year to substantiate their internal assessment portfolio."
+    },
+    "editorial_study_tips": [
+      "Prioritize NCERT solved examples and textbook exercises before moving to secondary reference books.",
+      "Practice basic geometry theorems (especially the Basic Proportionality Theorem) with neat diagrams and formal statements.",
+      "Maintain a dedicated formula notebook for Surface Areas and Volumes, memorizing unit conversions carefully to avoid calculation errors."
+    ]
   },
   {
     "id": "cbse-10-science-2027",
@@ -45,7 +180,136 @@
       "internal_assessment_marks": 20,
       "total_marks": 100,
       "duration_hours": 3
-    }
+    },
+    "course_structure_overview": "CBSE Class 10 Science develops fundamental scientific literacy across Chemistry, Biology, Physics, and Environmental Science, focusing on experimental observation, cause-and-effect reasoning, and real-world technology.",
+    "units": [
+      {
+        "unit_number": "I",
+        "name": "Chemical Substances - Nature and Behaviour",
+        "marks": 25,
+        "chapters": [
+          "Chemical Reactions and Equations",
+          "Acids, Bases and Salts",
+          "Metals and Non-metals",
+          "Carbon and its Compounds"
+        ]
+      },
+      {
+        "unit_number": "II",
+        "name": "World of Living",
+        "marks": 25,
+        "chapters": [
+          "Life Processes",
+          "Control and Coordination",
+          "How do Organisms Reproduce?",
+          "Heredity"
+        ]
+      },
+      {
+        "unit_number": "III",
+        "name": "Natural Phenomena",
+        "marks": 12,
+        "chapters": [
+          "Light - Reflection and Refraction",
+          "The Human Eye and the Colourful World"
+        ]
+      },
+      {
+        "unit_number": "IV",
+        "name": "Effects of Current",
+        "marks": 13,
+        "chapters": [
+          "Electricity",
+          "Magnetic Effects of Electric Current"
+        ]
+      },
+      {
+        "unit_number": "V",
+        "name": "Natural Resources",
+        "marks": 5,
+        "chapters": [
+          "Our Environment (Ecosystem, Ozone Depletion, Waste Management)"
+        ]
+      }
+    ],
+    "question_paper_design": {
+      "format": "Theory Written Paper (80 Marks, 3 Hours, 39 Questions)",
+      "typology": [
+        {
+          "category": "Demonstrate Knowledge and Understanding",
+          "percentage": "50%",
+          "marks": 40,
+          "description": "Exhibit memory of previously learned material by recalling facts, terms, basic concepts, and demonstrating understanding."
+        },
+        {
+          "category": "Application of Knowledge and Concepts",
+          "percentage": "30%",
+          "marks": 24,
+          "description": "Solve problems in new situations by applying acquired scientific knowledge, facts, techniques, and rules in different ways."
+        },
+        {
+          "category": "Formulate, Analyse, Evaluate and Create",
+          "percentage": "20%",
+          "marks": 16,
+          "description": "Examine and break information into parts, make inferences, construct explanations, and synthesize experimental conclusions."
+        }
+      ],
+      "competency_focus": "50% competency-oriented questions including MCQs, Assertion-Reason questions, and Case-Based data interpretation problems.",
+      "choice_pattern": "Internal choices of 33% are provided within designated short-answer and long-answer questions."
+    },
+    "prescribed_books": [
+      {
+        "title": "Science - Textbook for Class X",
+        "publisher": "NCERT",
+        "type": "Core Textbook"
+      },
+      {
+        "title": "Assessment of Practical Skills in Science - Class X",
+        "publisher": "CBSE",
+        "type": "Practical Manual"
+      },
+      {
+        "title": "Laboratory Manual - Science - Class X",
+        "publisher": "NCERT",
+        "type": "Lab Guidelines"
+      },
+      {
+        "title": "Exemplar Problems - Science - Class X",
+        "publisher": "NCERT",
+        "type": "Higher Order Thinking"
+      }
+    ],
+    "practical_guidance": {
+      "component_name": "Internal Assessment (20 Marks)",
+      "breakdown": [
+        {
+          "item": "Periodic Assessment",
+          "marks": 5,
+          "details": "Periodic pen-paper tests covering unit syllabus."
+        },
+        {
+          "item": "Diverse Assessment",
+          "marks": 5,
+          "details": "Quizzes, concept maps, and classroom oral assessments."
+        },
+        {
+          "item": "Subject Enrichment (Practical Work)",
+          "marks": 5,
+          "details": "Maintenance of laboratory record book covering prescribed experiments and observation tables."
+        },
+        {
+          "item": "Portfolio",
+          "marks": 5,
+          "details": "Student notebook, peer assessments, and project documentation."
+        }
+      ],
+      "guidelines": "Every student must perform the 14 officially prescribed core practicals (including Ohm's law, ray tracing through prisms, and stomata peel observation)."
+    },
+    "editorial_study_tips": [
+      "Write balanced chemical equations with state symbols (s, l, g, aq) for full credit in inorganic and organic questions.",
+      "Draw ray diagrams for spherical mirrors and lenses strictly with arrowheads indicating light propagation direction.",
+      "Memorize all NCERT textbook diagrams in Biology (Nephron, Alimentary Canal, Reflex Arc, Heart) with exact labels."
+    ]
   },
   {
     "id": "cbse-10-social-science-2027",
@@ -69,7 +333,138 @@
       "internal_assessment_marks": 20,
       "total_marks": 100,
       "duration_hours": 3
-    }
+    },
+    "course_structure_overview": "CBSE Class 10 Social Science provides an integrated perspective on Indian history, world developments, physical geography, democratic institutions, and socio-economic dynamics.",
+    "units": [
+      {
+        "unit_number": "I",
+        "name": "India and the Contemporary World - II (History)",
+        "marks": 20,
+        "chapters": [
+          "The Rise of Nationalism in Europe",
+          "Nationalism in India",
+          "The Making of a Global World",
+          "The Age of Industrialization",
+          "Print Culture and the Modern World"
+        ]
+      },
+      {
+        "unit_number": "II",
+        "name": "Contemporary India - II (Geography)",
+        "marks": 20,
+        "chapters": [
+          "Resources and Development",
+          "Forest and Wildlife Resources",
+          "Water Resources",
+          "Agriculture",
+          "Minerals and Energy Resources",
+          "Manufacturing Industries",
+          "Lifelines of National Economy"
+        ]
+      },
+      {
+        "unit_number": "III",
+        "name": "Democratic Politics - II (Political Science)",
+        "marks": 20,
+        "chapters": [
+          "Power Sharing",
+          "Federalism",
+          "Gender, Religion and Caste",
+          "Political Parties",
+          "Outcomes of Democracy"
+        ]
+      },
+      {
+        "unit_number": "IV",
+        "name": "Understanding Economic Development (Economics)",
+        "marks": 20,
+        "chapters": [
+          "Development",
+          "Sectors of the Indian Economy",
+          "Money and Credit",
+          "Globalization and the Indian Economy"
+        ]
+      }
+    ],
+    "question_paper_design": {
+      "format": "Theory Written Paper (80 Marks, 3 Hours, 37 Questions)",
+      "typology": [
+        {
+          "category": "Remembering & Understanding",
+          "percentage": "35%",
+          "marks": 28,
+          "description": "Factual recall of historical treaties, constitutional terms, geographic locations, and economic indices."
+        },
+        {
+          "category": "Applying & Analyzing",
+          "percentage": "44%",
+          "marks": 35,
+          "description": "Explaining historical causes, comparative federal features, sectoral trends, and environmental policies."
+        },
+        {
+          "category": "Evaluating & Creating",
+          "percentage": "15%",
+          "marks": 12,
+          "description": "Formulating arguments on democratic outcomes, economic disparities, and sustainable development."
+        },
+        {
+          "category": "Map Skill",
+          "percentage": "6%",
+          "marks": 5,
+          "description": "2 marks History (Nationalism in India Congress sessions/centres) + 3 marks Geography (Dams, ports, airports, power plants)."
+        }
+      ],
+      "competency_focus": "50% competency-focused items including case-based questions from source extracts.",
+      "choice_pattern": "Internal choice of approximately 33% is provided in 3-mark and 5-mark subjective questions."
+    },
+    "prescribed_books": [
+      {
+        "title": "India and the Contemporary World-II",
+        "publisher": "NCERT",
+        "type": "History"
+      },
+      {
+        "title": "Contemporary India-II",
+        "publisher": "NCERT",
+        "type": "Geography"
+      },
+      {
+        "title": "Democratic Politics-II",
+        "publisher": "NCERT",
+        "type": "Political Science"
+      },
+      {
+        "title": "Understanding Economic Development",
+        "publisher": "NCERT",
+        "type": "Economics"
+      }
+    ],
+    "practical_guidance": {
+      "component_name": "Internal Assessment (20 Marks)",
+      "breakdown": [
+        {
+          "item": "Pen-Paper Tests & Multiple Assessments",
+          "marks": 10,
+          "details": "Unit tests and continuous class assessments."
+        },
+        {
+          "item": "Portfolio",
+          "marks": 5,
+          "details": "Classwork assignments, self-assessment, and map work practice files."
+        },
+        {
+          "item": "Subject Enrichment Project Work",
+          "marks": 5,
+          "details": "Individual student project on Consumer Awareness, Social Issues, or Sustainable Development."
+        }
+      ],
+      "guidelines": "The 5-mark project work must be handwritten and supported by primary or secondary research citations."
+    },
+    "editorial_study_tips": [
+      "Practice the official CBSE map items regularly on physical outline maps of India; map questions offer 5 guaranteed marks.",
+      "Structure 5-mark answers in point format with bold subheadings rather than uninterrupted paragraphs.",
+      "Remember that Economics definitions (e.g., Sustainable Development, Underemployment, Infant Mortality Rate) must adhere closely to NCERT wording."
+    ]
   },
   {
     "id": "cbse-10-english-2027",
@@ -93,7 +488,109 @@
       "internal_assessment_marks": 20,
       "total_marks": 100,
       "duration_hours": 3
-    }
+    },
+    "course_structure_overview": "CBSE Class 10 English Language and Literature builds communicative competence, reading comprehension, critical analysis of literary themes, and structured creative writing.",
+    "units": [
+      {
+        "unit_number": "Section A",
+        "name": "Reading Skills",
+        "marks": 20,
+        "chapters": [
+          "Discursive Passage (400-450 words, 10 marks)",
+          "Case-Based Factual Passage with statistical data/charts (200-250 words, 10 marks)"
+        ]
+      },
+      {
+        "unit_number": "Section B",
+        "name": "Writing Skills and Grammar",
+        "marks": 20,
+        "chapters": [
+          "Grammar: Tenses, Modals, Subject-Verb Concord, Reported Speech (10 marks)",
+          "Writing: Formal Letter on a given situation (5 marks)",
+          "Writing: Analytical Paragraph based on map/chart/graph/cue (5 marks)"
+        ]
+      },
+      {
+        "unit_number": "Section C",
+        "name": "Language through Literature",
+        "marks": 40,
+        "chapters": [
+          "Reference to Context: One prose extract (5 marks) + One poetry extract (5 marks)",
+          "Short Answer Questions from First Flight (12 marks)",
+          "Short Answer Questions from Footprints Without Feet (6 marks)",
+          "Long Answer Question from First Flight (6 marks)",
+          "Long Answer Question from Footprints Without Feet (6 marks)"
+        ]
+      }
+    ],
+    "question_paper_design": {
+      "format": "Theory Written Paper (80 Marks, 3 Hours)",
+      "typology": [
+        {
+          "category": "Reading Comprehension",
+          "percentage": "25%",
+          "marks": 20,
+          "description": "Conceptual understanding, decoding, inferring, interpreting, and vocabulary analysis."
+        },
+        {
+          "category": "Writing Skills & Grammar",
+          "percentage": "25%",
+          "marks": 20,
+          "description": "Creative expression, grammatical accuracy, structured paragraph formatting, and formal communication."
+        },
+        {
+          "category": "Literature Textbooks",
+          "percentage": "50%",
+          "marks": 40,
+          "description": "Literary analysis, character sketch, thematic interpretation, and extrapolative evaluations."
+        }
+      ],
+      "competency_focus": "Inferential and extrapolative questions testing deeper comprehension rather than rote summary memorization.",
+      "choice_pattern": "Internal choices provided in formal letter, analytical paragraph, and long literature questions."
+    },
+    "prescribed_books": [
+      {
+        "title": "First Flight - Textbook for Class X",
+        "publisher": "NCERT",
+        "type": "Main Reader"
+      },
+      {
+        "title": "Footprints Without Feet - Supplementary Reader for Class X",
+        "publisher": "NCERT",
+        "type": "Supplementary"
+      },
+      {
+        "title": "Words and Expressions 2 - Workbook for Class X",
+        "publisher": "NCERT",
+        "type": "Practice Workbook"
+      }
+    ],
+    "practical_guidance": {
+      "component_name": "Internal Assessment (20 Marks)",
+      "breakdown": [
+        {
+          "item": "Assessment of Listening Skills (ALS)",
+          "marks": 5,
+          "details": "Evaluating comprehension of recorded audio passages and instructions."
+        },
+        {
+          "item": "Assessment of Speaking Skills (ALS)",
+          "marks": 5,
+          "details": "Individual presentation, storytelling, or interactive viva conversation."
+        },
+        {
+          "item": "Periodic Tests & Classroom Portfolio",
+          "marks": 10,
+          "details": "Continuous term evaluation and class notebook maintenance."
+        }
+      ],
+      "guidelines": "ALS is evaluated at the school level following standard CBSE rubrics for pronunciation, fluency, and vocabulary."
+    },
+    "editorial_study_tips": [
+      "Stick strictly to the 100-120 word limit for Formal Letters and Analytical Paragraphs to avoid deduction for extraneous length.",
+      "In literature answers, quote pivotal phrases or key terms from the text to demonstrate direct textual familiarity.",
+      "Practice editing and gap-filling grammar exercises daily to master subject-verb agreement and reported speech rules."
+    ]
   },
   {
     "id": "cbse-10-hindi-a-2027",
@@ -117,7 +614,125 @@
       "internal_assessment_marks": 20,
       "total_marks": 100,
       "duration_hours": 3
-    }
+    },
+    "course_structure_overview": "CBSE Class 10 Hindi Course-A strengthens linguistic proficiency in Hindi, covering literary appreciation of classic and modern Hindi literature, functional grammar, and creative compositions.",
+    "units": [
+      {
+        "unit_number": "खंड 'क'",
+        "name": "अपठित बोध",
+        "marks": 14,
+        "chapters": [
+          "अपठित गद्यांश (चिंतन क्षमता एवं अभिव्यक्ति पर आधारित)",
+          "अपठित काव्यांश (काव्य सौंदर्य व भावबोध)"
+        ]
+      },
+      {
+        "unit_number": "खंड 'ख'",
+        "name": "व्यावहारिक व्याकरण",
+        "marks": 16,
+        "chapters": [
+          "रचना के आधार पर वाक्य भेद (4 अंक)",
+          "वाच्य: कर्तृवाच्य, कर्मवाच्य, भाववाच्य (4 अंक)",
+          "पद परिचय (4 अंक)",
+          "अलंकार: शब्दालंकार (श्लेष), अर्थालंकार (उत्प्रेक्षा, अतिशयोक्ति, मानवीकरण) (4 अंक)"
+        ]
+      },
+      {
+        "unit_number": "खंड 'ग'",
+        "name": "पाठ्यपुस्तक व पूरक पाठ्यपुस्तक",
+        "marks": 30,
+        "chapters": [
+          "क्षितिज भाग-2: गद्य खंड (14 अंक)",
+          "क्षितिज भाग-2: काव्य खंड (14 अंक)",
+          "कृतिका भाग-2: पूरक पाठ्यपुस्तक प्रश्न (6 अंक)"
+        ]
+      },
+      {
+        "unit_number": "खंड 'घ'",
+        "name": "रचनात्मक लेखन",
+        "marks": 20,
+        "chapters": [
+          "अनुच्छेद लेखन (6 अंक)",
+          "औपचारिक / अनौपचारिक पत्र लेखन (5 अंक)",
+          "स्ववृत्त लेखन अथवा ई-मेल लेखन (5 अंक)",
+          "विज्ञापन लेखन अथवा संदेश लेखन (4 अंक)"
+        ]
+      }
+    ],
+    "question_paper_design": {
+      "format": "लिखित परीक्षा (80 अंक, 3 घंटे)",
+      "typology": [
+        {
+          "category": "अपठित गद्यांश व काव्यांश",
+          "percentage": "17.5%",
+          "marks": 14,
+          "description": "गहन पठन, भाव ग्रहण और विश्लेषण पर आधारित बहुविकल्पी प्रश्न।"
+        },
+        {
+          "category": "व्यावहारिक व्याकरण",
+          "percentage": "20%",
+          "marks": 16,
+          "description": "व्याकरणिक नियमों का सटीक अनुप्रयोग व भेद पहचान।"
+        },
+        {
+          "category": "पाठ्यपुस्तक प्रश्नोत्तर",
+          "percentage": "37.5%",
+          "marks": 30,
+          "description": "क्षितिज व कृतिका के पाठों के आधार पर विचार व मूल्यपरक प्रश्न।"
+        },
+        {
+          "category": "रचनात्मक लेखन",
+          "percentage": "25%",
+          "marks": 20,
+          "description": "सटीक प्रारूप, विषयवस्तु व भाषाई शुद्धता आधारित लेखन।"
+        }
+      ],
+      "competency_focus": "दक्षता-आधारित प्रश्न (लगभग 50%), जिसमें स्थिति-आधारित अनुच्छेद व व्यावहारिक व्याकरण शामिल हैं।",
+      "choice_pattern": "रचनात्मक लेखन तथा पाठ्यपुस्तक आधारित प्रश्नों में पर्याप्त आंतरिक विकल्प उपलब्ध हैं।"
+    },
+    "prescribed_books": [
+      {
+        "title": "क्षितिज भाग-2",
+        "publisher": "NCERT",
+        "type": "मुख्य पाठ्यपुस्तक"
+      },
+      {
+        "title": "कृतिका भाग-2",
+        "publisher": "NCERT",
+        "type": "पूरक पाठ्यपुस्तक"
+      }
+    ],
+    "practical_guidance": {
+      "component_name": "आंतरिक मूल्यांकन (20 अंक)",
+      "breakdown": [
+        {
+          "item": "सामयिक आकलन",
+          "marks": 5,
+          "details": "विद्यालय स्तरीय आवधिक परीक्षाएं।"
+        },
+        {
+          "item": "बहुविध आकलन",
+          "marks": 5,
+          "details": "कक्षा कार्य, प्रश्नोत्तरी व मौखिक प्रस्तुतियां।"
+        },
+        {
+          "item": "पोर्टफोलियो",
+          "marks": 5,
+          "details": "अभ्यास पुस्तिका का रख-रखाव व नियमितता।"
+        },
+        {
+          "item": "श्रवण एवं वाचन कौशल",
+          "marks": 5,
+          "details": "हिंदी उच्चारण, धाराप्रवाह वाचन व श्रवण बोध।"
+        }
+      ],
+      "guidelines": "श्रवण व वाचन कौशल का मूल्यांकन बोर्ड द्वारा निर्धारित मानकों के अनुसार विद्यालय स्तर पर किया जाता है।"
+    },
+    "editorial_study_tips": [
+      "व्याकरण के चारों विषयों (वाक्य भेद, वाच्य, पद परिचय, अलंकार) के नियमों का अभ्यास नियमित लिखित उदाहरणों के साथ करें।",
+      "रचनात्मक लेखन (पत्र, विज्ञापन, ई-मेल) में निर्धारित प्रारूप (Format) का विशेष ध्यान रखें, क्योंकि प्रारूप के निर्धारित अंक होते हैं।",
+      "क्षितिज के पद्य खंड में कविताओं के केंद्रीय भाव व रूपक-प्रतीकों को बिंदुवार समझें।"
+    ]
   },
   {
     "id": "cbse-10-computer-app-2027",
@@ -141,7 +756,109 @@
       "internal_assessment_marks": 50,
       "total_marks": 100,
       "duration_hours": 2
-    }
+    },
+    "course_structure_overview": "CBSE Class 10 Computer Applications introduces practical computer ethics, standard web page authoring using HTML/CSS, and foundational cyber security practices.",
+    "units": [
+      {
+        "unit_number": "Unit 1",
+        "name": "Networking",
+        "marks": 15,
+        "chapters": [
+          "Internet: World Wide Web, web servers, clients, browsers, blogs, URLs, search engines",
+          "Internet protocols: TCP/IP, SMTP, POP3, HTTP, HTTPS, SSH, SFTP, FTP, TELNET",
+          "Web services: chat, email, video conferencing, e-Learning, e-Banking, e-Shopping, e-Governance, social networks",
+          "Mobile technologies: SMS, MMS, 3G, 4G, 5G"
+        ]
+      },
+      {
+        "unit_number": "Unit 2",
+        "name": "HTML",
+        "marks": 25,
+        "chapters": [
+          "Basic HTML tags: html, head, title, body, headings, paragraphs, br, hr",
+          "Lists: ordered, unordered, definition lists",
+          "Images, Hyperlinks (internal and external), Audio/Video embedding",
+          "Tables: table, tr, th, td, colspan, rowspan",
+          "HTML Forms: text box, radio buttons, checkbox, password, submit, combo box",
+          "Cascading Style Sheets (CSS): inline, embedded, external styles"
+        ]
+      },
+      {
+        "unit_number": "Unit 3",
+        "name": "Cyber ethics",
+        "marks": 10,
+        "chapters": [
+          "Netiquettes and digital footprint",
+          "Software licenses and Open Source software movement",
+          "Intellectual Property Rights (IPR), plagiarism, digital property rights",
+          "Freedom of information and the digital divide",
+          "E-commerce: privacy, fraud, secure data transmission"
+        ]
+      }
+    ],
+    "question_paper_design": {
+      "format": "Theory Written Paper (50 Marks, 2 Hours) + Practical Exam (50 Marks)",
+      "typology": [
+        {
+          "category": "Remembering & Conceptual Recall",
+          "percentage": "40%",
+          "marks": 20,
+          "description": "Definitions of internet terms, cyber laws, HTML tag syntax, and cyber security concepts."
+        },
+        {
+          "category": "Applying & Code Analysis",
+          "percentage": "40%",
+          "marks": 20,
+          "description": "Writing HTML code snippets, designing tables, formatting web pages, and correcting code errors."
+        },
+        {
+          "category": "Case-based & Cyber Ethics",
+          "percentage": "20%",
+          "marks": 10,
+          "description": "Scenario-based questions assessing safe digital conduct and incident handling."
+        }
+      ],
+      "competency_focus": "Practical application of HTML/CSS code syntax and ethical problem-solving.",
+      "choice_pattern": "Internal choices provided in subjective HTML coding questions."
+    },
+    "prescribed_books": [
+      {
+        "title": "Computer and Communication Technology - Class X",
+        "publisher": "NCERT",
+        "type": "Core Reference"
+      },
+      {
+        "title": "CBSE Curriculum Document for Computer Applications (Subject Code 165)",
+        "publisher": "CBSE",
+        "type": "Official Curriculum Guide"
+      }
+    ],
+    "practical_guidance": {
+      "component_name": "Practical Examination (50 Marks)",
+      "breakdown": [
+        {
+          "item": "Lab Test (HTML & CSS Web Page Design)",
+          "marks": 20,
+          "details": "On-screen authoring of an interactive HTML web page with styling, tables, and forms."
+        },
+        {
+          "item": "Report File / Practical Portfolio",
+          "marks": 15,
+          "details": "Minimum 10 practical HTML programs compiled and validated."
+        },
+        {
+          "item": "Viva Voce",
+          "marks": 15,
+          "details": "Oral questions on web standards, tag attributes, and cyber safety practices."
+        }
+      ],
+      "guidelines": "Practical examinations are evaluated internally by the school under standard board criteria."
+    },
+    "editorial_study_tips": [
+      "Practice writing HTML code by hand on paper without auto-completion to build muscle memory for opening and closing tags.",
+      "Double-check table attributes (`colspan`, `rowspan`) through pencil sketches before writing code.",
+      "Be clear on differences between Proprietary Software, Freeware, Shareware, and Free & Open Source Software (FOSS)."
+    ]
   },
   {
     "id": "cbse-10-ai-2027",
@@ -166,7 +883,43 @@
       "internal_assessment_marks": 50,
       "total_marks": 100,
       "duration_hours": 2
-    }
+    },
+    "course_structure_overview": "CBSE Class 10 Artificial Intelligence (Subject Code 417) is an elective skill curriculum designed to introduce foundational concepts of AI ethics, data science, computer vision, and natural language processing.",
+    "units": [],
+    "question_paper_design": {
+      "format": "Theory Written Paper (50 Marks) + Practical Assessment (50 Marks) — Note: Official Session Syllabus Link Unverified",
+      "typology": [],
+      "competency_focus": "50 Marks Theory + 50 Marks Practical framework as per standard CBSE Skill Education guidelines.",
+      "choice_pattern": "Standard CBSE Skill Education pattern."
+    },
+    "prescribed_books": [
+      {
+        "title": "CBSE Skill Education Facilitator Handbook - Artificial Intelligence Class X",
+        "publisher": "CBSE / Intel",
+        "type": "Skill Module"
+      }
+    ],
+    "practical_guidance": {
+      "component_name": "Skill Practical Assessment (50 Marks)",
+      "breakdown": [
+        {
+          "item": "Practical Examination & Project File",
+          "marks": 35,
+          "details": "Practical test on Python AI scripts, mini-project, and logbook."
+        },
+        {
+          "item": "Viva Voce",
+          "marks": 15,
+          "details": "Oral viva on AI project cycle and practical implementation."
+        }
+      ],
+      "guidelines": "Subject to official verification on cbseacademic.nic.in/skill-education.html."
+    },
+    "editorial_study_tips": [
+      "Consult the official CBSE Skill Education portal directly for confirmed curriculum blueprints before purchasing third-party guides.",
+      "Focus on the AI Project Cycle (Problem Scoping, Data Acquisition, Data Exploration, Modelling, Evaluation) as foundational theory.",
+      "Practice core Python syntax (loops, conditionals, lists, and basic math operations) for practical lab evaluation."
+    ]
   },
   {
     "id": "cbse-12-physics-2027",
@@ -190,7 +943,142 @@
       "internal_assessment_marks": 30,
       "total_marks": 100,
       "duration_hours": 3
-    }
+    },
+    "course_structure_overview": "CBSE Class 12 Physics emphasizes rigorous conceptual reasoning, mathematical formulations, experimental inquiry, and technological applications across classical electromagnetism, modern physics, and electronic devices.",
+    "units": [
+      {
+        "unit_number": "I & II",
+        "name": "Electrostatics & Current Electricity",
+        "marks": 16,
+        "chapters": [
+          "Chapter 1: Electric Charges and Fields",
+          "Chapter 2: Electrostatic Potential and Capacitance",
+          "Chapter 3: Current Electricity"
+        ]
+      },
+      {
+        "unit_number": "III & IV",
+        "name": "Magnetic Effects of Current & EMI / AC",
+        "marks": 17,
+        "chapters": [
+          "Chapter 4: Moving Charges and Magnetism",
+          "Chapter 5: Magnetism and Matter",
+          "Chapter 6: Electromagnetic Induction",
+          "Chapter 7: Alternating Current"
+        ]
+      },
+      {
+        "unit_number": "V & VI",
+        "name": "Electromagnetic Waves & Optics",
+        "marks": 18,
+        "chapters": [
+          "Chapter 8: Electromagnetic Waves",
+          "Chapter 9: Ray Optics and Optical Instruments",
+          "Chapter 10: Wave Optics"
+        ]
+      },
+      {
+        "unit_number": "VII & VIII",
+        "name": "Dual Nature of Radiation, Atoms & Nuclei",
+        "marks": 12,
+        "chapters": [
+          "Chapter 11: Dual Nature of Radiation and Matter",
+          "Chapter 12: Atoms",
+          "Chapter 13: Nuclei"
+        ]
+      },
+      {
+        "unit_number": "IX",
+        "name": "Electronic Devices",
+        "marks": 7,
+        "chapters": [
+          "Chapter 14: Semiconductor Electronics (Materials, Devices, and Simple Circuits)"
+        ]
+      }
+    ],
+    "question_paper_design": {
+      "format": "Theory Written Paper (70 Marks, 3 Hours, 33 Questions)",
+      "typology": [
+        {
+          "category": "Remembering & Understanding",
+          "percentage": "38%",
+          "marks": 27,
+          "description": "State scientific laws, define physical quantities, state SI units, explain fundamental derivations."
+        },
+        {
+          "category": "Applying",
+          "percentage": "32%",
+          "marks": 22,
+          "description": "Formulate and solve numerical problems, trace ray diagrams, design circuit configurations."
+        },
+        {
+          "category": "Analysing, Evaluating & Creating",
+          "percentage": "30%",
+          "marks": 21,
+          "description": "Interpret graphical data, reason through complex electromagnetic scenarios, and solve case-based questions."
+        }
+      ],
+      "competency_focus": "50% competency-based questions including Assertion-Reasoning and Case-Based data scenarios.",
+      "choice_pattern": "No overall choice; internal choices of 33% are provided in 2-mark, 3-mark, and 5-mark questions."
+    },
+    "prescribed_books": [
+      {
+        "title": "Physics Part-I, Class XII",
+        "publisher": "NCERT",
+        "type": "Core Textbook"
+      },
+      {
+        "title": "Physics Part-II, Class XII",
+        "publisher": "NCERT",
+        "type": "Core Textbook"
+      },
+      {
+        "title": "Laboratory Manual of Physics, Class XII",
+        "publisher": "NCERT",
+        "type": "Practical Guide"
+      },
+      {
+        "title": "Exemplar Problems in Physics, Class XII",
+        "publisher": "NCERT",
+        "type": "Problem Practice"
+      }
+    ],
+    "practical_guidance": {
+      "component_name": "Practical Examination (30 Marks, 3 Hours)",
+      "breakdown": [
+        {
+          "item": "Two Experiments (One from Section A, One from Section B)",
+          "marks": 14,
+          "details": "7 marks per experiment evaluated on circuit setup/ray alignment, observations, and calculations."
+        },
+        {
+          "item": "Practical Record Book",
+          "marks": 5,
+          "details": "Neat documentation of at least 8 experiments and 6 activities performed throughout the session."
+        },
+        {
+          "item": "One Investigatory Project",
+          "marks": 3,
+          "details": "Written project report on an applied physics topic with working demonstration or model."
+        },
+        {
+          "item": "Viva Voce",
+          "marks": 5,
+          "details": "Oral questions on theory, experimental procedures, errors, and investigatory project."
+        },
+        {
+          "item": "Demonstration of Activities",
+          "marks": 3,
+          "details": "Demonstration of one activity from each section."
+        }
+      ],
+      "guidelines": "Practical exams are conducted under the supervision of an external examiner appointed by CBSE."
+    },
+    "editorial_study_tips": [
+      "Master standard derivations (Gauss's law applications, Lens Maker's formula, Young's double slit interference, AC generator) with clean labeled diagrams.",
+      "Always state the standard SI unit with every final numerical answer; half-mark penalties apply for missing units.",
+      "Practice drawing and analyzing graphs (e.g., photo-electric current vs frequency, semiconductor I-V curves, binding energy curve)."
+    ]
   },
   {
     "id": "cbse-12-chemistry-2027",
@@ -214,7 +1102,168 @@
       "internal_assessment_marks": 30,
       "total_marks": 100,
       "duration_hours": 3
-    }
+    },
+    "course_structure_overview": "CBSE Class 12 Chemistry provides deep conceptual grounding in physical chemistry principles, inorganic coordination compounds and d/f-block metals, and systematic organic reaction mechanisms and biomolecules.",
+    "units": [
+      {
+        "unit_number": "Unit 1",
+        "name": "Solutions",
+        "marks": 7,
+        "chapters": [
+          "Types of solutions, Colligative properties, Raoult's law, Van 't Hoff factor"
+        ]
+      },
+      {
+        "unit_number": "Unit 2",
+        "name": "Electrochemistry",
+        "marks": 9,
+        "chapters": [
+          "Redox reactions, Nernst equation, Conductance, Kohlrausch's law, Batteries & Fuel cells"
+        ]
+      },
+      {
+        "unit_number": "Unit 3",
+        "name": "Chemical Kinetics",
+        "marks": 7,
+        "chapters": [
+          "Rate of reaction, Order & Molecularity, Integrated rate equations, Arrhenius equation"
+        ]
+      },
+      {
+        "unit_number": "Unit 4",
+        "name": "d- and f-Block Elements",
+        "marks": 7,
+        "chapters": [
+          "Transition elements, Electronic configuration, Lanthanoids & Actinoids, Potassium dichromate/permanganate"
+        ]
+      },
+      {
+        "unit_number": "Unit 5",
+        "name": "Coordination Compounds",
+        "marks": 7,
+        "chapters": [
+          "Werner's theory, IUPAC nomenclature, Isomerism, Valence Bond Theory, Crystal Field Theory"
+        ]
+      },
+      {
+        "unit_number": "Unit 6",
+        "name": "Haloalkanes and Haloarenes",
+        "marks": 6,
+        "chapters": [
+          "Nomenclature, Nature of C-X bond, SN1 and SN2 mechanisms, Optical rotation"
+        ]
+      },
+      {
+        "unit_number": "Unit 7",
+        "name": "Alcohols, Phenols and Ethers",
+        "marks": 6,
+        "chapters": [
+          "Nomenclature, Preparation methods, Physical and chemical properties, Mechanism of dehydration"
+        ]
+      },
+      {
+        "unit_number": "Unit 8",
+        "name": "Aldehydes, Ketones and Carboxylic Acids",
+        "marks": 8,
+        "chapters": [
+          "Carbonyl group, Nucleophilic addition mechanisms, Aldol condensation, Cannizzaro reaction, Acidity"
+        ]
+      },
+      {
+        "unit_number": "Unit 9",
+        "name": "Amines",
+        "marks": 6,
+        "chapters": [
+          "Classification, Basic character of amines, Diazonium salts and synthetic transformations"
+        ]
+      },
+      {
+        "unit_number": "Unit 10",
+        "name": "Biomolecules",
+        "marks": 7,
+        "chapters": [
+          "Carbohydrates (monosaccharides, disaccharides), Proteins (peptide bond, denaturation), Nucleic acids"
+        ]
+      }
+    ],
+    "question_paper_design": {
+      "format": "Theory Written Paper (70 Marks, 3 Hours, 33 Questions)",
+      "typology": [
+        {
+          "category": "Remembering & Understanding",
+          "percentage": "40%",
+          "marks": 28,
+          "description": "State chemical laws, IUPAC nomenclature, periodic trends, electronic configurations, and reagent roles."
+        },
+        {
+          "category": "Applying",
+          "percentage": "30%",
+          "marks": 21,
+          "description": "Solve numericals on electrochemistry and kinetics; predict reaction products and conversion pathways."
+        },
+        {
+          "category": "Analysing, Evaluating & Creating",
+          "percentage": "30%",
+          "marks": 21,
+          "description": "Reasoning questions on organic reaction mechanisms, anomalous transition metal properties, and case-studies."
+        }
+      ],
+      "competency_focus": "50% competency-focused questions including reasoning MCQs and data-oriented passage questions.",
+      "choice_pattern": "Internal choices of approximately 33% provided across sections."
+    },
+    "prescribed_books": [
+      {
+        "title": "Chemistry Part-I, Class XII",
+        "publisher": "NCERT",
+        "type": "Core Textbook"
+      },
+      {
+        "title": "Chemistry Part-II, Class XII",
+        "publisher": "NCERT",
+        "type": "Core Textbook"
+      },
+      {
+        "title": "Laboratory Manual of Chemistry, Class XII",
+        "publisher": "NCERT",
+        "type": "Lab Manual"
+      }
+    ],
+    "practical_guidance": {
+      "component_name": "Practical Examination (30 Marks, 3 Hours)",
+      "breakdown": [
+        {
+          "item": "Volumetric Analysis (Titration)",
+          "marks": 8,
+          "details": "Standard solution preparation and redox titration of KMnO4 against oxalic acid or Mohr's salt."
+        },
+        {
+          "item": "Salt Analysis (Qualitative Analysis)",
+          "marks": 8,
+          "details": "Detection of one cation and one anion in an unknown inorganic salt."
+        },
+        {
+          "item": "Content-Based Experiment",
+          "marks": 6,
+          "details": "Chromatography, preparation of inorganic/organic compounds, or tests for functional groups."
+        },
+        {
+          "item": "Project Work",
+          "marks": 4,
+          "details": "Investigatory project report on an applied chemical phenomenon."
+        },
+        {
+          "item": "Class Record and Viva",
+          "marks": 4,
+          "details": "Regularity of practical notebook and viva voce by external examiner."
+        }
+      ],
+      "guidelines": "Practical evaluation is conducted jointly by an external examiner appointed by CBSE and an internal examiner."
+    },
+    "editorial_study_tips": [
+      "Write organic named reactions (Reimer-Tiemann, Kolbe, Aldol, Cannizzaro, Hoffmann bromamide) on flashcards and review weekly.",
+      "In Physical Chemistry numericals (Nernst equation, first-order kinetics), show step-by-step substitution with logarithmic calculations.",
+      "Focus on the reasons behind transition metal trends (variable oxidation states, catalytic behavior, colored ions) using exact NCERT explanations."
+    ]
   },
   {
     "id": "cbse-12-biology-2027",
@@ -238,7 +1287,136 @@
       "internal_assessment_marks": 30,
       "total_marks": 100,
       "duration_hours": 3
-    }
+    },
+    "course_structure_overview": "CBSE Class 12 Biology explores human and plant reproduction, principles of genetics and modern molecular biology, biotechnology tools, human health, and ecosystem ecology.",
+    "units": [
+      {
+        "unit_number": "VI",
+        "name": "Reproduction",
+        "marks": 16,
+        "chapters": [
+          "Sexual Reproduction in Flowering Plants",
+          "Human Reproduction",
+          "Reproductive Health"
+        ]
+      },
+      {
+        "unit_number": "VII",
+        "name": "Genetics and Evolution",
+        "marks": 20,
+        "chapters": [
+          "Principles of Inheritance and Variation",
+          "Molecular Basis of Inheritance",
+          "Evolution"
+        ]
+      },
+      {
+        "unit_number": "VIII",
+        "name": "Biology and Human Welfare",
+        "marks": 12,
+        "chapters": [
+          "Human Health and Diseases",
+          "Microbes in Human Welfare"
+        ]
+      },
+      {
+        "unit_number": "IX",
+        "name": "Biotechnology and Its Applications",
+        "marks": 12,
+        "chapters": [
+          "Biotechnology - Principles and Processes (Recombinant DNA technology)",
+          "Biotechnology and its Applications (Medicine, Agriculture)"
+        ]
+      },
+      {
+        "unit_number": "X",
+        "name": "Ecology and Environment",
+        "marks": 10,
+        "chapters": [
+          "Organisms and Populations",
+          "Ecosystem",
+          "Biodiversity and Its Conservation"
+        ]
+      }
+    ],
+    "question_paper_design": {
+      "format": "Theory Written Paper (70 Marks, 3 Hours, 33 Questions)",
+      "typology": [
+        {
+          "category": "Demonstrate Knowledge and Understanding",
+          "percentage": "50%",
+          "marks": 35,
+          "description": "State, name, list, identify, define, suggest, describe, outline, and summarize biological phenomena, systems, and principles."
+        },
+        {
+          "category": "Application of Knowledge and Concepts",
+          "percentage": "30%",
+          "marks": 21,
+          "description": "Calculate, illustrate, show, adapt, explain, and distinguish biological concepts, pedigree charts, and biotechnological processes."
+        },
+        {
+          "category": "Analyse, Evaluate and Create",
+          "percentage": "20%",
+          "marks": 14,
+          "description": "Interpret, analyse, compare, contrast, examine, evaluate, discuss, and construct biological insights and experimental observations."
+        }
+      ],
+      "competency_focus": "50% competency-oriented questions including Assertion-Reasoning and Case-Based scenarios.",
+      "choice_pattern": "Internal choices of approximately 33% are provided in 2-mark, 3-mark, and 5-mark questions."
+    },
+    "prescribed_books": [
+      {
+        "title": "Biology, Class XII",
+        "publisher": "NCERT",
+        "type": "Core Textbook"
+      },
+      {
+        "title": "Laboratory Manual of Biology, Class XII",
+        "publisher": "NCERT",
+        "type": "Practical Manual"
+      }
+    ],
+    "practical_guidance": {
+      "component_name": "Practical Examination (30 Marks, 3 Hours)",
+      "breakdown": [
+        {
+          "item": "One Major Experiment",
+          "marks": 5,
+          "details": "Isolate DNA from available plant material, pollen germination, or soil/water analysis."
+        },
+        {
+          "item": "One Minor Experiment",
+          "marks": 4,
+          "details": "Transpiration setup, population density by quadrat method."
+        },
+        {
+          "item": "Slide Preparation",
+          "marks": 5,
+          "details": "Temporary mount preparation (pollen tube growth or onion root tip for mitosis)."
+        },
+        {
+          "item": "Spotting (7 Spots)",
+          "marks": 7,
+          "details": "Identification of biological specimens, prepared slides, and ecological models."
+        },
+        {
+          "item": "Practical Record + Viva",
+          "marks": 4,
+          "details": "Laboratory record file and oral viva voce."
+        },
+        {
+          "item": "Project Record + Viva",
+          "marks": 5,
+          "details": "Investigatory project file and discussion."
+        }
+      ],
+      "guidelines": "Conducted with an external examiner appointed by CBSE."
+    },
+    "editorial_study_tips": [
+      "Draw and label genetic and physiological diagrams (lac operon, tRNA structure, pBR322 vector, human gametogenesis) repeatedly.",
+      "Memorize all phenotypic and genotypic ratios for monohybrid, dihybrid, incomplete dominance, and codominance crosses.",
+      "In ecology and environmental questions, write point-wise answers that integrate standard NCERT ecological terms and graphs."
+    ]
   },
   {
     "id": "cbse-12-maths-2027",
@@ -262,7 +1440,128 @@
       "internal_assessment_marks": 20,
       "total_marks": 100,
       "duration_hours": 3
-    }
+    },
+    "course_structure_overview": "CBSE Class 12 Mathematics covers relations and matrices, rigorous single-variable differential and integral calculus, 3D vector geometry, linear programming, and conditional probability.",
+    "units": [
+      {
+        "unit_number": "I",
+        "name": "Relations and Functions",
+        "marks": 8,
+        "chapters": [
+          "Relations and Functions (Equivalence relations, One-one and onto functions)",
+          "Inverse Trigonometric Functions"
+        ]
+      },
+      {
+        "unit_number": "II",
+        "name": "Algebra",
+        "marks": 10,
+        "chapters": [
+          "Matrices (Operations, Transpose, Symmetric/Skew-symmetric)",
+          "Determinants (Adjoint, Inverse, System of linear equations)"
+        ]
+      },
+      {
+        "unit_number": "III",
+        "name": "Calculus",
+        "marks": 35,
+        "chapters": [
+          "Continuity and Differentiability (Chain rule, Logarithmic differentiation)",
+          "Applications of Derivatives (Rate of change, Increasing/Decreasing, Maxima/Minima)",
+          "Integrals (Definite & Indefinite integrals, Properties of definite integrals)",
+          "Applications of Integrals (Area under simple curves)",
+          "Differential Equations (Separable variables, Homogeneous, Linear differential equations)"
+        ]
+      },
+      {
+        "unit_number": "IV",
+        "name": "Vectors and Three-Dimensional Geometry",
+        "marks": 14,
+        "chapters": [
+          "Vectors (Dot product, Cross product)",
+          "Three-Dimensional Geometry (Direction cosines/ratios, Equation of line, Skew lines, Shortest distance)"
+        ]
+      },
+      {
+        "unit_number": "V",
+        "name": "Linear Programming",
+        "marks": 5,
+        "chapters": [
+          "Linear Programming (Mathematical formulation, Graphical method, Corner point method)"
+        ]
+      },
+      {
+        "unit_number": "VI",
+        "name": "Probability",
+        "marks": 8,
+        "chapters": [
+          "Conditional Probability, Multiplication theorem, Bayes' Theorem, Random variables"
+        ]
+      }
+    ],
+    "question_paper_design": {
+      "format": "Theory Written Paper (80 Marks, 3 Hours, 38 Questions)",
+      "typology": [
+        {
+          "category": "Remembering & Understanding",
+          "percentage": "55%",
+          "marks": 44,
+          "description": "Formulate mathematical concepts, evaluate basic matrices, apply fundamental calculus theorems."
+        },
+        {
+          "category": "Applying",
+          "percentage": "25%",
+          "marks": 20,
+          "description": "Solve multi-step integration problems, find shortest distance between lines, apply Bayes' theorem."
+        },
+        {
+          "category": "Analysing, Evaluating & Creating",
+          "percentage": "20%",
+          "marks": 16,
+          "description": "Real-world optimization problems (maxima/minima word problems) and case-based application questions."
+        }
+      ],
+      "competency_focus": "50% competency-focused questions including MCQs and Case-Based scenarios.",
+      "choice_pattern": "Internal choices of approximately 33% are provided across 2-mark, 3-mark, and 5-mark questions."
+    },
+    "prescribed_books": [
+      {
+        "title": "Mathematics Part I, Class XII",
+        "publisher": "NCERT",
+        "type": "Core Textbook"
+      },
+      {
+        "title": "Mathematics Part II, Class XII",
+        "publisher": "NCERT",
+        "type": "Core Textbook"
+      },
+      {
+        "title": "Laboratory Manual of Mathematics, Class XII",
+        "publisher": "NCERT",
+        "type": "Lab Guidelines"
+      }
+    ],
+    "practical_guidance": {
+      "component_name": "Internal Assessment (20 Marks)",
+      "breakdown": [
+        {
+          "item": "Periodic Tests",
+          "marks": 10,
+          "details": "Best two out of three periodic pen-paper tests held across the session."
+        },
+        {
+          "item": "Mathematics Activities / Lab Work",
+          "marks": 10,
+          "details": "10 hands-on math laboratory activities documented in practical notebook, plus year-end assessment."
+        }
+      ],
+      "guidelines": "Assessed at the school level using CBSE's continuous assessment manual."
+    },
+    "editorial_study_tips": [
+      "Calculus accounts for 35 out of 80 marks; dedicate at least 45% of your regular revision time to mastering definite integral properties and maxima/minima applications.",
+      "Write complete step-by-step justifications in matrix inversion and linear programming; partial marks are strictly awarded for each verified stage.",
+      "In 3D Geometry, clearly define vector coordinates before calculating the shortest distance between skew lines."
+    ]
   },
   {
     "id": "cbse-12-computer-science-2027",
@@ -286,7 +1585,118 @@
       "internal_assessment_marks": 30,
       "total_marks": 100,
       "duration_hours": 3
-    }
+    },
+    "course_structure_overview": "CBSE Class 12 Computer Science develops computational problem-solving using Python 3, object manipulation, file persistence, network fundamentals, and relational database management using SQL.",
+    "units": [
+      {
+        "unit_number": "I",
+        "name": "Computational Thinking and Programming - 2",
+        "marks": 40,
+        "chapters": [
+          "Revision of Python basics, Functions (arguments, scope)",
+          "Exception Handling (try-except blocks)",
+          "File Handling: Text files, Binary files (pickle module), CSV files (csv module)",
+          "Data Structures: Linear list implementation of Stack (push, pop)"
+        ]
+      },
+      {
+        "unit_number": "II",
+        "name": "Computer Networks",
+        "marks": 10,
+        "chapters": [
+          "Evolution of networking, Data communication terminology, Transmission media",
+          "Network devices (hub, switch, router, gateway), Topologies (bus, star)",
+          "Network Protocols (HTTP, FTP, PPP, SMTP, POP3), Web services and Cloud concepts"
+        ]
+      },
+      {
+        "unit_number": "III",
+        "name": "Database Management",
+        "marks": 20,
+        "chapters": [
+          "Database concepts, Relational Data Model, SQL DDL/DML commands",
+          "Constraints (Primary Key, Foreign Key, Not Null, Unique, Default)",
+          "SQL Functions (Aggregate, String, Date, Math), Group By, Having, Joins",
+          "Interface Python with SQL database using mysql.connector"
+        ]
+      }
+    ],
+    "question_paper_design": {
+      "format": "Theory Written Paper (70 Marks, 3 Hours, 35 Questions)",
+      "typology": [
+        {
+          "category": "Remembering & Conceptual Recall",
+          "percentage": "35%",
+          "marks": 25,
+          "description": "Python syntax rules, network definitions, SQL clause functions, and data structure principles."
+        },
+        {
+          "category": "Applying & Code Analysis",
+          "percentage": "40%",
+          "marks": 28,
+          "description": "Writing Python functions, binary/text file operations, stack algorithms, and complex SQL query drafting."
+        },
+        {
+          "category": "Analysing & Case-Based Architecture",
+          "percentage": "25%",
+          "marks": 17,
+          "description": "Network layout design for institutional campuses and database-Python integration scripts."
+        }
+      ],
+      "competency_focus": "50% competency-focused questions including code output tracing, error finding, and case-based network layout questions.",
+      "choice_pattern": "Internal choices of 33% provided across programming and SQL sections.",
+      "is_editorial_estimate": true,
+      "column_title": "Curriculum Domain (Editorial Estimate)",
+      "editorial_notice": "CBSE does not publish an official cognitive percentage table for Computer Science (Code 083) in the 2026-27 curriculum. The percentages below represent ExamPulse editorial estimates to assist students with balanced study planning across programming, database, and networking sections."
+    },
+    "prescribed_books": [
+      {
+        "title": "Computer Science with Python, Class XII",
+        "publisher": "NCERT",
+        "type": "Core Textbook"
+      },
+      {
+        "title": "CBSE Senior Secondary Curriculum Document for Computer Science (Code 083)",
+        "publisher": "CBSE",
+        "type": "Official Curriculum Guide"
+      }
+    ],
+    "practical_guidance": {
+      "component_name": "Practical Examination (30 Marks, 3 Hours)",
+      "breakdown": [
+        {
+          "item": "Lab Test - Python Program",
+          "marks": 8,
+          "details": "Writing and executing a Python program demonstrating file handling or stack implementation."
+        },
+        {
+          "item": "Lab Test - SQL Queries",
+          "marks": 4,
+          "details": "Writing and executing SQL queries based on a given database schema."
+        },
+        {
+          "item": "Report File / Portfolio",
+          "marks": 7,
+          "details": "Minimum 15 Python programs and 5 SQL queries properly documented with outputs."
+        },
+        {
+          "item": "Project Work",
+          "marks": 8,
+          "details": "Collaborative real-world application developed using Python and SQL database connectivity."
+        },
+        {
+          "item": "Viva Voce",
+          "marks": 3,
+          "details": "Oral questions on Python libraries, database commands, and project code."
+        }
+      ],
+      "guidelines": "Conducted with an external examiner appointed by CBSE."
+    },
+    "editorial_study_tips": [
+      "In file handling, memorize syntax for `pickle.dump()` and `pickle.load()` with proper exception handling (`EOFError`).",
+      "In SQL queries, distinguish carefully between `WHERE` and `HAVING` filters; `HAVING` must only be used with aggregate functions.",
+      "For campus network layout questions, place the server in the building with the maximum number of computers to minimize cable length."
+    ]
   },
   {
     "id": "cbse-12-accountancy-2027",
@@ -310,7 +1720,86 @@
       "internal_assessment_marks": 20,
       "total_marks": 100,
       "duration_hours": 3
-    }
+    },
+    "course_structure_overview": "CBSE Class 12 Accountancy provides thorough vocational knowledge of corporate accounting, partnership reconstructions, company share issues, debenture redemption, and statutory financial statement analysis.",
+    "units": [
+      {
+        "unit_number": "Part A",
+        "name": "Accounting for Partnership Firms and Companies",
+        "marks": 60,
+        "chapters": [
+          "Unit 1: Accounting for Partnership Firms - Fundamentals, Goodwill, Change in PSR, Admission, Retirement/Death, Dissolution (36 marks)",
+          "Unit 2: Accounting for Companies - Issue of Shares, Forfeiture & Reissue, Issue of Debentures (24 marks)"
+        ]
+      },
+      {
+        "unit_number": "Part B",
+        "name": "Financial Statement Analysis",
+        "marks": 20,
+        "chapters": [
+          "Unit 3: Analysis of Financial Statements - Financial Statements of a Company, Financial Statement Analysis Tools, Accounting Ratios (12 marks)",
+          "Unit 4: Cash Flow Statement - AS-3 Indirect Method (8 marks)"
+        ]
+      }
+    ],
+    "question_paper_design": {
+      "format": "Theory Written Paper (80 Marks, 3 Hours, 34 Questions)",
+      "typology": [
+        {
+          "category": "Remembering & Understanding",
+          "percentage": "44%",
+          "marks": 35,
+          "description": "State statutory accounting rules, partnership provisions, company acts, and ratio formulas."
+        },
+        {
+          "category": "Applying",
+          "percentage": "33%",
+          "marks": 26,
+          "description": "Prepare journal entries for share forfeiture/reissue, revaluation accounts, and partner capital accounts."
+        },
+        {
+          "category": "Analysing & Evaluating",
+          "percentage": "23%",
+          "marks": 19,
+          "description": "Comprehensive cash flow statements, ratio analysis interpretations, and dissolution realization accounts."
+        }
+      ],
+      "competency_focus": "50% competency-focused questions including real-world corporate balance sheet scenarios.",
+      "choice_pattern": "Internal choices of 33% are provided across questions in both Part A and Part B."
+    },
+    "prescribed_books": [
+      {
+        "title": "Accountancy: Partnership Accounts Part-I, Class XII",
+        "publisher": "NCERT",
+        "type": "Core Textbook"
+      },
+      {
+        "title": "Accountancy: Company Accounts & Analysis Part-II, Class XII",
+        "publisher": "NCERT",
+        "type": "Core Textbook"
+      }
+    ],
+    "practical_guidance": {
+      "component_name": "Project Work (20 Marks)",
+      "breakdown": [
+        {
+          "item": "Project File",
+          "marks": 12,
+          "details": "Comprehensive project file covering business transactions, journal entries, ledger accounts, trial balance, and financial statement analysis."
+        },
+        {
+          "item": "Viva Voce",
+          "marks": 8,
+          "details": "Oral viva voce conducted by an external examiner appointed by CBSE based on the submitted project file."
+        }
+      ],
+      "guidelines": "Evaluated jointly by an external examiner appointed by CBSE and the internal subject teacher."
+    },
+    "editorial_study_tips": [
+      "Always include concise narrations in all journal entries; marks are deducted for missing narrations in board exams.",
+      "In share capital, master the pro-rata allotment table to calculate excess application money transferred to allotment.",
+      "In Cash Flow Statements, ensure non-cash and non-operating items (depreciation, gain/loss on asset sale) are correctly classified in Operating Activities."
+    ]
   },
   {
     "id": "cbse-12-business-studies-2027",
@@ -334,7 +1823,87 @@
       "internal_assessment_marks": 20,
       "total_marks": 100,
       "duration_hours": 3
-    }
+    },
+    "course_structure_overview": "CBSE Class 12 Business Studies covers principles and operational functions of management, corporate finance, capital markets, marketing mix strategies, and consumer rights under the Consumer Protection Act.",
+    "units": [
+      {
+        "unit_number": "Part A",
+        "name": "Principles and Functions of Management",
+        "marks": 50,
+        "chapters": [
+          "Nature and Significance of Management, Principles of Management, Business Environment (16 marks)",
+          "Planning and Organising (14 marks)",
+          "Staffing, Directing, and Controlling (20 marks)"
+        ]
+      },
+      {
+        "unit_number": "Part B",
+        "name": "Business Finance and Marketing",
+        "marks": 30,
+        "chapters": [
+          "Financial Management and Financial Markets (15 marks)",
+          "Marketing Management and Consumer Protection (15 marks)"
+        ]
+      }
+    ],
+    "question_paper_design": {
+      "format": "Theory Written Paper (80 Marks, 3 Hours, 34 Questions)",
+      "typology": [
+        {
+          "category": "Remembering and Understanding",
+          "percentage": "40%",
+          "marks": 32,
+          "description": "Exhibit memory of learned material by recalling facts, terms, basic concepts, and stating main management principles and processes."
+        },
+        {
+          "category": "Applying",
+          "percentage": "35%",
+          "marks": 28,
+          "description": "Solve problems to new situations by applying acquired management knowledge, leadership principles, techniques, and rules in business scenarios."
+        },
+        {
+          "category": "Analysing, Evaluating and Creating",
+          "percentage": "25%",
+          "marks": 20,
+          "description": "Examine business case problems, evaluate financial decisions, compare market options, and formulate strategic recommendations."
+        }
+      ],
+      "competency_focus": "50% competency-focused questions, dominated by scenario-based case studies.",
+      "choice_pattern": "Internal choices provided in 3-mark, 4-mark, and 6-mark questions."
+    },
+    "prescribed_books": [
+      {
+        "title": "Business Studies Part I: Principles and Functions of Management",
+        "publisher": "NCERT",
+        "type": "Core Textbook"
+      },
+      {
+        "title": "Business Studies Part II: Business Finance and Marketing",
+        "publisher": "NCERT",
+        "type": "Core Textbook"
+      }
+    ],
+    "practical_guidance": {
+      "component_name": "Project Work (20 Marks)",
+      "breakdown": [
+        {
+          "item": "Project File",
+          "marks": 12,
+          "details": "Handwritten investigation on one of the four CBSE topics: Elements of Business Environment, Principles of Management, Stock Exchange, or Marketing."
+        },
+        {
+          "item": "Viva Voce",
+          "marks": 8,
+          "details": "In-depth oral examination on the project file and conceptual business foundations."
+        }
+      ],
+      "guidelines": "Evaluated by a CBSE-appointed external examiner."
+    },
+    "editorial_study_tips": [
+      "In case-study questions, read the final question prompt first before reading the paragraph to identify what concept is being targeted.",
+      "Always quote lines from the case study extract to substantiate your identification of the management principle or function.",
+      "Memorize the 4Ps of marketing (Product, Price, Place, Promotion) and their individual components with practical examples."
+    ]
   },
   {
     "id": "cbse-12-economics-2027",
@@ -358,7 +1927,90 @@
       "internal_assessment_marks": 20,
       "total_marks": 100,
       "duration_hours": 3
-    }
+    },
+    "course_structure_overview": "CBSE Class 12 Economics integrates aggregate macroeconomics (national income accounting, central banking, fiscal policy) with a historical and contemporary analysis of Indian economic development.",
+    "units": [
+      {
+        "unit_number": "Part A",
+        "name": "Introductory Macroeconomics",
+        "marks": 40,
+        "chapters": [
+          "National Income and Related Aggregates (10 marks)",
+          "Money and Banking (6 marks)",
+          "Determination of Income and Employment (12 marks)",
+          "Government Budget and the Economy (6 marks)",
+          "Balance of Payments and Foreign Exchange (6 marks)"
+        ]
+      },
+      {
+        "unit_number": "Part B",
+        "name": "Indian Economic Development",
+        "marks": 40,
+        "chapters": [
+          "Development Experience (1947-90) & Economic Reforms since 1991 (12 marks)",
+          "Current Challenges facing Indian Economy: Human Capital, Rural Development, Employment, Sustainable Development (20 marks)",
+          "Development Experience of India: A Comparison with Neighbours China and Pakistan (8 marks)"
+        ]
+      }
+    ],
+    "question_paper_design": {
+      "format": "Theory Written Paper (80 Marks, 3 Hours, 34 Questions)",
+      "typology": [
+        {
+          "category": "Remembering and Understanding",
+          "percentage": "40%",
+          "marks": 32,
+          "description": "Exhibit memory of previously learned material by recalling macroeconomic facts, terminology, economic concepts, and historical reform milestones."
+        },
+        {
+          "category": "Applying",
+          "percentage": "35%",
+          "marks": 28,
+          "description": "Solve economic problems to new situations by applying acquired knowledge, national income formulas, multiplier equations, and fiscal tools."
+        },
+        {
+          "category": "Analysing, Evaluating and Creating",
+          "percentage": "25%",
+          "marks": 20,
+          "description": "Examine economic trends, analyze comparative development indicators across nations, make inferences, and propose developmental policies."
+        }
+      ],
+      "competency_focus": "50% competency-focused questions including data tables, graphs, and news extracts.",
+      "choice_pattern": "Internal choices of approximately 33% provided across sections."
+    },
+    "prescribed_books": [
+      {
+        "title": "Introductory Macroeconomics, Class XII",
+        "publisher": "NCERT",
+        "type": "Core Textbook"
+      },
+      {
+        "title": "Indian Economic Development, Class XII",
+        "publisher": "NCERT",
+        "type": "Core Textbook"
+      }
+    ],
+    "practical_guidance": {
+      "component_name": "Project Work (20 Marks)",
+      "breakdown": [
+        {
+          "item": "Project File",
+          "marks": 12,
+          "details": "Independent analytical study on an economic topic (e.g. Monetary Policy, GST, Digital Currency, Make in India)."
+        },
+        {
+          "item": "Viva Voce",
+          "marks": 8,
+          "details": "Viva on project methodology, data sources, and analytical conclusions with an external examiner."
+        }
+      ],
+      "guidelines": "Evaluated jointly by internal and external examiners."
+    },
+    "editorial_study_tips": [
+      "In National Income numericals, clearly write out the intermediate equations (e.g. GDPmp to NNPfc) before inserting numerical values.",
+      "In Indian Economic Development, memorize landmark policy years (e.g., Planning Commission 1950, NEP 1991, NITI Aayog 2015) for precise MCQs.",
+      "Draw clear, labeled macroeconomic equilibrium graphs (AD-AS and Investment-Saving curves) when explaining inflationary/deflationary gaps."
+    ]
   },
   {
     "id": "cbse-12-history-2027",
@@ -382,7 +2034,127 @@
       "internal_assessment_marks": 20,
       "total_marks": 100,
       "duration_hours": 3
-    }
+    },
+    "course_structure_overview": "CBSE Class 12 History explores Indian history chronologically through key themes: Ancient Harappan urbanism and early states, Medieval court chronicles and devotional movements, and Modern colonial encounters and the nationalist movement.",
+    "units": [
+      {
+        "unit_number": "Part I",
+        "name": "Themes in Indian History Part-I (Ancient)",
+        "marks": 25,
+        "chapters": [
+          "Theme 1: Bricks, Beads and Bones (The Harappan Civilisation)",
+          "Theme 2: Kings, Farmers and Towns (Early States and Economies)",
+          "Theme 3: Kinship, Caste and Class (Early Societies)",
+          "Theme 4: Thinkers, Beliefs and Buildings (Cultural Developments: Buddhism & Jainism)"
+        ]
+      },
+      {
+        "unit_number": "Part II",
+        "name": "Themes in Indian History Part-II (Medieval)",
+        "marks": 25,
+        "chapters": [
+          "Theme 5: Through the Eyes of Travellers",
+          "Theme 6: Bhakti-Sufi Traditions",
+          "Theme 7: An Imperial Capital: Vijayanagara",
+          "Theme 8: Peasants, Zamindars and the State (Agrarian Society & Mughal Empire)"
+        ]
+      },
+      {
+        "unit_number": "Part III",
+        "name": "Themes in Indian History Part-III (Modern)",
+        "marks": 25,
+        "chapters": [
+          "Theme 9: Colonialism and the Countryside",
+          "Theme 10: Rebels and the Raj (1857 Revolt)",
+          "Theme 11: Mahatma Gandhi and the Nationalist Movement",
+          "Theme 12: Framing the Constitution (The Beginning of a New Era)"
+        ]
+      },
+      {
+        "unit_number": "Map Work",
+        "name": "Map Identification & Location",
+        "marks": 5,
+        "chapters": [
+          "Significant historical sites across Ancient, Medieval, and Modern themes (5 marks)"
+        ]
+      }
+    ],
+    "question_paper_design": {
+      "format": "Theory Written Paper (80 Marks, 3 Hours, 34 Questions)",
+      "typology": [
+        {
+          "category": "Section A: Multiple Choice Questions (MCQ)",
+          "percentage": "26.25%",
+          "marks": 21,
+          "description": "21 Objective MCQs of 1 mark each covering Part I (7), Part II (7), and Part III (7)."
+        },
+        {
+          "category": "Section B: Short Answer Type (SA)",
+          "percentage": "22.50%",
+          "marks": 18,
+          "description": "6 Short Answer questions of 3 marks each (2 from each part, 100-150 words)."
+        },
+        {
+          "category": "Section C: Long Answer Type (LA)",
+          "percentage": "30.00%",
+          "marks": 24,
+          "description": "3 Long Answer essay questions of 8 marks each (1 from each part, with internal choice)."
+        },
+        {
+          "category": "Section D: Source-Based Questions",
+          "percentage": "15.00%",
+          "marks": 12,
+          "description": "3 Source-based passage questions of 4 marks each (1 from each part, with sub-questions)."
+        },
+        {
+          "category": "Section E: Map-Based Work",
+          "percentage": "6.25%",
+          "marks": 5,
+          "description": "1 Map-based question of 5 marks (identification, location, and labelling of significant historical sites)."
+        }
+      ],
+      "competency_focus": "50% competency questions including direct analysis of textual and epigraphic sources.",
+      "choice_pattern": "Internal choices of approximately 33% provided across short and long answer questions.",
+      "column_title": "Section & Question Format"
+    },
+    "prescribed_books": [
+      {
+        "title": "Themes in Indian History Part I",
+        "publisher": "NCERT",
+        "type": "Ancient"
+      },
+      {
+        "title": "Themes in Indian History Part II",
+        "publisher": "NCERT",
+        "type": "Medieval"
+      },
+      {
+        "title": "Themes in Indian History Part III",
+        "publisher": "NCERT",
+        "type": "Modern"
+      }
+    ],
+    "practical_guidance": {
+      "component_name": "Project Work (20 Marks)",
+      "breakdown": [
+        {
+          "item": "Project File",
+          "marks": 10,
+          "details": "Investigation of an archaeological site, monument, movement, or historical personality with primary evidence."
+        },
+        {
+          "item": "Viva Voce",
+          "marks": 10,
+          "details": "Oral defense with CBSE external examiner discussing historical methodology and sources."
+        }
+      ],
+      "guidelines": "Project must integrate primary sources (inscriptions, coins, oral histories, travelogues)."
+    },
+    "editorial_study_tips": [
+      "Source-based passages carry 12 marks; practice answering questions directly from the boxed extracts in the NCERT textbook.",
+      "Maintain timeline charts for Theme 11 (Nationalist Movement) to ensure chronological accuracy in 8-mark long essays.",
+      "Practice official map locations (e.g., Lothal, Sanchi, Vijayanagara, Dandi, Champaran) repeatedly on blank outline maps."
+    ]
   },
   {
     "id": "cbse-12-political-science-2027",
@@ -406,7 +2178,97 @@
       "internal_assessment_marks": 20,
       "total_marks": 100,
       "duration_hours": 3
-    }
+    },
+    "course_structure_overview": "CBSE Class 12 Political Science examines international relations post-Cold War and the political evolution of democratic India from nation-building to contemporary coalition and development politics.",
+    "units": [
+      {
+        "unit_number": "Part A",
+        "name": "Contemporary World Politics",
+        "marks": 40,
+        "chapters": [
+          "The End of Bipolarity (6 marks)",
+          "Contemporary Centres of Power: European Union, ASEAN, China, Japan, Korea (6 marks)",
+          "Contemporary South Asia (6 marks)",
+          "International Organizations (6 marks)",
+          "Security in the Contemporary World (6 marks)",
+          "Environment and Natural Resources (6 marks)",
+          "Globalization (4 marks)"
+        ]
+      },
+      {
+        "unit_number": "Part B",
+        "name": "Politics in India Since Independence",
+        "marks": 40,
+        "chapters": [
+          "Challenges of Nation-Building: Integration of princely states, linguistic reorganization (6 marks)",
+          "Era of One-Party Dominance (4 marks)",
+          "Politics of Planned Development: Five-year plans, Green Revolution (4 marks)",
+          "India's External Relations: Non-alignment, wars with China/Pakistan, nuclear policy (6 marks)",
+          "Challenges to and Restoration of the Congress System (4 marks)",
+          "The Crisis of Democratic Order: Emergency 1975, aftermath (6 marks)",
+          "Regional Aspirations: Kashmir, Punjab, North-East accords (4 marks)",
+          "Recent Developments in Indian Politics: Coalition era, NDA/UPA policies, contemporary issues (6 marks)"
+        ]
+      }
+    ],
+    "question_paper_design": {
+      "format": "Theory Written Paper (80 Marks, 3 Hours, 30 Questions)",
+      "typology": [
+        {
+          "category": "Remembering & Understanding",
+          "percentage": "38%",
+          "marks": 30,
+          "description": "Define geopolitical terms, recall treaty dates, identify international bodies, and summarize political events."
+        },
+        {
+          "category": "Applying & Analysing",
+          "percentage": "40%",
+          "marks": 32,
+          "description": "Examine foreign policy motivations, analyze democratic crises, and interpret political cartoons/maps."
+        },
+        {
+          "category": "Evaluating & Case Scenarios",
+          "percentage": "22%",
+          "marks": 18,
+          "description": "Passage-based, cartoon-based, and map-based interpretive questions (12 marks) plus essay evaluations."
+        }
+      ],
+      "competency_focus": "50% competency-focused questions including cartoon interpretations, map questions, and policy passage analyses.",
+      "choice_pattern": "Internal choices of approximately 33% provided across short and essay-type questions."
+    },
+    "prescribed_books": [
+      {
+        "title": "Contemporary World Politics, Class XII",
+        "publisher": "NCERT",
+        "type": "World Politics"
+      },
+      {
+        "title": "Politics in India Since Independence, Class XII",
+        "publisher": "NCERT",
+        "type": "Indian Politics"
+      }
+    ],
+    "practical_guidance": {
+      "component_name": "Project Work (20 Marks)",
+      "breakdown": [
+        {
+          "item": "Project File",
+          "marks": 10,
+          "details": "Research report on a contemporary geopolitical issue, Indian election, or foreign policy initiative."
+        },
+        {
+          "item": "Viva Voce",
+          "marks": 10,
+          "details": "Oral viva with external examiner assessing subject knowledge and critical thinking."
+        }
+      ],
+      "guidelines": "Evaluated jointly by internal and external examiners appointed by CBSE."
+    },
+    "editorial_study_tips": [
+      "Review every political cartoon in both NCERT textbooks; cartoon-based questions appear regularly and carry 4 to 6 marks.",
+      "Organize foreign policy treaties and UN agencies in a tabular format with headquarters, founding years, and principal mandates.",
+      "Structure long answers on the Emergency and Coalition Politics with neutral, constitutional arguments based strictly on textbook analysis."
+    ]
   },
   {
     "id": "cbse-12-english-core-2027",
@@ -430,7 +2292,105 @@
       "internal_assessment_marks": 20,
       "total_marks": 100,
       "duration_hours": 3
-    }
+    },
+    "course_structure_overview": "CBSE Class 12 English Core develops advanced reading comprehension, formal administrative writing, and nuanced textual analysis of modern prose and poetry.",
+    "units": [
+      {
+        "unit_number": "Section A",
+        "name": "Reading Skills",
+        "marks": 22,
+        "chapters": [
+          "One unseen passage to assess comprehension, interpretation, analysis and vocabulary (12 marks)",
+          "One unseen case-based factual passage with visual input/charts (10 marks)"
+        ]
+      },
+      {
+        "unit_number": "Section B",
+        "name": "Creative Writing Skills",
+        "marks": 18,
+        "chapters": [
+          "Notice Writing (up to 50 words, 4 marks)",
+          "Formal/Informal Invitation and Reply (up to 50 words, 4 marks)",
+          "Letter to the Editor / Application for a Job with Bio-data (120-150 words, 5 marks)",
+          "Article / Report Writing on contemporary issues (120-150 words, 5 marks)"
+        ]
+      },
+      {
+        "unit_number": "Section C",
+        "name": "Literature Textbooks and Supplementary Reading",
+        "marks": 40,
+        "chapters": [
+          "Flamingo: One Poetry extract (6 marks) + One Prose extract (6 marks)",
+          "Flamingo: Five Short Answer Questions (5 x 2 = 10 marks)",
+          "Vistas: Two Short Answer Questions (2 x 2 = 4 marks)",
+          "Flamingo: One Long Answer Question (5 marks)",
+          "Vistas: One Long Answer Question (5 marks)"
+        ]
+      }
+    ],
+    "question_paper_design": {
+      "format": "Theory Written Paper (80 Marks, 3 Hours, 13 Questions)",
+      "typology": [
+        {
+          "category": "Reading Comprehension",
+          "percentage": "27.5%",
+          "marks": 22,
+          "description": "Evaluating inference, tone, vocabulary in context, and data synthesis from unseen texts."
+        },
+        {
+          "category": "Creative Writing Skills",
+          "percentage": "22.5%",
+          "marks": 18,
+          "description": "Format adherence, logical organization of ideas, formal register, and grammatical precision."
+        },
+        {
+          "category": "Literature Textbooks",
+          "percentage": "50%",
+          "marks": 40,
+          "description": "Appreciation of poetic devices, character motivation, socio-historical context, and moral dilemmas."
+        }
+      ],
+      "competency_focus": "High focus on inferential reading questions and thematic extrapolations from literature.",
+      "choice_pattern": "Internal choices of 100% provided within each writing skill item and designated literature questions."
+    },
+    "prescribed_books": [
+      {
+        "title": "Flamingo: English Reader, Class XII",
+        "publisher": "NCERT",
+        "type": "Main Reader"
+      },
+      {
+        "title": "Vistas: Supplementary Reader, Class XII",
+        "publisher": "NCERT",
+        "type": "Supplementary Reader"
+      }
+    ],
+    "practical_guidance": {
+      "component_name": "Internal Assessment (20 Marks)",
+      "breakdown": [
+        {
+          "item": "Assessment of Listening Skills (ALS)",
+          "marks": 5,
+          "details": "Audio comprehension and response recording."
+        },
+        {
+          "item": "Assessment of Speaking Skills (ALS)",
+          "marks": 5,
+          "details": "Oral monologue, role-play, or project presentation."
+        },
+        {
+          "item": "Project Work & Portfolio",
+          "marks": 10,
+          "details": "Thematic essay, interview transcription, or literary critique portfolio."
+        }
+      ],
+      "guidelines": "Evaluated at school level based on CBSE ALS speaking/listening bands."
+    },
+    "editorial_study_tips": [
+      "Draw a clean box around Notices and Invitations; marks are deducted if the enclosing box is omitted.",
+      "In Job Applications, ensure your Bio-Data includes distinct headings: Personal Details, Educational Qualifications in tabular format, Work Experience, and References.",
+      "Memorize poetic devices (metaphor, simile, irony, transferred epithet) for all Flamingo poems (My Mother at Sixty-Six, Keeping Quiet, A Thing of Beauty, A Roadside Stand, Aunt Jennifer's Tigers)."
+    ]
   },
   {
     "id": "cbse-10-maths-2025",

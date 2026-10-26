@@ -643,5 +643,215 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
         with Image.open(master_path) as master_img:
             self.assertEqual(master_img.size, (1733, 907), f"Master dimensions should be (1733, 907), got {master_img.size}")
 
+    def test_syllabus_educational_content_and_unit_breakdown(self):
+        """Verify syllabus detail pages render rich authentic unit marks, textbooks, and question paper design"""
+        # Test Class 10 Mathematics
+        res_m10 = self.client.get("/cbse/syllabus/cbse-10-maths-2027")
+        self.assertEqual(res_m10.status_code, 200)
+        html_m10 = res_m10.data.decode("utf-8")
+        
+        self.assertIn("Official Unit-Wise Marks Distribution", html_m10)
+        self.assertIn("Number Systems", html_m10)
+        self.assertIn("6 Marks", html_m10)
+        self.assertIn("Algebra", html_m10)
+        self.assertIn("20 Marks", html_m10)
+        self.assertIn("Official Question Paper Design & Typology", html_m10)
+        self.assertIn("Remembering &amp; Understanding", html_m10)
+        self.assertIn("Prescribed Textbooks & Reading Materials", html_m10)
+        self.assertIn("Mathematics - Textbook for Class X", html_m10)
+        self.assertIn("Internal Assessment (20 Marks)", html_m10)
+        self.assertIn("Lab Practical Activities", html_m10)
+
+        # Test Class 12 Physics
+        res_p12 = self.client.get("/cbse/syllabus/cbse-12-physics-2027")
+        self.assertEqual(res_p12.status_code, 200)
+        html_p12 = res_p12.data.decode("utf-8")
+
+        self.assertIn("Electrostatics &amp; Current Electricity", html_p12)
+        self.assertIn("16 Marks", html_p12)
+        self.assertIn("Electromagnetic Waves &amp; Optics", html_p12)
+        self.assertIn("18 Marks", html_p12)
+        self.assertIn("Physics Part-I, Class XII", html_p12)
+        self.assertIn("Two Experiments", html_p12)
+
+    def test_distinction_between_official_data_and_editorial_advice(self):
+        """Verify clear visual and textual separation between official CBSE syllabus and editorial study advice"""
+        res = self.client.get("/cbse/syllabus/cbse-10-science-2027")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+
+        # Official markers
+        self.assertIn("Official CBSE Curriculum Weightage", html)
+        self.assertIn("Board Assessment Pattern", html)
+
+        # Editorial advice markers
+        self.assertIn("💡 ExamPulse Independent Editorial Study Advice", html)
+        self.assertIn("Non-Statutory Study Strategy", html)
+        self.assertIn("do not constitute official CBSE mandates", html)
+
+    def test_unverified_subject_educational_content_notice(self):
+        """Verify unverified subject (Class 10 AI) explicitly shows verification advisory instead of guessed units"""
+        res_ai = self.client.get("/cbse/syllabus/cbse-10-ai-2027")
+        self.assertEqual(res_ai.status_code, 200)
+        html_ai = res_ai.data.decode("utf-8")
+
+        self.assertIn("Curriculum Unit Verification Notice", html_ai)
+        self.assertIn("pending official verification against the CBSE Skill Education directory", html_ai)
+        self.assertNotIn("Official Unit-Wise Marks Distribution", html_ai)
+
+    def test_factual_accuracy_audit_corrections_class10(self):
+        """Verify factual audit corrections for Class 10 Science (086) and Computer Applications (165)"""
+        filepath = os.path.join(app.root_path, "data", "syllabus.json")
+        with open(filepath, "r", encoding="utf-8") as f:
+            syllabus = json.load(f)
+
+        # 1. Class 10 Science (086) QPD: 50% (40M), 30% (24M), 20% (16M)
+        sci10 = next(s for s in syllabus if s.get("id") == "cbse-10-science-2027")
+        sci_typo = sci10["question_paper_design"]["typology"]
+        self.assertEqual(len(sci_typo), 3)
+        self.assertEqual(sci_typo[0]["percentage"], "50%")
+        self.assertEqual(sci_typo[0]["marks"], 40)
+        self.assertEqual(sci_typo[1]["percentage"], "30%")
+        self.assertEqual(sci_typo[1]["marks"], 24)
+        self.assertEqual(sci_typo[2]["percentage"], "20%")
+        self.assertEqual(sci_typo[2]["marks"], 16)
+        self.assertEqual(sum(t["marks"] for t in sci_typo), 80)
+
+        res_sci = self.client.get("/cbse/syllabus/cbse-10-science-2027")
+        self.assertEqual(res_sci.status_code, 200)
+        html_sci = res_sci.data.decode("utf-8")
+        self.assertIn("Demonstrate Knowledge and Understanding", html_sci)
+        self.assertIn("50%", html_sci)
+        self.assertIn("40 M", html_sci)
+        self.assertIn("Application of Knowledge and Concepts", html_sci)
+        self.assertIn("30%", html_sci)
+        self.assertIn("24 M", html_sci)
+        self.assertIn("Formulate, Analyse, Evaluate and Create", html_sci)
+        self.assertIn("20%", html_sci)
+        self.assertIn("16 M", html_sci)
+
+        # 2. Class 10 Computer Applications (165) Unit Names: Networking (15M), HTML (25M), Cyber ethics (10M)
+        ca10 = next(s for s in syllabus if s.get("id") == "cbse-10-computer-app-2027")
+        unit_names = [(u.get("name"), u.get("marks")) for u in ca10.get("units", [])]
+        self.assertEqual(unit_names, [("Networking", 15), ("HTML", 25), ("Cyber ethics", 10)])
+        self.assertEqual(sum(u.get("marks") for u in ca10.get("units", [])), 50)
+
+        res_ca = self.client.get("/cbse/syllabus/cbse-10-computer-app-2027")
+        self.assertEqual(res_ca.status_code, 200)
+        html_ca = res_ca.data.decode("utf-8")
+        self.assertIn("Networking", html_ca)
+        self.assertIn("HTML", html_ca)
+        self.assertIn("Cyber ethics", html_ca)
+        self.assertNotIn("Networking and Cyberethics", html_ca)
+        self.assertNotIn("Cyber Safety", html_ca)
+
+    def test_factual_accuracy_audit_corrections_class12(self):
+        """Verify factual audit corrections for Class 12 Biology, BST, Economics, History, Accountancy, and CS"""
+        filepath = os.path.join(app.root_path, "data", "syllabus.json")
+        with open(filepath, "r", encoding="utf-8") as f:
+            syllabus = json.load(f)
+
+        # 3. Class 12 Biology (044) QPD: 50% (35M), 30% (21M), 20% (14M)
+        bio12 = next(s for s in syllabus if s.get("id") == "cbse-12-biology-2027")
+        bio_typo = bio12["question_paper_design"]["typology"]
+        self.assertEqual(len(bio_typo), 3)
+        self.assertEqual(bio_typo[0]["percentage"], "50%")
+        self.assertEqual(bio_typo[0]["marks"], 35)
+        self.assertEqual(bio_typo[1]["percentage"], "30%")
+        self.assertEqual(bio_typo[1]["marks"], 21)
+        self.assertEqual(bio_typo[2]["percentage"], "20%")
+        self.assertEqual(bio_typo[2]["marks"], 14)
+        self.assertEqual(sum(t["marks"] for t in bio_typo), 70)
+
+        res_bio = self.client.get("/cbse/syllabus/cbse-12-biology-2027")
+        html_bio = res_bio.data.decode("utf-8")
+        self.assertIn("35 M", html_bio)
+        self.assertIn("21 M", html_bio)
+        self.assertIn("14 M", html_bio)
+
+        # 4. Class 12 Business Studies (054) QPD: 40% (32M), 35% (28M), 25% (20M)
+        bst12 = next(s for s in syllabus if s.get("id") == "cbse-12-business-studies-2027")
+        bst_typo = bst12["question_paper_design"]["typology"]
+        self.assertEqual(bst_typo[0]["percentage"], "40%")
+        self.assertEqual(bst_typo[0]["marks"], 32)
+        self.assertEqual(bst_typo[1]["percentage"], "35%")
+        self.assertEqual(bst_typo[1]["marks"], 28)
+        self.assertEqual(bst_typo[2]["percentage"], "25%")
+        self.assertEqual(bst_typo[2]["marks"], 20)
+        self.assertEqual(sum(t["marks"] for t in bst_typo), 80)
+
+        res_bst = self.client.get("/cbse/syllabus/cbse-12-business-studies-2027")
+        html_bst = res_bst.data.decode("utf-8")
+        self.assertIn("32 M", html_bst)
+        self.assertIn("28 M", html_bst)
+        self.assertIn("20 M", html_bst)
+
+        # 5. Class 12 Economics (030) QPD: 40% (32M), 35% (28M), 25% (20M)
+        eco12 = next(s for s in syllabus if s.get("id") == "cbse-12-economics-2027")
+        eco_typo = eco12["question_paper_design"]["typology"]
+        self.assertEqual(eco_typo[0]["percentage"], "40%")
+        self.assertEqual(eco_typo[0]["marks"], 32)
+        self.assertEqual(eco_typo[1]["percentage"], "35%")
+        self.assertEqual(eco_typo[1]["marks"], 28)
+        self.assertEqual(eco_typo[2]["percentage"], "25%")
+        self.assertEqual(eco_typo[2]["marks"], 20)
+        self.assertEqual(sum(t["marks"] for t in eco_typo), 80)
+
+        res_eco = self.client.get("/cbse/syllabus/cbse-12-economics-2027")
+        html_eco = res_eco.data.decode("utf-8")
+        self.assertIn("32 M", html_eco)
+        self.assertIn("28 M", html_eco)
+        self.assertIn("20 M", html_eco)
+
+        # 6. Class 12 History (027) Question-Format Breakdown (Sections A-E totaling 80M)
+        hist12 = next(s for s in syllabus if s.get("id") == "cbse-12-history-2027")
+        hist_typo = hist12["question_paper_design"]["typology"]
+        self.assertEqual(len(hist_typo), 5)
+        self.assertEqual(sum(t["marks"] for t in hist_typo), 80)
+        self.assertEqual(hist_typo[0]["marks"], 21) # Section A MCQ
+        self.assertEqual(hist_typo[1]["marks"], 18) # Section B SA
+        self.assertEqual(hist_typo[2]["marks"], 24) # Section C LA
+        self.assertEqual(hist_typo[3]["marks"], 12) # Section D Source
+        self.assertEqual(hist_typo[4]["marks"], 5)  # Section E Map
+
+        res_hist = self.client.get("/cbse/syllabus/cbse-12-history-2027")
+        html_hist = res_hist.data.decode("utf-8")
+        self.assertIn("Section A: Multiple Choice Questions (MCQ)", html_hist)
+        self.assertIn("Section B: Short Answer Type (SA)", html_hist)
+        self.assertIn("Section C: Long Answer Type (LA)", html_hist)
+        self.assertIn("Section D: Source-Based Questions", html_hist)
+        self.assertIn("Section E: Map-Based Work", html_hist)
+
+        # 7. Class 12 Accountancy (055) Practical: Project File 12M, Viva Voce 8M (Total 20M)
+        acc12 = next(s for s in syllabus if s.get("id") == "cbse-12-accountancy-2027")
+        acc_breakdown = acc12["practical_guidance"]["breakdown"]
+        self.assertEqual(len(acc_breakdown), 2)
+        self.assertEqual(acc_breakdown[0]["item"], "Project File")
+        self.assertEqual(acc_breakdown[0]["marks"], 12)
+        self.assertEqual(acc_breakdown[1]["item"], "Viva Voce")
+        self.assertEqual(acc_breakdown[1]["marks"], 8)
+        self.assertEqual(sum(b["marks"] for b in acc_breakdown), 20)
+
+        res_acc = self.client.get("/cbse/syllabus/cbse-12-accountancy-2027")
+        html_acc = res_acc.data.decode("utf-8")
+        self.assertIn("Project File", html_acc)
+        self.assertIn("12 Marks", html_acc)
+        self.assertIn("Viva Voce", html_acc)
+        self.assertIn("8 Marks", html_acc)
+        self.assertNotIn("Written Test (One Hour)", html_acc)
+
+        # 8. Class 12 Computer Science (083): Explicitly labeled as ExamPulse editorial estimate
+        cs12 = next(s for s in syllabus if s.get("id") == "cbse-12-computer-science-2027")
+        self.assertTrue(cs12["question_paper_design"].get("is_editorial_estimate"))
+        self.assertIn("CBSE does not publish an official cognitive percentage table", cs12["question_paper_design"].get("editorial_notice", ""))
+
+        res_cs = self.client.get("/cbse/syllabus/cbse-12-computer-science-2027")
+        html_cs = res_cs.data.decode("utf-8")
+        self.assertIn("Estimated Question Paper Typology", html_cs)
+        self.assertIn("ExamPulse Editorial Estimate (Non-Official)", html_cs)
+        self.assertIn("CBSE does not publish an official cognitive percentage table for Computer Science", html_cs)
+
 if __name__ == "__main__":
     unittest.main()
+
+
