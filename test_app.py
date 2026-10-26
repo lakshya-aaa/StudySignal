@@ -465,6 +465,7 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
             os.path.join("static", "css", "style.css"),
             os.path.join("static", "js", "main.js"),
             os.path.join("static", "images", "favicon.svg"),
+            os.path.join("static", "googlec86ebbde15f4cbc3.html"),
             os.path.join("templates", "base.html"),
             os.path.join("templates", "index.html"),
         ]
@@ -475,6 +476,15 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
             for rule in gi_lines:
                 clean_rule = rule.rstrip("/")
                 self.assertNotIn(clean_rule, rel_path.split(os.sep), f"Asset {rel_path} matched by gitignore rule {rule}")
+
+    def test_google_search_console_verification(self):
+        """Verify Google Search Console verification file is served at root with HTTP 200 and expected token"""
+        res = self.client.get("/googlec86ebbde15f4cbc3.html")
+        self.assertEqual(res.status_code, 200)
+        self.assertIn("text/html", res.content_type)
+        content = res.data.decode("utf-8").strip()
+        res.close()
+        self.assertEqual(content, "google-site-verification: googlec86ebbde15f4cbc3.html")
 
 if __name__ == "__main__":
     unittest.main()

@@ -378,6 +378,10 @@ Sitemap: {Config.BASE_URL}/sitemap.xml
     response.headers["Content-Type"] = "text/plain; charset=utf-8"
     return response
 
+@app.route("/googlec86ebbde15f4cbc3.html")
+def google_verification():
+    return send_from_directory(os.path.join(app.root_path, "static"), "googlec86ebbde15f4cbc3.html")
+
 @app.route("/sitemap.xml")
 def sitemap_xml():
     syllabus_items = get_all_syllabus()
