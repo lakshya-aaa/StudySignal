@@ -25,7 +25,9 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
         self.assertIn("CBSE Class 12", html)
         self.assertIn("Official Advisory", html)
         self.assertIn("cbseacademic.nic.in", html)
-        self.assertIn("Advertisement", html)  # Header leaderboard ad
+        # By default in production, ad placeholders are disabled
+        self.assertNotIn("ad-placement-wrapper", html)
+        self.assertNotIn("Advertisement", html)
 
     def test_class_10_hub(self):
         """Test CBSE Class 10 dedicated hub"""
@@ -260,21 +262,35 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
         self.assertNotIn("English_LL_Sec_2024-25.pdf", eng.get("official_url"))
 
     def test_demo_records_badges_and_labels(self):
-        """Verify demo records display unmistakable DEMO label and NEVER 'Verified Official'"""
-        res_datesheet = self.client.get("/cbse/datesheets")
-        html_ds = res_datesheet.data.decode("utf-8")
-        self.assertIn("DEMO — NOT AN OFFICIAL ANNOUNCEMENT", html_ds)
-
+        """Verify demo records are hidden by default in production, and display unmistakable DEMO label when enabled"""
+        # 1. Default production setting (SHOW_DEMO_DATA = False): demo records must be hidden
         res_circ = self.client.get("/cbse/circulars")
         html_circ = res_circ.data.decode("utf-8")
-        self.assertIn("DEMO — NOT AN OFFICIAL ANNOUNCEMENT", html_circ)
+        self.assertNotIn("DEMO — NOT AN OFFICIAL ANNOUNCEMENT", html_circ)
 
-        # In search results, verify demo items do NOT receive verified badge
-        res_search = self.client.get("/search?category=datesheet")
-        html_search = res_search.data.decode("utf-8")
-        if "DEMO — NOT AN OFFICIAL ANNOUNCEMENT" in html_search:
-            # Check that DEMO items don't have the text '✓ Verified Official CBSE Source' on the same card
-            self.assertIn("DEMO — NOT AN OFFICIAL ANNOUNCEMENT", html_search)
+        res_datesheet = self.client.get("/cbse/datesheets")
+        html_ds = res_datesheet.data.decode("utf-8")
+        self.assertNotIn("[PROTOTYPE / NON-OFFICIAL DEMO ROW]", html_ds)
+
+        # 2. When demo data is explicitly enabled, verify badges and labels
+        orig_show_demo = getattr(Config, "SHOW_DEMO_DATA", False)
+        try:
+            Config.SHOW_DEMO_DATA = True
+            res_ds_demo = self.client.get("/cbse/datesheets")
+            html_ds_demo = res_ds_demo.data.decode("utf-8")
+            self.assertIn("DEMO — NOT AN OFFICIAL ANNOUNCEMENT", html_ds_demo)
+
+            res_circ_demo = self.client.get("/cbse/circulars")
+            html_circ_demo = res_circ_demo.data.decode("utf-8")
+            self.assertIn("DEMO — NOT AN OFFICIAL ANNOUNCEMENT", html_circ_demo)
+
+            # In search results, verify demo items do NOT receive verified badge
+            res_search = self.client.get("/search?category=datesheet")
+            html_search = res_search.data.decode("utf-8")
+            if "DEMO — NOT AN OFFICIAL ANNOUNCEMENT" in html_search:
+                self.assertIn("DEMO — NOT AN OFFICIAL ANNOUNCEMENT", html_search)
+        finally:
+            Config.SHOW_DEMO_DATA = orig_show_demo
 
     def test_demo_toggle_config(self):
         """Verify that setting SHOW_DEMO_DATA=False cleanly hides demo circulars and schedules"""
@@ -377,18 +393,33 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
         self.assertNotIn("CurriculumMain25/SrSec/Physics_SrSec_2024-25.pdf", html12)
 
     def test_ad_placeholder_copy_clean(self):
-        """Verify ad placeholders show clean labels and NO internal developer instructions"""
+        """Verify ad placeholders are hidden when ads are disabled, and show clean labels when enabled"""
+        # 1. Default production setting (ADS['enabled'] = False): ad wrappers are absent
         for route in ["/", "/cbse/class-10", "/cbse/class-12", "/cbse/syllabus"]:
             res = self.client.get(route)
             self.assertEqual(res.status_code, 200)
             html = res.data.decode("utf-8")
-            # Ensure developer instructions are never visible to users
+            self.assertNotIn("ad-placement-wrapper", html)
             self.assertNotIn("To integrate Google AdSense", html)
             self.assertNotIn("config.py", html)
-            # Ensure subtle, honest labels are present
-            self.assertIn("Advertisement", html)
-            self.assertIn("Sponsored placement", html)
-            self.assertIn("Reserved space for future non-intrusive educational sponsorships", html)
+
+        # 2. When ads are explicitly enabled, verify clean labels and NO internal developer instructions
+        orig_enabled = Config.ADS["enabled"]
+        try:
+            Config.ADS["enabled"] = True
+            for route in ["/", "/cbse/class-10", "/cbse/class-12", "/cbse/syllabus"]:
+                res = self.client.get(route)
+                self.assertEqual(res.status_code, 200)
+                html = res.data.decode("utf-8")
+                # Ensure developer instructions are never visible to users
+                self.assertNotIn("To integrate Google AdSense", html)
+                self.assertNotIn("config.py", html)
+                # Ensure subtle, honest labels are present
+                self.assertIn("Advertisement", html)
+                self.assertIn("Sponsored placement", html)
+                self.assertIn("Reserved space for future non-intrusive educational sponsorships", html)
+        finally:
+            Config.ADS["enabled"] = orig_enabled
 
     def test_circular_verification_badges_and_directories(self):
         """Verify individual notices vs official directories vs demo items have distinct badges"""
@@ -404,8 +435,18 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
         self.assertIn("Official Portal Directory", html)
         self.assertIn("Open Directory Portal ↗", html)
 
-        # 3. Demo entries
-        self.assertIn("DEMO — NOT AN OFFICIAL ANNOUNCEMENT", html)
+        # 3. In default production mode (SHOW_DEMO_DATA = False), demo entries are hidden
+        self.assertNotIn("DEMO — NOT AN OFFICIAL ANNOUNCEMENT", html)
+
+        # 4. When demo data is explicitly enabled, verify demo items receive distinct demo badge
+        orig_show_demo = getattr(Config, "SHOW_DEMO_DATA", False)
+        try:
+            Config.SHOW_DEMO_DATA = True
+            res_demo = self.client.get("/cbse/circulars")
+            html_demo = res_demo.data.decode("utf-8")
+            self.assertIn("DEMO — NOT AN OFFICIAL ANNOUNCEMENT", html_demo)
+        finally:
+            Config.SHOW_DEMO_DATA = orig_show_demo
 
     def test_class_12_syllabus_descriptions_and_marks(self):
         """Verify Class 12 descriptions clarify Senior Secondary scope and AI remains unverified"""

@@ -26,7 +26,7 @@ class Config:
     
     # Academic Year Settings (Current: October 2026 -> Session 2026-27)
     CURRENT_ACADEMIC_YEAR = "2026-27"
-    SHOW_DEMO_DATA = True  # Toggle to completely disable/hide demo and prototype records before launch
+    SHOW_DEMO_DATA = False  # Toggle to completely disable/hide demo and prototype records before launch
     
     # Non-Affiliation Disclaimer
     OFFICIAL_DISCLAIMER = (
@@ -53,7 +53,7 @@ class Config:
     # To replace placeholders with real Google AdSense / Sponsor scripts,
     # edit templates/components/ad_slot.html or set custom ad snippets below.
     ADS = {
-        "enabled": True,  # Master toggle for advertising
+        "enabled": False,  # Master toggle for advertising
         "slots": {
             "header_leaderboard": {
                 "name": "Header Leaderboard",
