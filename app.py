@@ -34,8 +34,19 @@ def get_datesheets():
 def get_circulars():
     items = load_json_data("circulars.json")
     if not getattr(Config, "SHOW_DEMO_DATA", True):
-        return [c for c in items if not (c.get("is_demo") or c.get("verification_status") == "demo")]
-    return items
+        items = [c for c in items if not (c.get("is_demo") or c.get("verification_status") == "demo")]
+
+    def sort_circular_key(c):
+        # 1. Pinned notices first (if any)
+        is_pinned = 1 if c.get("is_pinned") else 0
+        # 2. Valid iso_date sorted descending (has_iso = 1 before 0)
+        iso = c.get("iso_date") or ""
+        has_iso = 1 if iso else 0
+        # 3. For undated items, secondary sort on last_verified
+        fallback_date = c.get("last_verified") or ""
+        return (is_pinned, has_iso, iso, fallback_date)
+
+    return sorted(items, key=sort_circular_key, reverse=True)
 
 # Context processor for templates
 @app.context_processor
@@ -281,7 +292,7 @@ def search():
             )
             matches_class = (filter_class == "all" or filter_class in c.get("class_target", "") or "All" in c.get("class_target", ""))
             matches_subj = (filter_subject == "all")  # Circulars are usually board-wide
-            matches_year = True
+            matches_year = (filter_year == "all" or c.get("academic_year") == filter_year or "Multi-Year" in str(c.get("academic_year", "")))
 
             if matches_query and matches_class and matches_subj and matches_year:
                 results.append({

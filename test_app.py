@@ -894,6 +894,128 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
         self.assertNotIn("non-commercial educational information website", html_disclaimer)
         self.assertNotIn("non-commercial educational capacity", html_disclaimer)
 
+    # =========================================================================
+    # Stage 2 Phase 2: Date-Sheet Usability & Circular Schema Tests
+    # =========================================================================
+
+    def test_datesheet_improved_empty_state_and_last_checked(self):
+        """Verify date-sheet page provides rich guidance, explicit last-checked date, and authentic checklist when timetables are pending"""
+        orig_demo = getattr(Config, "SHOW_DEMO_DATA", False)
+        try:
+            Config.SHOW_DEMO_DATA = False
+            res = self.client.get("/cbse/datesheets")
+            self.assertEqual(res.status_code, 200)
+            html = res.data.decode("utf-8")
+
+            # 1. Explicit last-checked status from data file (never dynamically generated today)
+            self.assertIn("Official cbse.gov.in portal verified: 26 October 2026", html)
+            self.assertIn("Timetable Pending Announcement", html)
+
+            # 2. Both Class 10 & 12 sections display status awaiting press release
+            self.assertIn("Class 10 Schedule Status:", html)
+            self.assertIn("Class 12 Schedule Status:", html)
+            self.assertIn("Awaiting official press release from the Controller of Examinations", html)
+
+            # 3. Authentic verification instructions (3-column guide)
+            self.assertIn("1. Checking Official Releases", html)
+            self.assertIn("2. Spotting Fake Timetables", html)
+            self.assertIn("3. Official Sample Papers", html)
+            self.assertIn("cbse.gov.in/cbsenew/examination_Circular.html", html)
+            self.assertIn("CBSE Academic Portal", html)
+
+            # 4. Distinctly labeled independent preparation guidance
+            self.assertIn("💡 Independent Preparation Guidance (Non-Official / Non-Statutory)", html)
+            self.assertIn("Class 10 Core Focus:", html)
+            self.assertIn("Science Stream:", html)
+            self.assertIn("Commerce Stream:", html)
+            self.assertIn("Arts / Humanities:", html)
+
+            # 5. Clean separation: no unannounced speculative exam dates
+            self.assertNotIn("[PROTOTYPE / NON-OFFICIAL DEMO ROW]", html)
+        finally:
+            Config.SHOW_DEMO_DATA = orig_demo
+
+    def test_circular_schema_validation(self):
+        """Validate circulars.json schema: required fields, valid status, ISO date formats, and explicit uncertainty"""
+        from datetime import datetime
+        filepath = os.path.join(app.root_path, "data", "circulars.json")
+        with open(filepath, "r", encoding="utf-8") as f:
+            circulars = json.load(f)
+
+        self.assertGreaterEqual(len(circulars), 6)
+
+        required_keys = [
+            "id", "title", "category", "class_target", "circular_no",
+            "summary", "verification_status", "official_url", "source_portal", "status"
+        ]
+
+        for c in circulars:
+            for k in required_keys:
+                self.assertIn(k, c, f"Missing required key '{k}' in circular {c.get('id')}")
+
+            # Status must be valid
+            self.assertIn(c.get("status"), ["active", "archived", "demo"], f"Invalid status in {c.get('id')}")
+
+            # Official URLs must start with HTTPS and point to CBSE domains
+            self.assertTrue(c["official_url"].startswith("https://"), f"URL must be HTTPS: {c['official_url']}")
+            self.assertTrue(
+                "cbse.gov.in" in c["official_url"] or "cbseacademic.nic.in" in c["official_url"],
+                f"Official URL must point to CBSE domain: {c['official_url']}"
+            )
+
+            # ISO date validation
+            iso = c.get("iso_date")
+            if iso is not None:
+                # Must be YYYY-MM-DD
+                parsed = datetime.strptime(iso, "%Y-%m-%d")
+                self.assertEqual(iso, parsed.strftime("%Y-%m-%d"))
+                # If dated, academic_year should be explicitly set
+                self.assertIsNotNone(c.get("academic_year"))
+            else:
+                # If iso_date is null, verify uncertainty is handled explicitly (continuous directory or demo)
+                self.assertTrue(
+                    c.get("verification_status") in ["official_directory", "demo"],
+                    f"Null iso_date only allowed for official_directory or demo, got {c.get('id')}"
+                )
+
+    def test_circular_chronological_sorting_and_null_handling(self):
+        """Verify get_circulars sorts dated notices in descending order and places undated directories afterwards"""
+        from app import get_circulars
+
+        orig_demo = getattr(Config, "SHOW_DEMO_DATA", False)
+        try:
+            Config.SHOW_DEMO_DATA = False
+            items = get_circulars()
+            self.assertEqual(len(items), 6)
+
+            # First 4 must be dated notices sorted newest to oldest
+            dated_items = [c for c in items if c.get("iso_date") is not None]
+            self.assertEqual(len(dated_items), 4)
+
+            expected_dates = ["2026-10-21", "2026-10-14", "2026-10-13", "2026-10-07"]
+            actual_dates = [c.get("iso_date") for c in dated_items]
+            self.assertEqual(actual_dates, expected_dates)
+
+            # 21 Oct LOC notice must be first
+            self.assertIn("Reminder 6 / LOC-2026", items[0].get("circular_no"))
+            self.assertEqual(items[0].get("id"), "circ-exam-loc-reminder-2026")
+
+            # Undated directories must follow after dated notices, not before them
+            undated_items = [c for c in items if c.get("iso_date") is None]
+            self.assertEqual(len(undated_items), 2)
+            for d in undated_items:
+                self.assertEqual(d.get("verification_status"), "official_directory")
+
+            # Check homepage rendering: latest 4 circulars are the 4 dated notices
+            res = self.client.get("/")
+            html = res.data.decode("utf-8")
+            self.assertIn("Reminder: Submission of List of Candidates", html)
+            self.assertIn("Observance of Vigilance Awareness Week", html)
+            self.assertIn("CBSE Science Challenge", html)
+            self.assertIn("Online Examination Forms Submission for Private Candidates", html)
+        finally:
+            Config.SHOW_DEMO_DATA = orig_demo
+
 if __name__ == "__main__":
     unittest.main()
 

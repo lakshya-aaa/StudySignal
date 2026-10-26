@@ -38,9 +38,18 @@ Check official CBSE Class 10 and Class 12 board examination date sheet status, e
         Every year, unverified dates circulate on social media. CBSE officially advises all candidates, parents, and schools to verify date sheets exclusively at 
         <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer" style="font-weight: 700; text-decoration: underline;">www.cbse.gov.in</a>.
       </p>
+      {% if show_demo_data %}
       <div style="font-size: 0.8125rem; font-weight: 600; color: #b45309;">
         Note: The tables below contain sample placeholder rows strictly marked with "DEMO — NOT AN OFFICIAL ANNOUNCEMENT" for interface testing until CBSE publishes the final PDF.
       </div>
+      {% else %}
+      <div style="font-size: 0.8125rem; font-weight: 600; color: #0369a1; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+        <span>Official CBSE Portals Status: <strong>Timetable Pending Announcement</strong></span>
+        {% if data.last_checked_label or data.last_checked %}
+        <span>&bull; Official cbse.gov.in portal verified: <strong>{{ data.last_checked_label or data.last_checked }}</strong></span>
+        {% endif %}
+      </div>
+      {% endif %}
     </div>
 
     <!-- Class Selector Filter -->
@@ -104,10 +113,78 @@ Check official CBSE Class 10 and Class 12 board examination date sheet status, e
         </table>
       </div>
       {% else %}
-      <div style="background: var(--bg-alt); padding: 1.5rem; border-radius: var(--radius-sm); margin-bottom: 1rem; text-align: center;">
-        <p style="color: var(--text-muted); font-size: 0.9375rem;">
-          Official Class 10 date sheet has not been published yet. Please check the official CBSE portal at <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer">cbse.gov.in</a>.
+      <div class="no-datesheet-guidance" style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 1.5rem;">
+        <!-- Status & Last Checked Indicator -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; background: var(--bg-alt); padding: 0.75rem 1rem; border-radius: var(--radius-sm); margin-bottom: 1.25rem; border-left: 4px solid var(--accent-blue);">
+          <div>
+            <span style="font-weight: 700; color: var(--primary);">Class 10 Schedule Status:</span>
+            <span style="color: var(--text-muted); margin-left: 0.25rem;">Awaiting official press release from the Controller of Examinations</span>
+          </div>
+          {% if data.classes['10'].last_checked_label or data.last_checked_label %}
+          <div style="font-size: 0.8125rem; color: #0369a1; font-weight: 600;">
+            ✓ Official cbse.gov.in portal verified: {{ data.classes['10'].last_checked_label or data.last_checked_label }}
+          </div>
+          {% endif %}
+        </div>
+
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">
+          Official Status & How to Verify Class 10 Exam Dates
+        </h3>
+        <p style="color: var(--text-dark); font-size: 0.9375rem; line-height: 1.6; margin-bottom: 1.25rem;">
+          The Central Board of Secondary Education has not yet released the confirmed Secondary (Class 10) examination date sheet for Session {{ data.classes['10'].academic_year or current_academic_year }}. In keeping with our editorial integrity policy, ExamPulse India does not publish unverified dates or speculative countdowns.
         </p>
+
+        <!-- 3-Column Verification & Preparation Steps -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 1.25rem;">
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--radius-sm); padding: 1rem;">
+            <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.35rem;">🔍 1. Checking Official Releases</div>
+            <p style="font-size: 0.8125rem; color: var(--text-dark); line-height: 1.5; margin-bottom: 0.5rem;">
+              When released, authentic date sheets are published exclusively on <code>cbse.gov.in</code> under the Examination Circulars section.
+            </p>
+            <a href="{{ data.classes['10'].official_link or official_urls.cbse_examinations }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="font-size: 0.75rem; width: auto; display: inline-block;">
+              Check cbse.gov.in Notices ↗
+            </a>
+          </div>
+
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--radius-sm); padding: 1rem;">
+            <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.35rem;">🛡️ 2. Spotting Fake Timetables</div>
+            <p style="font-size: 0.8125rem; color: var(--text-dark); line-height: 1.5; margin-bottom: 0;">
+              Authentic CBSE notifications always carry a formal circular number (e.g. <code>CBSE/COORD/...</code>), digital signature of the Controller of Examinations, and are hosted directly on <code>cbse.gov.in</code>.
+            </p>
+          </div>
+
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--radius-sm); padding: 1rem;">
+            <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.35rem;">📝 3. Official Sample Papers</div>
+            <p style="font-size: 0.8125rem; color: var(--text-dark); line-height: 1.5; margin-bottom: 0.5rem;">
+              Prepare using official CBSE Sample Question Papers and Marking Schemes published on the Academic Unit server.
+            </p>
+            <a href="{{ official_urls.cbse_academic }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="font-size: 0.75rem; width: auto; display: inline-block;">
+              CBSE Academic Portal ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Independent Editorial Study Guidance (Clearly Labeled Non-Official) -->
+        <div style="background: #fffbeb; border: 1px solid #fef3c7; border-left: 4px solid #f59e0b; border-radius: var(--radius-sm); padding: 1rem;">
+          <h4 style="font-size: 0.9375rem; font-weight: 700; color: #92400e; margin-bottom: 0.35rem;">
+            💡 Independent Preparation Guidance (Non-Official / Non-Statutory)
+          </h4>
+          <p style="font-size: 0.8125rem; color: #78350f; line-height: 1.5; margin-bottom: 0.35rem;">
+            While awaiting the schedule, focus on mastering the high-weightage chapters outlined in the official curriculum blueprints:
+          </p>
+          <ul style="font-size: 0.8125rem; color: #78350f; line-height: 1.5; margin-left: 1.25rem; margin-bottom: 0.5rem;">
+            <li><strong>Class 10 Core Focus:</strong> Mathematics (Algebra 20M, Geometry 15M), Science (Chemical Substances 25M, World of Living 25M), and Social Science (20M per section).</li>
+            <li><strong>Internal Assessments:</strong> Complete periodic test revisions, lab practical records, and portfolio activities well before board theory exams commence.</li>
+          </ul>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <a href="/cbse/class-10" class="btn-sm btn-primary" style="font-size: 0.75rem; width: auto;">
+              Explore Class 10 Syllabus Blueprints &rarr;
+            </a>
+            <a href="/cbse/syllabus?class=10" class="btn-sm btn-secondary" style="font-size: 0.75rem; width: auto;">
+              Download Official Subject PDFs ↗
+            </a>
+          </div>
+        </div>
       </div>
       {% endif %}
 
@@ -174,10 +251,79 @@ Check official CBSE Class 10 and Class 12 board examination date sheet status, e
         </table>
       </div>
       {% else %}
-      <div style="background: var(--bg-alt); padding: 1.5rem; border-radius: var(--radius-sm); margin-bottom: 1rem; text-align: center;">
-        <p style="color: var(--text-muted); font-size: 0.9375rem;">
-          Official Class 12 date sheet has not been published yet. Please check the official CBSE portal at <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer">cbse.gov.in</a>.
+      <div class="no-datesheet-guidance" style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 1.5rem;">
+        <!-- Status & Last Checked Indicator -->
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; background: var(--bg-alt); padding: 0.75rem 1rem; border-radius: var(--radius-sm); margin-bottom: 1.25rem; border-left: 4px solid var(--accent-saffron);">
+          <div>
+            <span style="font-weight: 700; color: var(--primary);">Class 12 Schedule Status:</span>
+            <span style="color: var(--text-muted); margin-left: 0.25rem;">Awaiting official press release from the Controller of Examinations</span>
+          </div>
+          {% if data.classes['12'].last_checked_label or data.last_checked_label %}
+          <div style="font-size: 0.8125rem; color: #0369a1; font-weight: 600;">
+            ✓ Official cbse.gov.in portal verified: {{ data.classes['12'].last_checked_label or data.last_checked_label }}
+          </div>
+          {% endif %}
+        </div>
+
+        <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">
+          Official Status & How to Verify Class 12 Exam Dates
+        </h3>
+        <p style="color: var(--text-dark); font-size: 0.9375rem; line-height: 1.6; margin-bottom: 1.25rem;">
+          The Central Board of Secondary Education has not yet released the confirmed Senior School Certificate (Class 12) examination date sheet for Session {{ data.classes['12'].academic_year or current_academic_year }}. In keeping with our editorial integrity policy, ExamPulse India does not publish unverified dates or speculative countdowns.
         </p>
+
+        <!-- 3-Column Verification & Preparation Steps -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 1.25rem;">
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--radius-sm); padding: 1rem;">
+            <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.35rem;">🔍 1. Checking Official Releases</div>
+            <p style="font-size: 0.8125rem; color: var(--text-dark); line-height: 1.5; margin-bottom: 0.5rem;">
+              When released, authentic date sheets are published exclusively on <code>cbse.gov.in</code> under the Examination Circulars section.
+            </p>
+            <a href="{{ data.classes['12'].official_link or official_urls.cbse_examinations }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="font-size: 0.75rem; width: auto; display: inline-block;">
+              Check cbse.gov.in Notices ↗
+            </a>
+          </div>
+
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--radius-sm); padding: 1rem;">
+            <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.35rem;">🛡️ 2. Spotting Fake Timetables</div>
+            <p style="font-size: 0.8125rem; color: var(--text-dark); line-height: 1.5; margin-bottom: 0;">
+              Authentic CBSE notifications always carry a formal circular number (e.g. <code>CBSE/COORD/...</code>), digital signature of the Controller of Examinations, and are hosted directly on <code>cbse.gov.in</code>.
+            </p>
+          </div>
+
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: var(--radius-sm); padding: 1rem;">
+            <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.35rem;">📝 3. Official Sample Papers</div>
+            <p style="font-size: 0.8125rem; color: var(--text-dark); line-height: 1.5; margin-bottom: 0.5rem;">
+              Prepare using official CBSE Sample Question Papers and Marking Schemes published on the Academic Unit server.
+            </p>
+            <a href="{{ official_urls.cbse_academic }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="font-size: 0.75rem; width: auto; display: inline-block;">
+              CBSE Academic Portal ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Independent Editorial Study Guidance (Clearly Labeled Non-Official) -->
+        <div style="background: #fffbeb; border: 1px solid #fef3c7; border-left: 4px solid #f59e0b; border-radius: var(--radius-sm); padding: 1rem;">
+          <h4 style="font-size: 0.9375rem; font-weight: 700; color: #92400e; margin-bottom: 0.35rem;">
+            💡 Independent Preparation Guidance (Non-Official / Non-Statutory)
+          </h4>
+          <p style="font-size: 0.8125rem; color: #78350f; line-height: 1.5; margin-bottom: 0.35rem;">
+            While awaiting the schedule, organize revision across your respective streams:
+          </p>
+          <ul style="font-size: 0.8125rem; color: #78350f; line-height: 1.5; margin-left: 1.25rem; margin-bottom: 0.5rem;">
+            <li><strong>Science Stream:</strong> Prioritize numerical problem-solving in Physics & Chemistry, alongside NCERT diagrams and practical experiment records (30M practicals).</li>
+            <li><strong>Commerce Stream:</strong> Focus on Accountancy partnership/company accounts and Business Studies case study applications.</li>
+            <li><strong>Arts / Humanities:</strong> Practice source-based and map-based questions in History and Geography, and conceptual explanations in Political Science.</li>
+          </ul>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <a href="/cbse/class-12" class="btn-sm btn-primary" style="font-size: 0.75rem; width: auto;">
+              Explore Class 12 Stream Hub &rarr;
+            </a>
+            <a href="/cbse/syllabus?class=12" class="btn-sm btn-secondary" style="font-size: 0.75rem; width: auto;">
+              Download Stream Syllabi (PDF) ↗
+            </a>
+          </div>
+        </div>
       </div>
       {% endif %}
 

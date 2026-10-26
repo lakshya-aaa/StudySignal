@@ -107,6 +107,9 @@ Official Central Board of Secondary Education (CBSE) circulars, academic notices
             {% if circ.published_date %}
               <span class="circ-date">&bull; Published: {{ circ.published_date }}</span>
             {% endif %}
+            {% if circ.academic_year and 'Standing' not in circ.academic_year %}
+              <span class="circ-year" style="color: var(--accent-saffron); font-weight: 600;">&bull; Session: {{ circ.academic_year }}</span>
+            {% endif %}
             <span class="circ-target">Target: {{ circ.class_target }}</span>
           </div>
 
