@@ -7,20 +7,21 @@
   
   <title>{% block title %}{{ site_name }} - {{ site_tagline }}{% endblock %}</title>
   <meta name="description" content="{% block meta_description %}{{ site_description }}{% endblock %}">
-  <meta name="keywords" content="CBSE syllabus 2024-25, CBSE Class 10 syllabus, CBSE Class 12 syllabus, CBSE datesheet, CBSE circulars, cbseacademic.nic.in, board exam timetable">
+  <meta name="keywords" content="{% block meta_keywords %}CBSE syllabus 2026-27, CBSE Class 10 syllabus, CBSE Class 12 syllabus, CBSE datesheet, CBSE circulars, cbseacademic.nic.in, board exam timetable{% endblock %}">
+  <meta name="robots" content="{% block robots %}index, follow{% endblock %}">
   <link rel="canonical" href="{% block canonical_url %}{{ base_url }}{{ request.path }}{% endblock %}">
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ base_url }}{{ request.path }}">
-  <meta property="og:title" content="{% block og_title %}{{ site_name }} - {{ site_tagline }}{% endblock %}">
-  <meta property="og:description" content="{% block og_description %}{{ site_description }}{% endblock %}">
+  <meta property="og:title" content="{% block og_title %}{{ self.title() }}{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}{{ self.meta_description() }}{% endblock %}">
   <meta property="og:site_name" content="{{ site_name }}">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{% block twitter_title %}{{ site_name }} - {{ site_tagline }}{% endblock %}">
-  <meta name="twitter:description" content="{% block twitter_description %}{{ site_description }}{% endblock %}">
+  <meta name="twitter:title" content="{% block twitter_title %}{{ self.title() }}{% endblock %}">
+  <meta name="twitter:description" content="{% block twitter_description %}{{ self.meta_description() }}{% endblock %}">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/favicon.svg') }}">

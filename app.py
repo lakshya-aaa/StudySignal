@@ -6,7 +6,7 @@ Phase 1 Core Flask Application
 import os
 import json
 from datetime import datetime
-from flask import Flask, render_template, request, jsonify, abort, make_response, send_from_directory
+from flask import Flask, render_template, request, jsonify, abort, make_response, send_from_directory, redirect
 from config import Config
 
 app = Flask(__name__)
@@ -53,6 +53,18 @@ def inject_globals():
         "current_year": datetime.now().year,
         "today_str": datetime.now().strftime("%d %B %Y")
     }
+
+# Trailing-slash normalization (Safe 301 Canonical Redirect)
+@app.before_request
+def normalize_trailing_slash():
+    path = request.path
+    if request.method in ("GET", "HEAD") and path != "/" and path.endswith("/"):
+        clean_path = path.rstrip("/")
+        if request.query_string:
+            target = f"{clean_path}?{request.query_string.decode('utf-8')}"
+        else:
+            target = clean_path
+        return redirect(target, code=301)
 
 # ----------------- Core Routes -----------------
 
@@ -369,10 +381,12 @@ def disclaimer():
 
 @app.route("/robots.txt")
 def robots_txt():
+    # Production sitemap URL fallback ensures 127.0.0.1 is never exposed to public crawlers
+    base = Config.BASE_URL if ("127.0.0.1" not in Config.BASE_URL and "localhost" not in Config.BASE_URL) else "https://exampulse-india.onrender.com"
     content = f"""User-agent: *
 Allow: /
 
-Sitemap: {Config.BASE_URL}/sitemap.xml
+Sitemap: {base}/sitemap.xml
 """
     response = make_response(content, 200)
     response.headers["Content-Type"] = "text/plain; charset=utf-8"
@@ -394,7 +408,6 @@ def sitemap_xml():
         {"loc": f"{Config.BASE_URL}/cbse/syllabus", "priority": "0.8", "changefreq": "weekly"},
         {"loc": f"{Config.BASE_URL}/cbse/datesheets", "priority": "0.9", "changefreq": "daily"},
         {"loc": f"{Config.BASE_URL}/cbse/circulars", "priority": "0.8", "changefreq": "daily"},
-        {"loc": f"{Config.BASE_URL}/search", "priority": "0.7", "changefreq": "weekly"},
         {"loc": f"{Config.BASE_URL}/about", "priority": "0.5", "changefreq": "monthly"},
         {"loc": f"{Config.BASE_URL}/contact", "priority": "0.5", "changefreq": "monthly"},
         {"loc": f"{Config.BASE_URL}/privacy-policy", "priority": "0.3", "changefreq": "yearly"},

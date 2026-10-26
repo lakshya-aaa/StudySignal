@@ -131,11 +131,13 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
         self.assertEqual(res_exam.status_code, 200)
 
     def test_search_and_json_api(self):
-        """Test search by keyword and multi-field filters"""
+        """Test search by keyword and multi-field filters with noindex directive"""
         res = self.client.get("/search?q=Chemistry")
         self.assertEqual(res.status_code, 200)
         html = res.data.decode("utf-8")
         self.assertIn("Chemistry", html)
+        # Search page must have noindex, follow to prevent indexing thin search query combinations
+        self.assertIn('<meta name="robots" content="noindex, follow">', html)
 
         # AJAX JSON search response
         res_json = self.client.get("/search?q=Physics&format=json")
@@ -166,16 +168,27 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
         self.assertIn("Amit Sharma", html)
 
     def test_robots_txt(self):
-        """Test robots.txt accessibility and content"""
+        """Test robots.txt accessibility, live sitemap, absence of 127.0.0.1 and no Disallow /search"""
         res = self.client.get("/robots.txt")
         self.assertEqual(res.status_code, 200)
         self.assertIn("text/plain", res.content_type)
         text = res.data.decode("utf-8")
         self.assertIn("User-agent: *", text)
+        self.assertIn("Allow: /", text)
         self.assertIn("Sitemap:", text)
+        self.assertNotIn("127.0.0.1", text, "robots.txt must never expose 127.0.0.1")
+        # Ensure Disallow: /search is not used so Googlebot can crawl and see noindex
+        self.assertNotIn("Disallow: /search", text)
+
+        # Verify static/robots.txt also never exposes 127.0.0.1
+        static_robots = os.path.join(app.root_path, "static", "robots.txt")
+        if os.path.exists(static_robots):
+            with open(static_robots, "r", encoding="utf-8") as f:
+                s_text = f.read()
+            self.assertNotIn("127.0.0.1", s_text)
 
     def test_sitemap_xml(self):
-        """Test sitemap.xml validity as standard XML"""
+        """Test sitemap.xml validity as standard XML and exclusion of /search"""
         res = self.client.get("/sitemap.xml")
         self.assertEqual(res.status_code, 200)
         self.assertIn("application/xml", res.content_type)
@@ -188,6 +201,8 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
         self.assertGreater(len(urls), 10)
         self.assertTrue(any("/cbse/class-10" in u for u in urls))
         self.assertTrue(any("/cbse/class-12" in u for u in urls))
+        # Ensure /search is not present in sitemap
+        self.assertFalse(any(u.endswith("/search") for u in urls), "/search must be excluded from sitemap.xml")
 
     def test_disclaimer_presence(self):
         """Test non-affiliation disclaimer presence on legal page and banner"""
@@ -485,6 +500,57 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
         content = res.data.decode("utf-8").strip()
         res.close()
         self.assertEqual(content, "google-site-verification: googlec86ebbde15f4cbc3.html")
+
+    def test_trailing_slash_redirects(self):
+        """Verify trailing-slash URLs safely redirect with 301 to canonical non-slash URLs"""
+        # 1. Root / must return 200 without redirect
+        res_root = self.client.get("/")
+        self.assertEqual(res_root.status_code, 200)
+
+        # 2. Normal pages with trailing slash must 301 redirect to non-slash equivalent
+        res_about = self.client.get("/about/")
+        self.assertEqual(res_about.status_code, 301)
+        self.assertTrue(res_about.headers.get("Location").endswith("/about"))
+
+        res_c10 = self.client.get("/cbse/class-10/")
+        self.assertEqual(res_c10.status_code, 301)
+        self.assertTrue(res_c10.headers.get("Location").endswith("/cbse/class-10"))
+
+        # 3. Query parameters must be preserved across redirect
+        res_q = self.client.get("/cbse/syllabus/?class=10")
+        self.assertEqual(res_q.status_code, 301)
+        self.assertTrue(res_q.headers.get("Location").endswith("/cbse/syllabus?class=10"))
+
+        # 4. Following redirect returns 200 OK
+        res_follow = self.client.get("/about/", follow_redirects=True)
+        self.assertEqual(res_follow.status_code, 200)
+        self.assertIn("About Us", res_follow.data.decode("utf-8"))
+
+        # 5. Static file and verification URL must not be affected
+        res_ver = self.client.get("/googlec86ebbde15f4cbc3.html")
+        self.assertEqual(res_ver.status_code, 200)
+
+    def test_social_sharing_metadata_and_keywords(self):
+        """Verify dynamic OG/Twitter metadata inheritance and updated 2026-27 meta keywords"""
+        # Test homepage metadata
+        res_home = self.client.get("/")
+        html_home = res_home.data.decode("utf-8")
+        self.assertIn('property="og:title" content="ExamPulse India - CBSE Class 10 & 12 Syllabus, Date Sheets & Official Notices"', html_home)
+        self.assertIn('name="twitter:title" content="ExamPulse India - CBSE Class 10 & 12 Syllabus, Date Sheets & Official Notices"', html_home)
+        self.assertIn('2026-27', html_home)
+        # Check keywords tag specifically
+        kw_part = html_home.split('name="keywords"')[1].split('>')[0]
+        self.assertIn('2026-27', kw_part)
+        self.assertNotIn('2024-25', kw_part, "Meta keywords must not reference 2024-25")
+
+        # Test subpage metadata inheritance (Class 10 Hub)
+        res_c10 = self.client.get("/cbse/class-10")
+        html_c10 = res_c10.data.decode("utf-8")
+        self.assertIn('property="og:title" content="CBSE Class 10 (Secondary) - ExamPulse India"', html_c10)
+        self.assertIn('name="twitter:title" content="CBSE Class 10 (Secondary) - ExamPulse India"', html_c10)
+        self.assertIn('Complete guide for CBSE Class 10 (Secondary)', html_c10)
+        # Verify it does NOT fall back to generic site tagline
+        self.assertNotIn('property="og:title" content="ExamPulse India - Independent CBSE Education Information Portal"', html_c10)
 
 if __name__ == "__main__":
     unittest.main()
