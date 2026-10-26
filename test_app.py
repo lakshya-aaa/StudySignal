@@ -211,7 +211,7 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
         res = self.client.get("/disclaimer")
         html = res.data.decode("utf-8")
         self.assertIn("Strict Non-Affiliation Declaration", html)
-        self.assertIn("independent, non-commercial educational information website", html)
+        self.assertIn("independent, free-access educational information portal", html)
         self.assertIn("Central Board of Secondary Education (CBSE)", html)
         self.assertIn("cbse.gov.in", html)
         self.assertIn("cbseacademic.nic.in", html)
@@ -850,6 +850,49 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
         self.assertIn("Estimated Question Paper Typology", html_cs)
         self.assertIn("ExamPulse Editorial Estimate (Non-Official)", html_cs)
         self.assertIn("CBSE does not publish an official cognitive percentage table for Computer Science", html_cs)
+
+    def test_privacy_policy_transparency_and_disclosures(self):
+        """Test privacy policy disclosures, cookie-free status, ad disablement, and updated portal transparency"""
+        # 1. Privacy Policy verification
+        res_privacy = self.client.get("/privacy-policy")
+        self.assertEqual(res_privacy.status_code, 200)
+        html_privacy = res_privacy.data.decode("utf-8")
+
+        # Must accurately disclose cookie-free status, analytics, and advertising
+        self.assertIn("cookie-free", html_privacy)
+        self.assertIn("No Tracking or Session Cookies", html_privacy)
+        self.assertIn("No Analytics Scripts", html_privacy)
+        self.assertIn("completely disabled", html_privacy)
+        self.assertIn("Third-Party Advertising Status", html_privacy)
+
+        # Minor student protections & DPDPA statutory notice
+        self.assertIn("Children's and Minor Students' Privacy", html_privacy)
+        self.assertIn("Digital Personal Data Protection Act, 2023", html_privacy)
+        self.assertIn("Secondary (Class 10) and Senior Secondary (Class 12) students", html_privacy)
+
+        # Must not contain obsolete or misleading claims
+        self.assertNotIn("under the age of 13", html_privacy, "US COPPA age limit must not be used")
+        self.assertNotIn("COPPA", html_privacy)
+        self.assertNotIn("uses standard browser cookies", html_privacy)
+
+        # 2. About page terminology
+        res_about = self.client.get("/about")
+        self.assertEqual(res_about.status_code, 200)
+        html_about = res_about.data.decode("utf-8")
+        self.assertIn("independent, free-access educational information portal", html_about)
+        self.assertIn("Independent, Free-Access Approach", html_about)
+        self.assertNotIn("Non-Commercial &amp; Accessible Approach", html_about)
+        self.assertNotIn("Non-Commercial & Accessible Approach", html_about)
+
+        # 3. Disclaimer page terminology and non-affiliation preservation
+        res_disclaimer = self.client.get("/disclaimer")
+        self.assertEqual(res_disclaimer.status_code, 200)
+        html_disclaimer = res_disclaimer.data.decode("utf-8")
+        self.assertIn("Strict Non-Affiliation Declaration", html_disclaimer)
+        self.assertIn("independent, free-access educational information portal", html_disclaimer)
+        self.assertIn("nominative, descriptive, and educational capacity", html_disclaimer)
+        self.assertNotIn("non-commercial educational information website", html_disclaimer)
+        self.assertNotIn("non-commercial educational capacity", html_disclaimer)
 
 if __name__ == "__main__":
     unittest.main()
