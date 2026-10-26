@@ -480,6 +480,8 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
             os.path.join("static", "css", "style.css"),
             os.path.join("static", "js", "main.js"),
             os.path.join("static", "images", "favicon.svg"),
+            os.path.join("static", "images", "og-preview.png"),
+            os.path.join("static", "images", "og-preview-master.png"),
             os.path.join("static", "googlec86ebbde15f4cbc3.html"),
             os.path.join("templates", "base.html"),
             os.path.join("templates", "index.html"),
@@ -551,6 +553,54 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
         self.assertIn('Complete guide for CBSE Class 10 (Secondary)', html_c10)
         # Verify it does NOT fall back to generic site tagline
         self.assertNotIn('property="og:title" content="ExamPulse India - Independent CBSE Education Information Portal"', html_c10)
+
+    def test_social_image_metadata_and_asset(self):
+        """Verify Open Graph & Twitter social sharing image tags, accessibility, dimensions and master preservation"""
+        from PIL import Image
+
+        # 1. Verify meta tags in rendered homepage HTML
+        res_home = self.client.get("/")
+        self.assertEqual(res_home.status_code, 200)
+        html = res_home.data.decode("utf-8")
+
+        expected_og_image = "https://exampulse-india.onrender.com/static/images/og-preview.png"
+        self.assertIn(f'property="og:image" content="{expected_og_image}"', html)
+        self.assertIn('property="og:image:width" content="1200"', html)
+        self.assertIn('property="og:image:height" content="630"', html)
+        self.assertIn('property="og:image:alt"', html)
+        self.assertIn("School Boards, Engineering &amp; Medical Entrances", html)
+        self.assertIn('name="twitter:card" content="summary_large_image"', html)
+        self.assertIn(f'name="twitter:image" content="{expected_og_image}"', html)
+        self.assertIn('name="twitter:image:alt"', html)
+
+        # 2. Verify subpage inherits the same default og:image
+        res_c12 = self.client.get("/cbse/class-12")
+        self.assertEqual(res_c12.status_code, 200)
+        html_c12 = res_c12.data.decode("utf-8")
+        self.assertIn(f'property="og:image" content="{expected_og_image}"', html_c12)
+        self.assertIn(f'name="twitter:image" content="{expected_og_image}"', html_c12)
+
+        # 3. Verify static file route serves the image with HTTP 200
+        res_img = self.client.get("/static/images/og-preview.png")
+        self.assertEqual(res_img.status_code, 200)
+        self.assertIn("image/png", res_img.content_type)
+        res_img.close()
+
+        # 4. Verify physical image dimensions and file size on disk
+        og_path = os.path.join(app.root_path, "static", "images", "og-preview.png")
+        self.assertTrue(os.path.exists(og_path), "Optimized og-preview.png must exist")
+        file_size = os.path.getsize(og_path)
+        self.assertLess(file_size, 1024 * 1024, f"Image size ({file_size} bytes) should be < 1 MB")
+
+        with Image.open(og_path) as img:
+            self.assertEqual(img.size, (1200, 630), f"Dimensions must be exactly 1200x630, got {img.size}")
+            self.assertEqual(img.format, "PNG")
+
+        # 5. Verify master backup exists and preserves original resolution
+        master_path = os.path.join(app.root_path, "static", "images", "og-preview-master.png")
+        self.assertTrue(os.path.exists(master_path), "Master backup og-preview-master.png must exist")
+        with Image.open(master_path) as master_img:
+            self.assertEqual(master_img.size, (1733, 907), f"Master dimensions should be (1733, 907), got {master_img.size}")
 
 if __name__ == "__main__":
     unittest.main()

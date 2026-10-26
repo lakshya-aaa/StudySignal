@@ -14,7 +14,15 @@ class Config:
         "official date sheet alerts, circulars, and academic notifications."
     )
     SECRET_KEY = os.environ.get("SECRET_KEY", "exampulse-india-default-dev-key")
+    PRODUCTION_BASE_URL = os.environ.get("PRODUCTION_BASE_URL", "https://exampulse-india.onrender.com")
     BASE_URL = os.environ.get("BASE_URL", os.environ.get("RENDER_EXTERNAL_URL", "http://127.0.0.1:5000"))
+    
+    # Social Sharing Metadata (Representing full educational platform scope)
+    DEFAULT_OG_IMAGE = f"{PRODUCTION_BASE_URL}/static/images/og-preview.png"
+    DEFAULT_OG_IMAGE_ALT = (
+        "ExamPulse India - Educational Information Portal for School Boards, "
+        "Engineering & Medical Entrances, Government Examinations, and Higher Education Admissions"
+    )
     
     # Academic Year Settings (Current: October 2026 -> Session 2026-27)
     CURRENT_ACADEMIC_YEAR = "2026-27"
