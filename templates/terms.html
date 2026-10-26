@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}Terms & Conditions - ExamPulse India{% endblock %}
+
+{% block meta_description %}
+Terms and conditions of website use for ExamPulse India education portal.
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [{'title': 'Legal', 'url': '/terms'}, {'title': 'Terms & Conditions', 'url': '/terms'}] %}
+{% include 'components/breadcrumb.html' %}
+
+<div class="container">
+  <div class="static-page-container">
+    <div class="static-page-header">
+      <h1 class="static-page-title">Terms & Conditions</h1>
+      <p class="static-page-subtitle">Last Updated: October 2026</p>
+    </div>
+
+    <div class="static-content">
+      <h2>1. Introduction</h2>
+      <p>
+        Welcome to <strong>ExamPulse India</strong>. These Terms and Conditions govern your use of our website. By accessing and browsing ExamPulse India, you accept these terms in full. If you disagree with any part of these terms, you must not use our website.
+      </p>
+
+      <h2>2. Nature of Service & Non-Affiliation</h2>
+      <p>
+        ExamPulse India is an independent educational indexing platform designed to facilitate access to public educational documents issued by the Central Board of Secondary Education (CBSE). 
+      </p>
+      <p>
+        The portal is <strong>not</strong> an official website of the Government of India, Ministry of Education, or CBSE. We do not provide statutory examination registration, marksheet issuance, or grievance redressal services.
+      </p>
+
+      <h2>3. Intellectual Property Rights</h2>
+      <p>
+        Unless otherwise stated:
+      </p>
+      <ul>
+        <li>All original design, compilation, software code, and editorial presentation on ExamPulse India are owned by ExamPulse India.</li>
+        <li>Official syllabus PDFs, board circulars, circular numbers, curriculum blueprints, and board examination schedules belong to their respective statutory creator, the <strong>Central Board of Secondary Education (CBSE)</strong>.</li>
+        <li>Links to official documents directly redirect the user to official government servers (<code>cbseacademic.nic.in</code> and <code>cbse.gov.in</code>).</li>
+      </ul>
+
+      <h2>4. Accuracy and Use of Demo Placeholders</h2>
+      <p>
+        While we make every reasonable effort to ensure information is accurate and verified against official sources:
+      </p>
+      <ul>
+        <li>Any date sheet or circular tagged with a <code>[Demo Data]</code> or <code>[Placeholder]</code> label is intended solely for layout and software demonstration and must not be interpreted as an official notification.</li>
+        <li>Students and educational institutions must independently cross-verify critical dates, subject codes, and fee schedules with official board notifications on <code>cbse.gov.in</code>.</li>
+      </ul>
+
+      <h2>5. Limitation of Liability</h2>
+      <p>
+        ExamPulse India and its operators will not be liable for any direct, indirect, incidental, or consequential loss or damage arising out of the use of or inability to use this website, including but not limited to reliance on any information contained herein.
+      </p>
+
+      <h2>6. Governing Law</h2>
+      <p>
+        These terms and conditions are governed by and construed in accordance with the laws of India, and any disputes shall be subject to the exclusive jurisdiction of the competent courts in India.
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

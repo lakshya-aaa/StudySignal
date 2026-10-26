@@ -1,0 +1,158 @@
+{% extends 'base.html' %}
+
+{% block title %}CBSE Circulars, Academic Notices & Examination Updates - ExamPulse India{% endblock %}
+
+{% block meta_description %}
+Official Central Board of Secondary Education (CBSE) circulars, academic notices, syllabus directives, and exam advisories for affiliated schools, teachers, and students.
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [{'title': 'CBSE', 'url': '/'}, {'title': 'Circulars & Notices', 'url': '/cbse/circulars'}] %}
+{% include 'components/breadcrumb.html' %}
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h1 class="section-title">CBSE Circulars & Academic Updates</h1>
+        <p class="section-subtitle">
+          Direct directory of policy notifications, examination circulars, and official directives.
+        </p>
+      </div>
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <a href="{{ official_urls.cbse_circulars }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
+          Academic Circulars (cbseacademic.nic.in) ↗
+        </a>
+        <a href="{{ official_urls.cbse_examinations }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
+          Examination Circulars (cbse.gov.in) ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- Filter Form -->
+    <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 2rem;">
+      <form action="/cbse/circulars" method="get" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) 120px; gap: 1rem; align-items: end;">
+        <div>
+          <label class="form-label">Search Notices</label>
+          <input 
+            type="text" 
+            name="q" 
+            class="form-control" 
+            placeholder="Search keywords or circular no..." 
+            value="{{ search_q }}"
+          >
+        </div>
+
+        <div>
+          <label class="form-label">Category</label>
+          <select name="category" class="form-control">
+            <option value="all" {% if category == 'all' %}selected{% endif %}>All Categories</option>
+            <option value="Academic" {% if category == 'Academic' %}selected{% endif %}>Academic Curriculum</option>
+            <option value="Examination" {% if category == 'Examination' %}selected{% endif %}>Examination Wing</option>
+            <option value="Administrative" {% if category == 'Administrative' %}selected{% endif %}>Administrative & Affiliation</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="form-label">Target Standard</label>
+          <select name="class" class="form-control">
+            <option value="all" {% if selected_class == 'all' %}selected{% endif %}>All Classes</option>
+            <option value="10" {% if selected_class == '10' %}selected{% endif %}>Class 10</option>
+            <option value="12" {% if selected_class == '12' %}selected{% endif %}>Class 12</option>
+          </select>
+        </div>
+
+        <div>
+          <button type="submit" class="btn-primary" style="height: 42px;">Filter</button>
+        </div>
+      </form>
+
+      {% if search_q or category != 'all' or selected_class != 'all' %}
+      <div style="margin-top: 0.75rem; font-size: 0.8125rem;">
+        <span style="color: var(--text-muted);">Active filters:</span>
+        {% if search_q %}<strong>Query:</strong> "{{ search_q }}" &bull;{% endif %}
+        {% if category != 'all' %}<strong>Category:</strong> {{ category }} &bull;{% endif %}
+        {% if selected_class != 'all' %}<strong>Class:</strong> {{ selected_class }} &bull;{% endif %}
+        <a href="/cbse/circulars" style="color: var(--accent-saffron); font-weight: 600; margin-left: 0.5rem;">Reset Filters</a>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Circulars Count -->
+    <div style="margin-bottom: 1.25rem; font-size: 0.9375rem; font-weight: 600;">
+      Displaying {{ circulars|length }} circulars and updates
+    </div>
+
+    <!-- Circulars List -->
+    <div class="circular-list">
+      {% for circ in circulars %}
+      <div class="circular-card category-{{ circ.category }}">
+        <div class="circular-icon-box">
+          {% if circ.category == 'Academic' %}📚
+          {% elif circ.category == 'Examination' %}📝
+          {% else %}📋{% endif %}
+        </div>
+        <div class="circular-content">
+          <div class="circular-meta">
+            {% if circ.verification_status == 'verified_official' %}
+              <span class="circ-tag official">✓ Verified Official Notice</span>
+            {% elif circ.verification_status == 'official_directory' %}
+              <span class="circ-tag" style="background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd;">Official Portal Directory</span>
+            {% elif circ.is_demo or circ.verification_status == 'demo' %}
+              <span class="circ-tag demo">DEMO — NOT AN OFFICIAL ANNOUNCEMENT</span>
+            {% else %}
+              <span class="circ-tag unverified">Unverified Notice</span>
+            {% endif %}
+            <span class="circ-number">{{ circ.circular_no }}</span>
+            {% if circ.published_date %}
+              <span class="circ-date">&bull; Published: {{ circ.published_date }}</span>
+            {% endif %}
+            <span class="circ-target">Target: {{ circ.class_target }}</span>
+          </div>
+
+          <h2 class="circular-title">{{ circ.title }}</h2>
+          <p class="circular-summary">{{ circ.summary }}</p>
+
+          <div class="circular-footer">
+            {% if circ.is_demo %}
+              <span class="circ-notice-pill">DEMO — NOT AN OFFICIAL ANNOUNCEMENT</span>
+            {% elif circ.verification_status == 'official_directory' %}
+              <span style="font-size: 0.75rem; color: #0369a1; font-weight: 600;">
+                Official Central Board Portal Directory
+              </span>
+            {% elif circ.last_verified %}
+              <span style="font-size: 0.75rem; color: var(--accent-green); font-weight: 600;">
+                ✓ Verified against Official CBSE Source ({{ circ.last_verified }})
+              </span>
+            {% endif %}
+            <a href="{{ circ.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
+              {% if circ.official_url and circ.official_url.endswith('.pdf') %}View Official PDF ↗{% elif circ.verification_status == 'official_directory' %}Open Directory Portal ↗{% else %}Open Official Link ↗{% endif %}
+            </a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Ad Placement -->
+    {% set slot_id = 'in_content_banner' %}
+    {% include 'components/ad_slot.html' %}
+
+    <!-- Official Advisory on Circular Authenticity -->
+    <div class="alert-box alert-warning" style="margin-top: 2.5rem;">
+      <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 0.35rem;">
+        How to authenticate official CBSE circulars
+      </h3>
+      <p style="font-size: 0.875rem; margin-bottom: 0.5rem;">
+        Official CBSE circulars always possess:
+      </p>
+      <ul style="font-size: 0.875rem; margin-left: 1.5rem;">
+        <li>A distinct circular reference number (e.g. <code>CBSE/ACAD/...</code> or <code>COORD/EXAM/...</code>).</li>
+        <li>Authorized digital signature of the Controller of Examinations or Director (Academics).</li>
+        <li>Direct presence on <code>cbseacademic.nic.in/circulars.html</code> or <code>cbse.gov.in</code>.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

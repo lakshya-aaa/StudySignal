@@ -1,0 +1,24 @@
+{#
+  Reusable Ad Placement Component
+  Usage: {% include 'components/ad_slot.html' with context %}
+  or pass slot_id='header_leaderboard', 'sidebar_box', 'in_content_banner', 'footer_banner'
+#}
+{% if ad_config.enabled %}
+  {% set slot = ad_config.slots.get(slot_id) %}
+  {% if slot and slot.enabled %}
+    <div class="ad-placement-wrapper ad-slot-{{ slot_id }}" aria-label="Advertisement Placement">
+      <div class="ad-label">
+        <span>Advertisement</span>
+        <span class="ad-info-tag">Sponsored placement</span>
+      </div>
+      <div class="ad-slot-box" style="min-height: {{ slot.height }}px; max-width: {{ slot.width }}px;">
+        <div class="ad-slot-inner">
+          <div class="ad-content">
+            <span class="ad-title">{{ slot.placeholder_label }}</span>
+            <span class="ad-sub">Reserved space for future non-intrusive educational sponsorships</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+{% endif %}

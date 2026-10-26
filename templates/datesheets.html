@@ -1,0 +1,209 @@
+{% extends 'base.html' %}
+
+{% block title %}CBSE Board Exam Date Sheet {{ current_academic_year }} - Class 10 & 12 Timetable Status{% endblock %}
+
+{% block meta_description %}
+Check official CBSE Class 10 and Class 12 board examination date sheet status, examination timings, hall ticket advisories, and official CBSE notifications.
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [{'title': 'CBSE', 'url': '/'}, {'title': 'Exam Date Sheets', 'url': '/cbse/datesheets'}] %}
+{% include 'components/breadcrumb.html' %}
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h1 class="section-title">CBSE Board Exam Date Sheet Hub</h1>
+        <p class="section-subtitle">
+          Official board timetable notifications, session timing directives, and examination guidelines.
+        </p>
+      </div>
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <a href="{{ data.official_cbse_main_portal or official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
+          Visit Official CBSE Website ↗
+        </a>
+        <a href="{{ data.official_cbse_exam_portal }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
+          CBSE Examination Circulars ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- Official Advisory Warning Box -->
+    <div class="demo-table-alert" style="margin-bottom: 2rem;">
+      <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.35rem;">
+        🚨 Official Advisory Regarding Fake Date Sheets
+      </h3>
+      <p style="margin-bottom: 0.5rem; line-height: 1.5;">
+        Every year, unverified dates circulate on social media. CBSE officially advises all candidates, parents, and schools to verify date sheets exclusively at 
+        <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer" style="font-weight: 700; text-decoration: underline;">www.cbse.gov.in</a>.
+      </p>
+      <div style="font-size: 0.8125rem; font-weight: 600; color: #b45309;">
+        Note: The tables below contain sample placeholder rows strictly marked with "DEMO — NOT AN OFFICIAL ANNOUNCEMENT" for interface testing until CBSE publishes the final PDF.
+      </div>
+    </div>
+
+    <!-- Class Selector Filter -->
+    <div style="display: flex; gap: 0.5rem; margin-bottom: 2rem; flex-wrap: wrap;">
+      <a href="/cbse/datesheets" class="btn-sm {% if selected_class == 'all' or not selected_class %}btn-primary{% else %}btn-secondary{% endif %}" style="width: auto;">
+        All Classes (10 & 12)
+      </a>
+      <a href="/cbse/datesheets?class=10" class="btn-sm {% if selected_class == '10' %}btn-primary{% else %}btn-secondary{% endif %}" style="width: auto;">
+        Class 10 Only
+      </a>
+      <a href="/cbse/datesheets?class=12" class="btn-sm {% if selected_class == '12' %}btn-primary{% else %}btn-secondary{% endif %}" style="width: auto;">
+        Class 12 Only
+      </a>
+    </div>
+
+    <!-- Class 10 Date Sheet -->
+    {% if selected_class == 'all' or selected_class == '10' or not selected_class %}
+    <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.75rem; margin-bottom: 2.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+        <div>
+          <span class="class-badge" style="background: var(--accent-blue-light); color: var(--accent-blue); margin-bottom: 0.35rem; display: inline-block;">
+            Class 10 &bull; Secondary School Examination
+          </span>
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">
+            {{ data.classes['10'].class_name }}
+          </h2>
+        </div>
+        <div style="text-align: right;">
+          <span class="circ-tag demo" style="display: inline-block; margin-bottom: 0.25rem;">
+            {{ data.classes['10'].demo_label }}
+          </span>
+          <div style="font-size: 0.8125rem; color: var(--text-muted);">
+            Session: {{ data.classes['10'].academic_year }}
+          </div>
+        </div>
+      </div>
+
+      {% if data.classes['10'].schedule_items %}
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Code</th>
+              <th>Status</th>
+              <th>Timing Note</th>
+              <th>Classification</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in data.classes['10'].schedule_items %}
+            <tr>
+              <td><strong>{{ row.subject }}</strong></td>
+              <td><span class="code-pill">{{ row.subject_code }}</span></td>
+              <td><span style="color: #b45309; font-weight: 600;">{{ row.exam_date }}</span></td>
+              <td>{{ row.timing }}</td>
+              <td><span class="circ-tag demo">DEMO — NOT AN OFFICIAL ANNOUNCEMENT</span></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}
+      <div style="background: var(--bg-alt); padding: 1.5rem; border-radius: var(--radius-sm); margin-bottom: 1rem; text-align: center;">
+        <p style="color: var(--text-muted); font-size: 0.9375rem;">
+          Official Class 10 date sheet has not been published yet. Please check the official CBSE portal at <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer">cbse.gov.in</a>.
+        </p>
+      </div>
+      {% endif %}
+
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; background: var(--bg-alt); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.875rem;">
+        <span>CBSE Guidance: <strong>{{ data.classes['10'].official_status }}</strong></span>
+        <a href="{{ data.classes['10'].official_link }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary" style="width: auto;">
+          Check Confirmed Updates on cbse.gov.in ↗
+        </a>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Reusable In-Content Ad -->
+    {% set slot_id = 'in_content_banner' %}
+    {% include 'components/ad_slot.html' %}
+
+    <!-- Class 12 Date Sheet -->
+    {% if selected_class == 'all' or selected_class == '12' or not selected_class %}
+    <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.75rem; margin-bottom: 2.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+        <div>
+          <span class="class-badge" style="background: var(--accent-saffron-light); color: var(--accent-saffron); margin-bottom: 0.35rem; display: inline-block;">
+            Class 12 &bull; Senior School Certificate Examination
+          </span>
+          <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">
+            {{ data.classes['12'].class_name }}
+          </h2>
+        </div>
+        <div style="text-align: right;">
+          <span class="circ-tag demo" style="display: inline-block; margin-bottom: 0.25rem;">
+            {{ data.classes['12'].demo_label }}
+          </span>
+          <div style="font-size: 0.8125rem; color: var(--text-muted);">
+            Session: {{ data.classes['12'].academic_year }}
+          </div>
+        </div>
+      </div>
+
+      {% if data.classes['12'].schedule_items %}
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Subject</th>
+              <th>Code</th>
+              <th>Stream</th>
+              <th>Status</th>
+              <th>Timing Note</th>
+              <th>Classification</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in data.classes['12'].schedule_items %}
+            <tr>
+              <td><strong>{{ row.subject }}</strong></td>
+              <td><span class="code-pill">{{ row.subject_code }}</span></td>
+              <td><span class="f-badge" style="background: var(--bg-alt); color: var(--text-dark);">{{ row.stream }}</span></td>
+              <td><span style="color: #b45309; font-weight: 600;">{{ row.exam_date }}</span></td>
+              <td>{{ row.timing }}</td>
+              <td><span class="circ-tag demo">DEMO — NOT AN OFFICIAL ANNOUNCEMENT</span></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}
+      <div style="background: var(--bg-alt); padding: 1.5rem; border-radius: var(--radius-sm); margin-bottom: 1rem; text-align: center;">
+        <p style="color: var(--text-muted); font-size: 0.9375rem;">
+          Official Class 12 date sheet has not been published yet. Please check the official CBSE portal at <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer">cbse.gov.in</a>.
+        </p>
+      </div>
+      {% endif %}
+
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; background: var(--bg-alt); padding: 0.75rem 1rem; border-radius: var(--radius-sm); font-size: 0.875rem;">
+        <span>CBSE Guidance: <strong>{{ data.classes['12'].official_status }}</strong></span>
+        <a href="{{ data.classes['12'].official_link }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary" style="width: auto;">
+          Check Confirmed Updates on cbse.gov.in ↗
+        </a>
+      </div>
+    </div>
+    {% endif %}
+
+    <!-- Crucial Exam Day Protocol Guidelines -->
+    <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.75rem;">
+      <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem;">
+        Official CBSE Examination Day Instructions
+      </h3>
+      <ol style="margin-left: 1.5rem; color: #334155; line-height: 1.7; font-size: 0.9375rem;">
+        <li><strong>Entry Cut-off:</strong> No candidate shall be permitted to enter the examination centre after 10:00 AM IST under any circumstances.</li>
+        <li><strong>Admit Card & ID:</strong> Candidates must carry their school ID card and printed Admit Card with parent and school principal signatures.</li>
+        <li><strong>Question Paper Reading:</strong> Question papers will be handed out at 10:15 AM. 15 minutes are strictly reserved for reading the questions.</li>
+        <li><strong>Writing Commences:</strong> Candidates can start writing answers only at 10:30 AM IST.</li>
+        <li><strong>Prohibited Items:</strong> Electronic gadgets, mobile phones, smartwatches, calculators, and rough notes are strictly forbidden inside the hall.</li>
+      </ol>
+    </div>
+
+  </div>
+</section>
+{% endblock %}

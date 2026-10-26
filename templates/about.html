@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}About Us - ExamPulse India{% endblock %}
+
+{% block meta_description %}
+Learn about ExamPulse India: an independent, non-commercial education information portal dedicated to making verified CBSE curriculum and exam updates accessible to Indian students and educators.
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [{'title': 'Portal Information', 'url': '/about'}, {'title': 'About Us', 'url': '/about'}] %}
+{% include 'components/breadcrumb.html' %}
+
+<div class="container">
+  <div class="static-page-container">
+    <div class="static-page-header">
+      <span class="class-badge" style="background: var(--accent-saffron-light); color: var(--accent-saffron); margin-bottom: 0.5rem; display: inline-block;">
+        Independent Educational Initiative
+      </span>
+      <h1 class="static-page-title">About ExamPulse India</h1>
+      <p class="static-page-subtitle">
+        Bridging the information gap between official boards and millions of Indian students.
+      </p>
+    </div>
+
+    <div class="static-content">
+      <h2>1. Our Mission</h2>
+      <p>
+        Every year, over 3.5 million students across India and abroad appear for the Central Board of Secondary Education (CBSE) Secondary (Class 10) and Senior School Certificate (Class 12) examinations. Despite CBSE's efforts to publish official curricula and notices online, students and parents frequently encounter unverified rumours, misleading clickbait articles, and paywalled education websites.
+      </p>
+      <p>
+        <strong>ExamPulse India</strong> was founded to provide a clean, fast, and 100% accessible digital guide that directly references verified CBSE documents without clutter, intrusive pop-ups, or unverified claims.
+      </p>
+
+      <h2>2. What We Provide (Phase 1 Scope)</h2>
+      <p>
+        In accordance with our Phase 1 milestone, ExamPulse India is strictly dedicated to <strong>CBSE Secondary (Class 10) and Senior Secondary (Class 12)</strong> education:
+      </p>
+      <ul>
+        <li><strong>Direct Official Syllabus Links:</strong> Every syllabus PDF provided on this site links directly to authentic files hosted on the official CBSE Academic server (<code>cbseacademic.nic.in</code>).</li>
+        <li><strong>Subject Examination Blueprints:</strong> Clear breakdowns of theory marks, practical / internal assessment weightage, and examination durations.</li>
+        <li><strong>Authentic Board Notices & Circulars:</strong> Timely feeds of genuine academic and administrative notifications issued by CBSE.</li>
+        <li><strong>Verified Date Sheet Status:</strong> Clear advisories preventing students from falling prey to circulating fake timetables.</li>
+      </ul>
+
+      <div class="alert-box">
+        <strong>Strict Non-Affiliation Statement:</strong>
+        ExamPulse India is an independent educational portal operated independently by educators and software engineers. We are <strong>NOT</strong> affiliated with, associated with, authorized by, endorsed by, or in any way officially connected with the Central Board of Secondary Education (CBSE), the Ministry of Education, or the Government of India.
+      </div>
+
+      <h2>3. Non-Commercial & Accessible Approach</h2>
+      <p>
+        We believe foundational education information must remain completely free and lightweight. ExamPulse India is built using zero-dependency, ultra-fast web standards that load seamlessly on both affordable mobile devices and rural broadband connections across India.
+      </p>
+
+      <h2>4. Editorial Integrity & Corrections</h2>
+      <p>
+        We treat educational accuracy with the highest degree of responsibility:
+      </p>
+      <ul>
+        <li>We never invent, fabricate, or predict examination dates or syllabus alterations.</li>
+        <li>Whenever mock or sample data is used during development or before official announcements, it is explicitly labelled as demo data.</li>
+        <li>If you notice any broken link or discrepancy with an official CBSE notification, please report it immediately through our <a href="/contact">Contact Page</a>.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

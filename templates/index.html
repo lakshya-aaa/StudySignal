@@ -1,0 +1,301 @@
+{% extends 'base.html' %}
+
+{% block title %}ExamPulse India - CBSE Class 10 & 12 Syllabus, Date Sheets & Official Notices{% endblock %}
+
+{% block meta_description %}
+ExamPulse India is an independent portal providing authentic CBSE Class 10 and Class 12 syllabus PDFs, examination date sheet updates, academic circulars, and verified official board links.
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container hero-content">
+    <div class="hero-pill-badge">
+      <span>🇮🇳 Independent CBSE Educational Resource</span>
+    </div>
+    <h1 class="hero-title">
+      Verified CBSE <span>Curriculum & Exam</span> Information
+    </h1>
+    <p class="hero-subtitle">
+      Direct access to official CBSE Class 10 & 12 syllabus documents, board examination schedules, and official academic circulars without clutter or paywalls.
+    </p>
+
+    <!-- Hero Search -->
+    <div class="hero-search-wrapper">
+      <form action="/search" method="get" class="search-form-hero">
+        <div class="search-icon-hero">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
+        <input 
+          type="text" 
+          name="q" 
+          class="search-input-hero" 
+          placeholder="Search subjects (e.g. Mathematics, Physics, Science) or circulars..." 
+          aria-label="Search CBSE resources"
+          required
+        >
+        <button type="submit" class="search-submit-hero">Search</button>
+      </form>
+    </div>
+
+    <!-- Quick Subject Links -->
+    <div class="hero-quick-tags">
+      <span class="quick-label">Popular Searches:</span>
+      <a href="/search?q=Mathematics" class="quick-tag">Class 10 & 12 Maths</a>
+      <a href="/search?q=Science" class="quick-tag">Class 10 Science</a>
+      <a href="/search?q=Physics" class="quick-tag">Class 12 Physics</a>
+      <a href="/search?q=Chemistry" class="quick-tag">Class 12 Chemistry</a>
+      <a href="/search?q=Accountancy" class="quick-tag">Class 12 Accountancy</a>
+      <a href="/cbse/datesheets" class="quick-tag">Exam Date Sheet Status</a>
+    </div>
+  </div>
+</section>
+
+<!-- Dedicated Class 10 & Class 12 Sections -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Dedicated CBSE Portals</h2>
+        <p class="section-subtitle">Select your academic standard for customized syllabus links, exam patterns, and date sheet alerts.</p>
+      </div>
+    </div>
+
+    <div class="class-portal-grid">
+      <!-- Class 10 Portal Card -->
+      <div class="class-card class-10">
+        <div class="class-card-header">
+          <span class="class-badge">Secondary Education</span>
+          <span class="class-year">Session {{ current_academic_year }}</span>
+        </div>
+        <h3 class="class-card-title">CBSE Class 10</h3>
+        <p class="class-card-desc">
+          Official curriculum guidelines, subject code index (Mathematics 041, Science 086, Social Science 087), internal assessment structures, and board exam timeline.
+        </p>
+
+        <ul class="class-quick-links">
+          <li>
+            <a href="/cbse/class-10">
+              <span>View Class 10 Dedicated Hub</span>
+              <span>→</span>
+            </a>
+          </li>
+          <li>
+            <a href="/cbse/syllabus?class=10">
+              <span>Download Class 10 Subject Syllabi (PDF)</span>
+              <span>↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="/cbse/datesheets?class=10">
+              <span>Class 10 Exam Schedule & Status</span>
+              <span>→</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="class-card-footer">
+          <a href="/cbse/class-10" class="btn-primary">Explore CBSE Class 10 Hub</a>
+        </div>
+      </div>
+
+      <!-- Class 12 Portal Card -->
+      <div class="class-card class-12">
+        <div class="class-card-header">
+          <span class="class-badge">Senior Secondary</span>
+          <span class="class-year">Session {{ current_academic_year }}</span>
+        </div>
+        <h3 class="class-card-title">CBSE Class 12</h3>
+        <p class="class-card-desc">
+          Stream-wise academic electives for Science (Physics, Chemistry, Bio, Math), Commerce (Accountancy, BST, Economics), and Humanities alongside practical guidelines.
+        </p>
+
+        <ul class="class-quick-links">
+          <li>
+            <a href="/cbse/class-12">
+              <span>View Class 12 Dedicated Hub</span>
+              <span>→</span>
+            </a>
+          </li>
+          <li>
+            <a href="/cbse/syllabus?class=12">
+              <span>Download Class 12 Subject Syllabi (PDF)</span>
+              <span>↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="/cbse/datesheets?class=12">
+              <span>Class 12 Exam Schedule & Status</span>
+              <span>→</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="class-card-footer">
+          <a href="/cbse/class-12" class="btn-primary">Explore CBSE Class 12 Hub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Reusable In-Content Ad Slot -->
+{% set slot_id = 'in_content_banner' %}
+{% include 'components/ad_slot.html' %}
+
+<!-- Featured Subject-Wise Syllabus Section -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Verified Official CBSE Syllabus Documents</h2>
+        <p class="section-subtitle">
+          Direct links to authentic PDF files hosted on the official CBSE Academic Unit server (<code>cbseacademic.nic.in</code>).
+        </p>
+      </div>
+      <a href="/cbse/syllabus" class="section-action">View All Subjects &rarr;</a>
+    </div>
+
+    <div class="subject-grid">
+      {% for item in class_10_featured %}
+      <div class="subject-card">
+        <div class="subject-card-meta">
+          <span class="code-pill">Class 10 &bull; Code {{ item.code }}</span>
+          <span class="verified-badge">✓ Official CBSE Link</span>
+        </div>
+        <h3 class="subject-card-title">{{ item.subject }}</h3>
+        <p class="subject-card-desc">{{ item.description }}</p>
+        <div class="subject-card-details">
+          <span>Theory: <strong>{{ item.exam_structure.theory_marks }} M</strong></span>
+          <span>IA / Practical: <strong>{{ item.exam_structure.internal_assessment_marks }} M</strong></span>
+          <span>Time: <strong>{{ item.exam_structure.duration_hours }} Hrs</strong></span>
+        </div>
+        <div class="subject-card-actions">
+          <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-official-pdf">
+            Official PDF ↗
+          </a>
+          <a href="/cbse/syllabus/{{ item.id }}" class="btn-sm btn-view-details">
+            Details
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+
+      {% for item in class_12_featured %}
+      <div class="subject-card">
+        <div class="subject-card-meta">
+          <span class="code-pill">Class 12 &bull; Code {{ item.code }}</span>
+          <span class="verified-badge">✓ Official CBSE Link</span>
+        </div>
+        <h3 class="subject-card-title">{{ item.subject }}</h3>
+        <p class="subject-card-desc">{{ item.description }}</p>
+        <div class="subject-card-details">
+          <span>Theory: <strong>{{ item.exam_structure.theory_marks }} M</strong></span>
+          <span>IA / Practical: <strong>{{ item.exam_structure.internal_assessment_marks }} M</strong></span>
+          <span>Time: <strong>{{ item.exam_structure.duration_hours }} Hrs</strong></span>
+        </div>
+        <div class="subject-card-actions">
+          <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-official-pdf">
+            Official PDF ↗
+          </a>
+          <a href="/cbse/syllabus/{{ item.id }}" class="btn-sm btn-view-details">
+            Details
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Latest Circulars & Academic Updates -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">CBSE Circulars & Examination Updates</h2>
+        <p class="section-subtitle">Official policy notifications, exam advisories, and administrative releases.</p>
+      </div>
+      <a href="/cbse/circulars" class="section-action">View All Circulars &rarr;</a>
+    </div>
+
+    <div class="circular-list">
+      {% for circ in latest_circulars %}
+      <div class="circular-card category-{{ circ.category }}">
+        <div class="circular-icon-box">
+          {% if circ.category == 'Academic' %}📚
+          {% elif circ.category == 'Examination' %}📝
+          {% else %}📋{% endif %}
+        </div>
+        <div class="circular-content">
+          <div class="circular-meta">
+            {% if circ.verification_status == 'verified_official' %}
+              <span class="circ-tag official">✓ Verified Official Notice</span>
+            {% elif circ.verification_status == 'official_directory' %}
+              <span class="circ-tag" style="background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd;">Official Portal Directory</span>
+            {% elif circ.is_demo or circ.verification_status == 'demo' %}
+              <span class="circ-tag demo">DEMO — NOT AN OFFICIAL ANNOUNCEMENT</span>
+            {% else %}
+              <span class="circ-tag unverified">Unverified Notice</span>
+            {% endif %}
+            <span class="circ-number">{{ circ.circular_no }}</span>
+            {% if circ.published_date %}
+              <span class="circ-date">&bull; Published: {{ circ.published_date }}</span>
+            {% endif %}
+            <span class="circ-target">{{ circ.class_target }}</span>
+          </div>
+          <h3 class="circular-title">{{ circ.title }}</h3>
+          <p class="circular-summary">{{ circ.summary }}</p>
+          <div class="circular-footer">
+            {% if circ.is_demo %}
+              <span class="circ-notice-pill">DEMO — NOT AN OFFICIAL ANNOUNCEMENT</span>
+            {% elif circ.verification_status == 'official_directory' %}
+              <span style="font-size: 0.75rem; color: #0369a1; font-weight: 600;">
+                Official Central Board Portal Directory
+              </span>
+            {% elif circ.last_verified %}
+              <span style="font-size: 0.75rem; color: var(--accent-green); font-weight: 600;">
+                ✓ Verified on cbseacademic.nic.in / cbse.gov.in ({{ circ.last_verified }})
+              </span>
+            {% endif %}
+            <a href="{{ circ.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
+              {% if circ.official_url and circ.official_url.endswith('.pdf') %}View Official PDF ↗{% elif circ.verification_status == 'official_directory' %}Open Directory Portal ↗{% else %}Open Official Link ↗{% endif %}
+            </a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Exam Date Sheet Alert Callout -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="demo-table-alert">
+      <h3 style="font-size: 1.1rem; margin-bottom: 0.35rem; font-weight: 700;">
+        ⚠️ CBSE Board Examination Date Sheet Advisory
+      </h3>
+      <p style="margin-bottom: 0.5rem;">
+        Official date sheets are released solely through official press notes and PDF announcements on 
+        <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; font-weight: 600;">cbse.gov.in</a>. 
+        Any dates displayed on unofficial websites before the official CBSE circular are speculative.
+      </p>
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <a href="/cbse/datesheets" class="btn-sm btn-primary" style="width: auto;">
+          Check Date Sheet Portal & Status &rarr;
+        </a>
+        <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto;">
+          Visit Official CBSE Website ↗
+        </a>
+        <a href="{{ official_urls.cbse_examinations }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto;">
+          CBSE Examination Circulars ↗
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

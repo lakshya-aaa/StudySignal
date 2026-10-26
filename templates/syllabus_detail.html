@@ -1,0 +1,181 @@
+{% extends 'base.html' %}
+
+{% block title %}CBSE Class {{ item.class }} {{ item.subject }} Syllabus ({{ item.academic_year_label or item.academic_year }}) - ExamPulse India{% endblock %}
+
+{% block meta_description %}
+Official CBSE Class {{ item.class }} {{ item.subject }} (Code {{ item.code }}) syllabus, examination blueprint, marks weightage, and direct official PDF download link from cbseacademic.nic.in.
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [
+  {'title': 'CBSE', 'url': '/'},
+  {'title': 'Class ' ~ item.class, 'url': '/cbse/class-' ~ item.class},
+  {'title': 'Syllabus', 'url': '/cbse/syllabus?class=' ~ item.class},
+  {'title': item.subject, 'url': request.path}
+] %}
+{% include 'components/breadcrumb.html' %}
+
+<section class="section">
+  <div class="container">
+    <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 2rem; align-items: start;">
+      
+      <!-- Main Content Column -->
+      <div>
+        <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem; margin-bottom: 2rem;">
+          <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap;">
+            <span class="code-pill">Subject Code: {{ item.code }}</span>
+            <span class="class-badge">Class {{ item.class }} ({{ item.stream }})</span>
+            {% if item.verification_status == 'verified_official' %}
+              <span class="circ-tag official">✓ Verified Official CBSE Document</span>
+            {% elif item.session_type == 'historical' %}
+              <span class="circ-tag archive" style="background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1;">Historical Archive Document</span>
+            {% else %}
+              <span class="circ-tag unverified">Current link not verified yet</span>
+            {% endif %}
+            {% if item.last_verified %}
+              <span class="circ-date" style="font-size: 0.75rem;">(Link Verified: {{ item.last_verified }})</span>
+            {% endif %}
+          </div>
+
+          <h1 style="font-size: 2rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem;">
+            CBSE Class {{ item.class }} {{ item.subject }} Syllabus ({{ item.academic_year_label or item.academic_year }})
+          </h1>
+          <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem;">
+            {{ item.description }}
+          </p>
+
+          {% if item.session_type == 'historical' %}
+          <div class="alert-box" style="margin-bottom: 1.5rem; background: #f8fafc; border-left: 4px solid #64748b;">
+            <strong>Historical Archive Record:</strong> This syllabus document corresponds to the historical {{ item.academic_year_label or item.academic_year }}. If you are preparing for current examinations, please view the <a href="/cbse/syllabus?year=2026-27" style="color: var(--accent-saffron); font-weight: 700;">Current 2026-27 Syllabus</a> or consult the <a href="{{ official_urls.cbse_curriculum_current }}" target="_blank" rel="noopener noreferrer" style="font-weight: 700; text-decoration: underline;">Official CBSE Curriculum Directory ↗</a>.
+          </div>
+          {% endif %}
+
+          <!-- Direct Download Action Card or Unverified Notice -->
+          {% if item.verification_status == 'verified_official' and item.official_url %}
+          <div style="background: #f0fdf4; border: 1.5px solid #86efac; border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+              <div>
+                <strong style="color: #166534; font-size: 1.05rem; display: block; margin-bottom: 0.25rem;">
+                  Official CBSE PDF Document ({{ item.academic_year_label or item.academic_year }})
+                </strong>
+                <span style="font-size: 0.8125rem; color: #15803d;">
+                  Direct file hosted on: <code>{{ item.official_url }}</code>
+                </span>
+              </div>
+              <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="background-color: var(--accent-green); width: auto; padding: 0.65rem 1.5rem;">
+                Download Official PDF ↗
+              </a>
+            </div>
+          </div>
+          {% else %}
+          <div style="background: #fffbeb; border: 1.5px solid #fde68a; border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 2rem;">
+            <div style="margin-bottom: 0.75rem;">
+              <strong style="color: #92400e; font-size: 1.05rem; display: block; margin-bottom: 0.25rem;">
+                Current syllabus link not verified yet
+              </strong>
+              <p style="font-size: 0.875rem; color: #78350f; margin-bottom: 0.25rem;">
+                {{ item.verification_note or "The direct official PDF link for this subject has not been verified yet against the official CBSE 2026-27 catalog. Please consult the official CBSE curriculum directory directly." }}
+              </p>
+            </div>
+            <a href="{{ official_urls.cbse_curriculum_current }}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="background-color: var(--accent-saffron); width: auto; display: inline-block; padding: 0.65rem 1.5rem;">
+              Visit Official CBSE Curriculum Directory ↗
+            </a>
+          </div>
+          {% endif %}
+
+          <!-- Examination Scheme / Blueprint -->
+          <h2 style="font-size: 1.35rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem;">
+            Official Examination Blueprint & Weightage
+          </h2>
+
+          <div class="table-responsive">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Component</th>
+                  <th>Marks Allocated</th>
+                  <th>Duration</th>
+                  <th>Assessment Format</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Theory Written Paper</strong></td>
+                  <td><span style="font-weight: 700; color: var(--primary);">{{ item.exam_structure.theory_marks }} Marks</span></td>
+                  <td>{{ item.exam_structure.duration_hours }} Hours</td>
+                  <td>Board Written Examination conducted at designated centre</td>
+                </tr>
+                <tr>
+                  <td><strong>Internal Assessment / Practical</strong></td>
+                  <td><span style="font-weight: 700; color: var(--accent-green);">{{ item.exam_structure.internal_assessment_marks }} Marks</span></td>
+                  <td>School Session</td>
+                  <td>Project work, viva voce, lab manual, and periodical tests</td>
+                </tr>
+                <tr style="background: #f8fafc; font-weight: 700;">
+                  <td>Total Marks</td>
+                  <td>{{ item.exam_structure.total_marks }} Marks</td>
+                  <td>-</td>
+                  <td>100% Comprehensive Evaluation</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Academic Unit Verification Notice -->
+          <div class="alert-box" style="margin-top: 1.5rem;">
+            <strong style="display: block; margin-bottom: 0.25rem;">Official Verification Source:</strong>
+            This subject's curriculum outline is linked directly from the Central Board of Secondary Education Academic Unit curriculum catalog page (<code>{{ item.source_portal }}</code>). Always check official circulars for any mid-term syllabus modifications.
+          </div>
+        </div>
+
+        <!-- In-Content Ad -->
+        {% set slot_id = 'in_content_banner' %}
+        {% include 'components/ad_slot.html' %}
+      </div>
+
+      <!-- Sidebar Column -->
+      <div>
+        <!-- Sidebar Ad Placement -->
+        {% set slot_id = 'sidebar_box' %}
+        {% include 'components/ad_slot.html' %}
+
+        <!-- Related Subjects Box -->
+        <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 1.5rem;">
+          <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--primary); margin-bottom: 0.85rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-color);">
+            More Class {{ item.class }} Syllabi
+          </h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
+            {% for rel in related %}
+            <li>
+              <a href="/cbse/syllabus/{{ rel.id }}" style="display: flex; justify-content: space-between; align-items: center; padding: 0.45rem 0.65rem; background: var(--bg-alt); border-radius: var(--radius-sm); font-size: 0.875rem; font-weight: 600;">
+                <span>{{ rel.subject }}</span>
+                <span class="code-pill">{{ rel.code }}</span>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+          <div style="margin-top: 1rem; text-align: center;">
+            <a href="/cbse/syllabus?class={{ item.class }}" class="section-action" style="font-size: 0.8125rem;">
+              View All Class {{ item.class }} Subjects &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Official CBSE Links Box -->
+        <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem;">
+          <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--primary); margin-bottom: 0.85rem;">
+            Official Portals
+          </h3>
+          <ul class="footer-links">
+            <li><a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer">Visit Official CBSE Website (cbse.gov.in) ↗</a></li>
+            <li><a href="{{ official_urls.cbse_academic }}" target="_blank" rel="noopener noreferrer">CBSE Academic Unit ↗</a></li>
+            <li><a href="{{ official_urls.cbse_curriculum_current }}" target="_blank" rel="noopener noreferrer">Official 2026-27 Curriculum ↗</a></li>
+            <li><a href="{{ official_urls.cbse_curriculum_archive }}" target="_blank" rel="noopener noreferrer">Curriculum Archives ↗</a></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+{% endblock %}

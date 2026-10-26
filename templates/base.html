@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <title>{% block title %}{{ site_name }} - {{ site_tagline }}{% endblock %}</title>
+  <meta name="description" content="{% block meta_description %}{{ site_description }}{% endblock %}">
+  <meta name="keywords" content="CBSE syllabus 2024-25, CBSE Class 10 syllabus, CBSE Class 12 syllabus, CBSE datesheet, CBSE circulars, cbseacademic.nic.in, board exam timetable">
+  <link rel="canonical" href="{% block canonical_url %}{{ base_url }}{{ request.path }}{% endblock %}">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ base_url }}{{ request.path }}">
+  <meta property="og:title" content="{% block og_title %}{{ site_name }} - {{ site_tagline }}{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}{{ site_description }}{% endblock %}">
+  <meta property="og:site_name" content="{{ site_name }}">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{% block twitter_title %}{{ site_name }} - {{ site_tagline }}{% endblock %}">
+  <meta name="twitter:description" content="{% block twitter_description %}{{ site_description }}{% endblock %}">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/favicon.svg') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "{{ site_name }}",
+    "url": "{{ base_url }}",
+    "description": "{{ site_description }}",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "{{ base_url }}/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+  <!-- Top Indian Flag Accent Bar -->
+  <div class="national-accent-bar" aria-hidden="true"></div>
+
+  <!-- Quick Info Top Bar -->
+  <header class="top-announcement-bar">
+    <div class="container top-bar-content">
+      <div class="top-left">
+        <span class="live-indicator"><span class="dot"></span> Live Portal</span>
+        <span class="date-tag">{{ today_str }}</span>
+        <span class="coverage-tag">CBSE Secondary & Senior Secondary (Classes 10 & 12)</span>
+      </div>
+      <div class="top-right">
+        <span class="official-label">Official CBSE Links:</span>
+        <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer">cbse.gov.in ↗</a>
+        <a href="{{ official_urls.cbse_academic }}" target="_blank" rel="noopener noreferrer">cbseacademic.nic.in ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Navigation Header -->
+  <nav class="main-header" id="navbar">
+    <div class="container nav-container">
+      <a href="/" class="brand-logo" aria-label="ExamPulse India Home">
+        <div class="brand-symbol">
+          <svg viewBox="0 0 40 40" width="36" height="36" fill="none">
+            <rect width="40" height="40" rx="8" fill="#1b365d"/>
+            <path d="M6 21h7l4-9 6 18 4-9h7" stroke="#ff771f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="20" cy="8" r="3" fill="#138808"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">ExamPulse <strong>India</strong></span>
+          <span class="brand-sub">CBSE Information Hub</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}">Home</a></li>
+        <li><a href="/cbse/class-10" class="nav-link {% if '/class-10' in request.path %}active{% endif %}">Class 10</a></li>
+        <li><a href="/cbse/class-12" class="nav-link {% if '/class-12' in request.path %}active{% endif %}">Class 12</a></li>
+        <li><a href="/cbse/syllabus" class="nav-link {% if '/syllabus' in request.path %}active{% endif %}">Syllabus</a></li>
+        <li><a href="/cbse/datesheets" class="nav-link {% if '/datesheets' in request.path %}active{% endif %}">Date Sheets</a></li>
+        <li><a href="/cbse/circulars" class="nav-link {% if '/circulars' in request.path %}active{% endif %}">Circulars</a></li>
+      </ul>
+
+      <!-- Header Search & Mobile Toggle -->
+      <div class="nav-actions">
+        <a href="/search" class="nav-search-btn" title="Search CBSE Resources">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <span class="search-btn-text">Search</span>
+        </a>
+        <button class="mobile-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <ul class="mobile-nav-list">
+        <li><a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a></li>
+        <li><a href="/cbse/class-10" class="{% if '/class-10' in request.path %}active{% endif %}">CBSE Class 10</a></li>
+        <li><a href="/cbse/class-12" class="{% if '/class-12' in request.path %}active{% endif %}">CBSE Class 12</a></li>
+        <li><a href="/cbse/syllabus" class="{% if '/syllabus' in request.path %}active{% endif %}">Subject Syllabus</a></li>
+        <li><a href="/cbse/datesheets" class="{% if '/datesheets' in request.path %}active{% endif %}">Exam Date Sheets</a></li>
+        <li><a href="/cbse/circulars" class="{% if '/circulars' in request.path %}active{% endif %}">Circulars & Notices</a></li>
+        <li><a href="/search" class="{% if '/search' in request.path %}active{% endif %}">Search & Filters</a></li>
+        <li><a href="/about">About Us</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/disclaimer">Disclaimer</a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <div class="disclaimer-mini">{{ disclaimer_text }}</div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Reusable Header Leaderboard Ad Slot -->
+  {% set slot_id = 'header_leaderboard' %}
+  {% include 'components/ad_slot.html' %}
+
+  <!-- Official Notice & Non-Affiliation Banner -->
+  {% include 'components/notice_banner.html' %}
+
+  <!-- Main Content -->
+  <main id="main-content">
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- Reusable Footer Banner Ad Slot -->
+  {% set slot_id = 'footer_banner' %}
+  {% include 'components/ad_slot.html' %}
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <!-- About Column -->
+      <div class="footer-col footer-about">
+        <div class="footer-brand">
+          <span class="brand-name">ExamPulse <strong>India</strong></span>
+        </div>
+        <p class="footer-desc">
+          ExamPulse India is an independent, non-commercial education information portal created to provide Indian students, parents, and teachers with quick, clean, and direct access to authentic CBSE curricula, academic notifications, and date sheet announcements.
+        </p>
+        <div class="footer-badges">
+          <span class="f-badge">Phase 1: CBSE Focus</span>
+          <span class="f-badge">Zero Cost / Free Access</span>
+          <span class="f-badge">Direct Official PDFs</span>
+        </div>
+      </div>
+
+      <!-- CBSE Sections Column -->
+      <div class="footer-col">
+        <h4 class="footer-heading">CBSE Resources</h4>
+        <ul class="footer-links">
+          <li><a href="/cbse/class-10">CBSE Class 10 Portal</a></li>
+          <li><a href="/cbse/class-12">CBSE Class 12 Portal</a></li>
+          <li><a href="/cbse/syllabus">Subject-wise Syllabus</a></li>
+          <li><a href="/cbse/datesheets">Exam Date Sheets</a></li>
+          <li><a href="/cbse/circulars">Circulars & Academic Notices</a></li>
+          <li><a href="/search">Advanced Resource Search</a></li>
+        </ul>
+      </div>
+
+      <!-- Official Portals Column -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Official CBSE Portals</h4>
+        <ul class="footer-links">
+          <li><a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer">Visit Official CBSE Website ↗</a></li>
+          <li><a href="{{ official_urls.cbse_academic }}" target="_blank" rel="noopener noreferrer">CBSE Academic Unit ↗</a></li>
+          <li><a href="{{ official_urls.cbse_curriculum_current }}" target="_blank" rel="noopener noreferrer">Official Curriculum 2026-27 (Current) ↗</a></li>
+          <li><a href="{{ official_urls.cbse_circulars }}" target="_blank" rel="noopener noreferrer">CBSE Academic Circulars ↗</a></li>
+          <li><a href="{{ official_urls.cbse_examinations }}" target="_blank" rel="noopener noreferrer">CBSE Examination Circulars ↗</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal & Info Column -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Portal Information</h4>
+        <ul class="footer-links">
+          <li><a href="/about">About ExamPulse India</a></li>
+          <li><a href="/contact">Contact & Feedback</a></li>
+          <li><a href="/disclaimer">Official Disclaimer</a></li>
+          <li><a href="/privacy-policy">Privacy Policy</a></li>
+          <li><a href="/terms">Terms & Conditions</a></li>
+          <li><a href="/sitemap.xml">XML Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Official Non-Affiliation Legal Disclaimer Box -->
+    <div class="container footer-disclaimer-box">
+      <div class="disclaimer-header">
+        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <span>Important Legal Disclaimer</span>
+      </div>
+      <p>
+        {{ disclaimer_text }} All trademarks, logos, circular numbers, and syllabus documents mentioned on this website belong to the Central Board of Secondary Education (CBSE) and respective statutory bodies. Any sample timetables or mock circulars are strictly marked as demo data for layout testing.
+      </p>
+    </div>
+
+    <!-- Copyright Sub-footer -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <div>&copy; {{ current_year }} {{ site_name }}. An independent Indian educational initiative.</div>
+        <div class="footer-bottom-links">
+          <a href="/privacy-policy">Privacy</a> &bull;
+          <a href="/terms">Terms</a> &bull;
+          <a href="/disclaimer">Disclaimer</a> &bull;
+          <a href="/sitemap.xml">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+  {% block extra_scripts %}{% endblock %}
+</body>
+</html>

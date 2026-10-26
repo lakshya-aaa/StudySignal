@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+
+{% block title %}Official Disclaimer & Non-Affiliation Notice - ExamPulse India{% endblock %}
+
+{% block meta_description %}
+Official disclaimer of ExamPulse India: an independent educational portal not affiliated with the Central Board of Secondary Education (CBSE) or Government of India.
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [{'title': 'Legal', 'url': '/disclaimer'}, {'title': 'Disclaimer', 'url': '/disclaimer'}] %}
+{% include 'components/breadcrumb.html' %}
+
+<div class="container">
+  <div class="static-page-container">
+    <div class="static-page-header">
+      <div class="disclaimer-header" style="font-size: 1rem; color: #d97706; margin-bottom: 0.5rem;">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <span>Important Legal Announcement</span>
+      </div>
+      <h1 class="static-page-title">Non-Affiliation & Editorial Disclaimer</h1>
+      <p class="static-page-subtitle">Please read this official disclaimer carefully before using this portal.</p>
+    </div>
+
+    <div class="static-content">
+      <div class="demo-table-alert" style="margin-bottom: 1.5rem; border-left-color: #d97706;">
+        <h3 style="font-size: 1.15rem; font-weight: 800; color: #92400e; margin-bottom: 0.5rem;">
+          Strict Non-Affiliation Declaration
+        </h3>
+        <p style="color: #78350f; font-size: 0.9375rem; line-height: 1.6;">
+          <strong>ExamPulse India is an independent, non-commercial educational information website.</strong> ExamPulse India is <u>NOT</u> associated, affiliated, endorsed, certified, or sponsored by the <strong>Central Board of Secondary Education (CBSE)</strong>, the <strong>Ministry of Education (Shiksha Mantralaya)</strong>, or any other Government of India department or agency.
+        </p>
+      </div>
+
+      <h2>1. Purpose of This Portal</h2>
+      <p>
+        The sole objective of ExamPulse India is to index, organize, and provide direct, verified hyperlinked access to publicly disclosed educational documents (such as academic curricula, syllabus PDF files, and administrative circulars) released by the Central Board of Secondary Education in the public domain.
+      </p>
+
+      <h2>2. Official CBSE Online Portals</h2>
+      <p>
+        For all statutory services, official registrations, admit card generation, board fee submissions, re-evaluations, and authentic results, users must always refer exclusively to the official portals maintained by CBSE:
+      </p>
+
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Official Portal</th>
+              <th>Official Domain</th>
+              <th>Scope of Authority</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>CBSE Main Website</strong></td>
+              <td><a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer">https://www.cbse.gov.in ↗</a></td>
+              <td>Official board announcements, press notes, examination schedules, result portal.</td>
+            </tr>
+            <tr>
+              <td><strong>CBSE Academic Unit</strong></td>
+              <td><a href="{{ official_urls.cbse_academic }}" target="_blank" rel="noopener noreferrer">https://cbseacademic.nic.in ↗</a></td>
+              <td>Official curriculum, syllabus documents, sample question papers, academic circulars.</td>
+            </tr>
+            <tr>
+              <td><strong>CBSE Examination Circulars</strong></td>
+              <td><a href="{{ official_urls.cbse_examinations }}" target="_blank" rel="noopener noreferrer">cbse.gov.in/cbsenew/examination_Circular.html ↗</a></td>
+              <td>Conduct of Secondary & Senior Secondary exams, centre directives, and coordination advisories.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>3. Handling of Demo & Prototype Data</h2>
+      <p>
+        In accordance with our strict data transparency policies:
+      </p>
+      <ul>
+        <li><strong>We do not invent or fabricate exam dates, notifications, or circular numbers.</strong></li>
+        <li>Where the official date sheet has not yet been announced by the CBSE Controller of Examinations, sample or prototype timetable rows on ExamPulse India are unambiguously labelled as <code>DEMO — NOT AN OFFICIAL ANNOUNCEMENT</code>.</li>
+        <li>Such placeholder listings are strictly for software functionality and user interface testing, and demo dates are formatted distinctly to prevent misinterpretation.</li>
+      </ul>
+
+      <h2>4. Verification Responsibility</h2>
+      <p>
+        Students, parents, educators, and schools are advised to cross-check all dates, subject codes, and curriculum guidelines with their respective school authorities and official circulars published on <code>cbse.gov.in</code>. ExamPulse India shall not be held liable for any loss, damage, missed deadline, or academic penalty caused by reliance on content on this portal.
+      </p>
+
+      <h2>5. Intellectual Property & Trademarks</h2>
+      <p>
+        The terms "CBSE", "Central Board of Secondary Education", CBSE logo, and names of official publications are used on this portal strictly in a nominative, descriptive, and non-commercial educational capacity. All statutory copyrights and trademarks belong exclusively to their respective government bodies.
+      </p>
+
+      <div style="margin-top: 2rem;">
+        <a href="/" class="btn-primary" style="width: auto; display: inline-flex;">
+          Return to Homepage &rarr;
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

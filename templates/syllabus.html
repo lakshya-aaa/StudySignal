@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+
+{% block title %}CBSE Subject-wise Syllabus {{ current_academic_year }} - Direct Official PDF Downloads{% endblock %}
+
+{% block meta_description %}
+Explore and download verified subject-wise CBSE Class 10 and Class 12 syllabus PDFs for Session {{ current_academic_year }} directly from cbseacademic.nic.in.
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [{'title': 'CBSE', 'url': '/'}, {'title': 'Subject-wise Syllabus', 'url': '/cbse/syllabus'}] %}
+{% include 'components/breadcrumb.html' %}
+
+<section class="section" style="padding-bottom: 1.5rem;">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h1 class="section-title">CBSE Subject-wise Syllabus Explorer</h1>
+        <p class="section-subtitle">
+          Direct, verified links to official CBSE Academic Unit PDFs for Session {{ current_academic_year }}.
+        </p>
+      </div>
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <a href="{{ official_urls.cbse_curriculum_current }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
+          Official 2026-27 Curriculum Portal ↗
+        </a>
+        <a href="{{ official_urls.cbse_curriculum_archive }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
+          Curriculum Archives ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- Filter Form -->
+    <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 2rem;">
+      <form action="/cbse/syllabus" method="get" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) 120px; gap: 1rem; align-items: end;">
+        <div>
+          <label class="form-label">Search Subject or Code</label>
+          <input 
+            type="text" 
+            name="q" 
+            class="form-control" 
+            placeholder="e.g. Mathematics, 041, Physics" 
+            value="{{ search_q }}"
+          >
+        </div>
+
+        <div>
+          <label class="form-label">Select Class</label>
+          <select name="class" class="form-control">
+            <option value="all" {% if selected_class == 'all' %}selected{% endif %}>All Classes (10 & 12)</option>
+            <option value="10" {% if selected_class == '10' %}selected{% endif %}>Class 10 (Secondary)</option>
+            <option value="12" {% if selected_class == '12' %}selected{% endif %}>Class 12 (Senior Sec)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="form-label">Select Stream</label>
+          <select name="stream" class="form-control">
+            <option value="all" {% if selected_stream == 'all' %}selected{% endif %}>All Streams</option>
+            <option value="Science" {% if selected_stream == 'Science' %}selected{% endif %}>Science</option>
+            <option value="Commerce" {% if selected_stream == 'Commerce' %}selected{% endif %}>Commerce</option>
+            <option value="Arts" {% if selected_stream == 'Arts' %}selected{% endif %}>Arts / Humanities</option>
+            <option value="General" {% if selected_stream == 'General' %}selected{% endif %}>General / Core</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="form-label">Academic Session</label>
+          <select name="year" class="form-control">
+            <option value="all" {% if selected_year == 'all' %}selected{% endif %}>All Sessions</option>
+            <option value="2026-27" {% if selected_year == '2026-27' %}selected{% endif %}>2026-27 (Current Session)</option>
+            <option value="2025-26" {% if selected_year == '2025-26' %}selected{% endif %}>2025-26 (Previous Session)</option>
+            <option value="2024-25" {% if selected_year == '2024-25' %}selected{% endif %}>2024-25 (Historical Archive)</option>
+          </select>
+        </div>
+
+        <div>
+          <button type="submit" class="btn-primary" style="height: 42px;">Filter</button>
+        </div>
+      </form>
+
+      {% if search_q or selected_class != 'all' or selected_stream != 'all' or selected_year != 'all' %}
+      <div style="margin-top: 0.75rem; font-size: 0.8125rem;">
+        <span style="color: var(--text-muted);">Active filters applied:</span>
+        {% if search_q %}<strong>Query:</strong> "{{ search_q }}" &bull;{% endif %}
+        {% if selected_class != 'all' %}<strong>Class:</strong> {{ selected_class }} &bull;{% endif %}
+        {% if selected_stream != 'all' %}<strong>Stream:</strong> {{ selected_stream }} &bull;{% endif %}
+        {% if selected_year != 'all' %}<strong>Year:</strong> {{ selected_year }} &bull;{% endif %}
+        <a href="/cbse/syllabus" style="color: var(--accent-saffron); font-weight: 600; margin-left: 0.5rem;">Clear All</a>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Live Counter -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+      <span style="font-weight: 600; font-size: 0.9375rem;">
+        Showing {{ syllabus_items|length }} syllabus files
+      </span>
+      <span style="font-size: 0.8125rem; color: var(--text-muted);">
+        All files verified on <code>cbseacademic.nic.in</code> (26 Oct 2026)
+      </span>
+    </div>
+
+    {% if syllabus_items|length == 0 %}
+    <div style="background: #ffffff; border: 1px dashed var(--border-color); border-radius: var(--radius-md); padding: 3rem; text-align: center;">
+      <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 0.5rem;">No subjects match your filter</h3>
+      <p style="color: var(--text-muted); margin-bottom: 1rem;">Try clearing the search query or stream filters.</p>
+      <a href="/cbse/syllabus" class="btn-secondary" style="display: inline-block;">Reset All Filters</a>
+    </div>
+    {% else %}
+    <!-- Subject Cards Grid -->
+    <div class="subject-grid">
+      {% for item in syllabus_items %}
+      <div class="subject-card">
+        <div class="subject-card-meta">
+          <span class="code-pill">Class {{ item.class }} &bull; Code {{ item.code }}</span>
+          {% if item.verification_status == 'verified_official' %}
+            <span class="verified-badge">✓ Verified Official</span>
+          {% elif item.session_type == 'historical' %}
+            <span class="circ-tag archive" style="background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1;">Historical Archive</span>
+          {% else %}
+            <span class="circ-tag unverified">Current link unverified</span>
+          {% endif %}
+        </div>
+        <h3 class="subject-card-title">{{ item.subject }}</h3>
+        <div style="font-size: 0.75rem; color: var(--accent-saffron); font-weight: 600; margin-bottom: 0.35rem;">
+          {{ item.stream }} &bull; {{ item.academic_year_label or item.academic_year }}
+        </div>
+        <p class="subject-card-desc">{{ item.description }}</p>
+
+        <div class="subject-card-details">
+          <span>Theory: <strong>{{ item.exam_structure.theory_marks }} M</strong></span>
+          <span>IA/Pract: <strong>{{ item.exam_structure.internal_assessment_marks }} M</strong></span>
+          <span>Time: <strong>{{ item.exam_structure.duration_hours }} Hrs</strong></span>
+        </div>
+
+        <div class="subject-card-actions">
+          {% if item.verification_status == 'verified_official' and item.official_url %}
+          <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-official-pdf" title="Download official CBSE syllabus PDF">
+            Download PDF ↗
+          </a>
+          {% else %}
+          <a href="{{ official_urls.cbse_curriculum_current }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" title="Visit Official CBSE Curriculum Directory">
+            Directory ↗
+          </a>
+          {% endif %}
+          <a href="/cbse/syllabus/{{ item.id }}" class="btn-sm btn-view-details">
+            Blueprint
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- Ad Placement -->
+{% set slot_id = 'in_content_banner' %}
+{% include 'components/ad_slot.html' %}
+
+<!-- Official Archive Information -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="alert-box">
+      <strong>Looking for previous years' curricula?</strong>
+      The Central Board of Secondary Education maintains an archive of previous academic sessions. You can inspect older syllabi directly at 
+      <a href="{{ official_urls.cbse_curriculum_archive }}" target="_blank" rel="noopener noreferrer" style="font-weight: 700; text-decoration: underline;">
+        CBSE Academic Curriculum Archive ↗
+      </a>.
+    </div>
+  </div>
+</section>
+{% endblock %}

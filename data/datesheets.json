@@ -1,0 +1,155 @@
+{
+  "notice": "Official board examination date sheets and schedules are published exclusively on the Central Board of Secondary Education portal (cbse.gov.in). Students and parents are advised to check the official CBSE portal for confirmed announcements.",
+  "official_cbse_exam_portal": "https://www.cbse.gov.in/cbsenew/examination_Circular.html",
+  "official_cbse_main_portal": "https://www.cbse.gov.in",
+  "classes": {
+    "10": {
+      "class_name": "CBSE Class 10 (Secondary)",
+      "academic_year": "2026-27",
+      "official_status": "Please check official CBSE announcements on cbse.gov.in",
+      "official_link": "https://www.cbse.gov.in/cbsenew/examination_Circular.html",
+      "exam_timing_standard": "Standard CBSE morning sessions are typically conducted from 10:30 AM to 01:30 PM IST (subject to official admit card instructions)",
+      "is_demo_schedule": true,
+      "verification_status": "demo",
+      "demo_label": "DEMO — NOT AN OFFICIAL ANNOUNCEMENT",
+      "schedule_items": [
+        {
+          "subject": "Painting / Regional Languages (Sample)",
+          "subject_code": "049",
+          "exam_date": "[PROTOTYPE / NON-OFFICIAL DEMO ROW]",
+          "timing": "Sample Timing (UI Test Only)",
+          "verification_status": "demo",
+          "is_placeholder": true,
+          "notes": "Sample row strictly for interface and responsive layout verification"
+        },
+        {
+          "subject": "Hindi Course A / Course B (Sample)",
+          "subject_code": "002 / 085",
+          "exam_date": "[PROTOTYPE / NON-OFFICIAL DEMO ROW]",
+          "timing": "Sample Timing (UI Test Only)",
+          "verification_status": "demo",
+          "is_placeholder": true,
+          "notes": "Sample row strictly for interface and responsive layout verification"
+        },
+        {
+          "subject": "English Language & Literature (Sample)",
+          "subject_code": "184",
+          "exam_date": "[PROTOTYPE / NON-OFFICIAL DEMO ROW]",
+          "timing": "Sample Timing (UI Test Only)",
+          "verification_status": "demo",
+          "is_placeholder": true,
+          "notes": "Sample row strictly for interface and responsive layout verification"
+        },
+        {
+          "subject": "Science (Sample)",
+          "subject_code": "086",
+          "exam_date": "[PROTOTYPE / NON-OFFICIAL DEMO ROW]",
+          "timing": "Sample Timing (UI Test Only)",
+          "verification_status": "demo",
+          "is_placeholder": true,
+          "notes": "Sample row strictly for interface and responsive layout verification"
+        },
+        {
+          "subject": "Social Science (Sample)",
+          "subject_code": "087",
+          "exam_date": "[PROTOTYPE / NON-OFFICIAL DEMO ROW]",
+          "timing": "Sample Timing (UI Test Only)",
+          "verification_status": "demo",
+          "is_placeholder": true,
+          "notes": "Sample row strictly for interface and responsive layout verification"
+        },
+        {
+          "subject": "Mathematics Standard / Basic (Sample)",
+          "subject_code": "041 / 241",
+          "exam_date": "[PROTOTYPE / NON-OFFICIAL DEMO ROW]",
+          "timing": "Sample Timing (UI Test Only)",
+          "verification_status": "demo",
+          "is_placeholder": true,
+          "notes": "Sample row strictly for interface and responsive layout verification"
+        }
+      ]
+    },
+    "12": {
+      "class_name": "CBSE Class 12 (Senior Secondary)",
+      "academic_year": "2026-27",
+      "official_status": "Please check official CBSE announcements on cbse.gov.in",
+      "official_link": "https://www.cbse.gov.in/cbsenew/examination_Circular.html",
+      "exam_timing_standard": "Standard CBSE morning sessions are typically conducted from 10:30 AM to 01:30 PM IST (subject to official admit card instructions)",
+      "is_demo_schedule": true,
+      "verification_status": "demo",
+      "demo_label": "DEMO — NOT AN OFFICIAL ANNOUNCEMENT",
+      "schedule_items": [
+        {
+          "subject": "Physical Education (Sample)",
+          "subject_code": "048",
+          "exam_date": "[PROTOTYPE / NON-OFFICIAL DEMO ROW]",
+          "timing": "Sample Timing (UI Test Only)",
+          "stream": "General",
+          "verification_status": "demo",
+          "is_placeholder": true,
+          "notes": "Sample row strictly for interface and responsive layout verification"
+        },
+        {
+          "subject": "English Core / Elective (Sample)",
+          "subject_code": "301 / 001",
+          "exam_date": "[PROTOTYPE / NON-OFFICIAL DEMO ROW]",
+          "timing": "Sample Timing (UI Test Only)",
+          "stream": "General",
+          "verification_status": "demo",
+          "is_placeholder": true,
+          "notes": "Sample row strictly for interface and responsive layout verification"
+        },
+        {
+          "subject": "Chemistry (Sample)",
+          "subject_code": "043",
+          "exam_date": "[PROTOTYPE / NON-OFFICIAL DEMO ROW]",
+          "timing": "Sample Timing (UI Test Only)",
+          "stream": "Science",
+          "verification_status": "demo",
+          "is_placeholder": true,
+          "notes": "Sample row strictly for interface and responsive layout verification"
+        },
+        {
+          "subject": "Physics (Sample)",
+          "subject_code": "042",
+          "exam_date": "[PROTOTYPE / NON-OFFICIAL DEMO ROW]",
+          "timing": "Sample Timing (UI Test Only)",
+          "stream": "Science",
+          "verification_status": "demo",
+          "is_placeholder": true,
+          "notes": "Sample row strictly for interface and responsive layout verification"
+        },
+        {
+          "subject": "Mathematics (Sample)",
+          "subject_code": "041",
+          "exam_date": "[PROTOTYPE / NON-OFFICIAL DEMO ROW]",
+          "timing": "Sample Timing (UI Test Only)",
+          "stream": "Science / Commerce",
+          "verification_status": "demo",
+          "is_placeholder": true,
+          "notes": "Sample row strictly for interface and responsive layout verification"
+        },
+        {
+          "subject": "Economics (Sample)",
+          "subject_code": "030",
+          "exam_date": "[PROTOTYPE / NON-OFFICIAL DEMO ROW]",
+          "timing": "Sample Timing (UI Test Only)",
+          "stream": "Commerce / Arts",
+          "verification_status": "demo",
+          "is_placeholder": true,
+          "notes": "Sample row strictly for interface and responsive layout verification"
+        },
+        {
+          "subject": "Accountancy (Sample)",
+          "subject_code": "055",
+          "exam_date": "[PROTOTYPE / NON-OFFICIAL DEMO ROW]",
+          "timing": "Sample Timing (UI Test Only)",
+          "stream": "Commerce",
+          "verification_status": "demo",
+          "is_placeholder": true,
+          "notes": "Sample row strictly for interface and responsive layout verification"
+        }
+      ]
+    }
+  }
+}
