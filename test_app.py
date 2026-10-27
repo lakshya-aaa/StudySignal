@@ -132,6 +132,11 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
         res_exam = self.client.get("/cbse/circulars?category=Examination")
         self.assertEqual(res_exam.status_code, 200)
 
+        # Verify empty Administrative category option is removed from circulars filter
+        self.assertNotIn('value="Administrative"', html)
+        self.assertIn('value="Academic"', html)
+        self.assertIn('value="Examination"', html)
+
     def test_search_and_json_api(self):
         """Test search by keyword and multi-field filters with noindex directive"""
         res = self.client.get("/search?q=Chemistry")
@@ -157,17 +162,28 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
             self.assertIn("ExamPulse India", html)
 
     def test_contact_submission(self):
-        """Test contact form POST request"""
-        res = self.client.post("/contact", data={
+        """Test contact form behavior: limitation advisory on GET and truthful submission notice on POST"""
+        # GET request must display clear pre-submission limitation advisory
+        res_get = self.client.get("/contact")
+        self.assertEqual(res_get.status_code, 200)
+        html_get = res_get.data.decode("utf-8")
+        self.assertIn("Message Delivery Advisory", html_get)
+        self.assertIn("not active on this portal", html_get)
+        self.assertNotIn("responds within 24 to 48 business hours", html_get)
+
+        # POST request must not claim successful receipt or promise replies
+        res_post = self.client.post("/contact", data={
             "name": "Amit Sharma",
             "email": "amit@example.com",
             "subject": "General Feedback",
             "message": "Testing portal functionality"
         })
-        self.assertEqual(res.status_code, 200)
-        html = res.data.decode("utf-8")
-        self.assertIn("Message Received Successfully", html)
-        self.assertIn("Amit Sharma", html)
+        self.assertEqual(res_post.status_code, 200)
+        html_post = res_post.data.decode("utf-8")
+        self.assertNotIn("Message Received Successfully", html_post)
+        self.assertNotIn("24 to 48 business hours", html_post)
+        self.assertIn("Form Submission Notice", html_post)
+        self.assertIn("Automated message delivery and storage are currently not configured", html_post)
 
     def test_robots_txt(self):
         """Test robots.txt accessibility, live sitemap, absence of 127.0.0.1 and no Disallow /search"""
@@ -894,6 +910,16 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
         self.assertNotIn("non-commercial educational information website", html_disclaimer)
         self.assertNotIn("non-commercial educational capacity", html_disclaimer)
 
+        # 4. Global disclaimer and footer terminology (non-commercial replaced with independent, free-access)
+        self.assertNotIn("non-commercial", Config.OFFICIAL_DISCLAIMER.lower())
+        self.assertIn("independent, free-access", Config.OFFICIAL_DISCLAIMER.lower())
+
+        res_home = self.client.get("/")
+        html_home = res_home.data.decode("utf-8")
+        self.assertNotIn("non-commercial", html_home.lower())
+        self.assertIn("independent, free-access educational information portal", html_home.lower())
+        self.assertIn("Independent Portal Notice", html_home)
+
     # =========================================================================
     # Stage 2 Phase 2: Date-Sheet Usability & Circular Schema Tests
     # =========================================================================
@@ -992,13 +1018,17 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
             dated_items = [c for c in items if c.get("iso_date") is not None]
             self.assertEqual(len(dated_items), 4)
 
-            expected_dates = ["2026-10-21", "2026-10-14", "2026-10-13", "2026-10-07"]
+            expected_dates = ["2026-10-26", "2026-10-21", "2026-10-13", "2026-10-07"]
             actual_dates = [c.get("iso_date") for c in dated_items]
             self.assertEqual(actual_dates, expected_dates)
 
-            # 21 Oct LOC notice must be first
-            self.assertIn("Reminder 6 / LOC-2026", items[0].get("circular_no"))
-            self.assertEqual(items[0].get("id"), "circ-exam-loc-reminder-2026")
+            # 26 Oct Acad-68 notice must be first
+            self.assertEqual(items[0].get("id"), "circ-acad-68-2026")
+            self.assertIn("Acad-68/2026", items[0].get("circular_no"))
+
+            # 21 Oct LOC notice must be second
+            self.assertEqual(items[1].get("id"), "circ-exam-loc-reminder-2026")
+            self.assertIn("Reminder 6 / LOC-2026", items[1].get("circular_no"))
 
             # Undated directories must follow after dated notices, not before them
             undated_items = [c for c in items if c.get("iso_date") is None]
@@ -1015,6 +1045,66 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
             self.assertIn("Online Examination Forms Submission for Private Candidates", html)
         finally:
             Config.SHOW_DEMO_DATA = orig_demo
+
+    def test_circular_acad_68_date_and_inconclusive_verification_labels(self):
+        """Verify Acad-68 corrected date and ensure inconclusive/unverified records are never falsely labeled as verified"""
+        import json
+        from unittest.mock import patch
+
+        # 1. Verify Acad-68 in data/circulars.json has the audited date
+        with open("data/circulars.json", "r", encoding="utf-8") as f:
+            circulars = json.load(f)
+        acad68 = next((c for c in circulars if c.get("id") == "circ-acad-68-2026"), None)
+        self.assertIsNotNone(acad68)
+        self.assertEqual(acad68.get("published_date"), "26 October 2026")
+        self.assertEqual(acad68.get("iso_date"), "2026-10-26")
+        self.assertEqual(acad68.get("verification_status"), "verified_official")
+
+        # 2. Check circulars page renders the corrected date
+        res = self.client.get("/cbse/circulars")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+        self.assertIn("Published: 26 October 2026", html)
+        self.assertNotIn("Published: 14 October 2026", html)
+
+        # 3. Test verification labels for inconclusive or unverified notices
+        # Construct a synthetic circular with inconclusive status
+        inconclusive_sample = [
+            {
+                "id": "circ-test-inconclusive",
+                "title": "Pending Verification Notice for Board Coordinators",
+                "category": "Examination",
+                "class_target": "Classes 10 & 12",
+                "academic_year": "2026-27",
+                "published_date": "25 October 2026",
+                "iso_date": "2026-10-25",
+                "last_verified": "2026-10-27",
+                "circular_no": "Coord/Test/2026",
+                "summary": "This notice is awaiting conclusive content verification.",
+                "verification_status": "inconclusive",
+                "is_official": True,
+                "is_demo": False,
+                "status": "active",
+                "official_url": "https://www.cbse.gov.in/cbsenew/documents/test.pdf",
+                "source_portal": "https://www.cbse.gov.in"
+            }
+        ]
+
+        with patch("app.get_circulars", return_value=inconclusive_sample):
+            res_circ = self.client.get("/cbse/circulars")
+            html_circ = res_circ.data.decode("utf-8")
+            self.assertIn("Verification Inconclusive", html_circ)
+            self.assertIn("Document Content Pending Verification", html_circ)
+            # Crucially: it must NOT have verified labels
+            self.assertNotIn("✓ Verified Official Notice", html_circ)
+            self.assertNotIn("✓ Verified against Official CBSE Source", html_circ)
+
+            res_home = self.client.get("/")
+            html_home = res_home.data.decode("utf-8")
+            self.assertIn("Verification Inconclusive", html_home)
+            self.assertIn("Document Content Pending Verification", html_home)
+            self.assertNotIn("✓ Verified Official Notice", html_home)
+            self.assertNotIn("✓ Verified on cbseacademic.nic.in", html_home)
 
 if __name__ == "__main__":
     unittest.main()

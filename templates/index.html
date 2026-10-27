@@ -236,6 +236,8 @@ ExamPulse India is an independent portal providing authentic CBSE Class 10 and C
               <span class="circ-tag official">✓ Verified Official Notice</span>
             {% elif circ.verification_status == 'official_directory' %}
               <span class="circ-tag" style="background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd;">Official Portal Directory</span>
+            {% elif circ.verification_status == 'inconclusive' %}
+              <span class="circ-tag unverified">Verification Inconclusive</span>
             {% elif circ.is_demo or circ.verification_status == 'demo' %}
               <span class="circ-tag demo">DEMO — NOT AN OFFICIAL ANNOUNCEMENT</span>
             {% else %}
@@ -256,7 +258,11 @@ ExamPulse India is an independent portal providing authentic CBSE Class 10 and C
               <span style="font-size: 0.75rem; color: #0369a1; font-weight: 600;">
                 Official Central Board Portal Directory
               </span>
-            {% elif circ.last_verified %}
+            {% elif circ.verification_status == 'inconclusive' %}
+              <span style="font-size: 0.75rem; color: #b45309; font-weight: 600;">
+                Document Content Pending Verification
+              </span>
+            {% elif circ.last_verified and circ.verification_status == 'verified_official' %}
               <span style="font-size: 0.75rem; color: var(--accent-green); font-weight: 600;">
                 ✓ Verified on cbseacademic.nic.in / cbse.gov.in ({{ circ.last_verified }})
               </span>

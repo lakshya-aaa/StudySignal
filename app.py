@@ -371,12 +371,12 @@ def contact():
     message = None
     if request.method == "POST":
         submitted = True
-        name = request.form.get("name", "").strip()
-        email = request.form.get("email", "").strip()
-        subject = request.form.get("subject", "").strip()
-        user_message = request.form.get("message", "").strip()
-        # Log contact submission locally for verification
-        message = f"Thank you, {name or 'Student/Parent'}. Your message regarding '{subject or 'General Inquiry'}' has been recorded."
+        # Do not pretend submissions are stored, delivered, or monitored
+        message = (
+            "Notice: Automated message delivery and storage are currently not configured on this portal. "
+            "Your message was not stored or delivered, and no response can be sent. "
+            "Please refer directly to official board contacts at cbse.gov.in."
+        )
     return render_template("contact.html", submitted=submitted, message=message)
 
 @app.route("/privacy-policy")

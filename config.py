@@ -30,7 +30,7 @@ class Config:
     
     # Non-Affiliation Disclaimer
     OFFICIAL_DISCLAIMER = (
-        "ExamPulse India is an independent, non-commercial educational resource and is NOT "
+        "ExamPulse India is an independent, free-access educational resource and is NOT "
         "affiliated with, endorsed by, or connected to the Central Board of Secondary Education "
         "(CBSE), Ministry of Education, or Government of India. Always cross-verify information "
         "on the official CBSE websites: cbse.gov.in and cbseacademic.nic.in."

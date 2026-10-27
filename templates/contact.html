@@ -19,14 +19,20 @@ Contact ExamPulse India team for corrections, broken link reporting, portal feed
       </p>
     </div>
 
+    <!-- Delivery Limitation Advisory -->
+    <div class="alert-box" style="background: #f8fafc; border-left: 4px solid #64748b; margin-top: 0; margin-bottom: 1.5rem; font-size: 0.875rem; line-height: 1.5;">
+      <strong>Message Delivery Advisory:</strong>
+      Direct automated message delivery is currently not active on this portal. Messages submitted through this form are not reliably delivered, stored, or monitored by an editorial team, and automated replies cannot be provided. Please do not submit sensitive personal details or urgent time-sensitive inquiries here. For all official CBSE inquiries, admissions, admit cards, or statutory questions, please refer directly to official board authorities.
+    </div>
+
     <!-- Submission Alert -->
     {% if submitted %}
-    <div style="background-color: #f0fdf4; border: 1.5px solid #86efac; border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 2rem;">
-      <h3 style="color: #166534; font-size: 1.1rem; font-weight: 700; margin-bottom: 0.35rem;">
-        ✓ Message Received Successfully
+    <div style="background-color: #fefce8; border: 1.5px solid #fde047; border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 2rem;">
+      <h3 style="color: #854d0e; font-size: 1.05rem; font-weight: 700; margin-bottom: 0.35rem;">
+        ⚠️ Form Submission Notice
       </h3>
-      <p style="color: #15803d; font-size: 0.9375rem;">
-        {{ message }} Our editorial team reviews every message and responds within 24 to 48 business hours.
+      <p style="color: #713f12; font-size: 0.9375rem; line-height: 1.5; margin-bottom: 0;">
+        {{ message }}
       </p>
     </div>
     {% endif %}

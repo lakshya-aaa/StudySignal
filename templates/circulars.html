@@ -49,7 +49,6 @@ Official Central Board of Secondary Education (CBSE) circulars, academic notices
             <option value="all" {% if category == 'all' %}selected{% endif %}>All Categories</option>
             <option value="Academic" {% if category == 'Academic' %}selected{% endif %}>Academic Curriculum</option>
             <option value="Examination" {% if category == 'Examination' %}selected{% endif %}>Examination Wing</option>
-            <option value="Administrative" {% if category == 'Administrative' %}selected{% endif %}>Administrative & Affiliation</option>
           </select>
         </div>
 
@@ -98,6 +97,8 @@ Official Central Board of Secondary Education (CBSE) circulars, academic notices
               <span class="circ-tag official">✓ Verified Official Notice</span>
             {% elif circ.verification_status == 'official_directory' %}
               <span class="circ-tag" style="background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd;">Official Portal Directory</span>
+            {% elif circ.verification_status == 'inconclusive' %}
+              <span class="circ-tag unverified">Verification Inconclusive</span>
             {% elif circ.is_demo or circ.verification_status == 'demo' %}
               <span class="circ-tag demo">DEMO — NOT AN OFFICIAL ANNOUNCEMENT</span>
             {% else %}
@@ -123,7 +124,11 @@ Official Central Board of Secondary Education (CBSE) circulars, academic notices
               <span style="font-size: 0.75rem; color: #0369a1; font-weight: 600;">
                 Official Central Board Portal Directory
               </span>
-            {% elif circ.last_verified %}
+            {% elif circ.verification_status == 'inconclusive' %}
+              <span style="font-size: 0.75rem; color: #b45309; font-weight: 600;">
+                Document Content Pending Verification
+              </span>
+            {% elif circ.last_verified and circ.verification_status == 'verified_official' %}
               <span style="font-size: 0.75rem; color: var(--accent-green); font-weight: 600;">
                 ✓ Verified against Official CBSE Source ({{ circ.last_verified }})
               </span>
