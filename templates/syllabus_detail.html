@@ -6,6 +6,8 @@
 Official CBSE Class {{ item.class }} {{ item.subject }} (Code {{ item.code }}) syllabus, examination blueprint, marks weightage, and direct official PDF download link from cbseacademic.nic.in.
 {% endblock %}
 
+{% block robots %}{% if item.verification_status == 'unverified' %}noindex, follow{% else %}{{ super() }}{% endif %}{% endblock %}
+
 {% block content %}
 {% set breadcrumbs = [
   {'title': 'CBSE', 'url': '/'},

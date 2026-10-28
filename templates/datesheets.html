@@ -78,9 +78,15 @@ Check official CBSE Class 10 and Class 12 board examination date sheet status, e
           </h2>
         </div>
         <div style="text-align: right;">
+          {% if show_demo_data %}
           <span class="circ-tag demo" style="display: inline-block; margin-bottom: 0.25rem;">
             {{ data.classes['10'].demo_label }}
           </span>
+          {% else %}
+          <span class="circ-tag" style="background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; display: inline-block; margin-bottom: 0.25rem;">
+            Official Timetable Pending
+          </span>
+          {% endif %}
           <div style="font-size: 0.8125rem; color: var(--text-muted);">
             Session: {{ data.classes['10'].academic_year }}
           </div>
@@ -214,9 +220,15 @@ Check official CBSE Class 10 and Class 12 board examination date sheet status, e
           </h2>
         </div>
         <div style="text-align: right;">
+          {% if show_demo_data %}
           <span class="circ-tag demo" style="display: inline-block; margin-bottom: 0.25rem;">
             {{ data.classes['12'].demo_label }}
           </span>
+          {% else %}
+          <span class="circ-tag" style="background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; display: inline-block; margin-bottom: 0.25rem;">
+            Official Timetable Pending
+          </span>
+          {% endif %}
           <div style="font-size: 0.8125rem; color: var(--text-muted);">
             Session: {{ data.classes['12'].academic_year }}
           </div>
@@ -338,15 +350,18 @@ Check official CBSE Class 10 and Class 12 board examination date sheet status, e
 
     <!-- Crucial Exam Day Protocol Guidelines -->
     <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.75rem;">
-      <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem;">
-        Official CBSE Examination Day Instructions
+      <h3 style="font-size: 1.25rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">
+        CBSE Standard Examination Day Guidelines (Reference Protocols)
       </h3>
+      <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;">
+        The guidelines below reflect CBSE's standard examination protocols observed across previous board sessions. Candidates must verify their individual session admit card and the final session date sheet circular issued on <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer" style="color: var(--accent-saffron); font-weight: 600;">cbse.gov.in</a> for definitive, subject-specific timings.
+      </p>
       <ol style="margin-left: 1.5rem; color: #334155; line-height: 1.7; font-size: 0.9375rem;">
-        <li><strong>Entry Cut-off:</strong> No candidate shall be permitted to enter the examination centre after 10:00 AM IST under any circumstances.</li>
-        <li><strong>Admit Card & ID:</strong> Candidates must carry their school ID card and printed Admit Card with parent and school principal signatures.</li>
-        <li><strong>Question Paper Reading:</strong> Question papers will be handed out at 10:15 AM. 15 minutes are strictly reserved for reading the questions.</li>
-        <li><strong>Writing Commences:</strong> Candidates can start writing answers only at 10:30 AM IST.</li>
-        <li><strong>Prohibited Items:</strong> Electronic gadgets, mobile phones, smartwatches, calculators, and rough notes are strictly forbidden inside the hall.</li>
+        <li><strong>Centre Entry Protocol:</strong> In standard morning sessions, examination centre gates typically close at 10:00 AM IST. Candidates are advised to report to their designated centre at least 30–45 minutes prior to gate closing.</li>
+        <li><strong>Mandatory Documents:</strong> Candidates must present an authentic, printed CBSE Admit Card (duly signed by the candidate, parent/guardian, and school principal) along with their official school identity card.</li>
+        <li><strong>Question Paper Reading Window:</strong> Under standard morning session schedules, question papers are distributed at 10:15 AM IST to provide a strict 15-minute reading period (10:15 AM to 10:30 AM) prior to writing answers.</li>
+        <li><strong>Writing Schedule:</strong> Writing commences at the designated session start time (standard 10:30 AM IST for morning papers). Final session timings are confirmed directly on the official admit card.</li>
+        <li><strong>Prohibited Materials:</strong> Electronic gadgets, mobile phones, smartwatches, programmable calculators, bags, and unauthorized written materials are strictly prohibited inside the examination centre.</li>
       </ol>
     </div>
 

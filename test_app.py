@@ -105,7 +105,7 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
         self.assertIn("404", res_404.data.decode("utf-8"))
 
     def test_datesheets(self):
-        """Test exam date sheets page and clear demo labeling"""
+        """Test exam date sheets page, official links, and production vs demo labeling"""
         res = self.client.get("/cbse/datesheets")
         self.assertEqual(res.status_code, 200)
         html = res.data.decode("utf-8")
@@ -113,8 +113,20 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
         # Verify verified URL is used, NOT the broken URL
         self.assertNotIn("cbsenew/examination.html", html)
         self.assertIn("cbse.gov.in/cbsenew/examination_Circular.html", html)
-        # Verify demo data has unmistakable label
-        self.assertIn("DEMO — NOT AN OFFICIAL ANNOUNCEMENT", html)
+
+        # In production mode (SHOW_DEMO_DATA=False), demo badge must NOT appear
+        self.assertIn("Official Timetable Pending", html)
+        self.assertNotIn("DEMO — NOT AN OFFICIAL ANNOUNCEMENT", html)
+
+        # When SHOW_DEMO_DATA is True (testing mode), demo badge must appear
+        orig_demo = Config.SHOW_DEMO_DATA
+        try:
+            Config.SHOW_DEMO_DATA = True
+            res_demo = self.client.get("/cbse/datesheets")
+            html_demo = res_demo.data.decode("utf-8")
+            self.assertIn("DEMO — NOT AN OFFICIAL ANNOUNCEMENT", html_demo)
+        finally:
+            Config.SHOW_DEMO_DATA = orig_demo
 
     def test_circulars(self):
         """Test circulars directory and category filters"""
@@ -206,7 +218,7 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
             self.assertNotIn("127.0.0.1", s_text)
 
     def test_sitemap_xml(self):
-        """Test sitemap.xml validity as standard XML and exclusion of /search"""
+        """Test sitemap.xml validity as standard XML, exclusion of /search, exclusion of unverified AI, and URL origin"""
         res = self.client.get("/sitemap.xml")
         self.assertEqual(res.status_code, 200)
         self.assertIn("application/xml", res.content_type)
@@ -219,8 +231,18 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
         self.assertGreater(len(urls), 10)
         self.assertTrue(any("/cbse/class-10" in u for u in urls))
         self.assertTrue(any("/cbse/class-12" in u for u in urls))
+
         # Ensure /search is not present in sitemap
         self.assertFalse(any(u.endswith("/search") for u in urls), "/search must be excluded from sitemap.xml")
+
+        # Ensure unverified Class 10 AI subject is excluded from sitemap
+        self.assertFalse(any("cbse-10-ai-2027" in u for u in urls), "Unverified AI subject must be excluded from sitemap")
+
+        # Ensure production origin is used and 127.0.0.1/localhost never leak into sitemap locs
+        for u in urls:
+            self.assertNotIn("127.0.0.1", u, f"Sitemap URL must not contain 127.0.0.1: {u}")
+            self.assertNotIn("localhost", u, f"Sitemap URL must not contain localhost: {u}")
+            self.assertTrue(u.startswith("https://") or u.startswith("http://"), f"Sitemap URL must have valid scheme: {u}")
 
     def test_disclaimer_presence(self):
         """Test non-affiliation disclaimer presence on legal page and banner"""
@@ -625,7 +647,7 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
         self.assertIn('property="og:image:width" content="1200"', html)
         self.assertIn('property="og:image:height" content="630"', html)
         self.assertIn('property="og:image:alt"', html)
-        self.assertIn("School Boards, Engineering &amp; Medical Entrances", html)
+        self.assertIn("CBSE Class 10 (Secondary) and Class 12 (Senior Secondary)", html)
         self.assertIn('name="twitter:card" content="summary_large_image"', html)
         self.assertIn(f'name="twitter:image" content="{expected_og_image}"', html)
         self.assertIn('name="twitter:image:alt"', html)
@@ -1105,6 +1127,118 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
             self.assertIn("Document Content Pending Verification", html_home)
             self.assertNotIn("✓ Verified Official Notice", html_home)
             self.assertNotIn("✓ Verified on cbseacademic.nic.in", html_home)
+
+    def test_phase_3c_adsense_readiness_remediations(self):
+        """Verify Phase 3C remediations: date-sheet production badges, canonical URLs, sitemap pruning, privacy disclosures"""
+        import xml.etree.ElementTree as ET
+
+        # 1. Date-sheet production status: no DEMO badge, rendered pending status
+        orig_demo = Config.SHOW_DEMO_DATA
+        try:
+            Config.SHOW_DEMO_DATA = False
+            res_ds = self.client.get("/cbse/datesheets")
+            self.assertEqual(res_ds.status_code, 200)
+            html_ds = res_ds.data.decode("utf-8")
+            self.assertNotIn("DEMO — NOT AN OFFICIAL ANNOUNCEMENT", html_ds)
+            self.assertIn("Official Timetable Pending", html_ds)
+
+            # Fact-checked exam day instructions
+            self.assertIn("CBSE Standard Examination Day Guidelines (Reference Protocols)", html_ds)
+            self.assertIn("Centre Entry Protocol:", html_ds)
+            self.assertIn("Mandatory Documents:", html_ds)
+            self.assertIn("Question Paper Reading Window:", html_ds)
+            self.assertIn("Prohibited Materials:", html_ds)
+        finally:
+            Config.SHOW_DEMO_DATA = orig_demo
+
+        # 2. Canonical URLs in templates must never leak 127.0.0.1 or localhost
+        for path in ["/", "/cbse/class-10", "/cbse/class-12", "/cbse/datesheets", "/cbse/circulars", "/about", "/contact", "/privacy-policy"]:
+            res = self.client.get(path)
+            self.assertEqual(res.status_code, 200)
+            html = res.data.decode("utf-8")
+            self.assertIn('<link rel="canonical" href="https://exampulse-india.onrender.com', html)
+            self.assertNotIn('<link rel="canonical" href="http://127.0.0.1', html)
+            self.assertNotIn('<link rel="canonical" href="http://localhost', html)
+            self.assertNotIn('property="og:url" content="http://127.0.0.1', html)
+
+        # 3. Contact page transparency (no unverified GitHub link, honest warning preserved)
+        res_contact = self.client.get("/contact")
+        self.assertEqual(res_contact.status_code, 200)
+        html_contact = res_contact.data.decode("utf-8")
+        self.assertNotIn("github.com/lakshya-aaa/EXAMPULSE", html_contact, "Unverified candidate repo must not be published")
+        self.assertIn("Message Delivery Advisory:", html_contact)
+        self.assertNotIn("24 to 48 business hours", html_contact)
+
+        # 4. Privacy Policy advertising transparency & future disclosures
+        res_privacy = self.client.get("/privacy-policy")
+        self.assertEqual(res_privacy.status_code, 200)
+        html_privacy = res_privacy.data.decode("utf-8")
+        self.assertIn("Third-Party Advertising Status & Future Disclosures", html_privacy)
+        self.assertIn("completely disabled", html_privacy)
+        self.assertIn("adssettings.google.com", html_privacy)
+        self.assertIn("aboutads.info/choices", html_privacy)
+        self.assertIn("policies.google.com/technologies/ads", html_privacy)
+
+        # 5. Robots meta tag scoped conditioning: unverified records have noindex; verified records preserve base index, follow
+        # Unverified subject (Class 10 AI)
+        res_ai = self.client.get("/cbse/syllabus/cbse-10-ai-2027")
+        self.assertEqual(res_ai.status_code, 200)
+        html_ai = res_ai.data.decode("utf-8")
+        self.assertIn('<meta name="robots" content="noindex, follow">', html_ai)
+
+        # Verified Class 10 subject (Mathematics)
+        res_maths = self.client.get("/cbse/syllabus/cbse-10-maths-2027")
+        self.assertEqual(res_maths.status_code, 200)
+        html_maths = res_maths.data.decode("utf-8")
+        self.assertIn('<meta name="robots" content="index, follow">', html_maths)
+        self.assertNotIn("noindex", html_maths)
+
+        # Verified Class 12 subject (Physics)
+        res_phys = self.client.get("/cbse/syllabus/cbse-12-physics-2027")
+        self.assertEqual(res_phys.status_code, 200)
+        html_phys = res_phys.data.decode("utf-8")
+        self.assertIn('<meta name="robots" content="index, follow">', html_phys)
+        self.assertNotIn("noindex", html_phys)
+
+        # Base template normal robots behavior preserved on core pages
+        res_home = self.client.get("/")
+        self.assertIn('<meta name="robots" content="index, follow">', res_home.data.decode("utf-8"))
+
+        # 6. Sitemap XML verification
+        res_sm = self.client.get("/sitemap.xml")
+        self.assertEqual(res_sm.status_code, 200)
+        root = ET.fromstring(res_sm.data.decode("utf-8"))
+        ns = {"ns": "http://www.sitemaps.org/schemas/sitemap/0.9"}
+        url_nodes = root.findall(".//ns:url", ns)
+
+        # Build map of loc -> (priority, changefreq, lastmod)
+        sitemap_map = {}
+        for node in url_nodes:
+            loc = node.find("ns:loc", ns).text
+            prio = node.find("ns:priority", ns).text if node.find("ns:priority", ns) is not None else None
+            freq = node.find("ns:changefreq", ns).text if node.find("ns:changefreq", ns) is not None else None
+            lastmod = node.find("ns:lastmod", ns).text if node.find("ns:lastmod", ns) is not None else None
+            sitemap_map[loc] = (prio, freq, lastmod)
+
+        # cbse-10-ai-2027 must NOT be in sitemap
+        self.assertFalse(any("cbse-10-ai-2027" in loc for loc in sitemap_map))
+
+        # Check historical archive records have lower priority 0.3 and yearly changefreq
+        hist_maths_url = "https://exampulse-india.onrender.com/cbse/syllabus/cbse-10-maths-2025"
+        self.assertIn(hist_maths_url, sitemap_map)
+        self.assertEqual(sitemap_map[hist_maths_url][0], "0.3")
+        self.assertEqual(sitemap_map[hist_maths_url][1], "yearly")
+
+        # Check current verified record has priority 0.7 and monthly changefreq
+        curr_maths_url = "https://exampulse-india.onrender.com/cbse/syllabus/cbse-10-maths-2027"
+        self.assertIn(curr_maths_url, sitemap_map)
+        self.assertEqual(sitemap_map[curr_maths_url][0], "0.7")
+        self.assertEqual(sitemap_map[curr_maths_url][1], "monthly")
+
+        # Check static legal page has NO invented current-date lastmod
+        terms_url = "https://exampulse-india.onrender.com/terms"
+        self.assertIn(terms_url, sitemap_map)
+        self.assertIsNone(sitemap_map[terms_url][2], "Terms page should omit lastmod if not explicitly tracked")
 
 if __name__ == "__main__":
     unittest.main()

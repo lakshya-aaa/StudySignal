@@ -48,17 +48,26 @@ def get_circulars():
 
     return sorted(items, key=sort_circular_key, reverse=True)
 
+def get_public_base_url():
+    """Return the canonical production origin, ensuring localhost/127.0.0.1 never leaks into public metadata."""
+    base = Config.BASE_URL
+    if not base or "127.0.0.1" in base or "localhost" in base:
+        return getattr(Config, "PRODUCTION_BASE_URL", "https://exampulse-india.onrender.com").rstrip("/")
+    return base.rstrip("/")
+
 # Context processor for templates
 @app.context_processor
 def inject_globals():
+    public_base = get_public_base_url()
     return {
         "site_name": Config.SITE_NAME,
         "site_tagline": Config.SITE_TAGLINE,
         "site_description": Config.SITE_DESCRIPTION,
         "base_url": Config.BASE_URL,
+        "canonical_base_url": public_base,
         "production_base_url": getattr(Config, "PRODUCTION_BASE_URL", "https://exampulse-india.onrender.com"),
-        "default_og_image": getattr(Config, "DEFAULT_OG_IMAGE", "https://exampulse-india.onrender.com/static/images/og-preview.png"),
-        "default_og_image_alt": getattr(Config, "DEFAULT_OG_IMAGE_ALT", "ExamPulse India - Educational Information Portal for School Boards, Engineering & Medical Entrances, Government Examinations, and Higher Education Admissions"),
+        "default_og_image": getattr(Config, "DEFAULT_OG_IMAGE", f"{public_base}/static/images/og-preview.png"),
+        "default_og_image_alt": getattr(Config, "DEFAULT_OG_IMAGE_ALT", "ExamPulse India - Independent Educational Information Portal for CBSE Class 10 (Secondary) and Class 12 (Senior Secondary) Curriculum, Date Sheets, and Official Notices"),
         "disclaimer_text": Config.OFFICIAL_DISCLAIMER,
         "official_urls": Config.OFFICIAL_URLS,
         "current_academic_year": getattr(Config, "CURRENT_ACADEMIC_YEAR", "2026-27"),
@@ -396,7 +405,7 @@ def disclaimer():
 @app.route("/robots.txt")
 def robots_txt():
     # Production sitemap URL fallback ensures 127.0.0.1 is never exposed to public crawlers
-    base = Config.BASE_URL if ("127.0.0.1" not in Config.BASE_URL and "localhost" not in Config.BASE_URL) else "https://exampulse-india.onrender.com"
+    base = get_public_base_url()
     content = f"""User-agent: *
 Allow: /
 
@@ -413,35 +422,62 @@ def google_verification():
 @app.route("/sitemap.xml")
 def sitemap_xml():
     syllabus_items = get_all_syllabus()
-    now_date = datetime.now().strftime("%Y-%m-%d")
+    datesheets = get_datesheets()
+    circulars = get_circulars()
+    base = get_public_base_url()
     
+    # Retrieve reliable per-section modification dates where verified
+    ds_lastmod = datesheets.get("last_checked") if isinstance(datesheets, dict) else None
+
+    circ_lastmod = None
+    for c in circulars:
+        if c.get("iso_date"):
+            circ_lastmod = c["iso_date"]
+            break
+        elif c.get("last_verified"):
+            circ_lastmod = c["last_verified"]
+            break
+
     pages = [
-        {"loc": f"{Config.BASE_URL}/", "priority": "1.0", "changefreq": "daily"},
-        {"loc": f"{Config.BASE_URL}/cbse/class-10", "priority": "0.9", "changefreq": "daily"},
-        {"loc": f"{Config.BASE_URL}/cbse/class-12", "priority": "0.9", "changefreq": "daily"},
-        {"loc": f"{Config.BASE_URL}/cbse/syllabus", "priority": "0.8", "changefreq": "weekly"},
-        {"loc": f"{Config.BASE_URL}/cbse/datesheets", "priority": "0.9", "changefreq": "daily"},
-        {"loc": f"{Config.BASE_URL}/cbse/circulars", "priority": "0.8", "changefreq": "daily"},
-        {"loc": f"{Config.BASE_URL}/about", "priority": "0.5", "changefreq": "monthly"},
-        {"loc": f"{Config.BASE_URL}/contact", "priority": "0.5", "changefreq": "monthly"},
-        {"loc": f"{Config.BASE_URL}/privacy-policy", "priority": "0.3", "changefreq": "yearly"},
-        {"loc": f"{Config.BASE_URL}/terms", "priority": "0.3", "changefreq": "yearly"},
-        {"loc": f"{Config.BASE_URL}/disclaimer", "priority": "0.5", "changefreq": "monthly"},
+        {"loc": f"{base}/", "priority": "1.0", "changefreq": "daily"},
+        {"loc": f"{base}/cbse/class-10", "priority": "0.9", "changefreq": "daily"},
+        {"loc": f"{base}/cbse/class-12", "priority": "0.9", "changefreq": "daily"},
+        {"loc": f"{base}/cbse/syllabus", "priority": "0.8", "changefreq": "weekly"},
+        {"loc": f"{base}/cbse/datesheets", "priority": "0.9", "changefreq": "daily", "lastmod": ds_lastmod},
+        {"loc": f"{base}/cbse/circulars", "priority": "0.8", "changefreq": "daily", "lastmod": circ_lastmod},
+        {"loc": f"{base}/about", "priority": "0.5", "changefreq": "monthly"},
+        {"loc": f"{base}/contact", "priority": "0.5", "changefreq": "monthly"},
+        {"loc": f"{base}/privacy-policy", "priority": "0.3", "changefreq": "yearly"},
+        {"loc": f"{base}/terms", "priority": "0.3", "changefreq": "yearly"},
+        {"loc": f"{base}/disclaimer", "priority": "0.5", "changefreq": "monthly"},
     ]
 
     for item in syllabus_items:
-        pages.append({
-            "loc": f"{Config.BASE_URL}/cbse/syllabus/{item['id']}",
-            "priority": "0.7",
-            "changefreq": "monthly"
-        })
+        # Exclude unverified subject records (e.g. cbse-10-ai-2027) from the sitemap
+        if item.get("verification_status") == "unverified":
+            continue
+
+        is_current = (item.get("session_type") == "current" or item.get("academic_year") == "2026-27")
+        priority = "0.7" if is_current else "0.3"
+        changefreq = "monthly" if is_current else "yearly"
+
+        page_entry = {
+            "loc": f"{base}/cbse/syllabus/{item['id']}",
+            "priority": priority,
+            "changefreq": changefreq
+        }
+        if item.get("last_verified"):
+            page_entry["lastmod"] = item["last_verified"]
+
+        pages.append(page_entry)
 
     xml_lines = ['<?xml version="1.0" encoding="UTF-8"?>']
     xml_lines.append('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">')
     for page in pages:
         xml_lines.append("  <url>")
         xml_lines.append(f"    <loc>{page['loc']}</loc>")
-        xml_lines.append(f"    <lastmod>{now_date}</lastmod>")
+        if page.get("lastmod"):
+            xml_lines.append(f"    <lastmod>{page['lastmod']}</lastmod>")
         xml_lines.append(f"    <changefreq>{page['changefreq']}</changefreq>")
         xml_lines.append(f"    <priority>{page['priority']}</priority>")
         xml_lines.append("  </url>")

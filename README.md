@@ -1,6 +1,6 @@
 # ExamPulse India - Independent CBSE Education Information Portal
 
-**ExamPulse India** is an independent, non-commercial educational portal created to provide Indian students, parents, and educators with clean, clutter-free, and verified information regarding Central Board of Secondary Education (CBSE) Class 10 (Secondary) and Class 12 (Senior Secondary) curricula, examination schedules, and academic circulars.
+**ExamPulse India** is an independent, free-access educational information portal created to provide Indian students, parents, and educators with clean, clutter-free, and verified information regarding Central Board of Secondary Education (CBSE) Class 10 (Secondary) and Class 12 (Senior Secondary) curricula, examination schedules, and academic circulars.
 
 > **Important Non-Affiliation Notice:** ExamPulse India is an independent initiative and is **NOT** affiliated with, authorized by, or endorsed by the Central Board of Secondary Education (CBSE), Ministry of Education, or Government of India. Official CBSE information is hosted at [cbse.gov.in](https://www.cbse.gov.in) and [cbseacademic.nic.in](https://cbseacademic.nic.in).
 
@@ -14,7 +14,7 @@ d:\exampulseindia\
 ├── app.py                      # Main Flask application and URL routing
 ├── config.py                   # Central configuration (Site metadata, Ad slots, Official links)
 ├── requirements.txt            # Python dependencies (Flask >= 3.0.0)
-├── test_app.py                 # Automated test suite (14 unit & integration tests)
+├── test_app.py                 # Automated test suite (regression, audit & deployment tests)
 ├── README.md                   # Beginner guide and documentation
 │
 ├── data/
@@ -121,13 +121,13 @@ ExamPulse India is production-ready for deployment on Render's free tier using G
 
 ## 🧪 Running Automated Tests
 
-To verify all 27 audit, regression, and deployment tests:
+To verify all unit, audit, regression, and deployment tests:
 ```powershell
 python -m unittest -v test_app.py
 ```
 Expected output:
 ```
-Ran 27 tests in ~0.26s
+Ran 40+ tests in ~0.26s
 OK
 ```
 
@@ -139,7 +139,7 @@ OK
 Ad placements are centrally controlled in `config.py`:
 ```python
 ADS = {
-    "enabled": True,  # Set to False to completely hide all ads
+    "enabled": False,  # Master toggle: kept False until site approval
     "slots": {
         "header_leaderboard": {"enabled": True, "width": 728, "height": 90},
         "sidebar_box": {"enabled": True, "width": 300, "height": 250},
@@ -171,6 +171,6 @@ Edit `data/datesheets.json`. In accordance with our policy, whenever the officia
 3. **Class 12 Stream Tabs:** Go to `/cbse/class-12` and click between **Science Stream**, **Commerce Stream**, and **Arts / Humanities** tabs to see stream filtering in action.
 4. **Unified Search:** Go to `/search` and search for "Mathematics", "Physics", or filter by category "Exam Date Sheets".
 5. **Direct Official PDF Downloads:** Click any "Official PDF ↗" button to verify that it directly opens authentic CBSE syllabus documents from `cbseacademic.nic.in`.
-6. **Contact Form:** Go to `/contact`, fill in sample feedback, and click submit to verify the confirmation message.
+6. **Contact Page:** Go to `/contact` to review the transparent message delivery advisory and official board contact directions.
 7. **SEO Endpoints:** Visit `/robots.txt` and `/sitemap.xml` directly in your browser.
-8. **Ad Toggle:** Open `config.py`, change `"enabled": True` to `"enabled": False`, refresh the site, and verify that all advertising units disappear.
+8. **Ad Toggle:** Open `config.py`, verify `ADS["enabled"]` is `False`, and confirm that advertising units remain hidden in production.

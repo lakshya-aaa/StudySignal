@@ -20,8 +20,8 @@ class Config:
     # Social Sharing Metadata (Representing full educational platform scope)
     DEFAULT_OG_IMAGE = f"{PRODUCTION_BASE_URL}/static/images/og-preview.png"
     DEFAULT_OG_IMAGE_ALT = (
-        "ExamPulse India - Educational Information Portal for School Boards, "
-        "Engineering & Medical Entrances, Government Examinations, and Higher Education Admissions"
+        "ExamPulse India - Independent Educational Information Portal for CBSE Class 10 (Secondary) "
+        "and Class 12 (Senior Secondary) Curriculum, Date Sheets, and Official Notices"
     )
     
     # Academic Year Settings (Current: October 2026 -> Session 2026-27)
