@@ -1,5 +1,5 @@
 """
-ExamPulse India - Configuration File
+StudySignal - Configuration File
 Centralized settings for site metadata, advertising slots, and official links.
 """
 
@@ -7,20 +7,20 @@ import os
 
 class Config:
     # Site Identity
-    SITE_NAME = "ExamPulse India"
+    SITE_NAME = "StudySignal"
     SITE_TAGLINE = "Independent CBSE Education Information Portal"
     SITE_DESCRIPTION = (
-        "ExamPulse India provides accurate, verified CBSE Class 10 and 12 syllabus, "
+        "StudySignal provides accurate, verified CBSE Class 10 and 12 syllabus, "
         "official date sheet alerts, circulars, and academic notifications."
     )
-    SECRET_KEY = os.environ.get("SECRET_KEY", "exampulse-india-default-dev-key")
+    SECRET_KEY = os.environ.get("SECRET_KEY", "studysignal-default-dev-key")
     PRODUCTION_BASE_URL = os.environ.get("PRODUCTION_BASE_URL", "https://exampulse-india.onrender.com")
     BASE_URL = os.environ.get("BASE_URL", os.environ.get("RENDER_EXTERNAL_URL", "http://127.0.0.1:5000"))
     
     # Social Sharing Metadata (Representing full educational platform scope)
     DEFAULT_OG_IMAGE = f"{PRODUCTION_BASE_URL}/static/images/og-preview.png"
     DEFAULT_OG_IMAGE_ALT = (
-        "ExamPulse India - Independent Educational Information Portal for CBSE Class 10 (Secondary) "
+        "StudySignal - Independent Educational Information Portal for CBSE Class 10 (Secondary) "
         "and Class 12 (Senior Secondary) Curriculum, Date Sheets, and Official Notices"
     )
     
@@ -30,7 +30,7 @@ class Config:
     
     # Non-Affiliation Disclaimer
     OFFICIAL_DISCLAIMER = (
-        "ExamPulse India is an independent, free-access educational resource and is NOT "
+        "StudySignal is an independent, free-access educational resource and is NOT "
         "affiliated with, endorsed by, or connected to the Central Board of Secondary Education "
         "(CBSE), Ministry of Education, or Government of India. Always cross-verify information "
         "on the official CBSE websites: cbse.gov.in and cbseacademic.nic.in."

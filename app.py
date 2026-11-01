@@ -1,5 +1,5 @@
 """
-ExamPulse India - Independent CBSE Education Information Portal
+StudySignal - Independent CBSE Education Information Portal
 Phase 1 Core Flask Application
 """
 
@@ -67,7 +67,7 @@ def inject_globals():
         "canonical_base_url": public_base,
         "production_base_url": getattr(Config, "PRODUCTION_BASE_URL", "https://exampulse-india.onrender.com"),
         "default_og_image": getattr(Config, "DEFAULT_OG_IMAGE", f"{public_base}/static/images/og-preview.png"),
-        "default_og_image_alt": getattr(Config, "DEFAULT_OG_IMAGE_ALT", "ExamPulse India - Independent Educational Information Portal for CBSE Class 10 (Secondary) and Class 12 (Senior Secondary) Curriculum, Date Sheets, and Official Notices"),
+        "default_og_image_alt": getattr(Config, "DEFAULT_OG_IMAGE_ALT", "StudySignal - Independent Educational Information Portal for CBSE Class 10 (Secondary) and Class 12 (Senior Secondary) Curriculum, Date Sheets, and Official Notices"),
         "disclaimer_text": Config.OFFICIAL_DISCLAIMER,
         "official_urls": Config.OFFICIAL_URLS,
         "current_academic_year": getattr(Config, "CURRENT_ACADEMIC_YEAR", "2026-27"),

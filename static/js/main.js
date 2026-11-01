@@ -1,5 +1,5 @@
 /**
- * ExamPulse India - Core Client-Side Utilities
+ * StudySignal - Core Client-Side Utilities
  * Vanilla JS for responsive drawer, client-side filtering, and copy utilities
  */
 

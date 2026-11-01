@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}CBSE Class {{ item.class }} {{ item.subject }} Syllabus ({{ item.academic_year_label or item.academic_year }}) - ExamPulse India{% endblock %}
+{% block title %}CBSE Class {{ item.class }} {{ item.subject }} Syllabus ({{ item.academic_year_label or item.academic_year }}) - StudySignal{% endblock %}
 
 {% block meta_description %}
 Official CBSE Class {{ item.class }} {{ item.subject }} (Code {{ item.code }}) syllabus, examination blueprint, marks weightage, and direct official PDF download link from cbseacademic.nic.in.
@@ -201,7 +201,7 @@ Official CBSE Class {{ item.class }} {{ item.subject }} (Code {{ item.code }}) s
               </h2>
               {% if item.question_paper_design.is_editorial_estimate %}
               <span style="font-size: 0.75rem; color: #b45309; font-weight: 700; background: #fffbeb; border: 1px solid #fde68a; padding: 0.2rem 0.6rem; border-radius: 9999px;">
-                ⚠️ ExamPulse Editorial Estimate (Non-Official)
+                ⚠️ StudySignal Editorial Estimate (Non-Official)
               </span>
               {% else %}
               <span style="font-size: 0.75rem; color: #0369a1; font-weight: 700; background: #e0f2fe; border: 1px solid #bae6fd; padding: 0.2rem 0.6rem; border-radius: 9999px;">
@@ -313,12 +313,12 @@ Official CBSE Class {{ item.class }} {{ item.subject }} (Code {{ item.code }}) s
           </div>
           {% endif %}
 
-          <!-- ExamPulse Independent Editorial Study Advice -->
+          <!-- StudySignal Independent Editorial Study Advice -->
           {% if item.editorial_study_tips and item.editorial_study_tips|length > 0 %}
           <div style="background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%); border: 1.5px solid #fcd34d; border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 2rem;">
             <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.75rem;">
               <span style="font-size: 0.8125rem; font-weight: 800; color: #92400e; display: inline-flex; align-items: center; gap: 0.35rem;">
-                💡 ExamPulse Independent Editorial Study Advice
+                💡 StudySignal Independent Editorial Study Advice
               </span>
               <span style="font-size: 0.7rem; background: #fef08a; color: #854d0e; padding: 0.15rem 0.5rem; border-radius: 4px; font-weight: 600;">
                 Non-Statutory Study Strategy

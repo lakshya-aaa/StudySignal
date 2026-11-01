@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="512" height="512" role="img" aria-label="StudySignal icon">
+  <defs>
+    <linearGradient id="ssBlue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3A4BFF"/>
+      <stop offset="1" stop-color="#2424F5"/>
+    </linearGradient>
+    <path id="sPath" d="M45 21 C45 11 18 11 18 23 C18 34 46 30 46 41 C46 53 19 53 19 43"/>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#ssBlue)"/>
+  <!-- back S (yellow) -->
+  <g transform="translate(41 31) scale(0.78) translate(-32 -32)">
+    <use href="#sPath" fill="none" stroke="#FFD166" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- front S (white) with blue halo for separation -->
+  <g transform="translate(23.5 33) scale(0.78) translate(-32 -32)">
+    <use href="#sPath" fill="none" stroke="#2F3CFA" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <use href="#sPath" fill="none" stroke="#FFFFFF" stroke-width="7.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

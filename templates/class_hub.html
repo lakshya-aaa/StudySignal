@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ class_title }} - ExamPulse India{% endblock %}
+{% block title %}{{ class_title }} - StudySignal{% endblock %}
 
 {% block meta_description %}
 Complete guide for {{ class_title }} including verified official CBSE syllabus PDFs, date sheet status, subject blueprints, and board exam circulars.
@@ -13,8 +13,8 @@ Complete guide for {{ class_title }} including verified official CBSE syllabus P
 <!-- Class Hub Header -->
 <section class="section" style="padding-bottom: 1rem;">
   <div class="container">
-    <div style="background: linear-gradient(135deg, #0e2a47 0%, #173f6b 100%); color: #ffffff; padding: 2.5rem; border-radius: var(--radius-lg); margin-bottom: 2rem;">
-      <span class="class-badge" style="background: rgba(255,255,255,0.15); color: #ff9933; margin-bottom: 0.75rem; display: inline-block;">
+    <div style="background: linear-gradient(135deg, #090e26 0%, #131b54 60%, #1c2670 100%); color: #ffffff; padding: 2.5rem; border-radius: var(--radius-lg); margin-bottom: 2rem;">
+      <span class="class-badge" style="background: rgba(255,255,255,0.15); color: var(--brand-yellow); margin-bottom: 0.75rem; display: inline-block;">
         CBSE Official Academic Framework
       </span>
       <h1 style="font-size: 2.25rem; font-weight: 800; margin-bottom: 0.75rem;">
@@ -25,7 +25,7 @@ Complete guide for {{ class_title }} including verified official CBSE syllabus P
       </p>
 
       <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem; flex-wrap: wrap;">
-        <a href="#syllabus-section" class="btn-primary" style="width: auto; background-color: var(--accent-saffron);">
+        <a href="#syllabus-section" class="btn-primary" style="width: auto;">
           View Subject Syllabi &darr;
         </a>
         <a href="/cbse/datesheets?class={{ class_num }}" class="btn-secondary" style="width: auto; background-color: rgba(255,255,255,0.1); color: #ffffff; border-color: rgba(255,255,255,0.2);">

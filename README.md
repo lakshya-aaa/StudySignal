@@ -1,8 +1,8 @@
-# ExamPulse India - Independent CBSE Education Information Portal
+# StudySignal - Independent CBSE Education Information Portal
 
-**ExamPulse India** is an independent, free-access educational information portal created to provide Indian students, parents, and educators with clean, clutter-free, and verified information regarding Central Board of Secondary Education (CBSE) Class 10 (Secondary) and Class 12 (Senior Secondary) curricula, examination schedules, and academic circulars.
+**StudySignal** is an independent, free-access educational information portal created to provide Indian students, parents, and educators with clean, clutter-free, and verified information regarding Central Board of Secondary Education (CBSE) Class 10 (Secondary) and Class 12 (Senior Secondary) curricula, examination schedules, and academic circulars.
 
-> **Important Non-Affiliation Notice:** ExamPulse India is an independent initiative and is **NOT** affiliated with, authorized by, or endorsed by the Central Board of Secondary Education (CBSE), Ministry of Education, or Government of India. Official CBSE information is hosted at [cbse.gov.in](https://www.cbse.gov.in) and [cbseacademic.nic.in](https://cbseacademic.nic.in).
+> **Important Non-Affiliation Notice:** StudySignal is an independent initiative and is **NOT** affiliated with, authorized by, or endorsed by the Central Board of Secondary Education (CBSE), Ministry of Education, or Government of India. Official CBSE information is hosted at [cbse.gov.in](https://www.cbse.gov.in) and [cbseacademic.nic.in](https://cbseacademic.nic.in).
 
 ---
 
@@ -40,7 +40,7 @@ d:\exampulseindia\
     ├── datesheets.html         # Exam date sheets page with official CBSE status and labeled demo timetables
     ├── circulars.html          # CBSE circulars & updates feed with category filtering (Academic, Exam, Admin)
     ├── search.html             # Multi-filter search (by class, subject, category, and academic year)
-    ├── about.html              # About ExamPulse India (Mission, Scope, Editorial integrity)
+    ├── about.html              # About StudySignal (Mission, Scope, Editorial integrity)
     ├── contact.html            # Contact & broken link reporting form
     ├── privacy.html            # Privacy Policy (Cookie disclosure, AdSense third-party compliance)
     ├── terms.html              # Terms and Conditions of website usage
@@ -95,7 +95,7 @@ http://127.0.0.1:5000
 
 ## 🌐 Deploying on Render (Free Web Service)
 
-ExamPulse India is production-ready for deployment on Render's free tier using Gunicorn WSGI.
+StudySignal is production-ready for deployment on Render's free tier using Gunicorn WSGI.
 
 ### Render Dashboard Settings:
 1. **Environment:** `Python`

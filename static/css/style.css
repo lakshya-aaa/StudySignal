@@ -1,39 +1,82 @@
 /* ==========================================================================
-   ExamPulse India - Core Stylesheet
+   StudySignal - Core Stylesheet
    Responsive, clean, accessible, zero-dependency design
    ========================================================================== */
 
 :root {
-  --primary: #0e2a47;
-  --primary-light: #173f6b;
-  --primary-dark: #07192d;
-  --accent-saffron: #e65100;
-  --accent-saffron-light: #fff3e0;
+  /* ========================================================================
+     StudySignal Brand Identity Palette
+     Extracted from StudySignal Logo & Icon (Electric Blue & Sunny Yellow)
+     ======================================================================== */
+  --brand-blue: #2424F5;          /* Signature electric blue */
+  --brand-blue-light: #3A4BFF;    /* Bright gradient blue from logo */
+  --brand-blue-hover: #1b1be0;    /* Accessible high-contrast hover blue */
+  --brand-blue-dark: #121752;     /* Deep navy brand blue for titles & solid text */
+  --brand-blue-soft: #EEF2FF;     /* 50-tint subtle blue for active states & badges */
+  --brand-blue-border: #C7D2FE;   /* 200-tint subtle blue border */
+
+  --brand-yellow: #FFD166;        /* Warm bright yellow from logo icon back-S */
+  --brand-yellow-gold: #F5A300;   /* Golden yellow from logo wordmark */
+  --brand-yellow-hover: #e09500;   /* Hover state for golden yellow */
+  --brand-yellow-soft: #FFFBEB;   /* Amber 50-tint background for badges/active tabs */
+  --brand-yellow-border: #FDE68A; /* Amber 200-tint border */
+  --brand-yellow-dark: #92400e;   /* WCAG AAA accessible amber-brown for text on yellow tints */
+
+  /* Dark Foundations (Top Announcement Bar, Hero Background, Site Footer) */
+  --bg-dark-midnight: #0A0F24;    /* Midnight navy with blue undertone */
+  --bg-dark-deep: #050814;        /* Deepest navy for sub-footer copyright bar */
+  --bg-dark-surface: #131A3D;     /* Elevated dark container surface */
+
+  /* Primary Theme Variables */
+  --primary: var(--brand-blue);
+  --primary-light: var(--brand-blue-light);
+  --primary-dark: var(--bg-dark-midnight);
+  --primary-headings: var(--brand-blue-dark);
+
+  /* Brand Accents (Backwards-compatible mappings) */
+  --accent-blue: var(--brand-blue);
+  --accent-blue-light: var(--brand-blue-soft);
+  --accent-saffron: var(--brand-yellow-gold);
+  --accent-saffron-light: var(--brand-yellow-soft);
+  --accent-yellow: var(--brand-yellow);
+  --accent-yellow-light: var(--brand-yellow-soft);
+
+  /* Status Colors (Preserved for CBSE statutory notices & verification indicators) */
   --accent-green: #15803d;
   --accent-green-light: #f0fdf4;
-  --accent-blue: #0284c7;
-  --accent-blue-light: #e0f2fe;
-  
-  --text-dark: #1e293b;
+  --status-warning: #b45309;
+  --status-warning-bg: #fffbeb;
+  --status-warning-border: #fde68a;
+  --status-error: #b91c1c;
+  --status-error-bg: #fef2f2;
+  --status-info: #0369a1;
+  --status-info-bg: #e0f2fe;
+
+  /* Typography & Neutrals */
+  --text-dark: #0f172a;
   --text-muted: #64748b;
   --text-light: #f8fafc;
-  
+
+  /* Surfaces & Backgrounds */
   --bg-page: #f8fafc;
   --bg-card: #ffffff;
   --bg-alt: #f1f5f9;
-  
+
+  /* Borders & Focus Rings */
   --border-color: #e2e8f0;
-  --border-focus: #0284c7;
-  
+  --border-focus: var(--brand-blue);
+  --focus-ring: 0 0 0 3px rgba(36, 36, 245, 0.2);
+
+  /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.06);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;
   --radius-full: 9999px;
-  
+
   --container-max: 1200px;
   --transition: all 0.2s ease-in-out;
 }
@@ -60,13 +103,13 @@ body {
 }
 
 a {
-  color: var(--primary-light);
+  color: var(--brand-blue);
   text-decoration: none;
   transition: var(--transition);
 }
 
 a:hover {
-  color: var(--accent-saffron);
+  color: var(--brand-blue-hover);
 }
 
 img, svg {
@@ -83,16 +126,16 @@ img, svg {
   padding-right: 1.25rem;
 }
 
-/* Indian National Accent Top Bar */
+/* StudySignal Brand Accent Top Bar */
 .national-accent-bar {
   height: 4px;
-  background: linear-gradient(90deg, #ff9933 0%, #ff9933 33.3%, #ffffff 33.3%, #ffffff 66.6%, #138808 66.6%, #138808 100%);
+  background: linear-gradient(90deg, #2424F5 0%, #3A4BFF 40%, #FFD166 75%, #F5A300 100%);
   width: 100%;
 }
 
 /* Top Announcement Bar */
 .top-announcement-bar {
-  background-color: var(--primary-dark);
+  background-color: var(--bg-dark-midnight);
   color: #cbd5e1;
   font-size: 0.8125rem;
   padding: 0.4rem 0;
@@ -156,12 +199,12 @@ img, svg {
 }
 
 .top-right a {
-  color: #38bdf8;
+  color: #93c5fd;
   font-weight: 500;
 }
 
 .top-right a:hover {
-  color: #ffffff;
+  color: var(--brand-yellow);
   text-decoration: underline;
 }
 
@@ -188,6 +231,14 @@ img, svg {
   gap: 0.75rem;
 }
 
+.brand-logo img,
+.header-logo {
+  display: block;
+  height: 40px;
+  width: auto;
+  max-width: 190px;
+}
+
 .brand-symbol svg {
   display: block;
 }
@@ -200,13 +251,13 @@ img, svg {
 .brand-name {
   font-size: 1.35rem;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--primary-headings);
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
 
 .brand-name strong {
-  color: var(--accent-saffron);
+  color: var(--brand-yellow-gold);
 }
 
 .brand-sub {
@@ -235,13 +286,14 @@ img, svg {
 }
 
 .nav-link:hover {
-  color: var(--primary);
+  color: var(--brand-blue);
   background-color: var(--bg-alt);
 }
 
 .nav-link.active {
-  color: var(--accent-saffron);
-  background-color: var(--accent-saffron-light);
+  color: var(--brand-blue);
+  background-color: var(--brand-blue-soft);
+  box-shadow: inset 0 -2px 0 var(--brand-blue);
 }
 
 .nav-actions {
@@ -264,8 +316,8 @@ img, svg {
 }
 
 .nav-search-btn:hover {
-  border-color: var(--accent-saffron);
-  color: var(--accent-saffron);
+  border-color: var(--brand-blue);
+  color: var(--brand-blue);
   background-color: #ffffff;
 }
 
@@ -286,7 +338,7 @@ img, svg {
 .mobile-toggle .bar {
   width: 100%;
   height: 2.5px;
-  background-color: var(--primary);
+  background-color: var(--brand-blue);
   border-radius: 2px;
   transition: var(--transition);
 }
@@ -318,7 +370,8 @@ img, svg {
 }
 
 .mobile-nav-list li a.active {
-  color: var(--accent-saffron);
+  color: var(--brand-blue);
+  background-color: var(--brand-blue-soft);
 }
 
 .mobile-drawer-footer {
@@ -413,11 +466,11 @@ img, svg {
 }
 
 .breadcrumb-item a:hover {
-  color: var(--accent-saffron);
+  color: var(--brand-blue);
 }
 
 .breadcrumb-item.active {
-  color: var(--primary);
+  color: var(--primary-headings);
   font-weight: 600;
 }
 
@@ -509,7 +562,7 @@ img, svg {
    Hero Section
    ========================================================================== */
 .hero-section {
-  background: linear-gradient(135deg, #0e2a47 0%, #173f6b 100%);
+  background: linear-gradient(135deg, #090e26 0%, #131b54 50%, #2424f5 100%);
   color: #ffffff;
   padding: 3.5rem 0 3rem;
   position: relative;
@@ -544,7 +597,7 @@ img, svg {
 }
 
 .hero-title span {
-  color: #ff9933;
+  color: var(--brand-yellow);
 }
 
 .hero-subtitle {
@@ -571,7 +624,8 @@ img, svg {
 }
 
 .search-form-hero:focus-within {
-  border-color: #ff9933;
+  border-color: var(--brand-blue);
+  box-shadow: 0 0 0 3px rgba(36, 36, 245, 0.25);
 }
 
 .search-icon-hero {
@@ -592,7 +646,7 @@ img, svg {
 }
 
 .search-submit-hero {
-  background-color: var(--accent-saffron);
+  background-color: var(--brand-blue);
   color: #ffffff;
   border: none;
   outline: none;
@@ -605,7 +659,7 @@ img, svg {
 }
 
 .search-submit-hero:hover {
-  background-color: #cc4400;
+  background-color: var(--brand-blue-hover);
 }
 
 /* Quick Hero Tags */
@@ -633,8 +687,9 @@ img, svg {
 }
 
 .quick-tag:hover {
-  background: #ffffff;
-  color: var(--primary);
+  background: var(--brand-yellow);
+  color: #0f172a;
+  border-color: var(--brand-yellow);
 }
 
 /* ==========================================================================
@@ -660,7 +715,7 @@ img, svg {
 .section-title {
   font-size: 1.75rem;
   font-weight: 800;
-  color: var(--primary);
+  color: var(--primary-headings);
   line-height: 1.2;
 }
 
@@ -673,13 +728,14 @@ img, svg {
 .section-action {
   font-size: 0.875rem;
   font-weight: 600;
-  color: var(--accent-saffron);
+  color: var(--brand-blue);
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
 }
 
 .section-action:hover {
+  color: var(--brand-blue-hover);
   text-decoration: underline;
 }
 
@@ -720,11 +776,11 @@ img, svg {
 }
 
 .class-card.class-10::before {
-  background-color: var(--accent-blue);
+  background-color: var(--brand-blue);
 }
 
 .class-card.class-12::before {
-  background-color: var(--accent-saffron);
+  background-color: var(--brand-yellow-gold);
 }
 
 .class-card-header {
@@ -744,13 +800,15 @@ img, svg {
 }
 
 .class-10 .class-badge {
-  background-color: var(--accent-blue-light);
-  color: var(--accent-blue);
+  background-color: var(--brand-blue-soft);
+  color: var(--brand-blue);
+  border: 1px solid var(--brand-blue-border);
 }
 
 .class-12 .class-badge {
-  background-color: var(--accent-saffron-light);
-  color: var(--accent-saffron);
+  background-color: var(--brand-yellow-soft);
+  color: var(--brand-yellow-dark);
+  border: 1px solid var(--brand-yellow-border);
 }
 
 .class-year {
@@ -762,7 +820,7 @@ img, svg {
 .class-card-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--primary-headings);
   margin-bottom: 0.5rem;
 }
 
@@ -791,11 +849,12 @@ img, svg {
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--text-dark);
+  transition: var(--transition);
 }
 
 .class-quick-links li a:hover {
-  background-color: #e2e8f0;
-  color: var(--primary);
+  background-color: var(--brand-blue-soft);
+  color: var(--brand-blue);
 }
 
 .class-card-footer {
@@ -807,7 +866,7 @@ img, svg {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  background-color: var(--primary);
+  background-color: var(--brand-blue);
   color: #ffffff;
   padding: 0.65rem 1.25rem;
   border-radius: var(--radius-sm);
@@ -820,7 +879,7 @@ img, svg {
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-light);
+  background-color: var(--brand-blue-hover);
   color: #ffffff;
 }
 
@@ -830,7 +889,7 @@ img, svg {
   justify-content: center;
   gap: 0.5rem;
   background-color: #ffffff;
-  color: var(--primary);
+  color: var(--brand-blue-dark);
   border: 1px solid var(--border-color);
   padding: 0.65rem 1.25rem;
   border-radius: var(--radius-sm);
@@ -841,8 +900,9 @@ img, svg {
 }
 
 .btn-secondary:hover {
-  border-color: var(--primary);
-  background-color: var(--bg-alt);
+  border-color: var(--brand-blue);
+  color: var(--brand-blue);
+  background-color: var(--brand-blue-soft);
 }
 
 /* ==========================================================================
@@ -867,7 +927,7 @@ img, svg {
 }
 
 .subject-card:hover {
-  border-color: var(--accent-saffron);
+  border-color: var(--brand-blue);
   box-shadow: var(--shadow-md);
   transform: translateY(-2px);
 }
@@ -901,7 +961,7 @@ img, svg {
 .subject-card-title {
   font-size: 1.125rem;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--primary-headings);
   margin-bottom: 0.5rem;
 }
 
@@ -949,13 +1009,13 @@ img, svg {
 }
 
 .btn-official-pdf {
-  background-color: var(--accent-saffron);
+  background-color: var(--brand-blue);
   color: #ffffff;
   flex: 1;
 }
 
 .btn-official-pdf:hover {
-  background-color: #cc4400;
+  background-color: var(--brand-blue-hover);
   color: #ffffff;
 }
 
@@ -995,7 +1055,7 @@ img, svg {
 }
 
 .circular-card:hover {
-  border-color: #94a3b8;
+  border-color: var(--brand-blue-border);
   box-shadow: var(--shadow-sm);
 }
 
@@ -1011,13 +1071,13 @@ img, svg {
 }
 
 .category-Academic .circular-icon-box {
-  background-color: var(--accent-blue-light);
-  color: var(--accent-blue);
+  background-color: var(--brand-blue-soft);
+  color: var(--brand-blue);
 }
 
 .category-Examination .circular-icon-box {
-  background-color: var(--accent-saffron-light);
-  color: var(--accent-saffron);
+  background-color: var(--brand-yellow-soft);
+  color: var(--brand-yellow-dark);
 }
 
 .category-Administrative .circular-icon-box {
@@ -1053,9 +1113,9 @@ img, svg {
 }
 
 .circ-tag.official-dir {
-  background-color: var(--accent-blue-light);
-  color: var(--accent-blue);
-  border: 1px solid #bae6fd;
+  background-color: var(--brand-blue-soft);
+  color: var(--brand-blue);
+  border: 1px solid var(--brand-blue-border);
 }
 
 .circ-tag.unverified {
@@ -1096,7 +1156,7 @@ img, svg {
 .circular-title {
   font-size: 1.0625rem;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--primary-headings);
   margin-bottom: 0.35rem;
   line-height: 1.35;
 }
@@ -1152,7 +1212,7 @@ img, svg {
 .data-table th {
   background-color: var(--bg-alt);
   font-weight: 700;
-  color: var(--primary);
+  color: var(--primary-headings);
   font-size: 0.8125rem;
   text-transform: uppercase;
   letter-spacing: 0.03em;
@@ -1220,7 +1280,8 @@ img, svg {
 }
 
 .filter-select:focus, .filter-input:focus {
-  border-color: var(--accent-saffron);
+  border-color: var(--brand-blue);
+  box-shadow: var(--focus-ring);
 }
 
 .results-header {
@@ -1253,7 +1314,7 @@ img, svg {
 }
 
 .result-card:hover {
-  border-color: var(--accent-saffron);
+  border-color: var(--brand-blue-border);
   box-shadow: var(--shadow-sm);
 }
 
@@ -1279,7 +1340,7 @@ img, svg {
 .result-title {
   font-size: 1.125rem;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--primary-headings);
   margin-bottom: 0.35rem;
 }
 
@@ -1318,7 +1379,7 @@ img, svg {
 .static-page-title {
   font-size: 2rem;
   font-weight: 800;
-  color: var(--primary);
+  color: var(--primary-headings);
   margin-bottom: 0.5rem;
 }
 
@@ -1330,7 +1391,7 @@ img, svg {
 .static-content h2 {
   font-size: 1.35rem;
   font-weight: 700;
-  color: var(--primary);
+  color: var(--primary-headings);
   margin: 1.75rem 0 0.75rem;
 }
 
@@ -1358,13 +1419,13 @@ img, svg {
 }
 
 .alert-box {
-  background-color: #eff6ff;
-  border-left: 4px solid var(--accent-blue);
+  background-color: var(--brand-blue-soft);
+  border-left: 4px solid var(--brand-blue);
   padding: 1rem 1.25rem;
   border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   margin: 1.5rem 0;
   font-size: 0.9375rem;
-  color: #1e3a8a;
+  color: var(--brand-blue-dark);
 }
 
 .alert-warning {
@@ -1397,8 +1458,8 @@ img, svg {
 }
 
 .form-control:focus {
-  border-color: var(--accent-saffron);
-  box-shadow: 0 0 0 3px rgba(230, 81, 0, 0.1);
+  border-color: var(--brand-blue);
+  box-shadow: var(--focus-ring);
 }
 
 textarea.form-control {
@@ -1410,7 +1471,7 @@ textarea.form-control {
    Footer
    ========================================================================== */
 .site-footer {
-  background-color: var(--primary-dark);
+  background-color: var(--bg-dark-midnight);
   color: #94a3b8;
   padding-top: 3.5rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -1423,11 +1484,57 @@ textarea.form-control {
   margin-bottom: 3rem;
 }
 
+.footer-brand {
+  margin-bottom: 0.75rem;
+}
+
+.footer-brand a {
+  display: inline-block;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.footer-brand a:hover,
+.footer-brand a:focus,
+.footer-brand a:active {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  text-decoration: none;
+}
+
 .footer-brand .brand-name {
   color: #ffffff;
   font-size: 1.5rem;
   margin-bottom: 0.75rem;
   display: inline-block;
+}
+
+.footer-brand img,
+.footer-logo {
+  display: block;
+  height: 38px;
+  width: auto;
+  max-width: 180px;
+  margin-bottom: 0.75rem;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  filter: none;
+  -webkit-filter: none;
+}
+
+.footer-brand a:hover .footer-logo,
+.footer-brand a:focus .footer-logo,
+.footer-logo:hover,
+.footer-logo:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+  filter: none;
+  -webkit-filter: none;
 }
 
 .footer-desc {
@@ -1471,10 +1578,11 @@ textarea.form-control {
 .footer-links li a {
   color: #cbd5e1;
   font-size: 0.875rem;
+  transition: var(--transition);
 }
 
 .footer-links li a:hover {
-  color: #ff9933;
+  color: var(--brand-yellow);
 }
 
 .footer-disclaimer-box {
@@ -1489,7 +1597,7 @@ textarea.form-control {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #fbbf24;
+  color: var(--brand-yellow);
   font-size: 0.875rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
@@ -1502,7 +1610,7 @@ textarea.form-control {
 }
 
 .footer-bottom {
-  background: #040d17;
+  background: var(--bg-dark-deep);
   padding: 1.25rem 0;
   font-size: 0.8125rem;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -1519,10 +1627,11 @@ textarea.form-control {
 .footer-bottom-links a {
   color: #94a3b8;
   margin: 0 0.35rem;
+  transition: var(--transition);
 }
 
 .footer-bottom-links a:hover {
-  color: #ffffff;
+  color: var(--brand-yellow);
 }
 
 /* ==========================================================================

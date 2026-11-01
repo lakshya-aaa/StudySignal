@@ -1,5 +1,5 @@
 """
-ExamPulse India - Automated Test Suite
+StudySignal - Automated Test Suite
 Phase 1 Content Integrity Audit, Broken Link Regression & Verification Tests.
 """
 
@@ -10,7 +10,7 @@ import xml.etree.ElementTree as ET
 from app import app
 from config import Config
 
-class ExamPulseIndiaTestCase(unittest.TestCase):
+class StudySignalTestCase(unittest.TestCase):
     def setUp(self):
         app.config["TESTING"] = True
         self.client = app.test_client()
@@ -20,7 +20,7 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
         res = self.client.get("/")
         self.assertEqual(res.status_code, 200)
         html = res.data.decode("utf-8")
-        self.assertIn("ExamPulse", html)
+        self.assertIn("StudySignal", html)
         self.assertIn("CBSE Class 10", html)
         self.assertIn("CBSE Class 12", html)
         self.assertIn("Official Advisory", html)
@@ -171,7 +171,7 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
             res = self.client.get(route)
             self.assertEqual(res.status_code, 200, f"Route {route} failed")
             html = res.data.decode("utf-8")
-            self.assertIn("ExamPulse India", html)
+            self.assertIn("StudySignal", html)
 
     def test_contact_submission(self):
         """Test contact form behavior: limitation advisory on GET and truthful submission notice on POST"""
@@ -559,6 +559,8 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
             os.path.join("static", "css", "style.css"),
             os.path.join("static", "js", "main.js"),
             os.path.join("static", "images", "favicon.svg"),
+            os.path.join("static", "images", "studysignal-logo.svg"),
+            os.path.join("static", "images", "studysignal-icon.svg"),
             os.path.join("static", "images", "og-preview.png"),
             os.path.join("static", "images", "og-preview-master.png"),
             os.path.join("static", "googlec86ebbde15f4cbc3.html"),
@@ -616,8 +618,8 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
         # Test homepage metadata
         res_home = self.client.get("/")
         html_home = res_home.data.decode("utf-8")
-        self.assertIn('property="og:title" content="ExamPulse India - CBSE Class 10 & 12 Syllabus, Date Sheets & Official Notices"', html_home)
-        self.assertIn('name="twitter:title" content="ExamPulse India - CBSE Class 10 & 12 Syllabus, Date Sheets & Official Notices"', html_home)
+        self.assertIn('property="og:title" content="StudySignal - CBSE Class 10 & 12 Syllabus, Date Sheets & Official Notices"', html_home)
+        self.assertIn('name="twitter:title" content="StudySignal - CBSE Class 10 & 12 Syllabus, Date Sheets & Official Notices"', html_home)
         self.assertIn('2026-27', html_home)
         # Check keywords tag specifically
         kw_part = html_home.split('name="keywords"')[1].split('>')[0]
@@ -627,11 +629,11 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
         # Test subpage metadata inheritance (Class 10 Hub)
         res_c10 = self.client.get("/cbse/class-10")
         html_c10 = res_c10.data.decode("utf-8")
-        self.assertIn('property="og:title" content="CBSE Class 10 (Secondary) - ExamPulse India"', html_c10)
-        self.assertIn('name="twitter:title" content="CBSE Class 10 (Secondary) - ExamPulse India"', html_c10)
+        self.assertIn('property="og:title" content="CBSE Class 10 (Secondary) - StudySignal"', html_c10)
+        self.assertIn('name="twitter:title" content="CBSE Class 10 (Secondary) - StudySignal"', html_c10)
         self.assertIn('Complete guide for CBSE Class 10 (Secondary)', html_c10)
         # Verify it does NOT fall back to generic site tagline
-        self.assertNotIn('property="og:title" content="ExamPulse India - Independent CBSE Education Information Portal"', html_c10)
+        self.assertNotIn('property="og:title" content="StudySignal - Independent CBSE Education Information Portal"', html_c10)
 
     def test_social_image_metadata_and_asset(self):
         """Verify Open Graph & Twitter social sharing image tags, accessibility, dimensions and master preservation"""
@@ -723,7 +725,7 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
         self.assertIn("Board Assessment Pattern", html)
 
         # Editorial advice markers
-        self.assertIn("💡 ExamPulse Independent Editorial Study Advice", html)
+        self.assertIn("💡 StudySignal Independent Editorial Study Advice", html)
         self.assertIn("Non-Statutory Study Strategy", html)
         self.assertIn("do not constitute official CBSE mandates", html)
 
@@ -878,7 +880,7 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
         self.assertIn("8 Marks", html_acc)
         self.assertNotIn("Written Test (One Hour)", html_acc)
 
-        # 8. Class 12 Computer Science (083): Explicitly labeled as ExamPulse editorial estimate
+        # 8. Class 12 Computer Science (083): Explicitly labeled as StudySignal editorial estimate
         cs12 = next(s for s in syllabus if s.get("id") == "cbse-12-computer-science-2027")
         self.assertTrue(cs12["question_paper_design"].get("is_editorial_estimate"))
         self.assertIn("CBSE does not publish an official cognitive percentage table", cs12["question_paper_design"].get("editorial_notice", ""))
@@ -886,7 +888,7 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
         res_cs = self.client.get("/cbse/syllabus/cbse-12-computer-science-2027")
         html_cs = res_cs.data.decode("utf-8")
         self.assertIn("Estimated Question Paper Typology", html_cs)
-        self.assertIn("ExamPulse Editorial Estimate (Non-Official)", html_cs)
+        self.assertIn("StudySignal Editorial Estimate (Non-Official)", html_cs)
         self.assertIn("CBSE does not publish an official cognitive percentage table for Computer Science", html_cs)
 
     def test_privacy_policy_transparency_and_disclosures(self):
@@ -1239,6 +1241,63 @@ class ExamPulseIndiaTestCase(unittest.TestCase):
         terms_url = "https://exampulse-india.onrender.com/terms"
         self.assertIn(terms_url, sitemap_map)
         self.assertIsNone(sitemap_map[terms_url][2], "Terms page should omit lastmod if not explicitly tracked")
+
+    def test_studysignal_brand_assets_and_clean_references(self):
+        """Verify StudySignal SVG assets are served correctly and templates reference them"""
+        # 1. Test logo SVG asset
+        res_logo = self.client.get("/static/images/studysignal-logo.svg")
+        self.assertEqual(res_logo.status_code, 200)
+        self.assertIn("image/svg+xml", res_logo.content_type)
+        self.assertIn("StudySignal", res_logo.data.decode("utf-8"))
+        res_logo.close()
+
+        # 2. Test icon SVG asset
+        res_icon = self.client.get("/static/images/studysignal-icon.svg")
+        self.assertEqual(res_icon.status_code, 200)
+        self.assertIn("image/svg+xml", res_icon.content_type)
+        self.assertIn("StudySignal icon", res_icon.data.decode("utf-8"))
+        res_icon.close()
+
+        # 3. Test base.html rendered output links to the assets
+        res_home = self.client.get("/")
+        html = res_home.data.decode("utf-8")
+        self.assertIn("/static/images/studysignal-logo.svg", html)
+        self.assertIn("/static/images/studysignal-icon.svg", html)
+        self.assertIn('alt="StudySignal"', html)
+
+        # 4. Ensure old brand text is not rendered on core pages
+        for path in ["/", "/about", "/contact", "/disclaimer", "/privacy-policy", "/terms"]:
+            page = self.client.get(path)
+            self.assertNotIn("ExamPulse India", page.data.decode("utf-8"), f"Old brand 'ExamPulse India' leaked in {path}")
+
+    def test_studysignal_css_brand_palette_and_footer_logo(self):
+        """Verify StudySignal CSS variables, color contrast, and footer logo styling"""
+        res_css = self.client.get("/static/css/style.css")
+        self.assertEqual(res_css.status_code, 200)
+        css_text = res_css.data.decode("utf-8")
+        res_css.close()
+
+        # Primary brand colors from logo
+        self.assertIn("--brand-blue: #2424F5", css_text)
+        self.assertIn("--brand-blue-light: #3A4BFF", css_text)
+        self.assertIn("--brand-yellow: #FFD166", css_text)
+        self.assertIn("--brand-yellow-gold: #F5A300", css_text)
+        self.assertIn("--bg-dark-midnight: #0A0F24", css_text)
+        self.assertIn("--bg-dark-deep: #050814", css_text)
+
+        # Ensure old brand saffron/orange does not linger
+        self.assertNotIn("#ff9933", css_text)
+        self.assertNotIn("#e65100", css_text)
+
+        # Official CBSE warning/disclaimer preserved
+        self.assertIn(".official-disclaimer-banner", css_text)
+        self.assertIn(".demo-table-alert", css_text)
+
+        # Footer logo outline and glow protection
+        self.assertIn(".footer-logo", css_text)
+        self.assertIn("outline: none;", css_text)
+        self.assertIn("box-shadow: none;", css_text)
+        self.assertIn("filter: none;", css_text)
 
 if __name__ == "__main__":
     unittest.main()

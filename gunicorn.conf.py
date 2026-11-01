@@ -1,5 +1,5 @@
 """
-ExamPulse India - Gunicorn Production Configuration
+StudySignal - Gunicorn Production Configuration
 Configures production WSGI server for Render deployment.
 """
 
