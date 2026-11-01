@@ -58,7 +58,7 @@ class StudySignalTestCase(unittest.TestCase):
         res = self.client.get("/cbse/syllabus")
         self.assertEqual(res.status_code, 200)
         html = res.data.decode("utf-8")
-        self.assertIn("CBSE Subject-wise Syllabus Explorer", html)
+        self.assertIn("CBSE Subject-wise Syllabus Directory", html)
 
         # Filter by Class 10
         res10 = self.client.get("/cbse/syllabus?class=10")
@@ -78,18 +78,12 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn("Biology", res_q.data.decode("utf-8"))
 
     def test_syllabus_detail(self):
-        """Test single subject syllabus blueprint view"""
-        # Historical 2024-25 blueprint
+        """Test single subject syllabus complete content view and 404 for removed archive pages"""
+        # Historical 2024-25 archive-only page must return 404 (removed from system)
         res_hist = self.client.get("/cbse/syllabus/cbse-10-maths-2025")
-        self.assertEqual(res_hist.status_code, 200)
-        html_hist = res_hist.data.decode("utf-8")
-        self.assertIn("Mathematics", html_hist)
-        self.assertIn("041", html_hist)
-        self.assertIn("80 Marks", html_hist)
-        self.assertIn("Historical Archive Record", html_hist)
-        self.assertIn("cbseacademic.nic.in/web_material/CurriculumMain25/Sec/Maths_Sec_2024-25.pdf", html_hist)
+        self.assertEqual(res_hist.status_code, 404)
 
-        # Current 2026-27 blueprint
+        # Current 2026-27 syllabus
         res_curr = self.client.get("/cbse/syllabus/cbse-10-maths-2027")
         self.assertEqual(res_curr.status_code, 200)
         html_curr = res_curr.data.decode("utf-8")
@@ -290,14 +284,14 @@ class StudySignalTestCase(unittest.TestCase):
             self.assertNotIn(broken_pattern, res.data.decode("utf-8"), f"Broken URL rendered in {endpoint}")
 
     def test_fixed_english_syllabus_link(self):
-        """Verify Class 10 English Language & Literature syllabus link is corrected and valid"""
+        """Verify Class 10 English Language & Literature syllabus link is verified and points to current 2026-27 PDF"""
         filepath = os.path.join(app.root_path, "data", "syllabus.json")
         with open(filepath, "r", encoding="utf-8") as f:
             syllabus = json.load(f)
-        eng = next((s for s in syllabus if s.get("id") == "cbse-10-english-2025"), None)
+        eng = next((s for s in syllabus if s.get("id") == "cbse-10-english-2027"), None)
         self.assertIsNotNone(eng)
-        self.assertEqual(eng.get("official_url"), "https://cbseacademic.nic.in/web_material/CurriculumMain25/Sec/English_LL_2024-25.pdf")
-        self.assertNotIn("English_LL_Sec_2024-25.pdf", eng.get("official_url"))
+        self.assertEqual(eng.get("official_url"), "https://cbseacademic.nic.in/web_material/CurriculumMain27/SecPart1/English_LL_SecP1_2026-27.pdf")
+        self.assertNotIn("CurriculumMain25", eng.get("official_url"))
 
     def test_demo_records_badges_and_labels(self):
         """Verify demo records are hidden by default in production, and display unmistakable DEMO label when enabled"""
@@ -346,21 +340,16 @@ class StudySignalTestCase(unittest.TestCase):
             Config.SHOW_DEMO_DATA = orig_show_demo
 
     def test_academic_year_preservation(self):
-        """Ensure historical 2024-25 syllabus records are preserved with historical labels and not claimed as current"""
+        """Ensure historical 2024-25 syllabus records are removed and only current 2026-27 verified records are preserved"""
         filepath = os.path.join(app.root_path, "data", "syllabus.json")
         with open(filepath, "r", encoding="utf-8") as f:
             syllabus = json.load(f)
         
-        historical = [s for s in syllabus if s.get("session_type") == "historical"]
-        current = [s for s in syllabus if s.get("session_type") == "current"]
+        historical = [s for s in syllabus if s.get("session_type") == "historical" or s.get("academic_year") == "2024-25"]
+        current = [s for s in syllabus if s.get("session_type") == "current" or s.get("academic_year") == "2026-27"]
 
-        self.assertGreaterEqual(len(historical), 17)
-        self.assertGreaterEqual(len(current), 17)
-
-        for s in historical:
-            self.assertEqual(s.get("academic_year"), "2024-25")
-            self.assertEqual(s.get("session_type"), "historical")
-            self.assertIn("Historical Archive", s.get("academic_year_label"))
+        self.assertEqual(len(historical), 0)
+        self.assertGreaterEqual(len(current), 18)
 
         for s in current:
             self.assertEqual(s.get("academic_year"), "2026-27")
@@ -1225,11 +1214,9 @@ class StudySignalTestCase(unittest.TestCase):
         # cbse-10-ai-2027 must NOT be in sitemap
         self.assertFalse(any("cbse-10-ai-2027" in loc for loc in sitemap_map))
 
-        # Check historical archive records have lower priority 0.3 and yearly changefreq
+        # Check removed historical archive records are NOT in sitemap
         hist_maths_url = "https://exampulse-india.onrender.com/cbse/syllabus/cbse-10-maths-2025"
-        self.assertIn(hist_maths_url, sitemap_map)
-        self.assertEqual(sitemap_map[hist_maths_url][0], "0.3")
-        self.assertEqual(sitemap_map[hist_maths_url][1], "yearly")
+        self.assertNotIn(hist_maths_url, sitemap_map)
 
         # Check current verified record has priority 0.7 and monthly changefreq
         curr_maths_url = "https://exampulse-india.onrender.com/cbse/syllabus/cbse-10-maths-2027"
@@ -1593,7 +1580,7 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn("Physics", html_q)
 
     def test_icse_syllabus_detail_page(self):
-        """Verify ICSE & ISC individual subject syllabus blueprints and 404 behavior"""
+        """Verify ICSE & ISC individual subject syllabus content-first view and 404 behavior"""
         # Valid ICSE subject
         res = self.client.get("/icse/syllabus/icse-10-mathematics-2027")
         self.assertEqual(res.status_code, 200)
@@ -1787,17 +1774,17 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn('class="syllabus-detail-card"', html_detail)
         self.assertIn('class="syllabus-detail-title"', html_detail)
 
-        # Download card responsive wrappers
-        self.assertIn('class="syllabus-download-card"', html_detail)
-        self.assertIn('class="syllabus-download-inner"', html_detail)
-        self.assertIn('class="syllabus-download-info"', html_detail)
-        self.assertIn('class="syllabus-download-url"', html_detail)
+        # Content-first syllabus reading containers and secondary PDF download utility
+        self.assertIn('class="syllabus-units-container"', html_detail)
+        self.assertIn('class="syllabus-unit-block"', html_detail)
+        self.assertIn('class="syllabus-chapter-list"', html_detail)
+        self.assertIn('class="syllabus-secondary-pdf-bar"', html_detail)
 
         # Accessible table wrappers with keyboard focus (tabindex=0), role=region, and aria-labels
         self.assertIn('class="table-scroll-hint"', html_detail)
         self.assertIn('role="region"', html_detail)
         self.assertIn('tabindex="0"', html_detail)
-        self.assertIn('aria-label="Official Examination Blueprint Table"', html_detail)
+        self.assertIn('aria-label="Official Examination Marks Structure Table"', html_detail)
         self.assertIn('aria-label="Official Unit-Wise Marks Distribution Table"', html_detail)
         self.assertIn('aria-label="Question Paper Design & Assessment Typology Table"', html_detail)
         self.assertIn('aria-label="Practical Assessment Framework Table"', html_detail)
@@ -1813,42 +1800,22 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn('class="syllabus-count-bar"', html_cat)
 
     def test_syllabus_current_vs_archive_labeling_and_demarcation(self):
-        """Verify strict demarcation between current (2026-27) and historical archive (2024-25) sessions"""
-        # Catalog all sessions view: must have separate headers for current and historical
+        """Verify historical 2024-25 archive section and cards are removed, showing only current verified content"""
+        # Catalog view: only current session content, zero historical archive cards or sections
         res_all = self.client.get("/cbse/syllabus")
         self.assertEqual(res_all.status_code, 200)
         html_all = res_all.data.decode("utf-8")
 
-        self.assertIn("Current Academic Session (2026–27)", html_all)
-        self.assertIn("Historical Curriculum Archives (Session 2024–25)", html_all)
-        self.assertIn("subject-card-archive", html_all)
-        self.assertIn("📁 Historical Archive (2024-25)", html_all)
-        self.assertIn("Archive PDF ↗", html_all)
+        self.assertIn("Academic Session 2026-27 (Current)", html_all)
+        self.assertNotIn("Historical Curriculum Archives", html_all)
+        self.assertNotIn("subject-card-archive", html_all)
+        self.assertNotIn("📁 Historical Archive", html_all)
+        self.assertNotIn("Archive PDF ↗", html_all)
+        self.assertNotIn("2024-25 (Historical Archive)", html_all)
 
-        # Historical session filter view: must only show historical records and archive advisory
-        res_hist_cat = self.client.get("/cbse/syllabus?year=2024-25")
-        self.assertEqual(res_hist_cat.status_code, 200)
-        html_hist_cat = res_hist_cat.data.decode("utf-8")
-        self.assertIn("Historical Archive View", html_hist_cat)
-        self.assertIn("📁 Historical Archive (2024-25)", html_hist_cat)
-        self.assertNotIn("✓ Current Official", html_hist_cat)
-        self.assertNotIn("✓ Verified Official", html_hist_cat)
-
-        # Current session filter view: must only show current records and active advisory
-        res_curr_cat = self.client.get("/cbse/syllabus?year=2026-27")
-        self.assertEqual(res_curr_cat.status_code, 200)
-        html_curr_cat = res_curr_cat.data.decode("utf-8")
-        self.assertIn("Current Academic Session (2026–27)", html_curr_cat)
-        self.assertIn("✓ Current Official (2026-27)", html_curr_cat)
-        self.assertNotIn("Historical Archive (2024-25)", html_curr_cat)
-
-        # Historical detail page: must NEVER claim to be verified current CBSE document
+        # Historical detail page must return 404 (archive-only pages removed)
         res_hist_detail = self.client.get("/cbse/syllabus/cbse-10-maths-2025")
-        self.assertEqual(res_hist_detail.status_code, 200)
-        html_hist_detail = res_hist_detail.data.decode("utf-8")
-        self.assertIn("Historical Archive Document (2024-25)", html_hist_detail)
-        self.assertIn("Historical Archive Record:", html_hist_detail)
-        self.assertNotIn("✓ Verified Official CBSE Document", html_hist_detail)
+        self.assertEqual(res_hist_detail.status_code, 404)
 
         # Current detail page: must display verified official status
         res_curr_detail = self.client.get("/cbse/syllabus/cbse-10-maths-2027")
@@ -1882,6 +1849,94 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn("min-width: 0;", css)
         self.assertIn(".syllabus-filter-form {", css)
         self.assertIn(".subject-card-archive {", css)
+
+
+    def test_complete_blueprint_removal_and_content_first_reading_experience(self):
+        """Verify blueprint buttons and links are completely removed across CBSE and ICSE,
+        and content-first syllabus reading with secondary PDF links is enforced.
+        """
+        # 1. CBSE Syllabus Catalog: cards must have "Complete Syllabus ->" and "Official PDF ↗", no "Blueprint"
+        res_cbse_cat = self.client.get("/cbse/syllabus")
+        self.assertEqual(res_cbse_cat.status_code, 200)
+        html_cbse_cat = res_cbse_cat.data.decode("utf-8")
+        self.assertIn("Complete Syllabus &rarr;", html_cbse_cat)
+        self.assertIn("Official PDF ↗", html_cbse_cat)
+        self.assertNotIn(">Blueprint<", html_cbse_cat)
+        self.assertNotIn("Blueprint &rarr;", html_cbse_cat)
+        self.assertNotIn("Blueprint ↗", html_cbse_cat)
+
+        # 2. CBSE Class Hubs: cards must have "Complete Syllabus ->"
+        res_hub10 = self.client.get("/cbse/class-10")
+        self.assertEqual(res_hub10.status_code, 200)
+        html_hub10 = res_hub10.data.decode("utf-8")
+        self.assertIn("Complete Syllabus &rarr;", html_hub10)
+        self.assertNotIn(">Blueprint<", html_hub10)
+        self.assertNotIn("Blueprint &rarr;", html_hub10)
+
+        # 3. ICSE Syllabus Catalog: cards must have "Complete Syllabus ->" and "Official PDF ↗"
+        res_icse_cat = self.client.get("/icse/syllabus")
+        self.assertEqual(res_icse_cat.status_code, 200)
+        html_icse_cat = res_icse_cat.data.decode("utf-8")
+        self.assertIn("Complete Syllabus &rarr;", html_icse_cat)
+        self.assertIn("Official PDF ↗", html_icse_cat)
+        self.assertNotIn(">Blueprint<", html_icse_cat)
+        self.assertNotIn("Blueprint &rarr;", html_icse_cat)
+
+        # 4. CBSE Subject Detail: Content-first unit reading, no blueprint buttons, secondary PDF utility
+        res_cbse_detail = self.client.get("/cbse/syllabus/cbse-10-maths-2027")
+        self.assertEqual(res_cbse_detail.status_code, 200)
+        html_cbse_detail = res_cbse_detail.data.decode("utf-8")
+        self.assertNotIn(">Blueprint<", html_cbse_detail)
+        self.assertNotIn("Blueprint &rarr;", html_cbse_detail)
+        self.assertIn("syllabus-units-container", html_cbse_detail)
+        self.assertIn("syllabus-unit-block", html_cbse_detail)
+        self.assertIn("syllabus-chapter-list", html_cbse_detail)
+        self.assertIn("Number Systems", html_cbse_detail)
+        self.assertIn("Algebra", html_cbse_detail)
+        self.assertIn("Coordinate Geometry", html_cbse_detail)
+        self.assertIn("syllabus-secondary-pdf-bar", html_cbse_detail)
+        self.assertIn("Download official PDF", html_cbse_detail)
+
+        # 5. ICSE Subject Detail: Content-first unit reading, no blueprint buttons, secondary PDF utility
+        res_icse_detail = self.client.get("/icse/syllabus/icse-10-mathematics-2027")
+        self.assertEqual(res_icse_detail.status_code, 200)
+        html_icse_detail = res_icse_detail.data.decode("utf-8")
+        self.assertNotIn(">Blueprint<", html_icse_detail)
+        self.assertNotIn("Blueprint &rarr;", html_icse_detail)
+        self.assertIn("syllabus-units-container", html_icse_detail)
+        self.assertIn("syllabus-unit-block", html_icse_detail)
+        self.assertIn("syllabus-secondary-pdf-bar", html_icse_detail)
+        self.assertIn("Download official PDF", html_icse_detail)
+
+        # 6. ISC Subject Detail (Physics)
+        res_isc_detail = self.client.get("/icse/syllabus/isc-12-physics-2027")
+        self.assertEqual(res_isc_detail.status_code, 200)
+        html_isc_detail = res_isc_detail.data.decode("utf-8")
+        self.assertIn("syllabus-units-container", html_isc_detail)
+        self.assertIn("syllabus-unit-block", html_isc_detail)
+        self.assertIn("Electrostatics &amp; Current Electricity", html_isc_detail)
+        self.assertIn("syllabus-secondary-pdf-bar", html_isc_detail)
+
+        # 7. Missing detailed unit content notice for subjects pending full digitization
+        res_unverified = self.client.get("/cbse/syllabus/cbse-10-ai-2027")
+        self.assertEqual(res_unverified.status_code, 200)
+        html_unverified = res_unverified.data.decode("utf-8")
+        self.assertIn("Curriculum Unit Verification Notice:", html_unverified)
+        self.assertIn("pending official verification", html_unverified)
+
+
+    def test_isc_syllabus_directory_route(self):
+        """Verify dedicated ISC Class 12 syllabus directory route (/isc/syllabus)"""
+        res = self.client.get("/isc/syllabus")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+        self.assertIn("ISC Class 12 Subject-wise Syllabus Directory", html)
+        self.assertIn("Physics", html)
+        self.assertIn("Chemistry", html)
+        self.assertIn("Mathematics", html)
+        self.assertIn("Complete Syllabus &rarr;", html)
+        self.assertIn("Official PDF ↗", html)
+        self.assertNotIn("Historical Curriculum Archives", html)
 
 if __name__ == "__main__":
     unittest.main()

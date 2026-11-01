@@ -1,41 +1,50 @@
 {% extends 'base.html' %}
 
-{% block title %}CBSE Subject-wise Syllabus {{ current_academic_year }} - Direct Official PDF Downloads{% endblock %}
+{% block title %}CBSE Subject-wise Syllabus {{ current_academic_year }} - Direct Official PDFs &amp; Complete Curriculum | StudySignal{% endblock %}
 
 {% block meta_description %}
-Explore and download verified subject-wise CBSE Class 10 and Class 12 syllabus PDFs for Session {{ current_academic_year }} directly from cbseacademic.nic.in.
+Explore and read verified subject-wise CBSE Class 10 and Class 12 complete syllabi, course structures, unit weightage, and official PDF documents for Session {{ current_academic_year }} directly from cbseacademic.nic.in.
 {% endblock %}
 
 {% block content %}
-{% set breadcrumbs = [{'title': 'CBSE', 'url': '/'}, {'title': 'Subject-wise Syllabus', 'url': '/cbse/syllabus'}] %}
+{% set breadcrumbs = [
+  {'title': 'Home', 'url': '/'},
+  {'title': 'Boards & Exams', 'url': '/boards'},
+  {'title': 'CBSE Portal', 'url': '/'},
+  {'title': 'Subject-wise Syllabus', 'url': '/cbse/syllabus'}
+] %}
 {% include 'components/breadcrumb.html' %}
 
-<section class="section" style="padding-bottom: 1.5rem;">
+<section class="section" style="padding-bottom: 2rem;">
   <div class="container">
+    <!-- Header -->
     <div class="section-header">
       <div>
-        <h1 class="section-title">CBSE Subject-wise Syllabus Explorer</h1>
+        <div style="display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+          <span class="coverage-tag" style="background: #eff6ff; color: var(--brand-blue); border: 1px solid #bfdbfe; font-weight: 700; padding: 0.2rem 0.65rem; border-radius: 9999px; font-size: 0.8125rem;">
+            Academic Session {{ current_academic_year }} (Current)
+          </span>
+        </div>
+        <h1 class="section-title">CBSE Subject-wise Syllabus Directory</h1>
         <p class="section-subtitle">
-          Direct, verified links to official CBSE Academic Unit PDFs for Session {{ current_academic_year }}.
+          Direct, verified curriculum outlines, examination marks structures, and complete unit-wise syllabi for CBSE Class 10 (Secondary) and Class 12 (Senior Secondary).
         </p>
       </div>
       <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
         <a href="{{ official_urls.cbse_curriculum_current }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
-          Official 2026-27 Curriculum Portal ↗
-        </a>
-        <a href="{{ official_urls.cbse_curriculum_archive }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
-          Curriculum Archives ↗
+          Official CBSE Curriculum Portal ↗
         </a>
       </div>
     </div>
 
-    <!-- Filter Form -->
-    <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 2rem;">
+    <!-- Search & Filter Card -->
+    <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 2rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);">
       <form action="/cbse/syllabus" method="get" class="syllabus-filter-form">
         <div>
-          <label class="form-label">Search Subject or Code</label>
+          <label class="form-label" for="filter-q">Search Subject or Code</label>
           <input 
             type="text" 
+            id="filter-q"
             name="q" 
             class="form-control" 
             placeholder="e.g. Mathematics, 041, Physics" 
@@ -44,17 +53,17 @@ Explore and download verified subject-wise CBSE Class 10 and Class 12 syllabus P
         </div>
 
         <div>
-          <label class="form-label">Select Class</label>
-          <select name="class" class="form-control">
-            <option value="all" {% if selected_class == 'all' %}selected{% endif %}>All Classes (10 & 12)</option>
+          <label class="form-label" for="filter-class">Select Class</label>
+          <select id="filter-class" name="class" class="form-control">
+            <option value="all" {% if selected_class == 'all' %}selected{% endif %}>All Classes (10 &amp; 12)</option>
             <option value="10" {% if selected_class == '10' %}selected{% endif %}>Class 10 (Secondary)</option>
-            <option value="12" {% if selected_class == '12' %}selected{% endif %}>Class 12 (Senior Sec)</option>
+            <option value="12" {% if selected_class == '12' %}selected{% endif %}>Class 12 (Senior Secondary)</option>
           </select>
         </div>
 
         <div>
-          <label class="form-label">Select Stream</label>
-          <select name="stream" class="form-control">
+          <label class="form-label" for="filter-stream">Select Stream / Category</label>
+          <select id="filter-stream" name="stream" class="form-control">
             <option value="all" {% if selected_stream == 'all' %}selected{% endif %}>All Streams</option>
             <option value="Science" {% if selected_stream == 'Science' %}selected{% endif %}>Science</option>
             <option value="Commerce" {% if selected_stream == 'Commerce' %}selected{% endif %}>Commerce</option>
@@ -64,222 +73,83 @@ Explore and download verified subject-wise CBSE Class 10 and Class 12 syllabus P
         </div>
 
         <div>
-          <label class="form-label">Academic Session</label>
-          <select name="year" class="form-control">
-            <option value="all" {% if selected_year == 'all' %}selected{% endif %}>All Sessions</option>
-            <option value="2026-27" {% if selected_year == '2026-27' %}selected{% endif %}>2026-27 (Current Session)</option>
-            <option value="2025-26" {% if selected_year == '2025-26' %}selected{% endif %}>2025-26 (Previous Session)</option>
-            <option value="2024-25" {% if selected_year == '2024-25' %}selected{% endif %}>2024-25 (Historical Archive)</option>
-          </select>
-        </div>
-
-        <div>
-          <button type="submit" class="btn-primary" style="height: 42px;">Filter</button>
+          <button type="submit" class="btn-primary" style="height: 42px; width: 100%;">Filter</button>
         </div>
       </form>
 
-      {% if search_q or selected_class != 'all' or selected_stream != 'all' or selected_year != 'all' %}
-      <div style="margin-top: 0.75rem; font-size: 0.8125rem;">
-        <span style="color: var(--text-muted);">Active filters applied:</span>
-        {% if search_q %}<strong>Query:</strong> "{{ search_q }}" &bull;{% endif %}
-        {% if selected_class != 'all' %}<strong>Class:</strong> {{ selected_class }} &bull;{% endif %}
-        {% if selected_stream != 'all' %}<strong>Stream:</strong> {{ selected_stream }} &bull;{% endif %}
-        {% if selected_year != 'all' %}<strong>Year:</strong> {{ selected_year }} &bull;{% endif %}
-        <a href="/cbse/syllabus" style="color: var(--accent-saffron); font-weight: 600; margin-left: 0.5rem;">Clear All</a>
+      {% if search_q or selected_class != 'all' or selected_stream != 'all' %}
+      <div style="margin-top: 0.85rem; padding-top: 0.75rem; border-top: 1px dashed var(--border-color); font-size: 0.8125rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+        <div>
+          <span style="color: var(--text-muted);">Active filters applied:</span>
+          {% if search_q %}<strong>Query:</strong> "{{ search_q }}" &bull;{% endif %}
+          {% if selected_class != 'all' %}<strong>Class:</strong> {{ selected_class }} &bull;{% endif %}
+          {% if selected_stream != 'all' %}<strong>Stream:</strong> {{ selected_stream }} &bull;{% endif %}
+        </div>
+        <a href="/cbse/syllabus" style="color: var(--brand-blue); font-weight: 700; text-decoration: underline;">Clear All Filters</a>
       </div>
       {% endif %}
     </div>
 
     <!-- Live Counter -->
-    <div class="syllabus-count-bar">
-      <span style="font-weight: 600; font-size: 0.9375rem;">
-        Showing {{ syllabus_items|length }} syllabus files
+    <div class="syllabus-count-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.5rem;">
+      <span style="font-weight: 700; font-size: 0.9375rem; color: var(--text-dark);">
+        Showing {{ syllabus_items|length }} verified CBSE syllabus entries
       </span>
       <span style="font-size: 0.8125rem; color: var(--text-muted);">
-        All files verified on <code>cbseacademic.nic.in</code> (26 Oct 2026)
+        Verified against official CBSE Academic Unit catalog (<code>cbseacademic.nic.in</code>)
       </span>
     </div>
 
     {% if syllabus_items|length == 0 %}
-    <div style="background: #ffffff; border: 1px dashed var(--border-color); border-radius: var(--radius-md); padding: 3rem; text-align: center;">
+    <div style="background: #ffffff; border: 1px dashed var(--border-color); border-radius: var(--radius-md); padding: 3.5rem 1.5rem; text-align: center;">
       <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 0.5rem;">No subjects match your filter</h3>
-      <p style="color: var(--text-muted); margin-bottom: 1rem;">Try clearing the search query or stream filters.</p>
-      <a href="/cbse/syllabus" class="btn-secondary" style="display: inline-block;">Reset All Filters</a>
+      <p style="color: var(--text-muted); margin-bottom: 1.25rem;">Try clearing your search query or choosing "All Classes".</p>
+      <a href="/cbse/syllabus" class="btn-primary" style="display: inline-block;">Reset All Filters</a>
     </div>
     {% else %}
-
-    {% set current_items = syllabus_items | selectattr('session_type', 'equalto', 'current') | list %}
-    {% set historical_items = syllabus_items | selectattr('session_type', 'equalto', 'historical') | list %}
-
-    {% if selected_year == 'all' and current_items|length > 0 and historical_items|length > 0 %}
-      <!-- Current Session Section -->
-      <div style="margin-bottom: 1.25rem;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
-          <h2 style="font-size: 1.35rem; font-weight: 700; color: var(--primary); margin: 0;">
-            Current Academic Session (2026–27)
-          </h2>
-          <span style="font-size: 0.75rem; color: var(--accent-green); font-weight: 700; background: #f0fdf4; border: 1px solid #86efac; padding: 0.2rem 0.6rem; border-radius: 9999px;">
-            ✓ Active Examination Curriculum
-          </span>
-        </div>
-        <p style="font-size: 0.875rem; color: var(--text-muted); margin: 0.25rem 0 0 0;">
-          Official CBSE Academic curriculum documents and examination blueprints verified for Session 2026–27.
-        </p>
-      </div>
-
-      <div class="subject-grid">
-        {% for item in current_items %}
-        <div class="subject-card">
-          <div class="subject-card-meta">
+    <!-- Subject Directory List -->
+    <div class="syllabus-dir-list">
+      {% for item in syllabus_items %}
+      <article class="syllabus-dir-item {% if item.verification_status != 'verified_official' %}is-unverified{% endif %}">
+        <div class="syllabus-dir-main">
+          <div class="syllabus-dir-meta">
             <span class="code-pill">Class {{ item.class }} &bull; Code {{ item.code }}</span>
+            <span class="syllabus-stream-pill">{{ item.stream }}</span>
+            <span class="syllabus-session-pill">Session {{ item.academic_year }}</span>
             {% if item.verification_status == 'verified_official' %}
               <span class="verified-badge">✓ Current Official ({{ item.academic_year }})</span>
             {% else %}
               <span class="circ-tag unverified">Current link unverified</span>
             {% endif %}
           </div>
-          <h3 class="subject-card-title">{{ item.subject }}</h3>
-          <div style="font-size: 0.75rem; color: var(--accent-saffron); font-weight: 600; margin-bottom: 0.35rem;">
-            {{ item.stream }} &bull; {{ item.academic_year_label or item.academic_year }}
-          </div>
-          <p class="subject-card-desc">{{ item.description }}</p>
-
-          <div class="subject-card-details">
-            <span>Theory: <strong>{{ item.exam_structure.theory_marks }} M</strong></span>
-            <span>IA/Pract: <strong>{{ item.exam_structure.internal_assessment_marks }} M</strong></span>
-            <span>Time: <strong>{{ item.exam_structure.duration_hours }} Hrs</strong></span>
-          </div>
-
-          <div class="subject-card-actions">
-            {% if item.verification_status == 'verified_official' and item.official_url %}
-            <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-official-pdf" title="Download official CBSE syllabus PDF">
-              Download PDF ↗
-            </a>
-            {% else %}
-            <a href="{{ official_urls.cbse_curriculum_current }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" title="Visit Official CBSE Curriculum Directory">
-              Directory ↗
-            </a>
-            {% endif %}
-            <a href="/cbse/syllabus/{{ item.id }}" class="btn-sm btn-view-details">
-              Blueprint
-            </a>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-
-      <!-- Historical Archive Section -->
-      <div style="margin-top: 3rem; padding-top: 2rem; border-top: 2px dashed var(--border-color); margin-bottom: 1.25rem;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem;">
-          <h2 style="font-size: 1.35rem; font-weight: 700; color: #475569; margin: 0;">
-            📁 Historical Curriculum Archives (Session 2024–25)
+          <h2 class="syllabus-dir-title">
+            <a href="/cbse/syllabus/{{ item.id }}" class="syllabus-dir-title-link">{{ item.subject }}</a>
           </h2>
-          <span style="font-size: 0.75rem; color: #475569; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 0.2rem 0.6rem; border-radius: 9999px; font-weight: 600;">
-            Reference Archives Only
-          </span>
-        </div>
-        <p style="font-size: 0.875rem; color: var(--text-muted); margin: 0.25rem 0 0 0;">
-          These documents correspond to the previous 2024–25 academic cycle. They are maintained strictly for historical reference. Students preparing for upcoming examinations should refer to the 2026–27 curriculum above.
-        </p>
-      </div>
-
-      <div class="subject-grid">
-        {% for item in historical_items %}
-        <div class="subject-card subject-card-archive">
-          <div class="subject-card-meta">
-            <span class="code-pill">Class {{ item.class }} &bull; Code {{ item.code }}</span>
-            <span class="circ-tag archive" style="background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; font-weight: 600;">📁 Historical Archive ({{ item.academic_year }})</span>
-          </div>
-          <h3 class="subject-card-title">{{ item.subject }}</h3>
-          <div style="font-size: 0.75rem; color: #64748b; font-weight: 600; margin-bottom: 0.35rem;">
-            {{ item.stream }} &bull; {{ item.academic_year_label or item.academic_year }}
-          </div>
-          <p class="subject-card-desc">{{ item.description }}</p>
-
-          <div class="subject-card-details">
-            <span>Theory: <strong>{{ item.exam_structure.theory_marks }} M</strong></span>
-            <span>IA/Pract: <strong>{{ item.exam_structure.internal_assessment_marks }} M</strong></span>
-            <span>Time: <strong>{{ item.exam_structure.duration_hours }} Hrs</strong></span>
-          </div>
-
-          <div class="subject-card-actions">
-            {% if item.official_url %}
-            <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" title="Download official CBSE archive PDF ({{ item.academic_year }})">
-              Archive PDF ↗
-            </a>
-            {% else %}
-            <a href="{{ official_urls.cbse_curriculum_archive }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" title="Visit Official CBSE Curriculum Archive">
-              Archive Directory ↗
-            </a>
-            {% endif %}
-            <a href="/cbse/syllabus/{{ item.id }}" class="btn-sm btn-view-details">
-              Blueprint
-            </a>
+          <p class="syllabus-dir-desc">{{ item.description }}</p>
+          <div class="syllabus-dir-metrics">
+            <span class="syllabus-metric-pill">Theory: <strong>{{ item.exam_structure.theory_marks }} M</strong></span>
+            <span class="syllabus-metric-pill">IA/Pract: <strong>{{ item.exam_structure.internal_assessment_marks }} M</strong></span>
+            <span class="syllabus-metric-pill">Time: <strong>{{ item.exam_structure.duration_hours }} Hrs</strong></span>
           </div>
         </div>
-        {% endfor %}
-      </div>
 
-    {% else %}
-      {% if selected_year == '2024-25' %}
-      <div class="alert-box" style="margin-bottom: 1.5rem; background: #f8fafc; border-left: 4px solid #64748b;">
-        <strong>📁 Historical Archive View:</strong> Displaying syllabus documents for historical Session 2024–25. For current examinations, please view <a href="/cbse/syllabus?year=2026-27" style="color: var(--accent-saffron); font-weight: 700;">Current Session 2026-27</a> or visit the <a href="{{ official_urls.cbse_curriculum_current }}" target="_blank" rel="noopener noreferrer" style="font-weight: 700; text-decoration: underline;">Official CBSE Curriculum Directory ↗</a>.
-      </div>
-      {% elif selected_year == '2026-27' %}
-      <div class="alert-box" style="margin-bottom: 1.5rem; background: #f0fdf4; border-left: 4px solid #22c55e;">
-        <strong>✓ Current Academic Session (2026–27):</strong> Displaying officially verified syllabus documents and blueprints for the current board examination cycle.
-      </div>
-      {% endif %}
-
-      <!-- Single Subject Cards Grid for Filtered View -->
-      <div class="subject-grid">
-        {% for item in syllabus_items %}
-        <div class="subject-card {% if item.session_type == 'historical' %}subject-card-archive{% endif %}">
-          <div class="subject-card-meta">
-            <span class="code-pill">Class {{ item.class }} &bull; Code {{ item.code }}</span>
-            {% if item.session_type == 'historical' %}
-              <span class="circ-tag archive" style="background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; font-weight: 600;">📁 Historical Archive ({{ item.academic_year }})</span>
-            {% elif item.verification_status == 'verified_official' %}
-              <span class="verified-badge">✓ Current Official ({{ item.academic_year }})</span>
-            {% else %}
-              <span class="circ-tag unverified">Current link unverified</span>
-            {% endif %}
-          </div>
-          <h3 class="subject-card-title">{{ item.subject }}</h3>
-          <div style="font-size: 0.75rem; color: {% if item.session_type == 'historical' %}#64748b{% else %}var(--accent-saffron){% endif %}; font-weight: 600; margin-bottom: 0.35rem;">
-            {{ item.stream }} &bull; {{ item.academic_year_label or item.academic_year }}
-          </div>
-          <p class="subject-card-desc">{{ item.description }}</p>
-
-          <div class="subject-card-details">
-            <span>Theory: <strong>{{ item.exam_structure.theory_marks }} M</strong></span>
-            <span>IA/Pract: <strong>{{ item.exam_structure.internal_assessment_marks }} M</strong></span>
-            <span>Time: <strong>{{ item.exam_structure.duration_hours }} Hrs</strong></span>
-          </div>
-
-          <div class="subject-card-actions">
-            {% if item.session_type == 'historical' and item.official_url %}
-            <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" title="Download official CBSE archive PDF ({{ item.academic_year }})">
-              Archive PDF ↗
-            </a>
-            {% elif item.verification_status == 'verified_official' and item.official_url %}
-            <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-official-pdf" title="Download official CBSE syllabus PDF">
-              Download PDF ↗
-            </a>
-            {% else %}
-            <a href="{{ official_urls.cbse_curriculum_current }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" title="Visit Official CBSE Curriculum Directory">
-              Directory ↗
-            </a>
-            {% endif %}
-            <a href="/cbse/syllabus/{{ item.id }}" class="btn-sm btn-view-details">
-              Blueprint
-            </a>
-          </div>
+        <div class="syllabus-dir-actions">
+          <a href="/cbse/syllabus/{{ item.id }}" class="btn-sm btn-primary syllabus-btn-primary">
+            Complete Syllabus &rarr;
+          </a>
+          {% if item.verification_status == 'verified_official' and item.official_url %}
+          <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary syllabus-btn-secondary" title="Download official CBSE syllabus PDF">
+            Official PDF ↗
+          </a>
+          {% else %}
+          <a href="{{ official_urls.cbse_curriculum_current }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary syllabus-btn-secondary" title="Visit Official CBSE Curriculum Directory">
+            Directory ↗
+          </a>
+          {% endif %}
         </div>
-        {% endfor %}
-      </div>
-    {% endif %}
-
+      </article>
+      {% endfor %}
+    </div>
     {% endif %}
   </div>
 </section>
@@ -288,15 +158,16 @@ Explore and download verified subject-wise CBSE Class 10 and Class 12 syllabus P
 {% set slot_id = 'in_content_banner' %}
 {% include 'components/ad_slot.html' %}
 
-<!-- Official Archive Information -->
-<section class="section section-alt">
+<!-- Official Verification Info Box -->
+<section class="section section-alt" style="padding: 2.5rem 0;">
   <div class="container">
-    <div class="alert-box">
-      <strong>Looking for previous years' curricula?</strong>
-      The Central Board of Secondary Education maintains an archive of previous academic sessions. You can inspect older syllabi directly at 
-      <a href="{{ official_urls.cbse_curriculum_archive }}" target="_blank" rel="noopener noreferrer" style="font-weight: 700; text-decoration: underline;">
-        CBSE Academic Curriculum Archive ↗
-      </a>.
+    <div class="alert-box" style="border-left: 4px solid var(--brand-blue); background: #ffffff;">
+      <h3 style="font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 0.35rem;">
+        Official CBSE Curriculum Portal Authentication
+      </h3>
+      <p style="margin: 0; line-height: 1.5; font-size: 0.875rem; color: var(--text-dark);">
+        All CBSE curriculum documents and examination structures listed above are indexed directly against official publications on <code>cbseacademic.nic.in</code> for Session {{ current_academic_year }}. StudySignal provides direct on-page access and unedited official source links to ensure complete student confidence.
+      </p>
     </div>
   </div>
 </section>

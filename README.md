@@ -34,7 +34,7 @@ d:\exampulseindia\
 └── templates/
     ├── base.html               # Master layout with SEO meta, navbar, ad slots, footer, disclaimer
     ├── index.html              # Homepage (hero search, class hubs, featured syllabus, updates)
-    ├── class_hub.html          # Dedicated CBSE Class 10 & 12 hubs (stream tabs, blueprint, guidelines)
+    ├── class_hub.html          # Dedicated CBSE Class 10 & 12 hubs (stream tabs, complete syllabus, guidelines)
     ├── syllabus.html           # Subject-wise syllabus catalog with Class, Stream, Year, and Query filters
     ├── syllabus_detail.html    # Single subject view with marks weightage, duration, and direct PDF download
     ├── datesheets.html         # Exam date sheets page with official CBSE status and labeled demo timetables

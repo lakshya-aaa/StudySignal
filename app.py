@@ -154,7 +154,7 @@ def get_boards_and_exams():
                 "url": None,
                 "is_clickable": False,
                 "badge_class": "badge-status-soon",
-                "description": "Maharashtra State Board SSC and HSC curriculum guides, evaluation blueprints, and timetable notifications in planning.",
+                "description": "Maharashtra State Board SSC and HSC curriculum guides, evaluation structures, and timetable notifications in planning.",
                 "actions": []
             }
         ],
@@ -313,7 +313,7 @@ def class_12():
 def syllabus_index():
     selected_class = request.args.get("class", "all")
     selected_stream = request.args.get("stream", "all")
-    selected_year = request.args.get("year", "all")
+    selected_year = request.args.get("year", "2026-27")
     search_q = request.args.get("q", "").strip().lower()
 
     items = get_all_syllabus()
@@ -322,7 +322,7 @@ def syllabus_index():
         items = [s for s in items if s.get("class") == selected_class]
     if selected_stream != "all":
         items = [s for s in items if selected_stream.lower() in s.get("stream", "").lower()]
-    if selected_year != "all":
+    if selected_year != "all" and selected_year != "2026-27":
         items = [s for s in items if s.get("academic_year") == selected_year]
     if search_q:
         items = [
@@ -346,15 +346,15 @@ def syllabus_detail(subject_id):
     items = get_all_syllabus()
     matched = next((s for s in items if s.get("id") == subject_id), None)
     if not matched:
-        if not subject_id.endswith("-2027") and not subject_id.endswith("-2025"):
+        if not subject_id.endswith("-2027"):
             matched = next((s for s in items if s.get("id") == f"{subject_id}-2027"), None)
         elif subject_id.endswith("-2027"):
             matched = next((s for s in items if s.get("id") == subject_id.replace("-2027", "")), None)
     if not matched:
         abort(404)
     
-    # Related subjects in same class and same session type
-    related = [s for s in items if s.get("class") == matched.get("class") and s.get("session_type") == matched.get("session_type") and s.get("id") != matched.get("id")][:4]
+    # Related subjects in same class
+    related = [s for s in items if s.get("class") == matched.get("class") and s.get("id") != matched.get("id")][:4]
 
     return render_template(
         "syllabus_detail.html",
@@ -536,7 +536,6 @@ def icse_class_12():
 def icse_syllabus_index():
     selected_class = request.args.get("class", "all")
     selected_stream = request.args.get("stream", "all")
-    selected_year = request.args.get("year", "all")
     search_q = request.args.get("q", "").strip().lower()
 
     items = get_all_icse_syllabus()
@@ -544,8 +543,6 @@ def icse_syllabus_index():
         items = [s for s in items if s.get("class") == selected_class]
     if selected_stream != "all":
         items = [s for s in items if selected_stream.lower() in s.get("stream", "").lower()]
-    if selected_year != "all":
-        items = [s for s in items if s.get("academic_year") == selected_year]
     if search_q:
         items = [
             s for s in items
@@ -558,8 +555,34 @@ def icse_syllabus_index():
         syllabus_items=items,
         selected_class=selected_class,
         selected_stream=selected_stream,
-        selected_year=selected_year,
-        search_q=search_q
+        selected_year="2026-27",
+        search_q=search_q,
+        is_isc_view=False
+    )
+
+@app.route("/isc/syllabus")
+def isc_syllabus_index():
+    selected_stream = request.args.get("stream", "all")
+    search_q = request.args.get("q", "").strip().lower()
+
+    items = [s for s in get_all_icse_syllabus() if s.get("class") == "12"]
+    if selected_stream != "all":
+        items = [s for s in items if selected_stream.lower() in s.get("stream", "").lower()]
+    if search_q:
+        items = [
+            s for s in items
+            if search_q in s.get("subject", "").lower()
+            or search_q in s.get("code", "").lower()
+            or search_q in s.get("description", "").lower()
+        ]
+    return render_template(
+        "icse_syllabus.html",
+        syllabus_items=items,
+        selected_class="12",
+        selected_stream=selected_stream,
+        selected_year="2026-27",
+        search_q=search_q,
+        is_isc_view=True
     )
 
 @app.route("/icse/syllabus/<subject_id>")
@@ -933,6 +956,7 @@ def sitemap_xml():
         {"loc": f"{base}/icse/class-10", "priority": "0.9", "changefreq": "daily"},
         {"loc": f"{base}/icse/class-12", "priority": "0.9", "changefreq": "daily"},
         {"loc": f"{base}/icse/syllabus", "priority": "0.8", "changefreq": "weekly"},
+        {"loc": f"{base}/isc/syllabus", "priority": "0.8", "changefreq": "weekly"},
         {"loc": f"{base}/icse/datesheets", "priority": "0.9", "changefreq": "daily"},
         {"loc": f"{base}/icse/circulars", "priority": "0.8", "changefreq": "daily"},
         {"loc": f"{base}/icse/pyq", "priority": "0.8", "changefreq": "weekly"},

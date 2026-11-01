@@ -2,34 +2,34 @@
 
 {% block title %}CBSE Class {{ item.class }} {{ item.subject }} Syllabus ({{ item.academic_year_label or item.academic_year }}) - StudySignal{% endblock %}
 
-{% block meta_description %}
-Official CBSE Class {{ item.class }} {{ item.subject }} (Code {{ item.code }}) syllabus, examination blueprint, marks weightage, and direct official PDF download link from cbseacademic.nic.in.
-{% endblock %}
+{% block robots %}{% if item.verification_status == 'unverified' %}noindex, follow{% else %}index, follow{% endif %}{% endblock %}
 
-{% block robots %}{% if item.verification_status == 'unverified' %}noindex, follow{% else %}{{ super() }}{% endif %}{% endblock %}
+{% block meta_description %}
+Official CBSE Class {{ item.class }} {{ item.subject }} (Code {{ item.code }}) complete syllabus, course structure, units, marks weightage, and official PDF download link from cbseacademic.nic.in.
+{% endblock %}
 
 {% block content %}
 {% set breadcrumbs = [
-  {'title': 'CBSE', 'url': '/'},
-  {'title': 'Class ' ~ item.class, 'url': '/cbse/class-' ~ item.class},
-  {'title': 'Syllabus', 'url': '/cbse/syllabus?class=' ~ item.class},
-  {'title': item.subject, 'url': request.path}
+  {'title': 'Home', 'url': '/'},
+  {'title': 'Boards & Exams', 'url': '/boards'},
+  {'title': 'CBSE Portal', 'url': '/'},
+  {'title': 'Subject-wise Syllabus', 'url': '/cbse/syllabus'},
+  {'title': 'Class ' ~ item.class ~ ' ' ~ item.subject, 'url': '/cbse/syllabus/' ~ item.id}
 ] %}
 {% include 'components/breadcrumb.html' %}
 
-<section class="section">
+<section class="section" style="padding-top: 1.5rem; padding-bottom: 2.5rem;">
   <div class="container">
     <div class="syllabus-detail-layout">
       
       <!-- Main Content Column -->
       <div class="syllabus-detail-main">
         <div class="syllabus-detail-card">
-          <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.75rem; flex-wrap: wrap;">
+          <!-- Top Badges -->
+          <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.85rem; flex-wrap: wrap;">
             <span class="code-pill">Subject Code: {{ item.code }}</span>
             <span class="class-badge">Class {{ item.class }} ({{ item.stream }})</span>
-            {% if item.session_type == 'historical' %}
-              <span class="circ-tag archive" style="background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; font-weight: 600;">📁 Historical Archive Document ({{ item.academic_year }})</span>
-            {% elif item.verification_status == 'verified_official' %}
+            {% if item.verification_status == 'verified_official' %}
               <span class="circ-tag official">✓ Verified Official CBSE Document</span>
             {% else %}
               <span class="circ-tag unverified">Current link not verified yet</span>
@@ -39,37 +39,26 @@ Official CBSE Class {{ item.class }} {{ item.subject }} (Code {{ item.code }}) s
             {% endif %}
           </div>
 
-          <h1 class="syllabus-detail-title">
-            CBSE Class {{ item.class }} {{ item.subject }} Syllabus ({{ item.academic_year_label or item.academic_year }})
-          </h1>
-          <p style="color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin-bottom: 1.5rem;">
-            {{ item.description }}
-          </p>
-
-          {% if item.session_type == 'historical' %}
-          <div class="alert-box" style="margin-bottom: 1.5rem; background: #f8fafc; border-left: 4px solid #64748b;">
-            <strong>Historical Archive Record:</strong> This syllabus document corresponds to the historical academic session {{ item.academic_year_label or item.academic_year }}. If you are preparing for current examinations, please view the <a href="/cbse/syllabus?year=2026-27" style="color: var(--accent-saffron); font-weight: 700;">Current 2026-27 Syllabus</a> or consult the <a href="{{ official_urls.cbse_curriculum_current }}" target="_blank" rel="noopener noreferrer" style="font-weight: 700; text-decoration: underline;">Official CBSE Curriculum Directory ↗</a>.
-          </div>
-          {% endif %}
-
-          <!-- Direct Download Action Card or Unverified Notice -->
-          {% if item.verification_status == 'verified_official' and item.official_url %}
-          <div class="syllabus-download-card">
-            <div class="syllabus-download-inner">
-              <div class="syllabus-download-info">
-                <strong style="color: #166534; font-size: 1.05rem; display: block; margin-bottom: 0.25rem;">
-                  Official CBSE PDF Document ({{ item.academic_year_label or item.academic_year }})
-                </strong>
-                <span class="syllabus-download-url">
-                  Direct file hosted on: <code>{{ item.official_url }}</code>
-                </span>
-              </div>
-              <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="background-color: var(--accent-green); width: auto; padding: 0.65rem 1.5rem;">
-                Download Official PDF ↗
+          <!-- Title & Top Action -->
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border-color);">
+            <div style="max-width: 680px;">
+              <h1 class="syllabus-detail-title" style="margin-bottom: 0.5rem;">
+                CBSE Class {{ item.class }} {{ item.subject }} Syllabus ({{ item.academic_year_label or item.academic_year }})
+              </h1>
+              <p style="color: var(--text-dark); font-size: 0.95rem; line-height: 1.6; margin: 0;">
+                {{ item.description }}
+              </p>
+            </div>
+            {% if item.verification_status == 'verified_official' and item.official_url %}
+            <div style="flex-shrink: 0;">
+              <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" title="Download official CBSE syllabus PDF for offline study">
+                Download official PDF ↗
               </a>
             </div>
+            {% endif %}
           </div>
-          {% else %}
+
+          {% if item.verification_status == 'unverified' %}
           <div style="background: #fffbeb; border: 1.5px solid #fde68a; border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 2rem; max-width: 100%; box-sizing: border-box;">
             <div style="margin-bottom: 0.75rem;">
               <strong style="color: #92400e; font-size: 1.05rem; display: block; margin-bottom: 0.25rem;">
@@ -85,106 +74,136 @@ Official CBSE Class {{ item.class }} {{ item.subject }} (Code {{ item.code }}) s
           </div>
           {% endif %}
 
-          <!-- Examination Scheme / Blueprint -->
-          <h2 style="font-size: 1.35rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem;">
-            Official Examination Blueprint & Weightage
-          </h2>
-
-          <div class="table-scroll-hint" aria-hidden="true">
-            <span>⟷ Scroll horizontally to view full blueprint</span>
-          </div>
-          <div class="table-responsive" role="region" aria-label="Official Examination Blueprint Table" tabindex="0">
-            <table class="data-table">
-              <thead>
-                <tr>
-                  <th>Component</th>
-                  <th>Marks Allocated</th>
-                  <th>Duration</th>
-                  <th>Assessment Format</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Theory Written Paper</strong></td>
-                  <td><span style="font-weight: 700; color: var(--primary);">{{ item.exam_structure.theory_marks }} Marks</span></td>
-                  <td>{{ item.exam_structure.duration_hours }} Hours</td>
-                  <td>Board Written Examination conducted at designated centre</td>
-                </tr>
-                <tr>
-                  <td><strong>Internal Assessment / Practical</strong></td>
-                  <td><span style="font-weight: 700; color: var(--accent-green);">{{ item.exam_structure.internal_assessment_marks }} Marks</span></td>
-                  <td>School Session</td>
-                  <td>Project work, viva voce, lab manual, and periodical tests</td>
-                </tr>
-                <tr style="background: #f8fafc; font-weight: 700;">
-                  <td>Total Marks</td>
-                  <td>{{ item.exam_structure.total_marks }} Marks</td>
-                  <td>-</td>
-                  <td>100% Comprehensive Evaluation</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
           <!-- Course Structure Overview -->
           {% if item.course_structure_overview %}
-          <div style="background: var(--bg-alt); padding: 1.25rem 1.5rem; border-radius: var(--radius-md); border-left: 4px solid var(--accent-blue); margin-bottom: 2rem;">
-            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 0.35rem;">
-              Course Structure & Academic Focus
+          <div class="syllabus-course-overview">
+            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 0.45rem;">
+              Course Structure &amp; Academic Focus
             </h3>
-            <p style="font-size: 0.9375rem; color: var(--text-dark); line-height: 1.6; margin: 0;">
+            <p>
               {{ item.course_structure_overview }}
             </p>
           </div>
           {% endif %}
 
-          <!-- Official Unit-wise Marks Distribution -->
+          <!-- Examination Scheme & Marks Structure -->
+          <div style="margin-bottom: 2.25rem;">
+            <h2 class="syllabus-section-heading">
+              Examination Scheme &amp; Marks Structure
+            </h2>
+            <p class="syllabus-section-subtext">
+              Official annual examination format and internal/practical assessment weightage prescribed by CBSE:
+            </p>
+
+            <div class="table-scroll-hint" aria-hidden="true">
+              <span>⟷ Scroll horizontally to view full assessment structure</span>
+            </div>
+            <div class="table-responsive" role="region" aria-label="Official Examination Marks Structure Table" tabindex="0">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Component</th>
+                    <th>Marks Allocated</th>
+                    <th>Duration</th>
+                    <th>Assessment Format</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Theory Written Paper</strong></td>
+                    <td><span style="font-weight: 700; color: var(--primary);">{{ item.exam_structure.theory_marks }} Marks</span></td>
+                    <td>{{ item.exam_structure.duration_hours }} Hours</td>
+                    <td>Board Written Examination conducted at designated centre</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Internal Assessment / Practical</strong></td>
+                    <td><span style="font-weight: 700; color: var(--accent-green);">{{ item.exam_structure.internal_assessment_marks }} Marks</span></td>
+                    <td>School Session</td>
+                    <td>Project work, viva voce, lab manual, and periodical tests</td>
+                  </tr>
+                  <tr style="background: #f8fafc; font-weight: 700;">
+                    <td>Total Marks</td>
+                    <td>{{ item.exam_structure.total_marks }} Marks</td>
+                    <td>-</td>
+                    <td>100% Comprehensive Evaluation</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Official Unit-wise Marks Distribution Summary -->
           {% if item.units and item.units|length > 0 %}
-          <div style="margin-bottom: 2rem;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 0.75rem; gap: 0.5rem;">
-              <h2 style="font-size: 1.35rem; font-weight: 700; color: var(--primary); margin: 0;">
+          <div style="margin-bottom: 2.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 0.5rem; gap: 0.5rem;">
+              <h2 class="syllabus-section-heading" style="margin-top: 0; margin-bottom: 0;">
                 Official Unit-Wise Marks Distribution
               </h2>
               <span style="font-size: 0.75rem; color: var(--accent-green); font-weight: 700; background: #f0fdf4; border: 1px solid #86efac; padding: 0.2rem 0.6rem; border-radius: 9999px;">
                 ✓ Official CBSE Curriculum Weightage
               </span>
             </div>
+            <p class="syllabus-section-subtext">
+              Summary breakdown of units and their corresponding weightage in the written board examination:
+            </p>
             <div class="table-scroll-hint" aria-hidden="true">
-              <span>⟷ Scroll horizontally to view full unit breakdown</span>
+              <span>⟷ Scroll horizontally to view unit marks summary</span>
             </div>
             <div class="table-responsive" role="region" aria-label="Official Unit-Wise Marks Distribution Table" tabindex="0">
               <table class="data-table">
                 <thead>
                   <tr>
-                    <th style="width: 15%;">Unit No.</th>
-                    <th style="width: 32%;">Unit Title</th>
-                    <th style="width: 38%;">Chapters / Core Syllabus Areas</th>
-                    <th style="width: 15%; text-align: center;">Official Marks</th>
+                    <th style="width: 20%;">Unit No.</th>
+                    <th style="width: 60%;">Unit Title</th>
+                    <th style="width: 20%; text-align: center;">Official Marks</th>
                   </tr>
                 </thead>
                 <tbody>
                   {% for u in item.units %}
                   <tr>
-                    <td><strong>{{ u.unit_number }}</strong></td>
-                    <td><strong style="color: var(--primary);">{{ u.name }}</strong></td>
-                    <td>
-                      <ul style="margin: 0; padding-left: 1.2rem; font-size: 0.875rem; line-height: 1.5;">
-                        {% for ch in u.chapters %}
-                        <li>{{ ch }}</li>
-                        {% endfor %}
-                      </ul>
-                    </td>
-                    <td style="text-align: center;">
-                      <span class="code-pill" style="font-weight: 700; background: #e0f2fe; color: #0369a1;">{{ u.marks }} Marks</span>
-                    </td>
+                    <td><strong style="color: var(--primary);">Unit {{ u.unit_number }}</strong></td>
+                    <td><span style="font-weight: 600;">{{ u.name }}</span></td>
+                    <td style="text-align: center; font-weight: 700; color: var(--brand-blue);">{{ u.marks }} Marks</td>
                   </tr>
                   {% endfor %}
                   <tr style="background: #f8fafc; font-weight: 700;">
-                    <td colspan="3" style="text-align: right;">Total Theory Marks:</td>
+                    <td colspan="2">Total Written Theory Examination Weightage</td>
                     <td style="text-align: center; color: var(--primary);">{{ item.exam_structure.theory_marks }} Marks</td>
                   </tr>
                 </tbody>
               </table>
+            </div>
+          </div>
+
+          <!-- Complete Detailed Syllabus Content & Chapters -->
+          <div style="margin-bottom: 2.25rem;">
+            <h2 class="syllabus-section-heading">
+              Complete Syllabus Content &amp; Chapters
+            </h2>
+            <p class="syllabus-section-subtext">
+              Read and study the complete prescribed chapters and core curriculum topics for CBSE Class {{ item.class }} {{ item.subject }}:
+            </p>
+
+            <div class="syllabus-units-container">
+              {% for u in item.units %}
+              <div class="syllabus-unit-block">
+                <div class="syllabus-unit-header">
+                  <div class="syllabus-unit-title-group">
+                    <span class="syllabus-unit-number">Unit {{ u.unit_number }}</span>
+                    <h3 class="syllabus-unit-name">{{ u.name }}</h3>
+                  </div>
+                  <span class="syllabus-unit-weightage">{{ u.marks }} Marks</span>
+                </div>
+                <div class="syllabus-unit-body">
+                  <h4 class="syllabus-subheading">Prescribed Chapters &amp; Topics:</h4>
+                  <ul class="syllabus-chapter-list">
+                    {% for ch in u.chapters %}
+                    <li>{{ ch }}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              </div>
+              {% endfor %}
             </div>
           </div>
           {% elif item.verification_status == 'unverified' %}
@@ -192,13 +211,19 @@ Official CBSE Class {{ item.class }} {{ item.subject }} (Code {{ item.code }}) s
             <strong>Curriculum Unit Verification Notice:</strong>
             Detailed chapter-wise unit marks for {{ item.subject }} (Code {{ item.code }}) are pending official verification against the CBSE Skill Education directory. Please consult the official curriculum directory directly.
           </div>
+          {% else %}
+          <div class="alert-box" style="margin-bottom: 2rem; background: #f8fafc; border-left: 4px solid var(--border-color);">
+            <strong>Detailed syllabus not yet available for direct online reading:</strong>
+            The detailed topic-by-topic curriculum for {{ item.subject }} is pending digital transcription. Please consult the official CBSE curriculum directory.
+          </div>
           {% endif %}
 
           <!-- Question Paper Design & Assessment Typology -->
-          {% if item.question_paper_design and item.question_paper_design.typology %}
-          <div style="margin-bottom: 2rem;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 0.75rem; gap: 0.5rem;">
-              <h2 style="font-size: 1.35rem; font-weight: 700; color: var(--primary); margin: 0;">
+          {% if item.question_paper_design and (item.question_paper_design.typology or item.question_paper_design|length > 0) %}
+          {% set typo_list = item.question_paper_design.typology if item.question_paper_design.typology is defined else item.question_paper_design %}
+          <div style="margin-bottom: 2.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 0.5rem; gap: 0.5rem;">
+              <h2 class="syllabus-section-heading" style="margin-top: 0; margin-bottom: 0;">
                 {% if item.question_paper_design.is_editorial_estimate %}
                   Estimated Question Paper Typology
                 {% else %}
@@ -206,110 +231,88 @@ Official CBSE Class {{ item.class }} {{ item.subject }} (Code {{ item.code }}) s
                 {% endif %}
               </h2>
               {% if item.question_paper_design.is_editorial_estimate %}
-              <span style="font-size: 0.75rem; color: #b45309; font-weight: 700; background: #fffbeb; border: 1px solid #fde68a; padding: 0.2rem 0.6rem; border-radius: 9999px;">
-                ⚠️ StudySignal Editorial Estimate (Non-Official)
-              </span>
+                <span style="font-size: 0.75rem; color: #b45309; background: #fffbeb; border: 1px solid #fde68a; padding: 0.2rem 0.6rem; border-radius: 4px; font-weight: 700;">
+                  StudySignal Editorial Estimate (Non-Official)
+                </span>
               {% else %}
-              <span style="font-size: 0.75rem; color: #0369a1; font-weight: 700; background: #e0f2fe; border: 1px solid #bae6fd; padding: 0.2rem 0.6rem; border-radius: 9999px;">
-                Board Assessment Pattern
-              </span>
+                <span style="font-size: 0.75rem; color: var(--primary); font-weight: 600; background: #f1f5f9; padding: 0.2rem 0.6rem; border-radius: 4px;">
+                  Board Assessment Pattern
+                </span>
               {% endif %}
             </div>
-            
-            {% if item.question_paper_design.editorial_notice %}
-            <div class="alert-box" style="background: #fffbeb; border-left: 4px solid #f59e0b; margin-bottom: 1rem; font-size: 0.875rem; color: #92400e;">
-              <strong>Editorial Advisory:</strong> {{ item.question_paper_design.editorial_notice }}
-            </div>
+            {% if item.question_paper_design.is_editorial_estimate and item.question_paper_design.editorial_notice %}
+              <div class="alert-box alert-warning" style="margin-top: 0.75rem; margin-bottom: 1rem; font-size: 0.8125rem;">
+                <strong>Notice:</strong> {{ item.question_paper_design.editorial_notice }}
+              </div>
             {% endif %}
-
-            {% if item.question_paper_design.competency_focus %}
-            <p style="font-size: 0.875rem; color: var(--text-dark); background: #fefce8; border: 1px solid #fef08a; padding: 0.75rem 1rem; border-radius: var(--radius-sm); margin-bottom: 1rem;">
-              <strong>🎯 Competency Focus:</strong> {{ item.question_paper_design.competency_focus }}
+            <p class="syllabus-section-subtext">
+              Official cognitive typology guidelines indicating the expected proportion of questions testing knowledge, application, and higher-order skills:
             </p>
-            {% endif %}
-
             <div class="table-scroll-hint" aria-hidden="true">
-              <span>⟷ Scroll horizontally to view complete typology</span>
+              <span>⟷ Scroll horizontally to view question paper design</span>
             </div>
             <div class="table-responsive" role="region" aria-label="Question Paper Design & Assessment Typology Table" tabindex="0">
               <table class="data-table">
                 <thead>
                   <tr>
-                    <th>{{ item.question_paper_design.column_title or 'Competency / Cognitive Typology' }}</th>
-                    <th style="width: 15%; text-align: center;">Weightage %</th>
-                    <th style="width: 15%; text-align: center;">Marks</th>
-                    <th>Assessment Description</th>
+                    <th style="width: 55%;">Competency / Typology Component</th>
+                    <th style="width: 20%; text-align: center;">Total Marks</th>
+                    <th style="width: 25%; text-align: center;">Approx. Percentage</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {% for t in item.question_paper_design.typology %}
+                  {% for q in typo_list %}
                   <tr>
-                    <td><strong>{{ t.category }}</strong></td>
-                    <td style="text-align: center; font-weight: 700;">{{ t.percentage }}</td>
-                    <td style="text-align: center;"><span class="code-pill">{{ t.marks }} M</span></td>
-                    <td style="font-size: 0.875rem; color: var(--text-muted);">{{ t.description }}</td>
+                    <td><strong>{{ q.category or q.competency }}</strong></td>
+                    <td style="text-align: center; font-weight: 600;">{{ q.marks }} M</td>
+                    <td style="text-align: center;">
+                      <span class="code-pill" style="font-size: 0.75rem;">{{ q.percentage }}</span>
+                    </td>
                   </tr>
                   {% endfor %}
+                  <tr style="background: #f8fafc; font-weight: 700;">
+                    <td>Total Evaluation</td>
+                    <td style="text-align: center; color: var(--primary);">{{ item.exam_structure.theory_marks }} Marks</td>
+                    <td style="text-align: center; color: var(--primary);">100%</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
-
-            {% if item.question_paper_design.choice_pattern %}
-            <div style="font-size: 0.8125rem; color: var(--text-muted); margin-top: 0.5rem; font-style: italic;">
-              ℹ️ Choice Pattern: {{ item.question_paper_design.choice_pattern }}
-            </div>
-            {% endif %}
           </div>
           {% endif %}
 
-          <!-- Prescribed Official Textbooks -->
-          {% if item.prescribed_books and item.prescribed_books|length > 0 %}
-          <div style="margin-bottom: 2rem;">
-            <h2 style="font-size: 1.35rem; font-weight: 700; color: var(--primary); margin-bottom: 0.75rem;">
-              Prescribed Textbooks & Reading Materials
-            </h2>
-            <div class="prescribed-books-grid">
-              {% for b in item.prescribed_books %}
-              <div style="background: var(--bg-alt); border: 1px solid var(--border-color); border-radius: var(--radius-sm); padding: 0.85rem 1rem;">
-                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.25rem;">
-                  <span style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--accent-saffron); background: #fff7ed; border: 1px solid #ffedd5; padding: 0.1rem 0.4rem; border-radius: 4px;">
-                    {{ b.type }}
-                  </span>
-                  <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">{{ b.publisher }}</span>
-                </div>
-                <div style="font-weight: 700; font-size: 0.9375rem; color: var(--primary);">
-                  {{ b.title }}
-                </div>
-              </div>
-              {% endfor %}
-            </div>
-          </div>
-          {% endif %}
-
-          <!-- Practical Assessment / Internal Assessment Framework -->
+          <!-- Practical Assessment Guidance -->
           {% if item.practical_guidance and item.practical_guidance.breakdown %}
-          <div style="margin-bottom: 2rem;">
-            <h2 style="font-size: 1.35rem; font-weight: 700; color: var(--primary); margin-bottom: 0.75rem;">
-              {{ item.practical_guidance.component_name }}
-            </h2>
-            <div class="table-scroll-hint" aria-hidden="true">
-              <span>⟷ Scroll horizontally to view practical evaluation details</span>
+          <div style="margin-bottom: 2.25rem;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; margin-bottom: 0.5rem; gap: 0.5rem;">
+              <h2 class="syllabus-section-heading" style="margin-top: 0; margin-bottom: 0;">
+                Internal Assessment ({{ item.exam_structure.internal_assessment_marks }} Marks) &amp; Practical Assessment
+              </h2>
+              <span style="font-size: 0.75rem; color: var(--accent-green); font-weight: 700; background: #f0fdf4; border: 1px solid #86efac; padding: 0.2rem 0.6rem; border-radius: 9999px;">
+                {{ item.exam_structure.internal_assessment_marks }} Marks Total
+              </span>
             </div>
-            <div class="table-responsive" role="region" aria-label="Practical Assessment Framework Table" tabindex="0" style="margin-bottom: 0.75rem;">
+            <p class="syllabus-section-subtext">
+              Internal assessment evaluation components administered throughout the academic session:
+            </p>
+            <div class="table-scroll-hint" aria-hidden="true">
+              <span>⟷ Scroll horizontally to view practical assessment breakdown</span>
+            </div>
+            <div class="table-responsive" role="region" aria-label="Practical Assessment Framework Table" tabindex="0">
               <table class="data-table">
                 <thead>
                   <tr>
-                    <th style="width: 40%;">Assessment Component</th>
-                    <th style="width: 20%; text-align: center;">Marks Allocation</th>
-                    <th style="width: 40%;">Evaluation Criteria / Guidelines</th>
+                    <th style="width: 45%;">Assessment Item</th>
+                    <th style="width: 20%; text-align: center;">Marks Allocated</th>
+                    <th style="width: 35%;">Evaluation Criteria &amp; Details</th>
                   </tr>
                 </thead>
                 <tbody>
                   {% for row in item.practical_guidance.breakdown %}
                   <tr>
                     <td><strong>{{ row.item }}</strong></td>
-                    <td style="text-align: center;">
-                      <span class="code-pill" style="font-weight: 700; background: #ecfdf5; color: #047857;">{{ row.marks }} Marks</span>
+                    <td style="text-align: center; font-weight: 700; color: var(--accent-green);">
+                      {{ row.marks }} Marks
                     </td>
                     <td style="font-size: 0.875rem; color: var(--text-dark);">{{ row.details }}</td>
                   </tr>
@@ -322,6 +325,32 @@ Official CBSE Class {{ item.class }} {{ item.subject }} (Code {{ item.code }}) s
               📌 <strong>Assessment Rule:</strong> {{ item.practical_guidance.guidelines }}
             </p>
             {% endif %}
+          </div>
+          {% endif %}
+
+          <!-- Prescribed Books Section -->
+          {% if item.prescribed_books and item.prescribed_books|length > 0 %}
+          <div style="margin-bottom: 2.25rem;">
+            <h2 class="syllabus-section-heading">
+              Prescribed Textbooks & Reading Materials
+            </h2>
+            <p class="syllabus-section-subtext">
+              Officially recommended NCERT and CBSE publications for Class {{ item.class }} {{ item.subject }}:
+            </p>
+            <div class="prescribed-books-grid">
+              {% for b in item.prescribed_books %}
+              <div class="prescribed-book-card">
+                <span class="prescribed-book-icon" aria-hidden="true">📖</span>
+                <div class="prescribed-book-details">
+                  <div class="prescribed-book-title">{{ b.title }}</div>
+                  <div class="prescribed-book-publisher">{{ b.publisher }}</div>
+                  {% if b.notes %}
+                  <div class="prescribed-book-notes">{{ b.notes }}</div>
+                  {% endif %}
+                </div>
+              </div>
+              {% endfor %}
+            </div>
           </div>
           {% endif %}
 
@@ -347,10 +376,21 @@ Official CBSE Class {{ item.class }} {{ item.subject }} (Code {{ item.code }}) s
           </div>
           {% endif %}
 
-          <!-- Academic Unit Verification Notice -->
-          <div class="alert-box" style="margin-top: 1.5rem;">
-            <strong style="display: block; margin-bottom: 0.25rem;">Official Verification Source:</strong>
-            This subject's curriculum outline is linked directly from the Central Board of Secondary Education Academic Unit curriculum catalog page (<code>{{ item.source_portal }}</code>). Always check official circulars for any mid-term syllabus modifications.
+          <!-- Secondary Official PDF Download Bar -->
+          <div class="syllabus-secondary-pdf-bar">
+            <div class="syllabus-secondary-pdf-info">
+              <strong>Official CBSE Academic Document ({{ item.academic_year_label or item.academic_year }})</strong>
+              <span>Curriculum outline linked directly from the Central Board of Secondary Education Academic Unit catalog (<code>{{ item.source_portal }}</code>).</span>
+            </div>
+            {% if item.verification_status == 'verified_official' and item.official_url %}
+            <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="font-weight: 600;">
+              Download official PDF ↗
+            </a>
+            {% else %}
+            <a href="{{ official_urls.cbse_curriculum_current }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="font-weight: 600;">
+              Official CBSE Directory ↗
+            </a>
+            {% endif %}
           </div>
         </div>
 
@@ -365,38 +405,43 @@ Official CBSE Class {{ item.class }} {{ item.subject }} (Code {{ item.code }}) s
         {% set slot_id = 'sidebar_box' %}
         {% include 'components/ad_slot.html' %}
 
-        <!-- Related Subjects Box -->
-        <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 1.5rem;">
+        <!-- Quick Actions Box -->
+        <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
           <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--primary); margin-bottom: 0.85rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-color);">
-            More Class {{ item.class }} Syllabi
+            Quick Actions
           </h3>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem;">
-            {% for rel in related %}
-            <li>
-              <a href="/cbse/syllabus/{{ rel.id }}" style="display: flex; justify-content: space-between; align-items: center; padding: 0.45rem 0.65rem; background: var(--bg-alt); border-radius: var(--radius-sm); font-size: 0.875rem; font-weight: 600;">
-                <span>{{ rel.subject }}</span>
-                <span class="code-pill">{{ rel.code }}</span>
-              </a>
-            </li>
-            {% endfor %}
-          </ul>
-          <div style="margin-top: 1rem; text-align: center;">
-            <a href="/cbse/syllabus?class={{ item.class }}" class="section-action" style="font-size: 0.8125rem;">
-              View All Class {{ item.class }} Subjects &rarr;
+          <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+            {% if item.verification_status == 'verified_official' and item.official_url %}
+            <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="text-align: center; width: 100%;">
+              Download official PDF ↗
+            </a>
+            {% endif %}
+            <a href="/cbse/pyq?class={{ item.class }}&subject={{ item.subject }}" class="btn-sm btn-secondary" style="text-align: center; width: 100%;">
+              View {{ item.subject }} PYQs &rarr;
+            </a>
+            <a href="/cbse/datesheets" class="btn-sm btn-secondary" style="text-align: center; width: 100%;">
+              Check Date Sheet Status &rarr;
+            </a>
+            <a href="/cbse/class-{{ item.class }}" class="btn-sm btn-secondary" style="text-align: center; width: 100%;">
+              Class {{ item.class }} Hub &rarr;
             </a>
           </div>
         </div>
 
-        <!-- Official CBSE Links Box -->
-        <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem;">
-          <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--primary); margin-bottom: 0.85rem;">
-            Official Portals
+        <!-- Related Subjects Box -->
+        <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 1.5rem; box-shadow: 0 1px 3px rgba(0,0,0,0.04);">
+          <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--primary); margin-bottom: 0.85rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-color);">
+            More Class {{ item.class }} Syllabi
           </h3>
-          <ul class="footer-links">
-            <li><a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer">Visit Official CBSE Website (cbse.gov.in) ↗</a></li>
-            <li><a href="{{ official_urls.cbse_academic }}" target="_blank" rel="noopener noreferrer">CBSE Academic Unit ↗</a></li>
-            <li><a href="{{ official_urls.cbse_curriculum_current }}" target="_blank" rel="noopener noreferrer">Official 2026-27 Curriculum ↗</a></li>
-            <li><a href="{{ official_urls.cbse_curriculum_archive }}" target="_blank" rel="noopener noreferrer">Curriculum Archives ↗</a></li>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.5rem; padding: 0; margin: 0;">
+            {% for rel in related %}
+            <li>
+              <a href="/cbse/syllabus/{{ rel.id }}" style="display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0.65rem; background: #f8fafc; border-radius: 4px; font-size: 0.875rem; color: var(--primary); font-weight: 600; text-decoration: none; border: 1px solid var(--border-color);">
+                <span>{{ rel.subject }}</span>
+                <span class="code-pill" style="font-size: 0.7rem;">Code {{ rel.code }}</span>
+              </a>
+            </li>
+            {% endfor %}
           </ul>
         </div>
       </aside>

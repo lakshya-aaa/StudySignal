@@ -1,9 +1,19 @@
 {% extends 'base.html' %}
 
-{% block title %}ICSE &amp; ISC Subject-wise Syllabus {{ current_academic_year }} - Direct Official CISCE PDFs | StudySignal{% endblock %}
+{% block title %}
+{% if is_isc_view %}
+ISC Class 12 Subject-wise Syllabus {{ current_academic_year }} - Direct Official CISCE PDFs | StudySignal
+{% else %}
+ICSE &amp; ISC Subject-wise Syllabus {{ current_academic_year }} - Direct Official CISCE PDFs | StudySignal
+{% endif %}
+{% endblock %}
 
 {% block meta_description %}
-Explore and download verified subject-wise ICSE Class 10 and ISC Class 12 syllabus PDFs for Session {{ current_academic_year }} directly from official CISCE portal (cisce.org).
+{% if is_isc_view %}
+Explore and read verified subject-wise ISC Class 12 complete syllabi, course structures, and official CISCE curriculum PDF documents for Session {{ current_academic_year }} directly from cisce.org.
+{% else %}
+Explore and read verified subject-wise ICSE Class 10 and ISC Class 12 complete syllabi, course structures, and official CISCE curriculum PDF documents for Session {{ current_academic_year }} directly from cisce.org.
+{% endif %}
 {% endblock %}
 
 {% block content %}
@@ -11,17 +21,33 @@ Explore and download verified subject-wise ICSE Class 10 and ISC Class 12 syllab
   {'title': 'Home', 'url': '/'},
   {'title': 'Boards & Exams', 'url': '/boards'},
   {'title': 'ICSE & ISC Hub', 'url': '/icse'},
-  {'title': 'Subject-wise Syllabus', 'url': '/icse/syllabus'}
+  {'title': 'ISC Class 12 Syllabus' if is_isc_view else 'Subject-wise Syllabus', 'url': '/isc/syllabus' if is_isc_view else '/icse/syllabus'}
 ] %}
 {% include 'components/breadcrumb.html' %}
 
-<section class="section" style="padding-bottom: 1.5rem;">
+<section class="section" style="padding-bottom: 2rem;">
   <div class="container">
+    <!-- Header -->
     <div class="section-header">
       <div>
-        <h1 class="section-title">ICSE &amp; ISC Subject-wise Syllabus Directory</h1>
+        <div style="display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+          <span class="coverage-tag" style="background: #eff6ff; color: var(--brand-blue); border: 1px solid #bfdbfe; font-weight: 700; padding: 0.2rem 0.65rem; border-radius: 9999px; font-size: 0.8125rem;">
+            Academic Session {{ current_academic_year }} (Current)
+          </span>
+        </div>
+        <h1 class="section-title">
+          {% if is_isc_view %}
+          ISC Class 12 Subject-wise Syllabus Directory
+          {% else %}
+          ICSE &amp; ISC Subject-wise Syllabus Directory
+          {% endif %}
+        </h1>
         <p class="section-subtitle">
-          Direct, verified links to official Council for the Indian School Certificate Examinations (CISCE) curriculum PDFs for Session {{ current_academic_year }}.
+          {% if is_isc_view %}
+          Direct, verified curriculum outlines, examination marks structures, and complete unit-wise syllabi for ISC Class 12 (Higher Secondary) from official CISCE regulations.
+          {% else %}
+          Direct, verified curriculum outlines, examination marks structures, and complete unit-wise syllabi for ICSE Class 10 (Secondary) and ISC Class 12 (Higher Secondary).
+          {% endif %}
         </p>
       </div>
       <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
@@ -34,9 +60,9 @@ Explore and download verified subject-wise ICSE Class 10 and ISC Class 12 syllab
       </div>
     </div>
 
-    <!-- Filter Form -->
-    <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 2rem;">
-      <form action="/icse/syllabus" method="get" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) 120px; gap: 1rem; align-items: end;">
+    <!-- Search & Filter Card -->
+    <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 2rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);">
+      <form action="{{ '/isc/syllabus' if is_isc_view else '/icse/syllabus' }}" method="get" class="syllabus-filter-form">
         <div>
           <label class="form-label" for="filter-q">Search Subject or Code</label>
           <input 
@@ -49,6 +75,7 @@ Explore and download verified subject-wise ICSE Class 10 and ISC Class 12 syllab
           >
         </div>
 
+        {% if not is_isc_view %}
         <div>
           <label class="form-label" for="filter-class">Select Class / Course</label>
           <select id="filter-class" name="class" class="form-control">
@@ -57,6 +84,9 @@ Explore and download verified subject-wise ICSE Class 10 and ISC Class 12 syllab
             <option value="12" {% if selected_class == '12' %}selected{% endif %}>ISC Class 12 (Higher Secondary)</option>
           </select>
         </div>
+        {% else %}
+        <input type="hidden" name="class" value="12">
+        {% endif %}
 
         <div>
           <label class="form-label" for="filter-stream">Stream / Category</label>
@@ -70,33 +100,25 @@ Explore and download verified subject-wise ICSE Class 10 and ISC Class 12 syllab
         </div>
 
         <div>
-          <label class="form-label" for="filter-year">Academic Session</label>
-          <select id="filter-year" name="year" class="form-control">
-            <option value="all" {% if selected_year == 'all' %}selected{% endif %}>All Sessions</option>
-            <option value="2026-27" {% if selected_year == '2026-27' %}selected{% endif %}>2026-27 (Current Session)</option>
-            <option value="2025-26" {% if selected_year == '2025-26' %}selected{% endif %}>2025-26 (Previous Session)</option>
-          </select>
-        </div>
-
-        <div>
           <button type="submit" class="btn-primary" style="height: 42px; width: 100%;">Filter</button>
         </div>
       </form>
 
-      {% if search_q or selected_class != 'all' or selected_stream != 'all' or selected_year != 'all' %}
-      <div style="margin-top: 0.75rem; font-size: 0.8125rem;">
-        <span style="color: var(--text-muted);">Active filters applied:</span>
-        {% if search_q %}<strong>Query:</strong> "{{ search_q }}" &bull;{% endif %}
-        {% if selected_class != 'all' %}<strong>Class:</strong> {{ selected_class }} &bull;{% endif %}
-        {% if selected_stream != 'all' %}<strong>Stream:</strong> {{ selected_stream }} &bull;{% endif %}
-        {% if selected_year != 'all' %}<strong>Year:</strong> {{ selected_year }} &bull;{% endif %}
-        <a href="/icse/syllabus" style="color: var(--brand-blue); font-weight: 600; margin-left: 0.5rem; text-decoration: underline;">Clear All</a>
+      {% if search_q or (selected_class != 'all' and not is_isc_view) or selected_stream != 'all' %}
+      <div style="margin-top: 0.85rem; padding-top: 0.75rem; border-top: 1px dashed var(--border-color); font-size: 0.8125rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.5rem;">
+        <div>
+          <span style="color: var(--text-muted);">Active filters applied:</span>
+          {% if search_q %}<strong>Query:</strong> "{{ search_q }}" &bull;{% endif %}
+          {% if selected_class != 'all' and not is_isc_view %}<strong>Class:</strong> {{ selected_class }} &bull;{% endif %}
+          {% if selected_stream != 'all' %}<strong>Stream:</strong> {{ selected_stream }} &bull;{% endif %}
+        </div>
+        <a href="{{ '/isc/syllabus' if is_isc_view else '/icse/syllabus' }}" style="color: var(--brand-blue); font-weight: 700; text-decoration: underline;">Clear All Filters</a>
       </div>
       {% endif %}
     </div>
 
     <!-- Live Counter -->
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.5rem;">
+    <div class="syllabus-count-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.5rem;">
       <span style="font-weight: 700; font-size: 0.9375rem; color: var(--text-dark);">
         Showing {{ syllabus_items|length }} verified CISCE syllabus entries
       </span>
@@ -106,16 +128,53 @@ Explore and download verified subject-wise ICSE Class 10 and ISC Class 12 syllab
     </div>
 
     {% if syllabus_items|length == 0 %}
-    <div style="background: #ffffff; border: 1px dashed var(--border-color); border-radius: var(--radius-md); padding: 3rem; text-align: center;">
+    <div style="background: #ffffff; border: 1px dashed var(--border-color); border-radius: var(--radius-md); padding: 3.5rem 1.5rem; text-align: center;">
       <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 0.5rem;">No subjects match your filter</h3>
-      <p style="color: var(--text-muted); margin-bottom: 1rem;">Try clearing your search query or selecting "All Courses".</p>
-      <a href="/icse/syllabus" class="btn-primary" style="display: inline-block;">Reset All Filters</a>
+      <p style="color: var(--text-muted); margin-bottom: 1.25rem;">Try clearing your search query or selecting "All Courses".</p>
+      <a href="{{ '/isc/syllabus' if is_isc_view else '/icse/syllabus' }}" class="btn-primary" style="display: inline-block;">Reset All Filters</a>
     </div>
     {% else %}
-    <!-- Subject Cards Grid -->
-    <div class="subject-grid">
+    <!-- Subject Directory List -->
+    <div class="syllabus-dir-list">
       {% for item in syllabus_items %}
-        {% include 'components/icse_syllabus_card.html' %}
+      <article class="syllabus-dir-item {% if item.verification_status != 'verified_official' %}is-unverified{% endif %}">
+        <div class="syllabus-dir-main">
+          <div class="syllabus-dir-meta">
+            <span class="code-pill">{{ item.course }} {{ item.class }} &bull; Code {{ item.code }}</span>
+            <span class="syllabus-stream-pill">{{ item.category or item.stream }}</span>
+            <span class="syllabus-session-pill">{{ item.academic_year_label or ('Session ' ~ item.academic_year) }}</span>
+            {% if item.verification_status == 'verified_official' %}
+              <span class="verified-badge">✓ Verified CISCE</span>
+            {% else %}
+              <span class="circ-tag unverified">Pending Verification</span>
+            {% endif %}
+          </div>
+          <h2 class="syllabus-dir-title">
+            <a href="/icse/syllabus/{{ item.id }}" class="syllabus-dir-title-link">{{ item.subject }}</a>
+          </h2>
+          <p class="syllabus-dir-desc">{{ item.description }}</p>
+          <div class="syllabus-dir-metrics">
+            <span class="syllabus-metric-pill">Theory: <strong>{{ item.exam_structure.theory_marks }} M</strong></span>
+            <span class="syllabus-metric-pill">IA/Pract: <strong>{{ item.exam_structure.internal_marks }} M</strong></span>
+            <span class="syllabus-metric-pill">Total: <strong>{{ item.exam_structure.total_marks }} M</strong></span>
+          </div>
+        </div>
+
+        <div class="syllabus-dir-actions">
+          <a href="/icse/syllabus/{{ item.id }}" class="btn-sm btn-primary syllabus-btn-primary">
+            Complete Syllabus &rarr;
+          </a>
+          {% if item.verification_status == 'verified_official' and item.official_url %}
+          <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary syllabus-btn-secondary" title="Download official CISCE syllabus PDF">
+            Official PDF ↗
+          </a>
+          {% else %}
+          <a href="{{ item.source_portal or official_urls.cisce_regulations }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary syllabus-btn-secondary" title="Visit Official CISCE Regulations Directory">
+            CISCE Directory ↗
+          </a>
+          {% endif %}
+        </div>
+      </article>
       {% endfor %}
     </div>
     {% endif %}
@@ -126,15 +185,15 @@ Explore and download verified subject-wise ICSE Class 10 and ISC Class 12 syllab
 {% set slot_id = 'in_content_banner' %}
 {% include 'components/ad_slot.html' %}
 
-<!-- Official Archive Information -->
-<section class="section section-alt">
+<!-- Official Source Authentication Box -->
+<section class="section section-alt" style="padding: 2.5rem 0;">
   <div class="container">
     <div class="alert-box" style="border-left: 4px solid var(--brand-blue); background: #ffffff;">
       <h3 style="font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 0.35rem;">
-        Official CISCE Curriculum Source Verification
+        Official CISCE Curriculum Source Authentication
       </h3>
       <p style="margin: 0; line-height: 1.5; font-size: 0.875rem; color: var(--text-dark);">
-        Every syllabus file listed above is indexed directly against Council regulations published on <code>cisce.org</code>. StudySignal does not host altered PDF documents or third-party mirrored versions.
+        Every syllabus file listed above is indexed directly against Council regulations published on <code>cisce.org</code> for Session {{ current_academic_year }}. StudySignal does not host altered PDF documents or third-party mirrored versions.
       </p>
     </div>
   </div>

@@ -1094,6 +1094,209 @@ code {
   margin-bottom: 1.25rem;
 }
 
+/* ==========================================================================
+   Syllabus Directory List Redesign (CBSE, ICSE, ISC)
+   Compact, structured, student-friendly subject directory presentation
+   ========================================================================== */
+.syllabus-dir-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.syllabus-dir-item {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--brand-blue);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  position: relative;
+}
+
+.syllabus-dir-item:hover {
+  border-color: #93c5fd;
+  border-left-color: var(--brand-blue);
+  box-shadow: 0 4px 16px rgba(36, 36, 245, 0.08);
+  transform: translateY(-2px);
+}
+
+.syllabus-dir-item.is-unverified {
+  border-left-color: #f59e0b;
+}
+
+.syllabus-dir-main {
+  flex: 1 1 540px;
+  min-width: 0;
+}
+
+.syllabus-dir-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.4rem;
+}
+
+.syllabus-stream-pill {
+  background-color: #f1f5f9;
+  color: #334155;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid #e2e8f0;
+}
+
+.syllabus-session-pill {
+  background-color: #eff6ff;
+  color: var(--brand-blue);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid #bfdbfe;
+}
+
+.syllabus-dir-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-headings);
+  line-height: 1.3;
+  margin: 0.25rem 0 0.45rem;
+}
+
+.syllabus-dir-title-link {
+  color: var(--primary-headings);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.syllabus-dir-title-link:hover {
+  color: var(--brand-blue);
+  text-decoration: none;
+}
+
+.syllabus-dir-desc {
+  font-size: 0.875rem;
+  color: #4b5563;
+  line-height: 1.5;
+  margin-bottom: 0.75rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.syllabus-dir-metrics {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.syllabus-metric-pill {
+  background: var(--bg-alt);
+  border: 1px solid var(--border-color);
+  padding: 3px 8px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+
+.syllabus-metric-pill strong {
+  color: var(--text-dark);
+}
+
+.syllabus-dir-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 175px;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.syllabus-btn-primary {
+  background-color: var(--brand-blue);
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.55rem 1rem;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+  white-space: nowrap;
+}
+
+.syllabus-btn-primary:hover {
+  background-color: var(--brand-blue-hover);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+.syllabus-btn-secondary {
+  background-color: #ffffff;
+  color: var(--text-dark);
+  border: 1px solid var(--border-color);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  white-space: nowrap;
+}
+
+.syllabus-btn-secondary:hover {
+  background-color: #f8fafc;
+  border-color: #cbd5e1;
+  color: var(--brand-blue);
+}
+
+@media (max-width: 768px) {
+  .syllabus-dir-item {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    padding: 1.15rem 1rem;
+  }
+
+  .syllabus-dir-main {
+    flex: 1 1 auto;
+  }
+
+  .syllabus-dir-actions {
+    min-width: 100%;
+    width: 100%;
+    flex-direction: row;
+    align-self: stretch;
+  }
+
+  .syllabus-btn-primary,
+  .syllabus-btn-secondary {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .syllabus-dir-actions {
+    flex-direction: column;
+  }
+
+  .syllabus-dir-title {
+    font-size: 1.125rem;
+  }
+}
+
 /* Syllabus Detail Layout & Components */
 .syllabus-detail-layout {
   display: grid;
@@ -1207,6 +1410,203 @@ code {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 0.75rem;
+}
+
+/* ==========================================================================
+   Content-First Syllabus Reading Experience
+   ========================================================================== */
+.syllabus-reading-container {
+  width: 100%;
+}
+
+.syllabus-course-overview {
+  background: #f8fafc;
+  border-left: 4px solid var(--brand-blue);
+  border-radius: var(--radius-sm);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.syllabus-course-overview p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.syllabus-section-heading {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--primary-headings);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.syllabus-section-subtext {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+}
+
+/* Units & Chapters Reading Blocks */
+.syllabus-units-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2.25rem;
+}
+
+.syllabus-unit-block {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.syllabus-unit-block:hover {
+  border-color: #cbd5e1;
+  box-shadow: var(--shadow-sm);
+}
+
+.syllabus-unit-header {
+  background: linear-gradient(90deg, #f8fafc 0%, #f1f5f9 100%);
+  border-bottom: 1px solid var(--border-color);
+  padding: 0.85rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.syllabus-unit-title-group {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.syllabus-unit-number {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  background: var(--brand-blue);
+  color: #ffffff;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+}
+
+.syllabus-unit-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary-headings);
+  margin: 0;
+}
+
+.syllabus-unit-weightage {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #0369a1;
+  background: #e0f2fe;
+  border: 1px solid #bae6fd;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  flex-shrink: 0;
+}
+
+.syllabus-unit-body {
+  padding: 1.25rem;
+}
+
+.syllabus-subheading {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.65rem;
+}
+
+.syllabus-chapter-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--text-dark);
+}
+
+.syllabus-chapter-list li {
+  padding-left: 0.25rem;
+}
+
+.syllabus-chapter-list li::marker {
+  color: var(--brand-blue);
+}
+
+.syllabus-topics-text {
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+/* Secondary PDF Download Utility Bar */
+.syllabus-secondary-pdf-bar {
+  background: #f8fafc;
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.syllabus-secondary-pdf-info {
+  flex: 1;
+  min-width: 220px;
+}
+
+.syllabus-secondary-pdf-info strong {
+  display: block;
+  font-size: 0.9375rem;
+  color: var(--primary-headings);
+  margin-bottom: 0.2rem;
+}
+
+.syllabus-secondary-pdf-info span {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  display: block;
+  word-break: break-all;
+}
+
+.subject-card-actions .btn-primary {
+  flex: 1.3;
+  padding: 0.45rem 0.65rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.subject-card-actions .btn-secondary {
+  flex: 0.9;
+  padding: 0.45rem 0.5rem;
+  font-size: 0.8125rem;
+  text-align: center;
 }
 
 /* ==========================================================================
@@ -1532,7 +1932,7 @@ code {
 }
 
 /* ==========================================================================
-   Tables: Date Sheets & Examination Blueprints
+   Tables: Date Sheets & Examination Structures
    ========================================================================== */
 .table-responsive {
   width: 100%;

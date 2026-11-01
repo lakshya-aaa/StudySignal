@@ -3,7 +3,7 @@
 {% block title %}{{ class_title }} - StudySignal{% endblock %}
 
 {% block meta_description %}
-Complete guide for {{ class_title }} including verified official CBSE syllabus PDFs, date sheet status, subject blueprints, and board exam circulars.
+Complete guide for {{ class_title }} including verified official CBSE syllabus PDFs, date sheet status, subject syllabi, and board exam circulars.
 {% endblock %}
 
 {% block content %}
@@ -127,8 +127,11 @@ Complete guide for {{ class_title }} including verified official CBSE syllabus P
         </div>
 
         <div class="subject-card-actions">
+          <a href="/cbse/syllabus/{{ item.id }}" class="btn-sm btn-primary">
+            Complete Syllabus &rarr;
+          </a>
           {% if item.verification_status == 'verified_official' and item.official_url %}
-          <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-official-pdf">
+          <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" title="Download official CBSE syllabus PDF">
             Official PDF ↗
           </a>
           {% else %}
@@ -136,9 +139,6 @@ Complete guide for {{ class_title }} including verified official CBSE syllabus P
             Directory ↗
           </a>
           {% endif %}
-          <a href="/cbse/syllabus/{{ item.id }}" class="btn-sm btn-view-details">
-            Blueprint
-          </a>
         </div>
       </div>
       {% endfor %}
@@ -216,7 +216,7 @@ Complete guide for {{ class_title }} including verified official CBSE syllabus P
   </div>
 </section>
 
-<!-- Exam Preparation & Blueprint Guidelines -->
+<!-- Exam Preparation & Guidelines -->
 <section class="section section-alt">
   <div class="container">
     <div class="static-page-header" style="margin-bottom: 1.25rem;">

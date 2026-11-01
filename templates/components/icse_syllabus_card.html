@@ -20,17 +20,17 @@
   </div>
 
   <div class="subject-card-actions">
+    <a href="/icse/syllabus/{{ item.id }}" class="btn-sm btn-primary">
+      Complete Syllabus &rarr;
+    </a>
     {% if item.verification_status == 'verified_official' and item.official_url %}
-    <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-official-pdf" title="Download official CISCE syllabus PDF">
-      Download PDF ↗
+    <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" title="Download official CISCE syllabus PDF">
+      Official PDF ↗
     </a>
     {% else %}
     <a href="{{ item.source_portal or official_urls.cisce_regulations }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" title="Visit Official CISCE Regulations Directory">
       CISCE Directory ↗
     </a>
     {% endif %}
-    <a href="/icse/syllabus/{{ item.id }}" class="btn-sm btn-view-details">
-      Blueprint
-    </a>
   </div>
 </div>
