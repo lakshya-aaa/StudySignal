@@ -1,13 +1,17 @@
 {% extends 'base.html' %}
 
-{% block title %}ICSE & ISC Board Exam Hub (In Development) | StudySignal{% endblock %}
+{% block title %}ICSE &amp; ISC Board Examination Hub - Class 10 &amp; 12 Resources | StudySignal{% endblock %}
 
 {% block meta_description %}
-StudySignal's dedicated ICSE (Class 10) and ISC (Class 12) examination hub is currently in development. Track development progress, understand our verified source policy, and access official CISCE portals.
+StudySignal's verified ICSE (Class 10) and ISC (Class 12) education portal: subject-wise syllabi, exam date sheets, official circulars, and authentic PYQ library (2017–2027) direct from cisce.org.
 {% endblock %}
 
 {% block content %}
-{% set breadcrumbs = [{'title': 'Home', 'url': '/'}, {'title': 'Boards & Exams', 'url': '/boards'}, {'title': 'ICSE & ISC (In Development)', 'url': '/icse'}] %}
+{% set breadcrumbs = [
+  {'title': 'Home', 'url': '/'},
+  {'title': 'Boards & Exams', 'url': '/boards'},
+  {'title': 'ICSE & ISC Examination Hub', 'url': '/icse'}
+] %}
 {% include 'components/breadcrumb.html' %}
 
 <section class="section" style="padding-bottom: 2rem;">
@@ -16,14 +20,14 @@ StudySignal's dedicated ICSE (Class 10) and ISC (Class 12) examination hub is cu
     <div class="section-header" style="margin-bottom: 1.5rem;">
       <div>
         <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap;">
-          <span class="badge-status-dev" style="font-size: 0.8125rem; padding: 4px 10px; font-weight: 700;">
-            ⚙️ Status: In Development
+          <span class="badge-status-active" style="font-size: 0.8125rem; padding: 4px 10px; font-weight: 700;">
+            ✓ Active Board Portal
           </span>
           <span class="code-pill">Council for the Indian School Certificate Examinations (CISCE)</span>
         </div>
         <h1 class="section-title">ICSE &amp; ISC Board Examination Hub</h1>
         <p class="section-subtitle">
-          Dedicated coverage for ICSE (Class 10) and ISC (Class 12) curriculum frameworks, subject regulations, and board notices is currently undergoing verified indexing.
+          Verified academic curriculum, subject regulations, official examination datesheets, circulars, and previous year question papers for ICSE (Class 10) and ISC (Class 12).
         </p>
       </div>
       <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
@@ -36,32 +40,57 @@ StudySignal's dedicated ICSE (Class 10) and ISC (Class 12) examination hub is cu
       </div>
     </div>
 
+    <!-- Quick Navigation Pills -->
+    <div class="board-selector-bar" style="margin-bottom: 2rem;">
+      <a href="/icse/class-10" class="selector-pill">
+        📘 ICSE Class 10 Portal
+      </a>
+      <a href="/icse/class-12" class="selector-pill">
+        🎓 ISC Class 12 Portal
+      </a>
+      <a href="/icse/syllabus" class="selector-pill">
+        📚 Subject Syllabus Directory
+      </a>
+      <a href="/icse/datesheets" class="selector-pill">
+        🗓️ Exam Timetable Status
+      </a>
+      <a href="/icse/circulars" class="selector-pill">
+        📢 Official Circulars &amp; Notices
+      </a>
+      <a href="/icse/pyq" class="selector-pill">
+        📝 PYQ Library (2017–2027)
+      </a>
+    </div>
+
     <!-- Official Integrity & Source Policy Banner -->
-    <div class="alert-box" style="margin-bottom: 2rem; border-left: 4px solid var(--brand-blue); background-color: #f0f7ff;">
+    <div class="alert-box" style="margin-bottom: 2.5rem; border-left: 4px solid var(--brand-blue); background-color: #f0f7ff;">
       <h3 style="font-size: 1.05rem; color: var(--primary-headings); margin-bottom: 0.4rem; font-weight: 700;">
         StudySignal Academic Verification Policy for CISCE
       </h3>
       <p style="margin-bottom: 0.5rem; line-height: 1.6; color: var(--text-dark); font-size: 0.9rem;">
-        To uphold educational accuracy and protect students from misinformation, <strong>StudySignal does not publish unverified curriculum files, speculative timetables, mock notifications, or unconfirmed question papers</strong>. 
-        Official regulations, examination structures, and specimen question papers from the Council for the Indian School Certificate Examinations (CISCE) are currently undergoing verification before public release on this portal.
+        To uphold educational accuracy and protect students from misinformation, <strong>StudySignal does not publish unverified curriculum files, speculative timetables, mock notifications, or artificial question papers</strong>. 
+        All regulations, examination schedules, circulars, and specimen papers listed across this portal are verified and linked directly to official Council repositories on <code>cisce.org</code>.
       </p>
       <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 0.75rem;">
         <a href="{{ official_urls.cisce_regulations }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="font-size: 0.8125rem;">
-          Official CISCE Regulations &amp; Syllabuses ↗
+          Official ICSE Regulations &amp; Syllabuses ↗
         </a>
-        <a href="{{ official_urls.cisce_notices }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="font-size: 0.8125rem;">
-          CISCE Official Notice Board ↗
+        <a href="https://cisce.org/regulations-and-syllabuses-isc/" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="font-size: 0.8125rem;">
+          Official ISC Regulations &amp; Syllabuses ↗
+        </a>
+        <a href="https://cisce.org/circulars/" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="font-size: 0.8125rem;">
+          CISCE Official Circulars ↗
         </a>
       </div>
     </div>
 
-    <!-- Planned Coverage Cards -->
-    <div style="margin-bottom: 2.5rem;">
+    <!-- Portals Grid: ICSE Class 10 & ISC Class 12 -->
+    <div style="margin-bottom: 3rem;">
       <h2 style="font-size: 1.35rem; font-weight: 700; color: var(--primary-headings); margin-bottom: 0.5rem;">
-        Planned Academic Scope
+        Choose Your Course Level
       </h2>
       <p style="color: var(--text-muted); font-size: 0.9375rem; margin-bottom: 1.5rem;">
-        The foundation for ICSE and ISC sections is being structured across the following school educational levels:
+        Access dedicated academic portals tailored to your examination class and stream requirements:
       </p>
 
       <div class="class-portal-grid">
@@ -69,22 +98,27 @@ StudySignal's dedicated ICSE (Class 10) and ISC (Class 12) examination hub is cu
         <div class="class-card" style="border-top: 4px solid var(--brand-blue);">
           <div class="class-card-header">
             <span class="class-badge" style="background: #e0f2fe; color: #0369a1;">Secondary (Class 10)</span>
-            <span class="badge-status-dev">In Development</span>
+            <span class="badge-status-active">Active</span>
           </div>
           <h3 class="class-card-title">ICSE Class 10</h3>
           <p class="class-card-desc">
-            Planned indexing for Group I (Compulsory), Group II, and Group III electives, including English Language &amp; Literature, Mathematics, Science (Physics, Chemistry, Biology), History &amp; Civics, Geography, and Computer Applications.
+            Complete verified indexing for Group I (English, Second Language, History &amp; Civics, Geography), Group II (Mathematics, Science: Physics, Chemistry, Biology, Economics, Commercial Studies), and Group III skill electives.
           </p>
 
-          <div style="background: var(--bg-alt); padding: 0.85rem; border-radius: var(--radius-sm); font-size: 0.8125rem; color: var(--text-muted); margin-bottom: 1rem;">
-            <div>Status: <strong>Curriculum framework verification in progress</strong></div>
-            <div style="margin-top: 0.25rem;">Content: <strong>No unverified downloads published</strong></div>
+          <div style="background: var(--bg-alt); padding: 0.85rem; border-radius: var(--radius-sm); font-size: 0.8125rem; color: var(--text-dark); margin-bottom: 1rem;">
+            <div>Session: <strong>2026-27 (Current Academic Year)</strong></div>
+            <div style="margin-top: 0.25rem;">Resources: <strong>Verified Syllabi, Date Sheet Alerts &amp; PYQs</strong></div>
           </div>
 
-          <div class="class-card-footer" style="margin-top: auto;">
-            <a href="{{ official_urls.cisce_regulations }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: 100%; text-align: center;">
-              Check Official CISCE Regulations ↗
+          <div class="class-card-footer" style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <a href="/icse/class-10" class="btn-primary" style="width: 100%; text-align: center;">
+              Enter ICSE Class 10 Portal &rarr;
             </a>
+            <div style="display: flex; gap: 0.5rem;">
+              <a href="/icse/syllabus?class=10" class="btn-sm btn-secondary" style="flex: 1; text-align: center;">Syllabus</a>
+              <a href="/icse/pyq?class=10" class="btn-sm btn-secondary" style="flex: 1; text-align: center;">PYQs</a>
+              <a href="/icse/datesheets?class=10" class="btn-sm btn-secondary" style="flex: 1; text-align: center;">Timetable</a>
+            </div>
           </div>
         </div>
 
@@ -92,23 +126,153 @@ StudySignal's dedicated ICSE (Class 10) and ISC (Class 12) examination hub is cu
         <div class="class-card" style="border-top: 4px solid var(--brand-blue-dark);">
           <div class="class-card-header">
             <span class="class-badge" style="background: #e0e7ff; color: #3730a3;">Senior Secondary (Class 12)</span>
-            <span class="badge-status-dev">In Development</span>
+            <span class="badge-status-active">Active</span>
           </div>
           <h3 class="class-card-title">ISC Class 12</h3>
           <p class="class-card-desc">
-            Planned indexing for stream-wise electives across Science (Physics, Chemistry, Biology, Mathematics), Commerce (Accounts, Commerce, Economics, Business Studies), and Humanities electives alongside practical guidelines.
+            Comprehensive stream-wise coverage across Science (Physics, Chemistry, Biology, Mathematics), Commerce (Accounts, Commerce, Economics, Business Studies), and Humanities electives alongside practical guidelines.
           </p>
 
-          <div style="background: var(--bg-alt); padding: 0.85rem; border-radius: var(--radius-sm); font-size: 0.8125rem; color: var(--text-muted); margin-bottom: 1rem;">
-            <div>Status: <strong>Syllabus structure &amp; scheme mapping in progress</strong></div>
-            <div style="margin-top: 0.25rem;">Content: <strong>No unverified downloads published</strong></div>
+          <div style="background: var(--bg-alt); padding: 0.85rem; border-radius: var(--radius-sm); font-size: 0.8125rem; color: var(--text-dark); margin-bottom: 1rem;">
+            <div>Session: <strong>2026-27 (Current Academic Year)</strong></div>
+            <div style="margin-top: 0.25rem;">Resources: <strong>Stream Blueprints, Specimen Papers &amp; PYQs</strong></div>
           </div>
 
-          <div class="class-card-footer" style="margin-top: auto;">
-            <a href="{{ official_urls.cisce_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: 100%; text-align: center;">
-              Visit Official CISCE Portal ↗
+          <div class="class-card-footer" style="display: flex; flex-direction: column; gap: 0.5rem;">
+            <a href="/icse/class-12" class="btn-primary" style="width: 100%; text-align: center;">
+              Enter ISC Class 12 Portal &rarr;
             </a>
+            <div style="display: flex; gap: 0.5rem;">
+              <a href="/icse/syllabus?class=12" class="btn-sm btn-secondary" style="flex: 1; text-align: center;">Syllabus</a>
+              <a href="/icse/pyq?class=12" class="btn-sm btn-secondary" style="flex: 1; text-align: center;">PYQs</a>
+              <a href="/icse/datesheets?class=12" class="btn-sm btn-secondary" style="flex: 1; text-align: center;">Timetable</a>
+            </div>
           </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Examination Schedule & Timetable Status Section -->
+    <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.75rem; margin-bottom: 3rem; border-left: 4px solid var(--brand-blue);">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+        <div>
+          <span class="badge-status-active" style="margin-bottom: 0.4rem; display: inline-block;">
+            Year 2027 Examination Tracking
+          </span>
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary); margin: 0 0 0.35rem 0;">
+            CISCE Board Examination Schedule &amp; Timetable Status
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0; max-width: 700px; line-height: 1.5;">
+            Official ICSE and ISC Year 2027 timetables are pending publication by the Council (traditionally announced in late November or December).
+          </p>
+        </div>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <a href="/icse/datesheets" class="btn-sm btn-primary">
+            Full Date Sheet Status &rarr;
+          </a>
+          <a href="{{ datesheets.official_cisce_exam_portal or 'https://cisce.org/examination/' }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
+            Official CISCE Portal ↗
+          </a>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; font-size: 0.875rem;">
+        <div style="background: var(--bg-alt); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+          <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.25rem;">ICSE Class 10 Session</div>
+          <div style="color: var(--text-dark);">Morning session commences at 11:00 AM IST (15 minutes reading time from 10:45 AM).</div>
+        </div>
+        <div style="background: var(--bg-alt); padding: 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border-color);">
+          <div style="font-weight: 700; color: var(--primary); margin-bottom: 0.25rem;">ISC Class 12 Session</div>
+          <div style="color: var(--text-dark);">Afternoon session commences at 02:00 PM IST (15 minutes reading time from 01:45 PM).</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Syllabi Highlights -->
+    <div style="margin-bottom: 3rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.75rem;">
+        <div>
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary); margin: 0;">
+            Featured Subject Syllabi (Session {{ current_academic_year }})
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.875rem; margin: 0.25rem 0 0 0;">
+            Direct official CISCE regulations and question paper blueprints for key subjects.
+          </p>
+        </div>
+        <a href="/icse/syllabus" class="btn-sm btn-secondary">
+          Explore All Syllabi &rarr;
+        </a>
+      </div>
+
+      <div class="subject-grid">
+        {% for item in featured_syllabus %}
+          {% include 'components/icse_syllabus_card.html' %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Latest Official Circulars Feed -->
+    <div style="margin-bottom: 3rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.75rem;">
+        <div>
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary); margin: 0;">
+            Latest CISCE Official Circulars &amp; Notices
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.875rem; margin: 0.25rem 0 0 0;">
+            Directly verified policy circulars, examination directives, and curriculum notifications.
+          </p>
+        </div>
+        <a href="/icse/circulars" class="btn-sm btn-secondary">
+          All Circulars &rarr;
+        </a>
+      </div>
+
+      <div class="circulars-list">
+        {% for c in latest_circulars %}
+        <div class="circ-card">
+          <div class="circ-header">
+            <span class="circ-tag official">✓ Official Notice</span>
+            <span class="circ-date">{{ c.published_date }}</span>
+          </div>
+          <h3 class="circ-title">{{ c.title }}</h3>
+          <p class="circ-summary">{{ c.summary }}</p>
+          <div class="circ-footer">
+            <span class="circ-no">{{ c.circular_no }}</span>
+            {% if c.official_url %}
+            <a href="{{ c.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="font-size: 0.75rem;">
+              Download Official PDF ↗
+            </a>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Previous Year Question Paper Library Banner -->
+    <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.75rem; margin-bottom: 2.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span class="badge-status-active" style="margin-bottom: 0.4rem; display: inline-block;">
+            ✓ Comprehensive Archive
+          </span>
+          <h3 style="font-size: 1.2rem; color: var(--primary-headings); margin-bottom: 0.35rem; font-weight: 700;">
+            ICSE &amp; ISC Previous Year Question Papers (PYQ Library)
+          </h3>
+          <p style="color: var(--text-muted); font-size: 0.875rem; margin: 0; max-width: 650px;">
+            Access authentic specimen papers, answer keys, and marking schemes for ICSE Class 10 and ISC Class 12 spanning 2017 to 2027 verified directly from official CISCE repositories.
+          </p>
+        </div>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <a href="/icse/pyq?class=10" class="btn-primary" style="font-size: 0.875rem;">
+            ICSE Class 10 PYQs
+          </a>
+          <a href="/icse/pyq?class=12" class="btn-primary" style="font-size: 0.875rem;">
+            ISC Class 12 PYQs
+          </a>
+          <a href="/icse/pyq" class="btn-secondary" style="font-size: 0.875rem;">
+            All PYQs &rarr;
+          </a>
         </div>
       </div>
     </div>
@@ -118,24 +282,24 @@ StudySignal's dedicated ICSE (Class 10) and ISC (Class 12) examination hub is cu
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
         <div>
           <span class="badge-status-active" style="margin-bottom: 0.4rem; display: inline-block;">
-            ✓ Live &amp; Active
+            ✓ Also Available
           </span>
           <h3 style="font-size: 1.2rem; color: var(--primary-headings); margin-bottom: 0.35rem; font-weight: 700;">
-            Looking for Active CBSE Resources?
+            Looking for CBSE Resources?
           </h3>
           <p style="color: var(--text-muted); font-size: 0.875rem; margin: 0; max-width: 650px;">
-            Our CBSE section is fully active with verified subject syllabi, official date sheet tracking, circular notices, and an authentic 2014–2025 Previous Year Question Paper library.
+            StudySignal also hosts a comprehensive CBSE section with verified curriculum syllabi, date sheet tracking, circular notices, and a 2014–2025 Previous Year Question Paper library.
           </p>
         </div>
         <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-          <a href="/cbse/class-10" class="btn-primary" style="font-size: 0.875rem;">
+          <a href="/cbse/class-10" class="btn-secondary" style="font-size: 0.875rem;">
             CBSE Class 10
           </a>
-          <a href="/cbse/class-12" class="btn-primary" style="font-size: 0.875rem;">
+          <a href="/cbse/class-12" class="btn-secondary" style="font-size: 0.875rem;">
             CBSE Class 12
           </a>
           <a href="/cbse/pyq" class="btn-secondary" style="font-size: 0.875rem;">
-            PYQ Library (2014–25)
+            CBSE PYQs (2014–25)
           </a>
         </div>
       </div>

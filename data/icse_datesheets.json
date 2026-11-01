@@ -1,0 +1,45 @@
+{
+  "notice": "Official CISCE board examination timetables and schedules are published exclusively on the Council for the Indian School Certificate Examinations portal (cisce.org). Students, parents, and schools should always refer to confirmed notices released directly by the Council.",
+  "official_cisce_exam_portal": "https://cisce.org/examination/",
+  "official_cisce_main_portal": "https://cisce.org",
+  "last_checked": "2026-11-01",
+  "last_checked_label": "01 November 2026",
+  "classes": {
+    "10": {
+      "class_name": "ICSE Class 10 (Secondary)",
+      "academic_year": "2026-27",
+      "exam_series": "ICSE Year 2027 Examination",
+      "official_status": "Official date sheet pending announcement from CISCE on cisce.org (annually released in late November / December)",
+      "official_link": "https://cisce.org/examination/",
+      "last_checked": "2026-11-01",
+      "last_checked_label": "01 November 2026",
+      "specimen_papers_url": "https://cisce.org/specimen-question-papers-icse-class-x-2027/",
+      "regulations_url": "https://cisce.org/regulations-and-syllabuses/",
+      "improvement_timetable_url": "https://cisce.org/wp-content/uploads/2026/05/Time-Table-for-Improvement-Exmainations.pdf",
+      "exam_timing_standard": "Standard ICSE morning sessions commence at 11:00 AM IST with 15 minutes dedicated question paper reading time starting at 10:45 AM IST.",
+      "is_official_announced": false,
+      "verification_status": "verified_official",
+      "status_label": "Schedule Pending Official Release",
+      "announcement_expected": "Late November / December 2026",
+      "exam_window_expected": "Mid-February to late March 2027"
+    },
+    "12": {
+      "class_name": "ISC Class 12 (Higher Secondary)",
+      "academic_year": "2026-27",
+      "exam_series": "ISC Year 2027 Examination",
+      "official_status": "Official date sheet pending announcement from CISCE on cisce.org (annually released in late November / December)",
+      "official_link": "https://cisce.org/examination/",
+      "last_checked": "2026-11-01",
+      "last_checked_label": "01 November 2026",
+      "specimen_papers_url": "https://cisce.org/specimen-question-papers-isc-class-xii-2027/",
+      "regulations_url": "https://cisce.org/regulations-and-syllabuses-isc/",
+      "improvement_timetable_url": "https://cisce.org/wp-content/uploads/2026/05/Time-Table-for-Improvement-Exmainations.pdf",
+      "exam_timing_standard": "Standard ISC afternoon sessions commence at 02:00 PM IST with 15 minutes dedicated question paper reading time starting at 01:45 PM IST.",
+      "is_official_announced": false,
+      "verification_status": "verified_official",
+      "status_label": "Schedule Pending Official Release",
+      "announcement_expected": "Late November / December 2026",
+      "exam_window_expected": "Mid-February to early April 2027"
+    }
+  }
+}

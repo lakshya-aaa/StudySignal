@@ -1,0 +1,233 @@
+{% extends 'base.html' %}
+
+{% block title %}CBSE Previous Year Question Papers (PYQs) - Class 10 & 12 | StudySignal{% endblock %}
+
+{% block meta_description %}
+Download authentic, verified CBSE Class 10 and Class 12 Previous Year Question Papers (PYQs) for 2014 through 2025 directly from the official cbse.gov.in archive.
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [{'title': 'CBSE', 'url': '/'}, {'title': 'Previous Year Question Papers (PYQs)', 'url': '/cbse/pyq'}] %}
+{% include 'components/breadcrumb.html' %}
+
+<section class="section" style="padding-bottom: 1.5rem;">
+  <div class="container">
+    <!-- Header Section -->
+    <div class="section-header">
+      <div>
+        <h1 class="section-title">CBSE Previous Year Question Papers (PYQ Library)</h1>
+        <p class="section-subtitle">
+          Authentic board examination question papers with official question paper sets direct from the official <code>cbse.gov.in</code> repository.
+        </p>
+      </div>
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <a href="{{ official_urls.cbse_pyq_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
+          Official CBSE QP Archive ↗
+        </a>
+        <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
+          cbse.gov.in ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- Official Advisory Banner -->
+    <div class="alert-box" style="margin-bottom: 2rem;">
+      <strong>Official Repository Integrity Notice:</strong>
+      All question paper archives indexed below are verified and sourced directly from the official Central Board of Secondary Education public examination repository (<code>cbse.gov.in</code>). Papers that are not currently mirrored in the open board repository are transparently marked as <em>Unavailable / Pending Board Release</em> without broken or simulated download links.
+    </div>
+
+    <!-- Filter Form -->
+    <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 2rem;">
+      <form action="/cbse/pyq" method="get" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) 110px; gap: 1rem; align-items: end;">
+        <div>
+          <label class="form-label" for="filter-q">Search Subject or Code</label>
+          <input 
+            type="text" 
+            id="filter-q"
+            name="q" 
+            class="form-control" 
+            placeholder="e.g. Mathematics, 041, Physics" 
+            value="{{ search_q }}"
+          >
+        </div>
+
+        <div>
+          <label class="form-label" for="filter-class">Select Class</label>
+          <select id="filter-class" name="class" class="form-control">
+            <option value="all" {% if selected_class == 'all' %}selected{% endif %}>All Classes (10 &amp; 12)</option>
+            <option value="10" {% if selected_class == '10' %}selected{% endif %}>Class 10 (Secondary)</option>
+            <option value="12" {% if selected_class == '12' %}selected{% endif %}>Class 12 (Senior Sec)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="form-label" for="filter-subject">Subject</label>
+          <select id="filter-subject" name="subject" class="form-control">
+            <option value="all" {% if selected_subject == 'all' %}selected{% endif %}>All Subjects</option>
+            {% for subj in available_subjects %}
+            <option value="{{ subj }}" {% if selected_subject.lower() == subj.lower() %}selected{% endif %}>{{ subj }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div>
+          <label class="form-label" for="filter-year">Exam Year</label>
+          <select id="filter-year" name="year" class="form-control">
+            <option value="all" {% if selected_year == 'all' %}selected{% endif %}>All Years</option>
+            {% for yr in available_years %}
+            <option value="{{ yr }}" {% if selected_year == yr %}selected{% endif %}>{{ yr }} Examination</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div>
+          <label class="form-label" for="filter-availability">Availability</label>
+          <select id="filter-availability" name="availability" class="form-control">
+            <option value="all" {% if selected_availability == 'all' %}selected{% endif %}>All Status</option>
+            <option value="available" {% if selected_availability == 'available' %}selected{% endif %}>Available Only</option>
+            <option value="unavailable" {% if selected_availability == 'unavailable' %}selected{% endif %}>Unavailable Only</option>
+          </select>
+        </div>
+
+        <div>
+          <button type="submit" class="btn-primary" style="height: 42px; width: 100%;">Filter</button>
+        </div>
+      </form>
+
+      {% if search_q or selected_class != 'all' or selected_subject != 'all' or selected_year != 'all' or selected_availability != 'all' %}
+      <div style="margin-top: 0.75rem; font-size: 0.8125rem;">
+        <span style="color: var(--text-muted);">Active filters applied:</span>
+        {% if search_q %}<strong>Query:</strong> "{{ search_q }}" &bull;{% endif %}
+        {% if selected_class != 'all' %}<strong>Class:</strong> {{ selected_class }} &bull;{% endif %}
+        {% if selected_subject != 'all' %}<strong>Subject:</strong> {{ selected_subject }} &bull;{% endif %}
+        {% if selected_year != 'all' %}<strong>Year:</strong> {{ selected_year }} &bull;{% endif %}
+        {% if selected_availability != 'all' %}<strong>Status:</strong> {{ selected_availability }} &bull;{% endif %}
+        <a href="/cbse/pyq" style="color: var(--brand-blue); font-weight: 600; margin-left: 0.5rem; text-decoration: underline;">Clear All</a>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Live Counter Bar -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.5rem;">
+      <span style="font-weight: 700; font-size: 0.9375rem; color: var(--text-dark);">
+        Showing {{ pyq_items|length }} of {{ total_count }} question paper entries
+      </span>
+      <span style="font-size: 0.8125rem; color: var(--text-muted);">
+        Verified from <code>cbse.gov.in/cbsenew/question-paper.html</code>
+      </span>
+    </div>
+
+    <!-- Empty State -->
+    {% if pyq_items|length == 0 %}
+    <div class="pyq-empty-state">
+      <div style="font-size: 2.5rem; margin-bottom: 0.75rem;">📋</div>
+      <h3 style="font-size: 1.25rem; color: var(--primary-headings); margin-bottom: 0.5rem;">No Question Papers Match Your Filters</h3>
+      <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto 1.25rem; line-height: 1.5;">
+        No question paper records were found for the selected criteria. Try selecting "All Classes" or clearing the search keyword.
+      </p>
+      <a href="/cbse/pyq" class="btn-primary" style="display: inline-block; width: auto; padding: 0.6rem 1.5rem;">
+        Reset All Filters
+      </a>
+    </div>
+    {% else %}
+    <!-- PYQ Cards Grid -->
+    <div class="pyq-grid">
+      {% for item in pyq_items %}
+      <div class="pyq-card {% if not item.is_available %}is-unavailable{% endif %}">
+        <div class="pyq-card-header">
+          <div style="display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap;">
+            <span class="code-pill">Class {{ item.class }} &bull; Code {{ item.code }}</span>
+            <span class="pyq-year-badge">{{ item.exam_year }} Exam</span>
+          </div>
+          <div style="display: flex; gap: 0.35rem; align-items: center; flex-wrap: wrap;">
+            {% if item.is_available %}
+              {% if item.contains_multiple_sets %}
+                <span class="pyq-badge-multiset" title="ZIP archive containing multiple question paper sets (Delhi and Outside Delhi / Sets 1, 2, 3)">📦 Multi-Set ZIP</span>
+              {% elif item.set_name %}
+                <span class="pyq-badge-singleset" title="Individual question paper set">{{ item.set_name }}</span>
+              {% endif %}
+              <span class="pyq-badge-available">✓ Official Paper</span>
+            {% else %}
+              <span class="pyq-badge-unavailable">Pending Release</span>
+            {% endif %}
+          </div>
+        </div>
+
+        <h3 class="pyq-card-title">{{ item.subject }}</h3>
+        
+        <div class="pyq-card-meta">
+          <span>{{ item.stream }}</span>
+          <span>&bull;</span>
+          <span>{{ item.exam_type }}</span>
+        </div>
+
+        <p class="pyq-card-desc">{{ item.description }}</p>
+
+        <div class="pyq-details-box">
+          <span>Format: <strong>{{ item.file_type }}</strong></span>
+          <span>Sets: <strong>{% if item.contains_multiple_sets %}Multiple Sets (Archive){% elif item.set_name %}{{ item.set_name }}{% else %}Single Document{% endif %}</strong></span>
+          <span>Verified: <strong>{{ item.last_verified or '01 Nov 2026' }}</strong></span>
+          <span>Source: <a href="{{ item.source_portal or official_urls.cbse_pyq_main }}" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; color: inherit;" title="Official CBSE Source Archive"><strong>cbse.gov.in ↗</strong></a></span>
+        </div>
+
+        {% if item.is_available %}
+          <p class="pyq-note available">
+            ✓ {{ item.availability_note }}
+          </p>
+        {% else %}
+          <p class="pyq-note unavailable">
+            ⚠️ {{ item.availability_note }}
+          </p>
+        {% endif %}
+
+        <div class="pyq-card-actions">
+          {% if item.is_available and item.official_url %}
+            <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-official-pdf" title="Download official CBSE question paper archive">
+              {% if item.contains_multiple_sets %}
+                Download All Sets ({{ item.file_type }}) ↗
+              {% else %}
+                Download Official Paper ({{ item.file_type }}) ↗
+              {% endif %}
+            </a>
+            <a href="{{ item.source_portal or official_urls.cbse_pyq_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" title="View official CBSE repository source">
+              Source Archive ↗
+            </a>
+          {% else %}
+            <button class="btn-sm btn-unavailable" disabled title="Paper file not hosted in official CBSE online repository">
+              Paper Unavailable
+            </button>
+            <a href="{{ item.source_portal or official_urls.cbse_pyq_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" title="Visit official CBSE repository">
+              Check CBSE ↗
+            </a>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- Ad Placement Slot -->
+{% set slot_id = 'in_content_banner' %}
+{% include 'components/ad_slot.html' %}
+
+<!-- Educational Preparation Notice -->
+<section class="section section-alt" style="margin-top: 2rem;">
+  <div class="container">
+    <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.5rem;">
+      <h3 style="font-size: 1.15rem; color: var(--primary-headings); margin-bottom: 0.5rem; font-weight: 700;">
+        How to Practice Effectively With CBSE Previous Year Papers
+      </h3>
+      <p style="font-size: 0.875rem; color: #334155; line-height: 1.6; margin-bottom: 0.75rem;">
+        Solving previous years' board examination question papers helps students acclimate to the authentic examination environment, evaluate section-wise time distribution, and identify frequently tested core concepts across cognitive dimensions (Knowledge, Understanding, Application, Analysis).
+      </p>
+      <ul style="font-size: 0.875rem; color: #334155; line-height: 1.6; margin-left: 1.25rem;">
+        <li>Attempt papers in a single uninterrupted 3-hour sitting matching official board timing (10:30 AM to 1:30 PM).</li>
+        <li>Utilize the mandatory 15-minute question paper reading window (10:15 AM to 10:30 AM) to plan internal question choices.</li>
+        <li>Cross-verify answers against the corresponding official CBSE Marking Scheme documents available on <code>cbse.gov.in</code>.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+{% endblock %}

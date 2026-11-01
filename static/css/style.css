@@ -116,6 +116,20 @@ img, svg {
   vertical-align: middle;
 }
 
+code, pre, kbd, samp {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.875em;
+  word-break: break-all;
+  overflow-wrap: anywhere;
+}
+
+code {
+  background-color: var(--bg-alt);
+  padding: 0.15em 0.35em;
+  border-radius: var(--radius-sm);
+  color: var(--text-dark);
+}
+
 /* Container */
 .container {
   width: 100%;
@@ -1034,6 +1048,167 @@ img, svg {
   flex: 1;
 }
 
+/* Historical Archive Card Distinct Styling */
+.subject-card-archive {
+  background-color: #fafbfd;
+  border-color: #cbd5e1;
+  border-top: 3px solid #64748b;
+}
+
+.subject-card-archive:hover {
+  border-color: #64748b;
+  box-shadow: var(--shadow-md);
+}
+
+.subject-card-archive .code-pill {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+  color: #475569;
+}
+
+/* Syllabus Filter Form & Responsive Header */
+.syllabus-filter-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)) 120px;
+  gap: 1rem;
+  align-items: end;
+}
+
+@media (max-width: 640px) {
+  .syllabus-filter-form {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+  .syllabus-filter-form .btn-primary {
+    width: 100%;
+    height: 44px;
+  }
+}
+
+.syllabus-count-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Syllabus Detail Layout & Components */
+.syllabus-detail-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  width: 100%;
+  max-width: 100%;
+}
+
+.syllabus-detail-main {
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+.syllabus-detail-sidebar {
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .syllabus-detail-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.syllabus-detail-card {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+@media (max-width: 576px) {
+  .syllabus-detail-card {
+    padding: 1.25rem 1rem;
+    border-radius: var(--radius-md);
+  }
+}
+
+.syllabus-detail-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary-headings);
+  margin-bottom: 0.5rem;
+  line-height: 1.25;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 576px) {
+  .syllabus-detail-title {
+    font-size: 1.45rem;
+  }
+}
+
+.syllabus-download-card {
+  background: #f0fdf4;
+  border: 1.5px solid #86efac;
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.syllabus-download-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.syllabus-download-info {
+  flex: 1;
+  min-width: 220px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.syllabus-download-url {
+  font-size: 0.8125rem;
+  color: #15803d;
+  display: block;
+  overflow-wrap: anywhere;
+  word-break: break-all;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 576px) {
+  .syllabus-download-inner {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .syllabus-download-inner .btn-primary {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.prescribed-books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
 /* ==========================================================================
    PYQ (Previous Year Question Papers) Explorer
    ========================================================================== */
@@ -1357,19 +1532,54 @@ img, svg {
 }
 
 /* ==========================================================================
-   Tables: Date Sheets
+   Tables: Date Sheets & Examination Blueprints
    ========================================================================== */
 .table-responsive {
   width: 100%;
+  max-width: 100%;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
   background-color: #ffffff;
   margin-bottom: 1.5rem;
+  box-sizing: border-box;
+}
+
+.table-responsive:focus-visible {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 2px;
+}
+
+.table-scroll-hint {
+  display: none;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.table-scroll-hint span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #f1f5f9;
+  border: 1px solid var(--border-color);
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .table-scroll-hint {
+    display: flex;
+  }
 }
 
 .data-table {
   width: 100%;
+  min-width: 560px; /* Keep tabular contents readable and un-squished during mobile horizontal scroll */
   border-collapse: collapse;
   text-align: left;
   font-size: 0.9375rem;

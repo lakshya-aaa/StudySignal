@@ -1,0 +1,1054 @@
+[
+  {
+    "id": "icse-10-english-2027",
+    "class": "10",
+    "course": "ICSE",
+    "subject": "English",
+    "code": "01",
+    "category": "Group I (Compulsory)",
+    "stream": "General",
+    "academic_year": "2026-27",
+    "session_type": "current",
+    "academic_year_label": "Session 2026-27 (Current)",
+    "title": "ICSE Class 10 English Syllabus (Paper 1 Language & Paper 2 Literature)",
+    "description": "Official CISCE Class X English curriculum comprising Paper 1: English Language (Composition, Letter Writing, Notice & Email, Unseen Comprehension, Functional Grammar) and Paper 2: Literature in English (Drama, Poetry, and Prose selections).",
+    "verification_status": "verified_official",
+    "is_official": true,
+    "last_verified": "2026-11-01",
+    "official_url": "https://cisce.org/wp-content/uploads/2025/03/1.-ICSE-English-26.pdf",
+    "source_portal": "https://cisce.org/regulations-and-syllabuses/",
+    "exam_structure": {
+      "theory_marks": 160,
+      "internal_marks": 40,
+      "total_marks": 200,
+      "duration": "Paper 1: 2 hours | Paper 2: 2 hours",
+      "format": "Paper 1 (Language - 80 marks) + Paper 2 (Literature - 80 marks) + Internal Assessment (40 marks)"
+    },
+    "course_structure_overview": "Two 2-hour written papers worth 80 marks each, accompanied by continuous internal evaluation of listening and speaking skills (20 marks per paper).",
+    "units": [
+      {
+        "unit_name": "Paper 1: English Language",
+        "weightage": "80 Marks",
+        "topics": "Descriptive/narrative composition (300-350 words), Formal/Informal Letter writing, Notice & Email drafting, Unseen prose comprehension with précis writing, and functional grammar (tenses, prepositions, sentence transformation)."
+      },
+      {
+        "unit_name": "Paper 2: Literature in English",
+        "weightage": "80 Marks",
+        "topics": "Drama (Shakespeare's Julius Caesar, Acts 3, 4 & 5), Poetry (Treasure Chest: A Collection of ICSE Poems), and Prose Short Stories (Treasure Chest: A Collection of ICSE Short Stories)."
+      }
+    ],
+    "prescribed_books": [
+      "Julius Caesar - William Shakespeare (Acts III, IV & V)",
+      "Treasure Chest: A Collection of ICSE Poems and Short Stories (Evergreen Publications)"
+    ],
+    "editorial_study_tips": "Practice daily sentence transformations and precis writing for Paper 1. For Paper 2, focus on direct quotes from Julius Caesar and character motivations in short stories."
+  },
+  {
+    "id": "icse-10-mathematics-2027",
+    "class": "10",
+    "course": "ICSE",
+    "subject": "Mathematics",
+    "code": "51",
+    "category": "Group II",
+    "stream": "General",
+    "academic_year": "2026-27",
+    "session_type": "current",
+    "academic_year_label": "Session 2026-27 (Current)",
+    "title": "ICSE Class 10 Mathematics Syllabus (2026-27)",
+    "description": "Comprehensive CISCE Class 10 Mathematics curriculum spanning Commercial Mathematics (GST, Banking), Algebra (Linear Inequations, Quadratic Equations, Factor Theorem, Matrices, Arithmetic & Geometric Progression), Coordinate Geometry, Geometry, Mensuration, Trigonometry, Statistics, and Probability.",
+    "verification_status": "verified_official",
+    "is_official": true,
+    "last_verified": "2026-11-01",
+    "official_url": "https://cisce.org/wp-content/uploads/2025/03/12.-ICSE-Mathematics-26.pdf",
+    "source_portal": "https://cisce.org/regulations-and-syllabuses/",
+    "exam_structure": {
+      "theory_marks": 80,
+      "internal_marks": 20,
+      "total_marks": 100,
+      "duration": "2.5 hours",
+      "format": "Section A (40 marks - compulsory short answers) + Section B (40 marks - 4 out of 7 questions)"
+    },
+    "course_structure_overview": "One paper of two and a half hours carrying 80 marks and Internal Assessment of 20 marks based on two school-level mathematics projects.",
+    "units": [
+      {
+        "unit_name": "Commercial Mathematics",
+        "weightage": "Approx. 12 Marks",
+        "topics": "Goods and Services Tax (GST) computations, Recurring Deposit Accounts (qualifying interest and maturity value)."
+      },
+      {
+        "unit_name": "Algebra",
+        "weightage": "Approx. 26 Marks",
+        "topics": "Linear Inequations, Quadratic Equations in one variable, Factor Theorem & Remainder Theorem, Matrices (2x2), Arithmetic Progression (AP) and Geometric Progression (GP)."
+      },
+      {
+        "unit_name": "Coordinate Geometry",
+        "weightage": "Approx. 12 Marks",
+        "topics": "Reflection in coordinates, Section and Mid-point formula, Equation of a straight line, Slope and intercepts."
+      },
+      {
+        "unit_name": "Geometry & Mensuration",
+        "weightage": "Approx. 18 Marks",
+        "topics": "Similarity of triangles, Circles (tangents, intersecting chords, cyclic quadrilaterals), Cylinder, Cone, and Sphere (surface areas and volumes)."
+      },
+      {
+        "unit_name": "Trigonometry, Statistics & Probability",
+        "weightage": "Approx. 12 Marks",
+        "topics": "Trigonometric identities, Heights and Distances, Mean, Median, Mode, Ogives (cumulative frequency curve), Probability."
+      }
+    ],
+    "prescribed_books": [
+      "Concise Mathematics ICSE Class 10 - Selina Publishers",
+      "Understanding ICSE Mathematics Class 10 - M.L. Aggarwal (Arya Publications)"
+    ],
+    "editorial_study_tips": "Section A tests fundamental formula accuracy across all chapters. Practice plotting Ogives on actual graph paper and memorize circle theorems thoroughly."
+  },
+  {
+    "id": "icse-10-physics-2027",
+    "class": "10",
+    "course": "ICSE",
+    "subject": "Physics",
+    "code": "521",
+    "category": "Group II (Science Paper 1)",
+    "stream": "General",
+    "academic_year": "2026-27",
+    "session_type": "current",
+    "academic_year_label": "Session 2026-27 (Current)",
+    "title": "ICSE Class 10 Physics Syllabus (Science Paper 1)",
+    "description": "Official CISCE Class 10 Physics course covering Force, Work, Power & Energy, Light (Refraction, Lenses, Spectrum), Sound (Echoes, Vibrations), Electricity and Magnetism, Heat (Calorimetry), and Modern Physics (Radioactivity).",
+    "verification_status": "verified_official",
+    "is_official": true,
+    "last_verified": "2026-11-01",
+    "official_url": "https://cisce.org/wp-content/uploads/2025/03/13.-ICSE-Physics-26.pdf",
+    "source_portal": "https://cisce.org/regulations-and-syllabuses/",
+    "exam_structure": {
+      "theory_marks": 80,
+      "internal_marks": 20,
+      "total_marks": 100,
+      "duration": "2 hours",
+      "format": "Section I (40 marks - compulsory short answer questions) + Section II (40 marks - 4 out of 6 questions)"
+    },
+    "course_structure_overview": "One 2-hour paper of 80 marks and Internal Practical assessment of 20 marks evaluated through laboratory experiments.",
+    "units": [
+      {
+        "unit_name": "Force, Work, Power and Energy",
+        "weightage": "Approx. 16 Marks",
+        "topics": "Turning effect of forces, Equilibrium, Centre of gravity, Uniform circular motion, Work, kinetic and potential energy, Machines (pulleys, levers)."
+      },
+      {
+        "unit_name": "Light",
+        "weightage": "Approx. 16 Marks",
+        "topics": "Refraction of light through glass slab and prism, Total internal reflection, Lenses (ray diagrams and sign convention), Electromagnetic spectrum and dispersion."
+      },
+      {
+        "unit_name": "Sound & Electricity",
+        "weightage": "Approx. 24 Marks",
+        "topics": "Reflection of sound waves, Echoes, Resonance, Ohm's law, Series and parallel circuits, Electrical power and energy, Household circuits, Magnetic effects of currents."
+      },
+      {
+        "unit_name": "Heat & Modern Physics",
+        "weightage": "Approx. 24 Marks",
+        "topics": "Specific heat capacity, Principle of method of mixtures, Latent heat, Atomic structure, Radioactivity (alpha, beta, gamma emissions, nuclear fission and fusion safety)."
+      }
+    ],
+    "prescribed_books": [
+      "Concise Physics ICSE Class 10 - Selina Publishers",
+      "A New Approach to ICSE Physics - Goyal Brothers Prakashan"
+    ],
+    "editorial_study_tips": "Calorimetry numericals and ray diagram conventions are high-scoring. Master the difference between total internal reflection conditions and standard refraction."
+  },
+  {
+    "id": "icse-10-chemistry-2027",
+    "class": "10",
+    "course": "ICSE",
+    "subject": "Chemistry",
+    "code": "522",
+    "category": "Group II (Science Paper 2)",
+    "stream": "General",
+    "academic_year": "2026-27",
+    "session_type": "current",
+    "academic_year_label": "Session 2026-27 (Current)",
+    "title": "ICSE Class 10 Chemistry Syllabus (Science Paper 2)",
+    "description": "Official CISCE Class 10 Chemistry curriculum covering Periodic Properties, Chemical Bonding, Acids, Bases & Salts, Analytical Chemistry, Mole Concept & Stoichiometry, Electrolysis, Metallurgy, Study of Compounds (HCl, NH3, HNO3, H2SO4), and Organic Chemistry.",
+    "verification_status": "verified_official",
+    "is_official": true,
+    "last_verified": "2026-11-01",
+    "official_url": "https://cisce.org/wp-content/uploads/2025/03/14.-ICSE-Chemistry-26.pdf",
+    "source_portal": "https://cisce.org/regulations-and-syllabuses/",
+    "exam_structure": {
+      "theory_marks": 80,
+      "internal_marks": 20,
+      "total_marks": 100,
+      "duration": "2 hours",
+      "format": "Section I (40 marks - compulsory) + Section II (40 marks - answer 4 out of 6 questions)"
+    },
+    "course_structure_overview": "One 2-hour theory paper of 80 marks alongside an internal laboratory assessment of 20 marks based on identification of gases and chemical reagents.",
+    "units": [
+      {
+        "unit_name": "Periodic Properties & Chemical Bonding",
+        "weightage": "Approx. 14 Marks",
+        "topics": "Periodic trends (atomic radius, ionization potential, electron affinity, electronegativity), Electrovalent, covalent, and coordinate bonding with electron dot diagrams."
+      },
+      {
+        "unit_name": "Acids, Bases, Salts & Analytical Chemistry",
+        "weightage": "Approx. 14 Marks",
+        "topics": "Definitions, preparation of normal and acid salts, Action of NaOH and NH4OH on metallic salt solutions."
+      },
+      {
+        "unit_name": "Mole Concept & Electrolysis",
+        "weightage": "Approx. 18 Marks",
+        "topics": "Gay-Lussac's Law, Avogadro's Law, Empirical and Molecular formula, Electrolysis of molten lead bromide, acidified water, copper sulphate solution, electroplating and electro-refining."
+      },
+      {
+        "unit_name": "Metallurgy & Study of Compounds",
+        "weightage": "Approx. 20 Marks",
+        "topics": "Extraction of Aluminium (Hall-Heroult & Baeyer's process), Preparation and properties of Hydrogen Chloride, Ammonia (Haber's), Nitric Acid (Ostwald's), Sulphuric Acid (Contact process)."
+      },
+      {
+        "unit_name": "Organic Chemistry",
+        "weightage": "Approx. 14 Marks",
+        "topics": "IUPAC nomenclature, Alkanes (Methane, Ethane), Alkenes (Ethene), Alkynes (Ethyne), Alcohols, and Carboxylic Acids."
+      }
+    ],
+    "prescribed_books": [
+      "Concise Chemistry ICSE Class 10 - Selina Publishers",
+      "Simplified Middle School & ICSE Chemistry - Dr. Viraf J. Dalal (Allied Publishers)"
+    ],
+    "editorial_study_tips": "Equation balancing and observation questions (color changes, precipitates) are heavily tested. Memorize conditions and catalysts for Haber, Ostwald, and Contact processes."
+  },
+  {
+    "id": "icse-10-biology-2027",
+    "class": "10",
+    "course": "ICSE",
+    "subject": "Biology",
+    "code": "523",
+    "category": "Group II (Science Paper 3)",
+    "stream": "General",
+    "academic_year": "2026-27",
+    "session_type": "current",
+    "academic_year_label": "Session 2026-27 (Current)",
+    "title": "ICSE Class 10 Biology Syllabus (Science Paper 3)",
+    "description": "Official CISCE Class 10 Biology course covering Basic Biology (Cell Cycle, Genetics), Plant Physiology (Absorption by Roots, Transpiration, Photosynthesis), Human Anatomy & Physiology (Circulatory, Excretory, Nervous, Endocrine, Reproductive Systems), Population, and Human Immune System.",
+    "verification_status": "verified_official",
+    "is_official": true,
+    "last_verified": "2026-11-01",
+    "official_url": "https://cisce.org/wp-content/uploads/2025/03/15.-ICSE-Biology-26.pdf",
+    "source_portal": "https://cisce.org/regulations-and-syllabuses/",
+    "exam_structure": {
+      "theory_marks": 80,
+      "internal_marks": 20,
+      "total_marks": 100,
+      "duration": "2 hours",
+      "format": "Section I (40 marks - compulsory objective/short questions) + Section II (40 marks - 4 out of 6 questions)"
+    },
+    "course_structure_overview": "One 2-hour paper carrying 80 marks and an Internal Practical assessment of 20 marks based on plant physiology set-ups and specimen identification.",
+    "units": [
+      {
+        "unit_name": "Basic Biology & Genetics",
+        "weightage": "Approx. 15 Marks",
+        "topics": "Cell cycle, Mitosis, Meiosis, Structure of chromosomes, DNA overview, Mendel's laws of inheritance, Monohybrid and Dihybrid crosses, Sex determination."
+      },
+      {
+        "unit_name": "Plant Physiology",
+        "weightage": "Approx. 20 Marks",
+        "topics": "Absorption by roots, Osmosis, Diffusion, Turgidity, Plasmolysis, Root pressure, Transpiration experiments, Photosynthesis light & dark reactions, Chloroplast structure."
+      },
+      {
+        "unit_name": "Human Anatomy and Physiology",
+        "weightage": "Approx. 35 Marks",
+        "topics": "Circulatory system (blood, heart structure, cardiac cycle, double circulation), Excretory system (kidney, nephron), Nervous system (brain, spinal cord, reflex arc), Sense organs (Eye, Ear), Endocrine glands, Reproductive system."
+      },
+      {
+        "unit_name": "Population & Pollution",
+        "weightage": "Approx. 10 Marks",
+        "topics": "Population explosion in India, Need for population control, Major air, water, and soil pollutants, Acid rain, Ozone depletion."
+      }
+    ],
+    "prescribed_books": [
+      "Concise Biology ICSE Class 10 - Selina Publishers",
+      "A New Approach to ICSE Biology - Goyal Brothers Prakashan"
+    ],
+    "editorial_study_tips": "Practice neat anatomical diagrams with accurate labelling (especially the nephron, eye, and heart). Pay attention to scientific biological terms in Section I."
+  },
+  {
+    "id": "icse-10-history-civics-2027",
+    "class": "10",
+    "course": "ICSE",
+    "subject": "History & Civics",
+    "code": "501",
+    "category": "Group I (Compulsory)",
+    "stream": "General",
+    "academic_year": "2026-27",
+    "session_type": "current",
+    "academic_year_label": "Session 2026-27 (Current)",
+    "title": "ICSE Class 10 History & Civics Syllabus (H.C.G. Paper 1)",
+    "description": "Official CISCE Class 10 History and Civics curriculum covering the Indian Constitution, Union Parliament, Union Executive (President, Vice-President, Prime Minister), Judiciary (Supreme Court, High Courts, Subordinate Courts), Indian National Movement (1857-1947), and Contemporary World (World Wars, United Nations, NAM).",
+    "verification_status": "verified_official",
+    "is_official": true,
+    "last_verified": "2026-11-01",
+    "official_url": "https://cisce.org/wp-content/uploads/2025/03/8.-ICSE-History-Civics-26.pdf",
+    "source_portal": "https://cisce.org/regulations-and-syllabuses/",
+    "exam_structure": {
+      "theory_marks": 80,
+      "internal_marks": 20,
+      "total_marks": 100,
+      "duration": "2 hours",
+      "format": "Part I (30 marks - compulsory Civics 10 marks + History 20 marks) + Part II (50 marks - Section A Civics 2 questions + Section B History 3 questions)"
+    },
+    "course_structure_overview": "One 2-hour paper carrying 80 marks and Internal Project Assessment carrying 20 marks based on historical research or constitutional inquiries.",
+    "units": [
+      {
+        "unit_name": "Civics: The Union Legislature & Executive",
+        "weightage": "Approx. 30 Marks",
+        "topics": "Lok Sabha, Rajya Sabha (composition, qualifications, powers), Union Executive: President, Vice-President, Prime Minister and Council of Ministers, Union Judiciary: Supreme Court, High Courts, Lok Adalats."
+      },
+      {
+        "unit_name": "History: Indian National Movement (1857-1947)",
+        "weightage": "Approx. 30 Marks",
+        "topics": "First War of Independence (1857 causes & consequences), Early Nationalists vs Assertive Nationalists, Partition of Bengal, Muslim League, Mahatma Gandhi & National Movement, Quit India, Subhash Chandra Bose & INA, Independence & Partition."
+      },
+      {
+        "unit_name": "History: The Contemporary World",
+        "weightage": "Approx. 20 Marks",
+        "topics": "First World War (causes and Treaty of Versailles), Rise of Dictatorships (Fascism in Italy, Nazism in Germany), Second World War, United Nations (Major organs and specialized agencies: UNICEF, WHO, UNESCO), Non-Aligned Movement (NAM)."
+      }
+    ],
+    "prescribed_books": [
+      "Total History & Civics Class 10 - Morning Star Publishers",
+      "ICSE History & Civics - Frank Brothers & Co."
+    ],
+    "editorial_study_tips": "Focus on dates, causes, and consequences in History. In Civics, memorize specific constitutional clauses, qualifications, and terms of office."
+  },
+  {
+    "id": "icse-10-geography-2027",
+    "class": "10",
+    "course": "ICSE",
+    "subject": "Geography",
+    "code": "502",
+    "category": "Group I (Compulsory)",
+    "stream": "General",
+    "academic_year": "2026-27",
+    "session_type": "current",
+    "academic_year_label": "Session 2026-27 (Current)",
+    "title": "ICSE Class 10 Geography Syllabus (H.C.G. Paper 2)",
+    "description": "Official CISCE Class 10 Geography curriculum covering Topographical Survey Sheet Interpretation, Outline Map of India, Climate of India, Soils, Natural Vegetation, Water Resources, Mineral & Energy Resources, Agriculture, Manufacturing Industries, Transport, and Waste Management.",
+    "verification_status": "verified_official",
+    "is_official": true,
+    "last_verified": "2026-11-01",
+    "official_url": "https://cisce.org/wp-content/uploads/2025/03/9.-ICSE-Geography-26.pdf",
+    "source_portal": "https://cisce.org/regulations-and-syllabuses/",
+    "exam_structure": {
+      "theory_marks": 80,
+      "internal_marks": 20,
+      "total_marks": 100,
+      "duration": "2 hours",
+      "format": "Part I (30 marks compulsory - Topo Map 10 + India Map 10 + MCQs 10) + Part II (50 marks - 5 out of 9 structured questions)"
+    },
+    "course_structure_overview": "One 2-hour paper of 80 marks and Internal Assessment of 20 marks based on a field survey or geographic project report.",
+    "units": [
+      {
+        "unit_name": "Topographical Map Interpretation & Map of India",
+        "weightage": "30 Marks",
+        "topics": "Interpretation of Survey of India 1:50,000 toposheets (four-figure & six-figure grid references, scale, drainage, relief, settlement patterns). Location and marking on outline Map of India."
+      },
+      {
+        "unit_name": "Climate, Soil & Water Resources of India",
+        "weightage": "Approx. 25 Marks",
+        "topics": "Distribution of temperature, rainfall, winds in Summer and Winter, Monsoon mechanisms. Classification and soil conservation (Alluvial, Black, Red, Laterite). Sources of water, irrigation methods, rainwater harvesting."
+      },
+      {
+        "unit_name": "Minerals, Agriculture, Industry & Transport",
+        "weightage": "Approx. 25 Marks",
+        "topics": "Iron ore, Bauxite, Coal, Petroleum, Solar, Wind energy. Kharif and Rabi crops, Cotton, Jute, Sugar, Iron & Steel, Petrochemical industries. Roadways, Railways, Airways, Waterways, Waste management methods."
+      }
+    ],
+    "prescribed_books": [
+      "Total Geography Class 10 - Morning Star Publishers",
+      "A Textbook of ICSE Geography - Goyal Brothers Prakashan"
+    ],
+    "editorial_study_tips": "Practice toposheets weekly. Accuracy in four-figure and six-figure grid references and map markings can guarantee a perfect 20/20 in Part I."
+  },
+  {
+    "id": "icse-10-computer-applications-2027",
+    "class": "10",
+    "course": "ICSE",
+    "subject": "Computer Applications",
+    "code": "61",
+    "category": "Group III Elective",
+    "stream": "General",
+    "academic_year": "2026-27",
+    "session_type": "current",
+    "academic_year_label": "Session 2026-27 (Current)",
+    "title": "ICSE Class 10 Computer Applications Syllabus (Java Programming)",
+    "description": "Official CISCE Class 10 Computer Applications curriculum focused on Object-Oriented Programming (OOP) using Java, covering Classes, Methods, Constructors, Arrays (1D & 2D), String Handling, and Wrapper Classes.",
+    "verification_status": "verified_official",
+    "is_official": true,
+    "last_verified": "2026-11-01",
+    "official_url": "https://cisce.org/wp-content/uploads/2025/03/21.-ICSE-Computer-Applications-26.pdf",
+    "source_portal": "https://cisce.org/regulations-and-syllabuses/",
+    "exam_structure": {
+      "theory_marks": 100,
+      "internal_marks": 100,
+      "total_marks": 200,
+      "duration": "2 hours",
+      "format": "Section A (40 marks - compulsory short answers & dry-run outputs) + Section B (60 marks - 4 Java programs out of 6)"
+    },
+    "course_structure_overview": "One 2-hour theory paper carrying 100 marks and an Internal Practical assessment carrying 100 marks based on execution of 20 lab assignments.",
+    "units": [
+      {
+        "unit_name": "OOP Principles & Basic Java Elements",
+        "weightage": "Approx. 25 Marks",
+        "topics": "Principles of OOP (Encapsulation, Inheritance, Polymorphism, Abstraction), Data types, Operators, Control structures (if-else, switch, loops)."
+      },
+      {
+        "unit_name": "User-Defined Methods & Constructors",
+        "weightage": "Approx. 25 Marks",
+        "topics": "Method definition, signature, return types, Method overloading, Constructors (default, parameterized), 'this' keyword."
+      },
+      {
+        "unit_name": "Arrays & String Handling",
+        "weightage": "Approx. 50 Marks",
+        "topics": "Single dimensional arrays, Searching (Linear & Binary search), Sorting (Bubble & Selection sort), String class methods (charAt, length, substring, indexOf, toUpperCase, trim, replace), Wrapper classes."
+      }
+    ],
+    "prescribed_books": [
+      "Understanding Computer Applications with BlueJ Class 10 - Arya Publishing Company",
+      "Computer Applications Class 10 - Sumita Arora (Dhanpat Rai & Co.)"
+    ],
+    "editorial_study_tips": "Practice dry-running loop iterations on paper. Write clear variable description tables with your Java programs in Section B."
+  },
+  {
+    "id": "icse-10-economics-2027",
+    "class": "10",
+    "course": "ICSE",
+    "subject": "Economics",
+    "code": "64",
+    "category": "Group II Elective",
+    "stream": "General",
+    "academic_year": "2026-27",
+    "session_type": "current",
+    "academic_year_label": "Session 2026-27 (Current)",
+    "title": "ICSE Class 10 Economics Syllabus (2026-27)",
+    "description": "Official CISCE Class 10 Economics course covering Factors of Production (Land, Labour, Capital, Enterprise), Theory of Demand and Supply, Market Structures, Money & Banking (Central Bank & Commercial Banks), Inflation, Consumer Awareness, and Public Finance.",
+    "verification_status": "verified_official",
+    "is_official": true,
+    "last_verified": "2026-11-01",
+    "official_url": "https://cisce.org/wp-content/uploads/2025/03/16.-ICSE-Economics-26.pdf",
+    "source_portal": "https://cisce.org/regulations-and-syllabuses/",
+    "exam_structure": {
+      "theory_marks": 80,
+      "internal_marks": 20,
+      "total_marks": 100,
+      "duration": "2 hours",
+      "format": "Section I (40 marks - compulsory short answers) + Section II (40 marks - 4 out of 6 questions)"
+    },
+    "course_structure_overview": "One 2-hour written paper of 80 marks and an Internal Project assessment of 20 marks evaluated on economic data surveys.",
+    "units": [
+      {
+        "unit_name": "Factors of Production",
+        "weightage": "Approx. 20 Marks",
+        "topics": "Land, Labour (division of labour, efficiency), Capital (types and capital formation), Enterprise (role of an entrepreneur)."
+      },
+      {
+        "unit_name": "Theory of Demand and Supply",
+        "weightage": "Approx. 25 Marks",
+        "topics": "Law of Demand, Elasticity of demand, Law of Supply, Determinants of supply, Equilibrium price formation."
+      },
+      {
+        "unit_name": "Money, Banking & Public Finance",
+        "weightage": "Approx. 35 Marks",
+        "topics": "Functions of money, Commercial Banks vs Reserve Bank of India (RBI monetary policy tools), Inflation causes and remedies, Consumer rights and duties, Public revenue and expenditure."
+      }
+    ],
+    "prescribed_books": [
+      "ICSE Economics Class 10 - J.P. Goel (Goyal Brothers Prakashan)",
+      "A Textbook of ICSE Economics - Frank Brothers & Co."
+    ],
+    "editorial_study_tips": "Always draw neat, labelled demand and supply curves to illustrate price shifts. Memorize quantitative and qualitative credit control tools of the RBI."
+  },
+  {
+    "id": "icse-10-commercial-studies-2027",
+    "class": "10",
+    "course": "ICSE",
+    "subject": "Commercial Studies",
+    "code": "63",
+    "category": "Group II Elective",
+    "stream": "General",
+    "academic_year": "2026-27",
+    "session_type": "current",
+    "academic_year_label": "Session 2026-27 (Current)",
+    "title": "ICSE Class 10 Commercial Studies Syllabus (2026-27)",
+    "description": "Official CISCE Class 10 Commercial Studies curriculum covering Stakeholders in Commercial Organizations, Marketing & Sales, Finance & Accounting (Capital vs Revenue, Final Accounts, Banking), Human Resources, and Logistics & Environmental Regulations.",
+    "verification_status": "verified_official",
+    "is_official": true,
+    "last_verified": "2026-11-01",
+    "official_url": "https://cisce.org/wp-content/uploads/2025/03/17.-ICSE-Commercial-Studies-26.pdf",
+    "source_portal": "https://cisce.org/regulations-and-syllabuses/",
+    "exam_structure": {
+      "theory_marks": 80,
+      "internal_marks": 20,
+      "total_marks": 100,
+      "duration": "2 hours",
+      "format": "Section A (40 marks compulsory) + Section B (40 marks - 4 out of 6 questions)"
+    },
+    "course_structure_overview": "One 2-hour paper of 80 marks with 20 marks internal project assessment on business enterprise case studies.",
+    "units": [
+      {
+        "unit_name": "Stakeholders & Commercial Communication",
+        "weightage": "Approx. 25 Marks",
+        "topics": "Internal and external stakeholders, Interdependence, Marketing mix (4 Ps), Advertising vs sales promotion."
+      },
+      {
+        "unit_name": "Finance & Accounting",
+        "weightage": "Approx. 35 Marks",
+        "topics": "Capital and revenue expenditure/receipts, Preparation of Trading, Profit & Loss Account and Balance Sheet with simple adjustments, Sources of finance."
+      },
+      {
+        "unit_name": "Human Resources & Logistics",
+        "weightage": "Approx. 20 Marks",
+        "topics": "Recruitment, selection, training, Warehousing, Insurance, Environmental standards and consumer protection."
+      }
+    ],
+    "prescribed_books": [
+      "ICSE Commercial Studies Class 10 - C.B. Gupta (Sultan Chand & Sons)"
+    ],
+    "editorial_study_tips": "Practice Final Accounts problem solving with closing stock, outstanding expenses, and prepaid items. Understand the clear distinctions between advertising and personal selling."
+  },
+  {
+    "id": "isc-12-english-2027",
+    "class": "12",
+    "course": "ISC",
+    "subject": "English",
+    "code": "801",
+    "category": "Compulsory",
+    "stream": "General",
+    "academic_year": "2026-27",
+    "session_type": "current",
+    "academic_year_label": "Session 2026-27 (Current)",
+    "title": "ISC Class 12 English Syllabus (Paper 1 Language & Paper 2 Literature in English)",
+    "description": "Official CISCE Class 12 English curriculum comprising Paper 1: English Language (Composition, Directed Writing, Proposal Writing, Functional Grammar) and Paper 2: Literature in English (Drama, Poetry, and Short Stories).",
+    "verification_status": "verified_official",
+    "is_official": true,
+    "last_verified": "2026-11-01",
+    "official_url": "https://cisce.org/wp-content/uploads/2025/04/3.-ISC-English-XI-XII_020424_ISC2026.pdf",
+    "source_portal": "https://cisce.org/regulations-and-syllabuses-isc/",
+    "exam_structure": {
+      "theory_marks": 160,
+      "internal_marks": 40,
+      "total_marks": 200,
+      "duration": "Paper 1: 3 hours | Paper 2: 3 hours",
+      "format": "Paper 1 (Language - 80 marks) + Paper 2 (Literature - 80 marks) + Project Work (40 marks)"
+    },
+    "course_structure_overview": "Two written papers of three hours each carrying 80 marks alongside school-based project work of 20 marks per paper.",
+    "units": [
+      {
+        "unit_name": "Paper 1: English Language",
+        "weightage": "80 Marks",
+        "topics": "Discursive/Argumentative essay (400-450 words), Directed Writing (article, book review, statement of purpose, speech, report), Proposal Writing (Heading, Statement of Objective, List of Measures), Reading comprehension with summary writing, Grammar transformation."
+      },
+      {
+        "unit_name": "Paper 2: Literature in English",
+        "weightage": "80 Marks",
+        "topics": "Drama: The Tempest - William Shakespeare (Acts III, IV & V), Poetry: Rhapsody (A Collection of ISC Poems), Prose: Prism (A Collection of ISC Short Stories)."
+      }
+    ],
+    "prescribed_books": [
+      "The Tempest - William Shakespeare (Oxford / Cambridge University Press)",
+      "Rhapsody: A Collection of ISC Poems (Macmillan / CISCE)",
+      "Prism: A Collection of ISC Short Stories (Macmillan / CISCE)"
+    ],
+    "editorial_study_tips": "Adhere strictly to the official Council format for Proposal Writing (10 marks) and Directed Writing. For The Tempest, study Caliban's speeches and Prospero's soliloquies deeply."
+  },
+  {
+    "id": "isc-12-physics-2027",
+    "class": "12",
+    "course": "ISC",
+    "subject": "Physics",
+    "code": "861",
+    "category": "Science Elective",
+    "stream": "Science",
+    "academic_year": "2026-27",
+    "session_type": "current",
+    "academic_year_label": "Session 2026-27 (Current)",
+    "title": "ISC Class 12 Physics Syllabus (Theory & Practical)",
+    "description": "Official CISCE Class 12 Physics syllabus covering Electrostatics, Current Electricity, Magnetic Effects of Current & Magnetism, Electromagnetic Induction & AC, Electromagnetic Waves, Optics (Wave & Ray), Dual Nature of Radiation & Matter, Atoms & Nuclei, and Electronic Devices (Semiconductors).",
+    "verification_status": "verified_official",
+    "is_official": true,
+    "last_verified": "2026-11-01",
+    "official_url": "https://cisce.org/wp-content/uploads/2025/04/19.-ISC-Physics-XI-XII-Revised_020424_2026.pdf",
+    "source_portal": "https://cisce.org/regulations-and-syllabuses-isc/",
+    "exam_structure": {
+      "theory_marks": 70,
+      "internal_marks": 30,
+      "total_marks": 100,
+      "duration": "Theory: 3 hours | Practical: 3 hours",
+      "format": "Theory Paper (70 marks) + Practical Examination (15 marks) + Project Work (10 marks) + Practical File (5 marks)"
+    },
+    "course_structure_overview": "One 3-hour theory paper carrying 70 marks and practical/project work carrying 30 marks.",
+    "units": [
+      {
+        "unit_name": "Electrostatics & Current Electricity",
+        "weightage": "14 Marks",
+        "topics": "Coulomb's law, Gauss's theorem and applications, Electric potential, Capacitors and dielectrics, Ohm's law, Kirchhoff's rules, Wheatstone bridge, Potentiometer."
+      },
+      {
+        "unit_name": "Magnetic Effects of Current, Magnetism & EMI/AC",
+        "weightage": "16 Marks",
+        "topics": "Biot-Savart law, Ampere's circuital law, Moving coil galvanometer, Faraday's laws, Lenz's law, Eddy currents, LCR series AC circuits, Resonance, Transformers."
+      },
+      {
+        "unit_name": "Optics & Electromagnetic Waves",
+        "weightage": "20 Marks",
+        "topics": "Ray Optics: Refraction at spherical surfaces, Lens maker's formula, Optical instruments (microscopes, telescopes). Wave Optics: Huygens' principle, Interference, Young's double slit experiment, Diffraction."
+      },
+      {
+        "unit_name": "Modern Physics & Electronic Devices",
+        "weightage": "20 Marks",
+        "topics": "Photoelectric effect, Einstein's equation, de Broglie relation, Rutherford and Bohr models, Nuclear binding energy, p-n junction diodes, Rectifiers (half & full wave), Zener diode as voltage regulator."
+      }
+    ],
+    "prescribed_books": [
+      "Nootan ISC Physics Class 12 - Kumar & Mittal (Nageen Prakashan)",
+      "S. Chand's Principle of Physics for Class XII - V.K. Mehta"
+    ],
+    "editorial_study_tips": "Optics and AC circuits carry maximum numerical weightage. Master standard derivations: Gauss theorem applications, lens maker formula, and LCR circuit impedance."
+  },
+  {
+    "id": "isc-12-chemistry-2027",
+    "class": "12",
+    "course": "ISC",
+    "subject": "Chemistry",
+    "code": "862",
+    "category": "Science Elective",
+    "stream": "Science",
+    "academic_year": "2026-27",
+    "session_type": "current",
+    "academic_year_label": "Session 2026-27 (Current)",
+    "title": "ISC Class 12 Chemistry Syllabus (Theory & Practical)",
+    "description": "Official CISCE Class 12 Chemistry curriculum spanning Physical Chemistry (Solutions, Electrochemistry, Chemical Kinetics), Inorganic Chemistry (d & f-block elements, Coordination Compounds), and Organic Chemistry (Haloalkanes, Alcohols, Aldehydes, Ketones, Carboxylic Acids, Amines, Biomolecules).",
+    "verification_status": "verified_official",
+    "is_official": true,
+    "last_verified": "2026-11-01",
+    "official_url": "https://cisce.org/wp-content/uploads/2025/04/Chemistry-XII-Revised.pdf",
+    "source_portal": "https://cisce.org/regulations-and-syllabuses-isc/",
+    "exam_structure": {
+      "theory_marks": 70,
+      "internal_marks": 30,
+      "total_marks": 100,
+      "duration": "Theory: 3 hours | Practical: 3 hours",
+      "format": "Theory Paper (70 marks) + Practical Examination (15 marks) + Project Work (10 marks) + Practical File (5 marks)"
+    },
+    "course_structure_overview": "One 3-hour theory paper carrying 70 marks and a practical exam carrying 30 marks evaluating volumetric titration and qualitative salt analysis.",
+    "units": [
+      {
+        "unit_name": "Physical Chemistry",
+        "weightage": "25 Marks",
+        "topics": "Solutions (Colligative properties, Raoult's law, Van't Hoff factor), Electrochemistry (Nernst equation, Kohlrausch's law, molar conductivity), Chemical Kinetics (Rate law, Order, Activation energy, Arrhenius equation)."
+      },
+      {
+        "unit_name": "Inorganic Chemistry",
+        "weightage": "14 Marks",
+        "topics": "d- and f-Block Elements (Transition metal characteristics, Lanthanoid contraction, KMnO4 and K2Cr2O7), Coordination Compounds (Werner's theory, IUPAC naming, Valence Bond Theory, Crystal Field Theory)."
+      },
+      {
+        "unit_name": "Organic Chemistry",
+        "weightage": "31 Marks",
+        "topics": "Haloalkanes & Haloarenes (SN1/SN2 mechanisms), Alcohols, Phenols & Ethers, Aldehydes, Ketones & Carboxylic Acids (Aldol, Cannizzaro), Amines (Diazonium salts), Biomolecules (Carbohydrates, Proteins, Nucleic Acids)."
+      }
+    ],
+    "prescribed_books": [
+      "Nootan ISC Chemistry Class 12 - Dr. H.C. Srivastava (Nageen Prakashan)",
+      "ISC Chemistry Class XII - K.L. Chugh (Kalyani Publishers)"
+    ],
+    "editorial_study_tips": "Practice named reactions (Reimer-Tiemann, Kolbe, Aldol, Cannizzaro) and mechanism of nucleophilic substitution. In Physical Chemistry, practice numericals on Nernst equation and colligative properties."
+  },
+  {
+    "id": "isc-12-mathematics-2027",
+    "class": "12",
+    "course": "ISC",
+    "subject": "Mathematics",
+    "code": "860",
+    "category": "Science & Commerce Elective",
+    "stream": "Science",
+    "academic_year": "2026-27",
+    "session_type": "current",
+    "academic_year_label": "Session 2026-27 (Current)",
+    "title": "ISC Class 12 Mathematics Syllabus (Sections A, B & C)",
+    "description": "Official CISCE Class 12 Mathematics syllabus comprising Section A (Compulsory: Relations & Functions, Algebra, Calculus, Probability - 65 marks) and choice between Section B (Vectors & 3D Geometry - 15 marks) OR Section C (Application of Calculus in Commerce & Linear Programming - 15 marks).",
+    "verification_status": "verified_official",
+    "is_official": true,
+    "last_verified": "2026-11-01",
+    "official_url": "https://cisce.org/wp-content/uploads/2025/04/Mathematics-XII-Revised.pdf",
+    "source_portal": "https://cisce.org/regulations-and-syllabuses-isc/",
+    "exam_structure": {
+      "theory_marks": 80,
+      "internal_marks": 20,
+      "total_marks": 100,
+      "duration": "3 hours",
+      "format": "Section A (65 marks - compulsory) + Choice between Section B (15 marks) OR Section C (15 marks) + Project Work (20 marks)"
+    },
+    "course_structure_overview": "One 3-hour written examination paper carrying 80 marks and school project assessment carrying 20 marks based on two projects.",
+    "units": [
+      {
+        "unit_name": "Section A: Relations, Functions & Algebra",
+        "weightage": "Approx. 20 Marks",
+        "topics": "Relations and Functions, Inverse Trigonometric Functions, Matrices and Determinants, Solution of system of linear equations by matrix method."
+      },
+      {
+        "unit_name": "Section A: Calculus & Probability",
+        "weightage": "Approx. 45 Marks",
+        "topics": "Continuity, Differentiability, Applications of Derivatives (Maxims & Minima), Indefinite and Definite Integrals, Differential Equations, Conditional Probability, Bayes' Theorem, Probability Distributions."
+      },
+      {
+        "unit_name": "Section B: Vectors & Three-Dimensional Geometry",
+        "weightage": "15 Marks",
+        "topics": "Scalar and vector products of two vectors, Direction cosines and ratios, Cartesian and vector equations of lines and planes."
+      },
+      {
+        "unit_name": "Section C: Commercial Mathematics & Linear Programming",
+        "weightage": "15 Marks",
+        "topics": "Application of Calculus in Commerce and Economics (Marginal cost, Revenue functions), Linear Programming (graphical method), Index Numbers & Moving Averages."
+      }
+    ],
+    "prescribed_books": [
+      "Understanding ISC Mathematics Class XII - M.L. Aggarwal (Arya Publications)",
+      "ISC Mathematics - O.P. Malhotra, S.K. Gupta, Anubhuti Gangal (S. Chand)"
+    ],
+    "editorial_study_tips": "Calculus accounts for over 50% of Section A. Master integration by parts, partial fractions, and Maxima/Minima word problems."
+  },
+  {
+    "id": "isc-12-biology-2027",
+    "class": "12",
+    "course": "ISC",
+    "subject": "Biology",
+    "code": "863",
+    "category": "Science Elective",
+    "stream": "Science",
+    "academic_year": "2026-27",
+    "session_type": "current",
+    "academic_year_label": "Session 2026-27 (Current)",
+    "title": "ISC Class 12 Biology Syllabus (Theory & Practical)",
+    "description": "Official CISCE Class 12 Biology course covering Reproduction in Organisms, Flowering Plants & Humans, Genetics and Evolution, Biology and Human Welfare (Diseases, Immunity, Microbes), Biotechnology and Its Applications, and Ecology and Environment.",
+    "verification_status": "verified_official",
+    "is_official": true,
+    "last_verified": "2026-11-01",
+    "official_url": "https://cisce.org/wp-content/uploads/2025/04/Biology-XII-Revised.pdf",
+    "source_portal": "https://cisce.org/regulations-and-syllabuses-isc/",
+    "exam_structure": {
+      "theory_marks": 70,
+      "internal_marks": 30,
+      "total_marks": 100,
+      "duration": "Theory: 3 hours | Practical: 3 hours",
+      "format": "Theory Paper (70 marks) + Practical Examination (15 marks) + Project Work (10 marks) + Practical File (5 marks)"
+    },
+    "course_structure_overview": "One 3-hour theory paper carrying 70 marks alongside practical and project assessment carrying 30 marks.",
+    "units": [
+      {
+        "unit_name": "Reproduction",
+        "weightage": "16 Marks",
+        "topics": "Sexual reproduction in flowering plants (microsporogenesis, megasporogenesis, double fertilization), Human reproduction (gametogenesis, menstrual cycle, pregnancy), Reproductive health."
+      },
+      {
+        "unit_name": "Genetics and Evolution",
+        "weightage": "20 Marks",
+        "topics": "Mendelian inheritance, Chromosomal theory, Linkage and crossing over, Sex linkage, DNA structure and replication, Transcription, Genetic code, Translation, Evolution theories (Darwinism, Hardy-Weinberg)."
+      },
+      {
+        "unit_name": "Biology & Human Welfare and Biotechnology",
+        "weightage": "19 Marks",
+        "topics": "Human health and disease (Malaria, Typhoid, AIDS, Cancer), Immunity, Microbes in human welfare, Recombinant DNA technology, Applications in agriculture and medicine (r-insulin, gene therapy)."
+      },
+      {
+        "unit_name": "Ecology and Environment",
+        "weightage": "15 Marks",
+        "topics": "Organisms and populations, Ecosystem structure and function, Biodiversity and its conservation, Environmental issues."
+      }
+    ],
+    "prescribed_books": [
+      "Nootan ISC Biology Class 12 - Veer Bala Rastogi (Nageen Prakashan)",
+      "S. Chand's Biology for Class XII - Dr. P.S. Verma & Dr. B.P. Pandey"
+    ],
+    "editorial_study_tips": "Focus on molecular biology mechanisms (DNA replication fork, lac operon). Practice diagrams for human reproductive anatomy and ovule structure."
+  },
+  {
+    "id": "isc-12-commerce-2027",
+    "class": "12",
+    "course": "ISC",
+    "subject": "Commerce",
+    "code": "857",
+    "category": "Commerce Elective",
+    "stream": "Commerce",
+    "academic_year": "2026-27",
+    "session_type": "current",
+    "academic_year_label": "Session 2026-27 (Current)",
+    "title": "ISC Class 12 Commerce Syllabus (2026-27)",
+    "description": "Official CISCE Class 12 Commerce syllabus covering Business Environment, Financing (Sources of Capital, Capital Market, Working Capital), Management (Planning, Organizing, Staffing, Directing, Controlling), Marketing, and Consumer Protection.",
+    "verification_status": "verified_official",
+    "is_official": true,
+    "last_verified": "2026-11-01",
+    "official_url": "https://cisce.org/wp-content/uploads/2025/04/Commerce-XII-Revised.pdf",
+    "source_portal": "https://cisce.org/regulations-and-syllabuses-isc/",
+    "exam_structure": {
+      "theory_marks": 80,
+      "internal_marks": 20,
+      "total_marks": 100,
+      "duration": "3 hours",
+      "format": "Section A (16 marks compulsory objective) + Section B (32 marks - 4 out of 7 questions) + Section C (32 marks - 4 out of 7 questions)"
+    },
+    "course_structure_overview": "One 3-hour written examination paper of 80 marks and an Internal Project assessment of 20 marks based on two commercial enterprise case studies.",
+    "units": [
+      {
+        "unit_name": "Nature and Scope of Business & Business Environment",
+        "weightage": "Approx. 15 Marks",
+        "topics": "Dimensions of business environment (economic, legal, social, technological), Impact of policy changes on industry and commerce."
+      },
+      {
+        "unit_name": "Financing & Financial Markets",
+        "weightage": "Approx. 25 Marks",
+        "topics": "Sources of long-term and short-term finance, Banking services, Primary market (IPO), Secondary market (Stock Exchange operations, SEBI role)."
+      },
+      {
+        "unit_name": "Management & Marketing",
+        "weightage": "Approx. 40 Marks",
+        "topics": "Principles of management (Fayol and Taylor), Functions of management (POSDC), Marketing concepts, Marketing mix (Product, Price, Place, Promotion), Consumer Protection Act 2019."
+      }
+    ],
+    "prescribed_books": [
+      "ISC Commerce Class 12 - C.B. Gupta (S. Chand Publishing)"
+    ],
+    "editorial_study_tips": "Case study questions require application of Fayol's 14 principles of management. Ensure familiarity with modern SEBI regulatory guidelines and demat trading."
+  },
+  {
+    "id": "isc-12-accounts-2027",
+    "class": "12",
+    "course": "ISC",
+    "subject": "Accounts",
+    "code": "858",
+    "category": "Commerce Elective",
+    "stream": "Commerce",
+    "academic_year": "2026-27",
+    "session_type": "current",
+    "academic_year_label": "Session 2026-27 (Current)",
+    "title": "ISC Class 12 Accounts Syllabus (Sections A, B & C)",
+    "description": "Official CISCE Class 12 Accounts curriculum covering Section A (Partnership Accounts: Admission, Retirement, Death, Dissolution; Joint Stock Company Accounts: Issue & Forfeiture of Shares, Debentures - 60 marks) and choice between Section B (Financial Statement Analysis & Cash Flow Statement - 20 marks) OR Section C (Computerized Accounting - 20 marks).",
+    "verification_status": "verified_official",
+    "is_official": true,
+    "last_verified": "2026-11-01",
+    "official_url": "https://cisce.org/wp-content/uploads/2025/04/Accounts-XII-Revised.pdf",
+    "source_portal": "https://cisce.org/regulations-and-syllabuses-isc/",
+    "exam_structure": {
+      "theory_marks": 80,
+      "internal_marks": 20,
+      "total_marks": 100,
+      "duration": "3 hours",
+      "format": "Section A (60 marks - compulsory) + Section B or Section C (20 marks) + Project Work (20 marks)"
+    },
+    "course_structure_overview": "One 3-hour paper carrying 80 marks and school project assessment of 20 marks evaluated on accounting journals and ledger balances.",
+    "units": [
+      {
+        "unit_name": "Partnership Accounts",
+        "weightage": "30 Marks",
+        "topics": "Fundamentals, Profit & Loss Appropriation, Goodwill valuation, Admission, Retirement, Death of partner, Dissolution of partnership firm."
+      },
+      {
+        "unit_name": "Joint Stock Company Accounts",
+        "weightage": "30 Marks",
+        "topics": "Issue of shares at par, premium, discount, Calls in arrear/advance, Forfeiture and reissue of shares, Issue and redemption of debentures."
+      },
+      {
+        "unit_name": "Financial Statement Analysis & Cash Flow (Section B)",
+        "weightage": "20 Marks",
+        "topics": "Comparative and Common-size statements, Accounting Ratios (Liquidity, Solvency, Turnover, Profitability), Cash Flow Statement (AS-3)."
+      }
+    ],
+    "prescribed_books": [
+      "Double Entry Book Keeping - T.S. Grewal (Sultan Chand & Sons)",
+      "ISC Accountancy Class 12 - D.K. Goel (APC Books)"
+    ],
+    "editorial_study_tips": "Practice pro-rata allotment journal entries and capital reserve calculation repeatedly. Memorize indirect method adjustments for Cash Flow Statements (AS-3)."
+  },
+  {
+    "id": "isc-12-economics-2027",
+    "class": "12",
+    "course": "ISC",
+    "subject": "Economics",
+    "code": "856",
+    "category": "Commerce & Arts Elective",
+    "stream": "Commerce",
+    "academic_year": "2026-27",
+    "session_type": "current",
+    "academic_year_label": "Session 2026-27 (Current)",
+    "title": "ISC Class 12 Economics Syllabus (Microeconomics & Macroeconomics)",
+    "description": "Official CISCE Class 12 Economics syllabus covering Microeconomic Theory (Demand, Elasticity, Consumer Equilibrium, Supply, Production, Cost & Revenue, Market Forms) and Macroeconomic Theory (National Income Accounting, Money & Banking, Fiscal Policy, Balance of Payments).",
+    "verification_status": "verified_official",
+    "is_official": true,
+    "last_verified": "2026-11-01",
+    "official_url": "https://cisce.org/wp-content/uploads/2025/04/13.-ISC-Economics-XI-XII_020424_ISC2026.pdf",
+    "source_portal": "https://cisce.org/regulations-and-syllabuses-isc/",
+    "exam_structure": {
+      "theory_marks": 80,
+      "internal_marks": 20,
+      "total_marks": 100,
+      "duration": "3 hours",
+      "format": "Section A (16 marks compulsory) + Section B (32 marks - 4 out of 7 questions) + Section C (32 marks - 4 out of 7 questions)"
+    },
+    "course_structure_overview": "One 3-hour theory paper carrying 80 marks and an Internal Project assessment carrying 20 marks based on two economic reports.",
+    "units": [
+      {
+        "unit_name": "Microeconomic Theory",
+        "weightage": "40 Marks",
+        "topics": "Indifference curve analysis, Consumer surplus, Elasticity of demand and supply, Law of variable proportions, Short-run and long-run cost curves, Perfect competition, Monopoly, Monopolistic competition."
+      },
+      {
+        "unit_name": "Macroeconomics: National Income & Money/Banking",
+        "weightage": "25 Marks",
+        "topics": "Circular flow of income, GDP, GNP, NNP calculations by Value Added, Income, and Expenditure methods, Functions of money, Central Bank credit control."
+      },
+      {
+        "unit_name": "Macroeconomics: Fiscal Policy & Balance of Payments",
+        "weightage": "15 Marks",
+        "topics": "Public revenue and expenditure, Fiscal deficit, Revenue deficit, Foreign exchange rate determination, Balance of Payments (Current and Capital accounts)."
+      }
+    ],
+    "prescribed_books": [
+      "ISC Economics Class 12 - D.K. Sethi & Mrs. U. Andrews (Frank Brothers)",
+      "A Textbook of ISC Economics Class 12 - Dr. K.S. Ghosh"
+    ],
+    "editorial_study_tips": "Practice National Income numericals across all three methods. Clear diagrams with marked axes are necessary for Consumer Equilibrium and Cost/Revenue curves."
+  },
+  {
+    "id": "isc-12-computer-science-2027",
+    "class": "12",
+    "course": "ISC",
+    "subject": "Computer Science",
+    "code": "868",
+    "category": "Science Elective",
+    "stream": "Science",
+    "academic_year": "2026-27",
+    "session_type": "current",
+    "academic_year_label": "Session 2026-27 (Current)",
+    "title": "ISC Class 12 Computer Science Syllabus (Paper 1 Theory & Paper 2 Practical)",
+    "description": "Official CISCE Class 12 Computer Science course covering Boolean Algebra, Computer Hardware, Java Programming (Recursion, Inheritance, Polymorphism, Data Structures: Stacks, Queues, Linked Lists, Binary Trees), and Computational Complexity.",
+    "verification_status": "verified_official",
+    "is_official": true,
+    "last_verified": "2026-11-01",
+    "official_url": "https://cisce.org/wp-content/uploads/2025/04/27.-ISC-Computer-Science-XI-XII_020424_ISC2026.pdf",
+    "source_portal": "https://cisce.org/regulations-and-syllabuses-isc/",
+    "exam_structure": {
+      "theory_marks": 70,
+      "internal_marks": 30,
+      "total_marks": 100,
+      "duration": "Theory: 3 hours | Practical: 3 hours",
+      "format": "Theory Paper (70 marks) + Practical Examination (30 marks evaluated on programming execution & viva)"
+    },
+    "course_structure_overview": "One 3-hour theory paper carrying 70 marks and one 3-hour laboratory programming examination carrying 30 marks.",
+    "units": [
+      {
+        "unit_name": "Boolean Algebra & Computer Hardware",
+        "weightage": "20 Marks",
+        "topics": "Propositional logic, Logic gates, Karnaugh Maps (K-Maps: 3 & 4 variables, SOP & POS minimization), Encoders, Decoders, Half/Full Adders."
+      },
+      {
+        "unit_name": "Java Programming & OOP Concepts",
+        "weightage": "30 Marks",
+        "topics": "Class design, Inheritance, Dynamic method dispatch, Recursion (recursive algorithms, base cases), Exception handling, Strings and Arrays."
+      },
+      {
+        "unit_name": "Data Structures",
+        "weightage": "20 Marks",
+        "topics": "Linear data structures: Stacks (push/pop), Queues (insert/delete, circular queues), Deque, Linked lists, Algorithm complexity (Big-O notation)."
+      }
+    ],
+    "prescribed_books": [
+      "Understanding Computer Science with Java Class 12 - Vijay Kumar Pandey (APC Books)",
+      "ISC Computer Science with Java - Sumita Arora"
+    ],
+    "editorial_study_tips": "K-Map reduction rules must be memorized to secure full marks in Section A. Practice tracing recursive methods step-by-step."
+  },
+  {
+    "id": "isc-12-history-2027",
+    "class": "12",
+    "course": "ISC",
+    "subject": "History",
+    "code": "851",
+    "category": "Arts / Humanities Elective",
+    "stream": "Arts",
+    "academic_year": "2026-27",
+    "session_type": "current",
+    "academic_year_label": "Session 2026-27 (Current)",
+    "title": "ISC Class 12 History Syllabus (Indian & World History)",
+    "description": "Official CISCE Class 12 History syllabus covering Modern India (Towards Independence, First Three General Elections, Five Year Plans, Foreign Policy) and World History (World War II, Cold War, Crisis in the Middle East, Decolonization in Africa, Protest Movements).",
+    "verification_status": "verified_official",
+    "is_official": true,
+    "last_verified": "2026-11-01",
+    "official_url": "https://cisce.org/wp-content/uploads/2025/04/History-XII-Revised.pdf",
+    "source_portal": "https://cisce.org/regulations-and-syllabuses-isc/",
+    "exam_structure": {
+      "theory_marks": 80,
+      "internal_marks": 20,
+      "total_marks": 100,
+      "duration": "3 hours",
+      "format": "Section A (16 marks compulsory) + Section B (32 marks Indian History) + Section C (32 marks World History)"
+    },
+    "course_structure_overview": "One 3-hour theory paper carrying 80 marks and an Internal Project assessment carrying 20 marks based on historical research.",
+    "units": [
+      {
+        "unit_name": "Indian History (1947–1980s)",
+        "weightage": "40 Marks",
+        "topics": "Integration of Princely States, Reorganization of States, Nehruvian Era (Panchsheel, Planning), Indo-Pak Wars (1965, 1971), Emergency (1975-77), Janata Experiment."
+      },
+      {
+        "unit_name": "World History (Post-1945)",
+        "weightage": "40 Marks",
+        "topics": "Origins of the Cold War, Truman Doctrine, Marshall Plan, Cuban Missile Crisis, Vietnam War, Arab-Israeli Conflict (1948-1979), Collapse of Communism in USSR."
+      }
+    ],
+    "prescribed_books": [
+      "Mastering Modern World History - Norman Lowe",
+      "ISC History Class 12 - Sachhidananda Banerjee (Kalyani Publishers)"
+    ],
+    "editorial_study_tips": "Frame analytical answers with clear introduction, chronological sequence of events, and historical critique. Pay close attention to primary treaties and international accords."
+  },
+  {
+    "id": "isc-12-political-science-2027",
+    "class": "12",
+    "course": "ISC",
+    "subject": "Political Science",
+    "code": "852",
+    "category": "Arts / Humanities Elective",
+    "stream": "Arts",
+    "academic_year": "2026-27",
+    "session_type": "current",
+    "academic_year_label": "Session 2026-27 (Current)",
+    "title": "ISC Class 12 Political Science Syllabus (Constitution & Comparative Government)",
+    "description": "Official CISCE Class 12 Political Science course covering Part I: Theory of Governance & Comparative Politics (Forms of Government, Organs of Government in UK, USA & India) and Part II: The Indian Constitution (Fundamental Rights, Directive Principles, Union Executive, Parliament, Judiciary).",
+    "verification_status": "verified_official",
+    "is_official": true,
+    "last_verified": "2026-11-01",
+    "official_url": "https://cisce.org/wp-content/uploads/2025/04/Political-Science-XII-Revised.pdf",
+    "source_portal": "https://cisce.org/regulations-and-syllabuses-isc/",
+    "exam_structure": {
+      "theory_marks": 80,
+      "internal_marks": 20,
+      "total_marks": 100,
+      "duration": "3 hours",
+      "format": "Section A (16 marks compulsory) + Section B (32 marks Part I) + Section C (32 marks Part II)"
+    },
+    "course_structure_overview": "One 3-hour theory paper carrying 80 marks and an Internal Project assessment carrying 20 marks based on comparative constitutional analysis.",
+    "units": [
+      {
+        "unit_name": "Forms of Government & Comparative Constitutions",
+        "weightage": "40 Marks",
+        "topics": "Totalitarian vs Authoritarian vs Democratic States, Unitary and Federal systems, Parliamentary vs Presidential systems (Comparison of India, USA, UK)."
+      },
+      {
+        "unit_name": "Indian Constitutional Dynamics",
+        "weightage": "40 Marks",
+        "topics": "Preamble, Fundamental Rights vs Directive Principles, Powers of the Indian President, Prime Minister, Judicial Review and Public Interest Litigation (PIL)."
+      }
+    ],
+    "prescribed_books": [
+      "ISC Political Science Class 12 - K.K. Ghai (Kalyani Publishers)"
+    ],
+    "editorial_study_tips": "Create comparative tables contrasting the US President with the British Prime Minister and Indian Prime Minister across executive, legislative, and emergency powers."
+  }
+]

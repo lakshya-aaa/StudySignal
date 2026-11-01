@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+
+{% block title %}ICSE &amp; ISC Subject-wise Syllabus {{ current_academic_year }} - Direct Official CISCE PDFs | StudySignal{% endblock %}
+
+{% block meta_description %}
+Explore and download verified subject-wise ICSE Class 10 and ISC Class 12 syllabus PDFs for Session {{ current_academic_year }} directly from official CISCE portal (cisce.org).
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [
+  {'title': 'Home', 'url': '/'},
+  {'title': 'Boards & Exams', 'url': '/boards'},
+  {'title': 'ICSE & ISC Hub', 'url': '/icse'},
+  {'title': 'Subject-wise Syllabus', 'url': '/icse/syllabus'}
+] %}
+{% include 'components/breadcrumb.html' %}
+
+<section class="section" style="padding-bottom: 1.5rem;">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h1 class="section-title">ICSE &amp; ISC Subject-wise Syllabus Directory</h1>
+        <p class="section-subtitle">
+          Direct, verified links to official Council for the Indian School Certificate Examinations (CISCE) curriculum PDFs for Session {{ current_academic_year }}.
+        </p>
+      </div>
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <a href="{{ official_urls.cisce_regulations }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
+          Official ICSE Regulations ↗
+        </a>
+        <a href="https://cisce.org/regulations-and-syllabuses-isc/" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
+          Official ISC Regulations ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- Filter Form -->
+    <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 2rem;">
+      <form action="/icse/syllabus" method="get" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) 120px; gap: 1rem; align-items: end;">
+        <div>
+          <label class="form-label" for="filter-q">Search Subject or Code</label>
+          <input 
+            type="text" 
+            id="filter-q"
+            name="q" 
+            class="form-control" 
+            placeholder="e.g. Mathematics, Physics, 521" 
+            value="{{ search_q }}"
+          >
+        </div>
+
+        <div>
+          <label class="form-label" for="filter-class">Select Class / Course</label>
+          <select id="filter-class" name="class" class="form-control">
+            <option value="all" {% if selected_class == 'all' %}selected{% endif %}>All Courses (ICSE 10 &amp; ISC 12)</option>
+            <option value="10" {% if selected_class == '10' %}selected{% endif %}>ICSE Class 10 (Secondary)</option>
+            <option value="12" {% if selected_class == '12' %}selected{% endif %}>ISC Class 12 (Higher Secondary)</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="form-label" for="filter-stream">Stream / Category</label>
+          <select id="filter-stream" name="stream" class="form-control">
+            <option value="all" {% if selected_stream == 'all' %}selected{% endif %}>All Streams</option>
+            <option value="Science" {% if selected_stream == 'Science' %}selected{% endif %}>Science</option>
+            <option value="Commerce" {% if selected_stream == 'Commerce' %}selected{% endif %}>Commerce</option>
+            <option value="Arts" {% if selected_stream == 'Arts' %}selected{% endif %}>Arts / Humanities</option>
+            <option value="General" {% if selected_stream == 'General' %}selected{% endif %}>General / Core</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="form-label" for="filter-year">Academic Session</label>
+          <select id="filter-year" name="year" class="form-control">
+            <option value="all" {% if selected_year == 'all' %}selected{% endif %}>All Sessions</option>
+            <option value="2026-27" {% if selected_year == '2026-27' %}selected{% endif %}>2026-27 (Current Session)</option>
+            <option value="2025-26" {% if selected_year == '2025-26' %}selected{% endif %}>2025-26 (Previous Session)</option>
+          </select>
+        </div>
+
+        <div>
+          <button type="submit" class="btn-primary" style="height: 42px; width: 100%;">Filter</button>
+        </div>
+      </form>
+
+      {% if search_q or selected_class != 'all' or selected_stream != 'all' or selected_year != 'all' %}
+      <div style="margin-top: 0.75rem; font-size: 0.8125rem;">
+        <span style="color: var(--text-muted);">Active filters applied:</span>
+        {% if search_q %}<strong>Query:</strong> "{{ search_q }}" &bull;{% endif %}
+        {% if selected_class != 'all' %}<strong>Class:</strong> {{ selected_class }} &bull;{% endif %}
+        {% if selected_stream != 'all' %}<strong>Stream:</strong> {{ selected_stream }} &bull;{% endif %}
+        {% if selected_year != 'all' %}<strong>Year:</strong> {{ selected_year }} &bull;{% endif %}
+        <a href="/icse/syllabus" style="color: var(--brand-blue); font-weight: 600; margin-left: 0.5rem; text-decoration: underline;">Clear All</a>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Live Counter -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.5rem;">
+      <span style="font-weight: 700; font-size: 0.9375rem; color: var(--text-dark);">
+        Showing {{ syllabus_items|length }} verified CISCE syllabus entries
+      </span>
+      <span style="font-size: 0.8125rem; color: var(--text-muted);">
+        Directly verified from <code>cisce.org/regulations-and-syllabuses/</code>
+      </span>
+    </div>
+
+    {% if syllabus_items|length == 0 %}
+    <div style="background: #ffffff; border: 1px dashed var(--border-color); border-radius: var(--radius-md); padding: 3rem; text-align: center;">
+      <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 0.5rem;">No subjects match your filter</h3>
+      <p style="color: var(--text-muted); margin-bottom: 1rem;">Try clearing your search query or selecting "All Courses".</p>
+      <a href="/icse/syllabus" class="btn-primary" style="display: inline-block;">Reset All Filters</a>
+    </div>
+    {% else %}
+    <!-- Subject Cards Grid -->
+    <div class="subject-grid">
+      {% for item in syllabus_items %}
+        {% include 'components/icse_syllabus_card.html' %}
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- Ad Placement -->
+{% set slot_id = 'in_content_banner' %}
+{% include 'components/ad_slot.html' %}
+
+<!-- Official Archive Information -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="alert-box" style="border-left: 4px solid var(--brand-blue); background: #ffffff;">
+      <h3 style="font-size: 1rem; font-weight: 700; color: var(--primary); margin-bottom: 0.35rem;">
+        Official CISCE Curriculum Source Verification
+      </h3>
+      <p style="margin: 0; line-height: 1.5; font-size: 0.875rem; color: var(--text-dark);">
+        Every syllabus file listed above is indexed directly against Council regulations published on <code>cisce.org</code>. StudySignal does not host altered PDF documents or third-party mirrored versions.
+      </p>
+    </div>
+  </div>
+</section>
+{% endblock %}

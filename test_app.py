@@ -1505,34 +1505,196 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertNotIn("IBPS", html)
         self.assertNotIn("Banking Personnel", html)
 
-    def test_icse_landing_page_route_and_integrity(self):
-        """Verify /icse dedicated landing page has In Development status, verified CISCE links, and no fake content"""
+    def test_icse_hub_route_and_integrity(self):
+        """Verify /icse dedicated board hub has Active status, verified CISCE links, and complete portal navigation"""
         res = self.client.get("/icse")
         self.assertEqual(res.status_code, 200)
         html = res.data.decode("utf-8")
 
-        # 1. Clear In Development status
-        self.assertIn("Status: In Development", html)
+        # 1. Active board status
+        self.assertIn("Active Board Portal", html)
         self.assertIn("ICSE &amp; ISC Board Examination Hub", html)
 
         # 2. Integrity policy: No unverified content
         self.assertIn("StudySignal Academic Verification Policy for CISCE", html)
         self.assertIn("does not publish unverified curriculum files", html)
-        self.assertIn("Curriculum framework verification in progress", html)
 
-        # 3. Verified official CISCE portal links
+        # 3. Dedicated sub-route links
+        self.assertIn('href="/icse/class-10"', html)
+        self.assertIn('href="/icse/class-12"', html)
+        self.assertIn('href="/icse/syllabus"', html)
+        self.assertIn('href="/icse/datesheets"', html)
+        self.assertIn('href="/icse/circulars"', html)
+        self.assertIn('href="/icse/pyq"', html)
+
+        # 4. Verified official CISCE portal links
         self.assertIn("https://cisce.org", html)
         self.assertIn("https://cisce.org/regulations-and-syllabuses/", html)
-        self.assertIn("https://cisce.org/notice-board/", html)
 
-        # 4. Active CBSE bridge callout
-        self.assertIn("Looking for Active CBSE Resources?", html)
-        self.assertIn('href="/cbse/class-10"', html)
-        self.assertIn('href="/cbse/class-12"', html)
-        self.assertIn('href="/cbse/pyq"', html)
-
-        # 5. Non-affiliation disclaimer
+        # 5. Active CBSE bridge callout & Non-affiliation legal notice
+        self.assertIn("Looking for CBSE Resources?", html)
         self.assertIn("CISCE Non-Affiliation Legal Notice", html)
+
+    def test_icse_class_hubs(self):
+        """Verify ICSE Class 10 and ISC Class 12 portals"""
+        # Class 10
+        res_10 = self.client.get("/icse/class-10")
+        self.assertEqual(res_10.status_code, 200)
+        html_10 = res_10.data.decode("utf-8")
+        self.assertIn("ICSE Class 10 (Secondary)", html_10)
+        self.assertIn("Mathematics", html_10)
+        self.assertIn("Physics", html_10)
+        self.assertIn("Examination Schedule &amp; Timetable Status", html_10)
+        self.assertIn('href="/icse/pyq?class=10"', html_10)
+
+        # Class 12
+        res_12 = self.client.get("/icse/class-12")
+        self.assertEqual(res_12.status_code, 200)
+        html_12 = res_12.data.decode("utf-8")
+        self.assertIn("ISC Class 12 (Higher Secondary)", html_12)
+        self.assertIn("Science Stream Subjects", html_12)
+        self.assertIn("Commerce Stream Subjects", html_12)
+        self.assertIn("Humanities &amp; Arts Electives", html_12)
+        self.assertIn('href="/icse/pyq?class=12"', html_12)
+
+    def test_icse_syllabus_directory_and_filters(self):
+        """Verify ICSE syllabus directory with class, stream, and query filters"""
+        # Main directory
+        res = self.client.get("/icse/syllabus")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+        self.assertIn("ICSE &amp; ISC Subject-wise Syllabus Directory", html)
+        self.assertIn("Mathematics", html)
+
+        # Class 10 filter
+        res_10 = self.client.get("/icse/syllabus?class=10")
+        self.assertEqual(res_10.status_code, 200)
+        html_10 = res_10.data.decode("utf-8")
+        self.assertIn("icse-10-mathematics-2027", html_10)
+        self.assertNotIn("isc-12-physics-2027", html_10)
+
+        # Class 12 filter
+        res_12 = self.client.get("/icse/syllabus?class=12")
+        self.assertEqual(res_12.status_code, 200)
+        html_12 = res_12.data.decode("utf-8")
+        self.assertIn("isc-12-physics-2027", html_12)
+        self.assertNotIn("icse-10-mathematics-2027", html_12)
+
+        # Stream filter
+        res_stream = self.client.get("/icse/syllabus?stream=Science")
+        self.assertEqual(res_stream.status_code, 200)
+        html_stream = res_stream.data.decode("utf-8")
+        self.assertIn("Physics", html_stream)
+
+        # Search query
+        res_q = self.client.get("/icse/syllabus?q=physics")
+        self.assertEqual(res_q.status_code, 200)
+        html_q = res_q.data.decode("utf-8")
+        self.assertIn("Physics", html_q)
+
+    def test_icse_syllabus_detail_page(self):
+        """Verify ICSE & ISC individual subject syllabus blueprints and 404 behavior"""
+        # Valid ICSE subject
+        res = self.client.get("/icse/syllabus/icse-10-mathematics-2027")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+        self.assertIn("ICSE Class 10 Mathematics Syllabus", html)
+        self.assertIn("Written Theory Paper", html)
+        self.assertIn("Commercial Mathematics", html)
+        self.assertIn("Selina Publishers", html)
+        self.assertIn("Download Official PDF", html)
+
+        # Valid ISC subject
+        res_isc = self.client.get("/icse/syllabus/isc-12-physics-2027")
+        self.assertEqual(res_isc.status_code, 200)
+        html_isc = res_isc.data.decode("utf-8")
+        self.assertIn("ISC Class 12 Physics Syllabus", html_isc)
+        self.assertIn("Electrostatics &amp; Current Electricity", html_isc)
+
+        # Non-existent subject returns 404
+        res_404 = self.client.get("/icse/syllabus/non-existent-subject-xyz")
+        self.assertEqual(res_404.status_code, 404)
+
+    def test_icse_datesheets_view(self):
+        """Verify ICSE datesheet tracking view, honest status, and session timings"""
+        res = self.client.get("/icse/datesheets")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+        self.assertIn("ICSE &amp; ISC Examination Timetable Hub", html)
+        self.assertIn("Schedule Pending Official Release", html)
+        self.assertIn("11:00 AM IST", html)
+        self.assertIn("02:00 PM IST", html)
+        self.assertIn("https://cisce.org/examination/", html)
+
+        # Filter by class
+        res_10 = self.client.get("/icse/datesheets?class=10")
+        self.assertEqual(res_10.status_code, 200)
+        self.assertIn("ICSE Class 10 (Secondary)", res_10.data.decode("utf-8"))
+
+    def test_icse_circulars_view(self):
+        """Verify CISCE circulars & notices directory with filters"""
+        res = self.client.get("/icse/circulars")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+        self.assertIn("CISCE Official Circulars &amp; Academic Notices", html)
+        self.assertIn("Official CISCE", html)
+
+        # Filter by category
+        res_cat = self.client.get("/icse/circulars?category=Curriculum")
+        self.assertEqual(res_cat.status_code, 200)
+        self.assertIn("Modern English", res_cat.data.decode("utf-8"))
+
+        # Filter by class
+        res_cls = self.client.get("/icse/circulars?class=10")
+        self.assertEqual(res_cls.status_code, 200)
+
+    def test_icse_pyq_library_and_filtering(self):
+        """Verify ICSE & ISC PYQ library with multi-year coverage, filters, and honest states"""
+        res = self.client.get("/icse/pyq")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+        self.assertIn("ICSE &amp; ISC Previous Year Question Paper Library", html)
+
+        # Available paper check (e.g. 2025 or 2024)
+        self.assertIn("Official Paper", html)
+        self.assertIn("Download Official PDF", html)
+
+        # Filter available only
+        res_avail = self.client.get("/icse/pyq?availability=available")
+        self.assertEqual(res_avail.status_code, 200)
+        self.assertIn("Official Paper", res_avail.data.decode("utf-8"))
+
+        # Filter unavailable only (historical unhosted years)
+        res_unavail = self.client.get("/icse/pyq?availability=unavailable")
+        self.assertEqual(res_unavail.status_code, 200)
+        html_unavail = res_unavail.data.decode("utf-8")
+        self.assertIn("Not Hosted Online", html_unavail)
+        self.assertIn("Paper Unavailable", html_unavail)
+
+        # Filter by year and class
+        res_filter = self.client.get("/icse/pyq?class=10&year=2025")
+        self.assertEqual(res_filter.status_code, 200)
+        self.assertIn("2025 Exam", res_filter.data.decode("utf-8"))
+
+        # Empty state when filter doesn't match
+        res_empty = self.client.get("/icse/pyq?q=nonexistentsearchterm12345xyz")
+        self.assertEqual(res_empty.status_code, 200)
+        self.assertIn("No Question Papers Match Your Filters", res_empty.data.decode("utf-8"))
+
+    def test_icse_sitemap_entries(self):
+        """Verify /sitemap.xml includes all ICSE & ISC section URLs"""
+        res = self.client.get("/sitemap.xml")
+        self.assertEqual(res.status_code, 200)
+        xml = res.data.decode("utf-8")
+
+        self.assertIn("<loc>https://exampulse-india.onrender.com/icse</loc>", xml)
+        self.assertIn("<loc>https://exampulse-india.onrender.com/icse/class-10</loc>", xml)
+        self.assertIn("<loc>https://exampulse-india.onrender.com/icse/class-12</loc>", xml)
+        self.assertIn("<loc>https://exampulse-india.onrender.com/icse/syllabus</loc>", xml)
+        self.assertIn("<loc>https://exampulse-india.onrender.com/icse/datesheets</loc>", xml)
+        self.assertIn("<loc>https://exampulse-india.onrender.com/icse/circulars</loc>", xml)
+        self.assertIn("<loc>https://exampulse-india.onrender.com/icse/pyq</loc>", xml)
+        self.assertIn("/icse/syllabus/icse-10-mathematics-2027", xml)
 
     def test_navigation_boards_and_exams_selector(self):
         """Verify navigation bar dropdown, mobile drawer, and homepage selector section"""
@@ -1567,6 +1729,159 @@ class StudySignalTestCase(unittest.TestCase):
 
         self.assertIn("<loc>https://exampulse-india.onrender.com/boards</loc>", xml)
         self.assertIn("<loc>https://exampulse-india.onrender.com/icse</loc>", xml)
+
+    def test_search_includes_both_cbse_and_icse(self):
+        """Verify /search searches across both CBSE and ICSE resources"""
+        res = self.client.get("/search?q=mathematics")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+        # Should include both CBSE and ICSE Mathematics
+        self.assertIn("CBSE Class 10", html)
+        self.assertIn("ICSE Class 10", html)
+        self.assertNotIn("IBPS", html)
+
+    def test_icse_pyq_details_and_multi_year_integrity(self):
+        """Verify ICSE PYQ contains verified years and honest unavailable notes"""
+        res = self.client.get("/icse/pyq?year=2025")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+        self.assertIn("2025 Exam", html)
+        self.assertIn("Official Paper", html)
+
+        # Historical year 2014 unavailable note check
+        res_2014 = self.client.get("/icse/pyq?year=2014")
+        self.assertEqual(res_2014.status_code, 200)
+        html_2014 = res_2014.data.decode("utf-8")
+        self.assertIn("Not Hosted Online", html_2014)
+        self.assertIn("The official CISCE online repository does not host public question paper files", html_2014)
+
+    def test_canonical_and_meta_tags_on_icse_routes(self):
+        """Verify canonical URLs and OG preview images on all ICSE routes"""
+        routes = [
+            "/icse",
+            "/icse/class-10",
+            "/icse/class-12",
+            "/icse/syllabus",
+            "/icse/datesheets",
+            "/icse/circulars",
+            "/icse/pyq",
+            "/icse/syllabus/icse-10-mathematics-2027"
+        ]
+        for route in routes:
+            res = self.client.get(route)
+            self.assertEqual(res.status_code, 200, f"Route {route} failed")
+            html = res.data.decode("utf-8")
+            self.assertIn(f'<link rel="canonical" href="https://exampulse-india.onrender.com{route}">', html)
+            self.assertIn('<meta property="og:image" content="https://exampulse-india.onrender.com/static/images/og-preview.png">', html)
+
+    def test_syllabus_responsive_layout_and_table_wrappers(self):
+        """Verify mobile responsive layout classes, keyboard accessible table wrappers, and scroll hints"""
+        res_detail = self.client.get("/cbse/syllabus/cbse-10-maths-2027")
+        self.assertEqual(res_detail.status_code, 200)
+        html_detail = res_detail.data.decode("utf-8")
+
+        # Responsive grid layout and card wrappers
+        self.assertIn('class="syllabus-detail-layout"', html_detail)
+        self.assertIn('class="syllabus-detail-main"', html_detail)
+        self.assertIn('class="syllabus-detail-sidebar"', html_detail)
+        self.assertIn('class="syllabus-detail-card"', html_detail)
+        self.assertIn('class="syllabus-detail-title"', html_detail)
+
+        # Download card responsive wrappers
+        self.assertIn('class="syllabus-download-card"', html_detail)
+        self.assertIn('class="syllabus-download-inner"', html_detail)
+        self.assertIn('class="syllabus-download-info"', html_detail)
+        self.assertIn('class="syllabus-download-url"', html_detail)
+
+        # Accessible table wrappers with keyboard focus (tabindex=0), role=region, and aria-labels
+        self.assertIn('class="table-scroll-hint"', html_detail)
+        self.assertIn('role="region"', html_detail)
+        self.assertIn('tabindex="0"', html_detail)
+        self.assertIn('aria-label="Official Examination Blueprint Table"', html_detail)
+        self.assertIn('aria-label="Official Unit-Wise Marks Distribution Table"', html_detail)
+        self.assertIn('aria-label="Question Paper Design & Assessment Typology Table"', html_detail)
+        self.assertIn('aria-label="Practical Assessment Framework Table"', html_detail)
+
+        # Prescribed books responsive grid
+        self.assertIn('class="prescribed-books-grid"', html_detail)
+
+        # Catalog filter form and counter bar
+        res_cat = self.client.get("/cbse/syllabus")
+        self.assertEqual(res_cat.status_code, 200)
+        html_cat = res_cat.data.decode("utf-8")
+        self.assertIn('class="syllabus-filter-form"', html_cat)
+        self.assertIn('class="syllabus-count-bar"', html_cat)
+
+    def test_syllabus_current_vs_archive_labeling_and_demarcation(self):
+        """Verify strict demarcation between current (2026-27) and historical archive (2024-25) sessions"""
+        # Catalog all sessions view: must have separate headers for current and historical
+        res_all = self.client.get("/cbse/syllabus")
+        self.assertEqual(res_all.status_code, 200)
+        html_all = res_all.data.decode("utf-8")
+
+        self.assertIn("Current Academic Session (2026–27)", html_all)
+        self.assertIn("Historical Curriculum Archives (Session 2024–25)", html_all)
+        self.assertIn("subject-card-archive", html_all)
+        self.assertIn("📁 Historical Archive (2024-25)", html_all)
+        self.assertIn("Archive PDF ↗", html_all)
+
+        # Historical session filter view: must only show historical records and archive advisory
+        res_hist_cat = self.client.get("/cbse/syllabus?year=2024-25")
+        self.assertEqual(res_hist_cat.status_code, 200)
+        html_hist_cat = res_hist_cat.data.decode("utf-8")
+        self.assertIn("Historical Archive View", html_hist_cat)
+        self.assertIn("📁 Historical Archive (2024-25)", html_hist_cat)
+        self.assertNotIn("✓ Current Official", html_hist_cat)
+        self.assertNotIn("✓ Verified Official", html_hist_cat)
+
+        # Current session filter view: must only show current records and active advisory
+        res_curr_cat = self.client.get("/cbse/syllabus?year=2026-27")
+        self.assertEqual(res_curr_cat.status_code, 200)
+        html_curr_cat = res_curr_cat.data.decode("utf-8")
+        self.assertIn("Current Academic Session (2026–27)", html_curr_cat)
+        self.assertIn("✓ Current Official (2026-27)", html_curr_cat)
+        self.assertNotIn("Historical Archive (2024-25)", html_curr_cat)
+
+        # Historical detail page: must NEVER claim to be verified current CBSE document
+        res_hist_detail = self.client.get("/cbse/syllabus/cbse-10-maths-2025")
+        self.assertEqual(res_hist_detail.status_code, 200)
+        html_hist_detail = res_hist_detail.data.decode("utf-8")
+        self.assertIn("Historical Archive Document (2024-25)", html_hist_detail)
+        self.assertIn("Historical Archive Record:", html_hist_detail)
+        self.assertNotIn("✓ Verified Official CBSE Document", html_hist_detail)
+
+        # Current detail page: must display verified official status
+        res_curr_detail = self.client.get("/cbse/syllabus/cbse-10-maths-2027")
+        self.assertEqual(res_curr_detail.status_code, 200)
+        html_curr_detail = res_curr_detail.data.decode("utf-8")
+        self.assertIn("✓ Verified Official CBSE Document", html_curr_detail)
+        self.assertNotIn("Historical Archive Document", html_curr_detail)
+
+    def test_css_responsive_table_and_code_wrapping_rules(self):
+        """Verify CSS contains necessary overflow prevention rules, wrapping, and table minimum widths"""
+        css_path = os.path.join(app.root_path, "static", "css", "style.css")
+        with open(css_path, "r", encoding="utf-8") as f:
+            css = f.read()
+
+        # Monospace code and URL wrapping
+        self.assertIn("word-break: break-all;", css)
+        self.assertIn("overflow-wrap: anywhere;", css)
+
+        # Responsive table container rules
+        self.assertIn(".table-responsive {", css)
+        self.assertIn("max-width: 100%;", css)
+        self.assertIn("-webkit-overflow-scrolling: touch;", css)
+        self.assertIn(".table-scroll-hint {", css)
+
+        # Legible table min-width
+        self.assertIn("min-width: 560px;", css)
+
+        # Layout and grid responsiveness
+        self.assertIn(".syllabus-detail-layout {", css)
+        self.assertIn(".syllabus-detail-main {", css)
+        self.assertIn("min-width: 0;", css)
+        self.assertIn(".syllabus-filter-form {", css)
+        self.assertIn(".subject-card-archive {", css)
 
 if __name__ == "__main__":
     unittest.main()

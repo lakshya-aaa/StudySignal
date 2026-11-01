@@ -51,6 +51,24 @@ def get_circulars():
 
     return sorted(items, key=sort_circular_key, reverse=True)
 
+# ICSE & ISC data loader helpers
+def get_all_icse_syllabus():
+    return load_json_data("icse_syllabus.json")
+
+def get_all_icse_pyqs():
+    return load_json_data("icse_pyq.json")
+
+def get_icse_datesheets():
+    return load_json_data("icse_datesheets.json")
+
+def get_icse_circulars():
+    items = load_json_data("icse_circulars.json")
+    def sort_circular_key(c):
+        iso = c.get("iso_date") or ""
+        fallback_date = c.get("last_verified") or ""
+        return (iso, fallback_date)
+    return sorted(items, key=sort_circular_key, reverse=True)
+
 def get_boards_and_exams():
     """Directory of educational boards and competitive entrance exams on StudySignal."""
     return {
@@ -80,15 +98,21 @@ def get_boards_and_exams():
                 "name": "ICSE",
                 "full_name": "Council for the Indian School Certificate Examinations (CISCE)",
                 "scope": "National Board • ICSE (Class 10) & ISC (Class 12)",
-                "status": "In Development",
-                "status_code": "in_development",
-                "status_label": "In Development",
+                "status": "Active",
+                "status_code": "active",
+                "status_label": "Active",
                 "url": "/icse",
                 "is_clickable": True,
-                "badge_class": "badge-status-dev",
-                "description": "Curriculum verification and official CISCE directory integration currently in progress. Adheres strictly to verified source standards without unverified content.",
+                "badge_class": "badge-status-active",
+                "description": "Comprehensive verified coverage for ICSE (Class 10) and ISC (Class 12) curriculum, subject regulations, official examination datesheets, circulars, and PYQ library (2017–2027).",
                 "actions": [
-                    {"label": "View ICSE Roadmap & Status", "url": "/icse"}
+                    {"label": "ICSE & ISC Hub", "url": "/icse"},
+                    {"label": "ICSE Class 10 Portal", "url": "/icse/class-10"},
+                    {"label": "ISC Class 12 Portal", "url": "/icse/class-12"},
+                    {"label": "PYQ Library (2017-27)", "url": "/icse/pyq"},
+                    {"label": "Syllabus Directory", "url": "/icse/syllabus"},
+                    {"label": "Date Sheets", "url": "/icse/datesheets"},
+                    {"label": "Circulars & Notices", "url": "/icse/circulars"}
                 ]
             },
             {
@@ -449,10 +473,202 @@ def boards_hub():
         competitive_exams=directory["competitive_exams"]
     )
 
+# ----------------- ICSE & ISC Routes -----------------
+
 @app.route("/icse")
 def icse_hub():
-    """Dedicated foundation landing page for ICSE & ISC (In Development)."""
-    return render_template("icse.html")
+    """ICSE & ISC Board Examination Hub."""
+    syllabus_items = get_all_icse_syllabus()
+    datesheets = get_icse_datesheets()
+    circulars = get_icse_circulars()
+    featured_syllabus = syllabus_items[:6]
+    latest_circulars = circulars[:4]
+    return render_template(
+        "icse.html",
+        featured_syllabus=featured_syllabus,
+        latest_circulars=latest_circulars,
+        datesheets=datesheets
+    )
+
+@app.route("/icse/class-10")
+def icse_class_10():
+    all_syllabus = get_all_icse_syllabus()
+    syllabus_items = [s for s in all_syllabus if s.get("class") == "10"]
+    datesheets = get_icse_datesheets().get("classes", {}).get("10", {})
+    circulars = [c for c in get_icse_circulars() if "10" in c.get("class_target", "") or "All" in c.get("class_target", "")]
+    return render_template(
+        "icse_class_hub.html",
+        class_num="10",
+        course_name="ICSE",
+        class_title="ICSE Class 10 (Secondary)",
+        official_portal_url="https://cisce.org/regulations-and-syllabuses/",
+        syllabus_items=syllabus_items,
+        datesheets=datesheets,
+        circulars=circulars
+    )
+
+@app.route("/icse/class-12")
+def icse_class_12():
+    all_syllabus = get_all_icse_syllabus()
+    all_12 = [s for s in all_syllabus if s.get("class") == "12"]
+    datesheets = get_icse_datesheets().get("classes", {}).get("12", {})
+    circulars = [c for c in get_icse_circulars() if "12" in c.get("class_target", "") or "All" in c.get("class_target", "")]
+    science_subjects = [s for s in all_12 if "Science" in s.get("stream", "")]
+    commerce_subjects = [s for s in all_12 if "Commerce" in s.get("stream", "")]
+    arts_subjects = [s for s in all_12 if "Arts" in s.get("stream", "")]
+    other_subjects = [s for s in all_12 if s not in science_subjects and s not in commerce_subjects and s not in arts_subjects]
+    return render_template(
+        "icse_class_hub.html",
+        class_num="12",
+        course_name="ISC",
+        class_title="ISC Class 12 (Higher Secondary)",
+        official_portal_url="https://cisce.org/regulations-and-syllabuses-isc/",
+        syllabus_items=all_12,
+        science_subjects=science_subjects,
+        commerce_subjects=commerce_subjects,
+        arts_subjects=arts_subjects,
+        other_subjects=other_subjects,
+        datesheets=datesheets,
+        circulars=circulars
+    )
+
+@app.route("/icse/syllabus")
+def icse_syllabus_index():
+    selected_class = request.args.get("class", "all")
+    selected_stream = request.args.get("stream", "all")
+    selected_year = request.args.get("year", "all")
+    search_q = request.args.get("q", "").strip().lower()
+
+    items = get_all_icse_syllabus()
+    if selected_class != "all":
+        items = [s for s in items if s.get("class") == selected_class]
+    if selected_stream != "all":
+        items = [s for s in items if selected_stream.lower() in s.get("stream", "").lower()]
+    if selected_year != "all":
+        items = [s for s in items if s.get("academic_year") == selected_year]
+    if search_q:
+        items = [
+            s for s in items
+            if search_q in s.get("subject", "").lower()
+            or search_q in s.get("code", "").lower()
+            or search_q in s.get("description", "").lower()
+        ]
+    return render_template(
+        "icse_syllabus.html",
+        syllabus_items=items,
+        selected_class=selected_class,
+        selected_stream=selected_stream,
+        selected_year=selected_year,
+        search_q=search_q
+    )
+
+@app.route("/icse/syllabus/<subject_id>")
+def icse_syllabus_detail(subject_id):
+    items = get_all_icse_syllabus()
+    matched = next((s for s in items if s.get("id") == subject_id), None)
+    if not matched:
+        if not subject_id.endswith("-2027"):
+            matched = next((s for s in items if s.get("id") == f"{subject_id}-2027"), None)
+        elif subject_id.endswith("-2027"):
+            matched = next((s for s in items if s.get("id") == subject_id.replace("-2027", "")), None)
+    if not matched:
+        abort(404)
+    related = [s for s in items if s.get("class") == matched.get("class") and s.get("id") != matched.get("id")][:4]
+    return render_template(
+        "icse_subject_detail.html",
+        item=matched,
+        related=related
+    )
+
+@app.route("/icse/datesheets")
+def icse_datesheets_view():
+    data = get_icse_datesheets()
+    selected_class = request.args.get("class", "all")
+    return render_template(
+        "icse_datesheets.html",
+        data=data,
+        selected_class=selected_class
+    )
+
+@app.route("/icse/circulars")
+def icse_circulars_view():
+    all_circulars = get_icse_circulars()
+    category = request.args.get("category", "all")
+    selected_class = request.args.get("class", "all")
+    search_q = request.args.get("q", "").strip().lower()
+
+    filtered = all_circulars
+    if category != "all":
+        filtered = [c for c in filtered if c.get("category", "").lower() == category.lower()]
+    if selected_class != "all":
+        filtered = [c for c in filtered if selected_class in c.get("class_target", "") or "All" in c.get("class_target", "")]
+    if search_q:
+        filtered = [
+            c for c in filtered
+            if search_q in c.get("title", "").lower()
+            or search_q in c.get("summary", "").lower()
+            or search_q in c.get("circular_no", "").lower()
+        ]
+    return render_template(
+        "icse_circulars.html",
+        circulars=filtered,
+        category=category,
+        selected_class=selected_class,
+        search_q=search_q
+    )
+
+@app.route("/icse/pyq")
+def icse_pyq_index():
+    all_papers = get_all_icse_pyqs()
+    selected_class = request.args.get("class", "all").strip()
+    selected_subject = request.args.get("subject", "all").strip()
+    selected_year = request.args.get("year", "all").strip()
+    selected_availability = request.args.get("availability", "all").strip()
+    search_q = request.args.get("q", "").strip().lower()
+
+    available_years = sorted(list(set(p.get("exam_year", "") for p in all_papers if p.get("exam_year"))), reverse=True)
+    available_subjects = sorted(list(set(p.get("subject", "") for p in all_papers if p.get("subject"))))
+
+    filtered = all_papers
+    if selected_class != "all":
+        filtered = [p for p in filtered if str(p.get("class")) == selected_class]
+    if selected_subject != "all":
+        filtered = [p for p in filtered if p.get("subject", "").lower() == selected_subject.lower()]
+    if selected_year != "all":
+        filtered = [p for p in filtered if str(p.get("exam_year")) == selected_year]
+    if selected_availability == "available":
+        filtered = [p for p in filtered if p.get("is_available") is True]
+    elif selected_availability == "unavailable":
+        filtered = [p for p in filtered if not p.get("is_available")]
+    if search_q:
+        filtered = [
+            p for p in filtered
+            if search_q in p.get("subject", "").lower()
+            or search_q in p.get("code", "").lower()
+            or search_q in p.get("title", "").lower()
+            or search_q in p.get("description", "").lower()
+        ]
+
+    def sort_pyq_key(p):
+        year = p.get("exam_year", "0")
+        cls = p.get("class", "0")
+        subj = p.get("subject", "")
+        return (year, cls, subj)
+
+    filtered_sorted = sorted(filtered, key=sort_pyq_key, reverse=True)
+
+    return render_template(
+        "icse_pyq.html",
+        pyq_items=filtered_sorted,
+        selected_class=selected_class,
+        selected_subject=selected_subject,
+        selected_year=selected_year,
+        selected_availability=selected_availability,
+        search_q=search_q,
+        available_years=available_years,
+        available_subjects=available_subjects,
+        total_count=len(all_papers)
+    )
 
 @app.route("/search")
 def search():
@@ -465,10 +681,12 @@ def search():
     syllabus_items = get_all_syllabus()
     circular_items = get_circulars()
     datesheets_data = get_datesheets()
+    icse_syllabus_items = get_all_icse_syllabus()
+    icse_circular_items = get_icse_circulars()
 
     results = []
 
-    # 1. Search in Syllabus
+    # 1. Search in Syllabus (CBSE & ICSE)
     if filter_category in ("all", "syllabus"):
         for s in syllabus_items:
             matches_query = (
@@ -484,10 +702,10 @@ def search():
 
             if matches_query and matches_class and matches_subj and matches_year:
                 results.append({
-                    "type": "Syllabus",
+                    "type": "CBSE Syllabus",
                     "badge_color": "primary",
                     "title": s.get("title"),
-                    "subtitle": f"Class {s.get('class')} | Code: {s.get('code')} | {s.get('academic_year_label', s.get('academic_year'))}",
+                    "subtitle": f"CBSE Class {s.get('class')} | Code: {s.get('code')} | {s.get('academic_year_label', s.get('academic_year'))}",
                     "description": s.get("description"),
                     "url": f"/cbse/syllabus/{s.get('id')}",
                     "official_pdf": s.get("official_url"),
@@ -496,7 +714,33 @@ def search():
                     "last_verified": s.get("last_verified")
                 })
 
-    # 2. Search in Circulars
+        for s in icse_syllabus_items:
+            matches_query = (
+                not query
+                or query in s.get("subject", "").lower()
+                or query in s.get("code", "").lower()
+                or query in s.get("title", "").lower()
+                or query in s.get("description", "").lower()
+            )
+            matches_class = (filter_class == "all" or s.get("class") == filter_class)
+            matches_subj = (filter_subject == "all" or filter_subject.lower() in s.get("subject", "").lower())
+            matches_year = (filter_year == "all" or s.get("academic_year") == filter_year)
+
+            if matches_query and matches_class and matches_subj and matches_year:
+                results.append({
+                    "type": f"{s.get('course', 'ICSE')} Syllabus",
+                    "badge_color": "info",
+                    "title": s.get("title"),
+                    "subtitle": f"{s.get('course', 'ICSE')} Class {s.get('class')} | Code: {s.get('code')} | {s.get('academic_year_label', s.get('academic_year'))}",
+                    "description": s.get("description"),
+                    "url": f"/icse/syllabus/{s.get('id')}",
+                    "official_pdf": s.get("official_url"),
+                    "is_official": s.get("verification_status") == "verified_official",
+                    "verification_status": s.get("verification_status", "verified_official"),
+                    "last_verified": s.get("last_verified")
+                })
+
+    # 2. Search in Circulars (CBSE & CISCE)
     if filter_category in ("all", "circular", "exam_notice"):
         for c in circular_items:
             is_demo = c.get("is_demo") or c.get("verification_status") == "demo"
@@ -516,7 +760,7 @@ def search():
 
             if matches_query and matches_class and matches_subj and matches_year:
                 results.append({
-                    "type": f"Circular ({c.get('category')})",
+                    "type": f"CBSE Circular ({c.get('category')})",
                     "badge_color": "warning" if is_demo else "success",
                     "title": c.get("title"),
                     "subtitle": f"{c.get('circular_no')} | Target: {c.get('class_target')} | Published: {c.get('published_date', 'Continuous')}",
@@ -526,6 +770,33 @@ def search():
                     "is_official": not is_demo and c.get("verification_status") == "verified_official",
                     "verification_status": c.get("verification_status", "unverified"),
                     "demo_label": c.get("demo_label") if is_demo else None,
+                    "last_verified": c.get("last_verified")
+                })
+
+        for c in icse_circular_items:
+            matches_query = (
+                not query
+                or query in c.get("title", "").lower()
+                or query in c.get("summary", "").lower()
+                or query in c.get("circular_no", "").lower()
+                or query in c.get("category", "").lower()
+            )
+            matches_class = (filter_class == "all" or filter_class in c.get("class_target", "") or "All" in c.get("class_target", ""))
+            matches_subj = (filter_subject == "all")
+            matches_year = (filter_year == "all" or c.get("academic_year") == filter_year or "Multi-Year" in str(c.get("academic_year", "")))
+
+            if matches_query and matches_class and matches_subj and matches_year:
+                results.append({
+                    "type": f"CISCE Notice ({c.get('category')})",
+                    "badge_color": "success",
+                    "title": c.get("title"),
+                    "subtitle": f"{c.get('circular_no')} | Target: {c.get('class_target')} | Published: {c.get('published_date', 'Continuous')}",
+                    "description": c.get("summary"),
+                    "url": c.get("official_url") or "/icse/circulars",
+                    "official_pdf": c.get("official_url") if c.get("official_url", "").endswith(".pdf") else None,
+                    "is_official": c.get("verification_status") == "verified_official",
+                    "verification_status": c.get("verification_status", "verified_official"),
+                    "demo_label": None,
                     "last_verified": c.get("last_verified")
                 })
 
@@ -566,7 +837,7 @@ def search():
         })
 
     # Unique subject list for dropdown filter
-    all_subjects = sorted(list(set(s.get("subject") for s in syllabus_items)))
+    all_subjects = sorted(list(set([s.get("subject") for s in syllabus_items if s.get("subject")] + [s.get("subject") for s in icse_syllabus_items if s.get("subject")])))
 
     return render_template(
         "search.html",
@@ -658,7 +929,13 @@ def sitemap_xml():
         {"loc": f"{base}/cbse/circulars", "priority": "0.8", "changefreq": "daily", "lastmod": circ_lastmod},
         {"loc": f"{base}/cbse/pyq", "priority": "0.8", "changefreq": "weekly"},
         {"loc": f"{base}/boards", "priority": "0.8", "changefreq": "weekly"},
-        {"loc": f"{base}/icse", "priority": "0.7", "changefreq": "weekly"},
+        {"loc": f"{base}/icse", "priority": "0.9", "changefreq": "daily"},
+        {"loc": f"{base}/icse/class-10", "priority": "0.9", "changefreq": "daily"},
+        {"loc": f"{base}/icse/class-12", "priority": "0.9", "changefreq": "daily"},
+        {"loc": f"{base}/icse/syllabus", "priority": "0.8", "changefreq": "weekly"},
+        {"loc": f"{base}/icse/datesheets", "priority": "0.9", "changefreq": "daily"},
+        {"loc": f"{base}/icse/circulars", "priority": "0.8", "changefreq": "daily"},
+        {"loc": f"{base}/icse/pyq", "priority": "0.8", "changefreq": "weekly"},
         {"loc": f"{base}/about", "priority": "0.5", "changefreq": "monthly"},
         {"loc": f"{base}/contact", "priority": "0.5", "changefreq": "monthly"},
         {"loc": f"{base}/privacy-policy", "priority": "0.3", "changefreq": "yearly"},
@@ -683,6 +960,17 @@ def sitemap_xml():
         if item.get("last_verified"):
             page_entry["lastmod"] = item["last_verified"]
 
+        pages.append(page_entry)
+
+    icse_syllabus_items = get_all_icse_syllabus()
+    for item in icse_syllabus_items:
+        page_entry = {
+            "loc": f"{base}/icse/syllabus/{item['id']}",
+            "priority": "0.7",
+            "changefreq": "monthly"
+        }
+        if item.get("last_verified"):
+            page_entry["lastmod"] = item["last_verified"]
         pages.append(page_entry)
 
     xml_lines = ['<?xml version="1.0" encoding="UTF-8"?>']

@@ -94,8 +94,8 @@
                 <span class="badge-status-active">Active</span>
               </a>
               <a href="/icse" class="dropdown-entry">
-                <span>ICSE (CISCE)</span>
-                <span class="badge-status-dev">In Development</span>
+                <span>ICSE &amp; ISC</span>
+                <span class="badge-status-active">Active</span>
               </a>
               <div class="dropdown-entry is-disabled">
                 <span>UP Board (UPMSP)</span>
@@ -160,7 +160,7 @@
       <ul class="mobile-nav-list">
         <li><a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a></li>
         <li><a href="/boards" class="{% if '/boards' in request.path %}active{% endif %}">Boards &amp; Exams Hub</a></li>
-        <li><a href="/icse" class="{% if '/icse' in request.path %}active{% endif %}">ICSE &amp; ISC <span class="badge-status-dev" style="font-size: 0.65rem; margin-left: 0.25rem;">In Dev</span></a></li>
+        <li><a href="/icse" class="{% if '/icse' in request.path %}active{% endif %}">ICSE &amp; ISC <span class="badge-status-active" style="font-size: 0.65rem; margin-left: 0.25rem;">Active</span></a></li>
         <li><a href="/cbse/class-10" class="{% if '/class-10' in request.path %}active{% endif %}">CBSE Class 10</a></li>
         <li><a href="/cbse/class-12" class="{% if '/class-12' in request.path %}active{% endif %}">CBSE Class 12</a></li>
         <li><a href="/cbse/syllabus" class="{% if '/syllabus' in request.path %}active{% endif %}">Subject Syllabus</a></li>
@@ -225,7 +225,8 @@
           <li><a href="/cbse/circulars">Circulars & Academic Notices</a></li>
           <li><a href="/cbse/pyq">Previous Year Papers (PYQs)</a></li>
           <li><a href="/boards">Boards &amp; Competitive Exams</a></li>
-          <li><a href="/icse">ICSE &amp; ISC (In Development)</a></li>
+          <li><a href="/icse">ICSE &amp; ISC Examination Hub</a></li>
+          <li><a href="/icse/pyq">ICSE &amp; ISC PYQ Library</a></li>
           <li><a href="/search">Advanced Resource Search</a></li>
         </ul>
       </div>
@@ -239,6 +240,8 @@
           <li><a href="{{ official_urls.cbse_curriculum_current }}" target="_blank" rel="noopener noreferrer">Official Curriculum 2026-27 (Current) ↗</a></li>
           <li><a href="{{ official_urls.cbse_circulars }}" target="_blank" rel="noopener noreferrer">CBSE Academic Circulars ↗</a></li>
           <li><a href="{{ official_urls.cbse_examinations }}" target="_blank" rel="noopener noreferrer">CBSE Examination Circulars ↗</a></li>
+          <li><a href="{{ official_urls.cisce_main }}" target="_blank" rel="noopener noreferrer">Official CISCE Portal (cisce.org) ↗</a></li>
+          <li><a href="{{ official_urls.cisce_regulations }}" target="_blank" rel="noopener noreferrer">CISCE Regulations &amp; Syllabi ↗</a></li>
         </ul>
       </div>
 

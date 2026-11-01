@@ -1,0 +1,36 @@
+<div class="subject-card">
+  <div class="subject-card-meta">
+    <span class="code-pill">{{ item.course }} {{ item.class }} &bull; Code {{ item.code }}</span>
+    {% if item.verification_status == 'verified_official' %}
+      <span class="verified-badge">✓ Verified CISCE</span>
+    {% else %}
+      <span class="circ-tag unverified">Pending Verification</span>
+    {% endif %}
+  </div>
+  <h3 class="subject-card-title">{{ item.subject }}</h3>
+  <div style="font-size: 0.75rem; color: var(--brand-blue); font-weight: 600; margin-bottom: 0.35rem;">
+    {{ item.category or item.stream }} &bull; {{ item.academic_year_label or item.academic_year }}
+  </div>
+  <p class="subject-card-desc">{{ item.description }}</p>
+
+  <div class="subject-card-details">
+    <span>Theory: <strong>{{ item.exam_structure.theory_marks }} M</strong></span>
+    <span>IA/Pract: <strong>{{ item.exam_structure.internal_marks }} M</strong></span>
+    <span>Total: <strong>{{ item.exam_structure.total_marks }} M</strong></span>
+  </div>
+
+  <div class="subject-card-actions">
+    {% if item.verification_status == 'verified_official' and item.official_url %}
+    <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-official-pdf" title="Download official CISCE syllabus PDF">
+      Download PDF ↗
+    </a>
+    {% else %}
+    <a href="{{ item.source_portal or official_urls.cisce_regulations }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" title="Visit Official CISCE Regulations Directory">
+      CISCE Directory ↗
+    </a>
+    {% endif %}
+    <a href="/icse/syllabus/{{ item.id }}" class="btn-sm btn-view-details">
+      Blueprint
+    </a>
+  </div>
+</div>

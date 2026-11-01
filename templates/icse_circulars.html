@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+
+{% block title %}CISCE Official Circulars &amp; Notices - ICSE &amp; ISC Academic Updates | StudySignal{% endblock %}
+
+{% block meta_description %}
+Official Council for the Indian School Certificate Examinations (CISCE) circulars, academic notifications, curriculum directives, and examination advisories for ICSE & ISC.
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [
+  {'title': 'Home', 'url': '/'},
+  {'title': 'Boards & Exams', 'url': '/boards'},
+  {'title': 'ICSE & ISC Hub', 'url': '/icse'},
+  {'title': 'Circulars & Notices', 'url': '/icse/circulars'}
+] %}
+{% include 'components/breadcrumb.html' %}
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h1 class="section-title">CISCE Official Circulars &amp; Academic Notices</h1>
+        <p class="section-subtitle">
+          Direct directory of official Council notifications, curriculum directives, and examination circulars.
+        </p>
+      </div>
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <a href="https://cisce.org/circulars/" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
+          Official Circulars Portal (cisce.org) ↗
+        </a>
+        <a href="https://cisce.org/notifications-archive/" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
+          Notifications Archive ↗
+        </a>
+      </div>
+    </div>
+
+    <!-- Filter Form -->
+    <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 2rem;">
+      <form action="/icse/circulars" method="get" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) 120px; gap: 1rem; align-items: end;">
+        <div>
+          <label class="form-label" for="filter-q">Search Notices</label>
+          <input 
+            type="text" 
+            id="filter-q"
+            name="q" 
+            class="form-control" 
+            placeholder="Search keywords or circular no..." 
+            value="{{ search_q }}"
+          >
+        </div>
+
+        <div>
+          <label class="form-label" for="filter-category">Category</label>
+          <select id="filter-category" name="category" class="form-control">
+            <option value="all" {% if category == 'all' %}selected{% endif %}>All Categories</option>
+            <option value="Curriculum" {% if category == 'Curriculum' %}selected{% endif %}>Curriculum</option>
+            <option value="Examinations" {% if category == 'Examinations' %}selected{% endif %}>Examinations</option>
+            <option value="Academic" {% if category == 'Academic' %}selected{% endif %}>Academic</option>
+            <option value="Regulations" {% if category == 'Regulations' %}selected{% endif %}>Regulations</option>
+            <option value="Results" {% if category == 'Results' %}selected{% endif %}>Results &amp; Re-evaluation</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="form-label" for="filter-class">Target Course / Class</label>
+          <select id="filter-class" name="class" class="form-control">
+            <option value="all" {% if selected_class == 'all' %}selected{% endif %}>All Classes (ICSE &amp; ISC)</option>
+            <option value="10" {% if selected_class == '10' %}selected{% endif %}>ICSE Class 10</option>
+            <option value="12" {% if selected_class == '12' %}selected{% endif %}>ISC Class 12</option>
+          </select>
+        </div>
+
+        <div>
+          <button type="submit" class="btn-primary" style="height: 42px; width: 100%;">Filter</button>
+        </div>
+      </form>
+
+      {% if search_q or category != 'all' or selected_class != 'all' %}
+      <div style="margin-top: 0.75rem; font-size: 0.8125rem;">
+        <span style="color: var(--text-muted);">Active filters applied:</span>
+        {% if search_q %}<strong>Query:</strong> "{{ search_q }}" &bull;{% endif %}
+        {% if category != 'all' %}<strong>Category:</strong> {{ category }} &bull;{% endif %}
+        {% if selected_class != 'all' %}<strong>Class:</strong> {{ selected_class }} &bull;{% endif %}
+        <a href="/icse/circulars" style="color: var(--brand-blue); font-weight: 600; margin-left: 0.5rem; text-decoration: underline;">Reset Filters</a>
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Circulars Count -->
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.5rem;">
+      <span style="font-weight: 700; font-size: 0.9375rem; color: var(--text-dark);">
+        Showing {{ circulars|length }} verified CISCE notices
+      </span>
+      <span style="font-size: 0.8125rem; color: var(--text-muted);">
+        Verified against official CISCE circulars portal
+      </span>
+    </div>
+
+    {% if circulars|length == 0 %}
+    <div style="background: #ffffff; border: 1px dashed var(--border-color); border-radius: var(--radius-md); padding: 3rem; text-align: center;">
+      <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 0.5rem;">No circulars found matching your query</h3>
+      <p style="color: var(--text-muted); margin-bottom: 1rem;">Try clearing your search terms or selecting "All Categories".</p>
+      <a href="/icse/circulars" class="btn-primary" style="display: inline-block;">Reset All Filters</a>
+    </div>
+    {% else %}
+    <!-- Circulars List Grid -->
+    <div class="circulars-list">
+      {% for c in circulars %}
+      <div class="circ-card">
+        <div class="circ-header">
+          <div style="display: flex; gap: 0.4rem; align-items: center; flex-wrap: wrap;">
+            <span class="circ-tag official">✓ Official CISCE</span>
+            <span class="code-pill">{{ c.category }} &bull; {{ c.class_target }}</span>
+          </div>
+          <span class="circ-date">{{ c.published_date }}</span>
+        </div>
+
+        <h2 class="circ-title" style="font-size: 1.15rem; margin-top: 0.5rem;">{{ c.title }}</h2>
+        <p class="circ-summary">{{ c.summary }}</p>
+
+        <div class="circ-footer">
+          <span class="circ-no">Reference: <strong>{{ c.circular_no }}</strong></span>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            {% if c.official_url %}
+            <a href="{{ c.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-official-pdf" title="Download official CISCE PDF notice">
+              Download Official PDF ↗
+            </a>
+            {% endif %}
+            <a href="{{ c.source_portal or 'https://cisce.org/circulars/' }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
+              Source Portal ↗
+            </a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+<!-- Ad Placement Slot -->
+{% set slot_id = 'in_content_banner' %}
+{% include 'components/ad_slot.html' %}
+{% endblock %}
