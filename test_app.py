@@ -1299,6 +1299,275 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn("box-shadow: none;", css_text)
         self.assertIn("filter: none;", css_text)
 
+    def test_pyq_page_route_navigation_and_filters(self):
+        """Phase 2: Verify /cbse/pyq route accessibility, navigation links, and filter form rendering"""
+        # 1. Main PYQ page returns 200 OK
+        res = self.client.get("/cbse/pyq")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+        self.assertIn("CBSE Previous Year Question Papers (PYQ Library)", html)
+        self.assertIn("StudySignal", html)
+        self.assertNotIn("ExamPulse India", html)
+
+        # 2. Main navigation contains PYQ link and marks it active
+        self.assertIn('href="/cbse/pyq" class="nav-link active"', html)
+        self.assertIn('href="/cbse/pyq" class="active"', html)  # mobile drawer active
+
+        # 3. /pyq redirects to /cbse/pyq
+        res_redir = self.client.get("/pyq")
+        self.assertEqual(res_redir.status_code, 301)
+        self.assertTrue(res_redir.location.endswith("/cbse/pyq"))
+
+        # 4. Filter form is present with class, subject, and year inputs
+        self.assertIn('<form action="/cbse/pyq"', html)
+        self.assertIn('name="class"', html)
+        self.assertIn('name="subject"', html)
+        self.assertIn('name="year"', html)
+        self.assertIn('name="availability"', html)
+
+    def test_pyq_filtering_by_class_subject_year_and_empty_state(self):
+        """Phase 2: Verify class, subject, year filtering and empty state handling"""
+        # 1. Filter by Class 10
+        res_c10 = self.client.get("/cbse/pyq?class=10")
+        self.assertEqual(res_c10.status_code, 200)
+        html_c10 = res_c10.data.decode("utf-8")
+        self.assertIn("Class 10", html_c10)
+        self.assertNotIn("Senior School Certificate Examination", html_c10)
+
+        # 2. Filter by Class 12
+        res_c12 = self.client.get("/cbse/pyq?class=12")
+        self.assertEqual(res_c12.status_code, 200)
+        html_c12 = res_c12.data.decode("utf-8")
+        self.assertIn("Class 12", html_c12)
+        self.assertIn("Senior School Certificate Examination", html_c12)
+
+        # 3. Filter by Year 2024
+        res_2024 = self.client.get("/cbse/pyq?year=2024")
+        self.assertEqual(res_2024.status_code, 200)
+        html_2024 = res_2024.data.decode("utf-8")
+        self.assertIn("2024 Exam", html_2024)
+
+        # 4. Filter by specific subject (Physics)
+        res_phys = self.client.get("/cbse/pyq?subject=Physics")
+        self.assertEqual(res_phys.status_code, 200)
+        html_phys = res_phys.data.decode("utf-8")
+        self.assertIn('<h3 class="pyq-card-title">Physics</h3>', html_phys)
+        self.assertNotIn('<h3 class="pyq-card-title">Biology</h3>', html_phys)
+        self.assertNotIn('<h3 class="pyq-card-title">Accountancy</h3>', html_phys)
+
+        # 5. Empty state when no papers match
+        res_empty = self.client.get("/cbse/pyq?q=NonExistentSubject999")
+        self.assertEqual(res_empty.status_code, 200)
+        html_empty = res_empty.data.decode("utf-8")
+        self.assertIn("No Question Papers Match Your Filters", html_empty)
+        self.assertIn("Reset All Filters", html_empty)
+        self.assertIn('href="/cbse/pyq"', html_empty)
+
+    def test_pyq_availability_integrity_and_no_fake_links(self):
+        """Phase 2: Verify authentic links for available papers and proper unavailable handling without fake links"""
+        res = self.client.get("/cbse/pyq")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+
+        # Available papers must point to authentic cbse.gov.in zip archives
+        self.assertIn("https://www.cbse.gov.in/cbsenew/question-paper/2024/X/MATHEMATICS_STANDARD.zip", html)
+        self.assertIn("https://www.cbse.gov.in/cbsenew/question-paper/2024/XII/PHYSICS.zip", html)
+        self.assertIn("Download Official Paper", html)
+
+        # Unavailable papers must show disabled button and clear status
+        self.assertIn("Paper Unavailable", html)
+        self.assertIn("Pending Release", html)
+        self.assertIn("disabled", html)
+
+        # Test filter for unavailable only
+        res_unavail = self.client.get("/cbse/pyq?availability=unavailable")
+        self.assertEqual(res_unavail.status_code, 200)
+        html_unavail = res_unavail.data.decode("utf-8")
+        self.assertIn("Paper Unavailable", html_unavail)
+        self.assertNotIn("Download Official Paper", html_unavail)
+        self.assertNotIn("Download All Sets", html_unavail)
+
+    def test_pyq_2025_entries_and_official_links(self):
+        """Phase 2: Verify 2025 examination question papers are present, available, and have authentic official URLs"""
+        res_2025 = self.client.get("/cbse/pyq?year=2025")
+        self.assertEqual(res_2025.status_code, 200)
+        html_2025 = res_2025.data.decode("utf-8")
+
+        # 2025 Exam badge present
+        self.assertIn("2025 Exam", html_2025)
+
+        # Class 10 & 12 2025 official CBSE links
+        self.assertIn("https://www.cbse.gov.in/cbsenew/question-paper/2025/X/041_Mathematics_Standard.zip", html_2025)
+        self.assertIn("https://www.cbse.gov.in/cbsenew/question-paper/2025/X/086_Science.zip", html_2025)
+        self.assertIn("https://www.cbse.gov.in/cbsenew/question-paper/2025/XII/PHYSICS.zip", html_2025)
+        self.assertIn("https://www.cbse.gov.in/cbsenew/question-paper/2025/XII/CHEMISTRY.zip", html_2025)
+        self.assertIn("https://www.cbse.gov.in/cbsenew/question-paper/2025/XII/ACCOUNTANCY.zip", html_2025)
+
+    def test_pyq_multiple_sets_representation_and_individual_sets(self):
+        """Phase 2: Verify clear representation of multi-set ZIP archives vs individual set PDF files"""
+        # 1. Multi-set ZIP packages show multi-set badge and download all sets button
+        res_2025 = self.client.get("/cbse/pyq?year=2025&subject=Mathematics+Standard")
+        self.assertEqual(res_2025.status_code, 200)
+        html_mset = res_2025.data.decode("utf-8")
+        self.assertIn("Multi-Set ZIP", html_mset)
+        self.assertIn("Download All Sets", html_mset)
+        self.assertIn("ZIP Archive", html_mset)
+
+        # 2. 2015 individual sets are listed with specific set identifiers
+        res_2015 = self.client.get("/cbse/pyq?year=2015&subject=English+Language+%26+Literature")
+        self.assertEqual(res_2015.status_code, 200)
+        html_2015 = res_2015.data.decode("utf-8")
+        self.assertIn("Delhi Region - Set 1", html_2015)
+        self.assertIn("Delhi Region - Set 2", html_2015)
+        self.assertIn("Outside Delhi Region - Set 1", html_2015)
+        self.assertIn("PDF Document", html_2015)
+
+    def test_pyq_missing_and_cancelled_years_handling(self):
+        """Phase 2: Verify transparent handling of 2021 (COVID-19 cancelled) and 2019/2014 (not hosted in online archive)"""
+        # 1. 2021 COVID cancellation
+        res_2021 = self.client.get("/cbse/pyq?year=2021")
+        self.assertEqual(res_2021.status_code, 200)
+        html_2021 = res_2021.data.decode("utf-8")
+        self.assertIn("cancelled nationwide due to the COVID-19 pandemic", html_2021)
+        self.assertIn("Paper Unavailable", html_2021)
+
+        # 2. 2019 CBSE online archive status
+        res_2019 = self.client.get("/cbse/pyq?year=2019")
+        self.assertEqual(res_2019.status_code, 200)
+        html_2019 = res_2019.data.decode("utf-8")
+        self.assertIn("not hosted in the CBSE online download repository", html_2019)
+        self.assertIn("Paper Unavailable", html_2019)
+
+        # 3. 2014 CBSE online archive status
+        res_2014 = self.client.get("/cbse/pyq?year=2014")
+        self.assertEqual(res_2014.status_code, 200)
+        html_2014 = res_2014.data.decode("utf-8")
+        self.assertIn("not hosted in the CBSE online download repository", html_2014)
+        self.assertIn("Paper Unavailable", html_2014)
+
+    def test_pyq_source_links_and_verified_dates(self):
+        """Phase 2: Verify source portal links and checked/verified dates across records"""
+        res = self.client.get("/cbse/pyq?year=2025")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+        self.assertIn("Verified:", html)
+        self.assertIn("2026-11-01", html)
+        self.assertIn("Source Archive", html)
+
+    # -------------------------------------------------------------
+    # Multi-Board & Competitive Exam Expansion Tests
+    # -------------------------------------------------------------
+
+    def test_boards_hub_route_and_contents(self):
+        """Verify /boards directory displays active CBSE, in-development ICSE, and coming soon items without IBPS"""
+        res = self.client.get("/boards")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+
+        # 1. Page Header & Structure
+        self.assertIn("Educational Boards &amp; Competitive Examinations", html)
+        self.assertIn("School Education Boards", html)
+        self.assertIn("National Competitive Examinations", html)
+
+        # 2. CBSE is Active and fully clickable
+        self.assertIn("CBSE", html)
+        self.assertIn("Central Board of Secondary Education", html)
+        self.assertIn("Active", html)
+        self.assertIn('href="/cbse/class-10"', html)
+        self.assertIn('href="/cbse/class-12"', html)
+        self.assertIn('href="/cbse/pyq"', html)
+
+        # 3. ICSE is In Development with link to /icse
+        self.assertIn("ICSE", html)
+        self.assertIn("Council for the Indian School Certificate Examinations", html)
+        self.assertIn("In Development", html)
+        self.assertIn('href="/icse"', html)
+
+        # 4. State Boards are Coming Soon as non-clickable status cards
+        self.assertIn("UP Board", html)
+        self.assertIn("Uttar Pradesh Madhyamik Shiksha Parishad", html)
+        self.assertIn("Bihar Board (BSEB)", html)
+        self.assertIn("Bihar School Examination Board", html)
+        self.assertIn("Maharashtra Board (MSBSHSE)", html)
+        self.assertIn("Maharashtra State Board", html)
+        self.assertIn("Coming Soon", html)
+        self.assertIn("btn-disabled-soon", html)
+
+        # 5. Competitive Exams are Coming Soon
+        self.assertIn("JEE", html)
+        self.assertIn("Joint Entrance Examination", html)
+        self.assertIn("NEET", html)
+        self.assertIn("National Eligibility cum Entrance Test", html)
+        self.assertIn("CUET", html)
+        self.assertIn("Common University Entrance Test", html)
+
+        # 6. Must NOT include IBPS
+        self.assertNotIn("IBPS", html)
+        self.assertNotIn("Banking Personnel", html)
+
+    def test_icse_landing_page_route_and_integrity(self):
+        """Verify /icse dedicated landing page has In Development status, verified CISCE links, and no fake content"""
+        res = self.client.get("/icse")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+
+        # 1. Clear In Development status
+        self.assertIn("Status: In Development", html)
+        self.assertIn("ICSE &amp; ISC Board Examination Hub", html)
+
+        # 2. Integrity policy: No unverified content
+        self.assertIn("StudySignal Academic Verification Policy for CISCE", html)
+        self.assertIn("does not publish unverified curriculum files", html)
+        self.assertIn("Curriculum framework verification in progress", html)
+
+        # 3. Verified official CISCE portal links
+        self.assertIn("https://cisce.org", html)
+        self.assertIn("https://cisce.org/regulations-and-syllabuses/", html)
+        self.assertIn("https://cisce.org/notice-board/", html)
+
+        # 4. Active CBSE bridge callout
+        self.assertIn("Looking for Active CBSE Resources?", html)
+        self.assertIn('href="/cbse/class-10"', html)
+        self.assertIn('href="/cbse/class-12"', html)
+        self.assertIn('href="/cbse/pyq"', html)
+
+        # 5. Non-affiliation disclaimer
+        self.assertIn("CISCE Non-Affiliation Legal Notice", html)
+
+    def test_navigation_boards_and_exams_selector(self):
+        """Verify navigation bar dropdown, mobile drawer, and homepage selector section"""
+        # 1. Header Desktop Nav has Boards & Exams dropdown
+        res_home = self.client.get("/")
+        self.assertEqual(res_home.status_code, 200)
+        html_home = res_home.data.decode("utf-8")
+
+        self.assertIn('href="/boards"', html_home)
+        self.assertIn("Boards &amp; Exams", html_home)
+        self.assertIn('href="/icse"', html_home)
+
+        # 2. Homepage selector section exists with boards & competitive exams
+        self.assertIn('id="boards-exams"', html_home)
+        self.assertIn("Explore Boards &amp; Competitive Examinations", html_home)
+        self.assertIn("School Education Boards", html_home)
+        self.assertIn("Competitive Examinations", html_home)
+        self.assertIn("JEE (Main &amp; Advanced)", html_home)
+        self.assertIn("NEET (UG)", html_home)
+        self.assertIn("CUET (UG)", html_home)
+        self.assertNotIn("IBPS", html_home)
+
+        # 3. Mobile drawer contains Boards & Exams Hub and ICSE
+        self.assertIn('href="/boards"', html_home)
+        self.assertIn('href="/icse"', html_home)
+
+    def test_sitemap_includes_boards_and_icse(self):
+        """Verify /sitemap.xml lists /boards and /icse canonical URLs"""
+        res = self.client.get("/sitemap.xml")
+        self.assertEqual(res.status_code, 200)
+        xml = res.data.decode("utf-8")
+
+        self.assertIn("<loc>https://exampulse-india.onrender.com/boards</loc>", xml)
+        self.assertIn("<loc>https://exampulse-india.onrender.com/icse</loc>", xml)
+
 if __name__ == "__main__":
     unittest.main()
 

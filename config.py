@@ -45,7 +45,11 @@ class Config:
         "cbse_curriculum_2025": "https://cbseacademic.nic.in/curriculum_2025.html",     # Historical: 2024-25
         "cbse_curriculum_archive": "https://cbseacademic.nic.in/curriculum_archive.html",
         "cbse_circulars": "https://cbseacademic.nic.in/circulars.html",
-        "cbse_examinations": "https://www.cbse.gov.in/cbsenew/examination_Circular.html"  # Verified active page
+        "cbse_examinations": "https://www.cbse.gov.in/cbsenew/examination_Circular.html",  # Verified active page
+        "cbse_pyq_main": "https://www.cbse.gov.in/cbsenew/question-paper.html",
+        "cisce_main": "https://cisce.org",
+        "cisce_regulations": "https://cisce.org/regulations-and-syllabuses/",
+        "cisce_notices": "https://cisce.org/notice-board/"
     }
 
     # Reusable & Configurable Ad Placements

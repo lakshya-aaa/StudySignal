@@ -23,6 +23,9 @@ def load_json_data(filename):
 def get_all_syllabus():
     return load_json_data("syllabus.json")
 
+def get_all_pyqs():
+    return load_json_data("pyq.json")
+
 def get_datesheets():
     data = load_json_data("datesheets.json")
     if not getattr(Config, "SHOW_DEMO_DATA", True) and isinstance(data, dict) and "classes" in data:
@@ -47,6 +50,135 @@ def get_circulars():
         return (is_pinned, has_iso, iso, fallback_date)
 
     return sorted(items, key=sort_circular_key, reverse=True)
+
+def get_boards_and_exams():
+    """Directory of educational boards and competitive entrance exams on StudySignal."""
+    return {
+        "boards": [
+            {
+                "id": "cbse",
+                "name": "CBSE",
+                "full_name": "Central Board of Secondary Education",
+                "scope": "National Board • Secondary & Senior Secondary",
+                "status": "Active",
+                "status_code": "active",
+                "status_label": "Active",
+                "url": "/cbse/class-10",
+                "is_clickable": True,
+                "badge_class": "badge-status-active",
+                "description": "Comprehensive verified coverage for CBSE Class 10 and Class 12 curriculum, subject syllabi, official date sheets, circulars, and PYQ library (2014–2025).",
+                "actions": [
+                    {"label": "Class 10 Hub", "url": "/cbse/class-10"},
+                    {"label": "Class 12 Hub", "url": "/cbse/class-12"},
+                    {"label": "PYQ Library (2014-25)", "url": "/cbse/pyq"},
+                    {"label": "Syllabus Directory", "url": "/cbse/syllabus"},
+                    {"label": "Date Sheets", "url": "/cbse/datesheets"}
+                ]
+            },
+            {
+                "id": "icse",
+                "name": "ICSE",
+                "full_name": "Council for the Indian School Certificate Examinations (CISCE)",
+                "scope": "National Board • ICSE (Class 10) & ISC (Class 12)",
+                "status": "In Development",
+                "status_code": "in_development",
+                "status_label": "In Development",
+                "url": "/icse",
+                "is_clickable": True,
+                "badge_class": "badge-status-dev",
+                "description": "Curriculum verification and official CISCE directory integration currently in progress. Adheres strictly to verified source standards without unverified content.",
+                "actions": [
+                    {"label": "View ICSE Roadmap & Status", "url": "/icse"}
+                ]
+            },
+            {
+                "id": "up-board",
+                "name": "UP Board",
+                "full_name": "Uttar Pradesh Madhyamik Shiksha Parishad (UPMSP)",
+                "scope": "State Board • High School (10th) & Intermediate (12th)",
+                "status": "Coming Soon",
+                "status_code": "coming_soon",
+                "status_label": "Coming Soon",
+                "url": None,
+                "is_clickable": False,
+                "badge_class": "badge-status-soon",
+                "description": "Curriculum framework, subject code directory, and examination calendar integration planned for UPMSP students.",
+                "actions": []
+            },
+            {
+                "id": "bseb",
+                "name": "Bihar Board (BSEB)",
+                "full_name": "Bihar School Examination Board",
+                "scope": "State Board • Matric (10th) & Intermediate (12th)",
+                "status": "Coming Soon",
+                "status_code": "coming_soon",
+                "status_label": "Coming Soon",
+                "url": None,
+                "is_clickable": False,
+                "badge_class": "badge-status-soon",
+                "description": "BSEB Matric and Intermediate official examination alerts, model question papers, and syllabus tracking scheduled on roadmap.",
+                "actions": []
+            },
+            {
+                "id": "msbshse",
+                "name": "Maharashtra Board (MSBSHSE)",
+                "full_name": "Maharashtra State Board of Secondary and Higher Secondary Education",
+                "scope": "State Board • SSC (10th) & HSC (12th)",
+                "status": "Coming Soon",
+                "status_code": "coming_soon",
+                "status_label": "Coming Soon",
+                "url": None,
+                "is_clickable": False,
+                "badge_class": "badge-status-soon",
+                "description": "Maharashtra State Board SSC and HSC curriculum guides, evaluation blueprints, and timetable notifications in planning.",
+                "actions": []
+            }
+        ],
+        "competitive_exams": [
+            {
+                "id": "jee",
+                "name": "JEE",
+                "full_name": "Joint Entrance Examination (Main & Advanced)",
+                "scope": "National Engineering Entrance • NTA / IITs",
+                "status": "Coming Soon",
+                "status_code": "coming_soon",
+                "status_label": "Coming Soon",
+                "url": None,
+                "is_clickable": False,
+                "badge_class": "badge-status-soon",
+                "description": "Official NTA information bulletin tracking, syllabus topic weightage, and entrance session updates in preparation.",
+                "actions": []
+            },
+            {
+                "id": "neet",
+                "name": "NEET",
+                "full_name": "National Eligibility cum Entrance Test (UG)",
+                "scope": "National Medical Entrance • NTA",
+                "status": "Coming Soon",
+                "status_code": "coming_soon",
+                "status_label": "Coming Soon",
+                "url": None,
+                "is_clickable": False,
+                "badge_class": "badge-status-soon",
+                "description": "Undergraduate medical entrance eligibility guidelines, official NMC/NTA curriculum outlines, and exam alerts planned.",
+                "actions": []
+            },
+            {
+                "id": "cuet",
+                "name": "CUET",
+                "full_name": "Common University Entrance Test (UG)",
+                "scope": "Central & State University Admissions • NTA",
+                "status": "Coming Soon",
+                "status_code": "coming_soon",
+                "status_label": "Coming Soon",
+                "url": None,
+                "is_clickable": False,
+                "badge_class": "badge-status-soon",
+                "description": "Undergraduate domain subjects and general test syllabus mapping scheduled for university entrance aspirants.",
+                "actions": []
+            }
+        ]
+    }
 
 def get_public_base_url():
     """Return the canonical production origin, ensuring localhost/127.0.0.1 never leaks into public metadata."""
@@ -73,6 +205,7 @@ def inject_globals():
         "current_academic_year": getattr(Config, "CURRENT_ACADEMIC_YEAR", "2026-27"),
         "show_demo_data": getattr(Config, "SHOW_DEMO_DATA", True),
         "ad_config": Config.ADS,
+        "boards_and_exams": get_boards_and_exams(),
         "current_year": datetime.now().year,
         "today_str": datetime.now().strftime("%d %B %Y")
     }
@@ -242,6 +375,84 @@ def circulars_view():
         selected_class=selected_class,
         search_q=search_q
     )
+
+@app.route("/cbse/pyq")
+def pyq_index():
+    all_papers = get_all_pyqs()
+    selected_class = request.args.get("class", "all").strip()
+    selected_subject = request.args.get("subject", "all").strip()
+    selected_year = request.args.get("year", "all").strip()
+    selected_availability = request.args.get("availability", "all").strip()
+    search_q = request.args.get("q", "").strip().lower()
+
+    # Dynamic options for filter dropdowns
+    available_years = sorted(list(set(p.get("exam_year", "") for p in all_papers if p.get("exam_year"))), reverse=True)
+    available_subjects = sorted(list(set(p.get("subject", "") for p in all_papers if p.get("subject"))))
+
+    filtered = all_papers
+
+    if selected_class != "all":
+        filtered = [p for p in filtered if str(p.get("class")) == selected_class]
+    if selected_subject != "all":
+        filtered = [p for p in filtered if p.get("subject", "").lower() == selected_subject.lower()]
+    if selected_year != "all":
+        filtered = [p for p in filtered if str(p.get("exam_year")) == selected_year]
+    if selected_availability == "available":
+        filtered = [p for p in filtered if p.get("is_available") is True]
+    elif selected_availability == "unavailable":
+        filtered = [p for p in filtered if not p.get("is_available")]
+    if search_q:
+        filtered = [
+            p for p in filtered
+            if search_q in p.get("subject", "").lower()
+            or search_q in p.get("code", "").lower()
+            or search_q in p.get("title", "").lower()
+            or search_q in p.get("description", "").lower()
+        ]
+
+    # Sort papers by exam_year desc, then class asc, then subject asc
+    def sort_pyq_key(p):
+        year = p.get("exam_year", "0")
+        cls = p.get("class", "0")
+        subj = p.get("subject", "")
+        return (year, cls, subj)
+
+    filtered_sorted = sorted(filtered, key=sort_pyq_key, reverse=True)
+
+    return render_template(
+        "pyq.html",
+        pyq_items=filtered_sorted,
+        selected_class=selected_class,
+        selected_subject=selected_subject,
+        selected_year=selected_year,
+        selected_availability=selected_availability,
+        search_q=search_q,
+        available_years=available_years,
+        available_subjects=available_subjects,
+        total_count=len(all_papers)
+    )
+
+@app.route("/pyq")
+def pyq_redirect():
+    target = "/cbse/pyq"
+    if request.query_string:
+        target += f"?{request.query_string.decode('utf-8')}"
+    return redirect(target, code=301)
+
+@app.route("/boards")
+def boards_hub():
+    """Directory and status overview of all educational boards and competitive entrance exams."""
+    directory = get_boards_and_exams()
+    return render_template(
+        "boards.html",
+        boards=directory["boards"],
+        competitive_exams=directory["competitive_exams"]
+    )
+
+@app.route("/icse")
+def icse_hub():
+    """Dedicated foundation landing page for ICSE & ISC (In Development)."""
+    return render_template("icse.html")
 
 @app.route("/search")
 def search():
@@ -445,6 +656,9 @@ def sitemap_xml():
         {"loc": f"{base}/cbse/syllabus", "priority": "0.8", "changefreq": "weekly"},
         {"loc": f"{base}/cbse/datesheets", "priority": "0.9", "changefreq": "daily", "lastmod": ds_lastmod},
         {"loc": f"{base}/cbse/circulars", "priority": "0.8", "changefreq": "daily", "lastmod": circ_lastmod},
+        {"loc": f"{base}/cbse/pyq", "priority": "0.8", "changefreq": "weekly"},
+        {"loc": f"{base}/boards", "priority": "0.8", "changefreq": "weekly"},
+        {"loc": f"{base}/icse", "priority": "0.7", "changefreq": "weekly"},
         {"loc": f"{base}/about", "priority": "0.5", "changefreq": "monthly"},
         {"loc": f"{base}/contact", "priority": "0.5", "changefreq": "monthly"},
         {"loc": f"{base}/privacy-policy", "priority": "0.3", "changefreq": "yearly"},

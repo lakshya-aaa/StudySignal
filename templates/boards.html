@@ -1,0 +1,139 @@
+{% extends 'base.html' %}
+
+{% block title %}Educational Boards & Competitive Entrance Exams | StudySignal{% endblock %}
+
+{% block meta_description %}
+Explore StudySignal's coverage across Indian national and state school education boards (CBSE, ICSE, UP Board, Bihar Board, Maharashtra Board) and competitive entrance examinations (JEE, NEET, CUET).
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [{'title': 'Home', 'url': '/'}, {'title': 'Boards & Exams Hub', 'url': '/boards'}] %}
+{% include 'components/breadcrumb.html' %}
+
+<section class="section" style="padding-bottom: 2.5rem;">
+  <div class="container">
+    <!-- Header Section -->
+    <div class="section-header">
+      <div>
+        <div class="hero-pill-badge" style="margin-bottom: 0.5rem; display: inline-block;">
+          <span>🇮🇳 Multi-Board &amp; Competitive Exam Roadmap</span>
+        </div>
+        <h1 class="section-title">Educational Boards &amp; Competitive Examinations</h1>
+        <p class="section-subtitle">
+          StudySignal provides student-first access to authentic curricula, exam notifications, and dates across Indian school boards and competitive entrance exams.
+        </p>
+      </div>
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+        <a href="/cbse/class-10" class="btn-sm btn-primary">
+          Explore CBSE (Active) &rarr;
+        </a>
+      </div>
+    </div>
+
+    <!-- Status Legend Banner -->
+    <div class="boards-status-legend">
+      <div class="legend-item">
+        <span class="badge-status-active">Active</span>
+        <span class="legend-desc">Fully live with verified syllabi, dates, notices, and 2014–2025 PYQs.</span>
+      </div>
+      <div class="legend-item">
+        <span class="badge-status-dev">In Development</span>
+        <span class="legend-desc">Framework undergoing official verification; no speculative content published.</span>
+      </div>
+      <div class="legend-item">
+        <span class="badge-status-soon">Coming Soon</span>
+        <span class="legend-desc">Scheduled for upcoming phased integration on StudySignal's expansion roadmap.</span>
+      </div>
+    </div>
+
+    <!-- Section 1: School Education Boards -->
+    <div style="margin-bottom: 3rem;">
+      <div class="section-header" style="margin-bottom: 1.25rem;">
+        <div>
+          <h2 class="section-title" style="font-size: 1.35rem;">School Education Boards</h2>
+          <p class="section-subtitle" style="font-size: 0.875rem;">
+            National and state-level school boards governing secondary and higher secondary education.
+          </p>
+        </div>
+      </div>
+
+      <div class="board-selector-grid">
+        {% for b in boards %}
+        <div class="board-card {% if b.status_code == 'active' %}is-active{% elif b.status_code == 'in_development' %}is-in-dev{% else %}is-coming-soon{% endif %}">
+          <div class="board-card-header">
+            <span class="board-scope">{{ b.scope }}</span>
+            <span class="{{ b.badge_class }}">{{ b.status_label }}</span>
+          </div>
+
+          <h3 class="board-card-title">{{ b.name }}</h3>
+          <h4 class="board-card-fullname">{{ b.full_name }}</h4>
+          <p class="board-card-desc">{{ b.description }}</p>
+
+          {% if b.actions and b.actions|length > 0 %}
+          <div class="board-card-links">
+            {% for act in b.actions %}
+            <a href="{{ act.url }}" class="board-action-link">
+              <span>{{ act.label }}</span>
+              <span>&rarr;</span>
+            </a>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          <div class="board-card-footer">
+            {% if b.is_clickable and b.url %}
+              <a href="{{ b.url }}" class="{% if b.status_code == 'active' %}btn-primary{% else %}btn-secondary{% endif %}" style="width: 100%; text-align: center;">
+                {% if b.status_code == 'active' %}Explore {{ b.name }} Portal &rarr;{% else %}View {{ b.name }} Status &rarr;{% endif %}
+              </a>
+            {% else %}
+              <button class="btn-disabled-soon" disabled aria-disabled="true">
+                Coming Soon &bull; Planned on Roadmap
+              </button>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Section 2: National Competitive Entrance Examinations -->
+    <div style="margin-bottom: 2.5rem;">
+      <div class="section-header" style="margin-bottom: 1.25rem;">
+        <div>
+          <h2 class="section-title" style="font-size: 1.35rem;">National Competitive Examinations</h2>
+          <p class="section-subtitle" style="font-size: 0.875rem;">
+            Major entrance examinations for undergraduate admissions in engineering, medicine, and university programs.
+          </p>
+        </div>
+      </div>
+
+      <div class="board-selector-grid">
+        {% for exam in competitive_exams %}
+        <div class="board-card is-coming-soon">
+          <div class="board-card-header">
+            <span class="board-scope">{{ exam.scope }}</span>
+            <span class="{{ exam.badge_class }}">{{ exam.status_label }}</span>
+          </div>
+
+          <h3 class="board-card-title">{{ exam.name }}</h3>
+          <h4 class="board-card-fullname">{{ exam.full_name }}</h4>
+          <p class="board-card-desc">{{ exam.description }}</p>
+
+          <div class="board-card-footer" style="margin-top: auto;">
+            <button class="btn-disabled-soon" disabled aria-disabled="true">
+              Coming Soon &bull; Planned on Roadmap
+            </button>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    <!-- Bottom Advisory Banner -->
+    <div class="alert-box" style="margin-top: 1rem;">
+      <strong>Expansion Quality Commitment:</strong>
+      StudySignal does not create placeholder pages with auto-generated or fake curriculum links. Every board or examination section is published only after thorough verification against official notifications and government gazettes.
+    </div>
+  </div>
+</section>
+{% endblock %}

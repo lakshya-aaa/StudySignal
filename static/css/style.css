@@ -1035,6 +1035,177 @@ img, svg {
 }
 
 /* ==========================================================================
+   PYQ (Previous Year Question Papers) Explorer
+   ========================================================================== */
+.pyq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.pyq-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+  position: relative;
+}
+
+.pyq-card:hover {
+  border-color: var(--brand-blue-border);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.pyq-card.is-unavailable {
+  opacity: 0.95;
+  border-left: 3px solid #cbd5e1;
+}
+
+.pyq-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.pyq-year-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--brand-blue-dark);
+  background-color: var(--brand-blue-soft);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.pyq-badge-available {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--accent-green);
+  background-color: var(--accent-green-light);
+  border: 1px solid #bbf7d0;
+  padding: 2px 7px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.pyq-badge-multiset {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #1e40af;
+  background-color: #dbeafe;
+  border: 1px solid #bfdbfe;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.pyq-badge-singleset {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #374151;
+  background-color: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.pyq-badge-unavailable {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #991b1b;
+  background-color: #fee2e2;
+  border: 1px solid #fecaca;
+  padding: 2px 7px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.pyq-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary-headings);
+  margin-bottom: 0.35rem;
+  line-height: 1.3;
+}
+
+.pyq-card-meta {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  margin-bottom: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.pyq-card-desc {
+  font-size: 0.875rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  flex: 1 1 auto;
+}
+
+.pyq-details-box {
+  background: var(--bg-alt);
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 0.75rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.85rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pyq-details-box strong {
+  color: var(--text-dark);
+}
+
+.pyq-note {
+  font-size: 0.75rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.pyq-note.available {
+  color: #15803d;
+}
+
+.pyq-note.unavailable {
+  color: #b45309;
+}
+
+.pyq-card-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: stretch;
+  margin-top: auto;
+}
+
+.btn-unavailable {
+  background-color: var(--bg-alt);
+  color: var(--text-muted);
+  border: 1px dashed var(--border-color);
+  cursor: not-allowed;
+  flex: 1;
+}
+
+.pyq-empty-state {
+  background: #ffffff;
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 3.5rem 2rem;
+  text-align: center;
+}
+
+/* ==========================================================================
    Circulars & Updates List
    ========================================================================== */
 .circular-list {
@@ -1697,4 +1868,407 @@ textarea.form-control {
   .hero-title {
     font-size: 1.6rem;
   }
+}
+
+/* ==========================================================================
+   Boards & Competitive Examinations Styles
+   ========================================================================== */
+
+/* Status Badges */
+.badge-status-active {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #15803d;
+  background-color: #dcfce7;
+  border: 1px solid #bbf7d0;
+  padding: 2px 7px;
+  border-radius: 4px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.badge-status-dev {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #1d4ed8;
+  background-color: #dbeafe;
+  border: 1px solid #bfdbfe;
+  padding: 2px 7px;
+  border-radius: 4px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.badge-status-soon {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #92400e;
+  background-color: #fef3c7;
+  border: 1px solid #fde68a;
+  padding: 2px 7px;
+  border-radius: 4px;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+/* Nav Dropdown for Boards & Exams */
+.nav-dropdown-item {
+  position: relative;
+}
+
+.nav-dropdown-link {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  cursor: pointer;
+}
+
+.dropdown-arrow {
+  font-size: 0.75rem;
+  transition: transform 0.2s ease;
+}
+
+.nav-dropdown-box {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 440px;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+
+.nav-dropdown-item:hover .nav-dropdown-box,
+.nav-dropdown-item:focus-within .nav-dropdown-box {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-dropdown-item:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.dropdown-group-title {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  display: block;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dropdown-entry {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.dropdown-entry:hover {
+  background-color: var(--bg-alt);
+  color: var(--brand-blue);
+}
+
+.dropdown-entry.is-disabled {
+  opacity: 0.75;
+  cursor: default;
+}
+
+.dropdown-entry.is-disabled:hover {
+  background-color: transparent;
+  color: var(--text-dark);
+}
+
+.dropdown-hub-link {
+  margin-top: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--border-color);
+}
+
+.dropdown-hub-link a {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--brand-blue);
+  text-decoration: underline;
+}
+
+/* Homepage Selector Section */
+.section-selector {
+  background-color: #f8fafc;
+  border-bottom: 1px solid var(--border-color);
+  padding: 2.5rem 0;
+}
+
+.selector-summary-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .selector-summary-grid {
+    grid-template-columns: 1fr;
+  }
+  .nav-dropdown-box {
+    display: none !important;
+  }
+}
+
+.selector-block {
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.selector-block-heading {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary-headings);
+  margin-bottom: 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.selector-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.board-mini-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+  transition: var(--transition);
+}
+
+.board-mini-card.is-active {
+  border-left: 4px solid var(--brand-blue);
+  background: #ffffff;
+}
+
+.board-mini-card.is-in-dev {
+  border-left: 4px solid #0284c7;
+  background: #f0f9ff;
+}
+
+.board-mini-card.is-coming-soon {
+  border-left: 4px solid #cbd5e1;
+  background: #f8fafc;
+  cursor: default;
+}
+
+.mini-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.mini-board-name {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: var(--primary-headings);
+}
+
+.mini-board-desc {
+  font-size: 0.8125rem;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.mini-card-links {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.35rem;
+}
+
+.mini-link {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--brand-blue);
+  text-decoration: underline;
+}
+
+.mini-link.dev-link {
+  color: #0284c7;
+}
+
+.mini-soon-label {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Boards Directory Page (/boards) */
+.boards-status-legend {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+}
+
+.legend-desc {
+  color: var(--text-muted);
+}
+
+.board-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.board-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.board-card.is-active {
+  border-top: 4px solid var(--brand-blue);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.board-card.is-in-dev {
+  border-top: 4px solid #0284c7;
+  background: #f8fafc;
+}
+
+.board-card.is-coming-soon {
+  border-top: 4px solid #94a3b8;
+  background: #f8fafc;
+  border-style: dashed;
+  border-width: 1px;
+  border-top-style: solid;
+  border-top-width: 4px;
+  cursor: default;
+}
+
+.board-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.board-scope {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.board-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--primary-headings);
+  margin-bottom: 0.2rem;
+}
+
+.board-card-fullname {
+  font-size: 0.8125rem;
+  color: var(--brand-blue-dark);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.board-card-desc {
+  font-size: 0.875rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  flex: 1 1 auto;
+}
+
+.board-card-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.board-action-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--brand-blue);
+  padding: 0.35rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+  text-decoration: none;
+}
+
+.board-action-link:hover {
+  background: var(--brand-blue-soft);
+  text-decoration: underline;
+}
+
+.board-card-footer {
+  margin-top: auto;
+}
+
+.btn-disabled-soon {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #64748b;
+  background-color: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  border-radius: var(--radius-sm);
+  text-align: center;
+  cursor: not-allowed;
 }
