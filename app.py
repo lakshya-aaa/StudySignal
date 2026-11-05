@@ -731,15 +731,24 @@ def icse_pyq_index():
 def up_board_hub():
     """UP Board (UPMSP) Foundation Hub - In Development."""
     datesheets = get_up_datesheets()
+    all_syllabus = get_all_up_syllabus()
+    all_circulars = get_up_circulars()
+    all_model_papers = get_all_up_pyqs()
     return render_template(
         "upmsp.html",
-        datesheets=datesheets
+        datesheets=datesheets,
+        featured_syllabus=all_syllabus[:6],
+        latest_circulars=all_circulars[:4],
+        featured_model_papers=all_model_papers[:4]
     )
 
 @app.route("/up-board/class-10")
 def up_board_class_10():
     """UP Board High School (Class 10) Hub."""
     datesheets = get_up_datesheets().get("classes", {}).get("10", {})
+    all_syllabus = [s for s in get_all_up_syllabus() if s.get("class") == "10"]
+    circulars = [c for c in get_up_circulars() if "10" in c.get("class_target", "") or "All" in c.get("class_target", "")]
+    model_papers = [p for p in get_all_up_pyqs() if p.get("class") == "10"]
     return render_template(
         "upmsp_class_hub.html",
         class_num="10",
@@ -747,13 +756,19 @@ def up_board_class_10():
         course_name_hindi="हाई स्कूल",
         class_title="UP Board High School (Class 10)",
         class_title_hindi="उत्तर प्रदेश माध्यमिक शिक्षा परिषद् - हाईस्कूल (कक्षा 10)",
-        datesheets=datesheets
+        datesheets=datesheets,
+        syllabus_items=all_syllabus,
+        circulars=circulars,
+        model_papers=model_papers
     )
 
 @app.route("/up-board/class-12")
 def up_board_class_12():
     """UP Board Intermediate (Class 12) Hub."""
     datesheets = get_up_datesheets().get("classes", {}).get("12", {})
+    all_syllabus = [s for s in get_all_up_syllabus() if s.get("class") == "12"]
+    circulars = [c for c in get_up_circulars() if "12" in c.get("class_target", "") or "All" in c.get("class_target", "")]
+    model_papers = [p for p in get_all_up_pyqs() if p.get("class") == "12"]
     return render_template(
         "upmsp_class_hub.html",
         class_num="12",
@@ -761,7 +776,10 @@ def up_board_class_12():
         course_name_hindi="इण्टरमीडिएट",
         class_title="UP Board Intermediate (Class 12)",
         class_title_hindi="उत्तर प्रदेश माध्यमिक शिक्षा परिषद् - इण्टरमीडिएट (कक्षा 12)",
-        datesheets=datesheets
+        datesheets=datesheets,
+        syllabus_items=all_syllabus,
+        circulars=circulars,
+        model_papers=model_papers
     )
 
 @app.route("/up-board/datesheets")
@@ -777,29 +795,49 @@ def up_board_datesheets_view():
 
 @app.route("/up-board/syllabus")
 def up_board_syllabus_index():
-    """UP Board Subject Syllabus Directory Status."""
+    """UP Board Subject Syllabus Directory."""
     selected_class = request.args.get("class", "all")
+    search_q = request.args.get("q", "").strip().lower()
+    items = get_all_up_syllabus()
+    if selected_class != "all":
+        items = [s for s in items if s.get("class") == selected_class]
+    if search_q:
+        items = [s for s in items if search_q in s.get("subject", "").lower() or search_q in s.get("code", "").lower()]
     return render_template(
         "upmsp_syllabus.html",
-        selected_class=selected_class
+        syllabus_items=items,
+        selected_class=selected_class,
+        search_q=search_q
     )
 
 @app.route("/up-board/circulars")
 def up_board_circulars_view():
-    """UP Board Official Circulars & Notices Status."""
+    """UP Board Official Circulars & Notices."""
     selected_class = request.args.get("class", "all")
+    circulars = get_up_circulars()
+    if selected_class != "all":
+        circulars = [c for c in circulars if selected_class in c.get("class_target", "") or "All" in c.get("class_target", "")]
     return render_template(
         "upmsp_circulars.html",
+        circulars=circulars,
         selected_class=selected_class
     )
 
 @app.route("/up-board/pyq")
 def up_board_pyq_index():
-    """UP Board Model Question Papers & PYQ Status."""
+    """UP Board Official Model Papers Directory."""
     selected_class = request.args.get("class", "all")
+    search_q = request.args.get("q", "").strip().lower()
+    items = get_all_up_pyqs()
+    if selected_class != "all":
+        items = [p for p in items if p.get("class") == selected_class]
+    if search_q:
+        items = [p for p in items if search_q in p.get("subject", "").lower() or search_q in p.get("code", "").lower()]
     return render_template(
         "upmsp_pyq.html",
-        selected_class=selected_class
+        pyq_items=items,
+        selected_class=selected_class,
+        search_q=search_q
     )
 
 @app.route("/search")

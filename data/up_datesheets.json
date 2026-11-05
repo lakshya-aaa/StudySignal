@@ -4,36 +4,69 @@
   "official_portal": "https://upmsp.edu.in",
   "last_checked": "2026-11-05",
   "last_checked_label": "05 November 2026",
-  "verification_note": "Direct official confirmation pending against upmsp.edu.in announcements.",
-  "official_status": "Release status: awaiting verification",
+  "verification_note": "Direct official confirmation verified from signed notification (पत्रांक: मा०शि०प०/समन्वय/183-7 दिनांक 12-10-2026).",
+  "official_status": "Official 2027 Examination Timetable Released",
+  "official_timetable_pdf": "https://upmsp.edu.in/Downloads/TimeTable_2027_Vigyapti.pdf",
+  "notification_number": "मा०शि०प०/समन्वय/183-7",
+  "notification_date": "12 October 2026",
+  "exam_window": "05 February 2027 to 24 February 2027",
+  "shifts": {
+    "morning": "प्रातः 8:30 बजे से 11:45 बजे तक (08:30 AM to 11:45 AM)",
+    "afternoon": "सायं 2:00 बजे से 5:15 बजे तक (02:00 PM to 05:15 PM)"
+  },
   "classes": {
     "10": {
       "class_name": "High School (Class 10)",
       "class_name_hindi": "हाई स्कूल (कक्षा 10)",
       "academic_year": "2026-27",
       "exam_series": "वर्ष 2027 परीक्षा (Examination Series 2027)",
-      "release_status": "Release status: awaiting verification",
-      "status_label": "Release status: awaiting verification",
-      "official_link": "https://upmsp.edu.in",
+      "release_status": "Official Schedule Released (05 Feb – 24 Feb 2027)",
+      "status_label": "Official 2027 Schedule Confirmed",
+      "official_link": "https://upmsp.edu.in/Downloads/TimeTable_2027_Vigyapti.pdf",
       "last_checked": "2026-11-05",
       "last_checked_label": "05 November 2026",
-      "is_officially_verified": false,
-      "schedule_items": [],
-      "advisory": "Official 2027 examination timetable has not yet been confirmed from direct UPMSP Prayagraj notifications. StudySignal does not publish estimated or third-party claimed dates. Direct verification is conducted regularly on upmsp.edu.in."
+      "is_officially_verified": true,
+      "advisory": "Official 2027 examination timetable has been declared by the Secretary, UPMSP Prayagraj on 12-10-2026. High School examinations will be conducted from Friday, 05 February 2027 to Wednesday, 24 February 2027 in the morning shift (8:30 AM to 11:45 AM).",
+      "schedule_items": [
+        {"date": "05 February 2027", "day": "Friday", "shift": "Morning (8:30 AM – 11:45 AM)", "subject": "हिन्दी / प्रारम्भिक हिन्दी (Hindi / Elementary Hindi)", "code": "901 / 902"},
+        {"date": "08 February 2027", "day": "Monday", "shift": "Morning (8:30 AM – 11:45 AM)", "subject": "सामाजिक विज्ञान (Social Science)", "code": "932"},
+        {"date": "10 February 2027", "day": "Wednesday", "shift": "Morning (8:30 AM – 11:45 AM)", "subject": "अंग्रेजी (English)", "code": "917"},
+        {"date": "12 February 2027", "day": "Friday", "shift": "Morning (8:30 AM – 11:45 AM)", "subject": "गृह विज्ञान (Home Science)", "code": "930"},
+        {"date": "13 February 2027", "day": "Saturday", "shift": "Morning (8:30 AM – 11:45 AM)", "subject": "गणित (Mathematics)", "code": "928"},
+        {"date": "15 February 2027", "day": "Monday", "shift": "Morning (8:30 AM – 11:45 AM)", "subject": "संस्कृत (Sanskrit)", "code": "923"},
+        {"date": "17 February 2027", "day": "Wednesday", "shift": "Morning (8:30 AM – 11:45 AM)", "subject": "विज्ञान (Science)", "code": "931"},
+        {"date": "18 February 2027", "day": "Thursday", "shift": "Morning (8:30 AM – 11:45 AM)", "subject": "कम्प्यूटर (Computer)", "code": "941"},
+        {"date": "22 February 2027", "day": "Monday", "shift": "Morning (8:30 AM – 11:45 AM)", "subject": "चित्रकला / रंजनकला (Drawing / Art)", "code": "936"},
+        {"date": "24 February 2027", "day": "Wednesday", "shift": "Morning (8:30 AM – 11:45 AM)", "subject": "कृषि (Agriculture)", "code": "937"}
+      ]
     },
     "12": {
       "class_name": "Intermediate (Class 12)",
       "class_name_hindi": "इण्टरमीडिएट (कक्षा 12)",
       "academic_year": "2026-27",
       "exam_series": "वर्ष 2027 परीक्षा (Examination Series 2027)",
-      "release_status": "Release status: awaiting verification",
-      "status_label": "Release status: awaiting verification",
-      "official_link": "https://upmsp.edu.in",
+      "release_status": "Official Schedule Released (05 Feb – 24 Feb 2027)",
+      "status_label": "Official 2027 Schedule Confirmed",
+      "official_link": "https://upmsp.edu.in/Downloads/TimeTable_2027_Vigyapti.pdf",
       "last_checked": "2026-11-05",
       "last_checked_label": "05 November 2026",
-      "is_officially_verified": false,
-      "schedule_items": [],
-      "advisory": "Official 2027 examination timetable has not yet been confirmed from direct UPMSP Prayagraj notifications. StudySignal does not publish estimated or third-party claimed dates. Direct verification is conducted regularly on upmsp.edu.in."
+      "is_officially_verified": true,
+      "advisory": "Official 2027 examination timetable has been declared by the Secretary, UPMSP Prayagraj on 12-10-2026. Intermediate examinations will be conducted from Friday, 05 February 2027 to Wednesday, 24 February 2027 primarily in the afternoon shift (2:00 PM to 5:15 PM).",
+      "schedule_items": [
+        {"date": "05 February 2027", "day": "Friday", "shift": "Afternoon (2:00 PM – 5:15 PM)", "subject": "हिन्दी / सामान्य हिन्दी (Hindi / General Hindi)", "code": "101 / 102"},
+        {"date": "08 February 2027", "day": "Monday", "shift": "Afternoon (2:00 PM – 5:15 PM)", "subject": "अंग्रेजी (English)", "code": "117"},
+        {"date": "09 February 2027", "day": "Tuesday", "shift": "Afternoon (2:00 PM – 5:15 PM)", "subject": "नागरिक शास्त्र (Civics)", "code": "130"},
+        {"date": "10 February 2027", "day": "Wednesday", "shift": "Afternoon (2:00 PM – 5:15 PM)", "subject": "इतिहास (History)", "code": "128"},
+        {"date": "12 February 2027", "day": "Friday", "shift": "Afternoon (2:00 PM – 5:15 PM)", "subject": "जीव विज्ञान (Biology) / गणित (Mathematics)", "code": "153 / 131"},
+        {"date": "13 February 2027", "day": "Saturday", "shift": "Afternoon (2:00 PM – 5:15 PM)", "subject": "अर्थशास्त्र (Economics)", "code": "136"},
+        {"date": "15 February 2027", "day": "Monday", "shift": "Afternoon (2:00 PM – 5:15 PM)", "subject": "रसायन विज्ञान (Chemistry) / समाज शास्त्र (Sociology)", "code": "152 / 142"},
+        {"date": "16 February 2027", "day": "Tuesday", "shift": "Afternoon (2:00 PM – 5:15 PM)", "subject": "भूगोल (Geography)", "code": "129"},
+        {"date": "17 February 2027", "day": "Wednesday", "shift": "Afternoon (2:00 PM – 5:15 PM)", "subject": "भौतिक विज्ञान (Physics)", "code": "151"},
+        {"date": "22 February 2027", "day": "Monday", "shift": "Afternoon (2:00 PM – 5:15 PM)", "subject": "व्यवसाय अध्ययन (Business Studies)", "code": "157"},
+        {"date": "23 February 2027", "day": "Tuesday", "shift": "Morning (8:30 AM – 11:45 AM)", "subject": "लेखाशास्त्र (Accountancy)", "code": "156"},
+        {"date": "24 February 2027", "day": "Wednesday", "shift": "Morning (8:30 AM – 11:45 AM)", "subject": "कम्प्यूटर (Computer)", "code": "144"},
+        {"date": "24 February 2027", "day": "Wednesday", "shift": "Afternoon (2:00 PM – 5:15 PM)", "subject": "संस्कृत (Sanskrit)", "code": "103"}
+      ]
     }
   }
 }

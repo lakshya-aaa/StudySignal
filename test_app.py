@@ -2019,7 +2019,7 @@ class StudySignalTestCase(unittest.TestCase):
 
     def test_up_board_hub_in_development(self):
         """Verify /up-board overview hub has In Development status, verified UPMSP links,
-        dual-language terminology, and explicit awaiting verification timetable status."""
+        dual-language terminology, confirmed 2027 timetable, and verified curriculum records."""
         res = self.client.get("/up-board")
         self.assertEqual(res.status_code, 200)
         html = res.data.decode("utf-8")
@@ -2035,16 +2035,25 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn('href="/up-board/class-10"', html)
         self.assertIn('href="/up-board/class-12"', html)
 
-        # 3. Timetable release status strictly displayed
-        self.assertIn("Release status: awaiting verification", html)
-        self.assertIn("Checked: 05 November 2026", html)
+        # 3. Confirmed 2027 examination timetable
+        self.assertIn("Official 2027 Schedule Confirmed", html)
+        self.assertIn("05 Feb 2027 to 24 Feb 2027", html)
+        self.assertIn("मा०शि०प०/समन्वय/183-7", html)
+        self.assertIn("12 October 2026", html)
+        self.assertIn("TimeTable_2027_Vigyapti.pdf", html)
 
         # 4. Verified official sources & links
         self.assertIn("https://upmsp.edu.in", html)
-        self.assertIn("upmsp.edu.in/Syllabus.html", html)
-        self.assertIn("upmsp.edu.in/ModelPaper.html", html)
+        self.assertIn("Board_Syllabus.aspx", html)
+        self.assertIn("Board_ModelPaper.aspx", html)
 
-        # 5. Non-affiliation legal disclaimer
+        # 5. Featured verified content
+        self.assertIn("Verified Subject Syllabi", html)
+        self.assertIn("Official Model Question Papers", html)
+        self.assertIn("Official Notifications", html)
+        self.assertIn("विज्ञप्ति एवं महत्वपूर्ण सूचना", html)
+
+        # 6. Non-affiliation legal disclaimer
         self.assertIn("UPMSP Non-Affiliation Legal Notice", html)
         self.assertIn("NOT affiliated with, endorsed by, or connected to the Uttar Pradesh Madhyamik Shiksha Parishad", html)
 
@@ -2057,9 +2066,13 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn("UP Board High School (Class 10)", html10)
         self.assertIn("हाईस्कूल (कक्षा 10)", html10)
         self.assertIn("In Development", html10)
-        self.assertIn("Release status: awaiting verification", html10)
-        self.assertIn("Checked: 05 November 2026", html10)
-        self.assertIn("Syllabus Details Awaiting Live Source Verification", html10)
+        self.assertIn("Official 2027 Schedule Confirmed", html10)
+        self.assertIn("05 Feb 2027 to 24 Feb 2027", html10)
+        self.assertIn("High School Official Syllabi", html10)
+        self.assertIn("कोड: 901", html10)
+        self.assertIn("कोड: 928", html10)
+        self.assertIn("Official Model Papers", html10)
+        self.assertIn("TimeTable_2027_Vigyapti.pdf", html10)
 
         # 2. Intermediate (Class 12) Hub
         res12 = self.client.get("/up-board/class-12")
@@ -2068,33 +2081,65 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn("UP Board Intermediate (Class 12)", html12)
         self.assertIn("इण्टरमीडिएट (कक्षा 12)", html12)
         self.assertIn("In Development", html12)
-        self.assertIn("Release status: awaiting verification", html12)
+        self.assertIn("Official 2027 Schedule Confirmed", html12)
+        self.assertIn("05 Feb 2027 to 24 Feb 2027", html12)
+        self.assertIn("Intermediate Official Syllabi", html12)
+        self.assertIn("कोड: 101", html12)
+        self.assertIn("कोड: 151", html12)
         self.assertIn("विज्ञान वर्ग", html12)
         self.assertIn("मानविकी व कला वर्ग", html12)
         self.assertIn("वाणिज्य वर्ग", html12)
         self.assertIn("कृषि वर्ग", html12)
+        self.assertIn("Official Model Papers", html12)
 
     def test_up_board_subroutes_status_views(self):
-        """Verify dedicated status views for datesheets, syllabus, circulars, and pyq."""
+        """Verify dedicated views for datesheets, syllabus, circulars, and official model papers."""
         # Datesheets
         res_ds = self.client.get("/up-board/datesheets")
         self.assertEqual(res_ds.status_code, 200)
-        self.assertIn("Release status: awaiting verification", res_ds.data.decode("utf-8"))
+        html_ds = res_ds.data.decode("utf-8")
+        self.assertIn("Official 2027 Timetable Declared", html_ds)
+        self.assertIn("05 February 2027 to 24 February 2027", html_ds)
+        self.assertIn("मा०शि०प०/समन्वय/183-7", html_ds)
+        self.assertIn("TimeTable_2027_Vigyapti.pdf", html_ds)
+        self.assertIn("901 / 902", html_ds)
+        self.assertIn("101 / 102", html_ds)
 
         # Syllabus
         res_syl = self.client.get("/up-board/syllabus")
         self.assertEqual(res_syl.status_code, 200)
-        self.assertIn("Curriculum Data Under Verification", res_syl.data.decode("utf-8"))
+        html_syl = res_syl.data.decode("utf-8")
+        self.assertIn("UP Board Subject-wise Syllabus Directory", html_syl)
+        self.assertIn("सत्र 2026–27 अधिकृत पाठ्यक्रम निर्देशिका", html_syl)
+        self.assertIn("कोड: 901", html_syl)
+        self.assertIn("कोड: 151", html_syl)
+        self.assertIn("https://upmsp.edu.in/Downloads/Syllabus/Class10/901-Hindi-Class-10.pdf", html_syl)
+
+        # Syllabus Search filtering
+        res_syl_search = self.client.get("/up-board/syllabus?q=901")
+        self.assertEqual(res_syl_search.status_code, 200)
+        html_syl_search = res_syl_search.data.decode("utf-8")
+        self.assertIn("कोड: 901", html_syl_search)
+        self.assertNotIn("कोड: 928", html_syl_search)
 
         # Circulars
         res_circ = self.client.get("/up-board/circulars")
         self.assertEqual(res_circ.status_code, 200)
-        self.assertIn("No Unverified Press Releases Published", res_circ.data.decode("utf-8"))
+        html_circ = res_circ.data.decode("utf-8")
+        self.assertIn("UP Board Official Circulars &amp; Notices", html_circ)
+        self.assertIn("मा०शि०प०/समन्वय/183-7", html_circ)
+        self.assertIn("12 October 2026", html_circ)
 
-        # PYQ
+        # Model Papers (labeled Official Model Papers, NOT historical PYQs)
         res_pyq = self.client.get("/up-board/pyq")
         self.assertEqual(res_pyq.status_code, 200)
-        self.assertIn("Official Model Paper Links Under Verification", res_pyq.data.decode("utf-8"))
+        html_pyq = res_pyq.data.decode("utf-8")
+        self.assertIn("UP Board Official Model Question Papers", html_pyq)
+        self.assertIn("Official Model Paper", html_pyq)
+        self.assertIn("मॉडल प्रश्न पत्र", html_pyq)
+        self.assertIn("कोड: 901", html_pyq)
+        self.assertIn("https://upmsp.edu.in/Downloads/ModelPaper/class10/901-Hindi.pdf", html_pyq)
+        self.assertNotIn("10-Year Question Bank", html_pyq)
 
     def test_boards_up_card_in_development(self):
         """Verify on /boards that UP Board is marked In Development with correct links."""
@@ -2119,6 +2164,47 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn("/up-board/class-10", xml)
         self.assertIn("/up-board/class-12", xml)
         self.assertIn("/up-board/datesheets", xml)
+
+
+    def test_up_board_data_files_integrity(self):
+        """Verify that all populated UP Board records have official URLs, 
+        last_verified dates, official UPMSP domains, and correct model paper labeling."""
+        import json
+        # 1. Datesheets
+        with open(os.path.join(app.root_path, "data", "up_datesheets.json"), "r", encoding="utf-8") as f:
+            ds = json.load(f)
+        self.assertEqual(ds["notification_number"], "मा०शि०प०/समन्वय/183-7")
+        self.assertEqual(ds["exam_window"], "05 February 2027 to 24 February 2027")
+        self.assertTrue(ds["official_timetable_pdf"].startswith("https://upmsp.edu.in"))
+        self.assertEqual(len(ds["classes"]["10"]["schedule_items"]), 10)
+        self.assertEqual(len(ds["classes"]["12"]["schedule_items"]), 13)
+
+        # 2. Syllabi
+        with open(os.path.join(app.root_path, "data", "up_syllabus.json"), "r", encoding="utf-8") as f:
+            syl = json.load(f)
+        self.assertEqual(len(syl), 21)
+        for s in syl:
+            self.assertEqual(s["last_verified"], "2026-11-05")
+            self.assertTrue(s["official_url"].startswith("https://upmsp.edu.in"))
+            self.assertTrue(s["is_official"])
+
+        # 3. Model Papers (Labeled Official Model Paper, NOT historical PYQs)
+        with open(os.path.join(app.root_path, "data", "up_pyq.json"), "r", encoding="utf-8") as f:
+            pyq = json.load(f)
+        self.assertEqual(len(pyq), 16)
+        for p in pyq:
+            self.assertEqual(p["last_verified"], "2026-11-05")
+            self.assertTrue(p["official_url"].startswith("https://upmsp.edu.in"))
+            self.assertEqual(p["paper_type"], "Official Model Paper (मॉडल प्रश्न पत्र)")
+            self.assertTrue(p["is_available"])
+
+        # 4. Circulars
+        with open(os.path.join(app.root_path, "data", "up_circulars.json"), "r", encoding="utf-8") as f:
+            circ = json.load(f)
+        self.assertEqual(len(circ), 5)
+        for c in circ:
+            self.assertEqual(c["last_verified"], "2026-11-05")
+            self.assertTrue(c["official_url"].startswith("https://upmsp.edu.in"))
 
 if __name__ == "__main__":
     unittest.main()

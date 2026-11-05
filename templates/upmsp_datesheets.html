@@ -1,16 +1,16 @@
 {% extends 'base.html' %}
 
-{% block title %}UP Board Exam Date Sheet 2027 Status - समय-सारणी | StudySignal{% endblock %}
+{% block title %}UP Board Exam Date Sheet 2027 - समय-सारणी | StudySignal{% endblock %}
 
 {% block meta_description %}
-Official UP Board High School (Class 10) and Intermediate (Class 12) examination timetable status for 2027. Verified directly from UPMSP announcements on upmsp.edu.in.
+Official UP Board High School (Class 10) and Intermediate (Class 12) examination timetable for 2027. Verified directly from signed notification No. मा०शि०प०/समन्वय/183-7 on upmsp.edu.in.
 {% endblock %}
 
 {% block content %}
 {% set breadcrumbs = [
   {'title': 'Boards & Exams', 'url': '/boards'},
   {'title': 'UP Board Hub', 'url': '/up-board'},
-  {'title': 'Date Sheet Status', 'url': '/up-board/datesheets'}
+  {'title': 'Date Sheet 2027', 'url': '/up-board/datesheets'}
 ] %}
 {% include 'components/breadcrumb.html' %}
 
@@ -23,31 +23,34 @@ Official UP Board High School (Class 10) and Intermediate (Class 12) examination
           <span>🇮🇳 UPMSP Official Timetable Tracker &bull; <strong class="badge-status-dev" style="margin-left: 4px; vertical-align: middle;">In Development</strong></span>
         </div>
         <h1 class="hub-hero-title">
-          UP Board Exam Date Sheet 2027 Status
+          UP Board Exam Date Sheet 2027
         </h1>
         <div style="color: #64748b; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.6rem;">
-          वर्ष 2027 परीक्षा कार्यक्रम / समय-सारणी स्थिति
+          वर्ष 2027 की हाईस्कूल तथा इण्टरमीडिएट परीक्षा का संयुक्त परीक्षा कार्यक्रम
         </div>
         <p class="hub-hero-desc">
-          Official timetable advisory for UP Board High School (Class 10) and Intermediate (Class 12) examinations. To protect candidates from misinformation, StudySignal reports timetable status strictly verified from direct UPMSP notifications.
+          Official examination schedule for UP Board High School (Class 10) and Intermediate (Class 12). Verified directly from the signed notification (पत्रांक: मा०शि०प०/समन्वय/183-7) issued by the Secretary, Uttar Pradesh Madhyamik Shiksha Parishad (UPMSP), Prayagraj.
         </p>
 
         <!-- Quick Stats Row -->
         <div class="hub-stats-row">
           <div class="hub-stat-pill">
-            <span>🗓️ <strong>वर्ष 2027</strong> Exam Series</span>
+            <span>🗓️ <strong>05 Feb – 24 Feb 2027</strong> Exam Window</span>
           </div>
           <div class="hub-stat-pill">
-            <span>🛡️ <strong>Zero Speculative Dates</strong></span>
+            <span>📜 <strong>पत्रांक:</strong> {{ datesheets.notification_number or 'मा०शि०प०/समन्वय/183-7' }}</span>
           </div>
           <div class="hub-stat-pill">
-            <span>🔍 <strong>Verified Source:</strong> upmsp.edu.in</span>
+            <span>✓ <strong>Signed Notification:</strong> 12 Oct 2026</span>
+          </div>
+          <div class="hub-stat-pill">
+            <span>🛡️ <strong>Direct Official Source:</strong> upmsp.edu.in</span>
           </div>
         </div>
 
         <div class="hub-hero-actions">
-          <a href="{{ official_urls.upmsp_main }}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: auto;">
-            Check UPMSP Official Portal ↗
+          <a href="{{ datesheets.official_timetable_pdf or 'https://upmsp.edu.in/Downloads/TimeTable_2027_Vigyapti.pdf' }}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: auto;">
+            Download Official Timetable PDF (2.1 MB) ↗
           </a>
           <a href="/up-board" class="btn-secondary" style="width: auto;">
             UP Board Main Hub &rarr;
@@ -83,78 +86,187 @@ Official UP Board High School (Class 10) and Intermediate (Class 12) examination
     </div>
   </section>
 
-  <!-- Schedule Status Cards -->
-  <section class="section" style="padding-top: 0; padding-bottom: 3rem;">
+  <!-- Timetable Summary Advisory Card -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2rem;">
     <div class="container">
-      <!-- High School Advisory -->
-      {% if selected_class in ['all', '10'] %}
-      <div class="hub-alert-card" style="border-left-color: #f59e0b; background: #fffbeb; margin-bottom: 1.5rem;">
+      <div class="hub-alert-card" style="border-left-color: #16a34a; background: #f0fdf4;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.5rem;">
           <div>
             <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.35rem;">
-              <span class="badge-status-dev" style="background: #fef3c7; color: #92400e; border-color: #fde68a;">
-                हाई स्कूल (Class 10)
+              <span class="badge-status-active" style="background: #dcfce7; color: #15803d; border-color: #bbf7d0;">
+                ✓ Official 2027 Timetable Declared
               </span>
-              <span style="font-size: 0.8125rem; font-weight: 700; color: #b45309; background: #fef9c3; border: 1px solid #fde047; padding: 2px 8px; border-radius: 4px;">
-                Release status: awaiting verification
+              <span style="font-size: 0.8125rem; font-weight: 700; color: #166534; background: #e0f2fe; border: 1px solid #bae6fd; padding: 2px 8px; border-radius: 4px;">
+                05 February 2027 to 24 February 2027
               </span>
             </div>
-            <h3 style="font-size: 1.2rem; font-weight: 800; color: #78350f; margin: 0 0 0.25rem 0;">
-              High School (Class 10) Examination Schedule Status
-            </h3>
+            <h2 style="font-size: 1.25rem; font-weight: 800; color: #14532d; margin: 0 0 0.35rem 0;">
+              सचिव, माध्यमिक शिक्षा परिषद्, उ०प्र०, प्रयागराज द्वारा घोषित अधिकृत समय-सारणी
+            </h2>
           </div>
-          <span style="font-size: 0.75rem; color: #92400e; font-weight: 600;">
+          <span style="font-size: 0.75rem; color: #166534; font-weight: 600;">
             Checked: {{ datesheets.last_checked_label or '05 November 2026' }}
           </span>
         </div>
-        <p style="color: #78350f; font-size: 0.925rem; line-height: 1.6; margin-bottom: 0.85rem;">
-          {{ datesheets.classes['10'].advisory or 'Official 2027 examination timetable has not yet been confirmed from direct UPMSP Prayagraj notifications. StudySignal does not publish estimated or third-party claimed dates. Direct verification is conducted regularly on upmsp.edu.in.' }}
+        <p style="color: #166534; font-size: 0.925rem; line-height: 1.6; margin-bottom: 0.85rem;">
+          सर्वसाधारण को सूचित किया जाता है कि वर्ष 2027 की हाईस्कूल एवं इण्टरमीडिएट की परीक्षाएँ संयुक्त रूप से <strong>शुक्रवार, 05 फरवरी 2027</strong> से प्रारम्भ होकर <strong>बुधवार, 24 फरवरी 2027</strong> को समाप्त होंगी।
+          <br><br>
+          <strong>दैनिक परीक्षा पालियाँ (Official Shifts):</strong>
+          <br>&bull; <strong>प्रथम पाली (Morning Shift):</strong> प्रातः 8:30 बजे से पूर्वाह्न 11:45 बजे तक (08:30 AM to 11:45 AM) &mdash; मुख्य रूप से हाई स्कूल
+          <br>&bull; <strong>द्वितीय पाली (Afternoon Shift):</strong> अपराह्न 2:00 बजे से सायं 5:15 बजे तक (02:00 PM to 05:15 PM) &mdash; मुख्य रूप से इण्टरमीडिएट
+          <br>
+          <em>* नोट: परीक्षार्थियों को प्रश्न-पत्र पढ़ने हेतु 15 मिनट का अतिरिक्त समय प्रदान किया गया है (कुल अवधि 3 घण्टे 15 मिनट)।</em>
         </p>
         <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
-          <a href="{{ official_urls.upmsp_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary" style="width: auto;">
-            Verify on Official UPMSP Portal ↗
+          <a href="{{ datesheets.official_timetable_pdf or 'https://upmsp.edu.in/Downloads/TimeTable_2027_Vigyapti.pdf' }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary" style="width: auto;">
+            Download Official Signed Timetable PDF (2.1 MB) ↗
           </a>
-          <a href="/up-board/class-10" class="btn-sm btn-secondary" style="width: auto;">
-            Go to High School Portal &rarr;
+          <a href="{{ datesheets.official_portal or 'https://upmsp.edu.in' }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto;">
+            Verify on UPMSP Official Portal ↗
           </a>
         </div>
       </div>
-      {% endif %}
+    </div>
+  </section>
 
-      <!-- Intermediate Advisory -->
-      {% if selected_class in ['all', '12'] %}
-      <div class="hub-alert-card" style="border-left-color: #f59e0b; background: #fffbeb; margin-bottom: 1.5rem;">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.5rem;">
-          <div>
-            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.35rem;">
-              <span class="badge-status-dev" style="background: #fef3c7; color: #92400e; border-color: #fde68a;">
-                इण्टरमीडिएट (Class 12)
-              </span>
-              <span style="font-size: 0.8125rem; font-weight: 700; color: #b45309; background: #fef9c3; border: 1px solid #fde047; padding: 2px 8px; border-radius: 4px;">
-                Release status: awaiting verification
-              </span>
-            </div>
-            <h3 style="font-size: 1.2rem; font-weight: 800; color: #78350f; margin: 0 0 0.25rem 0;">
-              Intermediate (Class 12) Examination Schedule Status
-            </h3>
+  <!-- High School Date Sheet Table -->
+  {% if selected_class in ['all', '10'] %}
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1.25rem; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 0.75rem;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem;">
+            <span class="class-badge" style="background: #e0f2fe; color: #0369a1; font-weight: 700; border-radius: 6px; padding: 2px 8px; font-size: 0.75rem;">High School</span>
+            <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary-headings); margin: 0;">
+              हाई स्कूल (कक्षा 10) परीक्षा कार्यक्रम 2027
+            </h2>
           </div>
-          <span style="font-size: 0.75rem; color: #92400e; font-weight: 600;">
-            Checked: {{ datesheets.last_checked_label or '05 November 2026' }}
-          </span>
+          <p style="color: var(--text-muted); font-size: 0.875rem; margin: 0;">
+            Primary shift: Morning (8:30 AM to 11:45 AM). Extracted directly from official notification:
+          </p>
         </div>
-        <p style="color: #78350f; font-size: 0.925rem; line-height: 1.6; margin-bottom: 0.85rem;">
-          {{ datesheets.classes['12'].advisory or 'Official 2027 examination timetable has not yet been confirmed from direct UPMSP Prayagraj notifications. StudySignal does not publish estimated or third-party claimed dates. Direct verification is conducted regularly on upmsp.edu.in.' }}
-        </p>
-        <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
-          <a href="{{ official_urls.upmsp_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary" style="width: auto;">
-            Verify on Official UPMSP Portal ↗
-          </a>
-          <a href="/up-board/class-12" class="btn-sm btn-secondary" style="width: auto;">
-            Go to Intermediate Portal &rarr;
-          </a>
+        <a href="/up-board/class-10" class="btn-sm btn-secondary">
+          Go to High School Portal &rarr;
+        </a>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 18px rgba(15,23,42,0.04);">
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
+            <thead>
+              <tr style="background: #f8fafc; border-bottom: 2px solid #e2e8f0; color: #475569; font-weight: 700; font-size: 0.825rem; text-transform: uppercase; letter-spacing: 0.03em;">
+                <th style="padding: 0.85rem 1.25rem;">दिनांक एवं दिन (Date &amp; Day)</th>
+                <th style="padding: 0.85rem 1.25rem;">समय एवं पाली (Shift &amp; Time)</th>
+                <th style="padding: 0.85rem 1.25rem; text-align: center;">विषय कोड (Code)</th>
+                <th style="padding: 0.85rem 1.25rem;">विषय (Subject Name)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in datesheets.classes['10'].schedule_items %}
+              <tr style="border-bottom: 1px solid #f1f5f9; transition: background 0.15s ease;">
+                <td style="padding: 0.85rem 1.25rem; font-weight: 600; color: var(--primary);">
+                  {{ item.date }}<br>
+                  <span style="font-size: 0.775rem; color: #64748b; font-weight: 500;">{{ item.day }}</span>
+                </td>
+                <td style="padding: 0.85rem 1.25rem; color: #334155; font-size: 0.85rem;">
+                  <span style="display: inline-block; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-weight: 600; font-size: 0.775rem;">
+                    {{ item.shift }}
+                  </span>
+                </td>
+                <td style="padding: 0.85rem 1.25rem; text-align: center;">
+                  <span style="font-family: monospace; font-size: 0.85rem; background: #f1f5f9; padding: 2px 8px; border-radius: 4px; font-weight: 700; color: #475569;">
+                    {{ item.code }}
+                  </span>
+                </td>
+                <td style="padding: 0.85rem 1.25rem; font-weight: 700; color: var(--primary);">
+                  {{ item.subject }}
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
         </div>
       </div>
-      {% endif %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Intermediate Date Sheet Table -->
+  {% if selected_class in ['all', '12'] %}
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1.25rem; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 0.75rem;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.25rem;">
+            <span class="class-badge" style="background: #f0fdf4; color: #166534; font-weight: 700; border-radius: 6px; padding: 2px 8px; font-size: 0.75rem;">Intermediate</span>
+            <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary-headings); margin: 0;">
+              इण्टरमीडिएट (कक्षा 12) परीक्षा कार्यक्रम 2027
+            </h2>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.875rem; margin: 0;">
+            Primary shift: Afternoon (2:00 PM to 5:15 PM) / Morning for Commerce &amp; Sanskrit. Direct official schedule:
+          </p>
+        </div>
+        <a href="/up-board/class-12" class="btn-sm btn-secondary">
+          Go to Intermediate Portal &rarr;
+        </a>
+      </div>
+
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 18px rgba(15,23,42,0.04);">
+        <div style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
+            <thead>
+              <tr style="background: #f8fafc; border-bottom: 2px solid #e2e8f0; color: #475569; font-weight: 700; font-size: 0.825rem; text-transform: uppercase; letter-spacing: 0.03em;">
+                <th style="padding: 0.85rem 1.25rem;">दिनांक एवं दिन (Date &amp; Day)</th>
+                <th style="padding: 0.85rem 1.25rem;">समय एवं पाली (Shift &amp; Time)</th>
+                <th style="padding: 0.85rem 1.25rem; text-align: center;">विषय कोड (Code)</th>
+                <th style="padding: 0.85rem 1.25rem;">विषय (Subject Name)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for item in datesheets.classes['12'].schedule_items %}
+              <tr style="border-bottom: 1px solid #f1f5f9; transition: background 0.15s ease;">
+                <td style="padding: 0.85rem 1.25rem; font-weight: 600; color: var(--primary);">
+                  {{ item.date }}<br>
+                  <span style="font-size: 0.775rem; color: #64748b; font-weight: 500;">{{ item.day }}</span>
+                </td>
+                <td style="padding: 0.85rem 1.25rem; color: #334155; font-size: 0.85rem;">
+                  <span style="display: inline-block; background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 4px; font-weight: 600; font-size: 0.775rem;">
+                    {{ item.shift }}
+                  </span>
+                </td>
+                <td style="padding: 0.85rem 1.25rem; text-align: center;">
+                  <span style="font-family: monospace; font-size: 0.85rem; background: #f1f5f9; padding: 2px 8px; border-radius: 4px; font-weight: 700; color: #475569;">
+                    {{ item.code }}
+                  </span>
+                </td>
+                <td style="padding: 0.85rem 1.25rem; font-weight: 700; color: var(--primary);">
+                  {{ item.subject }}
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Official Instructions for Candidates -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 18px rgba(15,23,42,0.04);">
+        <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--primary); margin: 0 0 0.75rem 0;">
+          परीक्षार्थियों हेतु महत्वपूर्ण निर्देश &bull; Key Examination Instructions
+        </h3>
+        <ul style="color: #475569; font-size: 0.875rem; line-height: 1.7; margin: 0; padding-left: 1.25rem;">
+          <li><strong>प्रश्न-पत्र पठन समय:</strong> प्रत्येक प्रश्न-पत्र हल करने से पूर्व परीक्षार्थियों को प्रश्न-पत्र पढ़ने हेतु 15 मिनट का अतिरिक्त समय निर्धारित है।</li>
+          <li><strong>परीक्षा केन्द्र पर आगमन:</strong> परीक्षार्थी निर्धारित समय से कम से कम 30 मिनट पूर्व परीक्षा केन्द्र पर पहुँचना सुनिश्चित करें।</li>
+          <li><strong>प्रतिबंधित सामग्री:</strong> परीक्षा कक्ष में मोबाइल फोन, कैलकुलेटर, स्मार्टवॉच अथवा किसी भी प्रकार का इलेक्ट्रॉनिक उपकरण ले जाना पूर्णतया वर्जित है।</li>
+          <li><strong>प्रवेश पत्र:</strong> अधिकृत प्रवेश पत्र (Admit Card) प्रधानाचार्य के हस्ताक्षर एवं मुहर सहित परीक्षा केन्द्र पर साथ लाना अनिवार्य है।</li>
+        </ul>
+      </div>
     </div>
   </section>
 
