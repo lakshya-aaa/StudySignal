@@ -823,9 +823,10 @@ def up_board_circulars_view():
         selected_class=selected_class
     )
 
-@app.route("/up-board/pyq")
-def up_board_pyq_index():
-    """UP Board Official Model Papers Directory."""
+@app.route("/up-board/model-papers")
+@app.route("/up-board/sample-papers")
+def up_board_model_papers_index():
+    """UP Board Official Model Papers / Sample Papers Directory."""
     selected_class = request.args.get("class", "all")
     search_q = request.args.get("q", "").strip().lower()
     items = get_all_up_pyqs()
@@ -834,10 +835,20 @@ def up_board_pyq_index():
     if search_q:
         items = [p for p in items if search_q in p.get("subject", "").lower() or search_q in p.get("code", "").lower()]
     return render_template(
-        "upmsp_pyq.html",
-        pyq_items=items,
+        "upmsp_model_papers.html",
+        model_papers=items,
         selected_class=selected_class,
         search_q=search_q
+    )
+
+@app.route("/up-board/pyq")
+def up_board_pyq_index():
+    """UP Board Previous Year Question Papers (PYQs) - Archive Status / Coming Soon."""
+    selected_class = request.args.get("class", "all")
+    return render_template(
+        "upmsp_pyq.html",
+        selected_class=selected_class,
+        pyq_items=[]
     )
 
 @app.route("/search")
@@ -1114,7 +1125,8 @@ def sitemap_xml():
         {"loc": f"{base}/up-board/datesheets", "priority": "0.8", "changefreq": "daily"},
         {"loc": f"{base}/up-board/syllabus", "priority": "0.7", "changefreq": "weekly"},
         {"loc": f"{base}/up-board/circulars", "priority": "0.7", "changefreq": "daily"},
-        {"loc": f"{base}/up-board/pyq", "priority": "0.7", "changefreq": "weekly"},
+        {"loc": f"{base}/up-board/model-papers", "priority": "0.7", "changefreq": "weekly"},
+        {"loc": f"{base}/up-board/pyq", "priority": "0.6", "changefreq": "weekly"},
         {"loc": f"{base}/about", "priority": "0.5", "changefreq": "monthly"},
         {"loc": f"{base}/contact", "priority": "0.5", "changefreq": "monthly"},
         {"loc": f"{base}/privacy-policy", "priority": "0.3", "changefreq": "yearly"},

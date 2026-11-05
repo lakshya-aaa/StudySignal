@@ -2019,7 +2019,7 @@ class StudySignalTestCase(unittest.TestCase):
 
     def test_up_board_hub_in_development(self):
         """Verify /up-board overview hub has In Development status, verified UPMSP links,
-        dual-language terminology, confirmed 2027 timetable, and verified curriculum records."""
+        dual-language terminology, confirmed 2027 timetable, and distinct model papers and PYQ links."""
         res = self.client.get("/up-board")
         self.assertEqual(res.status_code, 200)
         html = res.data.decode("utf-8")
@@ -2047,9 +2047,12 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn("Board_Syllabus.aspx", html)
         self.assertIn("Board_ModelPaper.aspx", html)
 
-        # 5. Featured verified content
+        # 5. Distinct Model Papers vs PYQ links in navigation and sections
+        self.assertIn('href="/up-board/model-papers"', html)
+        self.assertIn('href="/up-board/pyq"', html)
+        self.assertIn("Official Model Papers / Sample Papers", html)
+        self.assertIn("Previous Year Question Papers (PYQs)", html)
         self.assertIn("Verified Subject Syllabi", html)
-        self.assertIn("Official Model Question Papers", html)
         self.assertIn("Official Notifications", html)
         self.assertIn("विज्ञप्ति एवं महत्वपूर्ण सूचना", html)
 
@@ -2058,7 +2061,7 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn("NOT affiliated with, endorsed by, or connected to the Uttar Pradesh Madhyamik Shiksha Parishad", html)
 
     def test_up_board_class_hubs(self):
-        """Verify UP Board High School (Class 10) and Intermediate (Class 12) portals."""
+        """Verify UP Board High School (Class 10) and Intermediate (Class 12) portals with separate model paper and PYQ navigation."""
         # 1. High School (Class 10) Hub
         res10 = self.client.get("/up-board/class-10")
         self.assertEqual(res10.status_code, 200)
@@ -2071,7 +2074,9 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn("High School Official Syllabi", html10)
         self.assertIn("कोड: 901", html10)
         self.assertIn("कोड: 928", html10)
-        self.assertIn("Official Model Papers", html10)
+        self.assertIn("Official Model Papers / Sample Papers", html10)
+        self.assertIn('href="/up-board/model-papers?class=10"', html10)
+        self.assertIn('href="/up-board/pyq?class=10"', html10)
         self.assertIn("TimeTable_2027_Vigyapti.pdf", html10)
 
         # 2. Intermediate (Class 12) Hub
@@ -2090,11 +2095,13 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn("मानविकी व कला वर्ग", html12)
         self.assertIn("वाणिज्य वर्ग", html12)
         self.assertIn("कृषि वर्ग", html12)
-        self.assertIn("Official Model Papers", html12)
+        self.assertIn("Official Model Papers / Sample Papers", html12)
+        self.assertIn('href="/up-board/model-papers?class=12"', html12)
+        self.assertIn('href="/up-board/pyq?class=12"', html12)
 
     def test_up_board_subroutes_status_views(self):
-        """Verify dedicated views for datesheets, syllabus, circulars, and official model papers."""
-        # Datesheets
+        """Verify dedicated views for datesheets, syllabus, circulars, official model papers, and PYQ archive status."""
+        # 1. Datesheets
         res_ds = self.client.get("/up-board/datesheets")
         self.assertEqual(res_ds.status_code, 200)
         html_ds = res_ds.data.decode("utf-8")
@@ -2105,7 +2112,7 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn("901 / 902", html_ds)
         self.assertIn("101 / 102", html_ds)
 
-        # Syllabus
+        # 2. Syllabus
         res_syl = self.client.get("/up-board/syllabus")
         self.assertEqual(res_syl.status_code, 200)
         html_syl = res_syl.data.decode("utf-8")
@@ -2115,14 +2122,14 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn("कोड: 151", html_syl)
         self.assertIn("https://upmsp.edu.in/Downloads/Syllabus/Class10/901-Hindi-Class-10.pdf", html_syl)
 
-        # Syllabus Search filtering
+        # 3. Syllabus Search filtering
         res_syl_search = self.client.get("/up-board/syllabus?q=901")
         self.assertEqual(res_syl_search.status_code, 200)
         html_syl_search = res_syl_search.data.decode("utf-8")
         self.assertIn("कोड: 901", html_syl_search)
         self.assertNotIn("कोड: 928", html_syl_search)
 
-        # Circulars
+        # 4. Circulars
         res_circ = self.client.get("/up-board/circulars")
         self.assertEqual(res_circ.status_code, 200)
         html_circ = res_circ.data.decode("utf-8")
@@ -2130,16 +2137,31 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn("मा०शि०प०/समन्वय/183-7", html_circ)
         self.assertIn("12 October 2026", html_circ)
 
-        # Model Papers (labeled Official Model Papers, NOT historical PYQs)
+        # 5. Dedicated Model Papers page (/up-board/model-papers)
+        res_mp = self.client.get("/up-board/model-papers")
+        self.assertEqual(res_mp.status_code, 200)
+        html_mp = res_mp.data.decode("utf-8")
+        self.assertIn("UP Board Official Model Papers / Sample Papers", html_mp)
+        self.assertIn("Official Model Paper", html_mp)
+        self.assertIn("मॉडल प्रश्न पत्र", html_mp)
+        self.assertIn("कोड: 901", html_mp)
+        self.assertIn("https://upmsp.edu.in/Downloads/ModelPaper/class10/901-Hindi.pdf", html_mp)
+        # Must NOT be labeled as PYQ or past exam papers
+        self.assertNotIn("Previous Year Question Papers (PYQs)", html_mp)
+        self.assertNotIn("विगत वर्षों के प्रश्न-पत्र", html_mp)
+        self.assertNotIn("10-Year Question Bank", html_mp)
+
+        # 6. Dedicated PYQ page (/up-board/pyq)
         res_pyq = self.client.get("/up-board/pyq")
         self.assertEqual(res_pyq.status_code, 200)
         html_pyq = res_pyq.data.decode("utf-8")
-        self.assertIn("UP Board Official Model Question Papers", html_pyq)
-        self.assertIn("Official Model Paper", html_pyq)
-        self.assertIn("मॉडल प्रश्न पत्र", html_pyq)
-        self.assertIn("कोड: 901", html_pyq)
-        self.assertIn("https://upmsp.edu.in/Downloads/ModelPaper/class10/901-Hindi.pdf", html_pyq)
-        self.assertNotIn("10-Year Question Bank", html_pyq)
+        self.assertIn("UP Board Previous Year Question Papers (PYQs)", html_pyq)
+        self.assertIn("विगत वर्षों के प्रश्न-पत्र", html_pyq)
+        self.assertIn("Coming Soon", html_pyq)
+        self.assertIn("Awaiting Verified Official Archives", html_pyq)
+        # Must NOT list model papers as PYQs
+        self.assertNotIn("Downloads/ModelPaper", html_pyq)
+        self.assertNotIn("901-Hindi.pdf", html_pyq)
 
     def test_boards_up_card_in_development(self):
         """Verify on /boards that UP Board is marked In Development with correct links."""
@@ -2156,7 +2178,7 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn('href="/up-board/class-12"', html)
 
     def test_sitemap_includes_up_board(self):
-        """Verify /sitemap.xml contains UP Board foundational routes."""
+        """Verify /sitemap.xml contains UP Board foundational routes, including model-papers and pyq."""
         res = self.client.get("/sitemap.xml")
         self.assertEqual(res.status_code, 200)
         xml = res.data.decode("utf-8")
@@ -2164,7 +2186,8 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn("/up-board/class-10", xml)
         self.assertIn("/up-board/class-12", xml)
         self.assertIn("/up-board/datesheets", xml)
-
+        self.assertIn("/up-board/model-papers", xml)
+        self.assertIn("/up-board/pyq", xml)
 
     def test_up_board_data_files_integrity(self):
         """Verify that all populated UP Board records have official URLs, 
