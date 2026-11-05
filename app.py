@@ -69,6 +69,19 @@ def get_icse_circulars():
         return (iso, fallback_date)
     return sorted(items, key=sort_circular_key, reverse=True)
 
+# UP Board (UPMSP) data loader helpers
+def get_all_up_syllabus():
+    return load_json_data("up_syllabus.json")
+
+def get_up_datesheets():
+    return load_json_data("up_datesheets.json")
+
+def get_up_circulars():
+    return load_json_data("up_circulars.json")
+
+def get_all_up_pyqs():
+    return load_json_data("up_pyq.json")
+
 def get_boards_and_exams():
     """Directory of educational boards and competitive entrance exams on StudySignal."""
     return {
@@ -119,14 +132,18 @@ def get_boards_and_exams():
                 "name": "UP Board",
                 "full_name": "Uttar Pradesh Madhyamik Shiksha Parishad (UPMSP)",
                 "scope": "State Board • High School (10th) & Intermediate (12th)",
-                "status": "Coming Soon",
-                "status_code": "coming_soon",
-                "status_label": "Coming Soon",
-                "url": None,
-                "is_clickable": False,
-                "badge_class": "badge-status-soon",
-                "description": "Curriculum framework, subject code directory, and examination calendar integration planned for UPMSP students.",
-                "actions": []
+                "status": "In Development",
+                "status_code": "in_development",
+                "status_label": "In Development",
+                "url": "/up-board",
+                "is_clickable": True,
+                "badge_class": "badge-status-dev",
+                "description": "Foundational portal for High School (Class 10) and Intermediate (Class 12). Official curriculum, examination timetable, and model paper links currently undergoing live verification.",
+                "actions": [
+                    {"label": "High School (Class 10) Hub", "url": "/up-board/class-10"},
+                    {"label": "Intermediate (Class 12) Hub", "url": "/up-board/class-12"},
+                    {"label": "Verification Status", "url": "/up-board"}
+                ]
             },
             {
                 "id": "bseb",
@@ -708,6 +725,83 @@ def icse_pyq_index():
         total_count=len(all_papers)
     )
 
+# ----------------- UP Board (UPMSP) Routes -----------------
+
+@app.route("/up-board")
+def up_board_hub():
+    """UP Board (UPMSP) Foundation Hub - In Development."""
+    datesheets = get_up_datesheets()
+    return render_template(
+        "upmsp.html",
+        datesheets=datesheets
+    )
+
+@app.route("/up-board/class-10")
+def up_board_class_10():
+    """UP Board High School (Class 10) Hub."""
+    datesheets = get_up_datesheets().get("classes", {}).get("10", {})
+    return render_template(
+        "upmsp_class_hub.html",
+        class_num="10",
+        course_name="High School",
+        course_name_hindi="हाई स्कूल",
+        class_title="UP Board High School (Class 10)",
+        class_title_hindi="उत्तर प्रदेश माध्यमिक शिक्षा परिषद् - हाईस्कूल (कक्षा 10)",
+        datesheets=datesheets
+    )
+
+@app.route("/up-board/class-12")
+def up_board_class_12():
+    """UP Board Intermediate (Class 12) Hub."""
+    datesheets = get_up_datesheets().get("classes", {}).get("12", {})
+    return render_template(
+        "upmsp_class_hub.html",
+        class_num="12",
+        course_name="Intermediate",
+        course_name_hindi="इण्टरमीडिएट",
+        class_title="UP Board Intermediate (Class 12)",
+        class_title_hindi="उत्तर प्रदेश माध्यमिक शिक्षा परिषद् - इण्टरमीडिएट (कक्षा 12)",
+        datesheets=datesheets
+    )
+
+@app.route("/up-board/datesheets")
+def up_board_datesheets_view():
+    """UP Board Examination Schedule & Timetable Status."""
+    datesheets = get_up_datesheets()
+    selected_class = request.args.get("class", "all")
+    return render_template(
+        "upmsp_datesheets.html",
+        datesheets=datesheets,
+        selected_class=selected_class
+    )
+
+@app.route("/up-board/syllabus")
+def up_board_syllabus_index():
+    """UP Board Subject Syllabus Directory Status."""
+    selected_class = request.args.get("class", "all")
+    return render_template(
+        "upmsp_syllabus.html",
+        selected_class=selected_class
+    )
+
+@app.route("/up-board/circulars")
+def up_board_circulars_view():
+    """UP Board Official Circulars & Notices Status."""
+    selected_class = request.args.get("class", "all")
+    return render_template(
+        "upmsp_circulars.html",
+        selected_class=selected_class
+    )
+
+@app.route("/up-board/pyq")
+def up_board_pyq_index():
+    """UP Board Model Question Papers & PYQ Status."""
+    selected_class = request.args.get("class", "all")
+    return render_template(
+        "upmsp_pyq.html",
+        selected_class=selected_class
+    )
+
 @app.route("/search")
 def search():
     query = request.args.get("q", "").strip().lower()
@@ -976,6 +1070,13 @@ def sitemap_xml():
         {"loc": f"{base}/icse/datesheets", "priority": "0.9", "changefreq": "daily"},
         {"loc": f"{base}/icse/circulars", "priority": "0.8", "changefreq": "daily"},
         {"loc": f"{base}/icse/pyq", "priority": "0.8", "changefreq": "weekly"},
+        {"loc": f"{base}/up-board", "priority": "0.8", "changefreq": "daily"},
+        {"loc": f"{base}/up-board/class-10", "priority": "0.8", "changefreq": "daily"},
+        {"loc": f"{base}/up-board/class-12", "priority": "0.8", "changefreq": "daily"},
+        {"loc": f"{base}/up-board/datesheets", "priority": "0.8", "changefreq": "daily"},
+        {"loc": f"{base}/up-board/syllabus", "priority": "0.7", "changefreq": "weekly"},
+        {"loc": f"{base}/up-board/circulars", "priority": "0.7", "changefreq": "daily"},
+        {"loc": f"{base}/up-board/pyq", "priority": "0.7", "changefreq": "weekly"},
         {"loc": f"{base}/about", "priority": "0.5", "changefreq": "monthly"},
         {"loc": f"{base}/contact", "priority": "0.5", "changefreq": "monthly"},
         {"loc": f"{base}/privacy-policy", "priority": "0.3", "changefreq": "yearly"},

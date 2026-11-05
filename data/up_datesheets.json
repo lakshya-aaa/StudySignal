@@ -1,0 +1,39 @@
+{
+  "board_name": "Uttar Pradesh Madhyamik Shiksha Parishad (UPMSP)",
+  "board_name_hindi": "उत्तर प्रदेश माध्यमिक शिक्षा परिषद्, प्रयागराज",
+  "official_portal": "https://upmsp.edu.in",
+  "last_checked": "2026-11-05",
+  "last_checked_label": "05 November 2026",
+  "verification_note": "Direct official confirmation pending against upmsp.edu.in announcements.",
+  "official_status": "Release status: awaiting verification",
+  "classes": {
+    "10": {
+      "class_name": "High School (Class 10)",
+      "class_name_hindi": "हाई स्कूल (कक्षा 10)",
+      "academic_year": "2026-27",
+      "exam_series": "वर्ष 2027 परीक्षा (Examination Series 2027)",
+      "release_status": "Release status: awaiting verification",
+      "status_label": "Release status: awaiting verification",
+      "official_link": "https://upmsp.edu.in",
+      "last_checked": "2026-11-05",
+      "last_checked_label": "05 November 2026",
+      "is_officially_verified": false,
+      "schedule_items": [],
+      "advisory": "Official 2027 examination timetable has not yet been confirmed from direct UPMSP Prayagraj notifications. StudySignal does not publish estimated or third-party claimed dates. Direct verification is conducted regularly on upmsp.edu.in."
+    },
+    "12": {
+      "class_name": "Intermediate (Class 12)",
+      "class_name_hindi": "इण्टरमीडिएट (कक्षा 12)",
+      "academic_year": "2026-27",
+      "exam_series": "वर्ष 2027 परीक्षा (Examination Series 2027)",
+      "release_status": "Release status: awaiting verification",
+      "status_label": "Release status: awaiting verification",
+      "official_link": "https://upmsp.edu.in",
+      "last_checked": "2026-11-05",
+      "last_checked_label": "05 November 2026",
+      "is_officially_verified": false,
+      "schedule_items": [],
+      "advisory": "Official 2027 examination timetable has not yet been confirmed from direct UPMSP Prayagraj notifications. StudySignal does not publish estimated or third-party claimed dates. Direct verification is conducted regularly on upmsp.edu.in."
+    }
+  }
+}

@@ -2012,6 +2012,114 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn("Official PDF ↗", html)
         self.assertNotIn("Historical Curriculum Archives", html)
 
+
+    # -------------------------------------------------------------
+    # UP Board (UPMSP) Foundational Onboarding Tests
+    # -------------------------------------------------------------
+
+    def test_up_board_hub_in_development(self):
+        """Verify /up-board overview hub has In Development status, verified UPMSP links,
+        dual-language terminology, and explicit awaiting verification timetable status."""
+        res = self.client.get("/up-board")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+
+        # 1. In Development status & branding
+        self.assertIn("In Development", html)
+        self.assertIn("UP Board Examination Hub", html)
+        self.assertIn("उत्तर प्रदेश माध्यमिक शिक्षा परिषद्, प्रयागराज (UPMSP)", html)
+
+        # 2. Dual-language class portals
+        self.assertIn("हाई स्कूल (High School)", html)
+        self.assertIn("इण्टरमीडिएट (Intermediate)", html)
+        self.assertIn('href="/up-board/class-10"', html)
+        self.assertIn('href="/up-board/class-12"', html)
+
+        # 3. Timetable release status strictly displayed
+        self.assertIn("Release status: awaiting verification", html)
+        self.assertIn("Checked: 05 November 2026", html)
+
+        # 4. Verified official sources & links
+        self.assertIn("https://upmsp.edu.in", html)
+        self.assertIn("upmsp.edu.in/Syllabus.html", html)
+        self.assertIn("upmsp.edu.in/ModelPaper.html", html)
+
+        # 5. Non-affiliation legal disclaimer
+        self.assertIn("UPMSP Non-Affiliation Legal Notice", html)
+        self.assertIn("NOT affiliated with, endorsed by, or connected to the Uttar Pradesh Madhyamik Shiksha Parishad", html)
+
+    def test_up_board_class_hubs(self):
+        """Verify UP Board High School (Class 10) and Intermediate (Class 12) portals."""
+        # 1. High School (Class 10) Hub
+        res10 = self.client.get("/up-board/class-10")
+        self.assertEqual(res10.status_code, 200)
+        html10 = res10.data.decode("utf-8")
+        self.assertIn("UP Board High School (Class 10)", html10)
+        self.assertIn("हाईस्कूल (कक्षा 10)", html10)
+        self.assertIn("In Development", html10)
+        self.assertIn("Release status: awaiting verification", html10)
+        self.assertIn("Checked: 05 November 2026", html10)
+        self.assertIn("Syllabus Details Awaiting Live Source Verification", html10)
+
+        # 2. Intermediate (Class 12) Hub
+        res12 = self.client.get("/up-board/class-12")
+        self.assertEqual(res12.status_code, 200)
+        html12 = res12.data.decode("utf-8")
+        self.assertIn("UP Board Intermediate (Class 12)", html12)
+        self.assertIn("इण्टरमीडिएट (कक्षा 12)", html12)
+        self.assertIn("In Development", html12)
+        self.assertIn("Release status: awaiting verification", html12)
+        self.assertIn("विज्ञान वर्ग", html12)
+        self.assertIn("मानविकी व कला वर्ग", html12)
+        self.assertIn("वाणिज्य वर्ग", html12)
+        self.assertIn("कृषि वर्ग", html12)
+
+    def test_up_board_subroutes_status_views(self):
+        """Verify dedicated status views for datesheets, syllabus, circulars, and pyq."""
+        # Datesheets
+        res_ds = self.client.get("/up-board/datesheets")
+        self.assertEqual(res_ds.status_code, 200)
+        self.assertIn("Release status: awaiting verification", res_ds.data.decode("utf-8"))
+
+        # Syllabus
+        res_syl = self.client.get("/up-board/syllabus")
+        self.assertEqual(res_syl.status_code, 200)
+        self.assertIn("Curriculum Data Under Verification", res_syl.data.decode("utf-8"))
+
+        # Circulars
+        res_circ = self.client.get("/up-board/circulars")
+        self.assertEqual(res_circ.status_code, 200)
+        self.assertIn("No Unverified Press Releases Published", res_circ.data.decode("utf-8"))
+
+        # PYQ
+        res_pyq = self.client.get("/up-board/pyq")
+        self.assertEqual(res_pyq.status_code, 200)
+        self.assertIn("Official Model Paper Links Under Verification", res_pyq.data.decode("utf-8"))
+
+    def test_boards_up_card_in_development(self):
+        """Verify on /boards that UP Board is marked In Development with correct links."""
+        res = self.client.get("/boards")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+
+        self.assertIn("UP Board", html)
+        self.assertIn("Uttar Pradesh Madhyamik Shiksha Parishad (UPMSP)", html)
+        self.assertIn("In Development", html)
+        self.assertIn("View UP Board Status &rarr;", html)
+        self.assertIn('href="/up-board"', html)
+        self.assertIn('href="/up-board/class-10"', html)
+        self.assertIn('href="/up-board/class-12"', html)
+
+    def test_sitemap_includes_up_board(self):
+        """Verify /sitemap.xml contains UP Board foundational routes."""
+        res = self.client.get("/sitemap.xml")
+        self.assertEqual(res.status_code, 200)
+        xml = res.data.decode("utf-8")
+        self.assertIn("/up-board", xml)
+        self.assertIn("/up-board/class-10", xml)
+        self.assertIn("/up-board/class-12", xml)
+        self.assertIn("/up-board/datesheets", xml)
+
 if __name__ == "__main__":
     unittest.main()
 

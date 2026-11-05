@@ -49,7 +49,11 @@ class Config:
         "cbse_pyq_main": "https://www.cbse.gov.in/cbsenew/question-paper.html",
         "cisce_main": "https://cisce.org",
         "cisce_regulations": "https://cisce.org/regulations-and-syllabuses/",
-        "cisce_notices": "https://cisce.org/notice-board/"
+        "cisce_notices": "https://cisce.org/notice-board/",
+        "upmsp_main": "https://upmsp.edu.in",
+        "upmsp_syllabus": "https://upmsp.edu.in/Syllabus.html",
+        "upmsp_model_papers": "https://upmsp.edu.in/ModelPaper.html",
+        "upmsp_results": "https://upresults.nic.in"
     }
 
     # Reusable & Configurable Ad Placements

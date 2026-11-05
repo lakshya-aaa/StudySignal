@@ -1,0 +1,223 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ class_title }} - Academic Portal &amp; Verification Status | StudySignal{% endblock %}
+
+{% block meta_description %}
+StudySignal's verified foundation portal for {{ class_title }} (UPMSP Prayagraj). Tracking official curriculum verification, examination schedule advisory, and syllabus documents directly from upmsp.edu.in.
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [
+  {'title': 'Boards & Exams', 'url': '/boards'},
+  {'title': 'UP Board Hub', 'url': '/up-board'},
+  {'title': class_title, 'url': request.path}
+] %}
+{% include 'components/breadcrumb.html' %}
+
+<div class="board-hub-container upmsp-class-hub">
+  <!-- Class Hub Header (Academic Dashboard Hero) -->
+  <section class="section" style="padding-bottom: 1.5rem;">
+    <div class="container">
+      <div class="hub-hero-banner">
+        <div class="hub-hero-badge">
+          <span>🇮🇳 UPMSP Official Academic Framework &bull; <strong class="badge-status-dev" style="margin-left: 4px; vertical-align: middle;">In Development</strong></span>
+        </div>
+        <h1 class="hub-hero-title">
+          {{ class_title }}
+        </h1>
+        <div style="color: #64748b; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.6rem;">
+          {{ class_title_hindi }}
+        </div>
+        <p class="hub-hero-desc">
+          Official resource tracker for UP Board {{ course_name }} ({{ course_name_hindi }}). Curriculum frameworks, blueprints, examination schedules, and model question papers are being verified directly against official announcements from the Secretary, UPMSP on <code>upmsp.edu.in</code>.
+        </p>
+
+        <!-- Quick Stats Row -->
+        <div class="hub-stats-row">
+          <div class="hub-stat-pill">
+            <span>📘 <strong>{{ course_name }}</strong> Level</span>
+          </div>
+          <div class="hub-stat-pill">
+            <span>🗓️ <strong>वर्ष 2027</strong> Exam Series</span>
+          </div>
+          <div class="hub-stat-pill">
+            <span>🛡️ <strong>No Assumed Dates</strong> Policy</span>
+          </div>
+          <div class="hub-stat-pill">
+            <span>🔍 <strong>Verification in Progress</strong></span>
+          </div>
+        </div>
+
+        <div class="hub-hero-actions">
+          <a href="{{ official_urls.upmsp_main }}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: auto;">
+            Official UPMSP Website ↗
+          </a>
+          <a href="/up-board/datesheets?class={{ class_num }}" class="btn-secondary" style="width: auto;">
+            Time-Table Status &rarr;
+          </a>
+          <a href="/up-board/syllabus?class={{ class_num }}" class="btn-secondary" style="width: auto;">
+            Syllabus Verification &rarr;
+          </a>
+          <a href="/up-board" class="btn-secondary" style="width: auto;">
+            UP Board Main Hub &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Navigation Bar -->
+  <section class="section" style="padding: 0 0 2rem 0;">
+    <div class="container">
+      <div class="board-selector-bar">
+        <a href="/up-board/class-10" class="selector-pill {% if class_num == '10' %}active{% endif %}">
+          📘 High School (Class 10)
+        </a>
+        <a href="/up-board/class-12" class="selector-pill {% if class_num == '12' %}active{% endif %}">
+          🎓 Intermediate (Class 12)
+        </a>
+        <a href="/up-board/datesheets?class={{ class_num }}" class="selector-pill">
+          🗓️ समय-सारणी (Date Sheet Status)
+        </a>
+        <a href="/up-board/syllabus?class={{ class_num }}" class="selector-pill">
+          📚 पाठ्यक्रम (Syllabus Status)
+        </a>
+        <a href="/up-board/pyq?class={{ class_num }}" class="selector-pill">
+          📝 मॉडल प्रश्न पत्र (Model Papers)
+        </a>
+        <a href="/up-board" class="selector-pill">
+          🏛️ UPMSP Main Hub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Date Sheet Alert Box -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2rem;">
+    <div class="container">
+      <div class="hub-alert-card demo-table-alert" style="border-left-color: #f59e0b; background: #fffbeb;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+          <strong style="font-size: 1.05rem; color: #78350f; display: inline-flex; align-items: center; gap: 0.4rem;">
+            📅 {{ class_title }} Examination Advisory
+          </strong>
+          <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+            <span style="font-size: 0.75rem; font-weight: 700; color: #b45309; background: #fef9c3; border: 1px solid #fde047; padding: 2px 8px; border-radius: 4px;">
+              Release status: awaiting verification
+            </span>
+            <span style="font-size: 0.75rem; color: #92400e; font-weight: 600;">
+              Checked: {{ datesheets.last_checked_label or '05 November 2026' }}
+            </span>
+          </div>
+        </div>
+        <p style="margin-bottom: 0.85rem; color: #78350f; line-height: 1.6; font-size: 0.925rem;">
+          {{ datesheets.advisory or 'Official 2027 examination timetable has not yet been confirmed from direct UPMSP Prayagraj notifications. StudySignal does not publish estimated or third-party claimed dates. Direct verification is conducted regularly on upmsp.edu.in.' }}
+        </p>
+        <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+          <a href="/up-board/datesheets?class={{ class_num }}" class="btn-sm btn-primary" style="width: auto;">
+            View Timetable Status &amp; Guidelines &rarr;
+          </a>
+          <a href="{{ official_urls.upmsp_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto;">
+            Visit Official UPMSP Website ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intermediate Stream Tabs (Only for Class 12) -->
+  {% if class_num == '12' %}
+  <section class="section" style="padding: 0 0 1.5rem 0;">
+    <div class="container">
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; margin-bottom: 1.5rem;">
+        <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--primary); margin: 0 0 0.5rem 0;">
+          इण्टरमीडिएट वर्ग संरचना &bull; Intermediate Stream Architecture
+        </h3>
+        <p style="font-size: 0.875rem; color: #64748b; margin-bottom: 1rem; line-height: 1.5;">
+          UPMSP Intermediate (Class 12) curriculum is organized into academic streams. Each stream's syllabi, evaluation blueprints, and prescribed topics are currently being validated directly from UPMSP official publications:
+        </p>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;">
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
+            <div style="font-weight: 700; color: var(--primary); font-size: 0.925rem; margin-bottom: 0.25rem;">🔬 विज्ञान वर्ग</div>
+            <div style="font-size: 0.775rem; color: #64748b;">Science Stream</div>
+            <div style="font-size: 0.75rem; color: #0284c7; margin-top: 0.5rem; font-weight: 600;">Status: Under Verification</div>
+          </div>
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
+            <div style="font-weight: 700; color: var(--primary); font-size: 0.925rem; margin-bottom: 0.25rem;">📚 मानविकी व कला वर्ग</div>
+            <div style="font-size: 0.775rem; color: #64748b;">Humanities / Arts Stream</div>
+            <div style="font-size: 0.75rem; color: #0284c7; margin-top: 0.5rem; font-weight: 600;">Status: Under Verification</div>
+          </div>
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
+            <div style="font-weight: 700; color: var(--primary); font-size: 0.925rem; margin-bottom: 0.25rem;">💼 वाणिज्य वर्ग</div>
+            <div style="font-size: 0.775rem; color: #64748b;">Commerce Stream</div>
+            <div style="font-size: 0.75rem; color: #0284c7; margin-top: 0.5rem; font-weight: 600;">Status: Under Verification</div>
+          </div>
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1rem;">
+            <div style="font-weight: 700; color: var(--primary); font-size: 0.925rem; margin-bottom: 0.25rem;">🌾 कृषि वर्ग</div>
+            <div style="font-size: 0.775rem; color: #64748b;">Agriculture Stream</div>
+            <div style="font-size: 0.75rem; color: #0284c7; margin-top: 0.5rem; font-weight: 600;">Status: Under Verification</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Subject Syllabus Verification Status Section -->
+  <section class="section" style="padding-top: 0; padding-bottom: 3rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1.25rem;">
+        <div>
+          <h2 style="font-size: 1.45rem; font-weight: 800; color: var(--primary-headings); margin-bottom: 0.35rem;">
+            {{ course_name }} Curriculum Verification Status &bull; पाठ्यक्रम सत्यापन स्थिति
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.9375rem; margin: 0;">
+            StudySignal adheres to a zero-speculation verification policy. Individual subject syllabi will appear with direct official PDFs once validated against <code>upmsp.edu.in/Syllabus.html</code>:
+          </p>
+        </div>
+      </div>
+
+      <!-- Verification Notice Card -->
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.75rem; box-shadow: 0 4px 18px rgba(15,23,42,0.04); margin-bottom: 1.5rem;">
+        <div style="display: flex; align-items: flex-start; gap: 1rem; flex-wrap: wrap;">
+          <div style="font-size: 2rem;">🛡️</div>
+          <div style="flex: 1 1 300px;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.4rem;">
+              <span class="badge-status-dev">Framework In Development</span>
+              <span style="font-size: 0.75rem; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 4px; font-weight: 600;">
+                Direct UPMSP Validation Underway
+              </span>
+            </div>
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--primary); margin: 0 0 0.5rem 0;">
+              Syllabus Details Awaiting Live Source Verification
+            </h3>
+            <p style="color: #64748b; font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem;">
+              We do not publish estimated marks structures, presumed question formats, or third-party claimed syllabi. Official UPMSP subject codes and syllabi for session 2026–27 will be listed with full reading layouts as soon as verified from official board files.
+            </p>
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+              <a href="{{ official_urls.upmsp_syllabus }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary">
+                View Official UPMSP Syllabus Portal ↗
+              </a>
+              <a href="{{ official_urls.upmsp_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
+                UPMSP Prayagraj Homepage ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Legal Non-Affiliation Disclaimer -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="disclaimer-callout" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; font-size: 0.8125rem; color: #64748b; line-height: 1.6;">
+        <strong style="color: var(--primary); display: block; margin-bottom: 0.35rem; font-size: 0.875rem;">
+          ⚖️ UPMSP Non-Affiliation Legal Notice
+        </strong>
+        StudySignal is an independent, free-access educational resource and is <strong>NOT affiliated with, endorsed by, or connected to the Uttar Pradesh Madhyamik Shiksha Parishad (UPMSP), Government of Uttar Pradesh, or any official examination authority</strong>. 
+        Always verify information on the official UPMSP website: <a href="{{ official_urls.upmsp_main }}" target="_blank" rel="noopener noreferrer" style="color: var(--brand-blue); text-decoration: underline;">upmsp.edu.in</a>.
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

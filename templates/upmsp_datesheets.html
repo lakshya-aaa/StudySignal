@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+
+{% block title %}UP Board Exam Date Sheet 2027 Status - समय-सारणी | StudySignal{% endblock %}
+
+{% block meta_description %}
+Official UP Board High School (Class 10) and Intermediate (Class 12) examination timetable status for 2027. Verified directly from UPMSP announcements on upmsp.edu.in.
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [
+  {'title': 'Boards & Exams', 'url': '/boards'},
+  {'title': 'UP Board Hub', 'url': '/up-board'},
+  {'title': 'Date Sheet Status', 'url': '/up-board/datesheets'}
+] %}
+{% include 'components/breadcrumb.html' %}
+
+<div class="board-hub-container upmsp-datesheets">
+  <!-- Header -->
+  <section class="section" style="padding-bottom: 1.5rem;">
+    <div class="container">
+      <div class="hub-hero-banner">
+        <div class="hub-hero-badge">
+          <span>🇮🇳 UPMSP Official Timetable Tracker &bull; <strong class="badge-status-dev" style="margin-left: 4px; vertical-align: middle;">In Development</strong></span>
+        </div>
+        <h1 class="hub-hero-title">
+          UP Board Exam Date Sheet 2027 Status
+        </h1>
+        <div style="color: #64748b; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.6rem;">
+          वर्ष 2027 परीक्षा कार्यक्रम / समय-सारणी स्थिति
+        </div>
+        <p class="hub-hero-desc">
+          Official timetable advisory for UP Board High School (Class 10) and Intermediate (Class 12) examinations. To protect candidates from misinformation, StudySignal reports timetable status strictly verified from direct UPMSP notifications.
+        </p>
+
+        <!-- Quick Stats Row -->
+        <div class="hub-stats-row">
+          <div class="hub-stat-pill">
+            <span>🗓️ <strong>वर्ष 2027</strong> Exam Series</span>
+          </div>
+          <div class="hub-stat-pill">
+            <span>🛡️ <strong>Zero Speculative Dates</strong></span>
+          </div>
+          <div class="hub-stat-pill">
+            <span>🔍 <strong>Verified Source:</strong> upmsp.edu.in</span>
+          </div>
+        </div>
+
+        <div class="hub-hero-actions">
+          <a href="{{ official_urls.upmsp_main }}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: auto;">
+            Check UPMSP Official Portal ↗
+          </a>
+          <a href="/up-board" class="btn-secondary" style="width: auto;">
+            UP Board Main Hub &rarr;
+          </a>
+          <a href="/up-board/class-10" class="btn-secondary" style="width: auto;">
+            High School Portal &rarr;
+          </a>
+          <a href="/up-board/class-12" class="btn-secondary" style="width: auto;">
+            Intermediate Portal &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Filter Bar -->
+  <section class="section" style="padding: 0 0 2rem 0;">
+    <div class="container">
+      <div class="board-selector-bar">
+        <a href="/up-board/datesheets?class=all" class="selector-pill {% if selected_class == 'all' %}active{% endif %}">
+          All Courses (हाई स्कूल एवं इण्टरमीडिएट)
+        </a>
+        <a href="/up-board/datesheets?class=10" class="selector-pill {% if selected_class == '10' %}active{% endif %}">
+          High School (Class 10)
+        </a>
+        <a href="/up-board/datesheets?class=12" class="selector-pill {% if selected_class == '12' %}active{% endif %}">
+          Intermediate (Class 12)
+        </a>
+        <a href="/up-board" class="selector-pill">
+          🏛️ UP Board Hub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schedule Status Cards -->
+  <section class="section" style="padding-top: 0; padding-bottom: 3rem;">
+    <div class="container">
+      <!-- High School Advisory -->
+      {% if selected_class in ['all', '10'] %}
+      <div class="hub-alert-card" style="border-left-color: #f59e0b; background: #fffbeb; margin-bottom: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.5rem;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.35rem;">
+              <span class="badge-status-dev" style="background: #fef3c7; color: #92400e; border-color: #fde68a;">
+                हाई स्कूल (Class 10)
+              </span>
+              <span style="font-size: 0.8125rem; font-weight: 700; color: #b45309; background: #fef9c3; border: 1px solid #fde047; padding: 2px 8px; border-radius: 4px;">
+                Release status: awaiting verification
+              </span>
+            </div>
+            <h3 style="font-size: 1.2rem; font-weight: 800; color: #78350f; margin: 0 0 0.25rem 0;">
+              High School (Class 10) Examination Schedule Status
+            </h3>
+          </div>
+          <span style="font-size: 0.75rem; color: #92400e; font-weight: 600;">
+            Checked: {{ datesheets.last_checked_label or '05 November 2026' }}
+          </span>
+        </div>
+        <p style="color: #78350f; font-size: 0.925rem; line-height: 1.6; margin-bottom: 0.85rem;">
+          {{ datesheets.classes['10'].advisory or 'Official 2027 examination timetable has not yet been confirmed from direct UPMSP Prayagraj notifications. StudySignal does not publish estimated or third-party claimed dates. Direct verification is conducted regularly on upmsp.edu.in.' }}
+        </p>
+        <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+          <a href="{{ official_urls.upmsp_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary" style="width: auto;">
+            Verify on Official UPMSP Portal ↗
+          </a>
+          <a href="/up-board/class-10" class="btn-sm btn-secondary" style="width: auto;">
+            Go to High School Portal &rarr;
+          </a>
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Intermediate Advisory -->
+      {% if selected_class in ['all', '12'] %}
+      <div class="hub-alert-card" style="border-left-color: #f59e0b; background: #fffbeb; margin-bottom: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.5rem;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.35rem;">
+              <span class="badge-status-dev" style="background: #fef3c7; color: #92400e; border-color: #fde68a;">
+                इण्टरमीडिएट (Class 12)
+              </span>
+              <span style="font-size: 0.8125rem; font-weight: 700; color: #b45309; background: #fef9c3; border: 1px solid #fde047; padding: 2px 8px; border-radius: 4px;">
+                Release status: awaiting verification
+              </span>
+            </div>
+            <h3 style="font-size: 1.2rem; font-weight: 800; color: #78350f; margin: 0 0 0.25rem 0;">
+              Intermediate (Class 12) Examination Schedule Status
+            </h3>
+          </div>
+          <span style="font-size: 0.75rem; color: #92400e; font-weight: 600;">
+            Checked: {{ datesheets.last_checked_label or '05 November 2026' }}
+          </span>
+        </div>
+        <p style="color: #78350f; font-size: 0.925rem; line-height: 1.6; margin-bottom: 0.85rem;">
+          {{ datesheets.classes['12'].advisory or 'Official 2027 examination timetable has not yet been confirmed from direct UPMSP Prayagraj notifications. StudySignal does not publish estimated or third-party claimed dates. Direct verification is conducted regularly on upmsp.edu.in.' }}
+        </p>
+        <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+          <a href="{{ official_urls.upmsp_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary" style="width: auto;">
+            Verify on Official UPMSP Portal ↗
+          </a>
+          <a href="/up-board/class-12" class="btn-sm btn-secondary" style="width: auto;">
+            Go to Intermediate Portal &rarr;
+          </a>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- Legal Non-Affiliation Disclaimer -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="disclaimer-callout" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; font-size: 0.8125rem; color: #64748b; line-height: 1.6;">
+        <strong style="color: var(--primary); display: block; margin-bottom: 0.35rem; font-size: 0.875rem;">
+          ⚖️ UPMSP Non-Affiliation Legal Notice
+        </strong>
+        StudySignal is an independent, free-access educational resource and is <strong>NOT affiliated with, endorsed by, or connected to the Uttar Pradesh Madhyamik Shiksha Parishad (UPMSP), Government of Uttar Pradesh, or any official examination authority</strong>. 
+        Always verify information on the official UPMSP website: <a href="{{ official_urls.upmsp_main }}" target="_blank" rel="noopener noreferrer" style="color: var(--brand-blue); text-decoration: underline;">upmsp.edu.in</a>.
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

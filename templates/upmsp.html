@@ -1,0 +1,344 @@
+{% extends 'base.html' %}
+
+{% block title %}UP Board (UPMSP) Examination Hub - High School &amp; Intermediate | StudySignal{% endblock %}
+
+{% block meta_description %}
+UP Board (UPMSP Prayagraj) educational portal on StudySignal. Tracking High School (Class 10) and Intermediate (Class 12) verified curriculum, examination schedule status, and official notifications.
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [
+  {'title': 'Boards & Exams', 'url': '/boards'},
+  {'title': 'UP Board Examination Hub', 'url': '/up-board'}
+] %}
+{% include 'components/breadcrumb.html' %}
+
+<div class="board-hub-container upmsp-hub">
+  <!-- Header with Academic Dashboard Banner -->
+  <section class="section" style="padding-bottom: 1.5rem;">
+    <div class="container">
+      <div class="hub-hero-banner">
+        <div class="hub-hero-badge">
+          <span>🇮🇳 UPMSP Official Academic Framework &bull; <strong class="badge-status-dev" style="margin-left: 4px; vertical-align: middle;">In Development</strong></span>
+        </div>
+        <h1 class="hub-hero-title">UP Board Examination Hub</h1>
+        <div style="color: #64748b; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.6rem;">
+          उत्तर प्रदेश माध्यमिक शिक्षा परिषद्, प्रयागराज (UPMSP)
+        </div>
+        <p class="hub-hero-desc">
+          Foundational portal for UP Board High School (हाई स्कूल - Class 10) and Intermediate (इण्टरमीडिएट - Class 12). Curriculum structures, examination schedules, and official model question papers are currently undergoing verified onboarding directly from official UPMSP sources.
+        </p>
+
+        <!-- Quick Stats Row -->
+        <div class="hub-stats-row">
+          <div class="hub-stat-pill">
+            <span>📘 <strong>हाई स्कूल (Class 10)</strong> Portal (In Dev)</span>
+          </div>
+          <div class="hub-stat-pill">
+            <span>🎓 <strong>इण्टरमीडिएट (Class 12)</strong> Portal (In Dev)</span>
+          </div>
+          <div class="hub-stat-pill">
+            <span>🗓️ <strong>वर्ष 2027 परीक्षा</strong> Schedule Tracking</span>
+          </div>
+          <div class="hub-stat-pill">
+            <span>🛡️ <strong>Zero Speculative Data</strong> Policy</span>
+          </div>
+        </div>
+
+        <div class="hub-hero-actions">
+          <a href="{{ official_urls.upmsp_main }}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: auto;">
+            Official UPMSP Website ↗
+          </a>
+          <a href="/up-board/class-10" class="btn-secondary" style="width: auto;">
+            High School Portal &rarr;
+          </a>
+          <a href="/up-board/class-12" class="btn-secondary" style="width: auto;">
+            Intermediate Portal &rarr;
+          </a>
+          <a href="/up-board/datesheets" class="btn-secondary" style="width: auto;">
+            Time-Table Status &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Navigation Pills -->
+  <section class="section" style="padding: 0 0 2rem 0;">
+    <div class="container">
+      <div class="board-selector-bar">
+        <a href="/up-board/class-10" class="selector-pill">
+          📘 High School (Class 10) Portal
+        </a>
+        <a href="/up-board/class-12" class="selector-pill">
+          🎓 Intermediate (Class 12) Portal
+        </a>
+        <a href="/up-board/datesheets" class="selector-pill">
+          🗓️ समय-सारणी (Date Sheet Status)
+        </a>
+        <a href="/up-board/syllabus" class="selector-pill">
+          📚 पाठ्यक्रम (Syllabus Verification)
+        </a>
+        <a href="/up-board/pyq" class="selector-pill">
+          📝 मॉडल प्रश्न पत्र (Model Papers Status)
+        </a>
+        <a href="/up-board/circulars" class="selector-pill">
+          📢 विज्ञप्ति एवं आदेश (Notices Status)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Official Integrity & Source Policy Banner -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="hub-alert-card" style="border-left-color: var(--brand-blue); background: #ffffff;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.4rem;">
+          <h3 style="font-size: 1.05rem; color: var(--primary-headings); margin: 0; font-weight: 700;">
+            StudySignal Academic Verification Policy for UP Board (UPMSP)
+          </h3>
+          <span style="font-size: 0.75rem; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 4px; font-weight: 600;">
+            Verification Date: {{ datesheets.last_checked_label or '05 November 2026' }}
+          </span>
+        </div>
+        <p style="margin-bottom: 0.75rem; line-height: 1.6; color: var(--text-dark); font-size: 0.9rem;">
+          To protect students from unverified claims and unofficial rumors, <strong>StudySignal does not publish estimated dates, assumed exam shifts, unverified marks allocations, or fabricated question papers</strong>. 
+          All curriculum guidelines, examination timetables, and model question papers for High School and Intermediate are systematically verified directly against official announcements issued by the Secretary, UPMSP on <code>upmsp.edu.in</code>.
+        </p>
+        <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+          <a href="{{ official_urls.upmsp_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="font-size: 0.8125rem;">
+            Official UPMSP Prayagraj Portal ↗
+          </a>
+          <a href="{{ official_urls.upmsp_syllabus }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="font-size: 0.8125rem;">
+            UPMSP Curriculum Section (पाठ्यक्रम) ↗
+          </a>
+          <a href="{{ official_urls.upmsp_model_papers }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="font-size: 0.8125rem;">
+            UPMSP Model Question Papers (मॉडल पेपर) ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Examination Schedule & Timetable Status Advisory -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="hub-alert-card" style="border-left-color: #f59e0b; background: #fffbeb;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.5rem;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.35rem;">
+              <span class="badge-status-dev" style="background: #fef3c7; color: #92400e; border-color: #fde68a;">
+                वर्ष 2027 परीक्षा (Exam Series 2027)
+              </span>
+              <span style="font-size: 0.8125rem; font-weight: 700; color: #b45309; background: #fef9c3; border: 1px solid #fde047; padding: 2px 8px; border-radius: 4px;">
+                Release status: awaiting verification
+              </span>
+            </div>
+            <h2 style="font-size: 1.25rem; font-weight: 800; color: #78350f; margin: 0 0 0.35rem 0;">
+              हाईस्कूल एवं इण्टरमीडिएट परीक्षा समय-सारणी स्थिति (Date Sheet Status)
+            </h2>
+          </div>
+          <span style="font-size: 0.75rem; color: #92400e; font-weight: 600;">
+            Checked: {{ datesheets.last_checked_label or '05 November 2026' }}
+          </span>
+        </div>
+        <p style="color: #78350f; font-size: 0.925rem; line-height: 1.6; margin-bottom: 0.85rem;">
+          {{ datesheets.classes['10'].advisory or 'Official 2027 examination timetable has not yet been confirmed from direct UPMSP Prayagraj notifications. StudySignal does not publish estimated or third-party claimed dates. Direct verification is conducted regularly on upmsp.edu.in.' }}
+        </p>
+        <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+          <a href="/up-board/datesheets" class="btn-sm btn-primary" style="width: auto;">
+            View Detailed Timetable Advisory &rarr;
+          </a>
+          <a href="{{ official_urls.upmsp_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto;">
+            Check Live Announcements on UPMSP ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portals Grid: High School & Intermediate -->
+  <section class="section" style="padding-top: 0; padding-bottom: 3rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1.25rem;">
+        <div>
+          <h2 style="font-size: 1.45rem; font-weight: 800; color: var(--primary-headings); margin-bottom: 0.35rem;">
+            Course Level Portals &bull; पाठ्यक्रम स्तर
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.9375rem; margin: 0;">
+            Select your course level to access verified academic guidelines, syllabus onboarding progress, and examination resources:
+          </p>
+        </div>
+      </div>
+
+      <div class="class-portal-grid upmsp-portal-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem;">
+        <!-- High School Card -->
+        <div class="class-card hub-course-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 5px solid var(--brand-blue); border-radius: 16px; padding: 1.75rem; box-shadow: 0 4px 18px rgba(15,23,42,0.04); display: flex; flex-direction: column;">
+          <div class="class-card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+            <span class="class-badge" style="background: #e0f2fe; color: #0369a1; font-weight: 700; border-radius: 6px; padding: 3px 10px; font-size: 0.75rem;">High School (कक्षा 10)</span>
+            <span class="badge-status-dev" style="font-size: 0.75rem;">In Development</span>
+          </div>
+          <h3 class="class-card-title" style="font-size: 1.4rem; font-weight: 800; color: var(--primary); margin: 0 0 0.25rem 0;">हाई स्कूल (High School)</h3>
+          <div style="font-size: 0.85rem; color: #64748b; font-weight: 600; margin-bottom: 0.6rem;">UPMSP Class 10 Secondary Framework</div>
+          <p class="class-card-desc" style="font-size: 0.875rem; color: #64748b; line-height: 1.5; margin-bottom: 1.25rem; flex: 1 1 auto;">
+            Foundational portal for UP Board Class 10 curriculum. Subject codes, marks structures, and official syllabi for Hindi (हिन्दी), English, Mathematics (गणित), Science (विज्ञान), and Social Science (सामाजिक विज्ञान) are undergoing systematic verification.
+          </p>
+          <div class="hub-course-links" style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem;">
+            <a href="/up-board/class-10" style="display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0.85rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.875rem; font-weight: 600; color: var(--primary); text-decoration: none;">
+              <span>📘 High School Portal Overview</span>
+              <span>&rarr;</span>
+            </a>
+            <a href="/up-board/datesheets?class=10" style="display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0.85rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.875rem; font-weight: 600; color: var(--primary); text-decoration: none;">
+              <span>🗓️ High School Time-Table Status</span>
+              <span>&rarr;</span>
+            </a>
+            <a href="/up-board/syllabus?class=10" style="display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0.85rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.875rem; font-weight: 600; color: var(--primary); text-decoration: none;">
+              <span>📚 High School Syllabus Verification</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+          <a href="/up-board/class-10" class="btn-primary" style="width: 100%; text-align: center;">
+            Explore High School Portal &rarr;
+          </a>
+        </div>
+
+        <!-- Intermediate Card -->
+        <div class="class-card hub-course-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 5px solid #0284c7; border-radius: 16px; padding: 1.75rem; box-shadow: 0 4px 18px rgba(15,23,42,0.04); display: flex; flex-direction: column;">
+          <div class="class-card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+            <span class="class-badge" style="background: #f0fdf4; color: #166534; font-weight: 700; border-radius: 6px; padding: 3px 10px; font-size: 0.75rem;">Intermediate (कक्षा 12)</span>
+            <span class="badge-status-dev" style="font-size: 0.75rem;">In Development</span>
+          </div>
+          <h3 class="class-card-title" style="font-size: 1.4rem; font-weight: 800; color: var(--primary); margin: 0 0 0.25rem 0;">इण्टरमीडिएट (Intermediate)</h3>
+          <div style="font-size: 0.85rem; color: #64748b; font-weight: 600; margin-bottom: 0.6rem;">UPMSP Class 12 Higher Secondary Framework</div>
+          <p class="class-card-desc" style="font-size: 0.875rem; color: #64748b; line-height: 1.5; margin-bottom: 1.25rem; flex: 1 1 auto;">
+            Foundational portal covering UP Board Class 12 streams: Science (विज्ञान वर्ग), Humanities/Arts (मानविकी व कला वर्ग), Commerce (वाणिज्य वर्ग), and Agriculture (कृषि वर्ग). Official blueprints and syllabus documents undergoing verification.
+          </p>
+          <div class="hub-course-links" style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem;">
+            <a href="/up-board/class-12" style="display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0.85rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.875rem; font-weight: 600; color: var(--primary); text-decoration: none;">
+              <span>🎓 Intermediate Portal Overview</span>
+              <span>&rarr;</span>
+            </a>
+            <a href="/up-board/datesheets?class=12" style="display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0.85rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.875rem; font-weight: 600; color: var(--primary); text-decoration: none;">
+              <span>🗓️ Intermediate Time-Table Status</span>
+              <span>&rarr;</span>
+            </a>
+            <a href="/up-board/syllabus?class=12" style="display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0.85rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.875rem; font-weight: 600; color: var(--primary); text-decoration: none;">
+              <span>📚 Intermediate Stream Syllabi Status</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+          <a href="/up-board/class-12" class="btn-primary" style="width: 100%; text-align: center;">
+            Explore Intermediate Portal &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Verification Tracking Section -->
+  <section class="section" style="padding-top: 0; padding-bottom: 3rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1.25rem;">
+        <div>
+          <h2 style="font-size: 1.45rem; font-weight: 800; color: var(--primary-headings); margin-bottom: 0.35rem;">
+            Resource Onboarding Status &bull; संसाधन सत्यापन स्थिति
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.9375rem; margin: 0;">
+            Transparent tracking of StudySignal's multi-board verification pipeline for UPMSP:
+          </p>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;">
+        <!-- Syllabus Tracker -->
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <span style="font-size: 1.2rem;">📚</span>
+            <span class="badge-status-dev" style="font-size: 0.7rem;">In Development</span>
+          </div>
+          <h4 style="font-size: 1rem; font-weight: 700; color: var(--primary); margin: 0 0 0.35rem 0;">
+            Subject Syllabi (पाठ्यक्रम)
+          </h4>
+          <p style="font-size: 0.8125rem; color: #64748b; line-height: 1.5; margin-bottom: 0.85rem;">
+            Syllabus files are undergoing systematic validation against <code>upmsp.edu.in/Syllabus.html</code>. No assumed marks or durations are published.
+          </p>
+          <a href="/up-board/syllabus" style="font-size: 0.8125rem; font-weight: 600; color: var(--brand-blue); text-decoration: none;">
+            View Syllabus Tracker &rarr;
+          </a>
+        </div>
+
+        <!-- Date Sheet Tracker -->
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <span style="font-size: 1.2rem;">🗓️</span>
+            <span class="badge-status-dev" style="font-size: 0.7rem;">Awaiting Verification</span>
+          </div>
+          <h4 style="font-size: 1rem; font-weight: 700; color: var(--primary); margin: 0 0 0.35rem 0;">
+            Time-Table (समय-सारणी)
+          </h4>
+          <p style="font-size: 0.8125rem; color: #64748b; line-height: 1.5; margin-bottom: 0.85rem;">
+            Release status: awaiting verification. Official timetables will be published directly from signed UPMSP notifications.
+          </p>
+          <a href="/up-board/datesheets" style="font-size: 0.8125rem; font-weight: 600; color: var(--brand-blue); text-decoration: none;">
+            View Timetable Tracker &rarr;
+          </a>
+        </div>
+
+        <!-- Model Papers Tracker -->
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <span style="font-size: 1.2rem;">📝</span>
+            <span class="badge-status-dev" style="font-size: 0.7rem;">Awaiting Links</span>
+          </div>
+          <h4 style="font-size: 1rem; font-weight: 700; color: var(--primary); margin: 0 0 0.35rem 0;">
+            Model Papers (मॉडल पेपर)
+          </h4>
+          <p style="font-size: 0.8125rem; color: #64748b; line-height: 1.5; margin-bottom: 0.85rem;">
+            Direct official links to UPMSP model question papers on <code>upmsp.edu.in/ModelPaper.html</code> will be displayed once link checks are complete.
+          </p>
+          <a href="/up-board/pyq" style="font-size: 0.8125rem; font-weight: 600; color: var(--brand-blue); text-decoration: none;">
+            View Model Papers Tracker &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-Board Navigation Bridge -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <h4 style="font-size: 1rem; font-weight: 700; color: var(--primary); margin: 0 0 0.25rem 0;">
+            Looking for Active Board Portals?
+          </h4>
+          <p style="color: #64748b; font-size: 0.875rem; margin: 0;">
+            StudySignal maintains comprehensive verified resources for CBSE and CISCE examinations.
+          </p>
+        </div>
+        <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+          <a href="/cbse" class="btn-sm btn-secondary">
+            Explore CBSE Hub &rarr;
+          </a>
+          <a href="/icse" class="btn-sm btn-secondary">
+            Explore ICSE &amp; ISC Hub &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Legal Non-Affiliation Disclaimer -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="disclaimer-callout" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; font-size: 0.8125rem; color: #64748b; line-height: 1.6;">
+        <strong style="color: var(--primary); display: block; margin-bottom: 0.35rem; font-size: 0.875rem;">
+          ⚖️ UPMSP Non-Affiliation Legal Notice
+        </strong>
+        StudySignal is an independent, free-access educational resource and is <strong>NOT affiliated with, endorsed by, or connected to the Uttar Pradesh Madhyamik Shiksha Parishad (UPMSP), Government of Uttar Pradesh, or any official examination authority</strong>. 
+        All official notifications, curriculum documents, examination time-tables, and model papers must always be verified directly on the official board website: <a href="{{ official_urls.upmsp_main }}" target="_blank" rel="noopener noreferrer" style="color: var(--brand-blue); text-decoration: underline;">upmsp.edu.in</a>.
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

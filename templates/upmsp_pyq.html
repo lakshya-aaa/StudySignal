@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block title %}UP Board Model Question Papers &amp; PYQs - मॉडल प्रश्न पत्र | StudySignal{% endblock %}
+
+{% block meta_description %}
+UP Board High School (Class 10) and Intermediate (Class 12) model question papers status. Direct official resources tracking from UPMSP at upmsp.edu.in/ModelPaper.html.
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [
+  {'title': 'Boards & Exams', 'url': '/boards'},
+  {'title': 'UP Board Hub', 'url': '/up-board'},
+  {'title': 'Model Papers & PYQs', 'url': '/up-board/pyq'}
+] %}
+{% include 'components/breadcrumb.html' %}
+
+<div class="board-hub-container upmsp-pyq">
+  <!-- Header -->
+  <section class="section" style="padding-bottom: 1.5rem;">
+    <div class="container">
+      <div class="hub-hero-banner">
+        <div class="hub-hero-badge">
+          <span>🇮🇳 UPMSP Official Model Paper Tracker &bull; <strong class="badge-status-dev" style="margin-left: 4px; vertical-align: middle;">In Development</strong></span>
+        </div>
+        <h1 class="hub-hero-title">
+          UP Board Model Question Papers &amp; PYQs
+        </h1>
+        <div style="color: #64748b; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.6rem;">
+          मॉडल प्रश्न पत्र एवं प्रश्न बैंक स्थिति (Question Paper Onboarding Status)
+        </div>
+        <p class="hub-hero-desc">
+          Tracking official Model Question Papers released by UPMSP Prayagraj for High School (Class 10) and Intermediate (Class 12). Verified PDF links will be indexed directly from <code>upmsp.edu.in/ModelPaper.html</code> upon URL validation.
+        </p>
+
+        <div class="hub-hero-actions">
+          <a href="{{ official_urls.upmsp_model_papers }}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: auto;">
+            Official UPMSP Model Papers ↗
+          </a>
+          <a href="/up-board" class="btn-secondary" style="width: auto;">
+            UP Board Main Hub &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Status Card -->
+  <section class="section" style="padding-top: 0; padding-bottom: 3rem;">
+    <div class="container">
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 2rem; box-shadow: 0 4px 18px rgba(15,23,42,0.04); margin-bottom: 2rem;">
+        <div style="display: flex; align-items: flex-start; gap: 1rem; flex-wrap: wrap;">
+          <div style="font-size: 2.2rem;">📝</div>
+          <div style="flex: 1 1 300px;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.5rem;">
+              <span class="badge-status-dev">Framework In Development</span>
+              <span style="font-size: 0.75rem; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-weight: 700;">
+                Direct Source Verification
+              </span>
+            </div>
+            <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary); margin: 0 0 0.5rem 0;">
+              Official Model Paper Links Under Verification
+            </h2>
+            <p style="color: #64748b; font-size: 0.925rem; line-height: 1.6; margin-bottom: 1.25rem;">
+              UPMSP periodically publishes official model question papers for High School and Intermediate on its designated Model Paper portal. We do not rehost unverified third-party sample papers. Direct verified links to official UPMSP PDF documents will be added here once server validation is completed.
+            </p>
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+              <a href="{{ official_urls.upmsp_model_papers }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary">
+                Visit Official UPMSP Model Paper Portal ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Legal Non-Affiliation Disclaimer -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="disclaimer-callout" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; font-size: 0.8125rem; color: #64748b; line-height: 1.6;">
+        <strong style="color: var(--primary); display: block; margin-bottom: 0.35rem; font-size: 0.875rem;">
+          ⚖️ UPMSP Non-Affiliation Legal Notice
+        </strong>
+        StudySignal is an independent, free-access educational resource and is <strong>NOT affiliated with, endorsed by, or connected to the Uttar Pradesh Madhyamik Shiksha Parishad (UPMSP), Government of Uttar Pradesh, or any official examination authority</strong>. 
+        Always verify information on the official UPMSP website: <a href="{{ official_urls.upmsp_main }}" target="_blank" rel="noopener noreferrer" style="color: var(--brand-blue); text-decoration: underline;">upmsp.edu.in</a>.
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}
