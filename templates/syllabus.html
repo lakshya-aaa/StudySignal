@@ -17,28 +17,37 @@ Explore and read verified subject-wise CBSE Class 10 and Class 12 complete sylla
 
 <section class="section" style="padding-bottom: 2rem;">
   <div class="container">
-    <!-- Header -->
-    <div class="section-header">
-      <div>
-        <div style="display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-          <span class="coverage-tag" style="background: #eff6ff; color: var(--brand-blue); border: 1px solid #bfdbfe; font-weight: 700; padding: 0.2rem 0.65rem; border-radius: 9999px; font-size: 0.8125rem;">
+    <!-- Academic Dashboard Hero Banner -->
+    <div class="syllabus-dashboard-hero">
+      <div class="syllabus-hero-content">
+        <div style="margin-bottom: 0.5rem;">
+          <span class="coverage-tag" style="background: #ffffff; color: var(--brand-blue); border: 1px solid #bfdbfe; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.8125rem;">
             Academic Session {{ current_academic_year }} (Current)
           </span>
         </div>
-        <h1 class="section-title">CBSE Subject-wise Syllabus Directory</h1>
-        <p class="section-subtitle">
-          Direct, verified curriculum outlines, examination marks structures, and complete unit-wise syllabi for CBSE Class 10 (Secondary) and Class 12 (Senior Secondary).
+        <div class="syllabus-hero-title-row">
+          <h1 class="syllabus-hero-title">CBSE Subject-wise Syllabus Directory</h1>
+          <span class="syllabus-hero-title-badge" title="Verified CBSE Curriculum" aria-label="Verified">✓</span>
+        </div>
+        <p class="syllabus-hero-subtitle">
+          Access the complete and official CBSE Class 10 &amp; 12 syllabus. Simple, accurate, and well-organized curriculum outlines, marks structures, and official documents.
         </p>
+        <div class="syllabus-hero-pills">
+          <span class="syllabus-hero-pill pill-verified">🛡️ Verified from CBSE</span>
+          <span class="syllabus-hero-pill pill-session">💠 Session {{ current_academic_year }}</span>
+          <span class="syllabus-hero-pill pill-count">📖 {{ syllabus_items|length }} Subjects</span>
+          <a href="{{ official_urls.cbse_curriculum_current }}" target="_blank" rel="noopener noreferrer" class="syllabus-hero-pill" style="color: var(--brand-blue); text-decoration: none;">
+            Official CBSE Curriculum Portal ↗
+          </a>
+        </div>
       </div>
-      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-        <a href="{{ official_urls.cbse_curriculum_current }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
-          Official CBSE Curriculum Portal ↗
-        </a>
+      <div class="syllabus-hero-visual">
+        {% include 'components/syllabus_hero_illustration.html' %}
       </div>
     </div>
 
     <!-- Search & Filter Card -->
-    <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 2rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);">
+    <div class="syllabus-filter-card">
       <form action="/cbse/syllabus" method="get" class="syllabus-filter-form">
         <div>
           <label class="form-label" for="filter-q">Search Subject or Code</label>
@@ -91,7 +100,7 @@ Explore and read verified subject-wise CBSE Class 10 and Class 12 complete sylla
     </div>
 
     <!-- Live Counter -->
-    <div class="syllabus-count-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.5rem;">
+    <div class="syllabus-count-bar">
       <span style="font-weight: 700; font-size: 0.9375rem; color: var(--text-dark);">
         Showing {{ syllabus_items|length }} verified CBSE syllabus entries
       </span>
@@ -107,12 +116,35 @@ Explore and read verified subject-wise CBSE Class 10 and Class 12 complete sylla
       <a href="/cbse/syllabus" class="btn-primary" style="display: inline-block;">Reset All Filters</a>
     </div>
     {% else %}
-    <!-- Subject Directory List -->
-    <div class="syllabus-dir-list">
+    <!-- Subject Directory List (Dashboard Style) -->
+    <div class="syllabus-dashboard-list">
       {% for item in syllabus_items %}
-      <article class="syllabus-dir-item {% if item.verification_status != 'verified_official' %}is-unverified{% endif %}">
-        <div class="syllabus-dir-main">
-          <div class="syllabus-dir-meta">
+        {% set s_name = item.subject|lower %}
+        {% if 'math' in s_name %}
+          {% set theme = 'math' %}
+        {% elif 'science' in s_name or 'physics' in s_name or 'chem' in s_name or 'bio' in s_name %}
+          {% set theme = 'science' %}
+        {% elif 'social' in s_name or 'history' in s_name or 'geo' in s_name or 'pol' in s_name or 'civic' in s_name or 'socio' in s_name %}
+          {% set theme = 'social' %}
+        {% elif 'english' in s_name or 'hindi' in s_name or 'language' in s_name or 'literature' in s_name or 'sanskrit' in s_name %}
+          {% set theme = 'language' %}
+        {% elif 'comput' in s_name or 'ai' in s_name or 'artificial' in s_name or 'informatic' in s_name %}
+          {% set theme = 'computer' %}
+        {% elif 'account' in s_name or 'business' in s_name or 'econ' in s_name or 'commerce' in s_name %}
+          {% set theme = 'commerce' %}
+        {% else %}
+          {% set theme = 'general' %}
+        {% endif %}
+
+      <article class="syllabus-dashboard-row theme-{{ theme }} {% if item.verification_status != 'verified_official' %}is-unverified{% endif %}">
+        <!-- Subject Illustration Area -->
+        <div class="syllabus-row-icon-box" aria-hidden="true">
+          {% include 'components/syllabus_subject_icon.html' %}
+        </div>
+
+        <!-- Subject Details -->
+        <div class="syllabus-row-body">
+          <div class="syllabus-row-meta">
             <span class="code-pill">Class {{ item.class }} &bull; Code {{ item.code }}</span>
             <span class="syllabus-stream-pill">{{ item.stream }}</span>
             <span class="syllabus-session-pill">Session {{ item.academic_year }}</span>
@@ -122,27 +154,29 @@ Explore and read verified subject-wise CBSE Class 10 and Class 12 complete sylla
               <span class="circ-tag unverified">Current link unverified</span>
             {% endif %}
           </div>
-          <h2 class="syllabus-dir-title">
-            <a href="/cbse/syllabus/{{ item.id }}" class="syllabus-dir-title-link">{{ item.subject }}</a>
+          <h2 class="syllabus-row-title">
+            <a href="/cbse/syllabus/{{ item.id }}" class="syllabus-row-title-link">{{ item.subject }}</a>
           </h2>
-          <p class="syllabus-dir-desc">{{ item.description }}</p>
-          <div class="syllabus-dir-metrics">
+          <p class="syllabus-row-desc">{{ item.description }}</p>
+          <div class="syllabus-row-metrics">
             <span class="syllabus-metric-pill">Theory: <strong>{{ item.exam_structure.theory_marks }} M</strong></span>
             <span class="syllabus-metric-pill">IA/Pract: <strong>{{ item.exam_structure.internal_assessment_marks }} M</strong></span>
             <span class="syllabus-metric-pill">Time: <strong>{{ item.exam_structure.duration_hours }} Hrs</strong></span>
           </div>
         </div>
 
-        <div class="syllabus-dir-actions">
-          <a href="/cbse/syllabus/{{ item.id }}" class="btn-sm btn-primary syllabus-btn-primary">
+        <!-- Action Area -->
+        <div class="syllabus-row-actions">
+          <a href="/cbse/syllabus/{{ item.id }}" class="btn-sm btn-primary syllabus-action-btn-primary">
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
             Complete Syllabus &rarr;
           </a>
           {% if item.verification_status == 'verified_official' and item.official_url %}
-          <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary syllabus-btn-secondary" title="Download official CBSE syllabus PDF">
+          <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary syllabus-action-btn-secondary" title="Download official CBSE syllabus PDF">
             Official PDF ↗
           </a>
           {% else %}
-          <a href="{{ official_urls.cbse_curriculum_current }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary syllabus-btn-secondary" title="Visit Official CBSE Curriculum Directory">
+          <a href="{{ official_urls.cbse_curriculum_current }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary syllabus-action-btn-secondary" title="Visit Official CBSE Curriculum Directory">
             Directory ↗
           </a>
           {% endif %}

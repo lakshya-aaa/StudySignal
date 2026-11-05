@@ -15,92 +15,122 @@ Official {{ class_title }} academic portal: verified CISCE syllabus, exam timeta
 ] %}
 {% include 'components/breadcrumb.html' %}
 
-<section class="section" style="padding-bottom: 2rem;">
-  <div class="container">
-    <!-- Header with Status Badge -->
-    <div class="section-header" style="margin-bottom: 1.5rem;">
-      <div>
-        <div style="display: flex; gap: 0.5rem; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap;">
-          <span class="badge-status-active" style="font-size: 0.8125rem; padding: 4px 10px; font-weight: 700;">
-            ✓ Active Board Portal
-          </span>
-          <span class="code-pill">Council for the Indian School Certificate Examinations (CISCE)</span>
+<div class="board-hub-container cisce-class-hub">
+  <!-- Header with Academic Dashboard Banner -->
+  <section class="section" style="padding-bottom: 1.5rem;">
+    <div class="container">
+      <div class="hub-hero-banner">
+        <div class="hub-hero-badge">
+          <span>✓ Active Board Portal &bull; CISCE Official Resources</span>
         </div>
-        <h1 class="section-title">{{ class_title }}</h1>
-        <p class="section-subtitle">
+        <h1 class="hub-hero-title">{{ class_title }}</h1>
+        <p class="hub-hero-desc">
           Verified academic curriculum, subject regulations, official examination datesheets, circulars, and previous year papers for {{ course_name }} Class {{ class_num }} students.
         </p>
-      </div>
-      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-        <a href="{{ official_portal_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
-          Official CISCE Regulations ↗
-        </a>
-        <a href="/icse/pyq?class={{ class_num }}" class="btn-sm btn-primary">
-          Class {{ class_num }} PYQ Library &rarr;
-        </a>
-      </div>
-    </div>
 
-    <!-- Quick Navigation Bar -->
-    <div class="board-selector-bar" style="margin-bottom: 2rem;">
-      <a href="/icse/syllabus?class={{ class_num }}" class="selector-pill">
-        📚 Subject Syllabus ({{ syllabus_items|length }})
-      </a>
-      <a href="/icse/datesheets?class={{ class_num }}" class="selector-pill">
-        🗓️ Exam Date Sheet Status
-      </a>
-      <a href="/icse/circulars?class={{ class_num }}" class="selector-pill">
-        📢 Official Circulars ({{ circulars|length }})
-      </a>
-      <a href="/icse/pyq?class={{ class_num }}" class="selector-pill">
-        📝 Question Papers &amp; Specimen Papers
-      </a>
-      <a href="/icse" class="selector-pill">
-        🏛️ ICSE &amp; ISC Main Hub
-      </a>
-    </div>
-
-    <!-- Examination Schedule & Timetable Status Card -->
-    <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 1.5rem; margin-bottom: 2.5rem; border-left: 4px solid var(--brand-blue);">
-      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
-        <div>
-          <span class="circ-tag" style="background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; display: inline-block; margin-bottom: 0.35rem;">
-            {{ datesheets.exam_series or 'Year 2027 Examination' }}
-          </span>
-          <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary); margin-bottom: 0.4rem;">
-            Examination Schedule &amp; Timetable Status
-          </h2>
-          <p style="color: var(--text-dark); font-size: 0.9375rem; margin-bottom: 0.5rem; max-width: 700px; line-height: 1.5;">
-            <strong>Status:</strong> {{ datesheets.official_status or 'Official timetable pending announcement from CISCE.' }}
-          </p>
-          <div style="font-size: 0.8125rem; color: var(--text-muted); display: flex; gap: 1rem; flex-wrap: wrap;">
-            <span>Expected Window: <strong>{{ datesheets.exam_window_expected or 'Mid-February to late March' }}</strong></span>
-            <span>Timing: <strong>{{ datesheets.exam_timing_standard }}</strong></span>
+        <!-- Quick Stats Row -->
+        <div class="hub-stats-row">
+          <div class="hub-stat-pill">
+            <span>📚 <strong>{{ syllabus_items|length }}</strong> Verified Syllabi</span>
+          </div>
+          <div class="hub-stat-pill">
+            <span>🗓️ <strong>Year 2027</strong> Exam Tracking</span>
+          </div>
+          <div class="hub-stat-pill">
+            <span>📢 <strong>{{ circulars|length }}</strong> Official Circulars</span>
+          </div>
+          <div class="hub-stat-pill">
+            <span>📝 <strong>Specimen Papers &amp; PYQs</strong> Available</span>
           </div>
         </div>
-        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-          <a href="/icse/datesheets?class={{ class_num }}" class="btn-sm btn-primary">
-            View Date Sheet Details &rarr;
+
+        <div class="hub-hero-actions">
+          <a href="/icse/pyq?class={{ class_num }}" class="btn-primary" style="width: auto;">
+            Class {{ class_num }} PYQ Library &rarr;
           </a>
-          <a href="{{ datesheets.official_link or 'https://cisce.org/examination/' }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
-            CISCE Exam Portal ↗
+          <a href="/icse/datesheets?class={{ class_num }}" class="btn-secondary" style="width: auto;">
+            Date Sheet Details &rarr;
+          </a>
+          <a href="{{ official_portal_url }}" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="width: auto;">
+            Official CISCE Regulations ↗
+          </a>
+          <a href="/icse" class="btn-secondary" style="width: auto;">
+            ICSE &amp; ISC Main Hub &rarr;
           </a>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Syllabus Section -->
-    <div style="margin-bottom: 3rem;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.75rem;">
+  <!-- Quick Navigation Bar -->
+  <section class="section" style="padding: 0 0 2rem 0;">
+    <div class="container">
+      <div class="board-selector-bar">
+        <a href="/icse/syllabus?class={{ class_num }}" class="selector-pill">
+          📚 Subject Syllabus ({{ syllabus_items|length }})
+        </a>
+        <a href="/icse/datesheets?class={{ class_num }}" class="selector-pill">
+          🗓️ Exam Date Sheet Status
+        </a>
+        <a href="/icse/circulars?class={{ class_num }}" class="selector-pill">
+          📢 Official Circulars ({{ circulars|length }})
+        </a>
+        <a href="/icse/pyq?class={{ class_num }}" class="selector-pill">
+          📝 Question Papers &amp; Specimen Papers
+        </a>
+        <a href="/icse" class="selector-pill">
+          🏛️ ICSE &amp; ISC Main Hub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Examination Schedule & Timetable Status Card -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="hub-alert-card" style="border-left-color: var(--brand-blue);">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="circ-tag" style="background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; display: inline-block; margin-bottom: 0.35rem; font-weight: 600;">
+              {{ datesheets.exam_series or 'Year 2027 Examination' }}
+            </span>
+            <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary); margin-bottom: 0.4rem;">
+              Examination Schedule &amp; Timetable Status
+            </h2>
+            <p style="color: var(--text-dark); font-size: 0.9375rem; margin-bottom: 0.6rem; max-width: 700px; line-height: 1.5;">
+              <strong>Status:</strong> {{ datesheets.official_status or 'Official timetable pending announcement from CISCE.' }}
+            </p>
+            <div style="font-size: 0.8125rem; color: var(--text-muted); display: flex; gap: 1rem; flex-wrap: wrap;">
+              <span>Expected Window: <strong>{{ datesheets.exam_window_expected or 'Mid-February to late March' }}</strong></span>
+              <span>Timing: <strong>{{ datesheets.exam_timing_standard }}</strong></span>
+            </div>
+          </div>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <a href="/icse/datesheets?class={{ class_num }}" class="btn-sm btn-primary">
+              View Date Sheet Details &rarr;
+            </a>
+            <a href="{{ datesheets.official_link or 'https://cisce.org/examination/' }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
+              CISCE Exam Portal ↗
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Syllabus Section -->
+  <section class="section section-alt" style="background: #f8fafc; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 3rem 0;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1.5rem;">
         <div>
-          <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--primary); margin: 0;">
+          <h2 class="section-title">
             {{ course_name }} Class {{ class_num }} Verified Subject Syllabi
           </h2>
-          <p style="color: var(--text-muted); font-size: 0.875rem; margin: 0.25rem 0 0 0;">
+          <p class="section-subtitle">
             Direct links to official CISCE curriculum PDF documents for Session {{ current_academic_year }}.
           </p>
         </div>
-        <a href="/icse/syllabus?class={{ class_num }}" class="btn-sm btn-secondary">
+        <a href="/icse/syllabus?class={{ class_num }}" class="section-action">
           View All Class {{ class_num }} Subjects ({{ syllabus_items|length }}) &rarr;
         </a>
       </div>
@@ -108,11 +138,11 @@ Official {{ class_title }} academic portal: verified CISCE syllabus, exam timeta
       {% if class_num == '12' %}
         <!-- Stream-wise grouped view for Class 12 -->
         {% if science_subjects %}
-        <div style="margin-bottom: 2rem;">
-          <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+        <div style="margin-bottom: 2.5rem;">
+          <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
             🔬 Science Stream Subjects
           </h3>
-          <div class="syllabus-grid">
+          <div class="subject-grid hub-subject-grid">
             {% for item in science_subjects %}
               {% include 'components/icse_syllabus_card.html' %}
             {% endfor %}
@@ -121,11 +151,11 @@ Official {{ class_title }} academic portal: verified CISCE syllabus, exam timeta
         {% endif %}
 
         {% if commerce_subjects %}
-        <div style="margin-bottom: 2rem;">
-          <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+        <div style="margin-bottom: 2.5rem;">
+          <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
             📊 Commerce Stream Subjects
           </h3>
-          <div class="syllabus-grid">
+          <div class="subject-grid hub-subject-grid">
             {% for item in commerce_subjects %}
               {% include 'components/icse_syllabus_card.html' %}
             {% endfor %}
@@ -134,11 +164,11 @@ Official {{ class_title }} academic portal: verified CISCE syllabus, exam timeta
         {% endif %}
 
         {% if arts_subjects %}
-        <div style="margin-bottom: 2rem;">
-          <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+        <div style="margin-bottom: 2.5rem;">
+          <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
             🏛️ Humanities &amp; Arts Electives
           </h3>
-          <div class="syllabus-grid">
+          <div class="subject-grid hub-subject-grid">
             {% for item in arts_subjects %}
               {% include 'components/icse_syllabus_card.html' %}
             {% endfor %}
@@ -147,11 +177,11 @@ Official {{ class_title }} academic portal: verified CISCE syllabus, exam timeta
         {% endif %}
 
         {% if other_subjects %}
-        <div style="margin-bottom: 2rem;">
-          <h3 style="font-size: 1.15rem; font-weight: 700; color: var(--primary); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+        <div style="margin-bottom: 2.5rem;">
+          <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--primary); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
             📖 Compulsory &amp; General Subjects
           </h3>
-          <div class="syllabus-grid">
+          <div class="subject-grid hub-subject-grid">
             {% for item in other_subjects %}
               {% include 'components/icse_syllabus_card.html' %}
             {% endfor %}
@@ -161,26 +191,28 @@ Official {{ class_title }} academic portal: verified CISCE syllabus, exam timeta
 
       {% else %}
         <!-- Class 10 Grid -->
-        <div class="syllabus-grid">
+        <div class="subject-grid hub-subject-grid">
           {% for item in syllabus_items %}
             {% include 'components/icse_syllabus_card.html' %}
           {% endfor %}
         </div>
       {% endif %}
     </div>
+  </section>
 
-    <!-- Official Circulars Feed for this Class -->
-    <div style="margin-bottom: 3rem;">
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.75rem;">
+  <!-- Official Circulars Feed for this Class -->
+  <section class="section" style="padding: 3rem 0;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1.5rem;">
         <div>
-          <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--primary); margin: 0;">
+          <h2 class="section-title">
             Relevant CISCE Circulars &amp; Notices
           </h2>
-          <p style="color: var(--text-muted); font-size: 0.875rem; margin: 0.25rem 0 0 0;">
+          <p class="section-subtitle">
             Verified policy notifications and updates from the Council applicable to Class {{ class_num }}.
           </p>
         </div>
-        <a href="/icse/circulars?class={{ class_num }}" class="btn-sm btn-secondary">
+        <a href="/icse/circulars?class={{ class_num }}" class="section-action">
           All Circulars ({{ circulars|length }}) &rarr;
         </a>
       </div>
@@ -206,34 +238,42 @@ Official {{ class_title }} academic portal: verified CISCE syllabus, exam timeta
         {% endfor %}
       </div>
     </div>
+  </section>
 
-    <!-- Question Paper Library Callout -->
-    <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.75rem; margin-bottom: 2rem;">
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-        <div>
-          <span class="badge-status-active" style="margin-bottom: 0.4rem; display: inline-block;">
-            ✓ Verified Archive
-          </span>
-          <h3 style="font-size: 1.2rem; color: var(--primary-headings); margin-bottom: 0.35rem; font-weight: 700;">
-            Practice with {{ course_name }} Class {{ class_num }} Question Papers
-          </h3>
-          <p style="color: var(--text-muted); font-size: 0.875rem; margin: 0; max-width: 650px;">
-            Access specimen question papers, answer keys, and marking schemes for {{ course_name }} Class {{ class_num }} verified directly from the official CISCE repository.
-          </p>
-        </div>
-        <div>
-          <a href="/icse/pyq?class={{ class_num }}" class="btn-primary" style="font-size: 0.875rem;">
-            Explore Class {{ class_num }} Papers &rarr;
-          </a>
+  <!-- Question Paper Library Callout -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2rem;">
+    <div class="container">
+      <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: 16px; padding: 2rem; box-shadow: 0 4px 18px rgba(15,23,42,0.04);">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="badge-status-active" style="margin-bottom: 0.4rem; display: inline-block;">
+              ✓ Verified Archive
+            </span>
+            <h3 style="font-size: 1.25rem; color: var(--primary-headings); margin-bottom: 0.35rem; font-weight: 700;">
+              Practice with {{ course_name }} Class {{ class_num }} Question Papers
+            </h3>
+            <p style="color: var(--text-muted); font-size: 0.875rem; margin: 0; max-width: 650px; line-height: 1.5;">
+              Access specimen question papers, answer keys, and marking schemes for {{ course_name }} Class {{ class_num }} verified directly from the official CISCE repository.
+            </p>
+          </div>
+          <div>
+            <a href="/icse/pyq?class={{ class_num }}" class="btn-primary" style="font-size: 0.875rem;">
+              Explore Class {{ class_num }} Papers &rarr;
+            </a>
+          </div>
         </div>
       </div>
     </div>
+  </section>
 
-    <!-- Non-Affiliation Disclaimer -->
-    <div class="alert-box" style="font-size: 0.8125rem; color: var(--text-muted); background: var(--bg-alt); border: 1px solid var(--border-color);">
-      <strong>CISCE Non-Affiliation Legal Notice:</strong>
-      StudySignal is an independent, free-access educational initiative and is NOT affiliated with, authorized by, endorsed by, or connected to the Council for the Indian School Certificate Examinations (CISCE). The names "ICSE", "ISC", and "CISCE" are trademarks of the statutory council and are used here solely for informational and descriptive identification purposes. Always cross-verify academic information on the official CISCE portal (<code>cisce.org</code>).
+  <!-- Non-Affiliation Disclaimer -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2rem;">
+    <div class="container">
+      <div class="alert-box" style="font-size: 0.8125rem; color: var(--text-muted); background: var(--bg-alt); border: 1px solid var(--border-color);">
+        <strong>CISCE Non-Affiliation Legal Notice:</strong>
+        StudySignal is an independent, free-access educational initiative and is NOT affiliated with, authorized by, endorsed by, or connected to the Council for the Indian School Certificate Examinations (CISCE). The names "ICSE", "ISC", and "CISCE" are trademarks of the statutory council and are used here solely for informational and descriptive identification purposes. Always cross-verify academic information on the official CISCE portal (<code>cisce.org</code>).
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 {% endblock %}

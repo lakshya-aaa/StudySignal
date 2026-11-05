@@ -10,246 +10,317 @@ Complete guide for {{ class_title }} including verified official CBSE syllabus P
 {% set breadcrumbs = [{'title': 'CBSE', 'url': '/'}, {'title': class_title, 'url': request.path}] %}
 {% include 'components/breadcrumb.html' %}
 
-<!-- Class Hub Header -->
-<section class="section" style="padding-bottom: 1rem;">
-  <div class="container">
-    <div style="background: linear-gradient(135deg, #090e26 0%, #131b54 60%, #1c2670 100%); color: #ffffff; padding: 2.5rem; border-radius: var(--radius-lg); margin-bottom: 2rem;">
-      <span class="class-badge" style="background: rgba(255,255,255,0.15); color: var(--brand-yellow); margin-bottom: 0.75rem; display: inline-block;">
-        CBSE Official Academic Framework
-      </span>
-      <h1 style="font-size: 2.25rem; font-weight: 800; margin-bottom: 0.75rem;">
-        {{ class_title }}
-      </h1>
-      <p style="font-size: 1.0625rem; color: #cbd5e1; max-width: 800px; line-height: 1.6;">
-        Access official CBSE syllabus documents directly from <code>cbseacademic.nic.in</code>, check current date sheet notifications on <code>cbse.gov.in</code>, and view essential board exam instructions.
-      </p>
-
-      <div style="display: flex; gap: 0.75rem; margin-top: 1.5rem; flex-wrap: wrap;">
-        <a href="#syllabus-section" class="btn-primary" style="width: auto;">
-          View Subject Syllabi &darr;
-        </a>
-        <a href="/cbse/datesheets?class={{ class_num }}" class="btn-secondary" style="width: auto; background-color: rgba(255,255,255,0.1); color: #ffffff; border-color: rgba(255,255,255,0.2);">
-          Date Sheet Status &rarr;
-        </a>
-        <a href="{{ official_urls.cbse_curriculum_current }}" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="width: auto; background-color: rgba(255,255,255,0.1); color: #ffffff; border-color: rgba(255,255,255,0.2);">
-          Official CBSE Curriculum Portal ↗
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Date Sheet Alert Box -->
-<section class="section" style="padding-top: 0; padding-bottom: 2rem;">
-  <div class="container">
-    <div class="demo-table-alert">
-      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
-        <strong style="font-size: 1rem;">📅 {{ class_title }} Examination Advisory</strong>
-        {% if datesheets.is_demo_schedule %}
-          <span class="circ-tag demo">DEMO — NOT AN OFFICIAL ANNOUNCEMENT</span>
-        {% endif %}
-      </div>
-      <p style="margin-bottom: 0.75rem;">
-        {{ datesheets.official_status }}. Official timetables are published exclusively on <code>cbse.gov.in</code>.
-      </p>
-      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-        <a href="/cbse/datesheets?class={{ class_num }}" class="btn-sm btn-primary" style="width: auto;">
-          View Date Sheet Status & Guidelines &rarr;
-        </a>
-        <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto;">
-          Visit Official CBSE Website ↗
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Stream Selector for Class 12 -->
-{% if class_num == '12' %}
-<section class="section" style="padding: 0 0 1.5rem 0;">
-  <div class="container">
-    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;">
-      <button class="btn-sm stream-tab-btn active" data-stream="all" style="cursor: pointer;">All Class 12 Subjects</button>
-      <button class="btn-sm stream-tab-btn" data-stream="Science" style="cursor: pointer;">Science Stream</button>
-      <button class="btn-sm stream-tab-btn" data-stream="Commerce" style="cursor: pointer;">Commerce Stream</button>
-      <button class="btn-sm stream-tab-btn" data-stream="Arts" style="cursor: pointer;">Arts / Humanities</button>
-    </div>
-  </div>
-</section>
-{% endif %}
-
-<!-- Subject-Wise Syllabus Section -->
-<section class="section section-alt" id="syllabus-section">
-  <div class="container">
-    <div class="section-header">
-      <div>
-        <h2 class="section-title">Official Subject Syllabi (PDF Direct Links)</h2>
-        <p class="section-subtitle">
-          Direct downloads from CBSE Academic servers. Verified official curriculum files for Session {{ current_academic_year }}.
+<div class="board-hub-container">
+  <!-- Class Hub Header (Academic Dashboard Hero) -->
+  <section class="section" style="padding-bottom: 1.5rem;">
+    <div class="container">
+      <div class="hub-hero-banner">
+        <div class="hub-hero-badge">
+          <span>🏛️ CBSE Official Academic Framework &bull; Session {{ current_academic_year }}</span>
+        </div>
+        <h1 class="hub-hero-title">
+          {{ class_title }}
+        </h1>
+        <p class="hub-hero-desc">
+          Access official CBSE syllabus documents directly from <code>cbseacademic.nic.in</code>, check current date sheet notifications on <code>cbse.gov.in</code>, and view essential board exam instructions.
         </p>
-      </div>
-      <div style="max-width: 300px; width: 100%;">
-        <input 
-          type="text" 
-          id="syllabusLiveSearch" 
-          class="form-control" 
-          placeholder="Filter subjects in Class {{ class_num }}..."
-        >
-      </div>
-    </div>
 
-    <div id="syllabusLiveCount" style="font-size: 0.8125rem; color: var(--text-muted); margin-bottom: 1rem;">
-      Showing {{ syllabus_items|length }} official subjects
-    </div>
-
-    <!-- Subjects Grid -->
-    <div class="subject-grid">
-      {% for item in syllabus_items %}
-      <div class="subject-card stream-content-group" data-stream="{{ item.stream }}">
-        <div class="subject-card-meta">
-          <span class="code-pill">Code: {{ item.code }}</span>
-          {% if item.verification_status == 'verified_official' %}
-            <span class="verified-badge">✓ Verified Official</span>
-          {% else %}
-            <span class="circ-tag unverified">Current link unverified</span>
-          {% endif %}
-        </div>
-        <h3 class="subject-card-title">{{ item.subject }}</h3>
-        <div style="font-size: 0.75rem; color: var(--accent-saffron); font-weight: 600; margin-bottom: 0.4rem;">
-          {{ item.stream }} &bull; {{ item.category }}
-        </div>
-        <p class="subject-card-desc">{{ item.description }}</p>
-
-        <div class="subject-card-details">
-          <span>Theory: <strong>{{ item.exam_structure.theory_marks }} M</strong></span>
-          <span>IA / Practical: <strong>{{ item.exam_structure.internal_assessment_marks }} M</strong></span>
-          <span>Duration: <strong>{{ item.exam_structure.duration_hours }} Hrs</strong></span>
-        </div>
-
-        <div class="subject-card-actions">
-          <a href="/cbse/syllabus/{{ item.id }}" class="btn-sm btn-primary">
-            Complete Syllabus &rarr;
-          </a>
-          {% if item.verification_status == 'verified_official' and item.official_url %}
-          <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" title="Download official CBSE syllabus PDF">
-            Official PDF ↗
-          </a>
-          {% else %}
-          <a href="{{ official_urls.cbse_curriculum_current }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" title="Visit Official CBSE Curriculum Directory">
-            Directory ↗
-          </a>
-          {% endif %}
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<!-- Reusable In-Content Ad Placement -->
-{% set slot_id = 'in_content_banner' %}
-{% include 'components/ad_slot.html' %}
-
-<!-- Relevant Circulars for this Class -->
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <div>
-        <h2 class="section-title">{{ class_title }} Circulars & Notices</h2>
-        <p class="section-subtitle">Board announcements affecting Class {{ class_num }} students.</p>
-      </div>
-      <a href="/cbse/circulars?class={{ class_num }}" class="section-action">View All Circulars &rarr;</a>
-    </div>
-
-    <div class="circular-list">
-      {% for circ in circulars %}
-      <div class="circular-card category-{{ circ.category }}">
-        <div class="circular-icon-box">
-          {% if circ.category == 'Academic' %}📚
-          {% elif circ.category == 'Examination' %}📝
-          {% else %}📋{% endif %}
-        </div>
-        <div class="circular-content">
-          <div class="circular-meta">
-            {% if circ.verification_status == 'verified_official' %}
-              <span class="circ-tag official">✓ Verified Official Notice</span>
-            {% elif circ.verification_status == 'official_directory' %}
-              <span class="circ-tag" style="background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd;">Official Portal Directory</span>
-            {% elif circ.verification_status == 'inconclusive' %}
-              <span class="circ-tag unverified">Verification Inconclusive</span>
-            {% elif circ.is_demo or circ.verification_status == 'demo' %}
-              <span class="circ-tag demo">DEMO — NOT AN OFFICIAL ANNOUNCEMENT</span>
-            {% else %}
-              <span class="circ-tag unverified">Unverified Notice</span>
-            {% endif %}
-            <span class="circ-number">{{ circ.circular_no }}</span>
-            {% if circ.published_date %}
-              <span class="circ-date">&bull; Published: {{ circ.published_date }}</span>
-            {% endif %}
+        <!-- Quick Stats Row -->
+        <div class="hub-stats-row">
+          <div class="hub-stat-pill">
+            <span>📚 <strong>{{ syllabus_items|length }}</strong> Verified Syllabi</span>
           </div>
-          <h3 class="circular-title">{{ circ.title }}</h3>
-          <p class="circular-summary">{{ circ.summary }}</p>
-          <div class="circular-footer">
-            {% if circ.is_demo %}
-              <span class="circ-notice-pill">DEMO — NOT AN OFFICIAL ANNOUNCEMENT</span>
-            {% elif circ.verification_status == 'official_directory' %}
-              <span style="font-size: 0.75rem; color: #0369a1; font-weight: 600;">
-                Official Central Board Portal Directory
-              </span>
-            {% elif circ.verification_status == 'inconclusive' %}
-              <span style="font-size: 0.75rem; color: #b45309; font-weight: 600;">
-                Document Content Pending Verification
-              </span>
-            {% elif circ.last_verified and circ.verification_status == 'verified_official' %}
-              <span style="font-size: 0.75rem; color: var(--accent-green); font-weight: 600;">
-                ✓ Verified ({{ circ.last_verified }})
-              </span>
-            {% endif %}
-            <a href="{{ circ.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
-              {% if circ.official_url and circ.official_url.endswith('.pdf') %}View Official PDF ↗{% elif circ.verification_status == 'official_directory' %}Open Directory Portal ↗{% else %}Open Official Link ↗{% endif %}
+          <div class="hub-stat-pill">
+            <span>🗓️ <strong>2027</strong> Exam Schedule Tracking</span>
+          </div>
+          <div class="hub-stat-pill">
+            <span>📢 <strong>{{ circulars|length }}</strong> Official Circulars</span>
+          </div>
+          <div class="hub-stat-pill">
+            <span>📝 <strong>2014–2025</strong> PYQ Library</span>
+          </div>
+        </div>
+
+        <div class="hub-hero-actions">
+          <a href="#syllabus-section" class="btn-primary" style="width: auto;">
+            View Subject Syllabi &darr;
+          </a>
+          <a href="/cbse/datesheets?class={{ class_num }}" class="btn-secondary" style="width: auto;">
+            Date Sheet Status &rarr;
+          </a>
+          <a href="/cbse/pyq?class={{ class_num }}" class="btn-secondary" style="width: auto;">
+            Class {{ class_num }} PYQs &rarr;
+          </a>
+          <a href="{{ official_urls.cbse_curriculum_current }}" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="width: auto;">
+            Official Curriculum Portal ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Date Sheet Alert Box -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2rem;">
+    <div class="container">
+      <div class="hub-alert-card demo-table-alert">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.5rem;">
+          <strong style="font-size: 1.05rem; color: var(--primary); display: inline-flex; align-items: center; gap: 0.4rem;">
+            📅 {{ class_title }} Examination Advisory
+          </strong>
+          {% if datesheets.is_demo_schedule %}
+            <span class="circ-tag demo">DEMO — NOT AN OFFICIAL ANNOUNCEMENT</span>
+          {% else %}
+            <span class="badge-status-active" style="font-size: 0.75rem;">Official Schedule Tracker</span>
+          {% endif %}
+        </div>
+        <p style="margin-bottom: 0.85rem; color: var(--text-dark); line-height: 1.5; font-size: 0.925rem;">
+          {{ datesheets.official_status }}. Official timetables are published exclusively on <code>cbse.gov.in</code>.
+        </p>
+        <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+          <a href="/cbse/datesheets?class={{ class_num }}" class="btn-sm btn-primary" style="width: auto;">
+            View Date Sheet Status & Guidelines &rarr;
+          </a>
+          <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto;">
+            Visit Official CBSE Website ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stream Selector for Class 12 -->
+  {% if class_num == '12' %}
+  <section class="section" style="padding: 0 0 1.5rem 0;">
+    <div class="container">
+      <div class="hub-stream-tabs">
+        <button class="stream-tab-btn active" data-stream="all">All Class 12 Subjects</button>
+        <button class="stream-tab-btn" data-stream="Science">Science Stream</button>
+        <button class="stream-tab-btn" data-stream="Commerce">Commerce Stream</button>
+        <button class="stream-tab-btn" data-stream="Arts">Arts / Humanities</button>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Subject-Wise Syllabus Section -->
+  <section class="section section-alt" id="syllabus-section" style="background: #f8fafc; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 3rem 0;">
+    <div class="container">
+      <div class="section-header" style="align-items: flex-end; margin-bottom: 1.5rem;">
+        <div>
+          <h2 class="section-title" style="margin-bottom: 0.35rem;">Official Subject Syllabi (PDF Direct Links)</h2>
+          <p class="section-subtitle" style="margin: 0;">
+            Direct downloads from CBSE Academic servers. Verified official curriculum files for Session {{ current_academic_year }}.
+          </p>
+        </div>
+        <div style="max-width: 320px; width: 100%;">
+          <input 
+            type="text" 
+            id="syllabusLiveSearch" 
+            class="form-control" 
+            placeholder="Filter subjects in Class {{ class_num }}..."
+            style="background: #ffffff; border-radius: 8px;"
+          >
+        </div>
+      </div>
+
+      <div id="syllabusLiveCount" style="font-size: 0.8125rem; color: var(--text-muted); margin-bottom: 1.25rem; font-weight: 600;">
+        Showing {{ syllabus_items|length }} official subjects
+      </div>
+
+      <!-- Subjects Grid (3-Column Layout matching target design) -->
+      <div class="subject-grid hub-subject-grid">
+        {% for item in syllabus_items %}
+          {% set s_name = item.subject|lower %}
+          {% if 'math' in s_name %}
+            {% set theme = 'math' %}
+          {% elif 'social' in s_name or 'history' in s_name or 'geo' in s_name or 'pol' in s_name or 'civic' in s_name or 'socio' in s_name %}
+            {% set theme = 'social' %}
+          {% elif 'hindi' in s_name %}
+            {% set theme = 'hindi' %}
+          {% elif 'science' in s_name or 'physics' in s_name or 'chem' in s_name or 'bio' in s_name %}
+            {% set theme = 'science' %}
+          {% elif 'english' in s_name or 'language' in s_name or 'literature' in s_name or 'sanskrit' in s_name %}
+            {% set theme = 'language' %}
+          {% elif 'comput' in s_name or 'ai' in s_name or 'artificial' in s_name or 'informatic' in s_name %}
+            {% set theme = 'computer' %}
+          {% elif 'account' in s_name or 'business' in s_name or 'econ' in s_name or 'commerce' in s_name %}
+            {% set theme = 'commerce' %}
+          {% else %}
+            {% set theme = 'general' %}
+          {% endif %}
+
+        <div class="subject-card hub-subject-card stream-content-group" data-stream="{{ item.stream }}">
+          <div class="subject-card-meta">
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+              <span class="code-pill">Code: {{ item.code }}</span>
+              {% if item.verification_status == 'verified_official' %}
+                <span class="verified-badge">✓ Verified Official</span>
+              {% else %}
+                <span class="circ-tag unverified">Current link unverified</span>
+              {% endif %}
+            </div>
+          </div>
+
+          <div class="hub-card-body">
+            <div class="hub-card-text">
+              <h3 class="subject-card-title">{{ item.subject }}</h3>
+              <div class="hub-card-subtitle">
+                {{ item.stream }} &bull; {{ item.category }}
+              </div>
+              <p class="subject-card-desc">{{ item.description }}</p>
+            </div>
+
+            <div class="hub-card-illustration" aria-hidden="true">
+              {% include 'components/syllabus_subject_icon.html' %}
+            </div>
+          </div>
+
+          <div class="subject-card-details">
+            <span class="metric-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+              <span>Theory: <strong>{{ item.exam_structure.theory_marks }} M</strong></span>
+            </span>
+            <span class="metric-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v7.31L4.69 18.6A2 2 0 0 0 6.4 22h11.2a2 2 0 0 0 1.71-3.4L14 9.31V2"/></svg>
+              <span>IA / Practical: <strong>{{ item.exam_structure.internal_assessment_marks }} M</strong></span>
+            </span>
+            <span class="metric-item">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              <span>Duration: <strong>{{ item.exam_structure.duration_hours }} Hrs</strong></span>
+            </span>
+          </div>
+
+          <div class="subject-card-actions">
+            <a href="/cbse/syllabus/{{ item.id }}" class="btn-sm btn-primary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              Complete Syllabus &rarr;
             </a>
+            {% if item.verification_status == 'verified_official' and item.official_url %}
+            <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" title="Download official CBSE syllabus PDF">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Official PDF ↗
+            </a>
+            {% else %}
+            <a href="{{ official_urls.cbse_curriculum_current }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" title="Visit Official CBSE Curriculum Directory">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              Directory ↗
+            </a>
+            {% endif %}
           </div>
         </div>
+        {% endfor %}
       </div>
-      {% endfor %}
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Exam Preparation & Guidelines -->
-<section class="section section-alt">
-  <div class="container">
-    <div class="static-page-header" style="margin-bottom: 1.25rem;">
-      <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">
-        CBSE Examination Guidelines for {{ class_title }}
-      </h2>
-      <p style="color: var(--text-muted); font-size: 0.9375rem;">
-        Essential official protocols every board examinee must follow:
-      </p>
+  <!-- Reusable In-Content Ad Placement -->
+  {% set slot_id = 'in_content_banner' %}
+  {% include 'components/ad_slot.html' %}
+
+  <!-- Relevant Circulars for this Class -->
+  <section class="section" style="padding: 3rem 0;">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">{{ class_title }} Circulars & Notices</h2>
+          <p class="section-subtitle">Board announcements affecting Class {{ class_num }} students.</p>
+        </div>
+        <a href="/cbse/circulars?class={{ class_num }}" class="section-action">View All Circulars &rarr;</a>
+      </div>
+
+      <div class="circular-list">
+        {% for circ in circulars %}
+        <div class="circular-card category-{{ circ.category }}">
+          <div class="circular-icon-box">
+            {% if circ.category == 'Academic' %}📚
+            {% elif circ.category == 'Examination' %}📝
+            {% else %}📋{% endif %}
+          </div>
+          <div class="circular-content">
+            <div class="circular-meta">
+              {% if circ.verification_status == 'verified_official' %}
+                <span class="circ-tag official">✓ Verified Official Notice</span>
+              {% elif circ.verification_status == 'official_directory' %}
+                <span class="circ-tag" style="background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd;">Official Portal Directory</span>
+              {% elif circ.verification_status == 'inconclusive' %}
+                <span class="circ-tag unverified">Verification Inconclusive</span>
+              {% elif circ.is_demo or circ.verification_status == 'demo' %}
+                <span class="circ-tag demo">DEMO — NOT AN OFFICIAL ANNOUNCEMENT</span>
+              {% else %}
+                <span class="circ-tag unverified">Unverified Notice</span>
+              {% endif %}
+              <span class="circ-number">{{ circ.circular_no }}</span>
+              {% if circ.published_date %}
+                <span class="circ-date">&bull; Published: {{ circ.published_date }}</span>
+              {% endif %}
+            </div>
+            <h3 class="circular-title">{{ circ.title }}</h3>
+            <p class="circular-summary">{{ circ.summary }}</p>
+            <div class="circular-footer">
+              {% if circ.is_demo %}
+                <span class="circ-notice-pill">DEMO — NOT AN OFFICIAL ANNOUNCEMENT</span>
+              {% elif circ.verification_status == 'official_directory' %}
+                <span style="font-size: 0.75rem; color: #0369a1; font-weight: 600;">
+                  Official Central Board Portal Directory
+                </span>
+              {% elif circ.verification_status == 'inconclusive' %}
+                <span style="font-size: 0.75rem; color: #b45309; font-weight: 600;">
+                  Document Content Pending Verification
+                </span>
+              {% elif circ.last_verified and circ.verification_status == 'verified_official' %}
+                <span style="font-size: 0.75rem; color: var(--accent-green); font-weight: 600;">
+                  ✓ Verified ({{ circ.last_verified }})
+                </span>
+              {% endif %}
+              <a href="{{ circ.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
+                {% if circ.official_url and circ.official_url.endswith('.pdf') %}View Official PDF ↗{% elif circ.verification_status == 'official_directory' %}Open Directory Portal ↗{% else %}Open Official Link ↗{% endif %}
+              </a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
     </div>
+  </section>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
-      <div style="background: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--accent-blue);">
-        <h4 style="font-weight: 700; color: var(--primary); margin-bottom: 0.35rem;">1. Reporting Time</h4>
-        <p style="font-size: 0.875rem; color: var(--text-dark);">
-          Candidates must report to their allotted examination centre before <strong>10:00 AM IST</strong>. Entry gates strictly close as per board directions.
+  <!-- Exam Preparation & Guidelines -->
+  <section class="section section-alt" style="background: #f8fafc; border-top: 1px solid var(--border-color); padding: 3rem 0;">
+    <div class="container">
+      <div class="static-page-header" style="margin-bottom: 1.5rem;">
+        <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">
+          CBSE Examination Guidelines for {{ class_title }}
+        </h2>
+        <p style="color: var(--text-muted); font-size: 0.9375rem;">
+          Essential official protocols every board examinee must follow:
         </p>
       </div>
 
-      <div style="background: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--accent-saffron);">
-        <h4 style="font-weight: 700; color: var(--primary); margin-bottom: 0.35rem;">2. Reading Time</h4>
-        <p style="font-size: 0.875rem; color: var(--text-dark);">
-          Question papers are distributed at <strong>10:15 AM</strong>. Students receive 15 minutes of uninterrupted reading time before writing begins at 10:30 AM.
-        </p>
-      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
+        <div class="guideline-card" style="background: #ffffff; padding: 1.5rem; border-radius: 14px; border: 1px solid #e2e8f0; border-left: 4px solid var(--accent-blue); box-shadow: 0 2px 10px rgba(15,23,42,0.03);">
+          <div style="font-size: 1.25rem; margin-bottom: 0.5rem;">⏰</div>
+          <h4 style="font-weight: 700; color: var(--primary); margin-bottom: 0.4rem; font-size: 1.05rem;">1. Reporting Time</h4>
+          <p style="font-size: 0.875rem; color: var(--text-dark); line-height: 1.5; margin: 0;">
+            Candidates must report to their allotted examination centre before <strong>10:00 AM IST</strong>. Entry gates strictly close as per board directions.
+          </p>
+        </div>
 
-      <div style="background: var(--bg-alt); padding: 1.25rem; border-radius: var(--radius-md); border-left: 4px solid var(--accent-green);">
-        <h4 style="font-weight: 700; color: var(--primary); margin-bottom: 0.35rem;">3. Official Admit Card</h4>
-        <p style="font-size: 0.875rem; color: var(--text-dark);">
-          Always carry the original CBSE Admit Card signed by the School Principal. Private candidates must download their verified admit card from cbse.gov.in.
-        </p>
+        <div class="guideline-card" style="background: #ffffff; padding: 1.5rem; border-radius: 14px; border: 1px solid #e2e8f0; border-left: 4px solid var(--accent-saffron); box-shadow: 0 2px 10px rgba(15,23,42,0.03);">
+          <div style="font-size: 1.25rem; margin-bottom: 0.5rem;">📖</div>
+          <h4 style="font-weight: 700; color: var(--primary); margin-bottom: 0.4rem; font-size: 1.05rem;">2. Reading Time</h4>
+          <p style="font-size: 0.875rem; color: var(--text-dark); line-height: 1.5; margin: 0;">
+            Question papers are distributed at <strong>10:15 AM</strong>. Students receive 15 minutes of uninterrupted reading time before writing begins at 10:30 AM.
+          </p>
+        </div>
+
+        <div class="guideline-card" style="background: #ffffff; padding: 1.5rem; border-radius: 14px; border: 1px solid #e2e8f0; border-left: 4px solid var(--accent-green); box-shadow: 0 2px 10px rgba(15,23,42,0.03);">
+          <div style="font-size: 1.25rem; margin-bottom: 0.5rem;">🪪</div>
+          <h4 style="font-weight: 700; color: var(--primary); margin-bottom: 0.4rem; font-size: 1.05rem;">3. Official Admit Card</h4>
+          <p style="font-size: 0.875rem; color: var(--text-dark); line-height: 1.5; margin: 0;">
+            Always carry the original CBSE Admit Card signed by the School Principal. Private candidates must download their verified admit card from cbse.gov.in.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
 {% endblock %}

@@ -1492,6 +1492,80 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertNotIn("IBPS", html)
         self.assertNotIn("Banking Personnel", html)
 
+    def test_boards_cisce_card_links(self):
+        """Verify CISCE card on /boards shows only Class 10 Hub and Class 12 Hub for class portals,
+        with redundant ICSE & ISC Hub link removed, and all utility links intact."""
+        res = self.client.get("/boards")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+
+        # 1. Class portal links
+        self.assertIn('<span>Class 10 Hub</span>', html)
+        self.assertIn('href="/icse/class-10"', html)
+        self.assertIn('<span>Class 12 Hub</span>', html)
+        self.assertIn('href="/icse/class-12"', html)
+
+        # 2. Redundant / replaced links removed
+        self.assertNotIn('<span>ICSE &amp; ISC Hub</span>', html)
+        self.assertNotIn('<span>ICSE & ISC Hub</span>', html)
+        self.assertNotIn('<span>ICSE Class 10 Portal</span>', html)
+        self.assertNotIn('<span>ISC Class 12 Portal</span>', html)
+
+        # 3. Existing resource links preserved
+        self.assertIn('href="/icse/pyq"', html)
+        self.assertIn('href="/icse/syllabus"', html)
+        self.assertIn('href="/icse/datesheets"', html)
+        self.assertIn('href="/icse/circulars"', html)
+
+        # 4. Footer CTA button preserved
+        self.assertIn('href="/icse"', html)
+
+    def test_cbse_hub_route_and_contents(self):
+        """Verify dedicated /cbse Board Examination Hub loads with verified content,
+        quick navigation, course level cards pointing to class-10 & class-12 hubs,
+        and legal disclaimer without fake data."""
+        res = self.client.get("/cbse")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+
+        # 1. Page Header & Academic Branding
+        self.assertIn("CBSE Board Examination Hub", html)
+        self.assertIn("Active Board Portal", html)
+        self.assertIn("Session 2026-27", html)
+
+        # 2. Class portal links point to existing CBSE hubs
+        self.assertIn('href="/cbse/class-10"', html)
+        self.assertIn('href="/cbse/class-12"', html)
+
+        # 3. Existing CBSE sections navigation
+        self.assertIn('href="/cbse/syllabus"', html)
+        self.assertIn('href="/cbse/datesheets"', html)
+        self.assertIn('href="/cbse/circulars"', html)
+        self.assertIn('href="/cbse/pyq"', html)
+
+        # 4. Official CBSE source links
+        self.assertIn("cbse.gov.in", html)
+        self.assertIn("cbseacademic.nic.in", html)
+
+        # 5. Non-affiliation disclaimer
+        self.assertIn("CBSE Non-Affiliation Legal Notice", html)
+
+        # 6. Cross-bridge to CISCE
+        self.assertIn('href="/icse"', html)
+
+    def test_boards_cbse_card_cta_points_to_cbse(self):
+        """Verify on /boards that 'Explore CBSE Portal' points to /cbse,
+        and class portal links still point to /cbse/class-10 and /cbse/class-12."""
+        res = self.client.get("/boards")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+
+        # Explore CBSE Portal CTA button
+        self.assertIn('href="/cbse"', html)
+        # Class Hub links within CBSE card
+        self.assertIn('href="/cbse/class-10"', html)
+        self.assertIn('href="/cbse/class-12"', html)
+
     def test_icse_hub_route_and_integrity(self):
         """Verify /icse dedicated board hub has Active status, verified CISCE links, and complete portal navigation"""
         res = self.client.get("/icse")

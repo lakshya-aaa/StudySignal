@@ -27,41 +27,50 @@ Explore and read verified subject-wise ICSE Class 10 and ISC Class 12 complete s
 
 <section class="section" style="padding-bottom: 2rem;">
   <div class="container">
-    <!-- Header -->
-    <div class="section-header">
-      <div>
-        <div style="display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
-          <span class="coverage-tag" style="background: #eff6ff; color: var(--brand-blue); border: 1px solid #bfdbfe; font-weight: 700; padding: 0.2rem 0.65rem; border-radius: 9999px; font-size: 0.8125rem;">
+    <!-- Academic Dashboard Hero Banner -->
+    <div class="syllabus-dashboard-hero">
+      <div class="syllabus-hero-content">
+        <div style="margin-bottom: 0.5rem;">
+          <span class="coverage-tag" style="background: #ffffff; color: var(--brand-blue); border: 1px solid #bfdbfe; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.8125rem;">
             Academic Session {{ current_academic_year }} (Current)
           </span>
         </div>
-        <h1 class="section-title">
+        <div class="syllabus-hero-title-row">
+          <h1 class="syllabus-hero-title">
+            {% if is_isc_view %}
+            ISC Class 12 Subject-wise Syllabus Directory
+            {% else %}
+            ICSE &amp; ISC Subject-wise Syllabus Directory
+            {% endif %}
+          </h1>
+          <span class="syllabus-hero-title-badge" title="Verified CISCE Curriculum" aria-label="Verified">✓</span>
+        </div>
+        <p class="syllabus-hero-subtitle">
           {% if is_isc_view %}
-          ISC Class 12 Subject-wise Syllabus Directory
+          Access verified curriculum outlines, examination marks structures, and complete unit-wise syllabi for ISC Class 12 (Higher Secondary) from official CISCE regulations.
           {% else %}
-          ICSE &amp; ISC Subject-wise Syllabus Directory
-          {% endif %}
-        </h1>
-        <p class="section-subtitle">
-          {% if is_isc_view %}
-          Direct, verified curriculum outlines, examination marks structures, and complete unit-wise syllabi for ISC Class 12 (Higher Secondary) from official CISCE regulations.
-          {% else %}
-          Direct, verified curriculum outlines, examination marks structures, and complete unit-wise syllabi for ICSE Class 10 (Secondary) and ISC Class 12 (Higher Secondary).
+          Access verified curriculum outlines, examination marks structures, and complete unit-wise syllabi for ICSE Class 10 (Secondary) and ISC Class 12 (Higher Secondary).
           {% endif %}
         </p>
+        <div class="syllabus-hero-pills">
+          <span class="syllabus-hero-pill pill-verified">🛡️ Verified from CISCE</span>
+          <span class="syllabus-hero-pill pill-session">💠 Session {{ current_academic_year }}</span>
+          <span class="syllabus-hero-pill pill-count">📖 {{ syllabus_items|length }} Subjects</span>
+          <a href="{{ official_urls.cisce_regulations }}" target="_blank" rel="noopener noreferrer" class="syllabus-hero-pill" style="color: var(--brand-blue); text-decoration: none;">
+            Official ICSE Regulations ↗
+          </a>
+          <a href="https://cisce.org/regulations-and-syllabuses-isc/" target="_blank" rel="noopener noreferrer" class="syllabus-hero-pill" style="color: var(--brand-blue); text-decoration: none;">
+            Official ISC Regulations ↗
+          </a>
+        </div>
       </div>
-      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-        <a href="{{ official_urls.cisce_regulations }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
-          Official ICSE Regulations ↗
-        </a>
-        <a href="https://cisce.org/regulations-and-syllabuses-isc/" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
-          Official ISC Regulations ↗
-        </a>
+      <div class="syllabus-hero-visual">
+        {% include 'components/syllabus_hero_illustration.html' %}
       </div>
     </div>
 
     <!-- Search & Filter Card -->
-    <div style="background: #ffffff; border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 1.25rem; margin-bottom: 2rem; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);">
+    <div class="syllabus-filter-card">
       <form action="{{ '/isc/syllabus' if is_isc_view else '/icse/syllabus' }}" method="get" class="syllabus-filter-form">
         <div>
           <label class="form-label" for="filter-q">Search Subject or Code</label>
@@ -118,7 +127,7 @@ Explore and read verified subject-wise ICSE Class 10 and ISC Class 12 complete s
     </div>
 
     <!-- Live Counter -->
-    <div class="syllabus-count-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.5rem;">
+    <div class="syllabus-count-bar">
       <span style="font-weight: 700; font-size: 0.9375rem; color: var(--text-dark);">
         Showing {{ syllabus_items|length }} verified CISCE syllabus entries
       </span>
@@ -134,12 +143,35 @@ Explore and read verified subject-wise ICSE Class 10 and ISC Class 12 complete s
       <a href="{{ '/isc/syllabus' if is_isc_view else '/icse/syllabus' }}" class="btn-primary" style="display: inline-block;">Reset All Filters</a>
     </div>
     {% else %}
-    <!-- Subject Directory List -->
-    <div class="syllabus-dir-list">
+    <!-- Subject Directory List (Dashboard Style) -->
+    <div class="syllabus-dashboard-list">
       {% for item in syllabus_items %}
-      <article class="syllabus-dir-item {% if item.verification_status != 'verified_official' %}is-unverified{% endif %}">
-        <div class="syllabus-dir-main">
-          <div class="syllabus-dir-meta">
+        {% set s_name = item.subject|lower %}
+        {% if 'math' in s_name %}
+          {% set theme = 'math' %}
+        {% elif 'science' in s_name or 'physics' in s_name or 'chem' in s_name or 'bio' in s_name %}
+          {% set theme = 'science' %}
+        {% elif 'social' in s_name or 'history' in s_name or 'geo' in s_name or 'pol' in s_name or 'civic' in s_name or 'socio' in s_name %}
+          {% set theme = 'social' %}
+        {% elif 'english' in s_name or 'hindi' in s_name or 'language' in s_name or 'literature' in s_name %}
+          {% set theme = 'language' %}
+        {% elif 'comput' in s_name or 'ai' in s_name or 'artificial' in s_name or 'informatic' in s_name %}
+          {% set theme = 'computer' %}
+        {% elif 'account' in s_name or 'business' in s_name or 'econ' in s_name or 'commerce' in s_name or 'commercial' in s_name %}
+          {% set theme = 'commerce' %}
+        {% else %}
+          {% set theme = 'general' %}
+        {% endif %}
+
+      <article class="syllabus-dashboard-row theme-{{ theme }} {% if item.verification_status != 'verified_official' %}is-unverified{% endif %}">
+        <!-- Subject Illustration Area -->
+        <div class="syllabus-row-icon-box" aria-hidden="true">
+          {% include 'components/syllabus_subject_icon.html' %}
+        </div>
+
+        <!-- Subject Details -->
+        <div class="syllabus-row-body">
+          <div class="syllabus-row-meta">
             <span class="code-pill">{{ item.course }} {{ item.class }} &bull; Code {{ item.code }}</span>
             <span class="syllabus-stream-pill">{{ item.category or item.stream }}</span>
             <span class="syllabus-session-pill">{{ item.academic_year_label or ('Session ' ~ item.academic_year) }}</span>
@@ -149,27 +181,29 @@ Explore and read verified subject-wise ICSE Class 10 and ISC Class 12 complete s
               <span class="circ-tag unverified">Pending Verification</span>
             {% endif %}
           </div>
-          <h2 class="syllabus-dir-title">
-            <a href="/icse/syllabus/{{ item.id }}" class="syllabus-dir-title-link">{{ item.subject }}</a>
+          <h2 class="syllabus-row-title">
+            <a href="/icse/syllabus/{{ item.id }}" class="syllabus-row-title-link">{{ item.subject }}</a>
           </h2>
-          <p class="syllabus-dir-desc">{{ item.description }}</p>
-          <div class="syllabus-dir-metrics">
+          <p class="syllabus-row-desc">{{ item.description }}</p>
+          <div class="syllabus-row-metrics">
             <span class="syllabus-metric-pill">Theory: <strong>{{ item.exam_structure.theory_marks }} M</strong></span>
             <span class="syllabus-metric-pill">IA/Pract: <strong>{{ item.exam_structure.internal_marks }} M</strong></span>
             <span class="syllabus-metric-pill">Total: <strong>{{ item.exam_structure.total_marks }} M</strong></span>
           </div>
         </div>
 
-        <div class="syllabus-dir-actions">
-          <a href="/icse/syllabus/{{ item.id }}" class="btn-sm btn-primary syllabus-btn-primary">
+        <!-- Action Area -->
+        <div class="syllabus-row-actions">
+          <a href="/icse/syllabus/{{ item.id }}" class="btn-sm btn-primary syllabus-action-btn-primary">
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
             Complete Syllabus &rarr;
           </a>
           {% if item.verification_status == 'verified_official' and item.official_url %}
-          <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary syllabus-btn-secondary" title="Download official CISCE syllabus PDF">
+          <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary syllabus-action-btn-secondary" title="Download official CISCE syllabus PDF">
             Official PDF ↗
           </a>
           {% else %}
-          <a href="{{ item.source_portal or official_urls.cisce_regulations }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary syllabus-btn-secondary" title="Visit Official CISCE Regulations Directory">
+          <a href="{{ item.source_portal or official_urls.cisce_regulations }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary syllabus-action-btn-secondary" title="Visit Official CISCE Regulations Directory">
             CISCE Directory ↗
           </a>
           {% endif %}

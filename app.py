@@ -81,7 +81,7 @@ def get_boards_and_exams():
                 "status": "Active",
                 "status_code": "active",
                 "status_label": "Active",
-                "url": "/cbse/class-10",
+                "url": "/cbse",
                 "is_clickable": True,
                 "badge_class": "badge-status-active",
                 "description": "Comprehensive verified coverage for CBSE Class 10 and Class 12 curriculum, subject syllabi, official date sheets, circulars, and PYQ library (2014–2025).",
@@ -106,9 +106,8 @@ def get_boards_and_exams():
                 "badge_class": "badge-status-active",
                 "description": "Comprehensive verified coverage for ICSE (Class 10) and ISC (Class 12) curriculum, subject regulations, official examination datesheets, circulars, and PYQ library (2017–2027).",
                 "actions": [
-                    {"label": "ICSE & ISC Hub", "url": "/icse"},
-                    {"label": "ICSE Class 10 Portal", "url": "/icse/class-10"},
-                    {"label": "ISC Class 12 Portal", "url": "/icse/class-12"},
+                    {"label": "Class 10 Hub", "url": "/icse/class-10"},
+                    {"label": "Class 12 Hub", "url": "/icse/class-12"},
                     {"label": "PYQ Library (2017-27)", "url": "/icse/pyq"},
                     {"label": "Syllabus Directory", "url": "/icse/syllabus"},
                     {"label": "Date Sheets", "url": "/icse/datesheets"},
@@ -263,6 +262,22 @@ def index():
         "index.html",
         class_10_featured=class_10_featured,
         class_12_featured=class_12_featured,
+        latest_circulars=latest_circulars,
+        datesheets=datesheets
+    )
+
+@app.route("/cbse")
+def cbse_hub():
+    """CBSE Board Examination Hub."""
+    all_syllabus = get_all_syllabus()
+    syllabus_items = [s for s in all_syllabus if s.get("session_type", "current") == "current"]
+    datesheets = get_datesheets()
+    circulars = get_circulars()
+    featured_syllabus = syllabus_items[:6]
+    latest_circulars = circulars[:4]
+    return render_template(
+        "cbse.html",
+        featured_syllabus=featured_syllabus,
         latest_circulars=latest_circulars,
         datesheets=datesheets
     )
@@ -945,6 +960,7 @@ def sitemap_xml():
 
     pages = [
         {"loc": f"{base}/", "priority": "1.0", "changefreq": "daily"},
+        {"loc": f"{base}/cbse", "priority": "0.9", "changefreq": "daily"},
         {"loc": f"{base}/cbse/class-10", "priority": "0.9", "changefreq": "daily"},
         {"loc": f"{base}/cbse/class-12", "priority": "0.9", "changefreq": "daily"},
         {"loc": f"{base}/cbse/syllabus", "priority": "0.8", "changefreq": "weekly"},
