@@ -79,8 +79,11 @@ def get_up_datesheets():
 def get_up_circulars():
     return load_json_data("up_circulars.json")
 
-def get_all_up_pyqs():
-    return load_json_data("up_pyq.json")
+def get_all_up_sample_papers():
+    return load_json_data("up_sample_papers.json")
+
+def get_up_question_bank():
+    return load_json_data("up_question_bank.json")
 
 def get_boards_and_exams():
     """Directory of educational boards and competitive entrance exams on StudySignal."""
@@ -132,17 +135,21 @@ def get_boards_and_exams():
                 "name": "UP Board",
                 "full_name": "Uttar Pradesh Madhyamik Shiksha Parishad (UPMSP)",
                 "scope": "State Board • High School (10th) & Intermediate (12th)",
-                "status": "In Development",
-                "status_code": "in_development",
-                "status_label": "In Development",
+                "status": "Active",
+                "status_code": "active",
+                "status_label": "Active",
                 "url": "/up-board",
                 "is_clickable": True,
-                "badge_class": "badge-status-dev",
-                "description": "Foundational portal for High School (Class 10) and Intermediate (Class 12). Official curriculum, examination timetable, and model paper links currently undergoing live verification.",
+                "badge_class": "badge-status-active",
+                "description": "Comprehensive UP Board resources for High School (Class 10) and Intermediate (Class 12), including syllabus, official examination timetable, 23 verified sample papers, circulars and a dedicated Question Bank tracker.",
                 "actions": [
                     {"label": "High School (Class 10) Hub", "url": "/up-board/class-10"},
                     {"label": "Intermediate (Class 12) Hub", "url": "/up-board/class-12"},
-                    {"label": "Verification Status", "url": "/up-board"}
+                    {"label": "Official Sample Papers (23)", "url": "/up-board/sample-papers"},
+                    {"label": "Syllabus Directory", "url": "/up-board/syllabus"},
+                    {"label": "Question Bank Tracker", "url": "/up-board/question-bank"},
+                    {"label": "Examination Timetable", "url": "/up-board/datesheets"},
+                    {"label": "Circulars & Notices", "url": "/up-board/circulars"}
                 ]
             },
             {
@@ -266,21 +273,88 @@ def normalize_trailing_slash():
 
 @app.route("/")
 def index():
-    syllabus_items = [s for s in get_all_syllabus() if s.get("session_type", "current") == "current"]
-    datesheets = get_datesheets()
-    circulars = get_circulars()
-    
-    # Top subjects for quick highlights
-    class_10_featured = [s for s in syllabus_items if s.get("class") == "10"][:4]
-    class_12_featured = [s for s in syllabus_items if s.get("class") == "12"][:4]
-    latest_circulars = circulars[:4]
-    
+    # 1. CBSE Syllabus highlights
+    cbse_items = [s for s in get_all_syllabus() if s.get("session_type", "current") == "current"]
+    class_10_featured = [dict(s) for s in cbse_items if s.get("class") == "10"][:2]
+    class_12_featured = [dict(s) for s in cbse_items if s.get("class") == "12"][:2]
+    cbse_featured = class_10_featured + class_12_featured
+    for s in cbse_featured:
+        s["board"] = "CBSE"
+        s["board_badge"] = "CBSE"
+        s["board_key"] = "cbse"
+        s["official_host"] = "cbseacademic.nic.in"
+        s["detail_url"] = f"/cbse/syllabus/{s.get('id')}"
+
+    # 2. UP Board Syllabus highlights
+    up_all = get_all_up_syllabus()
+    up_featured = [dict(s) for s in up_all if s.get("code") in ["901", "928", "151", "152"]][:4]
+    for s in up_featured:
+        s["board"] = "UP Board"
+        s["board_badge"] = "UP Board"
+        s["board_key"] = "up-board"
+        s["official_host"] = "upmsp.edu.in"
+        s["detail_url"] = "/up-board/syllabus"
+
+    # 3. CISCE Syllabus highlights
+    icse_all = get_all_icse_syllabus()
+    icse_featured = [dict(s) for s in icse_all if s.get("code") in ["01", "51", "861", "862"]][:4]
+    for s in icse_featured:
+        s["board"] = "CISCE"
+        s["board_badge"] = "CISCE"
+        s["board_key"] = "cisce"
+        s["official_host"] = "cisce.org"
+        s["detail_url"] = f"/icse/syllabus/{s.get('id')}"
+
+    all_featured_syllabus = cbse_featured + up_featured + icse_featured
+
+    # 4. Circulars across supported boards
+    cbse_circulars = [dict(c) for c in get_circulars()[:4]]
+    for c in cbse_circulars:
+        c["board"] = "CBSE"
+        c["board_badge"] = "CBSE"
+        c["board_key"] = "cbse"
+        c["official_host"] = "cbseacademic.nic.in / cbse.gov.in"
+
+    up_circulars = [dict(c) for c in get_up_circulars()[:3]]
+    for c in up_circulars:
+        c["board"] = "UP Board"
+        c["board_badge"] = "UPMSP"
+        c["board_key"] = "up-board"
+        c["official_host"] = "upmsp.edu.in"
+
+    icse_circulars = [dict(c) for c in get_icse_circulars()[:3]]
+    for c in icse_circulars:
+        c["board"] = "CISCE"
+        c["board_badge"] = "CISCE"
+        c["board_key"] = "cisce"
+        c["official_host"] = "cisce.org"
+
+    latest_circulars = cbse_circulars + up_circulars + icse_circulars
+
+    # 5. Date Sheets
+    cbse_datesheets = get_datesheets()
+    up_datesheets = get_up_datesheets()
+    icse_datesheets = get_icse_datesheets()
+
+    # 6. Boards Directory
+    boards_and_exams = get_boards_and_exams()
+
     return render_template(
         "index.html",
         class_10_featured=class_10_featured,
         class_12_featured=class_12_featured,
+        cbse_featured_syllabus=cbse_featured,
+        up_featured_syllabus=up_featured,
+        icse_featured_syllabus=icse_featured,
+        all_featured_syllabus=all_featured_syllabus,
         latest_circulars=latest_circulars,
-        datesheets=datesheets
+        cbse_circulars=cbse_circulars,
+        up_circulars=up_circulars,
+        icse_circulars=icse_circulars,
+        datesheets=cbse_datesheets,
+        up_datesheets=up_datesheets,
+        icse_datesheets=icse_datesheets,
+        boards_and_exams=boards_and_exams
     )
 
 @app.route("/cbse")
@@ -729,17 +803,19 @@ def icse_pyq_index():
 
 @app.route("/up-board")
 def up_board_hub():
-    """UP Board (UPMSP) Foundation Hub - In Development."""
+    """UP Board (UPMSP) Examination Hub - Active."""
     datesheets = get_up_datesheets()
     all_syllabus = get_all_up_syllabus()
     all_circulars = get_up_circulars()
-    all_model_papers = get_all_up_pyqs()
+    all_sample_papers = get_all_up_sample_papers()
+    question_bank = get_up_question_bank()
     return render_template(
         "upmsp.html",
         datesheets=datesheets,
         featured_syllabus=all_syllabus[:6],
         latest_circulars=all_circulars[:4],
-        featured_model_papers=all_model_papers[:4]
+        featured_sample_papers=all_sample_papers[:6],
+        question_bank=question_bank
     )
 
 @app.route("/up-board/class-10")
@@ -748,7 +824,8 @@ def up_board_class_10():
     datesheets = get_up_datesheets().get("classes", {}).get("10", {})
     all_syllabus = [s for s in get_all_up_syllabus() if s.get("class") == "10"]
     circulars = [c for c in get_up_circulars() if "10" in c.get("class_target", "") or "All" in c.get("class_target", "")]
-    model_papers = [p for p in get_all_up_pyqs() if p.get("class") == "10"]
+    sample_papers = [p for p in get_all_up_sample_papers() if p.get("class") == "10"]
+    question_bank_class = get_up_question_bank().get("classes", {}).get("10", {})
     return render_template(
         "upmsp_class_hub.html",
         class_num="10",
@@ -759,7 +836,8 @@ def up_board_class_10():
         datesheets=datesheets,
         syllabus_items=all_syllabus,
         circulars=circulars,
-        model_papers=model_papers
+        sample_papers=sample_papers,
+        question_bank=question_bank_class
     )
 
 @app.route("/up-board/class-12")
@@ -768,7 +846,8 @@ def up_board_class_12():
     datesheets = get_up_datesheets().get("classes", {}).get("12", {})
     all_syllabus = [s for s in get_all_up_syllabus() if s.get("class") == "12"]
     circulars = [c for c in get_up_circulars() if "12" in c.get("class_target", "") or "All" in c.get("class_target", "")]
-    model_papers = [p for p in get_all_up_pyqs() if p.get("class") == "12"]
+    sample_papers = [p for p in get_all_up_sample_papers() if p.get("class") == "12"]
+    question_bank_class = get_up_question_bank().get("classes", {}).get("12", {})
     return render_template(
         "upmsp_class_hub.html",
         class_num="12",
@@ -779,7 +858,8 @@ def up_board_class_12():
         datesheets=datesheets,
         syllabus_items=all_syllabus,
         circulars=circulars,
-        model_papers=model_papers
+        sample_papers=sample_papers,
+        question_bank=question_bank_class
     )
 
 @app.route("/up-board/datesheets")
@@ -823,32 +903,36 @@ def up_board_circulars_view():
         selected_class=selected_class
     )
 
-@app.route("/up-board/model-papers")
 @app.route("/up-board/sample-papers")
-def up_board_model_papers_index():
-    """UP Board Official Model Papers / Sample Papers Directory."""
+@app.route("/up-board/model-papers")
+def up_board_sample_papers_index():
+    """UP Board Official Sample Papers / Model Papers Directory."""
     selected_class = request.args.get("class", "all")
     search_q = request.args.get("q", "").strip().lower()
-    items = get_all_up_pyqs()
+    items = get_all_up_sample_papers()
     if selected_class != "all":
         items = [p for p in items if p.get("class") == selected_class]
     if search_q:
-        items = [p for p in items if search_q in p.get("subject", "").lower() or search_q in p.get("code", "").lower()]
+        items = [
+            p for p in items
+            if search_q in p.get("subject", "").lower()
+            or search_q in p.get("code", "").lower()
+            or search_q in p.get("title", "").lower()
+        ]
     return render_template(
-        "upmsp_model_papers.html",
-        model_papers=items,
+        "upmsp_sample_papers.html",
+        sample_papers=items,
         selected_class=selected_class,
         search_q=search_q
     )
 
-@app.route("/up-board/pyq")
-def up_board_pyq_index():
-    """UP Board Previous Year Question Papers (PYQs) - Archive Status / Coming Soon."""
-    selected_class = request.args.get("class", "all")
+@app.route("/up-board/question-bank")
+def up_board_question_bank_view():
+    """UP Board Official Question Bank Directory & Status Tracker."""
+    qb_data = get_up_question_bank()
     return render_template(
-        "upmsp_pyq.html",
-        selected_class=selected_class,
-        pyq_items=[]
+        "upmsp_question_bank.html",
+        question_bank=qb_data
     )
 
 @app.route("/search")
@@ -1125,8 +1209,8 @@ def sitemap_xml():
         {"loc": f"{base}/up-board/datesheets", "priority": "0.8", "changefreq": "daily"},
         {"loc": f"{base}/up-board/syllabus", "priority": "0.7", "changefreq": "weekly"},
         {"loc": f"{base}/up-board/circulars", "priority": "0.7", "changefreq": "daily"},
-        {"loc": f"{base}/up-board/model-papers", "priority": "0.7", "changefreq": "weekly"},
-        {"loc": f"{base}/up-board/pyq", "priority": "0.6", "changefreq": "weekly"},
+        {"loc": f"{base}/up-board/sample-papers", "priority": "0.7", "changefreq": "weekly"},
+        {"loc": f"{base}/up-board/question-bank", "priority": "0.7", "changefreq": "weekly"},
         {"loc": f"{base}/about", "priority": "0.5", "changefreq": "monthly"},
         {"loc": f"{base}/contact", "priority": "0.5", "changefreq": "monthly"},
         {"loc": f"{base}/privacy-policy", "priority": "0.3", "changefreq": "yearly"},

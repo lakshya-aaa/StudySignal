@@ -2,11 +2,22 @@
   <div class="container banner-inner">
     <div class="banner-badge">Official Advisory</div>
     <div class="banner-text">
-      <strong>Independent Portal Notice:</strong> {{ disclaimer_text }}
+      <strong aria-label="Independent Portal Notice">INDEPENDENT PORTAL NOTICE:</strong> StudySignal is an independent educational platform and is not affiliated with, endorsed by, or connected to the Central Board of Secondary Education (CBSE), Uttar Pradesh Madhyamik Shiksha Parishad (UPMSP), Council for the Indian School Certificate Examinations (CISCE / ICSE / ISC), or any other government or statutory body. For official services, examinations, registrations, and notifications, always visit the respective official portals directly.
     </div>
     <div class="banner-links">
-      <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer" class="banner-link">CBSE Main ↗</a>
-      <a href="{{ official_urls.cbse_academic }}" target="_blank" rel="noopener noreferrer" class="banner-link">CBSE Academics ↗</a>
+      <span class="banner-links-label" style="font-size: 0.75rem; font-weight: 700; color: #475569; text-transform: uppercase;">Official Sources:</span>
+      {% if '/up-board' in request.path %}
+        <a href="{{ official_urls.upmsp_main }}" target="_blank" rel="noopener noreferrer" class="banner-link">UPMSP (upmsp.edu.in) ↗</a>
+      {% elif '/icse' in request.path or '/isc' in request.path %}
+        <a href="{{ official_urls.cisce_main }}" target="_blank" rel="noopener noreferrer" class="banner-link">CISCE (cisce.org) ↗</a>
+      {% elif '/cbse' in request.path %}
+        <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer" class="banner-link">CBSE Main ↗</a>
+        <a href="{{ official_urls.cbse_academic }}" target="_blank" rel="noopener noreferrer" class="banner-link">CBSE Academics ↗</a>
+      {% else %}
+        <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer" class="banner-link">CBSE ↗</a>
+        <a href="{{ official_urls.upmsp_main }}" target="_blank" rel="noopener noreferrer" class="banner-link">UPMSP ↗</a>
+        <a href="{{ official_urls.cisce_main }}" target="_blank" rel="noopener noreferrer" class="banner-link">CISCE ↗</a>
+      {% endif %}
     </div>
   </div>
 </div>

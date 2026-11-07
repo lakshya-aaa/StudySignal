@@ -607,8 +607,8 @@ class StudySignalTestCase(unittest.TestCase):
         # Test homepage metadata
         res_home = self.client.get("/")
         html_home = res_home.data.decode("utf-8")
-        self.assertIn('property="og:title" content="StudySignal - CBSE Class 10 & 12 Syllabus, Date Sheets & Official Notices"', html_home)
-        self.assertIn('name="twitter:title" content="StudySignal - CBSE Class 10 & 12 Syllabus, Date Sheets & Official Notices"', html_home)
+        self.assertIn('property="og:title" content="StudySignal – Multi-Board Educational Platform (CBSE, UP Board & CISCE)"', html_home)
+        self.assertIn('name="twitter:title" content="StudySignal – Multi-Board Educational Platform (CBSE, UP Board & CISCE)"', html_home)
         self.assertIn('2026-27', html_home)
         # Check keywords tag specifically
         kw_part = html_home.split('name="keywords"')[1].split('>')[0]
@@ -930,7 +930,7 @@ class StudySignalTestCase(unittest.TestCase):
         res_home = self.client.get("/")
         html_home = res_home.data.decode("utf-8")
         self.assertNotIn("non-commercial", html_home.lower())
-        self.assertIn("independent, free-access educational information portal", html_home.lower())
+        self.assertIn("independent, free-access educational information platform", html_home.lower())
         self.assertIn("Independent Portal Notice", html_home)
 
     # =========================================================================
@@ -1103,7 +1103,9 @@ class StudySignalTestCase(unittest.TestCase):
             }
         ]
 
-        with patch("app.get_circulars", return_value=inconclusive_sample):
+        with patch("app.get_circulars", return_value=inconclusive_sample), \
+             patch("app.get_up_circulars", return_value=[]), \
+             patch("app.get_icse_circulars", return_value=[]):
             res_circ = self.client.get("/cbse/circulars")
             html_circ = res_circ.data.decode("utf-8")
             self.assertIn("Verification Inconclusive", html_circ)
@@ -2017,15 +2019,15 @@ class StudySignalTestCase(unittest.TestCase):
     # UP Board (UPMSP) Foundational Onboarding Tests
     # -------------------------------------------------------------
 
-    def test_up_board_hub_in_development(self):
-        """Verify /up-board overview hub has In Development status, verified UPMSP links,
-        dual-language terminology, confirmed 2027 timetable, and distinct model papers and PYQ links."""
+    def test_up_board_hub_active(self):
+        """Verify /up-board overview hub has Active status, verified UPMSP links,
+        dual-language terminology, confirmed 2027 timetable, and distinct sample papers and question bank links."""
         res = self.client.get("/up-board")
         self.assertEqual(res.status_code, 200)
         html = res.data.decode("utf-8")
 
-        # 1. In Development status & branding
-        self.assertIn("In Development", html)
+        # 1. Active status & branding
+        self.assertIn("Active", html)
         self.assertIn("UP Board Examination Hub", html)
         self.assertIn("उत्तर प्रदेश माध्यमिक शिक्षा परिषद्, प्रयागराज (UPMSP)", html)
 
@@ -2047,36 +2049,42 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn("Board_Syllabus.aspx", html)
         self.assertIn("Board_ModelPaper.aspx", html)
 
-        # 5. Distinct Model Papers vs PYQ links in navigation and sections
-        self.assertIn('href="/up-board/model-papers"', html)
-        self.assertIn('href="/up-board/pyq"', html)
-        self.assertIn("Official Model Papers / Sample Papers", html)
-        self.assertIn("Previous Year Question Papers (PYQs)", html)
+        # 5. Distinct Sample Papers and Question Bank links
+        self.assertIn('href="/up-board/sample-papers"', html)
+        self.assertIn('href="/up-board/question-bank"', html)
+        self.assertIn("Official Sample Papers", html)
+        self.assertIn("Question Bank", html)
         self.assertIn("Verified Subject Syllabi", html)
         self.assertIn("Official Notifications", html)
         self.assertIn("विज्ञप्ति एवं महत्वपूर्ण सूचना", html)
 
-        # 6. Non-affiliation legal disclaimer
+        # 6. Absence of UP Board PYQ references
+        self.assertNotIn('/up-board/pyq', html)
+        self.assertNotIn("Previous Year Question Papers (PYQs)", html)
+        self.assertNotIn("विगत वर्षों के प्रश्न-पत्र", html)
+
+        # 7. Non-affiliation legal disclaimer
         self.assertIn("UPMSP Non-Affiliation Legal Notice", html)
         self.assertIn("NOT affiliated with, endorsed by, or connected to the Uttar Pradesh Madhyamik Shiksha Parishad", html)
 
     def test_up_board_class_hubs(self):
-        """Verify UP Board High School (Class 10) and Intermediate (Class 12) portals with separate model paper and PYQ navigation."""
+        """Verify UP Board High School (Class 10) and Intermediate (Class 12) portals with separate sample paper and question bank navigation."""
         # 1. High School (Class 10) Hub
         res10 = self.client.get("/up-board/class-10")
         self.assertEqual(res10.status_code, 200)
         html10 = res10.data.decode("utf-8")
         self.assertIn("UP Board High School (Class 10)", html10)
         self.assertIn("हाईस्कूल (कक्षा 10)", html10)
-        self.assertIn("In Development", html10)
+        self.assertIn("Active", html10)
         self.assertIn("Official 2027 Schedule Confirmed", html10)
         self.assertIn("05 Feb 2027 to 24 Feb 2027", html10)
         self.assertIn("High School Official Syllabi", html10)
         self.assertIn("कोड: 901", html10)
         self.assertIn("कोड: 928", html10)
-        self.assertIn("Official Model Papers / Sample Papers", html10)
-        self.assertIn('href="/up-board/model-papers?class=10"', html10)
-        self.assertIn('href="/up-board/pyq?class=10"', html10)
+        self.assertIn("Official Sample Papers / Model Papers", html10)
+        self.assertIn('href="/up-board/sample-papers?class=10"', html10)
+        self.assertIn('href="/up-board/question-bank"', html10)
+        self.assertNotIn('/up-board/pyq', html10)
         self.assertIn("TimeTable_2027_Vigyapti.pdf", html10)
 
         # 2. Intermediate (Class 12) Hub
@@ -2085,7 +2093,7 @@ class StudySignalTestCase(unittest.TestCase):
         html12 = res12.data.decode("utf-8")
         self.assertIn("UP Board Intermediate (Class 12)", html12)
         self.assertIn("इण्टरमीडिएट (कक्षा 12)", html12)
-        self.assertIn("In Development", html12)
+        self.assertIn("Active", html12)
         self.assertIn("Official 2027 Schedule Confirmed", html12)
         self.assertIn("05 Feb 2027 to 24 Feb 2027", html12)
         self.assertIn("Intermediate Official Syllabi", html12)
@@ -2095,12 +2103,13 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn("मानविकी व कला वर्ग", html12)
         self.assertIn("वाणिज्य वर्ग", html12)
         self.assertIn("कृषि वर्ग", html12)
-        self.assertIn("Official Model Papers / Sample Papers", html12)
-        self.assertIn('href="/up-board/model-papers?class=12"', html12)
-        self.assertIn('href="/up-board/pyq?class=12"', html12)
+        self.assertIn("Official Sample Papers / Model Papers", html12)
+        self.assertIn('href="/up-board/sample-papers?class=12"', html12)
+        self.assertIn('href="/up-board/question-bank"', html12)
+        self.assertNotIn('/up-board/pyq', html12)
 
     def test_up_board_subroutes_status_views(self):
-        """Verify dedicated views for datesheets, syllabus, circulars, official model papers, and PYQ archive status."""
+        """Verify dedicated views for datesheets, syllabus, circulars, sample papers, question bank, and 404 for removed pyq."""
         # 1. Datesheets
         res_ds = self.client.get("/up-board/datesheets")
         self.assertEqual(res_ds.status_code, 200)
@@ -2137,48 +2146,69 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn("मा०शि०प०/समन्वय/183-7", html_circ)
         self.assertIn("12 October 2026", html_circ)
 
-        # 5. Dedicated Model Papers page (/up-board/model-papers)
+        # 5. Dedicated Sample Papers page (/up-board/sample-papers)
+        res_sp = self.client.get("/up-board/sample-papers")
+        self.assertEqual(res_sp.status_code, 200)
+        html_sp = res_sp.data.decode("utf-8")
+        self.assertIn("UP Board Official Sample Papers / Model Papers", html_sp)
+        self.assertIn("Official Sample Paper", html_sp)
+        self.assertIn("High School (Class 10) Sample Papers", html_sp)
+        self.assertIn("Intermediate (Class 12) Sample Papers", html_sp)
+        self.assertIn("कोड: 901", html_sp)
+        self.assertIn("कोड: 151", html_sp)
+        self.assertIn("https://upmsp.edu.in/Downloads/ModelPaper/class10/901-Hindi.pdf", html_sp)
+        self.assertIn("https://upmsp.edu.in/Downloads/ModelPaper/class12/151-Physics.pdf", html_sp)
+        self.assertIn("View PDF ↗", html_sp)
+        self.assertIn("Download", html_sp)
+        # Must NOT be labeled as PYQ
+        self.assertNotIn("Previous Year Question Papers (PYQs)", html_sp)
+        self.assertNotIn("विगत वर्षों के प्रश्न-पत्र", html_sp)
+
+        # 6. Sample Papers Search filtering
+        res_sp_search = self.client.get("/up-board/sample-papers?q=901")
+        self.assertEqual(res_sp_search.status_code, 200)
+        html_sp_search = res_sp_search.data.decode("utf-8")
+        self.assertIn("कोड: 901", html_sp_search)
+        self.assertNotIn("कोड: 928", html_sp_search)
+
+        # 7. Model-papers alias route
         res_mp = self.client.get("/up-board/model-papers")
         self.assertEqual(res_mp.status_code, 200)
-        html_mp = res_mp.data.decode("utf-8")
-        self.assertIn("UP Board Official Model Papers / Sample Papers", html_mp)
-        self.assertIn("Official Model Paper", html_mp)
-        self.assertIn("मॉडल प्रश्न पत्र", html_mp)
-        self.assertIn("कोड: 901", html_mp)
-        self.assertIn("https://upmsp.edu.in/Downloads/ModelPaper/class10/901-Hindi.pdf", html_mp)
-        # Must NOT be labeled as PYQ or past exam papers
-        self.assertNotIn("Previous Year Question Papers (PYQs)", html_mp)
-        self.assertNotIn("विगत वर्षों के प्रश्न-पत्र", html_mp)
-        self.assertNotIn("10-Year Question Bank", html_mp)
+        self.assertIn("UP Board Official Sample Papers / Model Papers", res_mp.data.decode("utf-8"))
 
-        # 6. Dedicated PYQ page (/up-board/pyq)
+        # 8. Dedicated Question Bank page (/up-board/question-bank)
+        res_qb = self.client.get("/up-board/question-bank")
+        self.assertEqual(res_qb.status_code, 200)
+        html_qb = res_qb.data.decode("utf-8")
+        self.assertIn("UP Board Official Question Bank", html_qb)
+        self.assertIn("अधिकृत प्रश्न बैंक", html_qb)
+        self.assertIn("Awaiting Official Release", html_qb)
+        self.assertIn("कक्षा 9 आधारभूत अधिकृत प्रश्न बैंक", html_qb)
+        self.assertIn("https://upmsp.edu.in/Downloads/QuestionBank/901_Hindi.pdf", html_qb)
+        # Must NOT be labeled as PYQs
+        self.assertNotIn("Previous Year Question Papers (PYQs)", html_qb)
+
+        # 9. Removed PYQ route returns 404
         res_pyq = self.client.get("/up-board/pyq")
-        self.assertEqual(res_pyq.status_code, 200)
-        html_pyq = res_pyq.data.decode("utf-8")
-        self.assertIn("UP Board Previous Year Question Papers (PYQs)", html_pyq)
-        self.assertIn("विगत वर्षों के प्रश्न-पत्र", html_pyq)
-        self.assertIn("Coming Soon", html_pyq)
-        self.assertIn("Awaiting Verified Official Archives", html_pyq)
-        # Must NOT list model papers as PYQs
-        self.assertNotIn("Downloads/ModelPaper", html_pyq)
-        self.assertNotIn("901-Hindi.pdf", html_pyq)
+        self.assertEqual(res_pyq.status_code, 404)
 
-    def test_boards_up_card_in_development(self):
-        """Verify on /boards that UP Board is marked In Development with correct links."""
+    def test_boards_up_card_active(self):
+        """Verify on /boards that UP Board is marked Active with correct links and updated description."""
         res = self.client.get("/boards")
         self.assertEqual(res.status_code, 200)
         html = res.data.decode("utf-8")
 
         self.assertIn("UP Board", html)
         self.assertIn("Uttar Pradesh Madhyamik Shiksha Parishad (UPMSP)", html)
-        self.assertIn("In Development", html)
-        self.assertIn("View UP Board Status &rarr;", html)
+        self.assertIn("Active", html)
+        self.assertIn("Explore UP Board Portal &rarr;", html)
+        self.assertIn("Comprehensive UP Board resources for High School (Class 10) and Intermediate (Class 12)", html)
         self.assertIn('href="/up-board"', html)
         self.assertIn('href="/up-board/class-10"', html)
         self.assertIn('href="/up-board/class-12"', html)
 
     def test_sitemap_includes_up_board(self):
-        """Verify /sitemap.xml contains UP Board foundational routes, including model-papers and pyq."""
+        """Verify /sitemap.xml contains UP Board foundational routes including sample-papers and question-bank, and excludes pyq."""
         res = self.client.get("/sitemap.xml")
         self.assertEqual(res.status_code, 200)
         xml = res.data.decode("utf-8")
@@ -2186,12 +2216,13 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn("/up-board/class-10", xml)
         self.assertIn("/up-board/class-12", xml)
         self.assertIn("/up-board/datesheets", xml)
-        self.assertIn("/up-board/model-papers", xml)
-        self.assertIn("/up-board/pyq", xml)
+        self.assertIn("/up-board/sample-papers", xml)
+        self.assertIn("/up-board/question-bank", xml)
+        self.assertNotIn("/up-board/pyq", xml)
 
     def test_up_board_data_files_integrity(self):
         """Verify that all populated UP Board records have official URLs, 
-        last_verified dates, official UPMSP domains, and correct model paper labeling."""
+        last_verified dates, official UPMSP domains, and correct sample paper and question bank labeling."""
         import json
         # 1. Datesheets
         with open(os.path.join(app.root_path, "data", "up_datesheets.json"), "r", encoding="utf-8") as f:
@@ -2207,27 +2238,182 @@ class StudySignalTestCase(unittest.TestCase):
             syl = json.load(f)
         self.assertEqual(len(syl), 21)
         for s in syl:
-            self.assertEqual(s["last_verified"], "2026-11-05")
+            self.assertEqual(s["last_verified"], "2026-11-07")
             self.assertTrue(s["official_url"].startswith("https://upmsp.edu.in"))
             self.assertTrue(s["is_official"])
 
-        # 3. Model Papers (Labeled Official Model Paper, NOT historical PYQs)
-        with open(os.path.join(app.root_path, "data", "up_pyq.json"), "r", encoding="utf-8") as f:
-            pyq = json.load(f)
-        self.assertEqual(len(pyq), 16)
-        for p in pyq:
-            self.assertEqual(p["last_verified"], "2026-11-05")
-            self.assertTrue(p["official_url"].startswith("https://upmsp.edu.in"))
-            self.assertEqual(p["paper_type"], "Official Model Paper (मॉडल प्रश्न पत्र)")
-            self.assertTrue(p["is_available"])
+        # 3. Sample Papers (23 verified official papers: 12 Class 10, 11 Class 12)
+        with open(os.path.join(app.root_path, "data", "up_sample_papers.json"), "r", encoding="utf-8") as f:
+            sp = json.load(f)
+        self.assertEqual(len(sp), 23)
+        c10_sp = [p for p in sp if p["class"] == "10"]
+        c12_sp = [p for p in sp if p["class"] == "12"]
+        self.assertEqual(len(c10_sp), 12)
+        self.assertEqual(len(c12_sp), 11)
+        for p in sp:
+            self.assertEqual(p["last_verified"], "2026-11-07")
+            self.assertTrue(p["view_url"].startswith("https://upmsp.edu.in/Downloads/ModelPaper/"))
+            self.assertTrue(p["download_url"].startswith("https://upmsp.edu.in/Downloads/ModelPaper/"))
+            self.assertEqual(p["verification_status"], "verified_official")
+            self.assertEqual(p["academic_session"], "2026-27")
+            self.assertIn("3 Hours 15 Minutes", p["duration"])
+            self.assertIn(p["max_marks"], [70, 100])
 
-        # 4. Circulars
+        # 4. Question Bank
+        with open(os.path.join(app.root_path, "data", "up_question_bank.json"), "r", encoding="utf-8") as f:
+            qb = json.load(f)
+        self.assertEqual(qb["metadata"]["official_source"], "https://upmsp.edu.in/Board_QuestionBank.aspx")
+        self.assertEqual(qb["classes"]["10"]["status"], "awaiting_official_release")
+        self.assertEqual(qb["classes"]["12"]["status"], "awaiting_official_release")
+        self.assertEqual(len(qb["classes"]["9"]["items"]), 16)
+        for item in qb["classes"]["9"]["items"]:
+            self.assertTrue(item["download_url"].startswith("https://upmsp.edu.in/Downloads/QuestionBank/"))
+
+        # 5. Circulars
         with open(os.path.join(app.root_path, "data", "up_circulars.json"), "r", encoding="utf-8") as f:
             circ = json.load(f)
         self.assertEqual(len(circ), 5)
         for c in circ:
             self.assertEqual(c["last_verified"], "2026-11-05")
             self.assertTrue(c["official_url"].startswith("https://upmsp.edu.in"))
+
+
+    # =========================================================================
+    # Multi-Board Homepage Upgrade & Branding Modernisation Tests
+    # =========================================================================
+
+    def test_multi_board_homepage_branding_and_hero(self):
+        """Verify homepage hero badge, heading, description, search placeholder, and no CBSE-only platform claims"""
+        res = self.client.get("/")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+
+        # Hero badge & heading
+        self.assertIn("Independent Boards &amp; Exam Resources", html)
+        self.assertIn("Verified Board &amp; Competitive Exam Information", html)
+        self.assertIn("StudySignal is an independent educational platform providing verified syllabus PDFs, official date sheets, sample papers, circulars, and notices across CBSE, UP Board (UPMSP), and CISCE (ICSE &amp; ISC).", html)
+        self.assertIn('placeholder="Search subjects, codes, circulars, or boards across India..."', html)
+
+        # Popular search chips
+        self.assertIn("CBSE Class 10 Math", html)
+        self.assertIn("UP Board Hindi 901", html)
+        self.assertIn("ICSE Class 10 English", html)
+        self.assertIn("UP Board High School", html)
+        self.assertIn("ISC Class 12 Physics", html)
+
+        # No CBSE-only platform claims
+        self.assertNotIn("Dedicated CBSE Education Information Portal", html)
+        self.assertNotIn("CBSE Class 10 & 12 Examination Hub", html)
+
+    def test_multi_board_navigation_and_announcement_bar(self):
+        """Verify top bar uses 'Official Sources' with cbse, upmsp, cisce and dropdown links to /cbse"""
+        res = self.client.get("/")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+
+        # Top announcement bar
+        self.assertIn("Official Sources:", html)
+        self.assertNotIn("Official CBSE Links:", html)
+        self.assertIn("https://www.cbse.gov.in", html)
+        self.assertIn("https://upmsp.edu.in", html)
+        self.assertIn("https://cisce.org", html)
+
+        # Navigation dropdown
+        self.assertIn('href="/cbse"', html)
+        self.assertIn('href="/up-board"', html)
+        self.assertIn('href="/icse"', html)
+
+    def test_multi_board_independent_portal_notice(self):
+        """Verify site-wide advisory notice includes CBSE, UPMSP, CISCE, ICSE, ISC"""
+        res = self.client.get("/")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+
+        self.assertIn("INDEPENDENT PORTAL NOTICE", html)
+        self.assertIn("Central Board of Secondary Education (CBSE)", html)
+        self.assertIn("Uttar Pradesh Madhyamik Shiksha Parishad (UPMSP)", html)
+        self.assertIn("Council for the Indian School Certificate Examinations (CISCE / ICSE / ISC)", html)
+
+    def test_multi_board_dedicated_portals_section(self):
+        """Verify Dedicated Boards & Exam Portals section contains CBSE, UP Board, and CISCE cards with working links"""
+        res = self.client.get("/")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+
+        self.assertIn("Dedicated Boards &amp; Exam Portals", html)
+        # CBSE card
+        self.assertIn('href="/cbse/class-10"', html)
+        self.assertIn('href="/cbse/class-12"', html)
+        self.assertIn('href="/cbse/datesheets"', html)
+        self.assertIn('href="/cbse/syllabus"', html)
+        self.assertIn('href="/cbse/pyq"', html)
+        self.assertIn('href="/cbse/circulars"', html)
+
+        # UP Board card
+        self.assertIn('href="/up-board/class-10"', html)
+        self.assertIn('href="/up-board/class-12"', html)
+        self.assertIn('href="/up-board/sample-papers"', html)
+        self.assertIn('href="/up-board/question-bank"', html)
+        self.assertIn('href="/up-board/datesheets"', html)
+        self.assertIn('href="/up-board/circulars"', html)
+
+        # CISCE card
+        self.assertIn('href="/icse/class-10"', html)
+        self.assertIn('href="/icse/class-12"', html)
+        self.assertIn('href="/icse/syllabus"', html)
+        self.assertIn('href="/icse/pyq"', html)
+        self.assertIn('href="/icse/datesheets"', html)
+        self.assertIn('href="/icse/circulars"', html)
+
+    def test_multi_board_syllabus_and_circulars_sections(self):
+        """Verify syllabus and circulars sections contain board badges, filters, and source hosts"""
+        res = self.client.get("/")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+
+        # Syllabus
+        self.assertIn("Verified Official Syllabus Resources", html)
+        self.assertIn("syllabus-filter-bar", html)
+        self.assertIn("cbseacademic.nic.in", html)
+        self.assertIn("upmsp.edu.in", html)
+        self.assertIn("cisce.org", html)
+
+        # Circulars
+        self.assertIn("Boards &amp; Examination Updates", html)
+        self.assertIn("circulars-filter-bar", html)
+        self.assertIn("Reminder: Submission of List of Candidates", html)
+
+    def test_multi_board_datesheet_advisory_and_footer(self):
+        """Verify multi-board datesheet advisory and footer columns"""
+        res = self.client.get("/")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+
+        # Datesheet advisory
+        self.assertIn("Board-wise Examination Date Sheet Advisory", html)
+        self.assertIn('href="/cbse/datesheets"', html)
+        self.assertIn('href="/up-board/datesheets"', html)
+        self.assertIn('href="/icse/datesheets"', html)
+
+        # Footer
+        self.assertIn("Multi-Board Educational Platform", html)
+        self.assertIn("Boards &amp; Exam Resources", html)
+        self.assertIn("Official Sources", html)
+        self.assertIn("cbse.gov.in", html)
+        self.assertIn("upmsp.edu.in", html)
+        self.assertIn("cisce.org", html)
+
+
+    def test_upmsp_official_urls_integrity(self):
+        """Verify that UPMSP official URLs point to active .aspx endpoints, not dead .html files."""
+        self.assertEqual(Config.OFFICIAL_URLS["upmsp_syllabus"], "https://upmsp.edu.in/Board_Syllabus.aspx")
+        self.assertEqual(Config.OFFICIAL_URLS["upmsp_model_papers"], "https://upmsp.edu.in/Board_ModelPaper.aspx")
+        self.assertEqual(Config.OFFICIAL_URLS["upmsp_question_bank"], "https://upmsp.edu.in/Board_QuestionBank.aspx")
+        for k, v in Config.OFFICIAL_URLS.items():
+            if "upmsp" in k:
+                self.assertNotIn("Syllabus.html", v, f"Dead URL Syllabus.html found in {k}")
+                self.assertNotIn("ModelPaper.html", v, f"Dead URL ModelPaper.html found in {k}")
+                self.assertNotIn("QuestionBank.html", v, f"Dead URL QuestionBank.html found in {k}")
 
 if __name__ == "__main__":
     unittest.main()

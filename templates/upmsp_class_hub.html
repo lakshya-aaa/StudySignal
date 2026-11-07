@@ -20,7 +20,7 @@ StudySignal verified academic portal for {{ class_title }} (UPMSP Prayagraj). Of
     <div class="container">
       <div class="hub-hero-banner">
         <div class="hub-hero-badge">
-          <span>🇮🇳 UPMSP Official Academic Framework &bull; <strong class="badge-status-dev" style="margin-left: 4px; vertical-align: middle;">In Development</strong></span>
+          <span>🇮🇳 UPMSP Official Academic Framework &bull; <strong class="badge-status-active" style="margin-left: 4px; vertical-align: middle;">Active</strong></span>
         </div>
         <h1 class="hub-hero-title">
           {{ class_title }}
@@ -44,7 +44,7 @@ StudySignal verified academic portal for {{ class_title }} (UPMSP Prayagraj). Of
             <span>📚 <strong>{{ syllabus_items|length }}</strong> Verified Syllabi</span>
           </div>
           <div class="hub-stat-pill">
-            <span>📝 <strong>{{ model_papers|length }}</strong> Official Model Papers</span>
+            <span>📝 <strong>{{ sample_papers|length }}</strong> Official Sample Papers</span>
           </div>
         </div>
 
@@ -58,11 +58,11 @@ StudySignal verified academic portal for {{ class_title }} (UPMSP Prayagraj). Of
           <a href="/up-board/syllabus?class={{ class_num }}" class="btn-secondary" style="width: auto;">
             Syllabus Directory &rarr;
           </a>
-          <a href="/up-board/model-papers?class={{ class_num }}" class="btn-secondary" style="width: auto;">
-            Official Model Papers &rarr;
+          <a href="/up-board/sample-papers?class={{ class_num }}" class="btn-secondary" style="width: auto;">
+            Official Sample Papers &rarr;
           </a>
-          <a href="/up-board/pyq?class={{ class_num }}" class="btn-secondary" style="width: auto;">
-            PYQ Archive Status &rarr;
+          <a href="/up-board/question-bank" class="btn-secondary" style="width: auto;">
+            Official Question Bank &rarr;
           </a>
         </div>
       </div>
@@ -85,11 +85,11 @@ StudySignal verified academic portal for {{ class_title }} (UPMSP Prayagraj). Of
         <a href="/up-board/syllabus?class={{ class_num }}" class="selector-pill">
           📚 पाठ्यक्रम (Syllabus)
         </a>
-        <a href="/up-board/model-papers?class={{ class_num }}" class="selector-pill">
-          📝 मॉडल प्रश्न पत्र (Model Papers)
+        <a href="/up-board/sample-papers?class={{ class_num }}" class="selector-pill">
+          📝 मॉडल प्रश्न पत्र (Sample Papers)
         </a>
-        <a href="/up-board/pyq?class={{ class_num }}" class="selector-pill">
-          📁 विगत वर्ष प्रश्न पत्र (PYQs)
+        <a href="/up-board/question-bank" class="selector-pill">
+          📚 अधिकृत प्रश्न बैंक (Question Bank)
         </a>
         <a href="/up-board/circulars?class={{ class_num }}" class="selector-pill">
           📢 विज्ञप्ति (Circulars)
@@ -229,10 +229,16 @@ StudySignal verified academic portal for {{ class_title }} (UPMSP Prayagraj). Of
             {% endif %}
           </div>
           <div style="margin-top: auto; padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-size: 0.7rem; color: #94a3b8;">सत्यापित: {{ item.last_verified or '05-11-2026' }}</span>
+            <span style="font-size: 0.7rem; color: #94a3b8;">सत्यापित: {{ item.last_verified or '07-11-2026' }}</span>
+            {% if item.official_url and item.verification_status == 'verified_official' %}
             <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;">
               Official PDF ↗
             </a>
+            {% else %}
+            <span class="btn-sm btn-disabled-soon" style="padding: 0.35rem 0.75rem; font-size: 0.8rem; background: #f1f5f9; color: #64748b; border: 1px solid #cbd5e1; cursor: not-allowed;">
+              Official link currently unavailable
+            </span>
+            {% endif %}
           </div>
         </div>
         {% endfor %}
@@ -245,71 +251,84 @@ StudySignal verified academic portal for {{ class_title }} (UPMSP Prayagraj). Of
     </div>
   </section>
 
-  <!-- Official Model Question Papers Section (NOT PYQs) -->
+  <!-- Official Sample Question Papers Section -->
   <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
     <div class="container">
       <div class="section-header" style="margin-bottom: 1.25rem; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 0.75rem;">
         <div>
           <h2 style="font-size: 1.45rem; font-weight: 800; color: var(--primary-headings); margin-bottom: 0.35rem;">
-            Official Model Papers / Sample Papers &bull; मॉडल प्रश्न पत्र (सत्र 2026–27)
+            Official Sample Papers / Model Papers &bull; मॉडल प्रश्न पत्र (सत्र 2026–27)
           </h2>
           <p style="color: var(--text-muted); font-size: 0.9375rem; margin: 0;">
             Authoritative examination blueprints released directly by UPMSP Prayagraj on <code>Board_ModelPaper.aspx</code>:
           </p>
         </div>
         <div>
-          <a href="/up-board/model-papers?class={{ class_num }}" class="btn-sm btn-secondary">
-            View All Model Papers &rarr;
+          <a href="/up-board/sample-papers?class={{ class_num }}" class="btn-sm btn-secondary">
+            View All Sample Papers &rarr;
           </a>
         </div>
       </div>
 
-      {% if model_papers and model_papers|length > 0 %}
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;">
-        {% for paper in model_papers %}
+      {% if sample_papers and sample_papers|length > 0 %}
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.25rem;">
+        {% for paper in sample_papers %}
         <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; display: flex; flex-direction: column; box-shadow: 0 2px 8px rgba(15,23,42,0.04);">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
-            <span style="font-size: 0.75rem; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-weight: 700;">
-              कोड: {{ paper.code }}
-            </span>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.4rem;">
+            <div style="display: flex; align-items: center; gap: 0.35rem;">
+              <span style="font-size: 0.75rem; background: {% if class_num == '10' %}#e0f2fe; color: #0369a1;{% else %}#f0fdf4; color: #166534;{% endif %} padding: 2px 8px; border-radius: 4px; font-weight: 700;">
+                कोड: {{ paper.code }}
+              </span>
+              {% if paper.stream %}
+              <span style="font-size: 0.7rem; background: #f8fafc; color: #475569; border: 1px solid #e2e8f0; border-radius: 4px; padding: 1px 6px;">
+                {{ paper.stream }}
+              </span>
+              {% endif %}
+            </div>
             <span style="font-size: 0.75rem; background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 4px; font-weight: 600;">
-              Official Model Paper
+              Official Sample Paper
             </span>
           </div>
           <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--primary); margin: 0 0 0.35rem 0;">
             {{ paper.subject }}
           </h3>
-          <div style="font-size: 0.8rem; color: #64748b; margin-bottom: 0.75rem; line-height: 1.4;">
-            समय: {{ paper.duration or '3 घण्टे 15 मिनट' }}<br>
-            पूर्णांक: {{ paper.max_marks or (70 if class_num == '10' else 100) }} अंक
+          <div style="font-size: 0.8rem; color: #64748b; margin-bottom: 0.75rem; line-height: 1.5;">
+            <div>समय: {{ paper.duration or '3 घण्टे 15 मिनट' }}</div>
+            <div>पूर्णांक: {{ paper.max_marks or (70 if class_num == '10' else 100) }} अंक</div>
+            <div>सत्र: {{ paper.academic_session or '2026-27' }} &bull; स्रोत: upmsp.edu.in</div>
           </div>
-          <div style="margin-top: auto; padding-top: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
-            <span style="font-size: 0.7rem; color: #94a3b8;">सत्यापित: {{ paper.last_verified or '05-11-2026' }}</span>
-            <a href="{{ paper.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary" style="padding: 0.35rem 0.75rem; font-size: 0.8rem;">
-              Model Paper PDF ↗
-            </a>
+          <div style="margin-top: auto; padding-top: 0.75rem; border-top: 1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center; gap: 0.5rem;">
+            <span style="font-size: 0.7rem; color: #94a3b8;">सत्यापित: {{ paper.last_verified or '07-11-2026' }}</span>
+            <div style="display: flex; gap: 0.35rem;">
+              <a href="{{ paper.view_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="padding: 0.35rem 0.65rem; font-size: 0.775rem;">
+                View ↗
+              </a>
+              <a href="{{ paper.download_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary" style="padding: 0.35rem 0.65rem; font-size: 0.775rem;">
+                Download
+              </a>
+            </div>
           </div>
         </div>
         {% endfor %}
       </div>
       {% else %}
       <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; text-align: center; color: #64748b;">
-        No official model papers verified for this class yet.
+        No official sample papers verified for this class yet.
       </div>
       {% endif %}
 
-      <!-- PYQ Archive Status Banner -->
-      <div style="margin-top: 1.5rem; background: #fffbeb; border: 1px solid #fde68a; border-radius: 10px; padding: 1.15rem 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+      <!-- Question Bank Separate Tracker Banner -->
+      <div style="margin-top: 1.5rem; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 10px; padding: 1.15rem 1.25rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
         <div>
-          <strong style="color: #92400e; font-size: 0.95rem; display: block; margin-bottom: 0.25rem;">
-            📁 Previous Year Question Papers (PYQs) &bull; विगत वर्षों के प्रश्न-पत्र
+          <strong style="color: #166534; font-size: 0.95rem; display: block; margin-bottom: 0.25rem;">
+            📚 UPMSP Official Question Bank (प्रश्न बैंक) &bull; {{ course_name }}
           </strong>
-          <p style="color: #78350f; font-size: 0.85rem; margin: 0; line-height: 1.5;">
-            Historical multi-year question paper archives are awaiting authenticated UPMSP release.
+          <p style="color: #15803d; font-size: 0.85rem; margin: 0; line-height: 1.5;">
+            Official question bank release for {{ course_name }} (Class {{ class_num }}) is currently awaiting official publication on <code>upmsp.edu.in/Board_QuestionBank.aspx</code>.
           </p>
         </div>
-        <a href="/up-board/pyq?class={{ class_num }}" class="btn-sm btn-secondary" style="border-color: #f59e0b; color: #92400e;">
-          Check PYQ Archive Status &rarr;
+        <a href="/up-board/question-bank" class="btn-sm btn-secondary" style="border-color: #16a34a; color: #166534;">
+          Open Question Bank Tracker &rarr;
         </a>
       </div>
     </div>

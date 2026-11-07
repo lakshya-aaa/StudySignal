@@ -1,0 +1,118 @@
+{
+  "metadata": {
+    "title": "UP Board Official Question Bank (प्रश्न बैंक)",
+    "official_source": "https://upmsp.edu.in/Board_QuestionBank.aspx",
+    "authority": "Uttar Pradesh Madhyamik Shiksha Parishad (UPMSP), Prayagraj",
+    "last_verified": "2026-11-07",
+    "description": "Official subject-wise Question Banks published directly by UPMSP on Board_QuestionBank.aspx. UPMSP has presently released question banks for foundational Class 9. Official question banks for High School (Class 10) and Intermediate (Class 12) are awaiting publication by the board."
+  },
+  "classes": {
+    "10": {
+      "name": "High School (Class 10)",
+      "name_hindi": "हाई स्कूल (कक्षा 10)",
+      "status": "awaiting_official_release",
+      "status_label": "Awaiting Official Release from UPMSP",
+      "status_label_hindi": "आधिकारिक विमोचन प्रतीक्षित",
+      "message": "UPMSP has not yet released official Question Bank PDFs for Class 10 on the official Board_QuestionBank.aspx portal. Under StudySignal's strict verification policy, links will be published immediately once issued by UPMSP.",
+      "items": []
+    },
+    "12": {
+      "name": "Intermediate (Class 12)",
+      "name_hindi": "इण्टरमीडिएट (कक्षा 12)",
+      "status": "awaiting_official_release",
+      "status_label": "Awaiting Official Release from UPMSP",
+      "status_label_hindi": "आधिकारिक विमोचन प्रतीक्षित",
+      "message": "UPMSP has not yet released official Question Bank PDFs for Class 12 on the official Board_QuestionBank.aspx portal. Under StudySignal's strict verification policy, links will be published immediately once issued by UPMSP.",
+      "items": []
+    },
+    "9": {
+      "name": "Class 9 Foundation",
+      "name_hindi": "कक्षा 9 आधारभूत",
+      "status": "available",
+      "status_label": "Official UPMSP Archive Available",
+      "status_label_hindi": "परिषद द्वारा उपलब्ध",
+      "items": [
+        {
+          "code": "901",
+          "subject": "Hindi (हिन्दी)",
+          "download_url": "https://upmsp.edu.in/Downloads/QuestionBank/901_Hindi.pdf"
+        },
+        {
+          "code": "902",
+          "subject": "Elementary Hindi (प्रारम्भिक हिन्दी)",
+          "download_url": "https://upmsp.edu.in/Downloads/QuestionBank/902_Prarambhik_Hindi.pdf"
+        },
+        {
+          "code": "903",
+          "subject": "Sanskrit (संस्कृत)",
+          "download_url": "https://upmsp.edu.in/Downloads/QuestionBank/903_Sanskrit.pdf"
+        },
+        {
+          "code": "905",
+          "subject": "Urdu (उर्दू)",
+          "download_url": "https://upmsp.edu.in/Downloads/QuestionBank/905_Urdu.pdf"
+        },
+        {
+          "code": "911",
+          "subject": "Mathematics (गणित)",
+          "download_url": "https://upmsp.edu.in/Downloads/QuestionBank/911_Ganit.pdf"
+        },
+        {
+          "code": "912",
+          "subject": "Science (विज्ञान)",
+          "download_url": "https://upmsp.edu.in/Downloads/QuestionBank/912_Vigyan.pdf"
+        },
+        {
+          "code": "913",
+          "subject": "Social Science (सामाजिक विज्ञान)",
+          "download_url": "https://upmsp.edu.in/Downloads/QuestionBank/913_Samajik_Vigyan.pdf"
+        },
+        {
+          "code": "917",
+          "subject": "English (अंग्रेजी)",
+          "download_url": "https://upmsp.edu.in/Downloads/QuestionBank/917_English.pdf"
+        },
+        {
+          "code": "928",
+          "subject": "Home Science (गृह विज्ञान)",
+          "download_url": "https://upmsp.edu.in/Downloads/QuestionBank/928_Home_Science.pdf"
+        },
+        {
+          "code": "931",
+          "subject": "Drawing / Art (चित्रकला)",
+          "download_url": "https://upmsp.edu.in/Downloads/QuestionBank/931_Chitrakala.pdf"
+        },
+        {
+          "code": "932",
+          "subject": "Ranjankala (रंजनकला)",
+          "download_url": "https://upmsp.edu.in/Downloads/QuestionBank/932_Ranjankala.pdf"
+        },
+        {
+          "code": "935",
+          "subject": "Music Vocal (संगीत गायन)",
+          "download_url": "https://upmsp.edu.in/Downloads/QuestionBank/935_Sangeet_Gayan.pdf"
+        },
+        {
+          "code": "936",
+          "subject": "Music Instrumental (संगीत वादन)",
+          "download_url": "https://upmsp.edu.in/Downloads/QuestionBank/936_Sangeet_Vadan.pdf"
+        },
+        {
+          "code": "937",
+          "subject": "Commerce (वाणिज्य)",
+          "download_url": "https://upmsp.edu.in/Downloads/QuestionBank/937_Vanijya.pdf"
+        },
+        {
+          "code": "938",
+          "subject": "Agriculture (कृषि)",
+          "download_url": "https://upmsp.edu.in/Downloads/QuestionBank/938_Krishi.pdf"
+        },
+        {
+          "code": "941",
+          "subject": "Computer (कम्प्यूटर)",
+          "download_url": "https://upmsp.edu.in/Downloads/QuestionBank/941_Computer.pdf"
+        }
+      ]
+    }
+  }
+}

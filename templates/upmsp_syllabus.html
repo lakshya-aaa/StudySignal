@@ -20,7 +20,7 @@ Official UP Board (UPMSP Prayagraj) High School (Class 10) and Intermediate (Cla
     <div class="container">
       <div class="hub-hero-banner">
         <div class="hub-hero-badge">
-          <span>🇮🇳 UPMSP Official Curriculum Tracker &bull; <strong class="badge-status-dev" style="margin-left: 4px; vertical-align: middle;">In Development</strong></span>
+          <span>🇮🇳 UPMSP Official Curriculum Tracker &bull; <strong class="badge-status-active" style="margin-left: 4px; vertical-align: middle;">Active</strong></span>
         </div>
         <h1 class="hub-hero-title">
           UP Board Subject-wise Syllabus Directory
@@ -142,11 +142,17 @@ Official UP Board (UPMSP Prayagraj) High School (Class 10) and Intermediate (Cla
 
           <div style="margin-top: auto; padding-top: 0.85rem; border-top: 1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center; gap: 0.5rem;">
             <span style="font-size: 0.725rem; color: #94a3b8;">
-              सत्यापित: {{ item.last_verified or '05-11-2026' }}
+              सत्यापित: {{ item.last_verified or '07-11-2026' }}
             </span>
+            {% if item.official_url and item.verification_status == 'verified_official' %}
             <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary" style="padding: 0.4rem 0.85rem; font-size: 0.825rem; white-space: nowrap;">
               Official UPMSP PDF ↗
             </a>
+            {% else %}
+            <span class="btn-sm btn-disabled-soon" style="padding: 0.4rem 0.85rem; font-size: 0.825rem; white-space: nowrap; background: #f1f5f9; color: #64748b; border: 1px solid #cbd5e1; cursor: not-allowed;">
+              Official link currently unavailable
+            </span>
+            {% endif %}
           </div>
         </div>
         {% endfor %}

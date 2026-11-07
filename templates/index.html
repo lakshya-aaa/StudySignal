@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
-{% block title %}StudySignal - CBSE Class 10 & 12 Syllabus, Date Sheets & Official Notices{% endblock %}
+{% block title %}StudySignal – Multi-Board Educational Platform (CBSE, UP Board & CISCE){% endblock %}
 
 {% block meta_description %}
-StudySignal is an independent portal providing authentic CBSE Class 10 and Class 12 syllabus PDFs, examination date sheet updates, academic circulars, and verified official board links.
+StudySignal is an independent, free-access educational platform providing authentic syllabus PDFs, official date sheets, sample papers, circulars, and notices across CBSE, UP Board (UPMSP), and CISCE (ICSE & ISC).
 {% endblock %}
 
 {% block content %}
@@ -11,13 +11,13 @@ StudySignal is an independent portal providing authentic CBSE Class 10 and Class
 <section class="hero-section">
   <div class="container hero-content">
     <div class="hero-pill-badge">
-      <span>🇮🇳 Independent CBSE Educational Resource</span>
+      <span>🇮🇳 Independent Boards &amp; Exam Resources</span>
     </div>
     <h1 class="hero-title">
-      Verified CBSE <span>Curriculum & Exam</span> Information
+      Verified Board &amp; Competitive Exam Information
     </h1>
     <p class="hero-subtitle">
-      Direct access to official CBSE Class 10 & 12 syllabus documents, board examination schedules, and official academic circulars without clutter or paywalls.
+      StudySignal is an independent educational platform providing verified syllabus PDFs, official date sheets, sample papers, circulars, and notices across CBSE, UP Board (UPMSP), and CISCE (ICSE &amp; ISC).
     </p>
 
     <!-- Hero Search -->
@@ -33,28 +33,214 @@ StudySignal is an independent portal providing authentic CBSE Class 10 and Class
           type="text" 
           name="q" 
           class="search-input-hero" 
-          placeholder="Search subjects (e.g. Mathematics, Physics, Science) or circulars..." 
-          aria-label="Search CBSE resources"
+          placeholder="Search subjects, codes, circulars, or boards across India..." 
+          aria-label="Search subjects, codes, circulars, or boards across India"
           required
         >
         <button type="submit" class="search-submit-hero">Search</button>
       </form>
     </div>
 
-    <!-- Quick Subject Links -->
+    <!-- Quick Search Chips -->
     <div class="hero-quick-tags">
       <span class="quick-label">Popular Searches:</span>
-      <a href="/search?q=Mathematics" class="quick-tag">Class 10 & 12 Maths</a>
-      <a href="/search?q=Science" class="quick-tag">Class 10 Science</a>
-      <a href="/search?q=Physics" class="quick-tag">Class 12 Physics</a>
-      <a href="/search?q=Chemistry" class="quick-tag">Class 12 Chemistry</a>
-      <a href="/search?q=Accountancy" class="quick-tag">Class 12 Accountancy</a>
-      <a href="/cbse/datesheets" class="quick-tag">Exam Date Sheet Status</a>
+      <a href="/search?q=CBSE+Class+10+Math" class="quick-tag">CBSE Class 10 Math</a>
+      <a href="/search?q=CBSE+Class+12+Physics" class="quick-tag">CBSE Class 12 Physics</a>
+      <a href="/search?q=UP+Board+Hindi+901" class="quick-tag">UP Board Hindi 901</a>
+      <a href="/search?q=UP+Board+High+School" class="quick-tag">UP Board High School</a>
+      <a href="/search?q=ICSE+Class+10+English" class="quick-tag">ICSE Class 10 English</a>
+      <a href="/search?q=ISC+Class+12+Physics" class="quick-tag">ISC Class 12 Physics</a>
     </div>
   </div>
 </section>
 
-<!-- Boards & Competitive Exams Selector Section -->
+<!-- Dedicated Boards & Exam Portals Section -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <div class="hero-pill-badge" style="margin-bottom: 0.5rem; display: inline-block;">
+          <span>🇮🇳 Supported Education Boards</span>
+        </div>
+        <h2 class="section-title">Dedicated Boards &amp; Exam Portals</h2>
+        <p class="section-subtitle">
+          Explore dedicated academic resources, examination updates and official information for different education boards and examinations.
+        </p>
+      </div>
+      <a href="/boards" class="section-action">View All Boards Directory &rarr;</a>
+    </div>
+
+    <!-- 3-Column Board Cards Grid -->
+    <div class="class-portal-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+      <!-- Card 1: CBSE -->
+      <div class="class-card class-10" style="border-top: 5px solid var(--brand-blue);">
+        <div class="class-card-header">
+          <span class="class-badge" style="background: #e0f2fe; color: #0369a1;">National Board &bull; Classes 10 &amp; 12</span>
+          <span class="badge-status-active">Active</span>
+        </div>
+        <h3 class="class-card-title">CBSE – Central Board of Secondary Education</h3>
+        <p class="class-card-desc">
+          Comprehensive verified coverage for CBSE Class 10 (Secondary) and Class 12 (Senior Secondary). Curricula, official subject syllabi, date sheets, academic circulars, and PYQ library (2014–2025).
+        </p>
+        <ul class="class-quick-links">
+          <li>
+            <a href="/cbse/class-10">
+              <span>CBSE Class 10 Portal</span>
+              <span>&rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="/cbse/class-12">
+              <span>CBSE Class 12 Portal</span>
+              <span>&rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="/cbse/syllabus">
+              <span>Subject Syllabi Directory (2026–27)</span>
+              <span>↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="/cbse/datesheets">
+              <span>Exam Date Sheets &amp; Status</span>
+              <span>&rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="/cbse/circulars">
+              <span>Circulars &amp; Official Notices</span>
+              <span>&rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="/cbse/pyq">
+              <span>CBSE PYQ Library (2014–2025)</span>
+              <span>&rarr;</span>
+            </a>
+          </li>
+        </ul>
+        <div class="class-card-footer">
+          <a href="/cbse" class="btn-primary" style="width: 100%; text-align: center;">Explore CBSE Resources &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Card 2: UP Board -->
+      <div class="class-card" style="border-top: 5px solid #0284c7; background: #ffffff;">
+        <div class="class-card-header">
+          <span class="class-badge" style="background: #e0f2fe; color: #0284c7;">State Board &bull; 10th &amp; 12th</span>
+          <span class="badge-status-active">Active</span>
+        </div>
+        <h3 class="class-card-title">UP Board – Uttar Pradesh Madhyamik Shiksha Parishad</h3>
+        <p class="class-card-desc">
+          Comprehensive UP Board resources for High School (Class 10) and Intermediate (Class 12), including syllabus, official examination timetable, 23 verified sample papers, circulars and a dedicated Question Bank tracker.
+        </p>
+        <ul class="class-quick-links">
+          <li>
+            <a href="/up-board/class-10">
+              <span>High School (Class 10) Portal</span>
+              <span>&rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="/up-board/class-12">
+              <span>Intermediate (Class 12) Portal</span>
+              <span>&rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="/up-board/sample-papers">
+              <span>Official Sample Papers (23 Verified PDFs)</span>
+              <span>↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="/up-board/question-bank">
+              <span>UPMSP Official Question Bank</span>
+              <span>&rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="/up-board/datesheets">
+              <span>2027 Timetable &amp; Schedule</span>
+              <span>&rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="/up-board/syllabus">
+              <span>Subject Syllabi Directory (2026–27)</span>
+              <span>&rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="/up-board/circulars">
+              <span>Circulars &amp; Official Notices</span>
+              <span>&rarr;</span>
+            </a>
+          </li>
+        </ul>
+        <div class="class-card-footer">
+          <a href="/up-board" class="btn-primary" style="width: 100%; text-align: center;">Explore UP Board Resources &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Card 3: CISCE -->
+      <div class="class-card class-12" style="border-top: 5px solid #059669;">
+        <div class="class-card-header">
+          <span class="class-badge" style="background: #d1fae5; color: #065f46;">National Board &bull; ICSE &amp; ISC</span>
+          <span class="badge-status-active">Active</span>
+        </div>
+        <h3 class="class-card-title">CISCE – Council for the Indian School Certificate Examinations</h3>
+        <p class="class-card-desc">
+          Comprehensive verified coverage for ICSE (Class 10) and ISC (Class 12) curriculum regulations, subject syllabi, examination schedules, circulars, and PYQ library (2017–2027).
+        </p>
+        <ul class="class-quick-links">
+          <li>
+            <a href="/icse/class-10">
+              <span>ICSE Class 10 Dedicated Hub</span>
+              <span>&rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="/icse/class-12">
+              <span>ISC Class 12 Dedicated Hub</span>
+              <span>&rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="/icse/syllabus">
+              <span>ICSE &amp; ISC Subject Syllabi</span>
+              <span>↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="/icse/pyq">
+              <span>ICSE &amp; ISC PYQ Library (2017–27)</span>
+              <span>&rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="/icse/datesheets">
+              <span>Examination Date Sheets</span>
+              <span>&rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="/icse/circulars">
+              <span>Circulars &amp; Academic Notices</span>
+              <span>&rarr;</span>
+            </a>
+          </li>
+        </ul>
+        <div class="class-card-footer">
+          <a href="/icse" class="btn-primary" style="width: 100%; text-align: center;">Explore CISCE Resources &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Boards & Competitive Exams Summary Roadmap Section -->
 <section class="section section-selector" id="boards-exams">
   <div class="container">
     <div class="section-header">
@@ -102,14 +288,16 @@ StudySignal is an independent portal providing authentic CBSE Class 10 and Class
             </div>
           </div>
 
-          <!-- UP Board (Coming Soon) -->
-          <div class="board-mini-card is-coming-soon">
+          <!-- UP Board (Active) -->
+          <div class="board-mini-card is-active" style="border-top-color: #0284c7;">
             <div class="mini-card-top">
               <span class="mini-board-name">UP Board (UPMSP)</span>
-              <span class="badge-status-soon">Coming Soon</span>
+              <span class="badge-status-active">Active</span>
             </div>
-            <p class="mini-board-desc">High School (10th) &amp; Intermediate (12th) syllabus integration scheduled on roadmap.</p>
-            <span class="mini-soon-label">Status Card • Planned</span>
+            <p class="mini-board-desc">Comprehensive UP Board resources for High School (Class 10) and Intermediate (Class 12), including syllabus, official examination timetable, 23 verified sample papers, circulars and a dedicated Question Bank tracker.</p>
+            <div class="mini-card-links">
+              <a href="/up-board" class="mini-link">Explore UP Board Hub &rarr;</a>
+            </div>
           </div>
 
           <!-- Bihar Board (Coming Soon) -->
@@ -119,7 +307,7 @@ StudySignal is an independent portal providing authentic CBSE Class 10 and Class
               <span class="badge-status-soon">Coming Soon</span>
             </div>
             <p class="mini-board-desc">BSEB Matric &amp; Intermediate examination tracking and syllabus planned.</p>
-            <span class="mini-soon-label">Status Card • Planned</span>
+            <span class="mini-soon-label">Status Card &bull; Planned</span>
           </div>
 
           <!-- Maharashtra Board (Coming Soon) -->
@@ -129,7 +317,7 @@ StudySignal is an independent portal providing authentic CBSE Class 10 and Class
               <span class="badge-status-soon">Coming Soon</span>
             </div>
             <p class="mini-board-desc">SSC &amp; HSC subject guidelines and notifications in preparation.</p>
-            <span class="mini-soon-label">Status Card • Planned</span>
+            <span class="mini-soon-label">Status Card &bull; Planned</span>
           </div>
         </div>
       </div>
@@ -145,7 +333,7 @@ StudySignal is an independent portal providing authentic CBSE Class 10 and Class
               <span class="badge-status-soon">Coming Soon</span>
             </div>
             <p class="mini-board-desc">National engineering entrance exam calendar and NTA syllabus tracking.</p>
-            <span class="mini-soon-label">Status Card • Planned</span>
+            <span class="mini-soon-label">Status Card &bull; Planned</span>
           </div>
 
           <!-- NEET (Coming Soon) -->
@@ -155,7 +343,7 @@ StudySignal is an independent portal providing authentic CBSE Class 10 and Class
               <span class="badge-status-soon">Coming Soon</span>
             </div>
             <p class="mini-board-desc">National medical entrance examination bulletin updates and eligibility criteria.</p>
-            <span class="mini-soon-label">Status Card • Planned</span>
+            <span class="mini-soon-label">Status Card &bull; Planned</span>
           </div>
 
           <!-- CUET (Coming Soon) -->
@@ -165,96 +353,8 @@ StudySignal is an independent portal providing authentic CBSE Class 10 and Class
               <span class="badge-status-soon">Coming Soon</span>
             </div>
             <p class="mini-board-desc">Central university entrance domain test syllabus and timeline scheduled.</p>
-            <span class="mini-soon-label">Status Card • Planned</span>
+            <span class="mini-soon-label">Status Card &bull; Planned</span>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Dedicated Class 10 & Class 12 Sections -->
-<section class="section">
-  <div class="container">
-    <div class="section-header">
-      <div>
-        <h2 class="section-title">Dedicated CBSE Portals</h2>
-        <p class="section-subtitle">Select your academic standard for customized syllabus links, exam patterns, and date sheet alerts.</p>
-      </div>
-    </div>
-
-    <div class="class-portal-grid">
-      <!-- Class 10 Portal Card -->
-      <div class="class-card class-10">
-        <div class="class-card-header">
-          <span class="class-badge">Secondary Education</span>
-          <span class="class-year">Session {{ current_academic_year }}</span>
-        </div>
-        <h3 class="class-card-title">CBSE Class 10</h3>
-        <p class="class-card-desc">
-          Official curriculum guidelines, subject code index (Mathematics 041, Science 086, Social Science 087), internal assessment structures, and board exam timeline.
-        </p>
-
-        <ul class="class-quick-links">
-          <li>
-            <a href="/cbse/class-10">
-              <span>View Class 10 Dedicated Hub</span>
-              <span>→</span>
-            </a>
-          </li>
-          <li>
-            <a href="/cbse/syllabus?class=10">
-              <span>Download Class 10 Subject Syllabi (PDF)</span>
-              <span>↗</span>
-            </a>
-          </li>
-          <li>
-            <a href="/cbse/datesheets?class=10">
-              <span>Class 10 Exam Schedule & Status</span>
-              <span>→</span>
-            </a>
-          </li>
-        </ul>
-
-        <div class="class-card-footer">
-          <a href="/cbse/class-10" class="btn-primary">Explore CBSE Class 10 Hub</a>
-        </div>
-      </div>
-
-      <!-- Class 12 Portal Card -->
-      <div class="class-card class-12">
-        <div class="class-card-header">
-          <span class="class-badge">Senior Secondary</span>
-          <span class="class-year">Session {{ current_academic_year }}</span>
-        </div>
-        <h3 class="class-card-title">CBSE Class 12</h3>
-        <p class="class-card-desc">
-          Stream-wise academic electives for Science (Physics, Chemistry, Bio, Math), Commerce (Accountancy, BST, Economics), and Humanities alongside practical guidelines.
-        </p>
-
-        <ul class="class-quick-links">
-          <li>
-            <a href="/cbse/class-12">
-              <span>View Class 12 Dedicated Hub</span>
-              <span>→</span>
-            </a>
-          </li>
-          <li>
-            <a href="/cbse/syllabus?class=12">
-              <span>Download Class 12 Subject Syllabi (PDF)</span>
-              <span>↗</span>
-            </a>
-          </li>
-          <li>
-            <a href="/cbse/datesheets?class=12">
-              <span>Class 12 Exam Schedule & Status</span>
-              <span>→</span>
-            </a>
-          </li>
-        </ul>
-
-        <div class="class-card-footer">
-          <a href="/cbse/class-12" class="btn-primary">Explore CBSE Class 12 Hub</a>
         </div>
       </div>
     </div>
@@ -265,63 +365,71 @@ StudySignal is an independent portal providing authentic CBSE Class 10 and Class
 {% set slot_id = 'in_content_banner' %}
 {% include 'components/ad_slot.html' %}
 
-<!-- Featured Subject-Wise Syllabus Section -->
-<section class="section section-alt">
+<!-- Verified Official Syllabus Resources Section -->
+<section class="section section-alt" id="syllabus-resources">
   <div class="container">
     <div class="section-header">
       <div>
-        <h2 class="section-title">Verified Official CBSE Syllabus Documents</h2>
+        <h2 class="section-title">Verified Official Syllabus Resources</h2>
         <p class="section-subtitle">
-          Direct links to authentic PDF files hosted on the official CBSE Academic Unit server (<code>cbseacademic.nic.in</code>).
+          Explore subject-wise syllabus information and authentic academic documents from supported education boards.
         </p>
       </div>
-      <a href="/cbse/syllabus" class="section-action">View All Subjects &rarr;</a>
+      <a href="/boards" class="section-action">Explore All Syllabi &rarr;</a>
     </div>
 
-    <div class="subject-grid">
-      {% for item in class_10_featured %}
-      <div class="subject-card">
-        <div class="subject-card-meta">
-          <span class="code-pill">Class 10 &bull; Code {{ item.code }}</span>
-          <span class="verified-badge">✓ Official CBSE Link</span>
-        </div>
-        <h3 class="subject-card-title">{{ item.subject }}</h3>
-        <p class="subject-card-desc">{{ item.description }}</p>
-        <div class="subject-card-details">
-          <span>Theory: <strong>{{ item.exam_structure.theory_marks }} M</strong></span>
-          <span>IA / Practical: <strong>{{ item.exam_structure.internal_assessment_marks }} M</strong></span>
-          <span>Time: <strong>{{ item.exam_structure.duration_hours }} Hrs</strong></span>
-        </div>
-        <div class="subject-card-actions">
-          <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-official-pdf">
-            Official PDF ↗
-          </a>
-          <a href="/cbse/syllabus/{{ item.id }}" class="btn-sm btn-view-details">
-            Details
-          </a>
-        </div>
-      </div>
-      {% endfor %}
+    <!-- Board Filter Pills for Syllabus -->
+    <div class="board-selector-bar" style="margin-bottom: 1.5rem;" id="syllabus-filter-bar">
+      <button type="button" class="selector-pill active" data-board-filter="all">All Boards (सभी बोर्ड)</button>
+      <button type="button" class="selector-pill" data-board-filter="cbse">CBSE</button>
+      <button type="button" class="selector-pill" data-board-filter="up-board">UP Board (UPMSP)</button>
+      <button type="button" class="selector-pill" data-board-filter="cisce">CISCE (ICSE &amp; ISC)</button>
+    </div>
 
-      {% for item in class_12_featured %}
-      <div class="subject-card">
+    <div class="subject-grid" id="syllabus-grid">
+      {% for item in all_featured_syllabus %}
+      <div class="subject-card syllabus-filter-card" data-board="{{ item.board_key }}" style="display: flex; flex-direction: column;">
         <div class="subject-card-meta">
-          <span class="code-pill">Class 12 &bull; Code {{ item.code }}</span>
-          <span class="verified-badge">✓ Official CBSE Link</span>
+          <div style="display: flex; align-items: center; gap: 0.35rem; flex-wrap: wrap;">
+            <span class="class-badge" style="background: {% if item.board_key == 'cbse' %}#e0f2fe; color: #0369a1;{% elif item.board_key == 'up-board' %}#fef3c7; color: #92400e;{% else %}#dcfce7; color: #166534;{% endif %} font-weight: 700; border-radius: 4px; padding: 2px 6px; font-size: 0.725rem;">
+              {{ item.board_badge }}
+            </span>
+            <span class="code-pill">
+              {% if item.class == '10' %}Class 10{% elif item.class == '12' %}Class 12{% else %}{{ item.course }}{% endif %} &bull; Code {{ item.code }}
+            </span>
+          </div>
+          <span class="verified-badge" style="font-size: 0.7rem;">✓ Official Source</span>
         </div>
         <h3 class="subject-card-title">{{ item.subject }}</h3>
         <p class="subject-card-desc">{{ item.description }}</p>
+        
         <div class="subject-card-details">
-          <span>Theory: <strong>{{ item.exam_structure.theory_marks }} M</strong></span>
-          <span>IA / Practical: <strong>{{ item.exam_structure.internal_assessment_marks }} M</strong></span>
-          <span>Time: <strong>{{ item.exam_structure.duration_hours }} Hrs</strong></span>
+          {% if item.exam_structure and item.exam_structure.theory_marks %}
+            <span>Theory: <strong>{{ item.exam_structure.theory_marks }} M</strong></span>
+            <span>IA / Practical: <strong>{{ item.exam_structure.internal_assessment_marks or item.exam_structure.internal_marks or 0 }} M</strong></span>
+            <span>Duration: <strong>{{ item.exam_structure.duration_hours or item.exam_structure.duration or '3 Hrs' }}</strong></span>
+          {% else %}
+            <span>सत्र (Session): <strong>{{ item.academic_year or '2026-27' }}</strong></span>
+            <span>वर्ग (Stream): <strong>{{ item.stream or 'General' }}</strong></span>
+          {% endif %}
         </div>
+
+        <div style="font-size: 0.725rem; color: #64748b; margin-top: auto; margin-bottom: 0.75rem; padding-top: 0.5rem; border-top: 1px solid #f1f5f9;">
+          स्रोत: <strong>{{ item.official_host }}</strong>
+        </div>
+
         <div class="subject-card-actions">
+          {% if item.official_url and (item.verification_status == 'verified_official' or item.is_official) %}
           <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-official-pdf">
             Official PDF ↗
           </a>
-          <a href="/cbse/syllabus/{{ item.id }}" class="btn-sm btn-view-details">
-            Details
+          {% else %}
+          <span class="btn-sm btn-disabled-soon" style="background: #f1f5f9; color: #64748b; border: 1px solid #cbd5e1; cursor: not-allowed; font-size: 0.75rem; padding: 0.35rem 0.6rem;">
+            Official link currently unavailable
+          </span>
+          {% endif %}
+          <a href="{{ item.detail_url }}" class="btn-sm btn-view-details">
+            Details &rarr;
           </a>
         </div>
       </div>
@@ -330,20 +438,30 @@ StudySignal is an independent portal providing authentic CBSE Class 10 and Class
   </div>
 </section>
 
-<!-- Latest Circulars & Academic Updates -->
-<section class="section">
+<!-- Boards & Examination Updates Section -->
+<section class="section" id="circulars-updates">
   <div class="container">
     <div class="section-header">
       <div>
-        <h2 class="section-title">CBSE Circulars & Examination Updates</h2>
-        <p class="section-subtitle">Official policy notifications, exam advisories, and administrative releases.</p>
+        <h2 class="section-title">Boards &amp; Examination Updates</h2>
+        <p class="section-subtitle">
+          Stay informed about verified academic circulars, examination notifications, policy updates and important announcements from supported education boards.
+        </p>
       </div>
       <a href="/cbse/circulars" class="section-action">View All Circulars &rarr;</a>
     </div>
 
-    <div class="circular-list">
+    <!-- Board Filter Pills for Circulars -->
+    <div class="board-selector-bar" style="margin-bottom: 1.5rem;" id="circulars-filter-bar">
+      <button type="button" class="selector-pill active" data-circular-filter="all">All Boards (सभी बोर्ड)</button>
+      <button type="button" class="selector-pill" data-circular-filter="cbse">CBSE</button>
+      <button type="button" class="selector-pill" data-circular-filter="up-board">UP Board (UPMSP)</button>
+      <button type="button" class="selector-pill" data-circular-filter="cisce">CISCE</button>
+    </div>
+
+    <div class="circular-list" id="circulars-grid">
       {% for circ in latest_circulars %}
-      <div class="circular-card category-{{ circ.category }}">
+      <div class="circular-card category-{{ circ.category }} circular-filter-card" data-board="{{ circ.board_key }}">
         <div class="circular-icon-box">
           {% if circ.category == 'Academic' %}📚
           {% elif circ.category == 'Examination' %}📝
@@ -351,6 +469,9 @@ StudySignal is an independent portal providing authentic CBSE Class 10 and Class
         </div>
         <div class="circular-content">
           <div class="circular-meta">
+            <span class="class-badge" style="background: {% if circ.board_key == 'cbse' %}#e0f2fe; color: #0369a1;{% elif circ.board_key == 'up-board' %}#fef3c7; color: #92400e;{% else %}#dcfce7; color: #166534;{% endif %} font-weight: 700; border-radius: 4px; padding: 2px 6px; font-size: 0.725rem;">
+              {{ circ.board_badge }}
+            </span>
             {% if circ.verification_status == 'verified_official' %}
               <span class="circ-tag official">✓ Verified Official Notice</span>
             {% elif circ.verification_status == 'official_directory' %}
@@ -383,7 +504,7 @@ StudySignal is an independent portal providing authentic CBSE Class 10 and Class
               </span>
             {% elif circ.last_verified and circ.verification_status == 'verified_official' %}
               <span style="font-size: 0.75rem; color: var(--accent-green); font-weight: 600;">
-                ✓ Verified on cbseacademic.nic.in / cbse.gov.in ({{ circ.last_verified }})
+                ✓ Verified on {{ circ.official_host }} ({{ circ.last_verified }})
               </span>
             {% endif %}
             <a href="{{ circ.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
@@ -397,30 +518,85 @@ StudySignal is an independent portal providing authentic CBSE Class 10 and Class
   </div>
 </section>
 
-<!-- Exam Date Sheet Alert Callout -->
+<!-- Board-wise Examination Date Sheet Advisory -->
 <section class="section section-alt">
   <div class="container">
-    <div class="demo-table-alert">
-      <h3 style="font-size: 1.1rem; margin-bottom: 0.35rem; font-weight: 700;">
-        ⚠️ CBSE Board Examination Date Sheet Advisory
+    <div class="demo-table-alert" style="border-left-color: var(--brand-blue);">
+      <h3 style="font-size: 1.15rem; margin-bottom: 0.35rem; font-weight: 700; color: var(--primary);">
+        ⚠️ Board-wise Examination Date Sheet Advisory
       </h3>
-      <p style="margin-bottom: 0.5rem;">
-        Official date sheets are released solely through official press notes and PDF announcements on 
-        <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; font-weight: 600;">cbse.gov.in</a>. 
-        Any dates displayed on unofficial websites before the official CBSE circular are speculative.
+      <p style="margin-bottom: 0.75rem; font-size: 0.875rem; line-height: 1.6; color: #475569;">
+        Examination schedules are announced by the respective education boards and examination authorities. Always verify dates through official notifications and websites. Dates displayed before official confirmation should be treated as tentative.
       </p>
-      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+      <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
         <a href="/cbse/datesheets" class="btn-sm btn-primary" style="width: auto;">
-          Check Date Sheet Portal & Status &rarr;
+          CBSE Date Sheets &rarr;
+        </a>
+        <a href="/up-board/datesheets" class="btn-sm btn-primary" style="width: auto;">
+          UP Board Timetable (2027 Confirmed) &rarr;
+        </a>
+        <a href="/icse/datesheets" class="btn-sm btn-primary" style="width: auto;">
+          CISCE Date Sheets &rarr;
         </a>
         <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto;">
-          Visit Official CBSE Website ↗
+          Official CBSE Website ↗
         </a>
-        <a href="{{ official_urls.cbse_examinations }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto;">
-          CBSE Examination Circulars ↗
+        <a href="{{ official_urls.upmsp_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto;">
+          Official UPMSP Website ↗
+        </a>
+        <a href="{{ official_urls.cisce_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto;">
+          Official CISCE Website ↗
         </a>
       </div>
     </div>
   </div>
 </section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+  // Interactive Multi-Board Filter for Syllabus Cards
+  (function() {
+    var syllabusFilterBar = document.getElementById('syllabus-filter-bar');
+    if (syllabusFilterBar) {
+      var buttons = syllabusFilterBar.querySelectorAll('button[data-board-filter]');
+      var cards = document.querySelectorAll('.syllabus-filter-card');
+      buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          buttons.forEach(function(b) { b.classList.remove('active'); });
+          this.classList.add('active');
+          var filter = this.getAttribute('data-board-filter');
+          cards.forEach(function(card) {
+            if (filter === 'all' || card.getAttribute('data-board') === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    }
+
+    // Interactive Multi-Board Filter for Circular Cards
+    var circularsFilterBar = document.getElementById('circulars-filter-bar');
+    if (circularsFilterBar) {
+      var cButtons = circularsFilterBar.querySelectorAll('button[data-circular-filter]');
+      var cCards = document.querySelectorAll('.circular-filter-card');
+      cButtons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          cButtons.forEach(function(b) { b.classList.remove('active'); });
+          this.classList.add('active');
+          var filter = this.getAttribute('data-circular-filter');
+          cCards.forEach(function(card) {
+            if (filter === 'all' || card.getAttribute('data-board') === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    }
+  })();
+</script>
 {% endblock %}

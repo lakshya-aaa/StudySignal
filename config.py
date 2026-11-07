@@ -8,10 +8,11 @@ import os
 class Config:
     # Site Identity
     SITE_NAME = "StudySignal"
-    SITE_TAGLINE = "Independent CBSE Education Information Portal"
+    SITE_TAGLINE = "Independent Multi-Board Education Information Portal"
     SITE_DESCRIPTION = (
-        "StudySignal provides accurate, verified CBSE Class 10 and 12 syllabus, "
-        "official date sheet alerts, circulars, and academic notifications."
+        "StudySignal provides accurate, verified Class 10 and 12 curriculum, "
+        "syllabus documents, official date sheets, sample papers, circulars, and "
+        "academic notifications across CBSE, UP Board (UPMSP), and CISCE (ICSE/ISC)."
     )
     SECRET_KEY = os.environ.get("SECRET_KEY", "studysignal-default-dev-key")
     PRODUCTION_BASE_URL = os.environ.get("PRODUCTION_BASE_URL", "https://exampulse-india.onrender.com")
@@ -20,8 +21,8 @@ class Config:
     # Social Sharing Metadata (Representing full educational platform scope)
     DEFAULT_OG_IMAGE = f"{PRODUCTION_BASE_URL}/static/images/og-preview.png"
     DEFAULT_OG_IMAGE_ALT = (
-        "StudySignal - Independent Educational Information Portal for CBSE Class 10 (Secondary) "
-        "and Class 12 (Senior Secondary) Curriculum, Date Sheets, and Official Notices"
+        "StudySignal - Independent Educational Information Portal for CBSE, UP Board, "
+        "and CISCE Class 10 & 12 Curriculum, Date Sheets, and Official Notices"
     )
     
     # Academic Year Settings (Current: October 2026 -> Session 2026-27)
@@ -30,10 +31,11 @@ class Config:
     
     # Non-Affiliation Disclaimer
     OFFICIAL_DISCLAIMER = (
-        "StudySignal is an independent, free-access educational resource and is NOT "
-        "affiliated with, endorsed by, or connected to the Central Board of Secondary Education "
-        "(CBSE), Ministry of Education, or Government of India. Always cross-verify information "
-        "on the official CBSE websites: cbse.gov.in and cbseacademic.nic.in."
+        "StudySignal is an independent, free-access educational information platform created to help "
+        "students, parents and educators access academic resources, examination updates and educational "
+        "information. StudySignal is not affiliated with, endorsed by, or officially connected to CBSE, "
+        "UPMSP, CISCE, ICSE, ISC, any other education board, examination authority, Ministry of Education, "
+        "or Government of India. Always verify important information through the respective official websites."
     )
     
     # Verified Official CBSE URLs
@@ -51,8 +53,9 @@ class Config:
         "cisce_regulations": "https://cisce.org/regulations-and-syllabuses/",
         "cisce_notices": "https://cisce.org/notice-board/",
         "upmsp_main": "https://upmsp.edu.in",
-        "upmsp_syllabus": "https://upmsp.edu.in/Syllabus.html",
-        "upmsp_model_papers": "https://upmsp.edu.in/ModelPaper.html",
+        "upmsp_syllabus": "https://upmsp.edu.in/Board_Syllabus.aspx",
+        "upmsp_model_papers": "https://upmsp.edu.in/Board_ModelPaper.aspx",
+        "upmsp_question_bank": "https://upmsp.edu.in/Board_QuestionBank.aspx",
         "upmsp_results": "https://upresults.nic.in"
     }
 
