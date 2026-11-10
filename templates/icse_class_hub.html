@@ -20,10 +20,15 @@ Official {{ class_title }} academic portal: verified CISCE syllabus, exam timeta
   <section class="section" style="padding-bottom: 1.5rem;">
     <div class="container">
       <div class="hub-hero-banner">
-        <div class="hub-hero-badge">
-          <span>✓ Active Board Portal &bull; CISCE Official Resources</span>
+        <div class="hub-hero-branding">
+          <img src="{{ url_for('static', filename='images/boards/cisce-logo.png') }}" alt="CISCE" class="hub-hero-logo" width="52" height="52">
+          <div>
+            <div class="hub-hero-badge">
+              <span>✓ Active Board Portal &bull; CISCE Official Resources</span>
+            </div>
+            <h1 class="hub-hero-title">{{ class_title }}</h1>
+          </div>
         </div>
-        <h1 class="hub-hero-title">{{ class_title }}</h1>
         <p class="hub-hero-desc">
           Verified academic curriculum, subject regulations, official examination datesheets, circulars, and previous year papers for {{ course_name }} Class {{ class_num }} students.
         </p>

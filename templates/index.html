@@ -78,7 +78,10 @@ StudySignal is an independent, free-access educational platform providing authen
           <span class="class-badge" style="background: #e0f2fe; color: #0369a1;">National Board &bull; Classes 10 &amp; 12</span>
           <span class="badge-status-active">Active</span>
         </div>
-        <h3 class="class-card-title">CBSE – Central Board of Secondary Education</h3>
+        <div class="portal-card-title-wrap">
+          <img src="{{ url_for('static', filename='images/boards/cbse-logo.png') }}" alt="CBSE" class="portal-card-logo" width="44" height="44">
+          <h3 class="class-card-title">CBSE – Central Board of Secondary Education</h3>
+        </div>
         <p class="class-card-desc">
           Comprehensive verified coverage for CBSE Class 10 (Secondary) and Class 12 (Senior Secondary). Curricula, official subject syllabi, date sheets, academic circulars, and PYQ library (2014–2025).
         </p>
@@ -131,7 +134,10 @@ StudySignal is an independent, free-access educational platform providing authen
           <span class="class-badge" style="background: #e0f2fe; color: #0284c7;">State Board &bull; 10th &amp; 12th</span>
           <span class="badge-status-active">Active</span>
         </div>
-        <h3 class="class-card-title">UP Board – Uttar Pradesh Madhyamik Shiksha Parishad</h3>
+        <div class="portal-card-title-wrap">
+          <img src="{{ url_for('static', filename='images/boards/upmsp-logo.png') }}" alt="UPMSP" class="portal-card-logo" width="44" height="44">
+          <h3 class="class-card-title">UP Board – Uttar Pradesh Madhyamik Shiksha Parishad</h3>
+        </div>
         <p class="class-card-desc">
           Comprehensive UP Board resources for High School (Class 10) and Intermediate (Class 12), including syllabus, official examination timetable, 23 verified sample papers, circulars and a dedicated Question Bank tracker.
         </p>
@@ -190,7 +196,10 @@ StudySignal is an independent, free-access educational platform providing authen
           <span class="class-badge" style="background: #d1fae5; color: #065f46;">National Board &bull; ICSE &amp; ISC</span>
           <span class="badge-status-active">Active</span>
         </div>
-        <h3 class="class-card-title">CISCE – Council for the Indian School Certificate Examinations</h3>
+        <div class="portal-card-title-wrap">
+          <img src="{{ url_for('static', filename='images/boards/cisce-logo.png') }}" alt="CISCE" class="portal-card-logo" width="44" height="44">
+          <h3 class="class-card-title">CISCE – Council for the Indian School Certificate Examinations</h3>
+        </div>
         <p class="class-card-desc">
           Comprehensive verified coverage for ICSE (Class 10) and ISC (Class 12) curriculum regulations, subject syllabi, examination schedules, circulars, and PYQ library (2017–2027).
         </p>
@@ -265,7 +274,10 @@ StudySignal is an independent, free-access educational platform providing authen
           <!-- CBSE (Active) -->
           <div class="board-mini-card is-active">
             <div class="mini-card-top">
-              <span class="mini-board-name">CBSE</span>
+              <div class="mini-board-branding">
+                <img src="{{ url_for('static', filename='images/boards/cbse-logo.png') }}" alt="CBSE" class="mini-logo" width="22" height="22">
+                <span class="mini-board-name">CBSE</span>
+              </div>
               <span class="badge-status-active">Active</span>
             </div>
             <p class="mini-board-desc">Class 10 &amp; 12 curriculum, official date sheets, circulars, and 2014–2025 PYQ library.</p>
@@ -279,7 +291,10 @@ StudySignal is an independent, free-access educational platform providing authen
           <!-- ICSE & ISC (Active) -->
           <div class="board-mini-card is-active">
             <div class="mini-card-top">
-              <span class="mini-board-name">ICSE &amp; ISC (CISCE)</span>
+              <div class="mini-board-branding">
+                <img src="{{ url_for('static', filename='images/boards/cisce-logo.png') }}" alt="CISCE" class="mini-logo" width="22" height="22">
+                <span class="mini-board-name">ICSE &amp; ISC (CISCE)</span>
+              </div>
               <span class="badge-status-active">Active</span>
             </div>
             <p class="mini-board-desc">ICSE Class 10 &amp; ISC Class 12 verified syllabi, timetables, and 2017–2027 PYQs.</p>
@@ -291,7 +306,10 @@ StudySignal is an independent, free-access educational platform providing authen
           <!-- UP Board (Active) -->
           <div class="board-mini-card is-active" style="border-top-color: #0284c7;">
             <div class="mini-card-top">
-              <span class="mini-board-name">UP Board (UPMSP)</span>
+              <div class="mini-board-branding">
+                <img src="{{ url_for('static', filename='images/boards/upmsp-logo.png') }}" alt="UPMSP" class="mini-logo" width="22" height="22">
+                <span class="mini-board-name">UP Board (UPMSP)</span>
+              </div>
               <span class="badge-status-active">Active</span>
             </div>
             <p class="mini-board-desc">Comprehensive UP Board resources for High School (Class 10) and Intermediate (Class 12), including syllabus, official examination timetable, 23 verified sample papers, circulars and a dedicated Question Bank tracker.</p>
@@ -303,7 +321,10 @@ StudySignal is an independent, free-access educational platform providing authen
           <!-- Bihar Board (Coming Soon) -->
           <div class="board-mini-card is-coming-soon">
             <div class="mini-card-top">
-              <span class="mini-board-name">Bihar Board (BSEB)</span>
+              <div class="mini-board-branding">
+                <span class="mini-board-placeholder">🏛️</span>
+                <span class="mini-board-name">Bihar Board (BSEB)</span>
+              </div>
               <span class="badge-status-soon">Coming Soon</span>
             </div>
             <p class="mini-board-desc">BSEB Matric &amp; Intermediate examination tracking and syllabus planned.</p>
@@ -313,7 +334,10 @@ StudySignal is an independent, free-access educational platform providing authen
           <!-- Maharashtra Board (Coming Soon) -->
           <div class="board-mini-card is-coming-soon">
             <div class="mini-card-top">
-              <span class="mini-board-name">Maharashtra Board (MSBSHSE)</span>
+              <div class="mini-board-branding">
+                <span class="mini-board-placeholder">🏛️</span>
+                <span class="mini-board-name">Maharashtra Board (MSBSHSE)</span>
+              </div>
               <span class="badge-status-soon">Coming Soon</span>
             </div>
             <p class="mini-board-desc">SSC &amp; HSC subject guidelines and notifications in preparation.</p>
@@ -329,7 +353,10 @@ StudySignal is an independent, free-access educational platform providing authen
           <!-- JEE (Coming Soon) -->
           <div class="board-mini-card is-coming-soon">
             <div class="mini-card-top">
-              <span class="mini-board-name">JEE (Main &amp; Advanced)</span>
+              <div class="mini-board-branding">
+                <img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="NTA" class="mini-logo exam-logo" width="36" height="14">
+                <span class="mini-board-name">JEE (Main &amp; Advanced)</span>
+              </div>
               <span class="badge-status-soon">Coming Soon</span>
             </div>
             <p class="mini-board-desc">National engineering entrance exam calendar and NTA syllabus tracking.</p>
@@ -339,7 +366,10 @@ StudySignal is an independent, free-access educational platform providing authen
           <!-- NEET (Coming Soon) -->
           <div class="board-mini-card is-coming-soon">
             <div class="mini-card-top">
-              <span class="mini-board-name">NEET (UG)</span>
+              <div class="mini-board-branding">
+                <img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="NTA" class="mini-logo exam-logo" width="36" height="14">
+                <span class="mini-board-name">NEET (UG)</span>
+              </div>
               <span class="badge-status-soon">Coming Soon</span>
             </div>
             <p class="mini-board-desc">National medical entrance examination bulletin updates and eligibility criteria.</p>
@@ -349,7 +379,10 @@ StudySignal is an independent, free-access educational platform providing authen
           <!-- CUET (Coming Soon) -->
           <div class="board-mini-card is-coming-soon">
             <div class="mini-card-top">
-              <span class="mini-board-name">CUET (UG)</span>
+              <div class="mini-board-branding">
+                <img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="NTA" class="mini-logo exam-logo" width="36" height="14">
+                <span class="mini-board-name">CUET (UG)</span>
+              </div>
               <span class="badge-status-soon">Coming Soon</span>
             </div>
             <p class="mini-board-desc">Central university entrance domain test syllabus and timeline scheduled.</p>
@@ -391,7 +424,14 @@ StudySignal is an independent, free-access educational platform providing authen
       <div class="subject-card syllabus-filter-card" data-board="{{ item.board_key }}" style="display: flex; flex-direction: column;">
         <div class="subject-card-meta">
           <div style="display: flex; align-items: center; gap: 0.35rem; flex-wrap: wrap;">
-            <span class="class-badge" style="background: {% if item.board_key == 'cbse' %}#e0f2fe; color: #0369a1;{% elif item.board_key == 'up-board' %}#fef3c7; color: #92400e;{% else %}#dcfce7; color: #166534;{% endif %} font-weight: 700; border-radius: 4px; padding: 2px 6px; font-size: 0.725rem;">
+            <span class="class-badge" style="background: {% if item.board_key == 'cbse' %}#e0f2fe; color: #0369a1;{% elif item.board_key == 'up-board' %}#fef3c7; color: #92400e;{% else %}#dcfce7; color: #166534;{% endif %} font-weight: 700; border-radius: 4px; padding: 2px 6px; font-size: 0.725rem; display: inline-flex; align-items: center; gap: 4px;">
+              {% if item.board_key == 'cbse' %}
+                <img src="{{ url_for('static', filename='images/boards/cbse-logo.png') }}" alt="" class="badge-board-logo" width="14" height="14">
+              {% elif item.board_key == 'up-board' %}
+                <img src="{{ url_for('static', filename='images/boards/upmsp-logo.png') }}" alt="" class="badge-board-logo" width="14" height="14">
+              {% elif item.board_key == 'cisce' %}
+                <img src="{{ url_for('static', filename='images/boards/cisce-logo.png') }}" alt="" class="badge-board-logo" width="14" height="14">
+              {% endif %}
               {{ item.board_badge }}
             </span>
             <span class="code-pill">
@@ -469,7 +509,14 @@ StudySignal is an independent, free-access educational platform providing authen
         </div>
         <div class="circular-content">
           <div class="circular-meta">
-            <span class="class-badge" style="background: {% if circ.board_key == 'cbse' %}#e0f2fe; color: #0369a1;{% elif circ.board_key == 'up-board' %}#fef3c7; color: #92400e;{% else %}#dcfce7; color: #166534;{% endif %} font-weight: 700; border-radius: 4px; padding: 2px 6px; font-size: 0.725rem;">
+            <span class="class-badge" style="background: {% if circ.board_key == 'cbse' %}#e0f2fe; color: #0369a1;{% elif circ.board_key == 'up-board' %}#fef3c7; color: #92400e;{% else %}#dcfce7; color: #166534;{% endif %} font-weight: 700; border-radius: 4px; padding: 2px 6px; font-size: 0.725rem; display: inline-flex; align-items: center; gap: 4px;">
+              {% if circ.board_key == 'cbse' %}
+                <img src="{{ url_for('static', filename='images/boards/cbse-logo.png') }}" alt="" class="badge-board-logo" width="14" height="14">
+              {% elif circ.board_key == 'up-board' %}
+                <img src="{{ url_for('static', filename='images/boards/upmsp-logo.png') }}" alt="" class="badge-board-logo" width="14" height="14">
+              {% elif circ.board_key == 'cisce' %}
+                <img src="{{ url_for('static', filename='images/boards/cisce-logo.png') }}" alt="" class="badge-board-logo" width="14" height="14">
+              {% endif %}
               {{ circ.board_badge }}
             </span>
             {% if circ.verification_status == 'verified_official' %}
@@ -529,23 +576,29 @@ StudySignal is an independent, free-access educational platform providing authen
         Examination schedules are announced by the respective education boards and examination authorities. Always verify dates through official notifications and websites. Dates displayed before official confirmation should be treated as tentative.
       </p>
       <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-        <a href="/cbse/datesheets" class="btn-sm btn-primary" style="width: auto;">
-          CBSE Date Sheets &rarr;
+        <a href="/cbse/datesheets" class="btn-sm btn-primary" style="width: auto; display: inline-flex; align-items: center; gap: 6px;">
+          <img src="{{ url_for('static', filename='images/boards/cbse-logo.png') }}" alt="" class="datesheet-board-logo" width="18" height="18">
+          <span>CBSE Date Sheets &rarr;</span>
         </a>
-        <a href="/up-board/datesheets" class="btn-sm btn-primary" style="width: auto;">
-          UP Board Timetable (2027 Confirmed) &rarr;
+        <a href="/up-board/datesheets" class="btn-sm btn-primary" style="width: auto; display: inline-flex; align-items: center; gap: 6px;">
+          <img src="{{ url_for('static', filename='images/boards/upmsp-logo.png') }}" alt="" class="datesheet-board-logo" width="18" height="18">
+          <span>UP Board Timetable (2027 Confirmed) &rarr;</span>
         </a>
-        <a href="/icse/datesheets" class="btn-sm btn-primary" style="width: auto;">
-          CISCE Date Sheets &rarr;
+        <a href="/icse/datesheets" class="btn-sm btn-primary" style="width: auto; display: inline-flex; align-items: center; gap: 6px;">
+          <img src="{{ url_for('static', filename='images/boards/cisce-logo.png') }}" alt="" class="datesheet-board-logo" width="18" height="18">
+          <span>CISCE Date Sheets &rarr;</span>
         </a>
-        <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto;">
-          Official CBSE Website ↗
+        <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto; display: inline-flex; align-items: center; gap: 6px;">
+          <img src="{{ url_for('static', filename='images/boards/cbse-logo.png') }}" alt="" class="datesheet-board-logo" width="16" height="16">
+          <span>Official CBSE Website ↗</span>
         </a>
-        <a href="{{ official_urls.upmsp_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto;">
-          Official UPMSP Website ↗
+        <a href="{{ official_urls.upmsp_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto; display: inline-flex; align-items: center; gap: 6px;">
+          <img src="{{ url_for('static', filename='images/boards/upmsp-logo.png') }}" alt="" class="datesheet-board-logo" width="16" height="16">
+          <span>Official UPMSP Website ↗</span>
         </a>
-        <a href="{{ official_urls.cisce_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto;">
-          Official CISCE Website ↗
+        <a href="{{ official_urls.cisce_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto; display: inline-flex; align-items: center; gap: 6px;">
+          <img src="{{ url_for('static', filename='images/boards/cisce-logo.png') }}" alt="" class="datesheet-board-logo" width="16" height="16">
+          <span>Official CISCE Website ↗</span>
         </a>
       </div>
     </div>

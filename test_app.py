@@ -2415,6 +2415,112 @@ class StudySignalTestCase(unittest.TestCase):
                 self.assertNotIn("ModelPaper.html", v, f"Dead URL ModelPaper.html found in {k}")
                 self.assertNotIn("QuestionBank.html", v, f"Dead URL QuestionBank.html found in {k}")
 
+
+    def test_logo_assets_exist_and_served(self):
+        """Verify that all authentic board and exam logo PNG assets exist and are served via static endpoint."""
+        import os
+        from PIL import Image
+
+        logos = [
+            ("static/images/boards/cbse-logo.png", "/static/images/boards/cbse-logo.png"),
+            ("static/images/boards/upmsp-logo.png", "/static/images/boards/upmsp-logo.png"),
+            ("static/images/boards/cisce-logo.png", "/static/images/boards/cisce-logo.png"),
+            ("static/images/exams/nta-logo.png", "/static/images/exams/nta-logo.png"),
+            ("static/images/exams/jee-adv-logo.png", "/static/images/exams/jee-adv-logo.png"),
+        ]
+
+        for filepath, url_path in logos:
+            self.assertTrue(os.path.exists(filepath), f"Missing logo file on disk: {filepath}")
+            # Verify image format and integrity
+            with Image.open(filepath) as img:
+                self.assertEqual(img.format, "PNG")
+                self.assertGreater(img.width, 0)
+                self.assertGreater(img.height, 0)
+            # Verify HTTP serving
+            res = self.client.get(url_path)
+            self.assertEqual(res.status_code, 200, f"Failed to serve {url_path}")
+            self.assertIn("image/png", res.content_type)
+            res.close()
+
+    def test_homepage_board_and_exam_logos_rendered(self):
+        """Verify homepage renders official board and examination logos across all required sections."""
+        res = self.client.get("/")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+
+        # 1. Dedicated Portal Cards with logos
+        self.assertIn("portal-card-logo", html)
+        self.assertIn("/static/images/boards/cbse-logo.png", html)
+        self.assertIn("/static/images/boards/upmsp-logo.png", html)
+        self.assertIn("/static/images/boards/cisce-logo.png", html)
+
+        # 2. Roadmap mini-cards with logos
+        self.assertIn("mini-logo", html)
+        self.assertIn("/static/images/exams/nta-logo.png", html)
+
+        # 3. Syllabus and circular badges with inline logos
+        self.assertIn("badge-board-logo", html)
+
+        # 4. Datesheet advisory with board logos
+        self.assertIn("datesheet-board-logo", html)
+
+        # 5. Header dropdown and mobile drawer
+        self.assertIn("nav-board-logo", html)
+
+        # 6. Footer official source links with logos
+        self.assertIn("footer-source-logo", html)
+
+    def test_hub_pages_logo_branding(self):
+        """Verify individual board hubs and directory cards display authentic branding logos."""
+        # 1. CBSE Hub & Class 10
+        res = self.client.get("/cbse")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+        self.assertIn("hub-hero-logo", html)
+        self.assertIn("/static/images/boards/cbse-logo.png", html)
+
+        res = self.client.get("/cbse/class-10")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+        self.assertIn("hub-hero-logo", html)
+        self.assertIn("/static/images/boards/cbse-logo.png", html)
+
+        # 2. UP Board Hub & High School
+        res = self.client.get("/up-board")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+        self.assertIn("hub-hero-logo", html)
+        self.assertIn("/static/images/boards/upmsp-logo.png", html)
+
+        res = self.client.get("/up-board/class-10")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+        self.assertIn("hub-hero-logo", html)
+        self.assertIn("/static/images/boards/upmsp-logo.png", html)
+
+        # 3. CISCE Hub & ICSE Class 10
+        res = self.client.get("/icse")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+        self.assertIn("hub-hero-logo", html)
+        self.assertIn("/static/images/boards/cisce-logo.png", html)
+
+        res = self.client.get("/icse/class-10")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+        self.assertIn("hub-hero-logo", html)
+        self.assertIn("/static/images/boards/cisce-logo.png", html)
+
+        # 4. Boards Directory
+        res = self.client.get("/boards")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+        self.assertIn("board-card-logo", html)
+        self.assertIn("/static/images/boards/cbse-logo.png", html)
+        self.assertIn("/static/images/boards/upmsp-logo.png", html)
+        self.assertIn("/static/images/boards/cisce-logo.png", html)
+        self.assertIn("/static/images/exams/nta-logo.png", html)
+
 if __name__ == "__main__":
     unittest.main()
 

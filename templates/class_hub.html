@@ -15,12 +15,17 @@ Complete guide for {{ class_title }} including verified official CBSE syllabus P
   <section class="section" style="padding-bottom: 1.5rem;">
     <div class="container">
       <div class="hub-hero-banner">
-        <div class="hub-hero-badge">
-          <span>🏛️ CBSE Official Academic Framework &bull; Session {{ current_academic_year }}</span>
+        <div class="hub-hero-branding">
+          <img src="{{ url_for('static', filename='images/boards/cbse-logo.png') }}" alt="CBSE" class="hub-hero-logo" width="52" height="52">
+          <div>
+            <div class="hub-hero-badge">
+              <span>🏛️ CBSE Official Academic Framework &bull; Session {{ current_academic_year }}</span>
+            </div>
+            <h1 class="hub-hero-title">
+              {{ class_title }}
+            </h1>
+          </div>
         </div>
-        <h1 class="hub-hero-title">
-          {{ class_title }}
-        </h1>
         <p class="hub-hero-desc">
           Access official CBSE syllabus documents directly from <code>cbseacademic.nic.in</code>, check current date sheet notifications on <code>cbse.gov.in</code>, and view essential board exam instructions.
         </p>

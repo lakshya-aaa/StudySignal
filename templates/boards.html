@@ -65,7 +65,16 @@ Explore StudySignal's coverage across Indian national and state school education
             <span class="{{ b.badge_class }}">{{ b.status_label }}</span>
           </div>
 
-          <h3 class="board-card-title">{{ b.name }}</h3>
+          <div class="board-card-title-group">
+            {% if b.id == 'cbse' %}
+              <img src="{{ url_for('static', filename='images/boards/cbse-logo.png') }}" alt="CBSE" class="board-card-logo" width="36" height="36">
+            {% elif b.id == 'icse' %}
+              <img src="{{ url_for('static', filename='images/boards/cisce-logo.png') }}" alt="CISCE" class="board-card-logo" width="36" height="36">
+            {% elif b.id == 'up-board' %}
+              <img src="{{ url_for('static', filename='images/boards/upmsp-logo.png') }}" alt="UPMSP" class="board-card-logo" width="36" height="36">
+            {% endif %}
+            <h3 class="board-card-title">{{ b.name }}</h3>
+          </div>
           <h4 class="board-card-fullname">{{ b.full_name }}</h4>
           <p class="board-card-desc">{{ b.description }}</p>
 
@@ -115,7 +124,16 @@ Explore StudySignal's coverage across Indian national and state school education
             <span class="{{ exam.badge_class }}">{{ exam.status_label }}</span>
           </div>
 
-          <h3 class="board-card-title">{{ exam.name }}</h3>
+          <div class="board-card-title-group">
+            {% if exam.id == 'jee' %}
+              <img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="NTA" class="board-card-logo exam-logo" width="48" height="16">
+            {% elif exam.id == 'neet' %}
+              <img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="NTA" class="board-card-logo exam-logo" width="48" height="16">
+            {% elif exam.id == 'cuet' %}
+              <img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="NTA" class="board-card-logo exam-logo" width="48" height="16">
+            {% endif %}
+            <h3 class="board-card-title">{{ exam.name }}</h3>
+          </div>
           <h4 class="board-card-fullname">{{ exam.full_name }}</h4>
           <p class="board-card-desc">{{ exam.description }}</p>
 
