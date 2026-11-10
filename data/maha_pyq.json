@@ -1,0 +1,4237 @@
+[
+  {
+    "id": "maha-pyq-ssc-23",
+    "strapi_id": 23,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2024",
+    "code": "03",
+    "subject": "ENGLISH (1ST LANG)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_580_4d38f71f2f.pdf",
+        "size_kb": 6374.1,
+        "filename": "N-580.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-1",
+    "strapi_id": 1,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2024",
+    "code": "01",
+    "subject": "ENGLISH",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_801_e8841e0007.pdf",
+        "size_kb": 638.7,
+        "filename": "J-801.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-2",
+    "strapi_id": 2,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2024",
+    "code": "38",
+    "subject": "HISTORY",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_976_112ff8c52d.pdf",
+        "size_kb": 141.9,
+        "filename": "J-976.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_977_d17ae2fa3e.pdf",
+        "size_kb": 112.2,
+        "filename": "J-977.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_981_9a4eb9dc66.pdf",
+        "size_kb": 137.1,
+        "filename": "J-981.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-3",
+    "strapi_id": 3,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2024",
+    "code": "39",
+    "subject": "GEOGRAPHY",
+    "paper": 2,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_970_fec40f05fb.pdf",
+        "size_kb": 191.3,
+        "filename": "J-970.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_971_576ae0dad8.pdf",
+        "size_kb": 169.2,
+        "filename": "J-971.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-4",
+    "strapi_id": 4,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2024",
+    "code": "40",
+    "subject": "MATHEMATICS & STATISTICS",
+    "paper": 3,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_862_2d4e70c02a.pdf",
+        "size_kb": 611.4,
+        "filename": "J-862.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_863_7ab2c1c0d6.pdf",
+        "size_kb": 1052.3,
+        "filename": "J-863.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_865_56e252e863.pdf",
+        "size_kb": 1124.0,
+        "filename": "J-865.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-5",
+    "strapi_id": 5,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2024",
+    "code": "49",
+    "subject": "ECONOMICS",
+    "paper": 4,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_904_76b0ffe2f5.pdf",
+        "size_kb": 366.2,
+        "filename": "J-904.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_905_0809b6185e.pdf",
+        "size_kb": 255.3,
+        "filename": "J-905.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_909_59c254aee1.pdf",
+        "size_kb": 276.0,
+        "filename": "J-909.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-6",
+    "strapi_id": 6,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2024",
+    "code": "50",
+    "subject": "BOOK-KEEPING & ACCOUNTANCY",
+    "paper": 5,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_897_b5ab03b296.pdf",
+        "size_kb": 335.6,
+        "filename": "J-897.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_898_224b86108f.pdf",
+        "size_kb": 1310.5,
+        "filename": "J-898.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_901_82b62d9450.pdf",
+        "size_kb": 1431.4,
+        "filename": "J-901.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-7",
+    "strapi_id": 7,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2024",
+    "code": "51",
+    "subject": "ORGANISATION OF COMMERCE & MANAGEMENT",
+    "paper": 6,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_828_1df1d12b13.pdf",
+        "size_kb": 281.9,
+        "filename": "J-828.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_829_1e4ddbf1c9.pdf",
+        "size_kb": 855.6,
+        "filename": "J-829.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_833_afb4d54797.pdf",
+        "size_kb": 801.7,
+        "filename": "J-833.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-8",
+    "strapi_id": 8,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2024",
+    "code": "52",
+    "subject": "SECRETARIAL PRACTICE",
+    "paper": 7,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_841_f19650382f.pdf",
+        "size_kb": 228.2,
+        "filename": "J-841.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_842_2f66dc2b2f.pdf",
+        "size_kb": 636.9,
+        "filename": "J-842.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_846_44049879ed.pdf",
+        "size_kb": 709.4,
+        "filename": "J-846.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-9",
+    "strapi_id": 9,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2024",
+    "code": "54",
+    "subject": "PHYSICS",
+    "paper": 8,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_837_d7cbf5fbdd.pdf",
+        "size_kb": 419.5,
+        "filename": "J-837.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_838_021cc58fc6.pdf",
+        "size_kb": 1394.4,
+        "filename": "J-838.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_840_5df09c533f.pdf",
+        "size_kb": 1446.1,
+        "filename": "J-840.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-10",
+    "strapi_id": 10,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2024",
+    "code": "55",
+    "subject": "CHEMISTRY",
+    "paper": 9,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_852_b020614673.pdf",
+        "size_kb": 333.1,
+        "filename": "J-852.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_853_4fec218c14.pdf",
+        "size_kb": 1074.6,
+        "filename": "J-853.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_855_1c4f024d65.pdf",
+        "size_kb": 1087.2,
+        "filename": "J-855.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-11",
+    "strapi_id": 11,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2024",
+    "code": "56",
+    "subject": "BIOLOGY",
+    "paper": 10,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_885_57efcf3a25.pdf",
+        "size_kb": 773.2,
+        "filename": "J-885.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_888_b6021a1f27.pdf",
+        "size_kb": 1747.0,
+        "filename": "J-888.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-12",
+    "strapi_id": 12,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2024",
+    "code": "88",
+    "subject": "MATHS & STAT. (COMMERCE)",
+    "paper": 11,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_866_c47ff4347a.pdf",
+        "size_kb": 778.3,
+        "filename": "J-866.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_867_5e44d5b1d4.pdf",
+        "size_kb": 1549.4,
+        "filename": "J-867.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_868_0b2bee8620.pdf",
+        "size_kb": 1629.5,
+        "filename": "J-868.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-13",
+    "strapi_id": 13,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2024",
+    "code": "01",
+    "subject": "MARATHI (1ST LANG)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_501_beba62be6a.pdf",
+        "size_kb": 4206.9,
+        "filename": "N-501.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-14",
+    "strapi_id": 14,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2024",
+    "code": "15",
+    "subject": "HINDI (2/3 LANG)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_582_6e0cdbd64a.pdf",
+        "size_kb": 2288.8,
+        "filename": "N-582.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-15",
+    "strapi_id": 15,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2024",
+    "code": "17",
+    "subject": "ENGLISH (2/3 LANG)",
+    "paper": 1,
+    "pdfs": [],
+    "is_available": false,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-16",
+    "strapi_id": 16,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2024",
+    "code": "71",
+    "subject": "MATHEMATICS - I ( ALGEBRA)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_619_5ab4a798b6.pdf",
+        "size_kb": 129.0,
+        "filename": "N-619.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_620_1864f49e58.pdf",
+        "size_kb": 873.9,
+        "filename": "N-620.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_626_5b41284b69.pdf",
+        "size_kb": 899.9,
+        "filename": "N-626.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-17",
+    "strapi_id": 17,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2024",
+    "code": "71",
+    "subject": "MATHEMATICS - II (GEOMETRY)",
+    "paper": 2,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_632_8d5f9b9836.pdf",
+        "size_kb": 123.3,
+        "filename": "N-632.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_633_5f734d1acb.pdf",
+        "size_kb": 789.1,
+        "filename": "N-633.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_639_448ff0ff2b.pdf",
+        "size_kb": 794.1,
+        "filename": "N-639.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-18",
+    "strapi_id": 18,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2024",
+    "code": "72",
+    "subject": "SCIENCE & TECHNOLOGY -I",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_640_caa3522b6a.pdf",
+        "size_kb": 277.4,
+        "filename": "N-640.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_641_81cbfab329.pdf",
+        "size_kb": 984.5,
+        "filename": "N-641.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_647_5943508d66.pdf",
+        "size_kb": 966.6,
+        "filename": "N-647.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-19",
+    "strapi_id": 19,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2024",
+    "code": "72",
+    "subject": "SCIENCE & TECHNOLOGY -II",
+    "paper": 2,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_653_77d7d03682.pdf",
+        "size_kb": 139.2,
+        "filename": "N-653.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_654_47e7cf5b84.pdf",
+        "size_kb": 890.1,
+        "filename": "N-654.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_660_8c3f205f1b.pdf",
+        "size_kb": 905.5,
+        "filename": "N-660.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-20",
+    "strapi_id": 20,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2024",
+    "code": "73",
+    "subject": "SOCIAL SCIENCES - I (HISTORY & POL.SC.)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_661_3ad578a02b.pdf",
+        "size_kb": 100.8,
+        "filename": "N-661.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_662_b2d8c61167.pdf",
+        "size_kb": 733.6,
+        "filename": "N-662.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_668_b6b05f9b14.pdf",
+        "size_kb": 776.4,
+        "filename": "N-668.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-22",
+    "strapi_id": 22,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2024",
+    "code": "73",
+    "subject": "SOCIAL SCIENCES - II (GEOGRAPHY)",
+    "paper": 2,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_669_5f1bd990d6.pdf",
+        "size_kb": 700.8,
+        "filename": "N-669.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_676_20331abd3c.pdf",
+        "size_kb": 1192.5,
+        "filename": "N-676.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-24",
+    "strapi_id": 24,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2025",
+    "code": "01",
+    "subject": "ENGLISH",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_251_d163542f57.pdf",
+        "size_kb": 130.2,
+        "filename": "J-251.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-25",
+    "strapi_id": 25,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2025",
+    "code": "38",
+    "subject": "HISTORY",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_426_6b4b463a85.pdf",
+        "size_kb": 1607.0,
+        "filename": "J-426.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_427_50c4b045f8.pdf",
+        "size_kb": 4415.8,
+        "filename": "J-427.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_431_3b6d01ea56.pdf",
+        "size_kb": 4557.7,
+        "filename": "J-431.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-26",
+    "strapi_id": 26,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2025",
+    "code": "39",
+    "subject": "GEOGRAPHY",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_420_df9f1e9b1a.pdf",
+        "size_kb": 2339.4,
+        "filename": "J-420.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_421_2c0dc1a696.pdf",
+        "size_kb": 4131.6,
+        "filename": "J-421.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_425_57013d135f.pdf",
+        "size_kb": 4101.6,
+        "filename": "J-425.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-27",
+    "strapi_id": 27,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2025",
+    "code": "40",
+    "subject": "MATHEMATICS & STATISTICS",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_312_7ea142d8f8.pdf",
+        "size_kb": 360.4,
+        "filename": "J-312.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_313_13bb1311d8.pdf",
+        "size_kb": 1798.2,
+        "filename": "J-313.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_315_c4edbc10f4.pdf",
+        "size_kb": 1996.3,
+        "filename": "J-315.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-28",
+    "strapi_id": 28,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2025",
+    "code": "49",
+    "subject": "ECONOMICS",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_354_25150562d6.pdf",
+        "size_kb": 1125.8,
+        "filename": "J-354.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_355_1ce0cc6b8b.pdf",
+        "size_kb": 1777.1,
+        "filename": "J-355.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_359_000a7d02aa.pdf",
+        "size_kb": 1814.4,
+        "filename": "J-359.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-29",
+    "strapi_id": 29,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2025",
+    "code": "50",
+    "subject": "BOOK-KEEPING & ACCOUNTANCY",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_347_9af74d0b20.pdf",
+        "size_kb": 271.5,
+        "filename": "J-347.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_348_88c423f134.pdf",
+        "size_kb": 2816.7,
+        "filename": "J-348.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_351_86e1a98a9c.pdf",
+        "size_kb": 3019.2,
+        "filename": "J-351.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-30",
+    "strapi_id": 30,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2025",
+    "code": "51",
+    "subject": "ORGANISATION OF COMMERCE & MANAGEMENT",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_278_eaace94384.pdf",
+        "size_kb": 57.7,
+        "filename": "J-278.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_279_e90473a08a.pdf",
+        "size_kb": 1246.4,
+        "filename": "J-279.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_283_d9194c019d.pdf",
+        "size_kb": 1337.1,
+        "filename": "J-283.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-31",
+    "strapi_id": 31,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2025",
+    "code": "52",
+    "subject": "SECRETARIAL PRACTICE",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_291_c7e81ceea8.pdf",
+        "size_kb": 66.7,
+        "filename": "J-291.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_292_4b8b3ca51e.pdf",
+        "size_kb": 71.9,
+        "filename": "J-292.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_296_2b7913c5b1.pdf",
+        "size_kb": 1511.0,
+        "filename": "J-296.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-32",
+    "strapi_id": 32,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2025",
+    "code": "54",
+    "subject": "PHYSICS",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_287_3a6bdb5161.pdf",
+        "size_kb": 200.5,
+        "filename": "J-287.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_288_9c07ebb5ee.pdf",
+        "size_kb": 2182.9,
+        "filename": "J-288.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_290_c2a67071a1.pdf",
+        "size_kb": 2365.5,
+        "filename": "J-290.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-33",
+    "strapi_id": 33,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2025",
+    "code": "55",
+    "subject": "CHEMISTRY",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_302_2de44977f4.pdf",
+        "size_kb": 183.1,
+        "filename": "J-302.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_303_22d7ae8f41.pdf",
+        "size_kb": 2035.0,
+        "filename": "J-303.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_305_6343c6f746.pdf",
+        "size_kb": 2236.3,
+        "filename": "J-305.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-34",
+    "strapi_id": 34,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2025",
+    "code": "56",
+    "subject": "BIOLOGY",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_355_1ce0cc6b8b.pdf",
+        "size_kb": 1777.1,
+        "filename": "J-355.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_336_1cf1a0fab9.pdf",
+        "size_kb": 2177.2,
+        "filename": "J-336.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_338_59cbf21400.pdf",
+        "size_kb": 2366.4,
+        "filename": "J-338.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-35",
+    "strapi_id": 35,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2025",
+    "code": "88",
+    "subject": "MATHS & STAT. (COMMERCE)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_316_1d2016f594.pdf",
+        "size_kb": 500.0,
+        "filename": "J-316.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_317_a1777f32fe.pdf",
+        "size_kb": 2598.4,
+        "filename": "J-317.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_318_ab861c4b1b.pdf",
+        "size_kb": 2744.7,
+        "filename": "J-318.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-56",
+    "strapi_id": 56,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "July 2025",
+    "code": "01",
+    "subject": "MARATHI (1ST LANG)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_601_586171ccbc.pdf",
+        "size_kb": 1666.5,
+        "filename": "n-601.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-37",
+    "strapi_id": 37,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2025",
+    "code": "15",
+    "subject": "HINDI (2/3 LANG)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "Hindi",
+        "url": "https://blr1.digitaloceanspaces.com/state-board-strapi-upload/N_817_9a7aa870f8.pdf",
+        "size_kb": 108508.2,
+        "filename": "N-817.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-38",
+    "strapi_id": 38,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2025",
+    "code": "17",
+    "subject": "ENGLISH (2/3 LANG)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://blr1.digitaloceanspaces.com/state-board-strapi-upload/N_816_8f513f0279.pdf",
+        "size_kb": 60683.7,
+        "filename": "N-816.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-39",
+    "strapi_id": 39,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2025",
+    "code": "71",
+    "subject": "MATHEMATICS - I ( ALGEBRA)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_819_146b96b0bf.pdf",
+        "size_kb": 113.0,
+        "filename": "N-819.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://blr1.digitaloceanspaces.com/state-board-strapi-upload/N_820_91c5d5504b.pdf",
+        "size_kb": 26767.0,
+        "filename": "N-820.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://blr1.digitaloceanspaces.com/state-board-strapi-upload/N_826_2ed309fb43.pdf",
+        "size_kb": 26443.8,
+        "filename": "N-826.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-40",
+    "strapi_id": 40,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2025",
+    "code": "71",
+    "subject": "MATHEMATICS - II (GEOMETRY)",
+    "paper": 2,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_832_a54516470b.pdf",
+        "size_kb": 139.1,
+        "filename": "N-832.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://blr1.digitaloceanspaces.com/state-board-strapi-upload/N_833_afa27aaeab.pdf",
+        "size_kb": 27178.7,
+        "filename": "N-833.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://blr1.digitaloceanspaces.com/state-board-strapi-upload/N_839_d02cdce653.pdf",
+        "size_kb": 28098.2,
+        "filename": "N-839.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-41",
+    "strapi_id": 41,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2025",
+    "code": "72",
+    "subject": "SCIENCE & TECHNOLOGY -I",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_840_2f3061701c.pdf",
+        "size_kb": 1011.8,
+        "filename": "N-840.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://blr1.digitaloceanspaces.com/state-board-strapi-upload/N_841_75bef4e735.pdf",
+        "size_kb": 35696.1,
+        "filename": "N-841.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://blr1.digitaloceanspaces.com/state-board-strapi-upload/N_847_a8ed21e6fd.pdf",
+        "size_kb": 35337.1,
+        "filename": "N-847.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-42",
+    "strapi_id": 42,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2025",
+    "code": "72",
+    "subject": "SCIENCE & TECHNOLOGY -II",
+    "paper": 2,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_853_36ff6720c6.pdf",
+        "size_kb": 736.8,
+        "filename": "N-853.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://blr1.digitaloceanspaces.com/state-board-strapi-upload/N_854_d28bace5e4.pdf",
+        "size_kb": 22271.9,
+        "filename": "N-854.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://blr1.digitaloceanspaces.com/state-board-strapi-upload/N_860_4eecef9ea4.pdf",
+        "size_kb": 22162.5,
+        "filename": "N-860.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-43",
+    "strapi_id": 43,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2025",
+    "code": "73",
+    "subject": "SOCIAL SCIENCES - I (HISTORY & POL.SC.)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_861_2c2b8c1079.pdf",
+        "size_kb": 153.2,
+        "filename": "N-861.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://blr1.digitaloceanspaces.com/state-board-strapi-upload/N_862_2fde862ec4.pdf",
+        "size_kb": 26513.6,
+        "filename": "N-862.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://blr1.digitaloceanspaces.com/state-board-strapi-upload/N_868_fd06d185ec.pdf",
+        "size_kb": 26389.0,
+        "filename": "N-868.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-44",
+    "strapi_id": 44,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2025",
+    "code": "73",
+    "subject": "SOCIAL SCIENCES - II (GEOGRAPHY)",
+    "paper": 2,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_869_f4621bb88e.pdf",
+        "size_kb": 2874.9,
+        "filename": "N-869.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://blr1.digitaloceanspaces.com/state-board-strapi-upload/N_870_c884cec237.pdf",
+        "size_kb": 27931.6,
+        "filename": "N-870.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://blr1.digitaloceanspaces.com/state-board-strapi-upload/N_876_233af256d7.pdf",
+        "size_kb": 26563.8,
+        "filename": "N-876.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-57",
+    "strapi_id": 57,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "July 2025",
+    "code": "03",
+    "subject": "ENGLISH (1ST LANG)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_682_bffcfb79e8.pdf",
+        "size_kb": 403.2,
+        "filename": "n-682.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-46",
+    "strapi_id": 46,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "July 2024",
+    "code": "01",
+    "subject": "MARATHI (1ST LANG)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "Marathi",
+        "url": "https://blr1.digitaloceanspaces.com/state-board-strapi-upload/n_301_a7deb419b9.pdf",
+        "size_kb": 11024.5,
+        "filename": "n-301.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-58",
+    "strapi_id": 58,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "July 2025",
+    "code": "15",
+    "subject": "HINDI (2/3 LANG)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_680_abd480b9e1.pdf",
+        "size_kb": 2117.0,
+        "filename": "n-680.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-45",
+    "strapi_id": 45,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2025",
+    "code": "03",
+    "subject": "ENGLISH (1ST LANG)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://blr1.digitaloceanspaces.com/state-board-strapi-upload/N_815_69508814ed.pdf",
+        "size_kb": 70095.5,
+        "filename": "N-815.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-53",
+    "strapi_id": 53,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "July 2024",
+    "code": "73",
+    "subject": "SOCIAL SCIENCES - I (HISTORY & POL.SC.)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_426_1d869bbdb4.pdf",
+        "size_kb": 170.9,
+        "filename": "n-426.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_427_8d25ca3db1.pdf",
+        "size_kb": 3550.9,
+        "filename": "n-427.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_433_12e2fd48cc.pdf",
+        "size_kb": 3532.1,
+        "filename": "n-433.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-47",
+    "strapi_id": 47,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "July 2024",
+    "code": "15",
+    "subject": "HINDI (2/3 LANG)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "Hindi",
+        "url": "https://blr1.digitaloceanspaces.com/state-board-strapi-upload/n_380_7f80af6fe4.pdf",
+        "size_kb": 9417.7,
+        "filename": "n-380.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-55",
+    "strapi_id": 55,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "July 2024",
+    "code": "03",
+    "subject": "ENGLISH (1ST LANG)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://blr1.digitaloceanspaces.com/state-board-strapi-upload/n_382_1ca06d79bc.pdf",
+        "size_kb": 27467.3,
+        "filename": "n-382.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-51",
+    "strapi_id": 51,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "July 2024",
+    "code": "72",
+    "subject": "SCIENCE & TECHNOLOGY -I",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_405_49a228aa24.pdf",
+        "size_kb": 634.0,
+        "filename": "n-405.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_406_e9789949e5.pdf",
+        "size_kb": 2168.3,
+        "filename": "n-406.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_412_c60d2f7acf.pdf",
+        "size_kb": 2041.5,
+        "filename": "n-412.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-50",
+    "strapi_id": 50,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "July 2024",
+    "code": "71",
+    "subject": "MATHEMATICS - II (GEOMETRY)",
+    "paper": 2,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_397_b6702ad772.pdf",
+        "size_kb": 123.3,
+        "filename": "n-397.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_398_d4687de3fe.pdf",
+        "size_kb": 2395.9,
+        "filename": "n-398.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_404_260085e5b9.pdf",
+        "size_kb": 2422.0,
+        "filename": "n-404.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-52",
+    "strapi_id": 52,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "July 2024",
+    "code": "72",
+    "subject": "SCIENCE & TECHNOLOGY -II",
+    "paper": 2,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_418_550e4e8380.pdf",
+        "size_kb": 1427.1,
+        "filename": "n-418.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_419_55ed7396d8.pdf",
+        "size_kb": 2098.0,
+        "filename": "n-419.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_425_84bf66aa4d.pdf",
+        "size_kb": 2198.1,
+        "filename": "n-425.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-65",
+    "strapi_id": 65,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "July 2025",
+    "code": "73",
+    "subject": "SOCIAL SCIENCES - II (GEOGRAPHY)",
+    "paper": 2,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_734_72dcb829b6.pdf",
+        "size_kb": 248.3,
+        "filename": "n-734.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_735_104ec56dd7.pdf",
+        "size_kb": 1038.8,
+        "filename": "n-735.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_741_46c605acb7.pdf",
+        "size_kb": 962.6,
+        "filename": "n-741.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-49",
+    "strapi_id": 49,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "July 2024",
+    "code": "71",
+    "subject": "MATHEMATICS - I ( ALGEBRA)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_384_28b9937653.pdf",
+        "size_kb": 131.3,
+        "filename": "n-384.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_385_e251a7a157.pdf",
+        "size_kb": 1592.8,
+        "filename": "n-385.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_391_249fd46022.pdf",
+        "size_kb": 2047.7,
+        "filename": "n-391.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-48",
+    "strapi_id": 48,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "July 2024",
+    "code": "17",
+    "subject": "ENGLISH (2/3 LANG)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://blr1.digitaloceanspaces.com/state-board-strapi-upload/n_383_2514745b3a.pdf",
+        "size_kb": 16672.2,
+        "filename": "n-383.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-54",
+    "strapi_id": 54,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "July 2024",
+    "code": "73",
+    "subject": "SOCIAL SCIENCES - II (GEOGRAPHY)",
+    "paper": 2,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_434_f89d7a814d.pdf",
+        "size_kb": 471.3,
+        "filename": "n-434.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_435_9943ec4940.pdf",
+        "size_kb": 1420.2,
+        "filename": "n-435.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_441_3316d0fcf4.pdf",
+        "size_kb": 1715.6,
+        "filename": "n-441.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-62",
+    "strapi_id": 62,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "July 2025",
+    "code": "72",
+    "subject": "SCIENCE & TECHNOLOGY -I",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_705_15fa432b32.pdf",
+        "size_kb": 229.9,
+        "filename": "n-705.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_706_608b6adb4e.pdf",
+        "size_kb": 748.2,
+        "filename": "n-706.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_712_64444265b8.pdf",
+        "size_kb": 761.2,
+        "filename": "n-712.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-63",
+    "strapi_id": 63,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "July 2025",
+    "code": "72",
+    "subject": "SCIENCE & TECHNOLOGY -II",
+    "paper": 2,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_718_2b83e96466.pdf",
+        "size_kb": 635.1,
+        "filename": "n-718.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_719_354c3c4d62.pdf",
+        "size_kb": 1338.9,
+        "filename": "n-719.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_725_a1c16dd3a4.pdf",
+        "size_kb": 1352.2,
+        "filename": "n-725.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-64",
+    "strapi_id": 64,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "July 2025",
+    "code": "73",
+    "subject": "SOCIAL SCIENCES - I (HISTORY & POL.SC.)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_726_a90a6370b7.pdf",
+        "size_kb": 127.1,
+        "filename": "n-726.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_727_a4b2b97484.pdf",
+        "size_kb": 765.2,
+        "filename": "n-727.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_733_98a01c041c.pdf",
+        "size_kb": 787.6,
+        "filename": "n-733.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-59",
+    "strapi_id": 59,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "July 2025",
+    "code": "17",
+    "subject": "ENGLISH (2/3 LANG)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_683_9c17bf25e0.pdf",
+        "size_kb": 328.6,
+        "filename": "n-683.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-60",
+    "strapi_id": 60,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "July 2025",
+    "code": "71",
+    "subject": "MATHEMATICS - I ( ALGEBRA)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_684_5a1ffd168d.pdf",
+        "size_kb": 144.5,
+        "filename": "n-684.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_685_5a06af07cd.pdf",
+        "size_kb": 748.3,
+        "filename": "n-685.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_691_7f70da02ae.pdf",
+        "size_kb": 749.1,
+        "filename": "n-691.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-36",
+    "strapi_id": 36,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2025",
+    "code": "01",
+    "subject": "MARATHI (1ST LANG)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "Marathi",
+        "url": "https://blr1.digitaloceanspaces.com/state-board-strapi-upload/N_701_70146dfe8d.pdf",
+        "size_kb": 113651.4,
+        "filename": "N-701.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-61",
+    "strapi_id": 61,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "July 2025",
+    "code": "71",
+    "subject": "MATHEMATICS - II (GEOMETRY)",
+    "paper": 2,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_697_63aa7e455f.pdf",
+        "size_kb": 141.7,
+        "filename": "n-697.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_698_8775215899.pdf",
+        "size_kb": 757.6,
+        "filename": "n-698.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/n_704_3854d70f2b.pdf",
+        "size_kb": 760.9,
+        "filename": "n-704.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-67",
+    "strapi_id": 67,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "July 2024",
+    "code": "38",
+    "subject": "HISTORY",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_168_4c2c7ec298.pdf",
+        "size_kb": 1060.7,
+        "filename": "j-168.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_169_591ea20a93.pdf",
+        "size_kb": 2052.9,
+        "filename": "j-169.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_173_eef6b16575.pdf",
+        "size_kb": 2171.6,
+        "filename": "j-173.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-68",
+    "strapi_id": 68,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "July 2024",
+    "code": "39",
+    "subject": "GEOGRAPHY",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_214_49ac73d375.pdf",
+        "size_kb": 1115.1,
+        "filename": "j-214.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_215_c6f2e83b42.pdf",
+        "size_kb": 3548.3,
+        "filename": "j-215.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_219_3b7c306ce1.pdf",
+        "size_kb": 3518.3,
+        "filename": "j-219.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-70",
+    "strapi_id": 70,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "July 2024",
+    "code": "49",
+    "subject": "ECONOMICS",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_220_1b577367fc.pdf",
+        "size_kb": 315.3,
+        "filename": "j-220.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_221_96368965ec.pdf",
+        "size_kb": 3236.1,
+        "filename": "j-221.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_225_0199e4bcc7.pdf",
+        "size_kb": 3499.1,
+        "filename": "j-225.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-71",
+    "strapi_id": 71,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "July 2024",
+    "code": "50",
+    "subject": "BOOK-KEEPING & ACCOUNTANCY",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_209_efc3bd7da9.pdf",
+        "size_kb": 396.9,
+        "filename": "j-209.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_210_db6d5cec79.pdf",
+        "size_kb": 4625.7,
+        "filename": "j-210.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_213_4bc38b3acf.pdf",
+        "size_kb": 5033.9,
+        "filename": "j-213.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-72",
+    "strapi_id": 72,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "July 2024",
+    "code": "51",
+    "subject": "ORGANISATION OF COMMERCE & MANAGEMENT",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_186_e7900bc28a.pdf",
+        "size_kb": 98.0,
+        "filename": "j-186.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_187_f063701a1b.pdf",
+        "size_kb": 1035.4,
+        "filename": "j-187.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_191_da5b2bc532.pdf",
+        "size_kb": 1003.7,
+        "filename": "j-191.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-73",
+    "strapi_id": 73,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "July 2024",
+    "code": "52",
+    "subject": "SECRETARIAL PRACTICE",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_138_9e77b2d5df.pdf",
+        "size_kb": 102.6,
+        "filename": "j-138.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_139_eb8f44bfcd.pdf",
+        "size_kb": 927.1,
+        "filename": "j-139.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_143_fbe2b70aa2.pdf",
+        "size_kb": 978.1,
+        "filename": "j-143.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-74",
+    "strapi_id": 74,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "July 2024",
+    "code": "54",
+    "subject": "PHYSICS",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_129_2c5e3aec16.pdf",
+        "size_kb": 142.8,
+        "filename": "j-129.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_130_f711c747fe.pdf",
+        "size_kb": 1506.3,
+        "filename": "j-130.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_132_bd87641880.pdf",
+        "size_kb": 2529.9,
+        "filename": "j-132.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-75",
+    "strapi_id": 75,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "July 2024",
+    "code": "55",
+    "subject": "CHEMISTRY",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_161_c995d8ef69.pdf",
+        "size_kb": 228.3,
+        "filename": "j-161.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_162_c0e8af97f6.pdf",
+        "size_kb": 1509.2,
+        "filename": "j-162.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_164_4422733aff.pdf",
+        "size_kb": 2428.7,
+        "filename": "j-164.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-76",
+    "strapi_id": 76,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "July 2024",
+    "code": "56",
+    "subject": "BIOLOGY",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_197_c62bfbf4f1.pdf",
+        "size_kb": 465.7,
+        "filename": "j-197.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_198_164dd0b61f.pdf",
+        "size_kb": 3661.3,
+        "filename": "j-198.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_200_9936b42844.pdf",
+        "size_kb": 3964.0,
+        "filename": "j-200.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-77",
+    "strapi_id": 77,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "July 2024",
+    "code": "88",
+    "subject": "MATHS & STAT. (COMMERCE)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_178_631c4b7e6f.pdf",
+        "size_kb": 307.9,
+        "filename": "j-178.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_179_7f9a8f8696.pdf",
+        "size_kb": 1796.4,
+        "filename": "j-179.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_180_6c94c8071e.pdf",
+        "size_kb": 1878.5,
+        "filename": "j-180.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-69",
+    "strapi_id": 69,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "July 2024",
+    "code": "40",
+    "subject": "MATHEMATICS & STATISTICS",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_174_0c38290d8a.pdf",
+        "size_kb": 368.6,
+        "filename": "j-174.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_175_f0d26ea0ef.pdf",
+        "size_kb": 1584.3,
+        "filename": "j-175.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_177_27ef341e55.pdf",
+        "size_kb": 2320.2,
+        "filename": "j-177.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-97",
+    "strapi_id": 97,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2026",
+    "code": "73",
+    "subject": "SOCIAL SCIENCES - I (HISTORY & POL.SC.)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_961_70207039a5.pdf",
+        "size_kb": 157.0,
+        "filename": "N-961.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_962_b101781dd0.pdf",
+        "size_kb": 844.0,
+        "filename": "N-962.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_968_2d417a62c4.pdf",
+        "size_kb": 888.5,
+        "filename": "N-968.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-79",
+    "strapi_id": 79,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "July 2025",
+    "code": "38",
+    "subject": "HISTORY",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_378_7cdd0e5b8d.pdf",
+        "size_kb": 85.0,
+        "filename": "j-378.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_379_f0ec28c0e9.pdf",
+        "size_kb": 106.0,
+        "filename": "j-379.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_383_5f0c70c2ce.pdf",
+        "size_kb": 110.2,
+        "filename": "j-383.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-80",
+    "strapi_id": 80,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "July 2025",
+    "code": "39",
+    "subject": "GEOGRAPHY",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_427_3daad0cea6.pdf",
+        "size_kb": 148.7,
+        "filename": "j-427.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_428_39e3d113aa.pdf",
+        "size_kb": 149.9,
+        "filename": "j-428.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_432_9db1526b23.pdf",
+        "size_kb": 141.8,
+        "filename": "j-432.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-81",
+    "strapi_id": 81,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "July 2025",
+    "code": "40",
+    "subject": "MATHEMATICS & STATISTICS",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_384_2e2059557c.pdf",
+        "size_kb": 366.6,
+        "filename": "j-384.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_385_dbc54bcdd6.pdf",
+        "size_kb": 1601.2,
+        "filename": "j-385.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_387_b5d9c7ce70.pdf",
+        "size_kb": 1713.8,
+        "filename": "j-387.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-82",
+    "strapi_id": 82,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "July 2025",
+    "code": "49",
+    "subject": "ECONOMICS",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_433_6c0782d7c5.pdf",
+        "size_kb": 108.8,
+        "filename": "j-433.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_434_dc89bd7644.pdf",
+        "size_kb": 91.3,
+        "filename": "j-434.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_438_0285697f9c.pdf",
+        "size_kb": 111.8,
+        "filename": "j-438.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-83",
+    "strapi_id": 83,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "July 2025",
+    "code": "50",
+    "subject": "BOOK-KEEPING & ACCOUNTANCY",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_422_8c7fb46d3d.pdf",
+        "size_kb": 97.8,
+        "filename": "j-422.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_423_00e3f09efc.pdf",
+        "size_kb": 86.9,
+        "filename": "j-423.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_426_859e4934a4.pdf",
+        "size_kb": 73.8,
+        "filename": "j-426.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-84",
+    "strapi_id": 84,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "July 2025",
+    "code": "51",
+    "subject": "ORGANISATION OF COMMERCE & MANAGEMENT",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_396_b4c6389068.pdf",
+        "size_kb": 46.7,
+        "filename": "j-396.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_397_b98a2a7009.pdf",
+        "size_kb": 54.8,
+        "filename": "j-397.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_401_5f9b9f725a.pdf",
+        "size_kb": 55.8,
+        "filename": "j-401.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-85",
+    "strapi_id": 85,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "July 2025",
+    "code": "52",
+    "subject": "SECRETARIAL PRACTICE",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_348_80a3af7377.pdf",
+        "size_kb": 49.0,
+        "filename": "j-348.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_349_79cd0775f6.pdf",
+        "size_kb": 71.5,
+        "filename": "j-349.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_353_6d9c264452.pdf",
+        "size_kb": 75.7,
+        "filename": "j-353.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-86",
+    "strapi_id": 86,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "July 2025",
+    "code": "54",
+    "subject": "PHYSICS",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_339_01054d0bfc.pdf",
+        "size_kb": 230.8,
+        "filename": "j-339.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_340_ed6948b806.pdf",
+        "size_kb": 2035.6,
+        "filename": "j-340.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_342_139021ab05.pdf",
+        "size_kb": 3529.7,
+        "filename": "j-342.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-87",
+    "strapi_id": 87,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "July 2025",
+    "code": "55",
+    "subject": "CHEMISTRY",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_371_b7fb2b8a1a.pdf",
+        "size_kb": 338.1,
+        "filename": "j-371.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_372_8ddf13ee5f.pdf",
+        "size_kb": 1396.5,
+        "filename": "j-372.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_374_382b3eb9d3.pdf",
+        "size_kb": 3795.2,
+        "filename": "j-374.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-88",
+    "strapi_id": 88,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "July 2025",
+    "code": "56",
+    "subject": "BIOLOGY",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_410_0488833f01.pdf",
+        "size_kb": 822.7,
+        "filename": "j-410.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_411_993ae6977f.pdf",
+        "size_kb": 3773.5,
+        "filename": "j-411.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_413_46942e6fb7.pdf",
+        "size_kb": 3957.8,
+        "filename": "j-413.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-89",
+    "strapi_id": 89,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "July 2025",
+    "code": "88",
+    "subject": "MATHS & STAT. (COMMERCE)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_388_dd6fba7759.pdf",
+        "size_kb": 458.1,
+        "filename": "j-388.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_389_74bf3bf90f.pdf",
+        "size_kb": 3628.4,
+        "filename": "j-389.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_390_0d53508ac5.pdf",
+        "size_kb": 3689.3,
+        "filename": "j-390.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-78",
+    "strapi_id": 78,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "July 2025",
+    "code": "01",
+    "subject": "ENGLISH",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_311_ec7ddaa5e2.pdf",
+        "size_kb": 80.5,
+        "filename": "j-311.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-66",
+    "strapi_id": 66,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "July 2024",
+    "code": "01",
+    "subject": "ENGLISH",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/j_101_3b974241d2.pdf",
+        "size_kb": 186.4,
+        "filename": "j-101.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-90",
+    "strapi_id": 90,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2026",
+    "code": "1",
+    "subject": "MARATHI (1ST LANG)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_801_e307c4518f.pdf",
+        "size_kb": 1640.4,
+        "filename": "N-801.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-91",
+    "strapi_id": 91,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2026",
+    "code": "15",
+    "subject": "HINDI (2/3 LANG)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_917_9321b92bc6.pdf",
+        "size_kb": 2189.4,
+        "filename": "N-917.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-92",
+    "strapi_id": 92,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2026",
+    "code": "17",
+    "subject": "ENGLISH (2/3 LANG)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_916_a7d8667741.pdf",
+        "size_kb": 557.8,
+        "filename": "N-916.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-93",
+    "strapi_id": 93,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2026",
+    "code": "71",
+    "subject": "MATHEMATICS - I ( ALGEBRA)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_919_8567e67521.pdf",
+        "size_kb": 156.6,
+        "filename": "N-919.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_920_0224a937df.pdf",
+        "size_kb": 755.3,
+        "filename": "N-920.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_926_2d882ebaf4.pdf",
+        "size_kb": 755.0,
+        "filename": "N-926.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-94",
+    "strapi_id": 94,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2026",
+    "code": "71",
+    "subject": "MATHEMATICS - II (GEOMETRY)",
+    "paper": 2,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_932_744ed2feb1.pdf",
+        "size_kb": 272.4,
+        "filename": "N-932.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_933_fbd0d6d2b1.pdf",
+        "size_kb": 783.8,
+        "filename": "N-933.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_939_cc6b3cc483.pdf",
+        "size_kb": 846.8,
+        "filename": "N-939.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-95",
+    "strapi_id": 95,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2026",
+    "code": "72",
+    "subject": "SCIENCE & TECHNOLOGY -I",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_940_2f8de9d4c0.pdf",
+        "size_kb": 189.5,
+        "filename": "N-940.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_941_8e21caa44a.pdf",
+        "size_kb": 862.2,
+        "filename": "N-941.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_947_a36f4ddbb8.pdf",
+        "size_kb": 869.7,
+        "filename": "N-947.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-96",
+    "strapi_id": 96,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2026",
+    "code": "72",
+    "subject": "SCIENCE & TECHNOLOGY -II",
+    "paper": 2,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_953_e0b066c538.pdf",
+        "size_kb": 696.9,
+        "filename": "N-953.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_954_0a0a937333.pdf",
+        "size_kb": 1241.6,
+        "filename": "N-954.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_960_417ab3d2ab.pdf",
+        "size_kb": 1251.8,
+        "filename": "N-960.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-98",
+    "strapi_id": 98,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2026",
+    "code": "73",
+    "subject": "SOCIAL SCIENCES - II (GEOGRAPHY)",
+    "paper": 2,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_969_e82d97b59e.pdf",
+        "size_kb": 632.2,
+        "filename": "N-969.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_970_0ad8301b8a.pdf",
+        "size_kb": 1717.6,
+        "filename": "N-970.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_976_2c0c100603.pdf",
+        "size_kb": 1359.1,
+        "filename": "N-976.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-99",
+    "strapi_id": 99,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "March 2026",
+    "code": "3",
+    "subject": "ENGLISH (1ST LANG)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_915_859f40f8b7.pdf",
+        "size_kb": 582.2,
+        "filename": "N-915.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-100",
+    "strapi_id": 100,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2026",
+    "code": "1",
+    "subject": "ENGLISH",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_101_bf26b0b5ee.pdf",
+        "size_kb": 76.6,
+        "filename": "J-101.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-101",
+    "strapi_id": 101,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2026",
+    "code": "38",
+    "subject": "HISTORY",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_276_207e74fdb7.pdf",
+        "size_kb": 79.2,
+        "filename": "J-276.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_277_6dddcb86bd.pdf",
+        "size_kb": 125.2,
+        "filename": "J-277.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_281_5fb269d39c.pdf",
+        "size_kb": 160.4,
+        "filename": "J-281.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-102",
+    "strapi_id": 102,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2026",
+    "code": "39",
+    "subject": "GEOGRAPHY",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_270_9f50dacf61.pdf",
+        "size_kb": 103.1,
+        "filename": "J-270.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_271_302856ac15.pdf",
+        "size_kb": 116.8,
+        "filename": "J-271.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_275_9d58376743.pdf",
+        "size_kb": 95.4,
+        "filename": "J-275.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-103",
+    "strapi_id": 103,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2026",
+    "code": "40",
+    "subject": "MATHEMATICS & STATISTICS",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_165_31fb54981b.pdf",
+        "size_kb": 827.4,
+        "filename": "J-165.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_166_92bc0cce1a.pdf",
+        "size_kb": 2861.2,
+        "filename": "J-166.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_168_17afefce7a.pdf",
+        "size_kb": 3126.8,
+        "filename": "J-168.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-104",
+    "strapi_id": 104,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2026",
+    "code": "49",
+    "subject": "ECONOMICS",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_183_e254dac27f.pdf",
+        "size_kb": 109.2,
+        "filename": "J-183.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_184_8bd2e0c3ce.pdf",
+        "size_kb": 89.4,
+        "filename": "J-184.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_188_f26a726829.pdf",
+        "size_kb": 99.8,
+        "filename": "J-188.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-105",
+    "strapi_id": 105,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2026",
+    "code": "50",
+    "subject": "BOOK-KEEPING & ACCOUNTANCY",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_196_47090d5c4a.pdf",
+        "size_kb": 369.0,
+        "filename": "J-196.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_197_55be28ac6a.pdf",
+        "size_kb": 69.7,
+        "filename": "J-197.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_200_60ac383839.pdf",
+        "size_kb": 72.9,
+        "filename": "J-200.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-106",
+    "strapi_id": 106,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2026",
+    "code": "51",
+    "subject": "ORGANISATION OF COMMERCE & MANAGEMENT",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_128_1f7539fe96.pdf",
+        "size_kb": 48.4,
+        "filename": "J-128.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_129_5486f81d26.pdf",
+        "size_kb": 62.3,
+        "filename": "J-129.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_133_ea3a02183c.pdf",
+        "size_kb": 69.0,
+        "filename": "J-133.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-107",
+    "strapi_id": 107,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2026",
+    "code": "52",
+    "subject": "SECRETARIAL PRACTICE",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_141_cdd4583202.pdf",
+        "size_kb": 48.2,
+        "filename": "J-141.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_142_8b89365f48.pdf",
+        "size_kb": 68.8,
+        "filename": "J-142.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_146_24180bc58c.pdf",
+        "size_kb": 66.7,
+        "filename": "J-146.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-108",
+    "strapi_id": 108,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2026",
+    "code": "54",
+    "subject": "PHYSICS",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_137_1fca0093b4.pdf",
+        "size_kb": 188.8,
+        "filename": "J-137.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_138_62d5bdc562.pdf",
+        "size_kb": 3904.1,
+        "filename": "J-138.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_140_7d11128924.pdf",
+        "size_kb": 4276.0,
+        "filename": "J-140.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-109",
+    "strapi_id": 109,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2026",
+    "code": "55",
+    "subject": "CHEMISTRY",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_155_4477e0b2cb.pdf",
+        "size_kb": 243.7,
+        "filename": "J-155.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_156_031b61f25e.pdf",
+        "size_kb": 3389.2,
+        "filename": "J-156.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_158_eddb718a0d.pdf",
+        "size_kb": 3579.0,
+        "filename": "J-158.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-110",
+    "strapi_id": 110,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2026",
+    "code": "56",
+    "subject": "BIOLOGY",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_189_d7beba4593.pdf",
+        "size_kb": 73.0,
+        "filename": "J-189.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_190_906d669094.pdf",
+        "size_kb": 95.4,
+        "filename": "J-190.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_192_1c217a1d42.pdf",
+        "size_kb": 100.4,
+        "filename": "J-192.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-111",
+    "strapi_id": 111,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "March 2026",
+    "code": "88",
+    "subject": "MATHS & STAT. (COMMERCE)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_169_f6db0a8d52.pdf",
+        "size_kb": 1125.2,
+        "filename": "J-169.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_170_fb5bf75336.pdf",
+        "size_kb": 4495.5,
+        "filename": "J-170.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J_171_c02cfbb1ef.pdf",
+        "size_kb": 4631.5,
+        "filename": "J-171.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-112",
+    "strapi_id": 112,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "June 2026",
+    "code": "1",
+    "subject": "MARATHI (1ST LANG)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_301_23cd2ef8e8.pdf",
+        "size_kb": 1655.4,
+        "filename": "N-301.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-113",
+    "strapi_id": 113,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "June 2026",
+    "code": "15",
+    "subject": "HINDI (2/3 LANG)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_380_a4fe8da198.pdf",
+        "size_kb": 1881.0,
+        "filename": "N-380.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-114",
+    "strapi_id": 114,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "June 2026",
+    "code": "17",
+    "subject": "ENGLISH (2/3 LANG)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_383_ab5b6f68f8.pdf",
+        "size_kb": 180.8,
+        "filename": "N-383.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-115",
+    "strapi_id": 115,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "June 2026",
+    "code": "71",
+    "subject": "MATHEMATICS - I ( ALGEBRA)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_384_cef6725f58.pdf",
+        "size_kb": 140.8,
+        "filename": "N-384.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_385_b1a079d607.pdf",
+        "size_kb": 714.7,
+        "filename": "N-385.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_391_074eecea51.pdf",
+        "size_kb": 724.3,
+        "filename": "N-391.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-116",
+    "strapi_id": 116,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "June 2026",
+    "code": "71",
+    "subject": "MATHEMATICS - II (GEOMETRY)",
+    "paper": 2,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_397_e347e12871.pdf",
+        "size_kb": 136.6,
+        "filename": "N-397.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_398_08f752328b.pdf",
+        "size_kb": 674.8,
+        "filename": "N-398.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_404_294c4a9afa.pdf",
+        "size_kb": 702.1,
+        "filename": "N-404.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-117",
+    "strapi_id": 117,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "June 2026",
+    "code": "72",
+    "subject": "SCIENCE & TECHNOLOGY -I",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_405_ee08436031.pdf",
+        "size_kb": 597.7,
+        "filename": "N-405.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_406_10c6519a1c.pdf",
+        "size_kb": 1281.2,
+        "filename": "N-406.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_412_a120250372.pdf",
+        "size_kb": 1267.4,
+        "filename": "N-412.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-118",
+    "strapi_id": 118,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "June 2026",
+    "code": "72",
+    "subject": "SCIENCE & TECHNOLOGY -II",
+    "paper": 2,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_418_50c73e4d38.pdf",
+        "size_kb": 265.6,
+        "filename": "N-418.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_419_e20c585918.pdf",
+        "size_kb": 775.6,
+        "filename": "N-419.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_425_ff70d3686a.pdf",
+        "size_kb": 780.7,
+        "filename": "N-425.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-119",
+    "strapi_id": 119,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "June 2026",
+    "code": "73",
+    "subject": "SOCIAL SCIENCES - I (HISTORY & POL.SC.)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_426_4172d79b8b.pdf",
+        "size_kb": 123.7,
+        "filename": "N-426.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_427_3fc4b76564.pdf",
+        "size_kb": 777.0,
+        "filename": "N-427.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_433_2291fa2ef3.pdf",
+        "size_kb": 803.5,
+        "filename": "N-433.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-120",
+    "strapi_id": 120,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "June 2026",
+    "code": "73",
+    "subject": "SOCIAL SCIENCES - II (GEOGRAPHY)",
+    "paper": 2,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_434_bd6a995829.pdf",
+        "size_kb": 266.6,
+        "filename": "N-434.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_435_8dc677c684.pdf",
+        "size_kb": 809.7,
+        "filename": "N-435.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_441_fa54a73bc2.pdf",
+        "size_kb": 866.7,
+        "filename": "N-441.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-ssc-121",
+    "strapi_id": 121,
+    "type": "SSC",
+    "class": "10",
+    "course": "SSC (Std. 10)",
+    "session": "June 2026",
+    "code": "3",
+    "subject": "ENGLISH (1ST LANG)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/N_382_38e0a6e4a8.pdf",
+        "size_kb": 182.3,
+        "filename": "N-382.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-122",
+    "strapi_id": 122,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "June 2026",
+    "code": "1",
+    "subject": "ENGLISH",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J201_9e5c9b7778.pdf",
+        "size_kb": 77.3,
+        "filename": "J201.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-123",
+    "strapi_id": 123,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "June 2026",
+    "code": "38",
+    "subject": "HISTORY",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J270_5e34977de9.pdf",
+        "size_kb": 110.6,
+        "filename": "J270.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J271_227ddf1116.pdf",
+        "size_kb": 4259.2,
+        "filename": "J271.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J275_7fba420156.pdf",
+        "size_kb": 4123.8,
+        "filename": "J275.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-124",
+    "strapi_id": 124,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "June 2026",
+    "code": "39",
+    "subject": "GEOGRAPHY",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J314_99a8526e7f.pdf",
+        "size_kb": 116.0,
+        "filename": "J314.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J315_ca74fa5cdb.pdf",
+        "size_kb": 108.6,
+        "filename": "J315.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J319_cde32789b1.pdf",
+        "size_kb": 122.9,
+        "filename": "J319.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-125",
+    "strapi_id": 125,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "June 2026",
+    "code": "40",
+    "subject": "MATHEMATICS & STATISTICS",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J276_587a6e34a6.pdf",
+        "size_kb": 397.6,
+        "filename": "J276.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J277_8409a38012.pdf",
+        "size_kb": 2343.5,
+        "filename": "J277.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J279_61cda1b75f.pdf",
+        "size_kb": 1230.5,
+        "filename": "J279.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-126",
+    "strapi_id": 126,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "June 2026",
+    "code": "49",
+    "subject": "ECONOMICS",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J320_eb5f28eb3a.pdf",
+        "size_kb": 97.1,
+        "filename": "J320.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J321_ab1f8cb5cf.pdf",
+        "size_kb": 91.3,
+        "filename": "J321.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J325_f2e99aa7b5.pdf",
+        "size_kb": 87.4,
+        "filename": "J325.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-127",
+    "strapi_id": 127,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "June 2026",
+    "code": "50",
+    "subject": "BOOK-KEEPING & ACCOUNTANCY",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J309_778ab79e55.pdf",
+        "size_kb": 393.2,
+        "filename": "J309.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J310_6d9533e182.pdf",
+        "size_kb": 3973.0,
+        "filename": "J310.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J313_d04f764c5d.pdf",
+        "size_kb": 4373.7,
+        "filename": "J313.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-128",
+    "strapi_id": 128,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "June 2026",
+    "code": "51",
+    "subject": "ORGANISATION OF COMMERCE & MANAGEMENT",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J283_6be2df1629.pdf",
+        "size_kb": 58.7,
+        "filename": "J283.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J284_61e71c90e2.pdf",
+        "size_kb": 53.3,
+        "filename": "J284.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J288_f87a0c8039.pdf",
+        "size_kb": 60.8,
+        "filename": "J288.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-129",
+    "strapi_id": 129,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "June 2026",
+    "code": "52",
+    "subject": "SECRETARIAL PRACTICE",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J238_56a15c785c.pdf",
+        "size_kb": 54.2,
+        "filename": "J238.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J239_b79a96fcec.pdf",
+        "size_kb": 50.8,
+        "filename": "J239.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J243_5f116b1668.pdf",
+        "size_kb": 2322.3,
+        "filename": "J243.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-130",
+    "strapi_id": 130,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "June 2026",
+    "code": "54",
+    "subject": "PHYSICS",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J229_6d379aed1c.pdf",
+        "size_kb": 108.2,
+        "filename": "J229.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J230_f0492b7a7d.pdf",
+        "size_kb": 1467.2,
+        "filename": "J230.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J232_170bab27d0.pdf",
+        "size_kb": 1624.0,
+        "filename": "J232.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-131",
+    "strapi_id": 131,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "June 2026",
+    "code": "55",
+    "subject": "CHEMISTRY",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J261_548107cdc9.pdf",
+        "size_kb": 66.6,
+        "filename": "J261.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J262_cae904873f.pdf",
+        "size_kb": 1455.8,
+        "filename": "J262.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J264_e3310ce25d.pdf",
+        "size_kb": 1545.4,
+        "filename": "J264.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-132",
+    "strapi_id": 132,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "June 2026",
+    "code": "56",
+    "subject": "BIOLOGY",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J297_9965afc012.pdf",
+        "size_kb": 782.0,
+        "filename": "J297.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J298_a130d78e42.pdf",
+        "size_kb": 2033.8,
+        "filename": "J298.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J300_84cd621ed3.pdf",
+        "size_kb": 2131.5,
+        "filename": "J300.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  },
+  {
+    "id": "maha-pyq-hsc-133",
+    "strapi_id": 133,
+    "type": "HSC",
+    "class": "12",
+    "course": "HSC (Std. 12)",
+    "session": "June 2026",
+    "code": "88",
+    "subject": "MATHS & STAT. (COMMERCE)",
+    "paper": 1,
+    "pdfs": [
+      {
+        "medium": "English",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J280_dc387a708a.pdf",
+        "size_kb": 705.1,
+        "filename": "J280.pdf"
+      },
+      {
+        "medium": "Marathi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J281_cfa85d2e39.pdf",
+        "size_kb": 4033.1,
+        "filename": "J281.pdf"
+      },
+      {
+        "medium": "Hindi",
+        "url": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/J282_656b086d75.pdf",
+        "size_kb": 4196.7,
+        "filename": "J282.pdf"
+      }
+    ],
+    "is_available": true,
+    "source_portal": "https://www.mahahsscboard.in/en/questionPaper",
+    "verification_status": "verified_official",
+    "last_verified": "2026-11-10"
+  }
+]

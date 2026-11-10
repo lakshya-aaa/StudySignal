@@ -1,0 +1,150 @@
+{
+  "board_name": "Bihar School Examination Board (BSEB)",
+  "board_name_hindi": "बिहार विद्यालय परीक्षा समिति (BSEB), पटना",
+  "official_portal": "https://biharboardonline.com/",
+  "last_checked": "2026-11-10",
+  "last_checked_label": "10 November 2026",
+  "status_2027": "awaiting_official_release",
+  "status_label_2027": "Awaiting Official Release",
+  "advisory_2027": "As of 10 November 2026, BSEB Patna has NOT released the 2027 Annual Matriculation (Class 10) or Intermediate (Class 12) examination timetable on biharboardonline.com. Under StudySignal's zero-speculation policy, no unverified 2027 dates are published. Below are the verified official 2026 Annual Examination Programmes (PR 329/2025 & PR 330/2025) for authentic shift timing, cool-off time, and schedule pattern reference.",
+  "shifts": {
+    "first": "प्रथम पाली (1st Sitting): 09:30 AM to 12:45 PM (Cool off time: 09:30 AM – 09:45 AM; Core Science/Social Sci 1st sitting ends 12:15 PM)",
+    "second": "द्वितीय पाली (2nd Sitting): 02:00 PM to 05:15 PM (Cool off time: 02:00 PM – 02:15 PM; Core Science/Social Sci 2nd sitting ends 04:45 PM)"
+  },
+  "classes": {
+    "10": {
+      "class_name": "Matriculation (Class 10 — Annual Secondary)",
+      "class_name_hindi": "वार्षिक माध्यमिक परीक्षा (मैट्रिक - कक्षा 10)",
+      "reference_year": "2026 Reference Programme",
+      "status_2027": "awaiting_official_release",
+      "status_label_2027": "2027 Timetable: Awaiting Official Release",
+      "notification_no": "विज्ञप्ति संख्या – पी0आर0 330/2025 (NEWS PR330 K5632)",
+      "exam_window_ref": "18 February 2026 to 25 February 2026 (2026 Official Routine)",
+      "official_ref_pdf": "https://biharboardonline.com/files/NEWS%20PR330%20K5632%20EXAMINATION%20PROGRAMME%20FOR%20ANNUAL%20SECONDARY%20EXAMINATION%2C%202026.pdf",
+      "entry_rule": "Entry allowed up to 30 minutes prior to commencement: First Sitting by 09:00 AM, Second Sitting by 01:30 PM. Visually impaired / spastic candidates receive 20 min extra per hour.",
+      "schedule_items": [
+        {
+          "date": "18 February 2026",
+          "day": "Wednesday (बुधवार)",
+          "first_shift": "मातृभाषा: 101-हिन्दी, 102-बंगला, 103-उर्दू, 104-मैथिली (09:30 AM – 12:45 PM)",
+          "second_shift": "मातृभाषा: 201-हिन्दी, 202-बंगला, 203-उर्दू, 204-मैथिली (02:00 PM – 05:15 PM)"
+        },
+        {
+          "date": "18 February 2026",
+          "day": "Wednesday (Blind Candidates)",
+          "first_shift": "126 - गृह विज्ञान (Home Science – 100 Marks, in place of Maths)",
+          "second_shift": "Not Scheduled (1st Sitting Only)"
+        },
+        {
+          "date": "19 February 2026",
+          "day": "Thursday (गुरुवार)",
+          "first_shift": "110 - गणित (Mathematics) [Part 1 Sitting Variant]; द्वितीय भारतीय भाषा: 105-संस्कृत, 106-हिन्दी, 107-अरबी, 108-फारसी, 109-भोजपुरी (09:30 AM – 12:45 PM)",
+          "second_shift": "द्वितीय भारतीय भाषा: 205-संस्कृत, 206-हिन्दी, 207-अरबी, 208-फारसी, 209-भोजपुरी (02:00 PM – 05:15 PM) & 210-गणित"
+        },
+        {
+          "date": "20 February 2026",
+          "day": "Friday (शुक्रवार)",
+          "first_shift": "111 - सामाजिक विज्ञान (Social Science) (09:30 AM – 12:15 PM)",
+          "second_shift": "211 - सामाजिक विज्ञान (Social Science) (02:00 PM – 04:45 PM)"
+        },
+        {
+          "date": "21 February 2026",
+          "day": "Saturday (शनिवार)",
+          "first_shift": "112 - विज्ञान (Science) (09:30 AM – 12:15 PM); Blind: 125 - संगीत (Music Theory – 70M)",
+          "second_shift": "212 - विज्ञान (Science) (02:00 PM – 04:45 PM)"
+        },
+        {
+          "date": "23 February 2026",
+          "day": "Monday (सोमवार)",
+          "first_shift": "113 - अंग्रेजी (सामान्य) / English General (09:30 AM – 12:45 PM)",
+          "second_shift": "213 - अंग्रेजी (सामान्य) / English General (02:00 PM – 05:15 PM)"
+        },
+        {
+          "date": "24 February 2026",
+          "day": "Tuesday (मंगलवार)",
+          "first_shift": "ऐच्छिक विषय: 114-उच्च गणित, 115-वाणिज्य, 116-अर्थशास्त्र, 121-फारसी, 122-संस्कृत, 123-अरबी, 124-मैथिली (09:30 AM–12:45 PM); 117-ललित कला, 118-गृह विज्ञान, 119-नृत्य, 120-संगीत (09:30 AM–12:15 PM)",
+          "second_shift": "ऐच्छिक विषय: 214–216, 221–224 (02:00 PM–05:15 PM); 217–220 (02:00 PM–04:45 PM)"
+        },
+        {
+          "date": "25 February 2026",
+          "day": "Wednesday (बुधवार)",
+          "first_shift": "व्यावसायिक ऐच्छिक विषय: 127-सुरक्षा, 128-ब्यूटिशियन, 129-टूरिज्म, 130-रिटेल, 131-ऑटोमोबाइल, 132-इलेक्ट्रॉनिक्स, 133-ब्यूटी, 134-टेलीकॉम, 135-IT/ITeS (09:30 AM – 12:45 PM)",
+          "second_shift": "No Second Sitting Examination"
+        }
+      ]
+    },
+    "12": {
+      "class_name": "Intermediate (Class 12 — I.Sc, I.Com, I.A. & Vocational)",
+      "class_name_hindi": "इण्टरमीडिएट वार्षिक परीक्षा (कला, विज्ञान, वाणिज्य एवं व्यावसायिक)",
+      "reference_year": "2026 Reference Programme",
+      "status_2027": "awaiting_official_release",
+      "status_label_2027": "2027 Timetable: Awaiting Official Release",
+      "notification_no": "PR 329/2025 | Memo No. BSEB(SS)/KEN/221/2025-944 (Dated 20-12-2025)",
+      "exam_window_ref": "Theory: 02 February 2026 to 13 February 2026 | Practicals: 10 January 2026 to 20 January 2026",
+      "official_ref_pdf": "https://biharboardonline.com/files/Inter2026%20Routine.pdf",
+      "entry_rule": "15 minutes additional 'Cool off' time granted for reading question paper (09:30–09:45 AM in 1st Sitting; 02:00–02:15 PM in 2nd Sitting).",
+      "schedule_items": [
+        {
+          "date": "02 February 2026",
+          "day": "Monday",
+          "first_shift": "I.Sc: 119 - Biology | I.A.: 320 - Philosophy",
+          "second_shift": "I.A.: 326 - Economics | I.Com: 219 - Economics"
+        },
+        {
+          "date": "03 February 2026",
+          "day": "Tuesday",
+          "first_shift": "I.Sc: 121 - Mathematics | I.A.: 327 - Mathematics",
+          "second_shift": "I.A.: 322 - Political Science | Voc.: 402 - Foundation Course"
+        },
+        {
+          "date": "05 February 2026",
+          "day": "Thursday",
+          "first_shift": "I.Sc: 117 - Physics",
+          "second_shift": "I.A.: 323 - Geography | I.Com: 217 - Business Studies"
+        },
+        {
+          "date": "06 February 2026",
+          "day": "Friday",
+          "first_shift": "I.Sc: 105/124 - English | I.Com: 205/223 - English",
+          "second_shift": "I.A.: 306/331 - Hindi | Voc.: 401 - Hindi"
+        },
+        {
+          "date": "07 February 2026",
+          "day": "Saturday",
+          "first_shift": "I.Sc: 118 - Chemistry",
+          "second_shift": "I.A.: 305/330 - English | Voc.: 403 - English"
+        },
+        {
+          "date": "09 February 2026",
+          "day": "Monday",
+          "first_shift": "I.Sc: 106/125 - Hindi | I.Com: 206/224 - Hindi",
+          "second_shift": "I.A.: 321 - History | I.Sc: 120 - Agriculture | Voc.: Elective Trade Paper-1 (404–430)"
+        },
+        {
+          "date": "10 February 2026",
+          "day": "Tuesday",
+          "first_shift": "I.Sc (107–116), I.Com (207–216), I.A. (307–316), Voc. (503–512): Compulsory Urdu, Maithili, Sanskrit, Prakrit, Magahi, Bhojpuri, Arabic, Persian, Pali, Bangla",
+          "second_shift": "I.A.: 324 - Psychology | I.Com: 218 - Entrepreneurship"
+        },
+        {
+          "date": "11 February 2026",
+          "day": "Wednesday",
+          "first_shift": "I.A.: 318 - Music",
+          "second_shift": "I.A.: 319 - Home Science | Voc.: Elective Trade Paper-2 (431–457)"
+        },
+        {
+          "date": "12 February 2026",
+          "day": "Thursday",
+          "first_shift": "I.A.: 325 - Sociology | I.Com: 220 - Accountancy",
+          "second_shift": "Security, Beautician, Tourism, Retail Mgmt, Automobile, Electronics & H/W, Beauty & Wellness, Telecom, IT/ITeS (I.Sc 136–144, I.Com 235–243, I.A. 342–350)"
+        },
+        {
+          "date": "13 February 2026",
+          "day": "Friday",
+          "first_shift": "I.Sc (126–135), I.Com (225–234), I.A. (332–341): Additional Language Subjects (Urdu to Bangla)",
+          "second_shift": "I.Sc (122 CS, 123 MMWT) | I.Com (221 CS, 222 MMWT) | I.A. (317 Yoga & Phy. Edu., 328 CS, 329 MMWT) | Voc. Electives (485–502)"
+        }
+      ]
+    }
+  }
+}

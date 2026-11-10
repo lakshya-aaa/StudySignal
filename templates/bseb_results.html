@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+
+{% block title %}Bihar Board (BSEB) Results, CSSS Scholarships &amp; OFSS Admissions Portals | StudySignal{% endblock %}
+
+{% block meta_description %}
+Verified official links for Bihar Board (BSEB) main portal (biharboardonline.com), institutional portal (biharboardonline.org), OFSS +2 admissions (ofssbihar.net), and official 2026 Top 20 Percentile scholarship cut-off PDFs.
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [
+  {'title': 'Boards & Exams', 'url': '/boards'},
+  {'title': 'Bihar Board (BSEB)', 'url': '/bihar-board'},
+  {'title': 'Results & Official Services', 'url': '/bihar-board/results'}
+] %}
+{% include 'components/breadcrumb.html' %}
+
+<div class="board-hub-container bseb-results">
+  <section class="section" style="padding-bottom: 1.5rem;">
+    <div class="container">
+      <div class="hub-hero-banner">
+        <div class="hub-hero-branding">
+          <img src="{{ url_for('static', filename='images/boards/bseb-logo.png') }}" alt="BSEB" class="hub-hero-logo" width="52" height="52">
+          <div>
+            <div class="hub-hero-badge">
+              <span>🇮🇳 BSEB Verified Live Portals &bull; <strong class="badge-status-active" style="margin-left: 4px; vertical-align: middle;">Active</strong></span>
+            </div>
+            <h1 class="hub-hero-title">Bihar Board Results, OFSS &amp; Scholarships</h1>
+            <div style="color: #64748b; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.6rem;">
+              अधिकृत परीक्षाफल पोर्टल, OFSS इण्टर नामांकन एवं CSSS टॉप-20 पर्सेंटाइल सूची
+            </div>
+          </div>
+        </div>
+        <p class="hub-hero-desc">
+          Direct verified official Bihar government and BSEB portals for results, institutional services, OFSS +2 admissions, duplicate documents, and National Scholarship Portal (CSSS) Top 20 Percentile eligibility lists.
+        </p>
+
+        <div class="hub-hero-actions">
+          <a href="{{ official_urls.bseb_main }}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: auto;">Official BSEB Main Portal ↗</a>
+          <a href="{{ official_urls.bseb_ofss }}" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="width: auto;">OFSS +2 Admissions Portal ↗</a>
+          <a href="/bihar-board" class="btn-secondary" style="width: auto;">BSEB Main Hub &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Verified Official BSEB Portals -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1.25rem;">
+        <div>
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary-headings); margin: 0 0 0.25rem 0;">
+            Verified Official BSEB &amp; Admissions Portals
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">
+            All links below are active and verified HTTP 200 endpoints; temporary seasonal result subdomains that are inactive offline are excluded.
+          </p>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.25rem;">
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.35rem; display: flex; flex-direction: column;">
+          <span class="badge-status-active" style="align-self: flex-start; margin-bottom: 0.5rem;">Live Primary Portal</span>
+          <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--primary); margin: 0 0 0.4rem 0;">BSEB Main Website (biharboardonline.com)</h3>
+          <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem; flex: 1 1 auto;">
+            Official Bihar School Examination Board homepage for latest notices, syllabus booklets, model question papers, and seasonal result link announcements.
+          </p>
+          <a href="{{ official_urls.bseb_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary" style="text-align: center;">Open biharboardonline.com ↗</a>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.35rem; display: flex; flex-direction: column;">
+          <span class="badge-status-active" style="align-self: flex-start; margin-bottom: 0.5rem;">Live Secondary &amp; Admin Portal</span>
+          <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--primary); margin: 0 0 0.4rem 0;">BSEB Official Portal (.org)</h3>
+          <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem; flex: 1 1 auto;">
+            Secondary institutional BSEB portal hosting administrative updates, examination forms, and school verification services.
+          </p>
+          <a href="{{ official_urls.bseb_org }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary" style="text-align: center;">Open biharboardonline.org ↗</a>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.35rem; display: flex; flex-direction: column;">
+          <span class="badge-status-active" style="align-self: flex-start; margin-bottom: 0.5rem;">Live Admissions Portal</span>
+          <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--primary); margin: 0 0 0.4rem 0;">OFSS Bihar (+2 Intermediate Admissions)</h3>
+          <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem; flex: 1 1 auto;">
+            Online Facilitation System for Students (OFSS) portal operated by BSEB for Class 11 (+2 Intermediate) admissions across Bihar schools and degree colleges.
+          </p>
+          <a href="{{ official_urls.bseb_ofss }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary" style="text-align: center;">Open OFSS Portal (ofssbihar.net) ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2026 Top 20 Percentile Scholarship Cut-off Lists -->
+  {% if scholarship_circulars %}
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1.25rem;">
+        <div>
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary-headings); margin: 0 0 0.25rem 0;">
+            Intermediate 2026 Top 20 Percentile Scholarship Lists (CSSS / NSP)
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">
+            Official Central Sector Scheme of Scholarships (CSSS) eligible student lists &amp; NSP official notice from <code>biharboardonline.com</code>:
+          </p>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0.9rem;">
+        {% for sc in scholarship_circulars %}
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.15rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div style="flex: 1 1 420px;">
+            <div style="font-size: 0.75rem; color: #64748b; margin-bottom: 0.2rem;">
+              <strong>{{ sc.circular_no }}</strong> &bull; {{ sc.class_target }} &bull; Size: <strong>{{ sc.file_size }}</strong>
+            </div>
+            <div style="font-weight: 700; color: var(--primary); font-size: 1rem; margin-bottom: 0.2rem;">{{ sc.title }}</div>
+            <div style="font-size: 0.825rem; color: #64748b;">{{ sc.summary }}</div>
+          </div>
+          <a href="{{ sc.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary">
+            Download PDF ({{ sc.file_size }}) ↗
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Student Record Correction & Duplicate Services -->
+  {% if service_circulars %}
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1rem;">
+        <div>
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary-headings); margin: 0 0 0.25rem 0;">
+            Student Record Corrections &amp; Duplicate Certificate Fees
+          </h2>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem;">
+        {% for sv in service_circulars %}
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; display: flex; flex-direction: column;">
+          <div style="font-size: 0.75rem; color: #64748b; margin-bottom: 0.25rem;">{{ sv.circular_no }} &bull; {{ sv.file_size }}</div>
+          <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--primary); margin: 0 0 0.4rem 0;">{{ sv.title }}</h3>
+          <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem; flex: 1 1 auto;">{{ sv.summary }}</p>
+          <a href="{{ sv.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="text-align: center;">View Official Guide PDF ↗</a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="disclaimer-callout" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; font-size: 0.8125rem; color: #64748b; line-height: 1.6;">
+        <strong style="color: var(--primary); display: block; margin-bottom: 0.35rem;">⚖️ BSEB Non-Affiliation Legal Notice</strong>
+        StudySignal is independent and NOT affiliated with BSEB Patna. Check results and official student services directly on <a href="{{ official_urls.bseb_main }}" target="_blank" rel="noopener noreferrer" style="color: var(--brand-blue); text-decoration: underline;">biharboardonline.com</a>.
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

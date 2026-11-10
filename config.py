@@ -11,8 +11,9 @@ class Config:
     SITE_TAGLINE = "Independent Multi-Board Education Information Portal"
     SITE_DESCRIPTION = (
         "StudySignal provides accurate, verified Class 10 and 12 curriculum, "
-        "syllabus documents, official date sheets, sample papers, circulars, and "
-        "academic notifications across CBSE, UP Board (UPMSP), and CISCE (ICSE/ISC)."
+        "syllabus documents, official date sheets, sample papers, PYQs, circulars, and "
+        "academic notifications across CBSE, UP Board (UPMSP), CISCE (ICSE/ISC), "
+        "Bihar Board (BSEB), and Maharashtra Board (MSBSHSE)."
     )
     SECRET_KEY = os.environ.get("SECRET_KEY", "studysignal-default-dev-key")
     PRODUCTION_BASE_URL = os.environ.get("PRODUCTION_BASE_URL", "https://exampulse-india.onrender.com")
@@ -22,10 +23,10 @@ class Config:
     DEFAULT_OG_IMAGE = f"{PRODUCTION_BASE_URL}/static/images/og-preview.png"
     DEFAULT_OG_IMAGE_ALT = (
         "StudySignal - Independent Educational Information Portal for CBSE, UP Board, "
-        "and CISCE Class 10 & 12 Curriculum, Date Sheets, and Official Notices"
+        "CISCE, Bihar Board (BSEB), and Maharashtra Board (MSBSHSE) Class 10 & 12 Curriculum, Date Sheets, and Official Notices"
     )
     
-    # Academic Year Settings (Current: October 2026 -> Session 2026-27)
+    # Academic Year Settings (Current: Session 2026-27)
     CURRENT_ACADEMIC_YEAR = "2026-27"
     SHOW_DEMO_DATA = False  # Toggle to completely disable/hide demo and prototype records before launch
     
@@ -34,11 +35,12 @@ class Config:
         "StudySignal is an independent, free-access educational information platform created to help "
         "students, parents and educators access academic resources, examination updates and educational "
         "information. StudySignal is not affiliated with, endorsed by, or officially connected to CBSE, "
-        "UPMSP, CISCE, ICSE, ISC, any other education board, examination authority, Ministry of Education, "
+        "UPMSP, CISCE, ICSE, ISC, BSEB (Bihar School Examination Board), MSBSHSE (Maharashtra State Board), "
+        "SCERT Maharashtra, any other education board, examination authority, Ministry of Education, "
         "or Government of India. Always verify important information through the respective official websites."
     )
     
-    # Verified Official CBSE URLs
+    # Verified Official Board URLs
     OFFICIAL_URLS = {
         "cbse_main": "https://www.cbse.gov.in",
         "cbse_academic": "https://cbseacademic.nic.in",
@@ -56,7 +58,26 @@ class Config:
         "upmsp_syllabus": "https://upmsp.edu.in/Board_Syllabus.aspx",
         "upmsp_model_papers": "https://upmsp.edu.in/Board_ModelPaper.aspx",
         "upmsp_question_bank": "https://upmsp.edu.in/Board_QuestionBank.aspx",
-        "upmsp_results": "https://upresults.nic.in"
+        "upmsp_results": "https://upresults.nic.in",
+        "bseb_main": "https://biharboardonline.com",
+        "bseb_org": "https://www.biharboardonline.org/",
+        "bseb_ofss": "https://www.ofssbihar.net/Higher-Education/index.html",
+        "maha_main": "https://www.mahahsscboard.in/en",
+        "maha_syllabus_ssc": "https://www.mahahsscboard.in/en/studentAndSyllabus/sscGeneral",
+        "maha_syllabus_hsc": "https://www.mahahsscboard.in/en/studentAndSyllabus/hscGeneral",
+        "maha_syllabus_voc": "https://www.mahahsscboard.in/en/studentAndSyllabus/hscVocational",
+        "maha_timetables": "https://www.mahahsscboard.in/en/studentCorner/timetables",
+        "maha_question_papers": "https://www.mahahsscboard.in/en/questionPaper",
+        "maha_publications": "https://www.mahahsscboard.in/en/publications",
+        "maha_result": "https://www.mahahsscboard.in/en/result",
+        "maha_verification": "https://www.mahahsscboard.in/en/verification",
+        "maha_emarksheet": "https://boardmarksheet.maharashtra.gov.in/emarksheet/",
+        "maha_form17": "https://www.mahahsscboard.in/en/form17",
+        "maha_downloads": "https://www.mahahsscboard.in/en/download",
+        "scert_maha_main": "https://www.maa.ac.in",
+        "scert_maha_qbank": "https://www.maa.ac.in/index.php?tcf=questionbank",
+        "scert_maha_curriculum": "https://www.maa.ac.in/index.php?tcf=curriculum",
+        "ebalbharati": "https://books.ebalbharati.in/ebook.aspx"
     }
 
     # Reusable & Configurable Ad Placements

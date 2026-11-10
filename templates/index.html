@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
-{% block title %}StudySignal – Multi-Board Educational Platform (CBSE, UP Board & CISCE){% endblock %}
+{% block title %}StudySignal – Multi-Board Educational Platform (CBSE, UP Board, CISCE, BSEB & MSBSHSE){% endblock %}
 
 {% block meta_description %}
-StudySignal is an independent, free-access educational platform providing authentic syllabus PDFs, official date sheets, sample papers, circulars, and notices across CBSE, UP Board (UPMSP), and CISCE (ICSE & ISC).
+StudySignal is an independent, free-access educational platform providing verified syllabus PDFs, official date sheets, sample papers, past question papers, circulars, and notices across CBSE, UP Board (UPMSP), CISCE (ICSE & ISC), Bihar Board (BSEB), and Maharashtra Board (MSBSHSE).
 {% endblock %}
 
 {% block content %}
@@ -17,7 +17,7 @@ StudySignal is an independent, free-access educational platform providing authen
       Verified Board &amp; Competitive Exam Information
     </h1>
     <p class="hero-subtitle">
-      StudySignal is an independent educational platform providing verified syllabus PDFs, official date sheets, sample papers, circulars, and notices across CBSE, UP Board (UPMSP), and CISCE (ICSE &amp; ISC).
+      StudySignal is an independent educational platform providing verified syllabus PDFs, official date sheets, sample papers, past question papers, circulars, and notices across CBSE, UP Board (UPMSP), CISCE (ICSE &amp; ISC), Bihar Board (BSEB), and Maharashtra Board (MSBSHSE).
     </p>
 
     <!-- Hero Search -->
@@ -50,6 +50,8 @@ StudySignal is an independent, free-access educational platform providing authen
       <a href="/search?q=UP+Board+High+School" class="quick-tag">UP Board High School</a>
       <a href="/search?q=ICSE+Class+10+English" class="quick-tag">ICSE Class 10 English</a>
       <a href="/search?q=ISC+Class+12+Physics" class="quick-tag">ISC Class 12 Physics</a>
+      <a href="/search?board=bihar-board&category=model_paper" class="quick-tag">Bihar Board Model Papers</a>
+      <a href="/search?board=maharashtra-board&category=pyq" class="quick-tag">Maharashtra SSC &amp; HSC PYQs</a>
     </div>
   </div>
 </section>
@@ -70,8 +72,8 @@ StudySignal is an independent, free-access educational platform providing authen
       <a href="/boards" class="section-action">View All Boards Directory &rarr;</a>
     </div>
 
-    <!-- 3-Column Board Cards Grid -->
-    <div class="class-portal-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+    <!-- Responsive 5-Board Cards Grid -->
+    <div class="class-portal-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
       <!-- Card 1: CBSE -->
       <div class="class-card class-10" style="border-top: 5px solid var(--brand-blue);">
         <div class="class-card-header">
@@ -245,6 +247,118 @@ StudySignal is an independent, free-access educational platform providing authen
           <a href="/icse" class="btn-primary" style="width: 100%; text-align: center;">Explore CISCE Resources &rarr;</a>
         </div>
       </div>
+
+      <!-- Card 4: Bihar Board (BSEB) -->
+      <div class="class-card" style="border-top: 5px solid #c2410c; background: #ffffff;">
+        <div class="class-card-header">
+          <span class="class-badge" style="background: #ffedd5; color: #9a3412;">State Board &bull; Matric &amp; +2</span>
+          <span class="badge-status-active">Active</span>
+        </div>
+        <div class="portal-card-title-wrap">
+          <img src="{{ url_for('static', filename='images/boards/bseb-logo.png') }}" alt="BSEB" class="portal-card-logo" width="44" height="44">
+          <h3 class="class-card-title">Bihar Board – BSEB Patna (Matric &amp; Inter)</h3>
+        </div>
+        <p class="class-card-desc">
+          Verified Bihar School Examination Board resources covering 57 official 2026 Model Question Papers (sample pattern only), consolidated syllabi, passing regulations, 2027 timetable status, and circulars.
+        </p>
+        <ul class="class-quick-links">
+          <li>
+            <a href="/bihar-board/class-10">
+              <span>Matriculation (Class 10) Portal</span>
+              <span>&rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="/bihar-board/class-12">
+              <span>Intermediate (+2 Class 12) Portal</span>
+              <span>&rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="/bihar-board/sample-papers">
+              <span>Official Model Papers (57 Verified PDFs)</span>
+              <span>↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="/bihar-board/syllabus">
+              <span>Consolidated Syllabi &amp; Passing Rules</span>
+              <span>&rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="/bihar-board/datesheets">
+              <span>2027 Status &amp; 2026 Ref. Timetable</span>
+              <span>&rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="/bihar-board/circulars">
+              <span>Circulars &amp; Official Services</span>
+              <span>&rarr;</span>
+            </a>
+          </li>
+        </ul>
+        <div class="class-card-footer">
+          <a href="/bihar-board" class="btn-primary" style="width: 100%; text-align: center;">Explore Bihar Board Resources &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Card 5: Maharashtra Board (MSBSHSE) -->
+      <div class="class-card" style="border-top: 5px solid #6d28d9; background: #ffffff;">
+        <div class="class-card-header">
+          <span class="class-badge" style="background: #ede9fe; color: #5b21b6;">State Board &bull; SSC &amp; HSC</span>
+          <span class="badge-status-active">Active</span>
+        </div>
+        <div class="portal-card-title-wrap">
+          <img src="{{ url_for('static', filename='images/boards/msbshse-logo.png') }}" alt="MSBSHSE" class="portal-card-logo" width="44" height="44">
+          <h3 class="class-card-title">Maharashtra Board – MSBSHSE Pune (SSC &amp; HSC)</h3>
+        </div>
+        <p class="class-card-desc">
+          Verified MSBSHSE Std. 10 (SSC) and Std. 12 (HSC) portal featuring confirmed Feb–Mar 2027 timetables, 332 medium-wise PYQ PDFs, SCERT Question Banks (Prashnapedhi), frameworks, and 246 subject codes.
+        </p>
+        <ul class="class-quick-links">
+          <li>
+            <a href="/maharashtra-board/class-10">
+              <span>SSC (Std. 10) Dedicated Hub</span>
+              <span>&rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="/maharashtra-board/class-12">
+              <span>HSC (Std. 12) Dedicated Hub</span>
+              <span>&rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="/maharashtra-board/datesheets">
+              <span>Feb–Mar 2027 Timetables (Confirmed)</span>
+              <span>↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="/maharashtra-board/pyq">
+              <span>Past Board PYQs (132 Sets / 332 PDFs)</span>
+              <span>↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="/maharashtra-board/question-bank">
+              <span>SCERT Question Bank (Prashnapedhi)</span>
+              <span>&rarr;</span>
+            </a>
+          </li>
+          <li>
+            <a href="/maharashtra-board/syllabus">
+              <span>SCERT Frameworks &amp; 246 Subject Codes</span>
+              <span>&rarr;</span>
+            </a>
+          </li>
+        </ul>
+        <div class="class-card-footer">
+          <a href="/maharashtra-board" class="btn-primary" style="width: 100%; text-align: center;">Explore Maharashtra Board &rarr;</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -318,30 +432,38 @@ StudySignal is an independent, free-access educational platform providing authen
             </div>
           </div>
 
-          <!-- Bihar Board (Coming Soon) -->
-          <div class="board-mini-card is-coming-soon">
+          <!-- Bihar Board (Active) -->
+          <div class="board-mini-card is-active" style="border-top-color: #c2410c;">
             <div class="mini-card-top">
               <div class="mini-board-branding">
-                <span class="mini-board-placeholder">🏛️</span>
+                <img src="{{ url_for('static', filename='images/boards/bseb-logo.png') }}" alt="BSEB" class="mini-logo" width="22" height="22">
                 <span class="mini-board-name">Bihar Board (BSEB)</span>
               </div>
-              <span class="badge-status-soon">Coming Soon</span>
+              <span class="badge-status-active">Active</span>
             </div>
-            <p class="mini-board-desc">BSEB Matric &amp; Intermediate examination tracking and syllabus planned.</p>
-            <span class="mini-soon-label">Status Card &bull; Planned</span>
+            <p class="mini-board-desc">Matric (Class 10) &amp; Inter (Class 12) consolidated syllabi, 57 official 2026 Model Question Papers, 2027 timetable tracker, and circulars.</p>
+            <div class="mini-card-links">
+              <a href="/bihar-board" class="mini-link">BSEB Hub &rarr;</a>
+              <a href="/bihar-board/sample-papers" class="mini-link">57 Model Papers &rarr;</a>
+              <a href="/bihar-board/datesheets" class="mini-link">2027 Timetable Status &rarr;</a>
+            </div>
           </div>
 
-          <!-- Maharashtra Board (Coming Soon) -->
-          <div class="board-mini-card is-coming-soon">
+          <!-- Maharashtra Board (Active) -->
+          <div class="board-mini-card is-active" style="border-top-color: #6d28d9;">
             <div class="mini-card-top">
               <div class="mini-board-branding">
-                <span class="mini-board-placeholder">🏛️</span>
+                <img src="{{ url_for('static', filename='images/boards/msbshse-logo.png') }}" alt="MSBSHSE" class="mini-logo" width="22" height="22">
                 <span class="mini-board-name">Maharashtra Board (MSBSHSE)</span>
               </div>
-              <span class="badge-status-soon">Coming Soon</span>
+              <span class="badge-status-active">Active</span>
             </div>
-            <p class="mini-board-desc">SSC &amp; HSC subject guidelines and notifications in preparation.</p>
-            <span class="mini-soon-label">Status Card &bull; Planned</span>
+            <p class="mini-board-desc">SSC (Std. 10) &amp; HSC (Std. 12) confirmed Feb–Mar 2027 timetables, 332 PYQ PDFs, SCERT Prashnapedhi banks, and 246 subject codes.</p>
+            <div class="mini-card-links">
+              <a href="/maharashtra-board" class="mini-link">MSBSHSE Hub &rarr;</a>
+              <a href="/maharashtra-board/datesheets" class="mini-link">2027 Timetables &rarr;</a>
+              <a href="/maharashtra-board/pyq" class="mini-link">PYQ Archive &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
@@ -417,6 +539,8 @@ StudySignal is an independent, free-access educational platform providing authen
       <button type="button" class="selector-pill" data-board-filter="cbse">CBSE</button>
       <button type="button" class="selector-pill" data-board-filter="up-board">UP Board (UPMSP)</button>
       <button type="button" class="selector-pill" data-board-filter="cisce">CISCE (ICSE &amp; ISC)</button>
+      <button type="button" class="selector-pill" data-board-filter="bseb">Bihar Board (BSEB)</button>
+      <button type="button" class="selector-pill" data-board-filter="msbshse">Maharashtra Board (MSBSHSE)</button>
     </div>
 
     <div class="subject-grid" id="syllabus-grid">
@@ -424,18 +548,22 @@ StudySignal is an independent, free-access educational platform providing authen
       <div class="subject-card syllabus-filter-card" data-board="{{ item.board_key }}" style="display: flex; flex-direction: column;">
         <div class="subject-card-meta">
           <div style="display: flex; align-items: center; gap: 0.35rem; flex-wrap: wrap;">
-            <span class="class-badge" style="background: {% if item.board_key == 'cbse' %}#e0f2fe; color: #0369a1;{% elif item.board_key == 'up-board' %}#fef3c7; color: #92400e;{% else %}#dcfce7; color: #166534;{% endif %} font-weight: 700; border-radius: 4px; padding: 2px 6px; font-size: 0.725rem; display: inline-flex; align-items: center; gap: 4px;">
+            <span class="class-badge" style="background: {% if item.board_key == 'cbse' %}#e0f2fe; color: #0369a1;{% elif item.board_key == 'up-board' %}#fef3c7; color: #92400e;{% elif item.board_key == 'bseb' %}#ffedd5; color: #9a3412;{% elif item.board_key == 'msbshse' %}#ede9fe; color: #5b21b6;{% else %}#dcfce7; color: #166534;{% endif %} font-weight: 700; border-radius: 4px; padding: 2px 6px; font-size: 0.725rem; display: inline-flex; align-items: center; gap: 4px;">
               {% if item.board_key == 'cbse' %}
                 <img src="{{ url_for('static', filename='images/boards/cbse-logo.png') }}" alt="" class="badge-board-logo" width="14" height="14">
               {% elif item.board_key == 'up-board' %}
                 <img src="{{ url_for('static', filename='images/boards/upmsp-logo.png') }}" alt="" class="badge-board-logo" width="14" height="14">
               {% elif item.board_key == 'cisce' %}
                 <img src="{{ url_for('static', filename='images/boards/cisce-logo.png') }}" alt="" class="badge-board-logo" width="14" height="14">
+              {% elif item.board_key == 'bseb' %}
+                <img src="{{ url_for('static', filename='images/boards/bseb-logo.png') }}" alt="" class="badge-board-logo" width="14" height="14">
+              {% elif item.board_key == 'msbshse' %}
+                <img src="{{ url_for('static', filename='images/boards/msbshse-logo.png') }}" alt="" class="badge-board-logo" width="14" height="14">
               {% endif %}
               {{ item.board_badge }}
             </span>
             <span class="code-pill">
-              {% if item.class == '10' %}Class 10{% elif item.class == '12' %}Class 12{% else %}{{ item.course }}{% endif %} &bull; Code {{ item.code }}
+              {% if item.class == '10' %}Class 10{% elif item.class == '12' %}Class 12{% else %}{{ item.course }}{% endif %}{% if item.code %} &bull; Code {{ item.code }}{% endif %}
             </span>
           </div>
           <span class="verified-badge" style="font-size: 0.7rem;">✓ Official Source</span>
@@ -461,7 +589,7 @@ StudySignal is an independent, free-access educational platform providing authen
         <div class="subject-card-actions">
           {% if item.official_url and (item.verification_status == 'verified_official' or item.is_official) %}
           <a href="{{ item.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-official-pdf">
-            Official PDF ↗
+            {% if '.pdf' in item.official_url|lower %}Official PDF ↗{% else %}Official Source ↗{% endif %}
           </a>
           {% else %}
           <span class="btn-sm btn-disabled-soon" style="background: #f1f5f9; color: #64748b; border: 1px solid #cbd5e1; cursor: not-allowed; font-size: 0.75rem; padding: 0.35rem 0.6rem;">
@@ -497,6 +625,8 @@ StudySignal is an independent, free-access educational platform providing authen
       <button type="button" class="selector-pill" data-circular-filter="cbse">CBSE</button>
       <button type="button" class="selector-pill" data-circular-filter="up-board">UP Board (UPMSP)</button>
       <button type="button" class="selector-pill" data-circular-filter="cisce">CISCE</button>
+      <button type="button" class="selector-pill" data-circular-filter="bseb">Bihar Board (BSEB)</button>
+      <button type="button" class="selector-pill" data-circular-filter="msbshse">Maharashtra Board (MSBSHSE)</button>
     </div>
 
     <div class="circular-list" id="circulars-grid">
@@ -509,18 +639,26 @@ StudySignal is an independent, free-access educational platform providing authen
         </div>
         <div class="circular-content">
           <div class="circular-meta">
-            <span class="class-badge" style="background: {% if circ.board_key == 'cbse' %}#e0f2fe; color: #0369a1;{% elif circ.board_key == 'up-board' %}#fef3c7; color: #92400e;{% else %}#dcfce7; color: #166534;{% endif %} font-weight: 700; border-radius: 4px; padding: 2px 6px; font-size: 0.725rem; display: inline-flex; align-items: center; gap: 4px;">
+            <span class="class-badge" style="background: {% if circ.board_key == 'cbse' %}#e0f2fe; color: #0369a1;{% elif circ.board_key == 'up-board' %}#fef3c7; color: #92400e;{% elif circ.board_key == 'bseb' %}#ffedd5; color: #9a3412;{% elif circ.board_key == 'msbshse' %}#ede9fe; color: #5b21b6;{% else %}#dcfce7; color: #166534;{% endif %} font-weight: 700; border-radius: 4px; padding: 2px 6px; font-size: 0.725rem; display: inline-flex; align-items: center; gap: 4px;">
               {% if circ.board_key == 'cbse' %}
                 <img src="{{ url_for('static', filename='images/boards/cbse-logo.png') }}" alt="" class="badge-board-logo" width="14" height="14">
               {% elif circ.board_key == 'up-board' %}
                 <img src="{{ url_for('static', filename='images/boards/upmsp-logo.png') }}" alt="" class="badge-board-logo" width="14" height="14">
               {% elif circ.board_key == 'cisce' %}
                 <img src="{{ url_for('static', filename='images/boards/cisce-logo.png') }}" alt="" class="badge-board-logo" width="14" height="14">
+              {% elif circ.board_key == 'bseb' %}
+                <img src="{{ url_for('static', filename='images/boards/bseb-logo.png') }}" alt="" class="badge-board-logo" width="14" height="14">
+              {% elif circ.board_key == 'msbshse' %}
+                <img src="{{ url_for('static', filename='images/boards/msbshse-logo.png') }}" alt="" class="badge-board-logo" width="14" height="14">
               {% endif %}
               {{ circ.board_badge }}
             </span>
             {% if circ.verification_status == 'verified_official' %}
-              <span class="circ-tag official">✓ Verified Official Notice</span>
+              {% if circ.board_key in ['cbse', 'up-board', 'cisce'] %}
+                <span class="circ-tag official">✓ Verified Official Notice</span>
+              {% else %}
+                <span class="circ-tag official">✓ Official {{ circ.board_badge }} Notice</span>
+              {% endif %}
             {% elif circ.verification_status == 'official_directory' %}
               <span class="circ-tag" style="background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd;">Official Portal Directory</span>
             {% elif circ.verification_status == 'inconclusive' %}
@@ -551,7 +689,11 @@ StudySignal is an independent, free-access educational platform providing authen
               </span>
             {% elif circ.last_verified and circ.verification_status == 'verified_official' %}
               <span style="font-size: 0.75rem; color: var(--accent-green); font-weight: 600;">
-                ✓ Verified on {{ circ.official_host }} ({{ circ.last_verified }})
+                {% if circ.board_key in ['cbse', 'up-board', 'cisce'] %}
+                  ✓ Verified on {{ circ.official_host }} ({{ circ.last_verified }})
+                {% else %}
+                  ✓ Source: {{ circ.official_host }} ({{ circ.last_verified }})
+                {% endif %}
               </span>
             {% endif %}
             <a href="{{ circ.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
@@ -588,6 +730,14 @@ StudySignal is an independent, free-access educational platform providing authen
           <img src="{{ url_for('static', filename='images/boards/cisce-logo.png') }}" alt="" class="datesheet-board-logo" width="18" height="18">
           <span>CISCE Date Sheets &rarr;</span>
         </a>
+        <a href="/bihar-board/datesheets" class="btn-sm btn-primary" style="width: auto; display: inline-flex; align-items: center; gap: 6px;">
+          <img src="{{ url_for('static', filename='images/boards/bseb-logo.png') }}" alt="" class="datesheet-board-logo" width="18" height="18">
+          <span>Bihar Board Schedule (2027 Pending) &rarr;</span>
+        </a>
+        <a href="/maharashtra-board/datesheets" class="btn-sm btn-primary" style="width: auto; display: inline-flex; align-items: center; gap: 6px;">
+          <img src="{{ url_for('static', filename='images/boards/msbshse-logo.png') }}" alt="" class="datesheet-board-logo" width="18" height="18">
+          <span>MSBSHSE 2027 Timetables (Confirmed) &rarr;</span>
+        </a>
         <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto; display: inline-flex; align-items: center; gap: 6px;">
           <img src="{{ url_for('static', filename='images/boards/cbse-logo.png') }}" alt="" class="datesheet-board-logo" width="16" height="16">
           <span>Official CBSE Website ↗</span>
@@ -599,6 +749,14 @@ StudySignal is an independent, free-access educational platform providing authen
         <a href="{{ official_urls.cisce_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto; display: inline-flex; align-items: center; gap: 6px;">
           <img src="{{ url_for('static', filename='images/boards/cisce-logo.png') }}" alt="" class="datesheet-board-logo" width="16" height="16">
           <span>Official CISCE Website ↗</span>
+        </a>
+        <a href="{{ official_urls.bseb_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto; display: inline-flex; align-items: center; gap: 6px;">
+          <img src="{{ url_for('static', filename='images/boards/bseb-logo.png') }}" alt="" class="datesheet-board-logo" width="16" height="16">
+          <span>Official BSEB Website ↗</span>
+        </a>
+        <a href="{{ official_urls.maha_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto; display: inline-flex; align-items: center; gap: 6px;">
+          <img src="{{ url_for('static', filename='images/boards/msbshse-logo.png') }}" alt="" class="datesheet-board-logo" width="16" height="16">
+          <span>Official MSBSHSE Website ↗</span>
         </a>
       </div>
     </div>

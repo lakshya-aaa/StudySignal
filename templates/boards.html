@@ -3,7 +3,7 @@
 {% block title %}Educational Boards & Competitive Entrance Exams | StudySignal{% endblock %}
 
 {% block meta_description %}
-Explore StudySignal's coverage across Indian national and state school education boards (CBSE, ICSE, UP Board, Bihar Board, Maharashtra Board) and competitive entrance examinations (JEE, NEET, CUET).
+Explore StudySignal's coverage across Indian national and state school education boards (CBSE, ICSE, UP Board, Bihar Board BSEB, Maharashtra Board MSBSHSE) and competitive entrance examinations (JEE, NEET, CUET).
 {% endblock %}
 
 {% block content %}
@@ -20,7 +20,7 @@ Explore StudySignal's coverage across Indian national and state school education
         </div>
         <h1 class="section-title">Educational Boards &amp; Competitive Examinations</h1>
         <p class="section-subtitle">
-          StudySignal provides student-first access to authentic curricula, exam notifications, and dates across Indian school boards and competitive entrance exams.
+          StudySignal provides student-first access to authentic curricula, sample papers, past question papers, exam notifications, and dates across Indian school boards and competitive entrance exams.
         </p>
       </div>
       <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
@@ -34,7 +34,7 @@ Explore StudySignal's coverage across Indian national and state school education
     <div class="boards-status-legend">
       <div class="legend-item">
         <span class="badge-status-active">Active</span>
-        <span class="legend-desc">Fully live with verified syllabi, dates, notices, and 2014–2025 PYQs.</span>
+        <span class="legend-desc">Live portal with verified syllabi, official timetables, sample/model papers, or past question archives.</span>
       </div>
       <div class="legend-item">
         <span class="badge-status-dev">In Development</span>
@@ -72,6 +72,10 @@ Explore StudySignal's coverage across Indian national and state school education
               <img src="{{ url_for('static', filename='images/boards/cisce-logo.png') }}" alt="CISCE" class="board-card-logo" width="36" height="36">
             {% elif b.id == 'up-board' %}
               <img src="{{ url_for('static', filename='images/boards/upmsp-logo.png') }}" alt="UPMSP" class="board-card-logo" width="36" height="36">
+            {% elif b.id == 'bseb' %}
+              <img src="{{ url_for('static', filename='images/boards/bseb-logo.png') }}" alt="BSEB" class="board-card-logo" width="36" height="36">
+            {% elif b.id == 'msbshse' %}
+              <img src="{{ url_for('static', filename='images/boards/msbshse-logo.png') }}" alt="MSBSHSE" class="board-card-logo" width="36" height="36">
             {% endif %}
             <h3 class="board-card-title">{{ b.name }}</h3>
           </div>

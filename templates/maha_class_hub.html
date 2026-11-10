@@ -1,0 +1,304 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ class_title }} - Maharashtra Board (MSBSHSE) Portal | StudySignal{% endblock %}
+
+{% block meta_description %}
+StudySignal portal for {{ class_title }} (MSBSHSE Pune). Access confirmed Feb–Mar 2027 timetable, {{ subjects|length }} official subject index codes, {{ pyq_pdf_count }} verified Past Question Paper PDFs, SCERT Prashnapedhi Question Banks, and official circulars.
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [
+  {'title': 'Boards & Exams', 'url': '/boards'},
+  {'title': 'Maharashtra Board (MSBSHSE)', 'url': '/maharashtra-board'},
+  {'title': class_title, 'url': request.path}
+] %}
+{% include 'components/breadcrumb.html' %}
+
+<div class="board-hub-container maha-class-hub">
+  <!-- Hero Banner -->
+  <section class="section" style="padding-bottom: 1.5rem;">
+    <div class="container">
+      <div class="hub-hero-banner">
+        <div class="hub-hero-branding">
+          <img src="{{ url_for('static', filename='images/boards/msbshse-logo.png') }}" alt="MSBSHSE" class="hub-hero-logo" width="52" height="52">
+          <div>
+            <div class="hub-hero-badge">
+              <span>🇮🇳 MSBSHSE Pune Official Framework &bull; <strong class="badge-status-active" style="margin-left: 4px; vertical-align: middle;">Active</strong></span>
+            </div>
+            <h1 class="hub-hero-title">{{ class_title }}</h1>
+            <div style="color: #64748b; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.6rem;">
+              {{ class_title_mr }} &bull; {{ course_name_mr }}
+            </div>
+          </div>
+        </div>
+        <p class="hub-hero-desc">
+          Dedicated {{ course_name }} (Std. {{ class_num }}) exam portal covering Maharashtra Board's confirmed Feb–Mar 2027 examination schedule, {{ subjects|length }} verified subject codes, {{ pyq_rows|length }} Past Board Question Paper entries ({{ pyq_pdf_count }} multi-medium PDFs), and SCERT Maharashtra Prashnapedhi practice banks.
+        </p>
+
+        <div class="hub-stats-row">
+          <div class="hub-stat-pill"><span>🗓️ <strong>2027 Exam Window:</strong> {{ '15 Feb – 15 Mar 2027' if class_num == '10' else '08 Feb – 11 Mar 2027 (+ IT/GK)' }}</span></div>
+          <div class="hub-stat-pill"><span>📚 <strong>{{ subjects|length }}</strong> Verified Subject Codes</span></div>
+          <div class="hub-stat-pill"><span>📄 <strong>{{ pyq_pdf_count }}</strong> Past Question Paper PDFs</span></div>
+          <div class="hub-stat-pill"><span>❓ <strong>{{ qbank_items|length }}</strong> Direct SCERT Banks</span></div>
+        </div>
+
+        <div class="hub-hero-actions">
+          <a href="/maharashtra-board/datesheets?class={{ class_num }}" class="btn-primary" style="width: auto;">
+            {{ course_name }} Feb–Mar 2027 Timetable &rarr;
+          </a>
+          <a href="/maharashtra-board/pyq?class={{ class_num }}" class="btn-secondary" style="width: auto;">
+            {{ course_name }} Past Papers ({{ pyq_pdf_count }} PDFs) &rarr;
+          </a>
+          <a href="/maharashtra-board/question-bank?class={{ class_num }}" class="btn-secondary" style="width: auto;">
+            SCERT Question Bank &rarr;
+          </a>
+          <a href="/maharashtra-board/syllabus?class={{ class_num }}" class="btn-secondary" style="width: auto;">
+            All {{ subjects|length }} Subject Codes &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Selector Bar -->
+  <section class="section" style="padding: 0 0 2rem 0;">
+    <div class="container">
+      <div class="board-selector-bar">
+        <a href="/maharashtra-board/class-10" class="selector-pill {% if class_num == '10' %}active{% endif %}">📘 SSC (Std. 10)</a>
+        <a href="/maharashtra-board/class-12" class="selector-pill {% if class_num == '12' %}active{% endif %}">🎓 HSC (Std. 12)</a>
+        <a href="/maharashtra-board/datesheets?class={{ class_num }}" class="selector-pill">🗓️ 2027 Time Table</a>
+        <a href="/maharashtra-board/pyq?class={{ class_num }}" class="selector-pill">📄 PYQ Archive ({{ pyq_rows|length }})</a>
+        <a href="/maharashtra-board/question-bank?class={{ class_num }}" class="selector-pill">❓ SCERT Prashnapedhi</a>
+        <a href="/maharashtra-board/syllabus?class={{ class_num }}" class="selector-pill">📚 Subject Codes ({{ subjects|length }})</a>
+        <a href="/maharashtra-board" class="selector-pill">🏛️ MSBSHSE Hub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Confirmed Feb-Mar 2027 Schedule Highlight -->
+  {% if class_ds %}
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="hub-alert-card" style="border-left-color: #15803d; background: #f0fdf4;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.5rem;">
+          <div>
+            <span class="verified-badge" style="background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; font-weight: 700; margin-bottom: 0.35rem; display: inline-block;">
+              ✓ Official Feb–Mar 2027 Timetable Confirmed
+            </span>
+            <h2 style="font-size: 1.2rem; font-weight: 800; color: #14532d; margin: 0;">
+              {{ class_ds.class_name }} &bull; {{ class_ds.exam_window }}
+            </h2>
+          </div>
+          <span style="font-size: 0.75rem; color: #166534; font-weight: 600;">
+            Published: {{ datesheets.published_date_label }}
+          </span>
+        </div>
+
+        {% if class_ds.online_note %}
+        <p style="color: #14532d; font-size: 0.875rem; background: #ffffff; border: 1px solid #bbf7d0; padding: 0.65rem 0.85rem; border-radius: 6px; margin: 0.5rem 0;">
+          <strong>Online Subjects Notice:</strong> {{ class_ds.online_note }}
+        </p>
+        {% endif %}
+
+        <p style="color: #166534; font-size: 0.875rem; margin: 0.5rem 0 0.9rem 0;">
+          {{ datesheets.official_board_note }}
+        </p>
+
+        <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+          <a href="/maharashtra-board/datesheets?class={{ class_num }}" class="btn-sm btn-primary" style="width: auto;">
+            View Full {{ class_ds.schedule_items|length }}-Date Schedule Table &rarr;
+          </a>
+          {% if class_num == '10' %}
+            <a href="{{ class_ds.pdf_en }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto;">Official PDF (English) ↗</a>
+            <a href="{{ class_ds.pdf_mr }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto;">Official PDF (Marathi) ↗</a>
+          {% else %}
+            <a href="{{ class_ds.pdf_gen_en }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto;">Gen/Bifocal PDF (EN) ↗</a>
+            <a href="{{ class_ds.pdf_gen_mr }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto;">Gen/Bifocal PDF (MR) ↗</a>
+            <a href="{{ class_ds.pdf_voc_en }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto;">Vocational PDF (EN) ↗</a>
+            <a href="{{ class_ds.pdf_voc_mr }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto;">Vocational PDF (MR) ↗</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Subject Codes Catalogue Preview & Curriculum Frameworks -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1.25rem;">
+        <div>
+          <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--primary-headings); margin-bottom: 0.3rem;">
+            {{ course_name }} Official Subject Index Catalogue ({{ subjects|length }} Subjects) &amp; Frameworks
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.875rem; margin: 0;">
+            {{ syllabus_note }}
+          </p>
+        </div>
+        <a href="/maharashtra-board/syllabus?class={{ class_num }}" class="btn-sm btn-primary">
+          Search All {{ subjects|length }} Subjects &rarr;
+        </a>
+      </div>
+
+      {% if curriculum_frameworks %}
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; margin-bottom: 1.5rem;">
+        {% for fw in curriculum_frameworks[:3] %}
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.1rem; display: flex; flex-direction: column;">
+          <span class="code-pill" style="align-self: flex-start; margin-bottom: 0.4rem;">{{ fw.authority }}</span>
+          <h3 style="font-size: 0.95rem; font-weight: 700; color: var(--primary); margin: 0 0 0.35rem 0; flex: 1 1 auto;">{{ fw.title }}</h3>
+          <div style="font-size: 0.75rem; color: #64748b; margin-bottom: 0.75rem;">{{ fw.class_scope }} &bull; {{ fw.file_size }}</div>
+          <a href="{{ fw.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="text-align: center;">Open Official Resource ↗</a>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      <div class="table-scroll-hint"><span>↔️ Swipe horizontally to view all columns</span></div>
+      <div class="table-responsive" role="region" tabindex="0" aria-label="MSBSHSE {{ course_name }} Official Subject Catalogue Preview">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Index Code</th>
+              <th>Subject (English)</th>
+              <th>Subject (Marathi / मराठी)</th>
+              <th>Official Category</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for s in subjects[:25] %}
+            <tr>
+              <td><code>{{ s.code }}</code></td>
+              <td style="font-weight: 700; color: var(--primary);">{{ s.subject }}</td>
+              <td>{{ s.subject_mr }}</td>
+              <td style="font-size: 0.85rem; color: #475569;">{{ s.category }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% if subjects|length > 25 %}
+      <div style="text-align: right; margin-top: -0.5rem;">
+        <a href="/maharashtra-board/syllabus?class={{ class_num }}" class="btn-sm btn-secondary">
+          Showing 25 of {{ subjects|length }} Official Subjects &mdash; View Complete {{ course_name }} Directory &rarr;
+        </a>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- Past Board Question Papers Preview -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1.25rem;">
+        <div>
+          <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--primary-headings); margin-bottom: 0.3rem;">
+            {{ course_name }} Official Past Question Papers ({{ pyq_rows|length }} Entries / {{ pyq_pdf_count }} PDFs)
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">
+            Authentic past board papers (March 2024 – June 2026) directly from <code>mahahsscboard.in</code>:
+          </p>
+        </div>
+        <a href="/maharashtra-board/pyq?class={{ class_num }}" class="btn-sm btn-primary">
+          Browse All {{ pyq_rows|length }} {{ course_name }} PYQs &rarr;
+        </a>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1rem;">
+        {% for item in pyq_rows[:6] %}
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.15rem; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.45rem; flex-wrap: wrap; gap: 0.35rem;">
+            <span class="code-pill">{{ item.type }} &bull; Code {{ item.code }}</span>
+            <span class="pyq-year-badge">{{ item.session }}</span>
+          </div>
+          <h3 style="font-size: 1rem; font-weight: 700; color: var(--primary); margin: 0 0 0.5rem 0;">
+            {{ item.subject }}
+          </h3>
+          <div style="display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: auto; padding-top: 0.5rem;">
+            {% for pdf in item.pdfs %}
+            <a href="{{ pdf.url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-official-pdf" style="font-size: 0.75rem;">
+              {{ pdf.medium }} PDF ↗
+            </a>
+            {% endfor %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- SCERT Maharashtra Question Bank Preview -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1.25rem;">
+        <div>
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary-headings); margin-bottom: 0.25rem;">
+            SCERT Maharashtra Question Bank (Prashnapedhi — Std. {{ class_num }})
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.875rem; margin: 0;">
+            Published by State Council of Educational Research and Training (<code>maa.ac.in</code>), Pune:
+          </p>
+        </div>
+        <a href="/maharashtra-board/question-bank?class={{ class_num }}" class="btn-sm btn-secondary">All SCERT Question Banks &rarr;</a>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1rem;">
+        {% for qb in qbank_items[:6] %}
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.1rem; display: flex; flex-direction: column;">
+          <div style="font-size: 0.75rem; color: #0369a1; font-weight: 700; margin-bottom: 0.25rem;">
+            {{ qb.medium }} Medium &bull; {{ qb.file_size }}
+          </div>
+          <h3 style="font-size: 0.98rem; font-weight: 700; color: var(--primary); margin: 0 0 0.5rem 0; flex: 1 1 auto;">
+            {{ qb.subject }}
+          </h3>
+          <a href="{{ qb.download_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary" style="text-align: center;">
+            SCERT Prashnapedhi PDF ↗
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Circulars & Publications -->
+  {% if circulars %}
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1rem;">
+        <div>
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary-headings); margin: 0;">
+            Relevant Official Circulars ({{ course_name }})
+          </h2>
+        </div>
+        <a href="/maharashtra-board/circulars?class={{ class_num }}" class="btn-sm btn-secondary">All Circulars &rarr;</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0.85rem;">
+        {% for c in circulars %}
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div style="flex: 1 1 350px;">
+            <div style="font-size: 0.75rem; color: #64748b; margin-bottom: 0.2rem;">
+              <strong>{{ c.category }}</strong> &bull; {{ c.circular_no }} &bull; {{ c.published_date }} ({{ c.file_size }})
+            </div>
+            <div style="font-weight: 700; color: var(--primary); font-size: 0.95rem; margin-bottom: 0.2rem;">{{ c.title }}</div>
+            <div style="font-size: 0.825rem; color: #64748b;">{{ c.summary }}</div>
+          </div>
+          <a href="{{ c.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary">Official PDF ↗</a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Disclaimer -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="disclaimer-callout" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; font-size: 0.8125rem; color: #64748b; line-height: 1.6;">
+        <strong style="color: var(--primary); display: block; margin-bottom: 0.35rem; font-size: 0.875rem;">
+          ⚖️ MSBSHSE Non-Affiliation Legal Notice
+        </strong>
+        StudySignal is independent and <strong>NOT affiliated with MSBSHSE Pune or SCERT Maharashtra</strong>. Always verify timetables and board circulars directly on <a href="{{ official_urls.maha_main }}" target="_blank" rel="noopener noreferrer" style="color: var(--brand-blue); text-decoration: underline;">mahahsscboard.in</a>.
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

@@ -1,0 +1,348 @@
+{% extends 'base.html' %}
+
+{% block title %}Maharashtra Board (MSBSHSE) Examination Hub - SSC &amp; HSC | StudySignal{% endblock %}
+
+{% block meta_description %}
+Maharashtra State Board of Secondary and Higher Secondary Education (MSBSHSE Pune) educational hub on StudySignal. Confirmed Feb–Mar 2027 SSC &amp; HSC timetables, 132 PYQ rows (332 official PDFs), 114 SSC &amp; 132 HSC subject codes, SCERT Prashnapedhi Question Banks, circulars, and e-Marksheet portals.
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [
+  {'title': 'Boards & Exams', 'url': '/boards'},
+  {'title': 'Maharashtra Board (MSBSHSE) Hub', 'url': '/maharashtra-board'}
+] %}
+{% include 'components/breadcrumb.html' %}
+
+<div class="board-hub-container maha-hub">
+  <!-- Header Hero Banner -->
+  <section class="section" style="padding-bottom: 1.5rem;">
+    <div class="container">
+      <div class="hub-hero-banner">
+        <div class="hub-hero-branding">
+          <img src="{{ url_for('static', filename='images/boards/msbshse-logo.png') }}" alt="MSBSHSE" class="hub-hero-logo" width="56" height="56">
+          <div>
+            <div class="hub-hero-badge">
+              <span>🇮🇳 MSBSHSE Pune Official Academic Framework &bull; <strong class="badge-status-active" style="margin-left: 4px; vertical-align: middle;">Active</strong></span>
+            </div>
+            <h1 class="hub-hero-title">Maharashtra Board Examination Hub (MSBSHSE)</h1>
+            <div style="color: #64748b; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.6rem;">
+              {{ datesheets.board_name_mr or 'महाराष्ट्र राज्य माध्यमिक व उच्च माध्यमिक शिक्षण मंडळ, पुणे' }} &bull; SSC &amp; HSC
+            </div>
+          </div>
+        </div>
+        <p class="hub-hero-desc">
+          Dedicated resource portal for Maharashtra State Board Std. 10 (SSC — माध्यमिक शालान्त प्रमाणपत्र परीक्षा) and Std. 12 (HSC — उच्च माध्यमिक प्रमाणपत्र परीक्षा). Access confirmed February–March 2027 board timetables, {{ pyq_total_rows }} official Past Board Question Paper entries ({{ pyq_total_pdfs }} live PDFs), SCERT Maharashtra Prashnapedhi Question Banks, 246 verified subject index codes, and board guidance handbooks.
+        </p>
+
+        <!-- Quick Stats Row -->
+        <div class="hub-stats-row">
+          <div class="hub-stat-pill">
+            <span>🗓️ <strong>Feb–Mar 2027 Timetable:</strong> Confirmed (07 Nov 2026)</span>
+          </div>
+          <div class="hub-stat-pill">
+            <span>📄 <strong>{{ pyq_total_rows }} PYQ Rows ({{ pyq_total_pdfs }} PDFs):</strong> 2024–2026</span>
+          </div>
+          <div class="hub-stat-pill">
+            <span>📚 <strong>114 SSC &amp; 132 HSC</strong> Subject Codes</span>
+          </div>
+          <div class="hub-stat-pill">
+            <span>❓ <strong>SCERT Question Bank:</strong> Prashnapedhi</span>
+          </div>
+        </div>
+
+        <div class="hub-hero-actions">
+          <a href="/maharashtra-board/datesheets" class="btn-primary" style="width: auto;">
+            Confirmed Feb–Mar 2027 Timetable &rarr;
+          </a>
+          <a href="/maharashtra-board/pyq" class="btn-secondary" style="width: auto;">
+            PYQ Archive ({{ pyq_total_pdfs }} PDFs) &rarr;
+          </a>
+          <a href="/maharashtra-board/question-bank" class="btn-secondary" style="width: auto;">
+            SCERT Question Bank &rarr;
+          </a>
+          <a href="/maharashtra-board/syllabus" class="btn-secondary" style="width: auto;">
+            Syllabus &amp; Subject Codes &rarr;
+          </a>
+          <a href="{{ official_urls.maha_main }}" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="width: auto;">
+            Official MSBSHSE Portal ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Navigation Pills -->
+  <section class="section" style="padding: 0 0 2rem 0;">
+    <div class="container">
+      <div class="board-selector-bar">
+        <a href="/maharashtra-board/class-10" class="selector-pill">
+          📘 SSC (Std. 10) Hub
+        </a>
+        <a href="/maharashtra-board/class-12" class="selector-pill">
+          🎓 HSC (Std. 12) Hub
+        </a>
+        <a href="/maharashtra-board/datesheets" class="selector-pill">
+          🗓️ Feb–Mar 2027 Timetable
+        </a>
+        <a href="/maharashtra-board/pyq" class="selector-pill">
+          📄 PYQ Library ({{ pyq_total_pdfs }} PDFs)
+        </a>
+        <a href="/maharashtra-board/question-bank" class="selector-pill">
+          ❓ SCERT Question Bank
+        </a>
+        <a href="/maharashtra-board/syllabus" class="selector-pill">
+          📚 Syllabus &amp; 246 Subject Codes
+        </a>
+        <a href="/maharashtra-board/sample-papers" class="selector-pill">
+          📖 Pattern &amp; Rajmarg Guides
+        </a>
+        <a href="/maharashtra-board/circulars" class="selector-pill">
+          📢 Circulars &amp; Journals
+        </a>
+        <a href="/maharashtra-board/results" class="selector-pill">
+          🏆 Results &amp; e-Marksheet
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Confirmed Feb-Mar 2027 Timetable Banner -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="hub-alert-card" style="border-left-color: #15803d; background: #f0fdf4;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.5rem;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.35rem;">
+              <span class="verified-badge" style="background: #dcfce7; color: #166534; border: 1px solid #bbf7d0; font-weight: 700;">
+                ✓ {{ datesheets.status_label_2027 or 'Official Feb–Mar 2027 Timetable Confirmed' }}
+              </span>
+              <span style="font-size: 0.8125rem; font-weight: 700; color: #166534; background: #ffffff; border: 1px solid #bbf7d0; padding: 2px 8px; border-radius: 4px;">
+                Published: {{ datesheets.published_date_label or '07 November 2026' }}
+              </span>
+            </div>
+            <h2 style="font-size: 1.25rem; font-weight: 800; color: #14532d; margin: 0 0 0.35rem 0;">
+              Maharashtra SSC &amp; HSC February–March 2027 Board Time Tables Declared
+            </h2>
+          </div>
+          <span style="font-size: 0.75rem; color: #166534; font-weight: 600;">
+            Verified: {{ datesheets.last_checked_label or '10 November 2026' }}
+          </span>
+        </div>
+        <p style="color: #166534; font-size: 0.925rem; line-height: 1.6; margin-bottom: 0.85rem;">
+          <strong>SSC (Std. 10):</strong> 15 February 2027 to 15 March 2027 &bull;
+          <strong>HSC (Std. 12) General &amp; Bifocal:</strong> 08 February 2027 to 11 March 2027 (IT Online: 12, 13, 15 Mar; GK Online: 16–18 Mar 2027) &bull;
+          <strong>HSC Vocational:</strong> 08 February to 09 March 2027.
+        </p>
+        <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+          <a href="/maharashtra-board/datesheets" class="btn-sm btn-primary" style="width: auto;">
+            View Full SSC &amp; HSC 2027 Schedule Tables &rarr;
+          </a>
+          <a href="{{ datesheets.classes['10'].pdf_en }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto;">
+            SSC Timetable PDF (EN) ↗
+          </a>
+          <a href="{{ datesheets.classes['12'].pdf_gen_en }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto;">
+            HSC Gen Timetable PDF (EN) ↗
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SSC & HSC Portals Grid -->
+  <section class="section" style="padding-top: 0; padding-bottom: 3rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1.25rem;">
+        <div>
+          <h2 style="font-size: 1.45rem; font-weight: 800; color: var(--primary-headings); margin-bottom: 0.35rem;">
+            Course Level Portals &bull; इयत्ता १० वी (SSC) व १२ वी (HSC)
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.9375rem; margin: 0;">
+            Choose SSC (Std. 10) or HSC (Std. 12) for confirmed 2027 timetables, past board papers, official subject codes, and SCERT question banks:
+          </p>
+        </div>
+      </div>
+
+      <div class="class-portal-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem;">
+        <!-- SSC Class 10 Card -->
+        <div class="class-card hub-course-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 5px solid var(--brand-blue); border-radius: 16px; padding: 1.75rem; box-shadow: 0 4px 18px rgba(15,23,42,0.04); display: flex; flex-direction: column;">
+          <div class="class-card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+            <span class="class-badge" style="background: #e0f2fe; color: #0369a1; font-weight: 700; border-radius: 6px; padding: 3px 10px; font-size: 0.75rem;">SSC (इयत्ता १० वी)</span>
+            <span class="badge-status-active" style="font-size: 0.75rem;">Active</span>
+          </div>
+          <h3 class="class-card-title" style="font-size: 1.4rem; font-weight: 800; color: var(--primary); margin: 0 0 0.25rem 0;">SSC (Std. 10 — Secondary)</h3>
+          <div style="font-size: 0.85rem; color: #64748b; font-weight: 600; margin-bottom: 0.6rem;">Confirmed Exam Window: 15 Feb – 15 Mar 2027</div>
+          <p class="class-card-desc" style="font-size: 0.875rem; color: #64748b; line-height: 1.5; margin-bottom: 1.25rem; flex: 1 1 auto;">
+            Complete SSC support: Feb–Mar 2027 official EN/MR timetable PDFs, 114 official subject index codes, SCERT Maharashtra SCF-SE 2024 &amp; Balbharati textbooks, verified SSC Past Question Papers across English, Marathi, Hindi &amp; Urdu mediums, and 14 SCERT Prashnapedhi PDFs.
+          </p>
+          <div class="hub-course-links" style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem;">
+            <a href="/maharashtra-board/class-10" style="display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0.85rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.875rem; font-weight: 600; color: var(--primary); text-decoration: none;">
+              <span>📘 SSC Std. 10 Overview Hub</span>
+              <span>&rarr;</span>
+            </a>
+            <a href="/maharashtra-board/datesheets?class=10" style="display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0.85rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.875rem; font-weight: 600; color: var(--primary); text-decoration: none;">
+              <span>🗓️ SSC Feb–Mar 2027 Timetable</span>
+              <span>&rarr;</span>
+            </a>
+            <a href="/maharashtra-board/pyq?class=10" style="display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0.85rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.875rem; font-weight: 600; color: var(--primary); text-decoration: none;">
+              <span>📄 SSC Past Question Papers (PYQs)</span>
+              <span>&rarr;</span>
+            </a>
+            <a href="/maharashtra-board/question-bank?class=10" style="display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0.85rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.875rem; font-weight: 600; color: var(--primary); text-decoration: none;">
+              <span>❓ SCERT Std. 10 Prashnapedhi (14 PDFs)</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+          <a href="/maharashtra-board/class-10" class="btn-primary" style="width: 100%; text-align: center;">
+            Explore SSC Class 10 Hub &rarr;
+          </a>
+        </div>
+
+        <!-- HSC Class 12 Card -->
+        <div class="class-card hub-course-card" style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 5px solid #059669; border-radius: 16px; padding: 1.75rem; box-shadow: 0 4px 18px rgba(15,23,42,0.04); display: flex; flex-direction: column;">
+          <div class="class-card-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+            <span class="class-badge" style="background: #d1fae5; color: #065f46; font-weight: 700; border-radius: 6px; padding: 3px 10px; font-size: 0.75rem;">HSC (इयत्ता १२ वी)</span>
+            <span class="badge-status-active" style="font-size: 0.75rem;">Active</span>
+          </div>
+          <h3 class="class-card-title" style="font-size: 1.4rem; font-weight: 800; color: var(--primary); margin: 0 0 0.25rem 0;">HSC (Std. 12 — Higher Secondary)</h3>
+          <div style="font-size: 0.85rem; color: #64748b; font-weight: 600; margin-bottom: 0.6rem;">Gen/Bifocal: 08 Feb – 11 Mar 2027 (+ IT/GK Online)</div>
+          <p class="class-card-desc" style="font-size: 0.875rem; color: #64748b; line-height: 1.5; margin-bottom: 1.25rem; flex: 1 1 auto;">
+            Science, Commerce, Arts, Bifocal &amp; HSC Vocational (MCVC) portal: confirmed Feb–Mar 2027 General/Bifocal &amp; Vocational timetables, 132 official subject codes, multi-medium Past Question Papers, 9 SCERT Std. 12 Question Banks, and March 2024 Performance Analysis Report.
+          </p>
+          <div class="hub-course-links" style="display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.25rem;">
+            <a href="/maharashtra-board/class-12" style="display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0.85rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.875rem; font-weight: 600; color: var(--primary); text-decoration: none;">
+              <span>🎓 HSC Std. 12 Overview Hub</span>
+              <span>&rarr;</span>
+            </a>
+            <a href="/maharashtra-board/datesheets?class=12" style="display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0.85rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.875rem; font-weight: 600; color: var(--primary); text-decoration: none;">
+              <span>🗓️ HSC Feb–Mar 2027 Timetables</span>
+              <span>&rarr;</span>
+            </a>
+            <a href="/maharashtra-board/pyq?class=12" style="display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0.85rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.875rem; font-weight: 600; color: var(--primary); text-decoration: none;">
+              <span>📄 HSC Past Question Papers (PYQs)</span>
+              <span>&rarr;</span>
+            </a>
+            <a href="/maharashtra-board/question-bank?class=12" style="display: flex; justify-content: space-between; align-items: center; padding: 0.6rem 0.85rem; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; font-size: 0.875rem; font-weight: 600; color: var(--primary); text-decoration: none;">
+              <span>❓ SCERT Std. 12 Prashnapedhi (9 PDFs)</span>
+              <span>&rarr;</span>
+            </a>
+          </div>
+          <a href="/maharashtra-board/class-12" class="btn-primary" style="width: 100%; text-align: center;">
+            Explore HSC Class 12 Hub &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transparency Strip: Official Syllabus vs SCERT Question Bank vs PYQs -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.25rem;">
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.35rem; display: flex; flex-direction: column;">
+          <span class="verified-badge" style="align-self: flex-start; margin-bottom: 0.5rem;">Official MSBSHSE Archive</span>
+          <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--primary); margin: 0 0 0.4rem 0;">
+            Past Board Papers ({{ pyq_total_pdfs }} PDFs)
+          </h3>
+          <p style="font-size: 0.84rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem; flex: 1 1 auto;">
+            {{ pyq_total_rows }} SSC &amp; HSC question paper entries (March 2024 – June 2026) directly sourced from <code>mahahsscboard.in</code> across English, Marathi, Hindi, and Urdu mediums.
+          </p>
+          <a href="/maharashtra-board/pyq" class="btn-sm btn-primary" style="text-align: center;">Browse All PYQs &rarr;</a>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.35rem; display: flex; flex-direction: column;">
+          <span class="code-pill" style="align-self: flex-start; margin-bottom: 0.5rem;">Authority: SCERT (maa.ac.in)</span>
+          <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--primary); margin: 0 0 0.4rem 0;">
+            SCERT Question Bank (Prashnapedhi)
+          </h3>
+          <p style="font-size: 0.84rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem; flex: 1 1 auto;">
+            Maharashtra's official Prashnapedhi practice banks and 2024–25 competency folders are published by SCERT Maharashtra (<code>maa.ac.in</code>), cleanly attributed and verified.
+          </p>
+          <a href="/maharashtra-board/question-bank" class="btn-sm btn-primary" style="text-align: center;">Open Question Banks &rarr;</a>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.35rem; display: flex; flex-direction: column;">
+          <span class="code-pill" style="align-self: flex-start; margin-bottom: 0.5rem;">SCERT &amp; Balbharati</span>
+          <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--primary); margin: 0 0 0.4rem 0;">
+            Syllabus &amp; Subject Index Catalogue
+          </h3>
+          <p style="font-size: 0.84rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem; flex: 1 1 auto;">
+            Browse all 114 SSC &amp; 132 HSC official subject codes alongside SCERT Maharashtra curriculum frameworks (SCF-SE 2024) and Balbharati E-Books.
+          </p>
+          <a href="/maharashtra-board/syllabus" class="btn-sm btn-secondary" style="text-align: center;">Explore Syllabus Guide &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest Circulars & Official Guidance Publications -->
+  <section class="section" style="padding-top: 0; padding-bottom: 3rem;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 1.75rem;">
+        <!-- Circulars Column -->
+        <div>
+          <div class="section-header" style="margin-bottom: 1rem;">
+            <div>
+              <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary-headings); margin: 0;">
+                Latest Board Circulars
+              </h2>
+            </div>
+            <a href="/maharashtra-board/circulars" class="btn-sm btn-secondary">All Circulars &rarr;</a>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            {% for c in latest_circulars %}
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1rem;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #64748b; margin-bottom: 0.25rem; gap: 0.4rem; flex-wrap: wrap;">
+                <span><strong>{{ c.category }}</strong> &bull; {{ c.class_target }}</span>
+                <span>{{ c.published_date }}</span>
+              </div>
+              <div style="font-weight: 700; color: var(--primary); font-size: 0.925rem; margin-bottom: 0.35rem;">{{ c.title }}</div>
+              <a href="{{ c.official_url }}" target="_blank" rel="noopener noreferrer" style="font-size: 0.8rem; font-weight: 600; color: var(--brand-blue);">
+                Official PDF ({{ c.file_size }}) ↗
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        <!-- Guidance Publications Column -->
+        <div>
+          <div class="section-header" style="margin-bottom: 1rem;">
+            <div>
+              <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary-headings); margin: 0;">
+                Guidance &amp; Performance Reports
+              </h2>
+            </div>
+            <a href="/maharashtra-board/sample-papers" class="btn-sm btn-secondary">All Guides &rarr;</a>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+            {% for pub in publications %}
+            <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1rem;">
+              <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #64748b; margin-bottom: 0.25rem; gap: 0.4rem; flex-wrap: wrap;">
+                <span><strong>{{ pub.category }}</strong> &bull; {{ pub.class_target }}</span>
+                <span>{{ pub.published_date }}</span>
+              </div>
+              <div style="font-weight: 700; color: var(--primary); font-size: 0.925rem; margin-bottom: 0.35rem;">{{ pub.title }}</div>
+              <a href="{{ pub.official_url }}" target="_blank" rel="noopener noreferrer" style="font-size: 0.8rem; font-weight: 600; color: var(--brand-blue);">
+                Download Publication ({{ pub.file_size }}) ↗
+              </a>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Non-Affiliation Disclaimer -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="disclaimer-callout" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; font-size: 0.8125rem; color: #64748b; line-height: 1.6;">
+        <strong style="color: var(--primary); display: block; margin-bottom: 0.35rem; font-size: 0.875rem;">
+          ⚖️ MSBSHSE Non-Affiliation Legal Notice
+        </strong>
+        StudySignal is an independent, free-access educational resource and is <strong>NOT affiliated with, endorsed by, or connected to the Maharashtra State Board of Secondary and Higher Secondary Education (MSBSHSE), SCERT Maharashtra (maa.ac.in), Balbharati, or Government of Maharashtra</strong>. Always verify exam rules on <a href="{{ official_urls.maha_main }}" target="_blank" rel="noopener noreferrer" style="color: var(--brand-blue); text-decoration: underline;">mahahsscboard.in</a>.
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

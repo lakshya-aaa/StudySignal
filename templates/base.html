@@ -7,7 +7,7 @@
   
   <title>{% block title %}{{ site_name }} - {{ site_tagline }}{% endblock %}</title>
   <meta name="description" content="{% block meta_description %}{{ site_description }}{% endblock %}">
-  <meta name="keywords" content="{% block meta_keywords %}CBSE syllabus 2026-27, CBSE Class 10 syllabus, CBSE Class 12 syllabus, CBSE datesheet, CBSE circulars, cbseacademic.nic.in, board exam timetable{% endblock %}">
+  <meta name="keywords" content="{% block meta_keywords %}CBSE syllabus 2026-27, UP Board UPMSP, CISCE ICSE ISC, Bihar Board BSEB model papers, Maharashtra Board MSBSHSE SSC HSC PYQ, SCERT Maharashtra Prashnapedhi, board exam timetable{% endblock %}">
   <meta name="robots" content="{% block robots %}index, follow{% endblock %}">
   <link rel="canonical" href="{% block canonical_url %}{{ canonical_base_url }}{{ request.path }}{% endblock %}">
 
@@ -66,11 +66,15 @@
           {% if '/up-board' in request.path %}
             UP Board High School &amp; Intermediate (Classes 10 &amp; 12)
           {% elif '/icse' in request.path or '/isc' in request.path %}
-            CISCE Board • ICSE Class 10 &amp; ISC Class 12
+            CISCE Board &bull; ICSE Class 10 &amp; ISC Class 12
+          {% elif '/bihar-board' in request.path %}
+            Bihar Board (BSEB) &bull; Matric (10th) &amp; Intermediate (+2)
+          {% elif '/maharashtra-board' in request.path %}
+            Maharashtra Board (MSBSHSE) &bull; SSC (Std. 10) &amp; HSC (Std. 12)
           {% elif '/cbse' in request.path %}
             CBSE Secondary &amp; Senior Secondary (Classes 10 &amp; 12)
           {% else %}
-            Multi-Board Coverage: CBSE • UP Board (UPMSP) • CISCE (ICSE/ISC)
+            Multi-Board Coverage: CBSE &bull; UPMSP &bull; CISCE &bull; BSEB &bull; MSBSHSE
           {% endif %}
         </span>
       </div>
@@ -82,6 +86,12 @@
         {% elif '/icse' in request.path or '/isc' in request.path %}
           <a href="{{ official_urls.cisce_main }}" target="_blank" rel="noopener noreferrer">cisce.org ↗</a>
           <a href="{{ official_urls.cisce_regulations }}" target="_blank" rel="noopener noreferrer">Regulations ↗</a>
+        {% elif '/bihar-board' in request.path %}
+          <a href="{{ official_urls.bseb_main }}" target="_blank" rel="noopener noreferrer">biharboardonline.com ↗</a>
+          <a href="{{ official_urls.bseb_ofss }}" target="_blank" rel="noopener noreferrer">ofssbihar.net ↗</a>
+        {% elif '/maharashtra-board' in request.path %}
+          <a href="{{ official_urls.maha_main }}" target="_blank" rel="noopener noreferrer">mahahsscboard.in ↗</a>
+          <a href="{{ official_urls.scert_maha_main }}" target="_blank" rel="noopener noreferrer">maa.ac.in (SCERT) ↗</a>
         {% elif '/cbse' in request.path %}
           <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer">cbse.gov.in ↗</a>
           <a href="{{ official_urls.cbse_academic }}" target="_blank" rel="noopener noreferrer">cbseacademic.nic.in ↗</a>
@@ -89,6 +99,8 @@
           <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer">cbse.gov.in ↗</a>
           <a href="{{ official_urls.upmsp_main }}" target="_blank" rel="noopener noreferrer">upmsp.edu.in ↗</a>
           <a href="{{ official_urls.cisce_main }}" target="_blank" rel="noopener noreferrer">cisce.org ↗</a>
+          <a href="{{ official_urls.bseb_main }}" target="_blank" rel="noopener noreferrer">biharboardonline.com ↗</a>
+          <a href="{{ official_urls.maha_main }}" target="_blank" rel="noopener noreferrer">mahahsscboard.in ↗</a>
         {% endif %}
       </div>
     </div>
@@ -105,7 +117,7 @@
       <ul class="nav-menu" id="navMenu">
         <li><a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}">Home</a></li>
         <li class="nav-dropdown-item">
-          <a href="/boards" class="nav-link nav-dropdown-link {% if '/boards' in request.path or '/icse' in request.path %}active{% endif %}">
+          <a href="/boards" class="nav-link nav-dropdown-link {% if '/boards' in request.path or '/icse' in request.path or '/up-board' in request.path or '/bihar-board' in request.path or '/maharashtra-board' in request.path %}active{% endif %}">
             <span>Boards &amp; Exams</span> <span class="dropdown-arrow">▾</span>
           </a>
           <div class="nav-dropdown-box">
@@ -132,20 +144,20 @@
                 </span>
                 <span class="badge-status-active">Active</span>
               </a>
-              <div class="dropdown-entry is-disabled">
+              <a href="/bihar-board" class="dropdown-entry">
                 <span class="dropdown-title-with-logo">
-                  <span class="nav-board-placeholder">🏛️</span>
+                  <img src="{{ url_for('static', filename='images/boards/bseb-logo.png') }}" alt="" class="nav-board-logo" width="18" height="18">
                   <span>Bihar Board (BSEB)</span>
                 </span>
-                <span class="badge-status-soon">Coming Soon</span>
-              </div>
-              <div class="dropdown-entry is-disabled">
+                <span class="badge-status-active">Active</span>
+              </a>
+              <a href="/maharashtra-board" class="dropdown-entry">
                 <span class="dropdown-title-with-logo">
-                  <span class="nav-board-placeholder">🏛️</span>
+                  <img src="{{ url_for('static', filename='images/boards/msbshse-logo.png') }}" alt="" class="nav-board-logo" width="18" height="18">
                   <span>Maharashtra Board (MSBSHSE)</span>
                 </span>
-                <span class="badge-status-soon">Coming Soon</span>
-              </div>
+                <span class="badge-status-active">Active</span>
+              </a>
             </div>
             <div class="dropdown-group">
               <span class="dropdown-group-title">Competitive Exams</span>
@@ -209,13 +221,15 @@
         <li><a href="/cbse" class="{% if request.path == '/cbse' %}active{% endif %}"><img src="{{ url_for('static', filename='images/boards/cbse-logo.png') }}" alt="" class="nav-board-logo" width="16" height="16"> CBSE Examination Hub</a></li>
         <li><a href="/up-board" class="{% if '/up-board' in request.path %}active{% endif %}"><img src="{{ url_for('static', filename='images/boards/upmsp-logo.png') }}" alt="" class="nav-board-logo" width="16" height="16"> UP Board (UPMSP) <span class="badge-status-active" style="font-size: 0.65rem; margin-left: 0.25rem;">Active</span></a></li>
         <li><a href="/icse" class="{% if '/icse' in request.path %}active{% endif %}"><img src="{{ url_for('static', filename='images/boards/cisce-logo.png') }}" alt="" class="nav-board-logo" width="16" height="16"> ICSE &amp; ISC <span class="badge-status-active" style="font-size: 0.65rem; margin-left: 0.25rem;">Active</span></a></li>
+        <li><a href="/bihar-board" class="{% if '/bihar-board' in request.path %}active{% endif %}"><img src="{{ url_for('static', filename='images/boards/bseb-logo.png') }}" alt="" class="nav-board-logo" width="16" height="16"> Bihar Board (BSEB) <span class="badge-status-active" style="font-size: 0.65rem; margin-left: 0.25rem;">Active</span></a></li>
+        <li><a href="/maharashtra-board" class="{% if '/maharashtra-board' in request.path %}active{% endif %}"><img src="{{ url_for('static', filename='images/boards/msbshse-logo.png') }}" alt="" class="nav-board-logo" width="16" height="16"> Maharashtra Board (MSBSHSE) <span class="badge-status-active" style="font-size: 0.65rem; margin-left: 0.25rem;">Active</span></a></li>
         <li><a href="/cbse/class-10" class="{% if '/class-10' in request.path %}active{% endif %}">CBSE Class 10</a></li>
         <li><a href="/cbse/class-12" class="{% if '/class-12' in request.path %}active{% endif %}">CBSE Class 12</a></li>
         <li><a href="/cbse/syllabus" class="{% if '/syllabus' in request.path %}active{% endif %}">Subject Syllabus</a></li>
         <li><a href="/cbse/datesheets" class="{% if '/datesheets' in request.path %}active{% endif %}">Exam Date Sheets</a></li>
-        <li><a href="/cbse/circulars" class="{% if '/circulars' in request.path %}active{% endif %}">Circulars & Notices</a></li>
+        <li><a href="/cbse/circulars" class="{% if '/circulars' in request.path %}active{% endif %}">Circulars &amp; Notices</a></li>
         <li><a href="/cbse/pyq" class="{% if '/pyq' in request.path %}active{% endif %}">Previous Year Papers (PYQs)</a></li>
-        <li><a href="/search" class="{% if '/search' in request.path %}active{% endif %}">Search & Filters</a></li>
+        <li><a href="/search" class="{% if '/search' in request.path %}active{% endif %}">Search &amp; Filters</a></li>
         <li><a href="/about">About Us</a></li>
         <li><a href="/contact">Contact</a></li>
         <li><a href="/disclaimer">Disclaimer</a></li>
@@ -253,7 +267,7 @@
           </a>
         </div>
         <p class="footer-desc">
-          StudySignal is an independent, free-access educational information platform and portal created to help Indian students, parents and educators access academic resources, syllabus information, sample papers, examination updates and educational notifications across supported boards and examinations.
+          StudySignal is an independent, free-access educational information platform and portal created to help Indian students, parents and educators access academic resources, syllabus information, sample papers, past question papers, examination updates and official notifications across CBSE, UP Board (UPMSP), CISCE, Bihar Board (BSEB) and Maharashtra Board (MSBSHSE).
         </p>
         <div class="footer-badges">
           <span class="f-badge">Multi-Board Educational Platform</span>
@@ -269,6 +283,12 @@
           <li><a href="/cbse">CBSE Resources</a></li>
           <li><a href="/up-board">UP Board Resources</a></li>
           <li><a href="/icse">CISCE Resources</a></li>
+          <li><a href="/bihar-board">Bihar Board (BSEB)</a></li>
+          <li><a href="/bihar-board/sample-papers">BSEB Model Papers (Not PYQ)</a></li>
+          <li><a href="/maharashtra-board">Maharashtra Board (MSBSHSE)</a></li>
+          <li><a href="/maharashtra-board/datesheets">MSBSHSE 2027 Timetables</a></li>
+          <li><a href="/maharashtra-board/pyq">MSBSHSE SSC &amp; HSC PYQs</a></li>
+          <li><a href="/maharashtra-board/question-bank">SCERT Prashnapedhi Bank</a></li>
           <li><a href="/boards">Boards &amp; Competitive Exams</a></li>
           <li><a href="/cbse/class-10">CBSE Class 10 Portal</a></li>
           <li><a href="/cbse/class-12">CBSE Class 12 Portal</a></li>
@@ -294,6 +314,9 @@
           <li><a href="{{ official_urls.cbse_academic }}" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='images/boards/cbse-logo.png') }}" alt="" class="footer-source-logo" width="15" height="15">CBSE Academic Unit (cbseacademic.nic.in) ↗</a></li>
           <li><a href="{{ official_urls.upmsp_main }}" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='images/boards/upmsp-logo.png') }}" alt="" class="footer-source-logo" width="15" height="15">UPMSP Official Website (upmsp.edu.in) ↗</a></li>
           <li><a href="{{ official_urls.cisce_main }}" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='images/boards/cisce-logo.png') }}" alt="" class="footer-source-logo" width="15" height="15">Official CISCE Portal (cisce.org) ↗</a></li>
+          <li><a href="{{ official_urls.bseb_main }}" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='images/boards/bseb-logo.png') }}" alt="" class="footer-source-logo" width="15" height="15">Bihar Board (biharboardonline.com) ↗</a></li>
+          <li><a href="{{ official_urls.maha_main }}" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='images/boards/msbshse-logo.png') }}" alt="" class="footer-source-logo" width="15" height="15">MSBSHSE Portal (mahahsscboard.in) ↗</a></li>
+          <li><a href="{{ official_urls.scert_maha_main }}" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='images/boards/msbshse-logo.png') }}" alt="" class="footer-source-logo" width="15" height="15">SCERT Maharashtra (maa.ac.in) ↗</a></li>
           <li><a href="{{ official_urls.cisce_regulations }}" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='images/boards/cisce-logo.png') }}" alt="" class="footer-source-logo" width="15" height="15">CISCE Regulations &amp; Syllabi ↗</a></li>
           <li><a href="{{ official_urls.upmsp_results }}" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='images/boards/upmsp-logo.png') }}" alt="" class="footer-source-logo" width="15" height="15">UPMSP Results &amp; Services ↗</a></li>
         </ul>
@@ -304,10 +327,10 @@
         <h4 class="footer-heading">Portal Information</h4>
         <ul class="footer-links">
           <li><a href="/about">About StudySignal</a></li>
-          <li><a href="/contact">Contact & Feedback</a></li>
+          <li><a href="/contact">Contact &amp; Feedback</a></li>
           <li><a href="/disclaimer">Official Disclaimer</a></li>
           <li><a href="/privacy-policy">Privacy Policy</a></li>
-          <li><a href="/terms">Terms & Conditions</a></li>
+          <li><a href="/terms">Terms &amp; Conditions</a></li>
           <li><a href="/sitemap.xml">XML Sitemap</a></li>
         </ul>
       </div>
@@ -324,7 +347,7 @@
         <span>Important Legal Disclaimer</span>
       </div>
       <p>
-        {{ disclaimer_text }} All trademarks, logos, circular numbers, and syllabus documents mentioned on this website belong to their respective statutory education boards and examination authorities (including CBSE, UPMSP, and CISCE). Any sample timetables or mock circulars are strictly marked as demo data for layout testing.
+        {{ disclaimer_text }} All trademarks, logos, circular numbers, and syllabus documents mentioned on this website belong to their respective statutory education boards and examination authorities (including CBSE, UPMSP, CISCE, BSEB, MSBSHSE, SCERT Maharashtra, and Balbharati). Any sample timetables or mock circulars are strictly marked as demo data for layout testing.
       </p>
     </div>
 

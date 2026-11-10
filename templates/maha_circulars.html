@@ -1,0 +1,178 @@
+{% extends 'base.html' %}
+
+{% block title %}Maharashtra Board (MSBSHSE) Official Circulars, Hall Ticket Notices &amp; Publications | StudySignal{% endblock %}
+
+{% block meta_description %}
+Verified Maharashtra State Board (MSBSHSE Pune) official circulars: Feb–Mar 2027 SSC &amp; HSC Time Tables, Form No. 17 private candidate date extension, July 2026 supplementary results, marksheet verification, Parikshecha Rajmarg handbooks, and Shikshan Sankraman journals.
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [
+  {'title': 'Boards & Exams', 'url': '/boards'},
+  {'title': 'Maharashtra Board (MSBSHSE)', 'url': '/maharashtra-board'},
+  {'title': 'Circulars & Publications', 'url': '/maharashtra-board/circulars'}
+] %}
+{% include 'components/breadcrumb.html' %}
+
+<div class="board-hub-container maha-circulars">
+  <!-- Hero -->
+  <section class="section" style="padding-bottom: 1.5rem;">
+    <div class="container">
+      <div class="hub-hero-banner">
+        <div class="hub-hero-branding">
+          <img src="{{ url_for('static', filename='images/boards/msbshse-logo.png') }}" alt="MSBSHSE" class="hub-hero-logo" width="52" height="52">
+          <div>
+            <div class="hub-hero-badge">
+              <span>🇮🇳 MSBSHSE Circulars &amp; Publications &bull; <strong class="badge-status-active" style="margin-left: 4px; vertical-align: middle;">Active</strong></span>
+            </div>
+            <h1 class="hub-hero-title">Maharashtra Board Circulars &amp; Publications</h1>
+            <div style="color: #64748b; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.6rem;">
+              महाराष्ट्र राज्य मंडळ अधिकृत परिपत्रके, अर्ज सूचना व प्रकाशन संग्रह
+            </div>
+          </div>
+        </div>
+        <p class="hub-hero-desc">
+          Verified official circulars from <code>mahahsscboard.in</code> including Feb–Mar 2027 SSC/HSC timetable declarations, Form No. 17 private exam date extensions, practical/internal exam conduct notices, and official MSBSHSE guidance publications.
+        </p>
+
+        <div class="hub-stats-row">
+          <div class="hub-stat-pill"><span>📢 <strong>{{ total_count }}</strong> Verified Official Circulars</span></div>
+          <div class="hub-stat-pill"><span>📖 <strong>{{ publications|length }}</strong> Handbooks &amp; Journals</span></div>
+        </div>
+
+        <div class="hub-hero-actions">
+          <a href="{{ official_urls.maha_main }}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: auto;">Official MSBSHSE Portal ↗</a>
+          <a href="/maharashtra-board/datesheets" class="btn-secondary" style="width: auto;">Feb–Mar 2027 Timetable &rarr;</a>
+          <a href="/maharashtra-board" class="btn-secondary" style="width: auto;">MSBSHSE Hub &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Bar -->
+  <section class="section" style="padding: 0 0 2rem 0;">
+    <div class="container">
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem;">
+        <form method="GET" action="/maharashtra-board/circulars" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0.85rem; align-items: end;">
+          <div>
+            <label class="form-label" for="maha-circ-q">Keyword Search</label>
+            <input type="text" id="maha-circ-q" name="q" value="{{ search_q }}" placeholder="e.g. Form 17, 2027, marksheet..." class="form-control">
+          </div>
+          <div>
+            <label class="form-label" for="maha-circ-cat">Category</label>
+            <select id="maha-circ-cat" name="category" class="form-control">
+              <option value="all" {% if category == 'all' %}selected{% endif %}>All Categories ({{ total_count }})</option>
+              {% for cat in available_categories %}
+              <option value="{{ cat }}" {% if category == cat %}selected{% endif %}>{{ cat }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div>
+            <label class="form-label" for="maha-circ-class">Course</label>
+            <select id="maha-circ-class" name="class" class="form-control">
+              <option value="all" {% if selected_class == 'all' %}selected{% endif %}>All (SSC &amp; HSC)</option>
+              <option value="10" {% if selected_class == '10' %}selected{% endif %}>SSC Std. 10</option>
+              <option value="12" {% if selected_class == '12' %}selected{% endif %}>HSC Std. 12</option>
+            </select>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button type="submit" class="btn-primary" style="flex: 1;">Filter</button>
+            {% if category != 'all' or selected_class != 'all' or search_q %}
+            <a href="/maharashtra-board/circulars" class="btn-secondary">Reset</a>
+            {% endif %}
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Official Circulars List -->
+  <section class="section" style="padding-top: 0; padding-bottom: 3rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1rem;">
+        <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary-headings); margin: 0;">
+          Official Circulars &amp; Examination Notifications ({{ circulars|length }})
+        </h2>
+      </div>
+
+      {% if circulars %}
+      <div style="display: flex; flex-direction: column; gap: 1rem;">
+        {% for c in circulars %}
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.45rem;">
+            <div style="display: flex; align-items: center; gap: 0.45rem; flex-wrap: wrap;">
+              <span style="font-size: 0.75rem; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-weight: 700;">{{ c.category }}</span>
+              <span style="font-size: 0.75rem; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 4px; font-family: monospace; font-weight: 600;">{{ c.circular_no }}</span>
+              <span style="font-size: 0.75rem; background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 4px; font-weight: 600;">{{ c.class_target }}</span>
+              <span style="font-size: 0.75rem; color: #64748b;">Published: {{ c.published_date }}</span>
+            </div>
+            <span style="font-size: 0.75rem; color: #94a3b8;">Size: {{ c.file_size }} &bull; Verified: {{ c.last_verified }}</span>
+          </div>
+
+          <h3 style="font-size: 1.1rem; font-weight: 800; color: var(--primary); margin: 0 0 0.4rem 0;">{{ c.title }}</h3>
+          <p style="color: #475569; font-size: 0.875rem; line-height: 1.6; margin: 0 0 0.9rem 0;">{{ c.summary }}</p>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+            <a href="{{ c.source_portal }}" target="_blank" rel="noopener noreferrer" style="font-size: 0.8rem; color: #64748b; text-decoration: underline;">
+              View Official Portal Source ↗
+            </a>
+            <a href="{{ c.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary">
+              Download Official PDF ({{ c.file_size }}) ↗
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 2.5rem; text-align: center;">
+        <h3 style="font-size: 1.15rem; color: var(--primary); margin-bottom: 0.5rem;">No Circulars Match Your Filter</h3>
+        <a href="/maharashtra-board/circulars" class="btn-primary" style="width: auto;">Reset Filters &rarr;</a>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- Official Guidance Publications & Journals -->
+  {% if publications %}
+  <section class="section" style="padding-top: 0; padding-bottom: 3rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1.25rem;">
+        <div>
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary-headings); margin: 0 0 0.25rem 0;">
+            Official Board Guidance Handbooks, Performance Reports &amp; Shikshan Sankraman
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.875rem; margin: 0;">
+            Verified monographs from <code>mahahsscboard.in/en/publications</code>:
+          </p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 1.25rem;">
+        {% for pub in publications %}
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; display: flex; flex-direction: column;">
+          <span class="code-pill" style="align-self: flex-start; margin-bottom: 0.45rem;">{{ pub.category }}</span>
+          <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--primary); margin: 0 0 0.35rem 0;">{{ pub.title }}</h3>
+          <p style="font-size: 0.84rem; color: #64748b; line-height: 1.5; margin-bottom: 0.85rem; flex: 1 1 auto;">{{ pub.description }}</p>
+          <div style="font-size: 0.75rem; color: #475569; margin-bottom: 0.8rem;">
+            {{ pub.class_target }} &bull; {{ pub.published_date }} &bull; {{ pub.file_size }}
+          </div>
+          <a href="{{ pub.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="text-align: center;">
+            Download Publication ({{ pub.file_size }}) ↗
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Disclaimer -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="disclaimer-callout" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; font-size: 0.8125rem; color: #64748b; line-height: 1.6;">
+        <strong style="color: var(--primary); display: block; margin-bottom: 0.35rem;">⚖️ MSBSHSE Non-Affiliation Legal Notice</strong>
+        StudySignal is independent and NOT affiliated with MSBSHSE Pune. Check official updates on <a href="{{ official_urls.maha_main }}" target="_blank" rel="noopener noreferrer" style="color: var(--brand-blue); text-decoration: underline;">mahahsscboard.in</a>.
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

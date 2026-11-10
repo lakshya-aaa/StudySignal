@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+
+{% block title %}Bihar Board (BSEB) Syllabus PDFs &amp; Subject Regulations | StudySignal{% endblock %}
+
+{% block meta_description %}
+Verified Bihar Board (BSEB Patna) consolidated syllabus booklets for Class 10 (Matriculation), Classes XI-XII (+2 Intermediate), Class 9 foundation, and official result &amp; passing criteria regulations.
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [
+  {'title': 'Boards & Exams', 'url': '/boards'},
+  {'title': 'Bihar Board (BSEB)', 'url': '/bihar-board'},
+  {'title': 'Syllabus & Passing Rules', 'url': '/bihar-board/syllabus'}
+] %}
+{% include 'components/breadcrumb.html' %}
+
+<div class="board-hub-container bseb-syllabus">
+  <section class="section" style="padding-bottom: 1.5rem;">
+    <div class="container">
+      <div class="hub-hero-banner">
+        <div class="hub-hero-branding">
+          <img src="{{ url_for('static', filename='images/boards/bseb-logo.png') }}" alt="BSEB" class="hub-hero-logo" width="52" height="52">
+          <div>
+            <div class="hub-hero-badge">
+              <span>🇮🇳 BSEB &amp; SCERT Bihar Official Curriculum &bull; <strong class="badge-status-active" style="margin-left: 4px; vertical-align: middle;">Active</strong></span>
+            </div>
+            <h1 class="hub-hero-title">Bihar Board Syllabus &amp; Result Regulations</h1>
+            <div style="color: #64748b; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.6rem;">
+              बिहार विद्यालय परीक्षा समिति पाठ्यक्रम एवं परीक्षा नियमावली
+            </div>
+          </div>
+        </div>
+        <p class="hub-hero-desc">
+          {{ syllabus_data.metadata.note if syllabus_data and syllabus_data.metadata else 'BSEB hosts consolidated multi-subject syllabus PDFs for Matriculation and Intermediate +2 streams.' }}
+        </p>
+
+        <div class="hub-stats-row">
+          <div class="hub-stat-pill"><span>📚 <strong>{{ all_pdfs_count }}</strong> Consolidated Official PDFs</span></div>
+          <div class="hub-stat-pill"><span>📘 <strong>500 Marks</strong> Matric &amp; Inter Division Rule</span></div>
+          <div class="hub-stat-pill"><span>✓ <strong>Direct PDFs:</strong> biharboardonline.com</span></div>
+        </div>
+
+        <div class="hub-hero-actions">
+          <a href="{{ official_urls.bseb_main }}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: auto;">Official BSEB Portal ↗</a>
+          <a href="/bihar-board/sample-papers" class="btn-secondary" style="width: auto;">Official 2026 Model Papers &rarr;</a>
+          <a href="/bihar-board" class="btn-secondary" style="width: auto;">BSEB Main Hub &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Pills -->
+  <section class="section" style="padding: 0 0 2rem 0;">
+    <div class="container">
+      <div class="board-selector-bar">
+        <a href="/bihar-board/syllabus?class=all" class="selector-pill {% if selected_class == 'all' %}active{% endif %}">All Consolidated Booklets ({{ all_pdfs_count }})</a>
+        <a href="/bihar-board/syllabus?class=10" class="selector-pill {% if selected_class == '10' %}active{% endif %}">Matriculation (Class 10)</a>
+        <a href="/bihar-board/syllabus?class=12" class="selector-pill {% if selected_class == '12' %}active{% endif %}">Intermediate (+2 Classes XI–XII)</a>
+        <a href="/bihar-board/syllabus?class=9" class="selector-pill {% if selected_class == '9' %}active{% endif %}">Secondary Foundation (Class 9)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consolidated Syllabus PDFs -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 1.25rem; margin-bottom: 2.5rem;">
+        {% for pdf in official_pdfs %}
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.35rem; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.6rem; flex-wrap: wrap; gap: 0.4rem;">
+            <span class="class-badge" style="background: #e0f2fe; color: #0369a1; font-weight: 700; border-radius: 6px; padding: 2px 8px; font-size: 0.75rem;">
+              Class {{ pdf.class }} &bull; {{ pdf.course }}
+            </span>
+            <span class="verified-badge" style="font-size: 0.7rem;">✓ Verified Official</span>
+          </div>
+          <h2 style="font-size: 1.15rem; font-weight: 700; color: var(--primary); margin: 0 0 0.4rem 0;">{{ pdf.title }}</h2>
+          <p style="font-size: 0.85rem; color: #64748b; line-height: 1.55; margin-bottom: 0.85rem; flex: 1 1 auto;">{{ pdf.description }}</p>
+          <div style="font-size: 0.8rem; color: #475569; background: #f8fafc; padding: 0.65rem 0.75rem; border-radius: 6px; margin-bottom: 1rem;">
+            <div><strong>Codes Covered:</strong> {{ pdf.code }}</div>
+            <div><strong>Session Archive:</strong> {{ pdf.academic_session }}</div>
+            <div><strong>File Size:</strong> {{ pdf.file_size }}</div>
+            <div><strong>Verified:</strong> {{ pdf.last_verified }}</div>
+          </div>
+          <a href="{{ pdf.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="text-align: center;">
+            Download Official Syllabus PDF ↗
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+
+      <!-- Curriculum Structures & Passing Regulations -->
+      {% for cls_key in ['10', '12'] %}
+        {% if selected_class in ['all', cls_key] and curriculum_structure and cls_key in curriculum_structure %}
+          {% set struct = curriculum_structure[cls_key] %}
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; margin-bottom: 2rem;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;">
+              <div>
+                <h2 style="font-size: 1.3rem; font-weight: 800; color: var(--primary); margin: 0 0 0.25rem 0;">
+                  {{ struct.course_name }}
+                </h2>
+                <div style="font-size: 0.85rem; color: #475569;">
+                  <strong>Division Criteria (Out of {{ struct.total_division_marks }}):</strong> {{ struct.division_thresholds }}
+                </div>
+              </div>
+              <a href="{{ struct.regulation_pdf }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
+                Official Result &amp; Passing Regulation PDF ↗
+              </a>
+            </div>
+            <p style="font-size: 0.875rem; color: #334155; background: #f8fafc; border-left: 3px solid var(--brand-blue); padding: 0.85rem 1rem; border-radius: 4px; margin-bottom: 1rem;">
+              <strong>Passing Rule:</strong> {{ struct.passing_rule }}
+            </p>
+
+            <div class="table-scroll-hint"><span>↔️ Swipe horizontally to view full table</span></div>
+            <div class="table-responsive" role="region" tabindex="0" aria-label="BSEB Class {{ cls_key }} Subject Scheme Table">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Group / Category</th>
+                    <th>Subject Codes</th>
+                    <th>Official Regulation Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for grp in struct.subject_groups %}
+                  <tr>
+                    <td style="font-weight: 700; color: var(--primary);">{{ grp.group }}</td>
+                    <td><code>{{ grp.codes }}</code></td>
+                    <td style="font-size: 0.85rem; color: #475569;">{{ grp.notes }}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- Disclaimer -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="disclaimer-callout" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; font-size: 0.8125rem; color: #64748b; line-height: 1.6;">
+        <strong style="color: var(--primary); display: block; margin-bottom: 0.35rem;">⚖️ BSEB Non-Affiliation Legal Notice</strong>
+        StudySignal is independent and NOT affiliated with BSEB Patna. Verify official curriculum PDFs on <a href="{{ official_urls.bseb_main }}" target="_blank" rel="noopener noreferrer" style="color: var(--brand-blue); text-decoration: underline;">biharboardonline.com</a>.
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

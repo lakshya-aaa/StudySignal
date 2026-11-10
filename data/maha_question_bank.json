@@ -1,0 +1,322 @@
+{
+  "metadata": {
+    "title": "Maharashtra Official Question Bank — SCERT Prashnapedhi (प्रश्नपेढी)",
+    "issuing_authority": "State Council of Educational Research and Training (SCERT Maharashtra / MSCERT Pune)",
+    "official_source": "https://www.maa.ac.in/index.php?tcf=questionbank",
+    "last_verified": "2026-11-10",
+    "distinction_note": "Official Question Banks (Prashnapedhi / प्रश्नपेढी) in Maharashtra are published by SCERT Maharashtra (maa.ac.in), not directly on mahahsscboard.in (which publishes official Past Board Question Papers / PYQs). Legacy 2021–22 question-bank PDF paths currently returning HTTP 404 on SCERT servers are excluded."
+  },
+  "drive_folders_2024_25": [
+    {
+      "id": "scert-drive-competency-24-25",
+      "title": "Competency-Based Practice Question Bank 2024–25 (सरावासाठी क्षमता धारित प्रश्नपेढी २०२४-२५)",
+      "scope": "Std. 10 & 12 Competency Practice",
+      "url": "https://drive.google.com/drive/folders/1YtVeeQYwM1ZN1H2Q5LiOUNcVbXBMbEZx",
+      "source_portal": "https://www.maa.ac.in/index.php?tcf=questionbank"
+    },
+    {
+      "id": "scert-drive-qbank-24-25",
+      "title": "SCERT Official Question Bank Archive 2024–25 (प्रश्नपेढी २०२४-२५)",
+      "scope": "Board Practice Folder",
+      "url": "https://drive.google.com/drive/folders/1vVND2n0OIz9Fr-bxQ2WZb5CJdE7Lw9Fy",
+      "source_portal": "https://www.maa.ac.in/index.php?tcf=questionbank"
+    },
+    {
+      "id": "scert-drive-std-1-10",
+      "title": "Std. 1st to 10th Class & Subject-wise Question Bank (इ. १ली ते १०वी इयत्ता व विषयनिहाय प्रश्नपेढी)",
+      "scope": "Foundation to SSC (Std. 10)",
+      "url": "https://drive.google.com/drive/folders/1wWRCQMXz5B6kti_ANB6TJqYNJw0ZiWqU?usp=drive_link",
+      "source_portal": "https://www.maa.ac.in/index.php?tcf=questionbank"
+    }
+  ],
+  "classes": {
+    "10": {
+      "name": "SSC (Std. 10) Question Banks",
+      "count": 14,
+      "items": [
+        {
+          "id": "scert-10-10th_science_i_marathi_quebank_mscert",
+          "class": "10",
+          "course": "SSC (Std. 10)",
+          "subject": "Science & Technology Part I (विज्ञान : भाग १)",
+          "medium": "Marathi",
+          "file_size": "7.34 MB",
+          "batch": "SCERT Prashnapedhi 2022–23",
+          "download_url": "https://www.maa.ac.in/prashnapedhi2023/10th/mar/10th_Science_I_MARATHI_QueBank_MSCERT.pdf",
+          "official_source": "https://www.maa.ac.in/index.php?tcf=prashnpedhi2022-23",
+          "last_verified": "2026-11-10"
+        },
+        {
+          "id": "scert-10-10th_science_ii_marathi_quebank_mscert",
+          "class": "10",
+          "course": "SSC (Std. 10)",
+          "subject": "Science & Technology Part II (विज्ञान : भाग २)",
+          "medium": "Marathi",
+          "file_size": "3.58 MB",
+          "batch": "SCERT Prashnapedhi 2022–23",
+          "download_url": "https://www.maa.ac.in/prashnapedhi2023/10th/mar/10th_Science_II_MARATHI_QueBank_MSCERT.pdf",
+          "official_source": "https://www.maa.ac.in/index.php?tcf=prashnpedhi2022-23",
+          "last_verified": "2026-11-10"
+        },
+        {
+          "id": "scert-10-10th_maths_part_i_marathi_quebank_mscert",
+          "class": "10",
+          "course": "SSC (Std. 10)",
+          "subject": "Mathematics Part I Algebra (गणित : भाग १)",
+          "medium": "Marathi",
+          "file_size": "1.30 MB",
+          "batch": "SCERT Prashnapedhi 2022–23",
+          "download_url": "https://www.maa.ac.in/prashnapedhi2023/10th/mar/10th_Maths_Part_I_MARATHI_QueBank_MSCERT.pdf",
+          "official_source": "https://www.maa.ac.in/index.php?tcf=prashnpedhi2022-23",
+          "last_verified": "2026-11-10"
+        },
+        {
+          "id": "scert-10-10th_maths_part_ii_marathi_quebank_mscert",
+          "class": "10",
+          "course": "SSC (Std. 10)",
+          "subject": "Mathematics Part II Geometry (गणित : भाग २)",
+          "medium": "Marathi",
+          "file_size": "6.21 MB",
+          "batch": "SCERT Prashnapedhi 2022–23",
+          "download_url": "https://www.maa.ac.in/prashnapedhi2023/10th/mar/10th_Maths_Part_II_MARATHI_QueBank_MSCERT.pdf",
+          "official_source": "https://www.maa.ac.in/index.php?tcf=prashnpedhi2022-23",
+          "last_verified": "2026-11-10"
+        },
+        {
+          "id": "scert-10-10th_kumarbharati_marathi_quebank_mscert",
+          "class": "10",
+          "course": "SSC (Std. 10)",
+          "subject": "Marathi Kumarbharati (कुमारभारती)",
+          "medium": "Marathi",
+          "file_size": "8.65 MB",
+          "batch": "SCERT Prashnapedhi 2022–23",
+          "download_url": "https://www.maa.ac.in/prashnapedhi2023/10th/mar/10th_Kumarbharati_MARATHI_QueBank_MSCERT.pdf",
+          "official_source": "https://www.maa.ac.in/index.php?tcf=prashnpedhi2022-23",
+          "last_verified": "2026-11-10"
+        },
+        {
+          "id": "scert-10-10th_eng_thirdlang_marmed_quebank_mscert",
+          "class": "10",
+          "course": "SSC (Std. 10)",
+          "subject": "English Third Language (इंग्रजी : तृतीय भाषा)",
+          "medium": "Marathi Medium",
+          "file_size": "1.24 MB",
+          "batch": "SCERT Prashnapedhi 2022–23",
+          "download_url": "https://www.maa.ac.in/prashnapedhi2023/10th/mar/10th_Eng_ThirdLang_MarMed_QueBank_MSCERT.pdf",
+          "official_source": "https://www.maa.ac.in/index.php?tcf=prashnpedhi2022-23",
+          "last_verified": "2026-11-10"
+        },
+        {
+          "id": "scert-10-10th_history_polity_marathi_quebank_mscert",
+          "class": "10",
+          "course": "SSC (Std. 10)",
+          "subject": "History & Political Science (इतिहास व राज्यशास्त्र)",
+          "medium": "Marathi",
+          "file_size": "1.04 MB",
+          "batch": "SCERT Prashnapedhi 2022–23",
+          "download_url": "https://www.maa.ac.in/prashnapedhi2023/10th/mar/10th_History_Polity_MARATHI_QueBank_MSCERT.pdf",
+          "official_source": "https://www.maa.ac.in/index.php?tcf=prashnpedhi2022-23",
+          "last_verified": "2026-11-10"
+        },
+        {
+          "id": "scert-10-10th_maths_part_i_eng_quebank_mscert",
+          "class": "10",
+          "course": "SSC (Std. 10)",
+          "subject": "Mathematics Part I Algebra (English)",
+          "medium": "English",
+          "file_size": "1.01 MB",
+          "batch": "SCERT Prashnapedhi 2022–23",
+          "download_url": "https://www.maa.ac.in/prashnapedhi2023/10th/eng/10th_Maths_Part_I_ENG_QueBank_MSCERT.pdf",
+          "official_source": "https://www.maa.ac.in/index.php?tcf=prashnpedhi2022-23",
+          "last_verified": "2026-11-10"
+        },
+        {
+          "id": "scert-10-10th_maths_part_ii_eng_quebank_mscert",
+          "class": "10",
+          "course": "SSC (Std. 10)",
+          "subject": "Mathematics Part II Geometry (English)",
+          "medium": "English",
+          "file_size": "1.99 MB",
+          "batch": "SCERT Prashnapedhi 2022–23",
+          "download_url": "https://www.maa.ac.in/prashnapedhi2023/10th/eng/10th_Maths_Part_II_ENG_QueBank_MSCERT.pdf",
+          "official_source": "https://www.maa.ac.in/index.php?tcf=prashnpedhi2022-23",
+          "last_verified": "2026-11-10"
+        },
+        {
+          "id": "scert-10-10th_eng_firstlang_engmed_quebank_mscert",
+          "class": "10",
+          "course": "SSC (Std. 10)",
+          "subject": "English First Language (English Medium)",
+          "medium": "English",
+          "file_size": "1.07 MB",
+          "batch": "SCERT Prashnapedhi 2022–23",
+          "download_url": "https://www.maa.ac.in/prashnapedhi2023/10th/eng/10th_Eng_FirstLang_EngMed_QueBank_MSCERT.pdf",
+          "official_source": "https://www.maa.ac.in/index.php?tcf=prashnpedhi2022-23",
+          "last_verified": "2026-11-10"
+        },
+        {
+          "id": "scert-10-10th_history_polity_engmed_quebank_mscert",
+          "class": "10",
+          "course": "SSC (Std. 10)",
+          "subject": "History & Political Science (English Medium)",
+          "medium": "English",
+          "file_size": "1.15 MB",
+          "batch": "SCERT Prashnapedhi 2022–23",
+          "download_url": "https://www.maa.ac.in/prashnapedhi2023/10th/eng/10th_History_Polity_EngMed_QueBank_MSCERT.pdf",
+          "official_source": "https://www.maa.ac.in/index.php?tcf=prashnpedhi2022-23",
+          "last_verified": "2026-11-10"
+        },
+        {
+          "id": "scert-10-10th_science_i_semieng_quebank_mscert",
+          "class": "10",
+          "course": "SSC (Std. 10)",
+          "subject": "Science & Technology Part I (Semi-English)",
+          "medium": "English / Semi-English",
+          "file_size": "9.42 MB",
+          "batch": "SCERT Prashnapedhi 2022–23",
+          "download_url": "https://www.maa.ac.in/prashnapedhi2023/10th/eng/10th_Science_I_SemiENG_QueBank_MSCERT.pdf",
+          "official_source": "https://www.maa.ac.in/index.php?tcf=prashnpedhi2022-23",
+          "last_verified": "2026-11-10"
+        },
+        {
+          "id": "scert-10-10th_science_ii_semieng_quebank_mscert",
+          "class": "10",
+          "course": "SSC (Std. 10)",
+          "subject": "Science & Technology Part II (Semi-English)",
+          "medium": "English / Semi-English",
+          "file_size": "7.05 MB",
+          "batch": "SCERT Prashnapedhi 2022–23",
+          "download_url": "https://www.maa.ac.in/prashnapedhi2023/10th/eng/10th_Science_II_SemiENG_QueBank_MSCERT.pdf",
+          "official_source": "https://www.maa.ac.in/index.php?tcf=prashnpedhi2022-23",
+          "last_verified": "2026-11-10"
+        },
+        {
+          "id": "scert-10-10th_geography_engmed_quebank_mscert",
+          "class": "10",
+          "course": "SSC (Std. 10)",
+          "subject": "Geography (English Medium)",
+          "medium": "English",
+          "file_size": "3.63 MB",
+          "batch": "SCERT Prashnapedhi 2022–23",
+          "download_url": "https://www.maa.ac.in/prashnapedhi2023/10th/eng/10th_Geography_EngMed_QueBank_MSCERT.pdf",
+          "official_source": "https://www.maa.ac.in/index.php?tcf=prashnpedhi2022-23",
+          "last_verified": "2026-11-10"
+        }
+      ]
+    },
+    "12": {
+      "name": "HSC (Std. 12) Question Banks",
+      "count": 9,
+      "items": [
+        {
+          "id": "scert-12-12th_englishthirdlang_marmed_quebank_mscert",
+          "class": "12",
+          "course": "HSC (Std. 12)",
+          "subject": "English Third Language (इंग्रजी : तृतीय भाषा)",
+          "medium": "Marathi Medium",
+          "file_size": "PDF",
+          "batch": "SCERT Prashnapedhi 2022–23",
+          "download_url": "https://www.maa.ac.in/prashnapedhi2023/12th/mar/12th_EnglishThirdLang_MarMed_QueBank_MSCERT.pdf",
+          "official_source": "https://www.maa.ac.in/index.php?tcf=prashnpedhi2022-23",
+          "last_verified": "2026-11-10"
+        },
+        {
+          "id": "scert-12-12th_yuvakbharati_marmed_quebank_mscert",
+          "class": "12",
+          "course": "HSC (Std. 12)",
+          "subject": "Marathi Yuvakbharati (युवकभारती)",
+          "medium": "Marathi",
+          "file_size": "PDF",
+          "batch": "SCERT Prashnapedhi 2022–23",
+          "download_url": "https://www.maa.ac.in/prashnapedhi2023/12th/mar/12th_Yuvakbharati_MarMed_QueBank_MSCERT.pdf",
+          "official_source": "https://www.maa.ac.in/index.php?tcf=prashnpedhi2022-23",
+          "last_verified": "2026-11-10"
+        },
+        {
+          "id": "scert-12-12th_history_marmed_quebank_mscert",
+          "class": "12",
+          "course": "HSC (Std. 12)",
+          "subject": "History (इतिहास)",
+          "medium": "Marathi",
+          "file_size": "PDF",
+          "batch": "SCERT Prashnapedhi 2022–23",
+          "download_url": "https://www.maa.ac.in/prashnapedhi2023/12th/mar/12th_History_MarMed_QueBank_MSCERT.pdf",
+          "official_source": "https://www.maa.ac.in/index.php?tcf=prashnpedhi2022-23",
+          "last_verified": "2026-11-10"
+        },
+        {
+          "id": "scert-12-12th_physics_engmed_quebank_mscert",
+          "class": "12",
+          "course": "HSC (Std. 12)",
+          "subject": "Physics (Std. 12)",
+          "medium": "English",
+          "file_size": "PDF",
+          "batch": "SCERT Prashnapedhi 2022–23",
+          "download_url": "https://www.maa.ac.in/prashnapedhi2023/12th/eng/12th_Physics_EngMed_QueBank_MSCERT.pdf",
+          "official_source": "https://www.maa.ac.in/index.php?tcf=prashnpedhi2022-23",
+          "last_verified": "2026-11-10"
+        },
+        {
+          "id": "scert-12-12th_chemistry_engmed_quebank_mscert",
+          "class": "12",
+          "course": "HSC (Std. 12)",
+          "subject": "Chemistry (Std. 12)",
+          "medium": "English",
+          "file_size": "PDF",
+          "batch": "SCERT Prashnapedhi 2022–23",
+          "download_url": "https://www.maa.ac.in/prashnapedhi2023/12th/eng/12th_Chemistry_EngMed_QueBank_MSCERT.pdf",
+          "official_source": "https://www.maa.ac.in/index.php?tcf=prashnpedhi2022-23",
+          "last_verified": "2026-11-10"
+        },
+        {
+          "id": "scert-12-12th_biology_engmed_quebank_mscert",
+          "class": "12",
+          "course": "HSC (Std. 12)",
+          "subject": "Biology (Std. 12)",
+          "medium": "English",
+          "file_size": "PDF",
+          "batch": "SCERT Prashnapedhi 2022–23",
+          "download_url": "https://www.maa.ac.in/prashnapedhi2023/12th/eng/12th_Biology_EngMed_QueBank_MSCERT.pdf",
+          "official_source": "https://www.maa.ac.in/index.php?tcf=prashnpedhi2022-23",
+          "last_verified": "2026-11-10"
+        },
+        {
+          "id": "scert-12-12th_englishfirstlang_engmed_quebank_mscert",
+          "class": "12",
+          "course": "HSC (Std. 12)",
+          "subject": "English First Language (Std. 12)",
+          "medium": "English",
+          "file_size": "PDF",
+          "batch": "SCERT Prashnapedhi 2022–23",
+          "download_url": "https://www.maa.ac.in/prashnapedhi2023/12th/eng/12th_EnglishFirstLang_EngMed_QueBank_MSCERT.pdf",
+          "official_source": "https://www.maa.ac.in/index.php?tcf=prashnpedhi2022-23",
+          "last_verified": "2026-11-10"
+        },
+        {
+          "id": "scert-12-12th_maths_engmed_quebank_mscert",
+          "class": "12",
+          "course": "HSC (Std. 12)",
+          "subject": "Mathematics (Arts & Science)",
+          "medium": "English",
+          "file_size": "PDF",
+          "batch": "SCERT Prashnapedhi 2022–23",
+          "download_url": "https://www.maa.ac.in/prashnapedhi2023/12th/eng/12th_Maths_EngMed_QueBank_MSCERT.pdf",
+          "official_source": "https://www.maa.ac.in/index.php?tcf=prashnpedhi2022-23",
+          "last_verified": "2026-11-10"
+        },
+        {
+          "id": "scert-12-12th_geography_engmed_quebank_mscert",
+          "class": "12",
+          "course": "HSC (Std. 12)",
+          "subject": "Geography (Std. 12)",
+          "medium": "English",
+          "file_size": "PDF",
+          "batch": "SCERT Prashnapedhi 2022–23",
+          "download_url": "https://www.maa.ac.in/prashnapedhi2023/12th/eng/12th_Geography_EngMed_QueBank_MSCERT.pdf",
+          "official_source": "https://www.maa.ac.in/index.php?tcf=prashnpedhi2022-23",
+          "last_verified": "2026-11-10"
+        }
+      ]
+    }
+  }
+}

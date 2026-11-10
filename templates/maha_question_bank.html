@@ -1,0 +1,250 @@
+{% extends 'base.html' %}
+
+{% block title %}Maharashtra SCERT Official Question Bank (Prashnapedhi) - Std. 10 &amp; 12 | StudySignal{% endblock %}
+
+{% block meta_description %}
+Official Maharashtra SCERT Question Bank (Prashnapedhi / प्रश्नपेढी) directory for Std. 10 SSC (14 direct PDFs) and Std. 12 HSC (9 direct PDFs) plus 2024–25 Competency Practice Drive archives, published by SCERT Maharashtra (maa.ac.in).
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [
+  {'title': 'Boards & Exams', 'url': '/boards'},
+  {'title': 'Maharashtra Board (MSBSHSE)', 'url': '/maharashtra-board'},
+  {'title': 'SCERT Question Bank (Prashnapedhi)', 'url': '/maharashtra-board/question-bank'}
+] %}
+{% include 'components/breadcrumb.html' %}
+
+<div class="board-hub-container maha-question-bank">
+  <!-- Hero -->
+  <section class="section" style="padding-bottom: 1.5rem;">
+    <div class="container">
+      <div class="hub-hero-banner">
+        <div class="hub-hero-branding">
+          <img src="{{ url_for('static', filename='images/boards/msbshse-logo.png') }}" alt="MSBSHSE &amp; SCERT Maharashtra" class="hub-hero-logo" width="52" height="52">
+          <div>
+            <div class="hub-hero-badge">
+              <span>🇮🇳 SCERT Maharashtra (maa.ac.in) Official Repository &bull; <strong class="badge-status-active" style="margin-left: 4px; vertical-align: middle;">Active</strong></span>
+            </div>
+            <h1 class="hub-hero-title">Maharashtra Official Question Bank (Prashnapedhi)</h1>
+            <div style="color: #64748b; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.6rem;">
+              राज्य शैक्षणिक संशोधन व प्रशिक्षण परिषद (SCERT Maharashtra / MSCERT पुणे) प्रश्नपेढी
+            </div>
+          </div>
+        </div>
+        <p class="hub-hero-desc">
+          {{ metadata.distinction_note or 'Official Question Banks (Prashnapedhi / प्रश्नपेढी) in Maharashtra are published by SCERT Maharashtra (maa.ac.in) for Std. 10 SSC and Std. 12 HSC board preparation, rather than directly on mahahsscboard.in.' }}
+        </p>
+
+        <div class="hub-stats-row">
+          <div class="hub-stat-pill"><span>📘 <strong>SSC Std. 10:</strong> {{ c10_total }} Direct SCERT PDFs</span></div>
+          <div class="hub-stat-pill"><span>🎓 <strong>HSC Std. 12:</strong> {{ c12_total }} Direct SCERT PDFs</span></div>
+          <div class="hub-stat-pill"><span>📁 <strong>{{ drive_folders|length }}</strong> Official 2024–25 Competency Folders</span></div>
+          <div class="hub-stat-pill"><span>🏛️ <strong>Publisher:</strong> SCERT Maharashtra (maa.ac.in)</span></div>
+        </div>
+
+        <div class="hub-hero-actions">
+          <a href="{{ metadata.official_source or official_urls.scert_maha_qbank }}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: auto;">
+            Official SCERT Question Bank Portal (maa.ac.in) ↗
+          </a>
+          <a href="/maharashtra-board/pyq" class="btn-secondary" style="width: auto;">
+            MSBSHSE Past Question Papers (PYQs) &rarr;
+          </a>
+          <a href="/maharashtra-board" class="btn-secondary" style="width: auto;">
+            MSBSHSE Hub &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Official Authority Attribution Notice -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2rem;">
+    <div class="container">
+      <div class="alert-box" style="margin: 0; border-left: 4px solid #059669; background: #f0fdf4;">
+        <strong>Official Authority Attribution &amp; Verification:</strong>
+        All Question Banks (<em>Prashnapedhi</em>) on this page are published by the <strong>State Council of Educational Research and Training (SCERT Maharashtra / MSCERT Pune)</strong> on <code>maa.ac.in</code> &mdash; not by MSBSHSE directly. Every PDF and Google Drive folder link below was verified live on <strong>{{ metadata.last_verified or '2026-11-10' }}</strong>, excluding broken historical paths.
+      </div>
+    </div>
+  </section>
+
+  <!-- 2024-25 SCERT Official Google Drive Competency Folders -->
+  {% if drive_folders %}
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1.25rem;">
+        <div>
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary-headings); margin: 0 0 0.25rem 0;">
+            SCERT 2024–25 Competency-Based Practice &amp; Question Bank Drive Folders
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">
+            Official Drive collections linked directly from <code>maa.ac.in/index.php?tcf=questionbank</code>:
+          </p>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem;">
+        {% for df in drive_folders %}
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 4px solid var(--brand-blue); border-radius: 12px; padding: 1.25rem; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; gap: 0.4rem; flex-wrap: wrap;">
+            <span class="code-pill">{{ df.scope }}</span>
+            <span class="verified-badge" style="font-size: 0.7rem;">SCERT maa.ac.in</span>
+          </div>
+          <h3 style="font-size: 1.025rem; font-weight: 700; color: var(--primary); margin: 0 0 0.65rem 0; flex: 1 1 auto;">
+            {{ df.title }}
+          </h3>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <a href="{{ df.url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary" style="flex: 1; text-align: center;">
+              Open Official SCERT Folder ↗
+            </a>
+            <a href="{{ df.source_portal }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
+              Source ↗
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Filter Bar -->
+  <section class="section" style="padding: 0 0 2rem 0;">
+    <div class="container">
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem;">
+        <form method="GET" action="/maharashtra-board/question-bank" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0.85rem; align-items: end;">
+          <div>
+            <label class="form-label" for="maha-qb-q">Search Subject or Medium</label>
+            <input type="text" id="maha-qb-q" name="q" value="{{ search_q }}" placeholder="e.g. Science, Maths, English, मराठी..." class="form-control">
+          </div>
+          <div>
+            <label class="form-label" for="maha-qb-class">Standard / Course</label>
+            <select id="maha-qb-class" name="class" class="form-control">
+              <option value="all" {% if selected_class == 'all' %}selected{% endif %}>All Classes ({{ c10_total + c12_total }} Direct PDFs)</option>
+              <option value="10" {% if selected_class == '10' %}selected{% endif %}>SSC Std. 10 ({{ c10_total }} PDFs)</option>
+              <option value="12" {% if selected_class == '12' %}selected{% endif %}>HSC Std. 12 ({{ c12_total }} PDFs)</option>
+            </select>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button type="submit" class="btn-primary" style="flex: 1;">Filter</button>
+            {% if selected_class != 'all' or search_q %}
+            <a href="/maharashtra-board/question-bank" class="btn-secondary">Reset</a>
+            {% endif %}
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Class 10 SCERT Prashnapedhi -->
+  {% if selected_class in ['all', '10'] %}
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1.25rem;">
+        <div>
+          <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--primary-headings); margin: 0 0 0.25rem 0;">
+            SSC (Std. 10) SCERT Prashnapedhi PDFs ({{ c10_items|length }} of {{ c10_total }})
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">
+            Direct verified PDFs hosted on <code>www.maa.ac.in</code>:
+          </p>
+        </div>
+      </div>
+
+      {% if c10_items %}
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.15rem;">
+        {% for item in c10_items %}
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.2rem; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 0.4rem; margin-bottom: 0.5rem; flex-wrap: wrap;">
+            <span class="class-badge" style="background: #e0f2fe; color: #0369a1; font-weight: 700; border-radius: 6px; padding: 2px 8px; font-size: 0.75rem;">
+              {{ item.course }} &bull; {{ item.medium }}
+            </span>
+            <span class="verified-badge" style="font-size: 0.7rem;">SCERT maa.ac.in</span>
+          </div>
+          <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--primary); margin: 0 0 0.35rem 0; flex: 1 1 auto;">
+            {{ item.subject }}
+          </h3>
+          <div style="font-size: 0.78rem; color: #64748b; margin-bottom: 0.85rem;">
+            <strong>Batch:</strong> {{ item.batch }} &bull; <strong>Size:</strong> {{ item.file_size }}
+          </div>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <a href="{{ item.download_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-official-pdf" style="flex: 1; text-align: center;">
+              Download PDF ({{ item.file_size }}) ↗
+            </a>
+            <a href="{{ item.official_source }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
+              Source ↗
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.5rem; color: #64748b;">
+        No SSC Question Banks match your search keyword.
+      </div>
+      {% endif %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Class 12 SCERT Prashnapedhi -->
+  {% if selected_class in ['all', '12'] %}
+  <section class="section" style="padding-top: 0; padding-bottom: 3rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1.25rem;">
+        <div>
+          <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--primary-headings); margin: 0 0 0.25rem 0;">
+            HSC (Std. 12) SCERT Prashnapedhi PDFs ({{ c12_items|length }} of {{ c12_total }})
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">
+            Direct verified Science, Arts &amp; Commerce PDFs hosted on <code>www.maa.ac.in</code>:
+          </p>
+        </div>
+      </div>
+
+      {% if c12_items %}
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.15rem;">
+        {% for item in c12_items %}
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.2rem; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 0.4rem; margin-bottom: 0.5rem; flex-wrap: wrap;">
+            <span class="class-badge" style="background: #f0fdf4; color: #166534; font-weight: 700; border-radius: 6px; padding: 2px 8px; font-size: 0.75rem;">
+              {{ item.course }} &bull; {{ item.medium }}
+            </span>
+            <span class="verified-badge" style="font-size: 0.7rem;">SCERT maa.ac.in</span>
+          </div>
+          <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--primary); margin: 0 0 0.35rem 0; flex: 1 1 auto;">
+            {{ item.subject }}
+          </h3>
+          <div style="font-size: 0.78rem; color: #64748b; margin-bottom: 0.85rem;">
+            <strong>Batch:</strong> {{ item.batch }} &bull; <strong>Size:</strong> {{ item.file_size }}
+          </div>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <a href="{{ item.download_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-official-pdf" style="flex: 1; text-align: center;">
+              Download PDF ({{ item.file_size }}) ↗
+            </a>
+            <a href="{{ item.official_source }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
+              Source ↗
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.5rem; color: #64748b;">
+        No HSC Question Banks match your search keyword.
+      </div>
+      {% endif %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Disclaimer -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="disclaimer-callout" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; font-size: 0.8125rem; color: #64748b; line-height: 1.6;">
+        <strong style="color: var(--primary); display: block; margin-bottom: 0.35rem;">⚖️ SCERT Maharashtra &amp; MSBSHSE Non-Affiliation Notice</strong>
+        StudySignal is independent and NOT affiliated with SCERT Maharashtra (<code>maa.ac.in</code>) or MSBSHSE Pune (<code>mahahsscboard.in</code>). Question Bank links go directly to official SCERT Maharashtra public URLs.
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

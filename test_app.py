@@ -607,8 +607,8 @@ class StudySignalTestCase(unittest.TestCase):
         # Test homepage metadata
         res_home = self.client.get("/")
         html_home = res_home.data.decode("utf-8")
-        self.assertIn('property="og:title" content="StudySignal – Multi-Board Educational Platform (CBSE, UP Board & CISCE)"', html_home)
-        self.assertIn('name="twitter:title" content="StudySignal – Multi-Board Educational Platform (CBSE, UP Board & CISCE)"', html_home)
+        self.assertIn('property="og:title" content="StudySignal – Multi-Board Educational Platform (CBSE, UP Board, CISCE, BSEB & MSBSHSE)"', html_home)
+        self.assertIn('name="twitter:title" content="StudySignal – Multi-Board Educational Platform (CBSE, UP Board, CISCE, BSEB & MSBSHSE)"', html_home)
         self.assertIn('2026-27', html_home)
         # Check keywords tag specifically
         kw_part = html_home.split('name="keywords"')[1].split('>')[0]
@@ -2291,7 +2291,7 @@ class StudySignalTestCase(unittest.TestCase):
         # Hero badge & heading
         self.assertIn("Independent Boards &amp; Exam Resources", html)
         self.assertIn("Verified Board &amp; Competitive Exam Information", html)
-        self.assertIn("StudySignal is an independent educational platform providing verified syllabus PDFs, official date sheets, sample papers, circulars, and notices across CBSE, UP Board (UPMSP), and CISCE (ICSE &amp; ISC).", html)
+        self.assertIn("StudySignal is an independent educational platform providing verified syllabus PDFs, official date sheets, sample papers, past question papers, circulars, and notices across CBSE, UP Board (UPMSP), CISCE (ICSE &amp; ISC), Bihar Board (BSEB), and Maharashtra Board (MSBSHSE).", html)
         self.assertIn('placeholder="Search subjects, codes, circulars, or boards across India..."', html)
 
         # Popular search chips
@@ -2425,6 +2425,8 @@ class StudySignalTestCase(unittest.TestCase):
             ("static/images/boards/cbse-logo.png", "/static/images/boards/cbse-logo.png"),
             ("static/images/boards/upmsp-logo.png", "/static/images/boards/upmsp-logo.png"),
             ("static/images/boards/cisce-logo.png", "/static/images/boards/cisce-logo.png"),
+            ("static/images/boards/bseb-logo.png", "/static/images/boards/bseb-logo.png"),
+            ("static/images/boards/msbshse-logo.png", "/static/images/boards/msbshse-logo.png"),
             ("static/images/exams/nta-logo.png", "/static/images/exams/nta-logo.png"),
             ("static/images/exams/jee-adv-logo.png", "/static/images/exams/jee-adv-logo.png"),
         ]
@@ -2520,6 +2522,382 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn("/static/images/boards/upmsp-logo.png", html)
         self.assertIn("/static/images/boards/cisce-logo.png", html)
         self.assertIn("/static/images/exams/nta-logo.png", html)
+
+    # =========================================================================
+    # Bihar Board (BSEB) & Maharashtra Board (MSBSHSE) Integration Tests
+    # =========================================================================
+
+    def test_bseb_and_maha_branding_on_home_and_boards(self):
+        """Verify BSEB & MSBSHSE are Active on / and /boards with authentic logos and zero Coming Soon badges for them."""
+        res_home = self.client.get("/")
+        self.assertEqual(res_home.status_code, 200)
+        html_home = res_home.data.decode("utf-8")
+        self.assertIn("/static/images/boards/bseb-logo.png", html_home)
+        self.assertIn("/static/images/boards/msbshse-logo.png", html_home)
+        self.assertIn('href="/bihar-board"', html_home)
+        self.assertIn('href="/maharashtra-board"', html_home)
+        self.assertIn("https://biharboardonline.com", html_home)
+        self.assertIn("https://www.mahahsscboard.in/en", html_home)
+        self.assertIn("Bihar School Examination Board (BSEB)", html_home)
+        self.assertIn("Maharashtra State Board of Secondary and Higher Secondary Education (MSBSHSE)", html_home)
+
+        res_boards = self.client.get("/boards")
+        self.assertEqual(res_boards.status_code, 200)
+        html_boards = res_boards.data.decode("utf-8")
+        self.assertIn("/static/images/boards/bseb-logo.png", html_boards)
+        self.assertIn("/static/images/boards/msbshse-logo.png", html_boards)
+        self.assertIn("Explore Bihar Board (BSEB) Portal &rarr;", html_boards)
+        self.assertIn("Explore Maharashtra Board (MSBSHSE) Portal &rarr;", html_boards)
+        self.assertIn('href="/bihar-board/sample-papers"', html_boards)
+        self.assertIn('href="/maharashtra-board/pyq"', html_boards)
+        self.assertIn('href="/maharashtra-board/datesheets"', html_boards)
+
+    def test_bseb_hub_and_class_portals(self):
+        """Verify BSEB hub and Matric/Intermediate class portals render verified resources cleanly."""
+        res = self.client.get("/bihar-board")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+        self.assertIn("hub-hero-logo", html)
+        self.assertIn("/static/images/boards/bseb-logo.png", html)
+        self.assertIn("Bihar Board Examination Hub (BSEB)", html)
+        self.assertIn("बिहार विद्यालय परीक्षा समिति", html)
+        self.assertIn("badge-status-active", html)
+        self.assertIn("57", html)
+        self.assertIn("Model Question Papers", html)
+        self.assertIn("Awaiting Official Release", html)
+        self.assertIn('href="/bihar-board/class-10"', html)
+        self.assertIn('href="/bihar-board/class-12"', html)
+        self.assertIn('href="/bihar-board/sample-papers"', html)
+        self.assertIn('href="/bihar-board/question-bank"', html)
+        self.assertIn('href="/bihar-board/syllabus"', html)
+        self.assertIn('href="/bihar-board/datesheets"', html)
+        self.assertIn('href="/bihar-board/circulars"', html)
+        self.assertIn('href="/bihar-board/results"', html)
+        self.assertIn("BSEB (Bihar Board) Non-Affiliation Legal Notice", html)
+
+        # Class 10 Matriculation Hub
+        res10 = self.client.get("/bihar-board/class-10")
+        self.assertEqual(res10.status_code, 200)
+        html10 = res10.data.decode("utf-8")
+        self.assertIn("/static/images/boards/bseb-logo.png", html10)
+        self.assertIn("Bihar Board Class 10 (Matriculation)", html10)
+        self.assertIn("CLASS_10_SYLLABUS", html10)
+        self.assertIn('href="/bihar-board/sample-papers?class=10"', html10)
+
+        # Class 12 Intermediate Hub
+        res12 = self.client.get("/bihar-board/class-12")
+        self.assertEqual(res12.status_code, 200)
+        html12 = res12.data.decode("utf-8")
+        self.assertIn("Bihar Board Class 12 (Intermediate +2)", html12)
+        self.assertIn("Class_XI", html12)
+        self.assertIn('href="/bihar-board/sample-papers?class=12"', html12)
+
+    def test_bseb_pyq_route_strictly_404_and_never_linked(self):
+        """Ensure /bihar-board/pyq returns 404 and is never linked anywhere on the portal."""
+        res_404 = self.client.get("/bihar-board/pyq")
+        self.assertEqual(res_404.status_code, 404)
+
+        routes_to_check = [
+            "/",
+            "/boards",
+            "/search",
+            "/disclaimer",
+            "/bihar-board",
+            "/bihar-board/class-10",
+            "/bihar-board/class-12",
+            "/bihar-board/syllabus",
+            "/bihar-board/sample-papers",
+            "/bihar-board/model-papers",
+            "/bihar-board/question-bank",
+            "/bihar-board/datesheets",
+            "/bihar-board/circulars",
+            "/bihar-board/results",
+            "/sitemap.xml",
+        ]
+        for route in routes_to_check:
+            res = self.client.get(route)
+            self.assertEqual(res.status_code, 200, f"Route {route} failed")
+            self.assertNotIn("/bihar-board/pyq", res.data.decode("utf-8"), f"Forbidden link /bihar-board/pyq found in {route}")
+
+    def test_bseb_sample_papers_question_bank_and_datesheets(self):
+        """Verify BSEB 57 model papers, honest Question Bank unavailability, and 2027 status + 2026 reference timetable."""
+        with open(os.path.join(app.root_path, "data", "bseb_sample_papers.json"), "r", encoding="utf-8") as f:
+            bseb_sp = json.load(f)
+        self.assertEqual(len(bseb_sp), 57)
+        for p in bseb_sp:
+            self.assertFalse(p["is_pyq"])
+            self.assertEqual(p["paper_badge"], "Model Question Paper (Sample Pattern — Not a PYQ)")
+            self.assertEqual(p["academic_session"], "2026 Examination Model Pattern")
+            self.assertEqual(p["last_verified"], "2026-11-10")
+            self.assertTrue(p["download_url"].startswith("https://biharboardonline.com/"))
+
+        # Sample Papers & alias route
+        for sp_route in ["/bihar-board/sample-papers", "/bihar-board/model-papers"]:
+            res_sp = self.client.get(sp_route)
+            self.assertEqual(res_sp.status_code, 200)
+            html_sp = res_sp.data.decode("utf-8")
+            self.assertIn("Model Question Papers", html_sp)
+            self.assertIn("Sample Pattern Only — Not PYQs", html_sp)
+            self.assertIn("Showing 57 of 57 Official Model Question Papers", html_sp)
+
+        res_sp10 = self.client.get("/bihar-board/sample-papers?class=10")
+        self.assertEqual(res_sp10.status_code, 200)
+        self.assertIn("Code 101", res_sp10.data.decode("utf-8"))
+
+        res_sp12 = self.client.get("/bihar-board/sample-papers?class=12&stream=Science")
+        self.assertEqual(res_sp12.status_code, 200)
+        self.assertIn("Physics", res_sp12.data.decode("utf-8"))
+
+        # Question Bank Tracker (Not Provided)
+        res_qb = self.client.get("/bihar-board/question-bank")
+        self.assertEqual(res_qb.status_code, 200)
+        html_qb = res_qb.data.decode("utf-8")
+        self.assertIn("Not Provided on Official Board Portal", html_qb)
+        self.assertIn("biharboardonline.com", html_qb)
+        self.assertIn('href="/bihar-board/sample-papers"', html_qb)
+
+        # Datesheets (/datesheets and /date-sheet)
+        for ds_route in ["/bihar-board/datesheets", "/bihar-board/date-sheet"]:
+            res_ds = self.client.get(ds_route)
+            self.assertEqual(res_ds.status_code, 200)
+            html_ds = res_ds.data.decode("utf-8")
+            self.assertIn("Awaiting Official Release", html_ds)
+            self.assertIn("PR 330/2025", html_ds)
+            self.assertIn("PR 329/2025", html_ds)
+            self.assertIn("2026 Reference Programme", html_ds)
+
+        # Syllabus, Circulars, Results
+        for route in ["/bihar-board/syllabus", "/bihar-board/circulars", "/bihar-board/results"]:
+            res_r = self.client.get(route)
+            self.assertEqual(res_r.status_code, 200, f"Route {route} failed")
+
+        res_syl = self.client.get("/bihar-board/syllabus")
+        self.assertIn("500", res_syl.data.decode("utf-8"))
+        res_circ = self.client.get("/bihar-board/circulars")
+        self.assertIn("OFSS", res_circ.data.decode("utf-8"))
+        res_res = self.client.get("/bihar-board/results")
+        self.assertIn("biharboardonline.com", res_res.data.decode("utf-8"))
+
+    def test_maha_hub_and_class_portals(self):
+        """Verify MSBSHSE hub and SSC (Std. 10) / HSC (Std. 12) hubs render verified resources."""
+        res = self.client.get("/maharashtra-board")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+        self.assertIn("hub-hero-logo", html)
+        self.assertIn("/static/images/boards/msbshse-logo.png", html)
+        self.assertIn("Maharashtra Board Examination Hub (MSBSHSE)", html)
+        self.assertIn("महाराष्ट्र राज्य माध्यमिक व उच्च माध्यमिक शिक्षण मंडळ", html)
+        self.assertIn("badge-status-active", html)
+        self.assertIn("132", html)
+        self.assertIn("332", html)
+        self.assertIn("SCERT Maharashtra", html)
+        self.assertIn('href="/maharashtra-board/class-10"', html)
+        self.assertIn('href="/maharashtra-board/class-12"', html)
+        self.assertIn('href="/maharashtra-board/datesheets"', html)
+        self.assertIn('href="/maharashtra-board/pyq"', html)
+        self.assertIn('href="/maharashtra-board/question-bank"', html)
+        self.assertIn('href="/maharashtra-board/syllabus"', html)
+        self.assertIn('href="/maharashtra-board/sample-papers"', html)
+        self.assertIn('href="/maharashtra-board/circulars"', html)
+        self.assertIn('href="/maharashtra-board/results"', html)
+        self.assertIn("MSBSHSE Non-Affiliation Legal Notice", html)
+
+        # Class 10 SSC & Class 12 HSC Hubs
+        res10 = self.client.get("/maharashtra-board/class-10")
+        self.assertEqual(res10.status_code, 200)
+        self.assertIn("/static/images/boards/msbshse-logo.png", res10.data.decode("utf-8"))
+        self.assertIn("Maharashtra Board SSC (Std. 10)", res10.data.decode("utf-8"))
+        self.assertIn("15 Feb – 15 Mar 2027", res10.data.decode("utf-8"))
+
+        res12 = self.client.get("/maharashtra-board/class-12")
+        self.assertEqual(res12.status_code, 200)
+        self.assertIn("Maharashtra Board HSC (Std. 12)", res12.data.decode("utf-8"))
+        self.assertIn("08 Feb – 11 Mar 2027", res12.data.decode("utf-8"))
+
+    def test_maha_datesheets_feb_mar_2027_confirmed(self):
+        """Verify MSBSHSE Feb-Mar 2027 confirmed timetables across /datesheets and /date-sheet."""
+        for ds_route in ["/maharashtra-board/datesheets", "/maharashtra-board/date-sheet"]:
+            res = self.client.get(ds_route)
+            self.assertEqual(res.status_code, 200)
+            html = res.data.decode("utf-8")
+            self.assertIn("Feb–Mar 2027", html)
+            self.assertIn("07 November 2026", html)
+            self.assertIn("15 Feb 2027", html)
+            self.assertIn("15 Mar 2027", html)
+            self.assertIn("08 Feb 2027", html)
+            self.assertIn("11 Mar 2027", html)
+            self.assertIn("12, 13 &amp; 15 Mar 2027", html)
+            self.assertIn("16, 17 &amp; 18 Mar 2027", html)
+
+        # Course filters (?class=ssc / ?class=hsc)
+        res_ssc = self.client.get("/maharashtra-board/datesheets?class=ssc")
+        self.assertEqual(res_ssc.status_code, 200)
+        self.assertIn("SSC (Std. 10)", res_ssc.data.decode("utf-8"))
+
+        res_hsc = self.client.get("/maharashtra-board/datesheets?class=hsc")
+        self.assertEqual(res_hsc.status_code, 200)
+        self.assertIn("HSC", res_hsc.data.decode("utf-8"))
+
+    def test_maha_pyq_archive_filters_and_honest_empty_slot(self):
+        """Verify MSBSHSE 132 PYQ rows / 332 PDFs data integrity, filters, and honest empty PDF handling."""
+        with open(os.path.join(app.root_path, "data", "maha_pyq.json"), "r", encoding="utf-8") as f:
+            pyqs = json.load(f)
+        self.assertEqual(len(pyqs), 132)
+        total_pdfs = sum(len(r.get("pdfs", [])) for r in pyqs)
+        self.assertEqual(total_pdfs, 332)
+        for r in pyqs:
+            self.assertEqual(r["last_verified"], "2026-11-10")
+            for pdf in r.get("pdfs", []):
+                self.assertTrue(
+                    pdf["url"].startswith("https://state-board-strapi-upload.blr1.digitaloceanspaces.com/")
+                    or pdf["url"].startswith("https://blr1.digitaloceanspaces.com/state-board-strapi-upload/")
+                )
+
+        res = self.client.get("/maharashtra-board/pyq")
+        self.assertEqual(res.status_code, 200)
+        html = res.data.decode("utf-8")
+        self.assertIn("Showing 132 of 132 entries (332 matching PDFs)", html)
+        self.assertIn("No PDF Hosted", html)
+
+        # Filters
+        res_ssc = self.client.get("/maharashtra-board/pyq?class=ssc&session=March+2026")
+        self.assertEqual(res_ssc.status_code, 200)
+        self.assertIn("March 2026", res_ssc.data.decode("utf-8"))
+
+        res_med = self.client.get("/maharashtra-board/pyq?medium=Marathi")
+        self.assertEqual(res_med.status_code, 200)
+        self.assertIn("Marathi PDF", res_med.data.decode("utf-8"))
+
+    def test_maha_question_bank_scert_attribution_and_syllabus(self):
+        """Verify SCERT Maharashtra (maa.ac.in) attribution for Prashnapedhi, transparent syllabus notes, and guides."""
+        res_qb = self.client.get("/maharashtra-board/question-bank")
+        self.assertEqual(res_qb.status_code, 200)
+        html_qb = res_qb.data.decode("utf-8")
+        self.assertIn("SCERT Maharashtra", html_qb)
+        self.assertIn("maa.ac.in", html_qb)
+        self.assertIn("Prashnapedhi", html_qb)
+        self.assertIn("14", html_qb)
+        self.assertIn("9", html_qb)
+        self.assertNotIn("questionbank22", html_qb)
+
+        # Syllabus catalogue (SSC 114 + HSC 132 + 5 frameworks)
+        res_syl = self.client.get("/maharashtra-board/syllabus")
+        self.assertEqual(res_syl.status_code, 200)
+        html_syl = res_syl.data.decode("utf-8")
+        self.assertIn("114", html_syl)
+        self.assertIn("132", html_syl)
+        self.assertIn("books.ebalbharati.in", html_syl)
+        self.assertIn("maa.ac.in", html_syl)
+
+        # Sample papers transparency, circulars, results
+        res_sp = self.client.get("/maharashtra-board/sample-papers")
+        self.assertEqual(res_sp.status_code, 200)
+        html_sp = res_sp.data.decode("utf-8")
+        self.assertIn("Parikshecha Rajmarg", html_sp)
+        self.assertIn('href="/maharashtra-board/pyq"', html_sp)
+        self.assertIn('href="/maharashtra-board/question-bank"', html_sp)
+
+        res_circ = self.client.get("/maharashtra-board/circulars")
+        self.assertEqual(res_circ.status_code, 200)
+        self.assertIn("mahahsscboard.in", res_circ.data.decode("utf-8"))
+
+        res_res = self.client.get("/maharashtra-board/results")
+        self.assertEqual(res_res.status_code, 200)
+        html_res = res_res.data.decode("utf-8")
+        self.assertIn("boardmarksheet.maharashtra.gov.in", html_res)
+        self.assertIn("mahahsscboard.in", html_res)
+
+    def test_no_dead_or_retired_bseb_maha_domains_anywhere(self):
+        """Ensure retired or offline BSEB/MSBSHSE domains never appear in config, data, templates, or rendered pages."""
+        forbidden_domains = [
+            "results.biharboardonline.com",
+            "biharboardonline.bihar.gov.in",
+            "mahresult.nic.in",
+            "sscresult.mkcl.org",
+            "hscresult.mkcl.org",
+            "questionbank22",
+        ]
+        for val in Config.OFFICIAL_URLS.values():
+            for bad in forbidden_domains:
+                self.assertNotIn(bad, str(val), f"Forbidden domain {bad} in Config.OFFICIAL_URLS")
+
+        for folder in ["data", "templates"]:
+            folder_path = os.path.join(app.root_path, folder)
+            for fname in os.listdir(folder_path):
+                fpath = os.path.join(folder_path, fname)
+                if os.path.isfile(fpath) and (fname.endswith(".json") or fname.endswith(".html")):
+                    content = open(fpath, "r", encoding="utf-8").read()
+                    for bad in forbidden_domains:
+                        self.assertNotIn(bad, content, f"Forbidden domain {bad} found in {folder}/{fname}")
+
+        for route in ["/", "/boards", "/bihar-board", "/bihar-board/results", "/maharashtra-board", "/maharashtra-board/results", "/maharashtra-board/question-bank", "/disclaimer"]:
+            res = self.client.get(route)
+            self.assertEqual(res.status_code, 200)
+            html = res.data.decode("utf-8")
+            for bad in forbidden_domains:
+                self.assertNotIn(bad, html, f"Forbidden domain {bad} rendered on {route}")
+
+    def test_unified_search_canonical_and_sitemap_for_bseb_maha(self):
+        """Verify unified search filters, trailing-slash redirects, canonical/OG tags across 19 routes, and sitemap."""
+        # 1. Search board filters
+        res_bs = self.client.get("/search?board=bihar-board&category=model_paper")
+        self.assertEqual(res_bs.status_code, 200)
+        self.assertIn("BSEB Model Paper (Not PYQ)", res_bs.data.decode("utf-8"))
+
+        res_mh = self.client.get("/search?board=maharashtra-board&category=pyq")
+        self.assertEqual(res_mh.status_code, 200)
+        self.assertIn("Maharashtra Board (MSBSHSE)", res_mh.data.decode("utf-8"))
+
+        res_json = self.client.get("/search?board=bihar-board&q=Physics&format=json")
+        self.assertEqual(res_json.status_code, 200)
+        self.assertGreater(res_json.get_json()["count"], 0)
+
+        # 2. Trailing-slash 301 canonical redirects
+        for slash_route, target in [
+            ("/bihar-board/", "/bihar-board"),
+            ("/maharashtra-board/", "/maharashtra-board"),
+        ]:
+            res_redir = self.client.get(slash_route)
+            self.assertEqual(res_redir.status_code, 301)
+            self.assertTrue(res_redir.headers.get("Location", "").endswith(target))
+
+        # 3. Canonical & OG image checks on all 19 new canonical routes
+        new_routes = [
+            "/bihar-board",
+            "/bihar-board/class-10",
+            "/bihar-board/class-12",
+            "/bihar-board/syllabus",
+            "/bihar-board/sample-papers",
+            "/bihar-board/question-bank",
+            "/bihar-board/datesheets",
+            "/bihar-board/circulars",
+            "/bihar-board/results",
+            "/maharashtra-board",
+            "/maharashtra-board/class-10",
+            "/maharashtra-board/class-12",
+            "/maharashtra-board/syllabus",
+            "/maharashtra-board/pyq",
+            "/maharashtra-board/sample-papers",
+            "/maharashtra-board/question-bank",
+            "/maharashtra-board/datesheets",
+            "/maharashtra-board/circulars",
+            "/maharashtra-board/results",
+        ]
+        for route in new_routes:
+            res = self.client.get(route)
+            self.assertEqual(res.status_code, 200, f"Route {route} failed")
+            html = res.data.decode("utf-8")
+            self.assertIn(f'<link rel="canonical" href="https://exampulse-india.onrender.com{route}">', html)
+            self.assertIn('<meta property="og:image" content="https://exampulse-india.onrender.com/static/images/og-preview.png">', html)
+            self.assertNotIn('href=""', html, f"Empty href found in {route}")
+
+        # 4. Sitemap XML verification
+        res_sm = self.client.get("/sitemap.xml")
+        self.assertEqual(res_sm.status_code, 200)
+        xml = res_sm.data.decode("utf-8")
+        for route in new_routes:
+            self.assertIn(f"<loc>https://exampulse-india.onrender.com{route}</loc>", xml, f"Missing {route} in sitemap")
+        self.assertNotIn("/bihar-board/pyq", xml)
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+
+{% block title %}Maharashtra Board (MSBSHSE) Results, e-Marksheet &amp; Verification Portals | StudySignal{% endblock %}
+
+{% block meta_description %}
+Verified official links for Maharashtra Board (MSBSHSE Pune) Result portal (mahahsscboard.in/en/result), Online Verification / Photocopy (mahahsscboard.in/en/verification), Digital e-Marksheet Verification (boardmarksheet.maharashtra.gov.in), and Form No. 17.
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [
+  {'title': 'Boards & Exams', 'url': '/boards'},
+  {'title': 'Maharashtra Board (MSBSHSE)', 'url': '/maharashtra-board'},
+  {'title': 'Results & e-Marksheet Portals', 'url': '/maharashtra-board/results'}
+] %}
+{% include 'components/breadcrumb.html' %}
+
+<div class="board-hub-container maha-results">
+  <section class="section" style="padding-bottom: 1.5rem;">
+    <div class="container">
+      <div class="hub-hero-banner">
+        <div class="hub-hero-branding">
+          <img src="{{ url_for('static', filename='images/boards/msbshse-logo.png') }}" alt="MSBSHSE" class="hub-hero-logo" width="52" height="52">
+          <div>
+            <div class="hub-hero-badge">
+              <span>🇮🇳 MSBSHSE Verified Live Student Services &bull; <strong class="badge-status-active" style="margin-left: 4px; vertical-align: middle;">Active</strong></span>
+            </div>
+            <h1 class="hub-hero-title">Maharashtra Board Results, Verification &amp; e-Marksheet</h1>
+            <div style="color: #64748b; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.6rem;">
+              अधिकृत निकाल पोर्टल, गुणपडताळणी / छायाप्रत व डिजिटल ई-मार्कशीट पडताळणी
+            </div>
+          </div>
+        </div>
+        <p class="hub-hero-desc">
+          Direct links strictly to verified live Government of Maharashtra &amp; MSBSHSE Pune official endpoints for SSC/HSC examination results, online marks verification, answer-sheet photocopy requests, digital statement of marks, and Form No. 17 private candidate registration.
+        </p>
+
+        <div class="hub-hero-actions">
+          <a href="{{ official_urls.maha_result }}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: auto;">MSBSHSE Result Portal ↗</a>
+          <a href="{{ official_urls.maha_emarksheet }}" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="width: auto;">Maharashtra e-Marksheet ↗</a>
+          <a href="/maharashtra-board" class="btn-secondary" style="width: auto;">MSBSHSE Hub &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Verified Portals Grid -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1.25rem;">
+        <div>
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary-headings); margin: 0 0 0.25rem 0;">
+            Verified Live Maharashtra Board Official Service Portals
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">
+            Every domain below was audited live on 10 November 2026; legacy retired third-party mirrors are excluded.
+          </p>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.25rem;">
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.35rem; display: flex; flex-direction: column;">
+          <span class="badge-status-active" style="align-self: flex-start; margin-bottom: 0.5rem;">Live Result Announcements</span>
+          <h3 style="font-size: 1.08rem; font-weight: 700; color: var(--primary); margin: 0 0 0.4rem 0;">MSBSHSE Result Portal</h3>
+          <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem; flex: 1 1 auto;">
+            Official SSC (Std. 10) and HSC (Std. 12) board result notifications, statistics, and active result lookup notices on <code>mahahsscboard.in/en/result</code>.
+          </p>
+          <a href="{{ official_urls.maha_result }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary" style="text-align: center;">Open mahahsscboard.in/en/result ↗</a>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.35rem; display: flex; flex-direction: column;">
+          <span class="badge-status-active" style="align-self: flex-start; margin-bottom: 0.5rem;">Marks Verification &amp; Photocopy</span>
+          <h3 style="font-size: 1.08rem; font-weight: 700; color: var(--primary); margin: 0 0 0.4rem 0;">Online Verification &amp; Photocopy</h3>
+          <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem; flex: 1 1 auto;">
+            Official MSBSHSE portal for applying for SSC/HSC marks verification, answer-booklet photocopy copies, and re-evaluation procedures.
+          </p>
+          <a href="{{ official_urls.maha_verification }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary" style="text-align: center;">Open Verification Portal ↗</a>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.35rem; display: flex; flex-direction: column;">
+          <span class="badge-status-active" style="align-self: flex-start; margin-bottom: 0.5rem;">Gov. of Maharashtra Portal</span>
+          <h3 style="font-size: 1.08rem; font-weight: 700; color: var(--primary); margin: 0 0 0.4rem 0;">Maharashtra e-Marksheet Verification</h3>
+          <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem; flex: 1 1 auto;">
+            Official Government of Maharashtra portal (<code>boardmarksheet.maharashtra.gov.in/emarksheet/</code>) for digital marksheet verification &amp; downloading statement of marks/passing certificates.
+          </p>
+          <a href="{{ official_urls.maha_emarksheet }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary" style="text-align: center;">Open e-Marksheet Portal ↗</a>
+        </div>
+
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.35rem; display: flex; flex-direction: column;">
+          <span class="badge-status-active" style="align-self: flex-start; margin-bottom: 0.5rem;">Private Candidates</span>
+          <h3 style="font-size: 1.08rem; font-weight: 700; color: var(--primary); margin: 0 0 0.4rem 0;">Form No. 17 Online Portal</h3>
+          <p style="font-size: 0.85rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem; flex: 1 1 auto;">
+            Official MSBSHSE portal for private students appearing in Std. 10 SSC &amp; Std. 12 HSC examinations via Form No. 17 enrollment.
+          </p>
+          <a href="{{ official_urls.maha_form17 }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="text-align: center;">Open Form No. 17 Portal ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Result & Marksheet Circulars -->
+  {% if result_circulars %}
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1rem;">
+        <div>
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary-headings); margin: 0 0 0.25rem 0;">
+            Official Result &amp; Marksheet Verification Circulars
+          </h2>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0.9rem;">
+        {% for rc in result_circulars %}
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.15rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div style="flex: 1 1 420px;">
+            <div style="font-size: 0.75rem; color: #64748b; margin-bottom: 0.2rem;">
+              <strong>{{ rc.circular_no }}</strong> &bull; {{ rc.class_target }} &bull; {{ rc.published_date }}
+            </div>
+            <div style="font-weight: 700; color: var(--primary); font-size: 1rem; margin-bottom: 0.2rem;">{{ rc.title }}</div>
+            <div style="font-size: 0.825rem; color: #64748b;">{{ rc.summary }}</div>
+          </div>
+          <a href="{{ rc.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary">
+            Official Notice PDF ↗
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Disclaimer -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="disclaimer-callout" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; font-size: 0.8125rem; color: #64748b; line-height: 1.6;">
+        <strong style="color: var(--primary); display: block; margin-bottom: 0.35rem;">⚖️ MSBSHSE Non-Affiliation Legal Notice</strong>
+        StudySignal is independent and NOT affiliated with MSBSHSE Pune or the Government of Maharashtra. Always verify results directly on <a href="{{ official_urls.maha_main }}" target="_blank" rel="noopener noreferrer" style="color: var(--brand-blue); text-decoration: underline;">mahahsscboard.in</a> and <a href="{{ official_urls.maha_emarksheet }}" target="_blank" rel="noopener noreferrer" style="color: var(--brand-blue); text-decoration: underline;">boardmarksheet.maharashtra.gov.in</a>.
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

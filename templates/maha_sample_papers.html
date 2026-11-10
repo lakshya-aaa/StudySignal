@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block title %}Maharashtra Board (MSBSHSE) Pattern Guides, Performance Analysis &amp; Sample Paper Note | StudySignal{% endblock %}
+
+{% block meta_description %}
+MSBSHSE does not issue CBSE-style sample question papers separately; explore Maharashtra Board's actual official practice tools: {{ pyq_total_pdfs }} Past Board Question Paper PDFs, SCERT Prashnapedhi Question Banks, Parikshecha Rajmarg handbooks, and March 2024 Performance Analysis Reports.
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [
+  {'title': 'Boards & Exams', 'url': '/boards'},
+  {'title': 'Maharashtra Board (MSBSHSE)', 'url': '/maharashtra-board'},
+  {'title': 'Guidance & Sample Paper Status', 'url': '/maharashtra-board/sample-papers'}
+] %}
+{% include 'components/breadcrumb.html' %}
+
+<div class="board-hub-container maha-sample-papers">
+  <!-- Hero -->
+  <section class="section" style="padding-bottom: 1.5rem;">
+    <div class="container">
+      <div class="hub-hero-banner">
+        <div class="hub-hero-branding">
+          <img src="{{ url_for('static', filename='images/boards/msbshse-logo.png') }}" alt="MSBSHSE" class="hub-hero-logo" width="52" height="52">
+          <div>
+            <div class="hub-hero-badge">
+              <span>🇮🇳 MSBSHSE Guidance &amp; Official Publications &bull; <strong class="badge-status-active" style="margin-left: 4px; vertical-align: middle;">Active</strong></span>
+            </div>
+            <h1 class="hub-hero-title">Maharashtra Board Pattern Guides &amp; Publications</h1>
+            <div style="color: #64748b; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.6rem;">
+              परीक्षेचा राजमार्ग, SSC/HSC कामगिरी विश्लेषण अहवाल व शिक्षण संक्रमण
+            </div>
+          </div>
+        </div>
+        <p class="hub-hero-desc">
+          Unlike CBSE or BSEB, the Maharashtra State Board (MSBSHSE) does not publish separate annual "Sample Question Papers (SQPs)". Instead, Maharashtra SSC &amp; HSC students officially prepare using actual <strong>Past Board Question Papers</strong>, <strong>SCERT Maharashtra Question Banks (Prashnapedhi)</strong>, and official MSBSHSE guidance publications indexed below.
+        </p>
+
+        <div class="hub-hero-actions">
+          <a href="/maharashtra-board/pyq" class="btn-primary" style="width: auto;">
+            Past Board PYQs ({{ pyq_total_pdfs }} PDFs) &rarr;
+          </a>
+          <a href="/maharashtra-board/question-bank" class="btn-secondary" style="width: auto;">
+            SCERT Question Banks &rarr;
+          </a>
+          <a href="{{ official_urls.maha_publications }}" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="width: auto;">
+            Official Publications Portal ↗
+          </a>
+          <a href="/maharashtra-board" class="btn-secondary" style="width: auto;">
+            MSBSHSE Main Hub &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transparency Alert -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2rem;">
+    <div class="container">
+      <div class="hub-alert-card" style="border-left-color: #d97706; background: #fffbeb;">
+        <h2 style="font-size: 1.15rem; font-weight: 800; color: #78350f; margin: 0 0 0.4rem 0;">
+          How Official Board Exam Pattern Practice Works in Maharashtra (MSBSHSE)
+        </h2>
+        <p style="color: #78350f; font-size: 0.925rem; line-height: 1.6; margin: 0;">
+          MSBSHSE maintains zero invented "guess papers" on <code>mahahsscboard.in</code>. Authentic preparation combines:
+          <strong>(1) {{ pyq_total_rows }} Actual Past Board Question Paper sets ({{ pyq_total_pdfs }} medium PDFs)</strong> under <a href="/maharashtra-board/pyq" style="text-decoration: underline; color: #92400e; font-weight: 700;">PYQ Library</a>,
+          <strong>(2) SCERT Maharashtra Prashnapedhi Banks</strong> under <a href="/maharashtra-board/question-bank" style="text-decoration: underline; color: #92400e; font-weight: 700;">Question Bank</a>, and
+          <strong>(3) Official Examiner Performance Analysis Reports &amp; Parikshecha Rajmarg Handbooks</strong> below.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Official Board Publications Grid -->
+  <section class="section" style="padding-top: 0; padding-bottom: 3rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1.25rem;">
+        <div>
+          <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--primary-headings); margin: 0 0 0.25rem 0;">
+            Verified MSBSHSE Handbooks, Examiner Analysis &amp; Academic Journals ({{ publications|length }} PDFs)
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">
+            Every document links directly to official PDFs hosted by <code>mahahsscboard.in/en/publications</code>:
+          </p>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.25rem;">
+        {% for pub in publications %}
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.35rem; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 0.4rem; margin-bottom: 0.5rem; flex-wrap: wrap;">
+            <span class="code-pill">{{ pub.category }}</span>
+            <span class="verified-badge" style="font-size: 0.7rem;">✓ Verified Official</span>
+          </div>
+          <h3 style="font-size: 1.08rem; font-weight: 700; color: var(--primary); margin: 0 0 0.4rem 0;">
+            {{ pub.title }}
+          </h3>
+          <p style="font-size: 0.85rem; color: #64748b; line-height: 1.55; margin-bottom: 0.85rem; flex: 1 1 auto;">
+            {{ pub.description }}
+          </p>
+          <div style="font-size: 0.78rem; color: #475569; margin-bottom: 0.9rem;">
+            <strong>Target:</strong> {{ pub.class_target }} &bull; <strong>Published:</strong> {{ pub.published_date }} &bull; <strong>Size:</strong> {{ pub.file_size }}
+          </div>
+          <a href="{{ pub.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary" style="text-align: center;">
+            Download Official PDF ({{ pub.file_size }}) ↗
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Disclaimer -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="disclaimer-callout" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; font-size: 0.8125rem; color: #64748b; line-height: 1.6;">
+        <strong style="color: var(--primary); display: block; margin-bottom: 0.35rem;">⚖️ MSBSHSE Non-Affiliation Legal Notice</strong>
+        StudySignal is independent and NOT affiliated with MSBSHSE Pune. Check <a href="{{ official_urls.maha_publications }}" target="_blank" rel="noopener noreferrer" style="color: var(--brand-blue); text-decoration: underline;">mahahsscboard.in/en/publications</a> for newly released monographs.
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

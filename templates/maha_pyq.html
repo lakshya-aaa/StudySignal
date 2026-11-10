@@ -1,0 +1,190 @@
+{% extends 'base.html' %}
+
+{% block title %}Maharashtra Board (MSBSHSE) Previous Year Question Papers (332 Official PDFs) | StudySignal{% endblock %}
+
+{% block meta_description %}
+Download {{ total_rows }} Maharashtra State Board (MSBSHSE) SSC &amp; HSC Past Question Paper entries ({{ total_pdfs }} verified multi-medium PDFs across March 2024 – June 2026) directly from official mahahsscboard.in archives.
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [
+  {'title': 'Boards & Exams', 'url': '/boards'},
+  {'title': 'Maharashtra Board (MSBSHSE)', 'url': '/maharashtra-board'},
+  {'title': 'Past Question Papers (PYQs)', 'url': '/maharashtra-board/pyq'}
+] %}
+{% include 'components/breadcrumb.html' %}
+
+<div class="board-hub-container maha-pyq">
+  <!-- Hero -->
+  <section class="section" style="padding-bottom: 1.5rem;">
+    <div class="container">
+      <div class="hub-hero-banner">
+        <div class="hub-hero-branding">
+          <img src="{{ url_for('static', filename='images/boards/msbshse-logo.png') }}" alt="MSBSHSE" class="hub-hero-logo" width="52" height="52">
+          <div>
+            <div class="hub-hero-badge">
+              <span>🇮🇳 MSBSHSE Official Question Paper Archive &bull; <strong class="badge-status-active" style="margin-left: 4px; vertical-align: middle;">Active</strong></span>
+            </div>
+            <h1 class="hub-hero-title">Maharashtra Board Previous Year Question Papers</h1>
+            <div style="color: #64748b; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.6rem;">
+              माध्यमिक व उच्च माध्यमिक मागील बोर्ड प्रश्नपत्रिका संग्रह (March 2024 – June 2026)
+            </div>
+          </div>
+        </div>
+        <p class="hub-hero-desc">
+          Browse and download all <strong>{{ total_rows }} official SSC &amp; HSC past examination paper entries</strong> ({{ total_pdfs }} individual medium PDF files) published by Maharashtra State Board (MSBSHSE) via <code>mahahsscboard.in/en/questionPaper</code>. Includes English, Marathi, Hindi, and Urdu medium papers across March 2024, July 2024, March 2025, July 2025, March 2026, and June 2026 exam sessions.
+        </p>
+
+        <div class="hub-stats-row">
+          <div class="hub-stat-pill"><span>📄 <strong>{{ total_rows }}</strong> Verified Subject/Session Entries</span></div>
+          <div class="hub-stat-pill"><span>📑 <strong>{{ total_pdfs }}</strong> Direct Medium PDFs</span></div>
+          <div class="hub-stat-pill"><span>🌐 <strong>Multi-Medium:</strong> English, Marathi, Hindi &amp; Urdu</span></div>
+          <div class="hub-stat-pill"><span>✓ <strong>100% Live Verified</strong> on MSBSHSE CDN</span></div>
+        </div>
+
+        <div class="hub-hero-actions">
+          <a href="{{ official_urls.maha_question_papers }}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: auto;">Official MSBSHSE Papers Portal ↗</a>
+          <a href="/maharashtra-board/question-bank" class="btn-secondary" style="width: auto;">SCERT Prashnapedhi &rarr;</a>
+          <a href="/maharashtra-board/datesheets" class="btn-secondary" style="width: auto;">Feb–Mar 2027 Timetable &rarr;</a>
+          <a href="/maharashtra-board" class="btn-secondary" style="width: auto;">MSBSHSE Hub &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter & Search Bar -->
+  <section class="section" style="padding: 0 0 2rem 0;">
+    <div class="container">
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem;">
+        <form method="GET" action="/maharashtra-board/pyq" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 0.85rem; align-items: end;">
+          <div>
+            <label class="form-label" for="maha-pyq-q">Search Subject / Code</label>
+            <input type="text" id="maha-pyq-q" name="q" value="{{ search_q }}" placeholder="e.g. English, 71, Physics..." class="form-control">
+          </div>
+          <div>
+            <label class="form-label" for="maha-pyq-class">Course</label>
+            <select id="maha-pyq-class" name="class" class="form-control">
+              <option value="all" {% if selected_class == 'all' %}selected{% endif %}>All Courses (SSC &amp; HSC)</option>
+              <option value="10" {% if selected_class == '10' %}selected{% endif %}>SSC Std. 10</option>
+              <option value="12" {% if selected_class == '12' %}selected{% endif %}>HSC Std. 12</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label" for="maha-pyq-session">Exam Session</label>
+            <select id="maha-pyq-session" name="session" class="form-control">
+              <option value="all" {% if selected_session == 'all' %}selected{% endif %}>All Sessions</option>
+              {% for sess in available_sessions %}
+              <option value="{{ sess }}" {% if selected_session == sess %}selected{% endif %}>{{ sess }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div>
+            <label class="form-label" for="maha-pyq-subject">Subject</label>
+            <select id="maha-pyq-subject" name="subject" class="form-control">
+              <option value="all" {% if selected_subject == 'all' %}selected{% endif %}>All Subjects</option>
+              {% for subj in available_subjects %}
+              <option value="{{ subj }}" {% if selected_subject == subj %}selected{% endif %}>{{ subj }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div>
+            <label class="form-label" for="maha-pyq-medium">Medium</label>
+            <select id="maha-pyq-medium" name="medium" class="form-control">
+              <option value="all" {% if selected_medium == 'all' %}selected{% endif %}>All Mediums</option>
+              {% for med in available_mediums %}
+              <option value="{{ med }}" {% if selected_medium == med %}selected{% endif %}>{{ med }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button type="submit" class="btn-primary" style="flex: 1;">Filter</button>
+            {% if selected_class != 'all' or selected_session != 'all' or selected_subject != 'all' or selected_medium != 'all' or search_q %}
+            <a href="/maharashtra-board/pyq" class="btn-secondary">Reset</a>
+            {% endif %}
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- PYQ Grid -->
+  <section class="section" style="padding-top: 0; padding-bottom: 3rem;">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.5rem;">
+        <span style="font-weight: 700; color: var(--primary);">
+          Showing {{ pyq_items|length }} of {{ total_rows }} entries ({{ filtered_pdfs_count }} matching PDFs)
+        </span>
+        <span style="font-size: 0.8rem; color: #64748b;">
+          Sourced directly from MSBSHSE Pune (<code>mahahsscboard.in/en/questionPaper</code>)
+        </span>
+      </div>
+
+      {% if pyq_items and pyq_items|length > 0 %}
+      <div class="pyq-grid">
+        {% for item in pyq_items %}
+        <div class="pyq-card">
+          <div class="pyq-card-header">
+            <div style="display: flex; gap: 0.35rem; align-items: center; flex-wrap: wrap;">
+              <span class="code-pill">{{ item.type }} Std. {{ item.class }} &bull; Code {{ item.code }}</span>
+              <span class="pyq-year-badge">{{ item.session }}</span>
+            </div>
+            {% if item.pdfs and item.pdfs|length > 0 %}
+              <span class="pyq-badge-available">✓ Official Paper</span>
+            {% else %}
+              <span class="pyq-badge-unavailable">No PDF Hosted</span>
+            {% endif %}
+          </div>
+
+          <h2 class="pyq-card-title">{{ item.subject }}</h2>
+          <div class="pyq-card-meta">
+            <span>{{ item.course }}</span>
+            <span>&bull;</span>
+            <span>Paper {{ item.paper }}</span>
+            <span>&bull;</span>
+            {% if item.pdfs and item.pdfs|length > 0 %}
+              <span>{{ item.pdfs|length }} Medium File{{ 's' if item.pdfs|length > 1 else '' }}</span>
+            {% else %}
+              <span>0 Downloadable PDFs</span>
+            {% endif %}
+          </div>
+
+          <div class="pyq-details-box">
+            <span>Verified: <strong>{{ item.last_verified }}</strong></span>
+            <span>Source: <a href="{{ item.source_portal }}" target="_blank" rel="noopener noreferrer" style="text-decoration: underline; color: inherit;"><strong>mahahsscboard.in ↗</strong></a></span>
+          </div>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: auto; padding-top: 0.75rem; border-top: 1px solid #f1f5f9;">
+            {% if item.pdfs and item.pdfs|length > 0 %}
+              {% for pdf in item.pdfs %}
+              <a href="{{ pdf.url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-official-pdf" style="font-size: 0.78rem;">
+                {{ pdf.medium }} PDF ({{ pdf.size_kb|round|int if pdf.size_kb else 'PDF' }} KB) ↗
+              </a>
+              {% endfor %}
+            {% else %}
+              <span style="font-size: 0.78rem; color: #64748b;">No downloadable PDF uploaded in the official MSBSHSE catalogue for this session.</span>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div class="pyq-empty-state">
+        <h3 style="font-size: 1.2rem; color: var(--primary); margin-bottom: 0.5rem;">No Question Papers Match Your Filters</h3>
+        <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1.25rem;">Try clearing one or more filters or searching another subject code.</p>
+        <a href="/maharashtra-board/pyq" class="btn-primary" style="width: auto;">Reset All Filters &rarr;</a>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- Disclaimer -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="disclaimer-callout" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; font-size: 0.8125rem; color: #64748b; line-height: 1.6;">
+        <strong style="color: var(--primary); display: block; margin-bottom: 0.35rem;">⚖️ MSBSHSE Non-Affiliation Legal Notice</strong>
+        StudySignal is independent and NOT affiliated with MSBSHSE Pune. All past paper PDFs resolve directly to the official Maharashtra Board archive linked on <a href="{{ official_urls.maha_question_papers }}" target="_blank" rel="noopener noreferrer" style="color: var(--brand-blue); text-decoration: underline;">mahahsscboard.in</a>.
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

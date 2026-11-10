@@ -1,0 +1,295 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ class_title }} - Academic Portal &amp; Verified Resources | StudySignal{% endblock %}
+
+{% block meta_description %}
+StudySignal portal for {{ class_title }} (Bihar School Examination Board, Patna). Access verified consolidated syllabi, division &amp; passing regulations, official 2026 Model Question Papers, circulars, and 2027 timetable status from biharboardonline.com.
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [
+  {'title': 'Boards & Exams', 'url': '/boards'},
+  {'title': 'Bihar Board (BSEB)', 'url': '/bihar-board'},
+  {'title': class_title, 'url': request.path}
+] %}
+{% include 'components/breadcrumb.html' %}
+
+<div class="board-hub-container bseb-class-hub">
+  <!-- Hero Banner -->
+  <section class="section" style="padding-bottom: 1.5rem;">
+    <div class="container">
+      <div class="hub-hero-banner">
+        <div class="hub-hero-branding">
+          <img src="{{ url_for('static', filename='images/boards/bseb-logo.png') }}" alt="BSEB" class="hub-hero-logo" width="52" height="52">
+          <div>
+            <div class="hub-hero-badge">
+              <span>🇮🇳 BSEB Patna Academic Framework &bull; <strong class="badge-status-active" style="margin-left: 4px; vertical-align: middle;">Active</strong></span>
+            </div>
+            <h1 class="hub-hero-title">{{ class_title }}</h1>
+            <div style="color: #64748b; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.6rem;">
+              {{ class_title_hindi }}
+            </div>
+          </div>
+        </div>
+        <p class="hub-hero-desc">
+          Official resource guide for Bihar Board {{ course_name }} ({{ course_name_hindi }}). Consolidated syllabus booklets, passing regulations, {{ sample_papers|length }} verified 2026 Model Question Papers, and timetable tracking directly verified on <code>biharboardonline.com</code>.
+        </p>
+
+        <div class="hub-stats-row">
+          <div class="hub-stat-pill">
+            <span>📘 <strong>{{ course_name }} (Class {{ class_num }})</strong></span>
+          </div>
+          <div class="hub-stat-pill">
+            <span>📝 <strong>{{ sample_papers|length }}</strong> Official Model Papers</span>
+          </div>
+          <div class="hub-stat-pill">
+            <span>🗓️ <strong>2027 Timetable:</strong> {{ datesheets.status_label_2027 }}</span>
+          </div>
+          <div class="hub-stat-pill">
+            <span>✓ <strong>Source:</strong> biharboardonline.com</span>
+          </div>
+        </div>
+
+        <div class="hub-hero-actions">
+          <a href="/bihar-board/sample-papers?class={{ class_num }}" class="btn-primary" style="width: auto;">
+            All {{ course_name }} Model Papers ({{ sample_papers|length }}) &rarr;
+          </a>
+          <a href="/bihar-board/syllabus?class={{ class_num }}" class="btn-secondary" style="width: auto;">
+            Syllabus &amp; Passing Rules &rarr;
+          </a>
+          <a href="/bihar-board/datesheets?class={{ class_num }}" class="btn-secondary" style="width: auto;">
+            2027 Timetable Tracker &rarr;
+          </a>
+          <a href="/bihar-board/circulars?class={{ class_num }}" class="btn-secondary" style="width: auto;">
+            Official Circulars &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Class Navigation Bar -->
+  <section class="section" style="padding: 0 0 2rem 0;">
+    <div class="container">
+      <div class="board-selector-bar">
+        <a href="/bihar-board/class-10" class="selector-pill {% if class_num == '10' %}active{% endif %}">
+          📘 Matriculation (Class 10)
+        </a>
+        <a href="/bihar-board/class-12" class="selector-pill {% if class_num == '12' %}active{% endif %}">
+          🎓 Intermediate (Class 12)
+        </a>
+        <a href="/bihar-board/sample-papers?class={{ class_num }}" class="selector-pill">
+          📝 Model Papers ({{ sample_papers|length }})
+        </a>
+        <a href="/bihar-board/syllabus?class={{ class_num }}" class="selector-pill">
+          📚 Syllabus &amp; Scheme
+        </a>
+        <a href="/bihar-board/datesheets?class={{ class_num }}" class="selector-pill">
+          🗓️ Timetable Tracker
+        </a>
+        <a href="/bihar-board/question-bank" class="selector-pill">
+          ❓ Question Bank Status
+        </a>
+        <a href="/bihar-board" class="selector-pill">
+          🏛️ Bihar Board Hub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2027 Timetable Status & 2026 Official Reference Alert -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2rem;">
+    <div class="container">
+      <div class="hub-alert-card" style="border-left-color: #d97706; background: #fffbeb;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.5rem;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.35rem;">
+              <span class="badge-status-soon" style="background: #fef3c7; color: #92400e; border: 1px solid #fde68a;">
+                ⏳ {{ class_ds.status_label_2027 or '2027 Timetable: Awaiting Official Release' }}
+              </span>
+              <span style="font-size: 0.8125rem; font-weight: 700; color: #78350f; background: #ffffff; border: 1px solid #fde68a; padding: 2px 8px; border-radius: 4px;">
+                Ref Notice: {{ class_ds.notification_no }}
+              </span>
+            </div>
+            <h2 style="font-size: 1.2rem; font-weight: 800; color: #78350f; margin: 0;">
+              {{ class_ds.class_name }} &bull; Schedule Tracker
+            </h2>
+          </div>
+          <span style="font-size: 0.75rem; color: #92400e; font-weight: 600;">
+            Checked: {{ datesheets.last_checked_label or '10 November 2026' }}
+          </span>
+        </div>
+        <p style="color: #78350f; font-size: 0.9rem; line-height: 1.6; margin: 0.5rem 0 0.85rem 0;">
+          BSEB has not yet published the 2027 exam routine as of {{ datesheets.last_checked_label or '10 November 2026' }}. For pattern reference only: the <strong>2026 Official Routine</strong> ran during <strong>{{ class_ds.exam_window_ref }}</strong>. {{ class_ds.entry_rule }}
+        </p>
+        <div style="display: flex; gap: 0.65rem; flex-wrap: wrap;">
+          <a href="{{ class_ds.official_ref_pdf }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary" style="width: auto;">
+            Download 2026 Reference Programme PDF ↗
+          </a>
+          <a href="/bihar-board/datesheets?class={{ class_num }}" class="btn-sm btn-secondary" style="width: auto;">
+            View Detailed Reference Schedule Table &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consolidated Syllabus & Passing / Division Scheme -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1.25rem;">
+        <div>
+          <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--primary-headings); margin-bottom: 0.3rem;">
+            Consolidated Syllabus PDF &amp; Subject Grouping Rules
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">
+            Official SCERT Bihar &amp; BSEB consolidated booklets and statutory result regulations:
+          </p>
+        </div>
+        <a href="/bihar-board/syllabus?class={{ class_num }}" class="btn-sm btn-secondary">
+          Open Syllabus Guide &rarr;
+        </a>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.25rem; margin-bottom: 1.5rem;">
+        {% for pdf in syllabus_pdfs %}
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <span class="code-pill">Class {{ pdf.class }} &bull; {{ pdf.code }}</span>
+            <span class="verified-badge">✓ Official PDF</span>
+          </div>
+          <h3 style="font-size: 1.05rem; font-weight: 700; color: var(--primary); margin: 0 0 0.4rem 0;">{{ pdf.title }}</h3>
+          <p style="font-size: 0.825rem; color: #64748b; line-height: 1.5; margin-bottom: 0.85rem; flex: 1 1 auto;">{{ pdf.description }}</p>
+          <div style="font-size: 0.75rem; color: #475569; margin-bottom: 0.75rem;">Size: <strong>{{ pdf.file_size }}</strong></div>
+          <a href="{{ pdf.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary" style="text-align: center;">
+            Download Official Syllabus PDF ↗
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+
+      {% if curriculum_struct %}
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 1rem;">
+          <div>
+            <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--primary); margin: 0 0 0.25rem 0;">
+              {{ curriculum_struct.course_name }} &mdash; Subject Groups &amp; Passing Criteria
+            </h3>
+            <div style="font-size: 0.85rem; color: #475569;">
+              <strong>Division Thresholds:</strong> {{ curriculum_struct.division_thresholds }}
+            </div>
+          </div>
+          <a href="{{ curriculum_struct.regulation_pdf }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
+            Official Result Regulation PDF ↗
+          </a>
+        </div>
+        <p style="font-size: 0.875rem; color: #334155; background: #f8fafc; padding: 0.85rem 1rem; border-left: 3px solid var(--brand-blue); border-radius: 4px; margin-bottom: 1rem;">
+          <strong>Official Passing Rule:</strong> {{ curriculum_struct.passing_rule }}
+        </p>
+
+        <div class="table-scroll-hint"><span>↔️ Swipe horizontally to view all subject groups</span></div>
+        <div class="table-responsive" role="region" tabindex="0" aria-label="BSEB Subject Grouping Structure Table">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Subject Group</th>
+                <th>Official Subject Codes</th>
+                <th>Evaluation &amp; Regulation Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for grp in curriculum_struct.subject_groups %}
+              <tr>
+                <td style="font-weight: 700; color: var(--primary);">{{ grp.group }}</td>
+                <td><code>{{ grp.codes }}</code></td>
+                <td style="font-size: 0.85rem; color: #475569;">{{ grp.notes }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- Official 2026 Model Question Papers List -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1.25rem;">
+        <div>
+          <h2 style="font-size: 1.4rem; font-weight: 800; color: var(--primary-headings); margin-bottom: 0.3rem;">
+            {{ course_name }} Official 2026 Model Question Papers ({{ sample_papers|length }} Papers)
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">
+            Sample pattern papers from <code>biharboardonline.com</code> (Not Past Exam PYQs):
+          </p>
+        </div>
+        <a href="/bihar-board/sample-papers?class={{ class_num }}" class="btn-sm btn-secondary">
+          Filter &amp; Search Papers &rarr;
+        </a>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1rem;">
+        {% for paper in sample_papers %}
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.15rem; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 0.35rem; margin-bottom: 0.45rem; flex-wrap: wrap;">
+            <span class="code-pill">Code {{ paper.code }}</span>
+            <span style="font-size: 0.68rem; background: #fef3c7; color: #92400e; padding: 2px 6px; border-radius: 4px; font-weight: 700;">Model Paper (Not PYQ)</span>
+          </div>
+          <h3 style="font-size: 1rem; font-weight: 700; color: var(--primary); margin: 0 0 0.25rem 0;">{{ paper.subject }}</h3>
+          <div style="font-size: 0.78rem; color: #64748b; margin-bottom: 0.75rem; flex: 1 1 auto;">
+            {{ paper.stream }} &bull; <code>{{ paper.raw_label }}</code> &bull; {{ paper.file_size }}
+          </div>
+          <a href="{{ paper.download_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary" style="text-align: center;">
+            Download Model Paper PDF ↗
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Relevant Circulars -->
+  {% if circulars %}
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1.25rem;">
+        <div>
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary-headings); margin-bottom: 0.25rem;">
+            Relevant Official Circulars &amp; Directives
+          </h2>
+        </div>
+        <a href="/bihar-board/circulars?class={{ class_num }}" class="btn-sm btn-secondary">All Circulars &rarr;</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0.85rem;">
+        {% for c in circulars %}
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.15rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+          <div style="flex: 1 1 350px;">
+            <div style="font-size: 0.75rem; color: #64748b; margin-bottom: 0.2rem;">
+              <strong>{{ c.category }}</strong> &bull; {{ c.circular_no }} &bull; {{ c.published_date }} ({{ c.file_size }})
+            </div>
+            <div style="font-weight: 700; color: var(--primary); font-size: 0.95rem; margin-bottom: 0.2rem;">{{ c.title }}</div>
+            <div style="font-size: 0.825rem; color: #64748b;">{{ c.summary }}</div>
+          </div>
+          <a href="{{ c.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary">Official PDF ↗</a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Disclaimer -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="disclaimer-callout" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; font-size: 0.8125rem; color: #64748b; line-height: 1.6;">
+        <strong style="color: var(--primary); display: block; margin-bottom: 0.35rem; font-size: 0.875rem;">
+          ⚖️ BSEB Non-Affiliation Legal Notice
+        </strong>
+        StudySignal is an independent educational portal and is <strong>NOT affiliated with the Bihar School Examination Board (BSEB) or Government of Bihar</strong>. Always verify official documents on <a href="{{ official_urls.bseb_main }}" target="_blank" rel="noopener noreferrer" style="color: var(--brand-blue); text-decoration: underline;">biharboardonline.com</a>.
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

@@ -1,0 +1,261 @@
+{% extends 'base.html' %}
+
+{% block title %}Maharashtra Board (MSBSHSE) Syllabus &amp; 246 Official Subject Codes | StudySignal{% endblock %}
+
+{% block meta_description %}
+Verified Maharashtra Board (MSBSHSE) SSC (114 subjects) &amp; HSC (132 subjects) official subject index code catalogue, SCERT Maharashtra SCF-SE 2024 curriculum frameworks (maa.ac.in), and Balbharati prescribed textbooks (books.ebalbharati.in).
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [
+  {'title': 'Boards & Exams', 'url': '/boards'},
+  {'title': 'Maharashtra Board (MSBSHSE)', 'url': '/maharashtra-board'},
+  {'title': 'Syllabus & Subject Codes', 'url': '/maharashtra-board/syllabus'}
+] %}
+{% include 'components/breadcrumb.html' %}
+
+<div class="board-hub-container maha-syllabus">
+  <!-- Hero -->
+  <section class="section" style="padding-bottom: 1.5rem;">
+    <div class="container">
+      <div class="hub-hero-banner">
+        <div class="hub-hero-branding">
+          <img src="{{ url_for('static', filename='images/boards/msbshse-logo.png') }}" alt="MSBSHSE" class="hub-hero-logo" width="52" height="52">
+          <div>
+            <div class="hub-hero-badge">
+              <span>🇮🇳 MSBSHSE, SCERT &amp; Balbharati Syllabus Guide &bull; <strong class="badge-status-active" style="margin-left: 4px; vertical-align: middle;">Active</strong></span>
+            </div>
+            <h1 class="hub-hero-title">Maharashtra Board Syllabus &amp; Subject Catalogue</h1>
+            <div style="color: #64748b; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.6rem;">
+              महाराष्ट्र राज्य पाठ्यक्रम आराखडा (SCERT SCF-SE), बालभारती पुस्तके व {{ ssc_total }} SSC + {{ hsc_total }} HSC विषय कोड
+            </div>
+          </div>
+        </div>
+        <p class="hub-hero-desc">
+          Complete directory of Maharashtra's {{ ssc_total }} SSC (Std. 10) and {{ hsc_total }} HSC (Std. 12) official board subject codes verified from <code>mahahsscboard.in</code>, paired with official curriculum frameworks from SCERT Maharashtra (<code>maa.ac.in</code>) and free textbooks on Balbharati (<code>books.ebalbharati.in</code>).
+        </p>
+
+        <div class="hub-stats-row">
+          <div class="hub-stat-pill"><span>📘 <strong>{{ ssc_total }}</strong> SSC Subject Codes</span></div>
+          <div class="hub-stat-pill"><span>🎓 <strong>{{ hsc_total }}</strong> HSC Subject Codes</span></div>
+          <div class="hub-stat-pill"><span>📚 <strong>{{ curriculum_frameworks|length }}</strong> SCERT &amp; Balbharati Portals</span></div>
+        </div>
+
+        <div class="hub-hero-actions">
+          <a href="{{ official_urls.ebalbharati }}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: auto;">Balbharati E-Books Library ↗</a>
+          <a href="{{ official_urls.scert_maha_curriculum }}" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="width: auto;">SCERT Curriculum Portal ↗</a>
+          <a href="/maharashtra-board/pyq" class="btn-secondary" style="width: auto;">Past Question Papers &rarr;</a>
+          <a href="/maharashtra-board" class="btn-secondary" style="width: auto;">MSBSHSE Hub &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Official Structural Transparency Note -->
+  {% if metadata and metadata.transparency_note %}
+  <section class="section" style="padding-top: 0; padding-bottom: 1.75rem;">
+    <div class="container">
+      <div class="alert-box" style="margin: 0; border-left: 4px solid var(--brand-blue); background: #f0f7ff;">
+        <strong>Syllabus Publication Architecture Note:</strong>
+        {{ metadata.transparency_note }}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- SCERT Maharashtra Frameworks & Balbharati Cards -->
+  {% if curriculum_frameworks %}
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1.25rem;">
+        <div>
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary-headings); margin: 0 0 0.25rem 0;">
+            SCERT Maharashtra Curriculum Frameworks &amp; Balbharati E-Textbooks
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin: 0;">
+            Authentic curriculum policy PDFs and state textbook repositories:
+          </p>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 1.25rem;">
+        {% for fw in curriculum_frameworks %}
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; gap: 0.4rem; flex-wrap: wrap;">
+            <span class="code-pill">{{ fw.authority }}</span>
+            <span class="verified-badge" style="font-size: 0.7rem;">✓ Verified</span>
+          </div>
+          <h3 style="font-size: 1.025rem; font-weight: 700; color: var(--primary); margin: 0 0 0.4rem 0; flex: 1 1 auto;">
+            {{ fw.title }}
+          </h3>
+          <div style="font-size: 0.8rem; color: #64748b; margin-bottom: 0.85rem;">
+            <strong>Scope:</strong> {{ fw.class_scope }} &bull; <strong>Size:</strong> {{ fw.file_size }}
+          </div>
+          <a href="{{ fw.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary" style="text-align: center;">
+            Open Official Document / Portal ↗
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Filter & Search Form for Subject Codes -->
+  <section class="section" style="padding-top: 0; padding-bottom: 1.75rem;">
+    <div class="container">
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem;">
+        <form method="GET" action="/maharashtra-board/syllabus" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0.85rem; align-items: end;">
+          <div>
+            <label class="form-label" for="maha-syl-q">Search Subject or Index Code</label>
+            <input type="text" id="maha-syl-q" name="q" value="{{ search_q }}" placeholder="e.g. Maths, Physics, 71, 54, मराठी..." class="form-control">
+          </div>
+          <div>
+            <label class="form-label" for="maha-syl-class">Level</label>
+            <select id="maha-syl-class" name="class" class="form-control">
+              <option value="all" {% if selected_class == 'all' %}selected{% endif %}>All Levels ({{ ssc_total + hsc_total }} Subjects)</option>
+              <option value="10" {% if selected_class == '10' %}selected{% endif %}>SSC Std. 10 ({{ ssc_total }} Subjects)</option>
+              <option value="12" {% if selected_class == '12' %}selected{% endif %}>HSC Std. 12 ({{ hsc_total }} Subjects)</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label" for="maha-syl-cat">Official Stream / Category</label>
+            <select id="maha-syl-cat" name="category" class="form-control">
+              <option value="all" {% if selected_category == 'all' %}selected{% endif %}>All Official Categories</option>
+              {% for cat in available_categories %}
+              <option value="{{ cat }}" {% if selected_category == cat %}selected{% endif %}>{{ cat }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button type="submit" class="btn-primary" style="flex: 1;">Filter</button>
+            {% if selected_class != 'all' or selected_category != 'all' or search_q %}
+            <a href="/maharashtra-board/syllabus" class="btn-secondary">Reset</a>
+            {% endif %}
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- SSC (Std. 10) Subjects Table -->
+  {% if selected_class in ['all', '10'] %}
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1rem;">
+        <div>
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary-headings); margin: 0 0 0.2rem 0;">
+            SSC (Std. 10) Official Subject Code Directory ({{ ssc_subjects|length }} of {{ ssc_total }})
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">
+            Verified from <code>mahahsscboard.in/en/studentAndSyllabus/sscGeneral</code>
+          </p>
+        </div>
+        <a href="{{ official_urls.maha_syllabus_ssc }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
+          Verify SSC Portal ↗
+        </a>
+      </div>
+
+      {% if ssc_subjects %}
+      <div class="table-scroll-hint"><span>↔️ Swipe horizontally to view full catalogue</span></div>
+      <div class="table-responsive" role="region" tabindex="0" aria-label="MSBSHSE SSC Std 10 Subject Index Codes Table">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Subject Name (English)</th>
+              <th>Subject Name (Marathi / मराठी)</th>
+              <th>Official Category</th>
+              <th>Individual PDF Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for s in ssc_subjects %}
+            <tr>
+              <td><code>{{ s.code }}</code></td>
+              <td style="font-weight: 700; color: var(--primary);">{{ s.subject }}</td>
+              <td>{{ s.subject_mr }}</td>
+              <td style="font-size: 0.85rem;">{{ s.category }}</td>
+              <td style="font-size: 0.8rem; color: #64748b;">
+                Not hosted separately on board portal &bull; Refer SCERT / Balbharati
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.5rem; color: #64748b;">
+        No SSC subjects matched your active filter.
+      </div>
+      {% endif %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- HSC (Std. 12) Subjects Table -->
+  {% if selected_class in ['all', '12'] %}
+  <section class="section" style="padding-top: 0; padding-bottom: 3rem;">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 1rem;">
+        <div>
+          <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary-headings); margin: 0 0 0.2rem 0;">
+            HSC (Std. 12) Official Subject Code Directory ({{ hsc_subjects|length }} of {{ hsc_total }})
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">
+            Verified from <code>mahahsscboard.in/en/studentAndSyllabus/hscGeneral</code>
+          </p>
+        </div>
+        <a href="{{ official_urls.maha_syllabus_hsc }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">
+          Verify HSC Portal ↗
+        </a>
+      </div>
+
+      {% if hsc_subjects %}
+      <div class="table-scroll-hint"><span>↔️ Swipe horizontally to view full catalogue</span></div>
+      <div class="table-responsive" role="region" tabindex="0" aria-label="MSBSHSE HSC Std 12 Subject Index Codes Table">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Subject Name (English)</th>
+              <th>Subject Name (Marathi / मराठी)</th>
+              <th>Official Category</th>
+              <th>Individual PDF Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for s in hsc_subjects %}
+            <tr>
+              <td><code>{{ s.code }}</code></td>
+              <td style="font-weight: 700; color: var(--primary);">{{ s.subject }}</td>
+              <td>{{ s.subject_mr }}</td>
+              <td style="font-size: 0.85rem;">{{ s.category }}</td>
+              <td style="font-size: 0.8rem; color: #64748b;">
+                Not hosted separately on board portal &bull; Refer SCERT / Balbharati
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      {% else %}
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.5rem; color: #64748b;">
+        No HSC subjects matched your active filter.
+      </div>
+      {% endif %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Disclaimer -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="disclaimer-callout" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; font-size: 0.8125rem; color: #64748b; line-height: 1.6;">
+        <strong style="color: var(--primary); display: block; margin-bottom: 0.35rem;">⚖️ MSBSHSE / SCERT / Balbharati Notice</strong>
+        StudySignal is independent and NOT affiliated with MSBSHSE Pune, SCERT Maharashtra, or Balbharati. Verify official curricula on <a href="{{ official_urls.maha_main }}" target="_blank" rel="noopener noreferrer" style="color: var(--brand-blue); text-decoration: underline;">mahahsscboard.in</a> and <a href="{{ official_urls.scert_maha_curriculum }}" target="_blank" rel="noopener noreferrer" style="color: var(--brand-blue); text-decoration: underline;">maa.ac.in</a>.
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

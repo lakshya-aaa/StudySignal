@@ -1,0 +1,2093 @@
+{
+  "metadata": {
+    "board": "Maharashtra State Board of Secondary and Higher Secondary Education (MSBSHSE)",
+    "board_mr": "महाराष्ट्र राज्य माध्यमिक व उच्च माध्यमिक शिक्षण मंडळ, पुणे",
+    "curriculum_authority": "SCERT Maharashtra (maa.ac.in) & Balbharati E-Books (books.ebalbharati.in)",
+    "official_source": "https://www.mahahsscboard.in/en/studentAndSyllabus/sscGeneral",
+    "last_verified": "2026-11-10",
+    "ssc_count": 114,
+    "hsc_count": 132,
+    "transparency_note": "MSBSHSE's official Strapi catalogue lists 114 SSC (Std. 10) and 132 HSC (Std. 12) subjects with official subject codes and categories, but individual subject syllabusPdf attachments are currently set to null (not uploaded) on mahahsscboard.in. Prescribed curriculum frameworks are published by SCERT Maharashtra (maa.ac.in) and official textbooks by Balbharati (books.ebalbharati.in)."
+  },
+  "curriculum_frameworks": [
+    {
+      "id": "maha-scf-se-2024",
+      "title": "State Curriculum Framework – School Education (SCF-SE 2024) | राज्य अभ्यासक्रम आराखडा शालेय शिक्षण 2024",
+      "authority": "SCERT Maharashtra (maa.ac.in)",
+      "class_scope": "Std. 1 to 12 (incl. SSC 10th & HSC 12th)",
+      "file_size": "2.39 MB",
+      "official_url": "https://www.maa.ac.in/documents/curriculum/1.pdf",
+      "last_verified": "2026-11-10"
+    },
+    {
+      "id": "maha-payabhut-1",
+      "title": "Foundational Learning Curriculum 2024 — Languages Part 1 (पायाभूत शिक्षण अभ्यासक्रम २०२४ भाषा भाग १)",
+      "authority": "SCERT Maharashtra (maa.ac.in)",
+      "class_scope": "Foundational Framework",
+      "file_size": "3.32 MB",
+      "official_url": "https://www.maa.ac.in/documents/curriculum/payabhut_01.pdf",
+      "last_verified": "2026-11-10"
+    },
+    {
+      "id": "maha-payabhut-2",
+      "title": "Foundational Learning Curriculum 2024 — Non-Language Part 2 (पायाभूत शिक्षण अभ्यासक्रम २०२४ भाषेतर भाग २)",
+      "authority": "SCERT Maharashtra (maa.ac.in)",
+      "class_scope": "Foundational Framework",
+      "file_size": "5.72 MB",
+      "official_url": "https://www.maa.ac.in/documents/curriculum/payabhut_02.pdf",
+      "last_verified": "2026-11-10"
+    },
+    {
+      "id": "maha-teacher-training-module",
+      "title": "Teacher Capacity Building 2.0 Training Module (शिक्षक क्षमता वृद्धी प्रशिक्षण २.० प्रशिक्षण घटकसंच)",
+      "authority": "SCERT Maharashtra (maa.ac.in)",
+      "class_scope": "Curriculum & Pedagogy Guide",
+      "file_size": "14.56 MB",
+      "official_url": "https://www.maa.ac.in/documents/curriculum/5.pdf",
+      "last_verified": "2026-11-10"
+    },
+    {
+      "id": "maha-balbharati-ebooks",
+      "title": "Balbharati Official E-Books & Class 10 / 12 Prescribed Textbooks Library (बालभारती ई-पुस्तक संग्रह)",
+      "authority": "Maharashtra State Bureau of Textbook Production & Curriculum Research (Balbharati)",
+      "class_scope": "Std. 10 (SSC) & Std. 12 (HSC) — All Mediums",
+      "file_size": "Official Portal",
+      "official_url": "https://books.ebalbharati.in/ebook.aspx",
+      "last_verified": "2026-11-10"
+    }
+  ],
+  "ssc_subjects": [
+    {
+      "id": 513,
+      "code": "J1",
+      "subject": "ELECTRICAL APPLIANCES",
+      "subject_mr": "इलेक्ट्रिकल उपकरणे",
+      "category": "DIVYANG SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 515,
+      "code": "J5",
+      "subject": "MILK & MILK PRODUCTS",
+      "subject_mr": "दूध आणि दुग्धजन्य पदार्थ",
+      "category": "DIVYANG SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 517,
+      "code": "J9",
+      "subject": "HAND EMBROIDERY",
+      "subject_mr": "हाताचे कसीदाकाम",
+      "category": "DIVYANG SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 519,
+      "code": "K1",
+      "subject": "STICHING WITH SEWING MACHINE",
+      "subject_mr": "शिवण मशीनसह शिवणकाम",
+      "category": "DIVYANG SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 521,
+      "code": "K5",
+      "subject": "DECORATIVE PIECES FROM WASTE",
+      "subject_mr": "कचऱ्यापासून सजावटीचे तुकडे",
+      "category": "DIVYANG SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 523,
+      "code": "L7",
+      "subject": "COOKERY",
+      "subject_mr": "स्वयंपाक",
+      "category": "DIVYANG SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 525,
+      "code": "M3",
+      "subject": "INDIAN MUSIC(VOCAL & INSTRU)",
+      "subject_mr": "भारतीय संगीत (गायन आणि वाद्य)",
+      "category": "DIVYANG SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 527,
+      "code": "M6",
+      "subject": "DRAWING & PAINTING",
+      "subject_mr": "रेखाटन आणि चित्रकला",
+      "category": "DIVYANG SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 529,
+      "code": "M7",
+      "subject": "PAPERWORK CARD BRD.& BK BIND",
+      "subject_mr": "कागदाचे काम, कार्ड बोर्ड आणि पुस्तक बांधणी",
+      "category": "DIVYANG SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 531,
+      "code": "P1",
+      "subject": "HEALTH & PHYSICAL EDUCATION",
+      "subject_mr": "आरोग्य आणि शारीरिक शिक्षण",
+      "category": "GRADE SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 533,
+      "code": "P2",
+      "subject": "SCOUTING/GUIDING",
+      "subject_mr": "स्काउटिंग/गाइडिंग",
+      "category": "GRADE SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 535,
+      "code": "P3",
+      "subject": "NCC/SEA CADET CORPS",
+      "subject_mr": "NCC/सी कॅडेट कोर",
+      "category": "GRADE SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 537,
+      "code": "P4",
+      "subject": "DEFENCE STUDIES",
+      "subject_mr": "संरक्षण अभ्यास",
+      "category": "GRADE SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 539,
+      "code": "P5",
+      "subject": "CIVIL DEFENCE & ROAD SAFETY",
+      "subject_mr": "नागरी संरक्षण आणि रस्ते सुरक्षा",
+      "category": "GRADE SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 541,
+      "code": "P6",
+      "subject": "SOCIAL SERVICE",
+      "subject_mr": "सामाजिक सेवा",
+      "category": "GRADE SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 543,
+      "code": "P7",
+      "subject": "VALUE EDUCATION",
+      "subject_mr": "मूल्य शिक्षण",
+      "category": "GRADE SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 545,
+      "code": "P8",
+      "subject": "GENERAL KNOWLEDGE",
+      "subject_mr": "सामान्य ज्ञान",
+      "category": "GRADE SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 547,
+      "code": "P9",
+      "subject": "SARVODAYA VICHAR",
+      "subject_mr": "सर्वोदय विचार",
+      "category": "GRADE SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 549,
+      "code": "R3",
+      "subject": "GREEN HOUSE",
+      "subject_mr": "हरितगृह",
+      "category": "GRADE SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 551,
+      "code": "R4",
+      "subject": "VOCATIONAL GUIDANCE",
+      "subject_mr": "व्यावसायिक मार्गदर्शन",
+      "category": "GRADE SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 553,
+      "code": "R6",
+      "subject": "PERSONALITY DEVELOPMENT",
+      "subject_mr": "व्यक्तिमत्व विकास",
+      "category": "GRADE SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 555,
+      "code": "R7",
+      "subject": "SELF DEVELOPMENT & ART APPRECIATION",
+      "subject_mr": "स्वतःचा विकास आणि कला प्रशंसा",
+      "category": "GRADE SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 557,
+      "code": "R8",
+      "subject": "WATER SECURITY",
+      "subject_mr": "जल सुरक्षा",
+      "category": "GRADE SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 559,
+      "code": "I1",
+      "subject": "ENGINEERING DRAWING",
+      "subject_mr": "अभियांत्रिकी रेखाटन",
+      "category": "I.T.I. SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 561,
+      "code": "I2",
+      "subject": "WORKSHOP SCI & CALCULATION",
+      "subject_mr": "कार्यशाळा विज्ञान आणि गणना",
+      "category": "I.T.I. SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 563,
+      "code": "I3",
+      "subject": "TRADE THEORY",
+      "subject_mr": "व्यापार सिद्धांत",
+      "category": "I.T.I. SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 565,
+      "code": "I4",
+      "subject": "EMPLOYBILITY SKILLS",
+      "subject_mr": "नोकरी कौशल्य",
+      "category": "I.T.I. SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 567,
+      "code": "I5",
+      "subject": "TRADE PRACTICAL",
+      "subject_mr": "व्यापार सराव",
+      "category": "I.T.I. SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 336,
+      "code": "01",
+      "subject": "MARATHI (1ST LANG)",
+      "subject_mr": "मराठी (पहिली भाषा)",
+      "category": "Language 1st",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 338,
+      "code": "02",
+      "subject": "HINDI (1ST LANG)",
+      "subject_mr": "हिंदी (पहिली भाषा)",
+      "category": "Language 1st",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 340,
+      "code": "03",
+      "subject": "ENGLISH (1ST LANG)",
+      "subject_mr": "इंग्रजी (पहिली भाषा)",
+      "category": "Language 1st",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 342,
+      "code": "04",
+      "subject": "URDU (1ST LANG)",
+      "subject_mr": "उर्दू (पहिली भाषा)",
+      "category": "Language 1st",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 344,
+      "code": "05",
+      "subject": "GUJARATI (1ST LANG)",
+      "subject_mr": "गुजराती (पहिली भाषा)",
+      "category": "Language 1st",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 346,
+      "code": "06",
+      "subject": "KANNADA (1ST LANG)",
+      "subject_mr": "कन्नड (पहिली भाषा)",
+      "category": "Language 1st",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 348,
+      "code": "07",
+      "subject": "TAMIL (1ST LANG)",
+      "subject_mr": "तमिळ (पहिली भाषा)",
+      "category": "Language 1st",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 350,
+      "code": "08",
+      "subject": "TELUGU (1ST LANG)",
+      "subject_mr": "तेलुगु (पहिली भाषा)",
+      "category": "Language 1st",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 352,
+      "code": "09",
+      "subject": "MALAYALAM (1ST LANG)",
+      "subject_mr": "मल्याळम (पहिली भाषा)",
+      "category": "Language 1st",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 354,
+      "code": "10",
+      "subject": "SINDHI (1ST LANG)",
+      "subject_mr": "सिंधी (पहिली भाषा)",
+      "category": "Language 1st",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 356,
+      "code": "11",
+      "subject": "BENGALI (1ST LANG)",
+      "subject_mr": "बंगाली (पहिली भाषा)",
+      "category": "Language 1st",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 358,
+      "code": "12",
+      "subject": "PUNJABI (1ST LANG)",
+      "subject_mr": "पंजाबी (पहिली भाषा)",
+      "category": "Language 1st",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 362,
+      "code": "16",
+      "subject": "MARATHI (2/3 LANG)",
+      "subject_mr": "मराठी (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 364,
+      "code": "17",
+      "subject": "ENGLISH (2/3 LANGUAGE)",
+      "subject_mr": "इंग्रजी (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 366,
+      "code": "18",
+      "subject": "URDU (2/3 LANGUAGE)",
+      "subject_mr": "उर्दू (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 368,
+      "code": "19",
+      "subject": "GUJARATI (2/3 LANGUAGE)",
+      "subject_mr": "गुजराती (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 370,
+      "code": "20",
+      "subject": "KANNADA (2/3 LANGUAGE)",
+      "subject_mr": "कन्नड (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 372,
+      "code": "21",
+      "subject": "TAMIL (2/3 LANGUAGE)",
+      "subject_mr": "तमिळ (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 374,
+      "code": "22",
+      "subject": "TELUGU (2/3 LANGUAGE)",
+      "subject_mr": "तेलुगू (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 376,
+      "code": "23",
+      "subject": "MALAYALAM (2/3 LANGUAGE)",
+      "subject_mr": "मल्याळम (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 378,
+      "code": "24",
+      "subject": "SINDHI (2/3 LANGUAGE)",
+      "subject_mr": "सिंधी (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 380,
+      "code": "25",
+      "subject": "BENGALI (2/3 LANGUAGE)",
+      "subject_mr": "बंगाली (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 382,
+      "code": "26",
+      "subject": "PUNJABI (2/3 LANG)",
+      "subject_mr": "पंजाबी (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 384,
+      "code": "27",
+      "subject": "SANSKRIT (2/3 LANGUAGE)",
+      "subject_mr": "संस्कृत (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 386,
+      "code": "28",
+      "subject": "PALI (2/3 LANGUAGE)",
+      "subject_mr": "पाली (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 388,
+      "code": "29",
+      "subject": "ARDHAMAGADHI (2/3 LANGUAGE)",
+      "subject_mr": "अर्धमागधी (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 390,
+      "code": "30",
+      "subject": "PERSIAN (2/3 LANGUAGE)",
+      "subject_mr": "पर्शियन (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 392,
+      "code": "31",
+      "subject": "ARABIC (2/3 LANGUAGE)",
+      "subject_mr": "अरबी (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 394,
+      "code": "32",
+      "subject": "AVESTA (2/3 LANGUAGE)",
+      "subject_mr": "अवेस्ता (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 396,
+      "code": "33",
+      "subject": "PAHALAVI (2/3 LANGUAGE)",
+      "subject_mr": "पहलवी (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 398,
+      "code": "34",
+      "subject": "GERMAN (2/3 LANGUAGE)",
+      "subject_mr": "जर्मन (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 400,
+      "code": "35",
+      "subject": "FRENCH (2/3 LANGUAGE)",
+      "subject_mr": "फ्रेंच (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 402,
+      "code": "36",
+      "subject": "RUSSIAN (2/3 LANGUAGE)",
+      "subject_mr": "रशियन (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 404,
+      "code": "AB",
+      "subject": "MARATHI-HINDI (2/3 LANGUAGE)",
+      "subject_mr": "मराठी-हिंदी (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 406,
+      "code": "AC",
+      "subject": "MARATHI-URDU (2/3 LANGUAGE)",
+      "subject_mr": "मराठी-उर्दू (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 408,
+      "code": "AD",
+      "subject": "MARATHI-SANSKRIT (2/3 LANGUAGE)",
+      "subject_mr": "मराठी-संस्कृत (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 410,
+      "code": "AE",
+      "subject": "MARATHI-PALI (2/3 LANGUAGE)",
+      "subject_mr": "मराठी-पाली (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 412,
+      "code": "AF",
+      "subject": "MARATHI-ARDHAMAGADHI(2/3LANGUAGE)",
+      "subject_mr": "मराठी-अर्धमागधी (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 414,
+      "code": "AG",
+      "subject": "MARATHI-ARABIC (2/3 LANGUAGE)",
+      "subject_mr": "मराठी-अरबी (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 416,
+      "code": "AH",
+      "subject": "MARATHI-PERSIAN (2/3 LANGUAGE)",
+      "subject_mr": "मराठी-पर्शियन (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 418,
+      "code": "AI",
+      "subject": "MARATHI-FRENCH (2/3 LANGUAGE)",
+      "subject_mr": "मराठी-फ्रेंच (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 420,
+      "code": "AJ",
+      "subject": "MARATHI-GERMAN (2/3 LANGUAGE)",
+      "subject_mr": "मराठी-जर्मन (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 422,
+      "code": "AK",
+      "subject": "MARATHI-RUSSIAN (2/3 LANGUAGE)",
+      "subject_mr": "मराठी-रशियन (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 424,
+      "code": "AQ",
+      "subject": "MARATHI-SINDHI (2/3 LANGUAGE)",
+      "subject_mr": "मराठी-सिंधी (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 426,
+      "code": "AS",
+      "subject": "MARATHI-BENGALI (2/3 LANGUAGE)",
+      "subject_mr": "मराठी-बंगाली (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 428,
+      "code": "BC",
+      "subject": "HINDI-URDU (2/3 LANGUAGE)",
+      "subject_mr": "हिंदी-उर्दू (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 430,
+      "code": "BD",
+      "subject": "HINDI-SANSKRIT (2/3 LANGUAGE)",
+      "subject_mr": "हिंदी-संस्कृत (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 432,
+      "code": "BE",
+      "subject": "HINDI-PALI (2/3 LANGUAGE)",
+      "subject_mr": "हिंदी-पाली (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 434,
+      "code": "BF",
+      "subject": "HINDI-ARDHAMAGADHI (2/3 LANGUAGE)",
+      "subject_mr": "हिंदी-अर्धमागधी (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 436,
+      "code": "BG",
+      "subject": "HINDI-ARABIC (2/3 LANGUAGE)",
+      "subject_mr": "हिंदी-अरबी (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 438,
+      "code": "BH",
+      "subject": "HINDI-PERSIAN (2/3 LANGUAGE)",
+      "subject_mr": "हिंदी-पर्शियन (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 440,
+      "code": "BI",
+      "subject": "HINDI-FRENCH (2/3 LANGUAGE)",
+      "subject_mr": "हिंदी-फ्रेंच (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 442,
+      "code": "BJ",
+      "subject": "HINDI-GERMAN (2/3 LANGUAGE)",
+      "subject_mr": "हिंदी-जर्मन (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 444,
+      "code": "BK",
+      "subject": "HINDI-RUSSIAN (2/3 LANGUAGE)",
+      "subject_mr": "हिंदी-रशियन (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 446,
+      "code": "BL",
+      "subject": "HINDI-KANNADA (2/3 LANGUAGE)",
+      "subject_mr": "हिंदी-कन्नड (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 449,
+      "code": "BM",
+      "subject": "HINDI-TAMIL (2/3 LANGUAGE)",
+      "subject_mr": "हिंदी-तमिळ (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 451,
+      "code": "BN",
+      "subject": "HINDI-TELUGU (2/3 LANGUAGE)",
+      "subject_mr": "हिंदी-तेलुगू (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 453,
+      "code": "BP",
+      "subject": "HINDI-MALAYALAM (2/3 LANGUAGE)",
+      "subject_mr": "हिंदी-मल्याळम (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 455,
+      "code": "BQ",
+      "subject": "HINDI-SINDHI (2/3 LANGUAGE)",
+      "subject_mr": "हिंदी-सिंधी (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 457,
+      "code": "BR",
+      "subject": "HINDI-PUNJABI (2/3 LANGUAGE)",
+      "subject_mr": "हिंदी-पंजाबी (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 459,
+      "code": "BS",
+      "subject": "HINDI-BENGALI (2/3 LANGUAGE)",
+      "subject_mr": "हिंदी-बंगाली (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 461,
+      "code": "BT",
+      "subject": "HINDI-GUJARATI (2/3 LANGUAGE)",
+      "subject_mr": "हिंदी-गुजराती (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 463,
+      "code": "CG",
+      "subject": "URDU-ARABIC (2/3 LANGUAGE)",
+      "subject_mr": "उर्दू-अरबी (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 467,
+      "code": "CH",
+      "subject": "URDU-PERSIAN (2/3 LANGuage)",
+      "subject_mr": "उर्दू-पर्शियन (दुसरी/तिसरी भाषा)",
+      "category": "Language 2/3",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 469,
+      "code": "71",
+      "subject": "MATHEMATICS",
+      "subject_mr": "गणित",
+      "category": "MATHS and SCIENCE",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 471,
+      "code": "72",
+      "subject": "SCIENCE & TECHNOLOGY",
+      "subject_mr": "विज्ञान आणि तंत्रज्ञान",
+      "category": "MATHS and SCIENCE",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 473,
+      "code": "73",
+      "subject": "SOCIAL SCIENCES",
+      "subject_mr": "सामाजिक विज्ञान",
+      "category": "MATHS and SCIENCE",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 475,
+      "code": "76",
+      "subject": "ARITHMETIC",
+      "subject_mr": "अंकगणित",
+      "category": "MATHS and SCIENCE",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 477,
+      "code": "77",
+      "subject": "PHYSIOLOGY HYGIENE & HOME SC",
+      "subject_mr": "शरीरशास्त्र, आरोग्य आणि गृहविज्ञान",
+      "category": "MATHS and SCIENCE",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 497,
+      "code": "91",
+      "subject": "MECHANICAL TECHNOLOGY",
+      "subject_mr": "मेकॅनिकल तंत्रज्ञान",
+      "category": "PRE-VOCATIONAL/NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 499,
+      "code": "92",
+      "subject": "ELECTRICAL TECHNOLOGY",
+      "subject_mr": "इलेक्ट्रिकल तंत्रज्ञान",
+      "category": "PRE-VOCATIONAL/NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 501,
+      "code": "93",
+      "subject": "ELECTRONICS TECHNOLOGY",
+      "subject_mr": "इलेक्ट्रॉनिक्स तंत्रज्ञान",
+      "category": "PRE-VOCATIONAL/NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 503,
+      "code": "94",
+      "subject": "ELECT. & H/W INSTALLATION TECH",
+      "subject_mr": "इलेक्ट्रिकल आणि हार्डवेअर इंस्टॉलेशन तंत्रज्ञान",
+      "category": "PRE-VOCATIONAL/NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 505,
+      "code": "95",
+      "subject": "POWER-CONSUMER ENERGY METER",
+      "subject_mr": "वीज-ग्राहक ऊर्जा मीटर",
+      "category": "PRE-VOCATIONAL/NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 507,
+      "code": "96",
+      "subject": "PHYSICAL ACTIVITY FACILITATOR",
+      "subject_mr": "शारीरिक क्रियाकलाप सुविधाकर्ता",
+      "category": "PRE-VOCATIONAL/NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 509,
+      "code": "97",
+      "subject": "APPARELS-SEWING MACHINE OPTR.",
+      "subject_mr": "कपडे-शिवण मशीन ऑपरेटर",
+      "category": "PRE-VOCATIONAL/NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 511,
+      "code": "98",
+      "subject": "PLUMBER-GENERAL",
+      "subject_mr": "प्लंबर-जनरल",
+      "category": "PRE-VOCATIONAL/NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 479,
+      "code": "X1",
+      "subject": "MULTI SKILL ASSISTANT TECH.",
+      "subject_mr": "मल्टी स्किल असिस्टंट तंत्रज्ञान",
+      "category": "PRE-VOCATIONAL/NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 481,
+      "code": "X2",
+      "subject": "AUTOMOTIVE SERVICE TECHNICIAN",
+      "subject_mr": "ऑटोमोटिव्ह सर्व्हिस तंत्रज्ञान",
+      "category": "PRE-VOCATIONAL/NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 483,
+      "code": "X3",
+      "subject": "STORE OPERATIONS ASSISTANT",
+      "subject_mr": "स्टोअर ऑपरेशन्स असिस्टंट",
+      "category": "PRE-VOCATIONAL/NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 485,
+      "code": "X4",
+      "subject": "ASSISTANT BEAUTY THERAPIST",
+      "subject_mr": "सहाय्यक सौंदर्यतज्ञ",
+      "category": "PRE-VOCATIONAL/NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 487,
+      "code": "X5",
+      "subject": "PHYSICIAL EDUCATION & SPORTS",
+      "subject_mr": "शारीरिक शिक्षण आणि क्रीडा",
+      "category": "PRE-VOCATIONAL/NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 489,
+      "code": "X6",
+      "subject": "TOURISM AND HOSPITALITY",
+      "subject_mr": "पर्यटन आणि आतिथ्य",
+      "category": "PRE-VOCATIONAL/NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 491,
+      "code": "X7",
+      "subject": "AGRICULTURE",
+      "subject_mr": "शेती",
+      "category": "PRE-VOCATIONAL/NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 493,
+      "code": "X8",
+      "subject": "ELECTRONICS AND HARDWARE",
+      "subject_mr": "इलेक्ट्रॉनिक्स आणि हार्डवेअर",
+      "category": "PRE-VOCATIONAL/NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 495,
+      "code": "X9",
+      "subject": "HEALTH CARE",
+      "subject_mr": "आरोग्य सेवा",
+      "category": "PRE-VOCATIONAL/NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    }
+  ],
+  "hsc_subjects": [
+    {
+      "id": 432,
+      "code": "A1",
+      "subject": "Electrical Maintenance",
+      "subject_mr": "इलेक्ट्रिकल देखभाल",
+      "category": "BI-FOCAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 434,
+      "code": "A2",
+      "subject": "Mechanical Maintenance",
+      "subject_mr": "मेकॅनिकल देखभाल",
+      "category": "BI-FOCAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 436,
+      "code": "A3",
+      "subject": "Scooter & Motorcycle Serv.",
+      "subject_mr": "स्कूटर आणि मोटारसायकल सर्व्हिसिंग",
+      "category": "BI-FOCAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 438,
+      "code": "A4",
+      "subject": "General Civil Engineering",
+      "subject_mr": "सामान्य सिव्हिल इंजिनिअरिंग",
+      "category": "BI-FOCAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 440,
+      "code": "A5",
+      "subject": "Banking",
+      "subject_mr": "बँकिंग",
+      "category": "BI-FOCAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 442,
+      "code": "A7",
+      "subject": "Office Management",
+      "subject_mr": "कार्यालय व्यवस्थापन",
+      "category": "BI-FOCAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 444,
+      "code": "A8",
+      "subject": "Marketing and Salesmanship",
+      "subject_mr": "विपणन आणि विक्रीकौशल्य",
+      "category": "BI-FOCAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 446,
+      "code": "A9",
+      "subject": "Small Industries and Self-emp.",
+      "subject_mr": "लघु उद्योग आणि स्वरोजगार",
+      "category": "BI-FOCAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 448,
+      "code": "B2",
+      "subject": "Animal Science and Dairying",
+      "subject_mr": "पशु विज्ञान आणि दुग्धव्यवसाय",
+      "category": "BI-FOCAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 450,
+      "code": "B4",
+      "subject": "Crop Science",
+      "subject_mr": "पीक विज्ञान",
+      "category": "BI-FOCAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 452,
+      "code": "B5",
+      "subject": "Horticulture",
+      "subject_mr": "बागायत",
+      "category": "BI-FOCAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 454,
+      "code": "B9",
+      "subject": "Fish Processing Technology",
+      "subject_mr": "मासे प्रक्रिया तंत्रज्ञान",
+      "category": "BI-FOCAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 456,
+      "code": "C1",
+      "subject": "Fresh Water Fish Culture",
+      "subject_mr": "ताज्या पाण्यातील मासेपालन",
+      "category": "BI-FOCAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 458,
+      "code": "C2",
+      "subject": "Electronics",
+      "subject_mr": "इलेक्ट्रॉनिक्स",
+      "category": "BI-FOCAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 460,
+      "code": "D9",
+      "subject": "Computer Science",
+      "subject_mr": "संगणक विज्ञान",
+      "category": "BI-FOCAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 322,
+      "code": "30",
+      "subject": "Health & Physical Education",
+      "subject_mr": "आरोग्य आणि शारीरिक शिक्षण",
+      "category": "COMPULSORY SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 324,
+      "code": "31",
+      "subject": "Env.Edu. & water security.",
+      "subject_mr": "पर्यावरण शिक्षण आणि जल सुरक्षा",
+      "category": "COMPULSORY SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 462,
+      "code": "EA/EB/EC",
+      "subject": "Electronics Technology",
+      "subject_mr": "इलेक्ट्रॉनिक्स तंत्रज्ञान",
+      "category": "HSC Vocational Subjects",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 464,
+      "code": "FA/FB/FC",
+      "subject": "Electrical Technology",
+      "subject_mr": "इलेक्ट्रिकल तंत्रज्ञान",
+      "category": "HSC Vocational Subjects",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 466,
+      "code": "GA/GB/GC",
+      "subject": "Automobile Technology",
+      "subject_mr": "ऑटोमोबाईल तंत्रज्ञान",
+      "category": "HSC Vocational Subjects",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 468,
+      "code": "HA/HB/HC",
+      "subject": "Construction Technology",
+      "subject_mr": "बांधकाम तंत्रज्ञान",
+      "category": "HSC Vocational Subjects",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 470,
+      "code": "IA/IB/IC",
+      "subject": "Mechanical Technology",
+      "subject_mr": "मेकॅनिकल तंत्रज्ञान",
+      "category": "HSC Vocational Subjects",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 472,
+      "code": "JA/JB/JC",
+      "subject": "Computer Technology",
+      "subject_mr": "संगणक तंत्रज्ञान",
+      "category": "HSC Vocational Subjects",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 475,
+      "code": "KA/KB/KC",
+      "subject": "Horticulture",
+      "subject_mr": "बागायत",
+      "category": "HSC Vocational Subjects",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 477,
+      "code": "LA/LB/LC",
+      "subject": "Crop Science",
+      "subject_mr": "पीक विज्ञान",
+      "category": "HSC Vocational Subjects",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 479,
+      "code": "MA/MB/MC",
+      "subject": "Animal Husbandry And Dairy",
+      "subject_mr": "पशुपालन आणि दुग्धव्यवसाय",
+      "category": "HSC Vocational Subjects",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 481,
+      "code": "NA/NB/NC",
+      "subject": "Fisheries Technology",
+      "subject_mr": "मत्स्य तंत्रज्ञान",
+      "category": "HSC Vocational Subjects",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 483,
+      "code": "OA/OB/OC",
+      "subject": "Medical Laboratory Tech.",
+      "subject_mr": "वैद्यकीय प्रयोगशाळा तंत्रज्ञान",
+      "category": "HSC Vocational Subjects",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 485,
+      "code": "PA/PB/PC",
+      "subject": "Radiology Technician",
+      "subject_mr": "रेडिओलॉजी तंत्रज्ञान",
+      "category": "HSC Vocational Subjects",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 487,
+      "code": "QA/QB/QC",
+      "subject": "Child Old Age & Hlt. Care",
+      "subject_mr": "बाल, वृद्ध आणि आरोग्य सेवा",
+      "category": "HSC Vocational Subjects",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 489,
+      "code": "RA/RB/RC",
+      "subject": "Ophthalmic Technician",
+      "subject_mr": "नेत्रतज्ञ तंत्रज्ञान",
+      "category": "HSC Vocational Subjects",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 491,
+      "code": "SA/SB/SC",
+      "subject": "Food Products Technology",
+      "subject_mr": "अन्न उत्पादने तंत्रज्ञान",
+      "category": "HSC Vocational Subjects",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 493,
+      "code": "TA/TB/TC",
+      "subject": "Tourism And Hospitality Man.",
+      "subject_mr": "पर्यटन आणि आतिथ्य व्यवस्थापन",
+      "category": "HSC Vocational Subjects",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 495,
+      "code": "UA/UB/UC",
+      "subject": "Accounting And Off. Mangmnt.",
+      "subject_mr": "लेखा आणि कार्यालय व्यवस्थापन",
+      "category": "HSC Vocational Subjects",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 497,
+      "code": "VA/VB/VC",
+      "subject": "Marketing And Retail Managementt.",
+      "subject_mr": "विपणन आणि किरकोळ व्यवस्थापन",
+      "category": "HSC Vocational Subjects",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 499,
+      "code": "WA/WB/WC",
+      "subject": "Logistics Supply Management.",
+      "subject_mr": "लॉजिस्टिक्स आणि पुरवठा व्यवस्थापन",
+      "category": "HSC Vocational Subjects",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 501,
+      "code": "XA/XB/XC",
+      "subject": "Banking Fin. Serv and Insur.",
+      "subject_mr": "बँकिंग, आर्थिक सेवा आणि विमा",
+      "category": "HSC Vocational Subjects",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 288,
+      "code": "01",
+      "subject": "English",
+      "subject_mr": "इंग्रजी",
+      "category": "Languages",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 290,
+      "code": "02",
+      "subject": "Marathi",
+      "subject_mr": "मराठी",
+      "category": "Languages",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 292,
+      "code": "03",
+      "subject": "Gujarati",
+      "subject_mr": "गुजराती",
+      "category": "Languages",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 294,
+      "code": "04",
+      "subject": "Hindi",
+      "subject_mr": "हिंदी",
+      "category": "Languages",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 296,
+      "code": "05",
+      "subject": "Urdu",
+      "subject_mr": "उर्दू",
+      "category": "Languages",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 298,
+      "code": "06",
+      "subject": "Kannada",
+      "subject_mr": "कन्नड",
+      "category": "Languages",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 300,
+      "code": "07",
+      "subject": "Sindhi",
+      "subject_mr": "सिंधी",
+      "category": "Languages",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 302,
+      "code": "08",
+      "subject": "Malayalam",
+      "subject_mr": "मल्याळम",
+      "category": "Languages",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 304,
+      "code": "09",
+      "subject": "Tamil",
+      "subject_mr": "तमिळ",
+      "category": "Languages",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 306,
+      "code": "10",
+      "subject": "Telugu",
+      "subject_mr": "तेलुगू",
+      "category": "Languages",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 308,
+      "code": "11",
+      "subject": "Punjabi",
+      "subject_mr": "पंजाबी",
+      "category": "Languages",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 310,
+      "code": "12",
+      "subject": "Bengali",
+      "subject_mr": "बंगाली",
+      "category": "Languages",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 312,
+      "code": "13",
+      "subject": "French",
+      "subject_mr": "फ्रेंच",
+      "category": "Languages",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 314,
+      "code": "14",
+      "subject": "German",
+      "subject_mr": "जर्मन",
+      "category": "Languages",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 316,
+      "code": "20",
+      "subject": "Russian",
+      "subject_mr": "रशियन",
+      "category": "Languages",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 318,
+      "code": "21",
+      "subject": "Japanese",
+      "subject_mr": "जपानी",
+      "category": "Languages",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 320,
+      "code": "87",
+      "subject": "Avesta Pahalavi",
+      "subject_mr": "अवेस्ता पहलवी",
+      "category": "Languages",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 507,
+      "code": "E2",
+      "subject": "MULTI SKILL (GENERAL ENGG)",
+      "subject_mr": "मल्टी स्किल (सामान्य अभियांत्रिकी)",
+      "category": "NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 509,
+      "code": "E3",
+      "subject": "MULTI SKILL (ELECTRICAL)",
+      "subject_mr": "मल्टी स्किल (इलेक्ट्रिकल)",
+      "category": "NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 511,
+      "code": "E4",
+      "subject": "MULTI SKILL (GARDENING )",
+      "subject_mr": "मल्टी स्किल (बागकाम)",
+      "category": "NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 513,
+      "code": "E5",
+      "subject": "ELECTRONIC & HARDWARE TECH",
+      "subject_mr": "इलेक्ट्रॉनिक आणि हार्डवेअर तंत्रज्ञान",
+      "category": "NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 515,
+      "code": "E6",
+      "subject": "MULTISKILL(FOOD PROCESSING)",
+      "subject_mr": "मल्टी स्किल (अन्न प्रक्रिया)",
+      "category": "NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 503,
+      "code": "F6",
+      "subject": "ELECTRONICS-FIELD TECH.",
+      "subject_mr": "इलेक्ट्रॉनिक्स-फील्ड तंत्रज्ञान",
+      "category": "NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 505,
+      "code": "F8",
+      "subject": "POWER DISTRIBUTION LINEMAN",
+      "subject_mr": "वीज वितरण लाइनमॅन",
+      "category": "NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 517,
+      "code": "G1",
+      "subject": "SPCL. SEWING MACHINE OPTR.",
+      "subject_mr": "विशेष शिवण मशीन ऑपरेटर",
+      "category": "NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 519,
+      "code": "G2",
+      "subject": "PLUMBER GENERAL - II",
+      "subject_mr": "प्लंबर जनरल - II",
+      "category": "NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 521,
+      "code": "G3",
+      "subject": "AUTOMOTIVE SERVICE TECH.",
+      "subject_mr": "ऑटोमोटिव्ह सर्व्हिस तंत्रज्ञान",
+      "category": "NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 523,
+      "code": "G4",
+      "subject": "RETAIL-SALES ASSOCIATE",
+      "subject_mr": "किरकोळ विक्री सहयोगी",
+      "category": "NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 525,
+      "code": "G5",
+      "subject": "HEALTHCARE GEN DUTY ASST",
+      "subject_mr": "आरोग्य सेवा सहाय्यक",
+      "category": "NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 527,
+      "code": "G6",
+      "subject": "BEAUTY THERAPIST",
+      "subject_mr": "सौंदर्यतज्ञ",
+      "category": "NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 529,
+      "code": "G7",
+      "subject": "SPORTS-PHYSICAL TRAINER",
+      "subject_mr": "क्रीडा-शारीरिक प्रशिक्षक",
+      "category": "NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 531,
+      "code": "G8",
+      "subject": "AGRICULTURE-MICRO IRR .TECH",
+      "subject_mr": "कृषी-सूक्ष्म सिंचन तंत्रज्ञान",
+      "category": "NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 533,
+      "code": "G9",
+      "subject": "TOURISM & HOSPITALITY",
+      "subject_mr": "पर्यटन आणि आतिथ्य",
+      "category": "NSQF SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 535,
+      "code": "80",
+      "subject": "Stenography",
+      "subject_mr": "स्टेनोग्राफी",
+      "category": "OCCUPATIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 537,
+      "code": "85",
+      "subject": "Library & Information Sci",
+      "subject_mr": "ग्रंथालय आणि माहितीशास्त्र",
+      "category": "OCCUPATIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 539,
+      "code": "89",
+      "subject": "Stenography - Marathi",
+      "subject_mr": "स्टेनोग्राफी - मराठी",
+      "category": "OCCUPATIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 326,
+      "code": "16",
+      "subject": "Ardhamagadhi",
+      "subject_mr": "अर्धमागधी",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 328,
+      "code": "22",
+      "subject": "English Literature",
+      "subject_mr": "इंग्रजी साहित्य",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 330,
+      "code": "23",
+      "subject": "Marathi Literature",
+      "subject_mr": "मराठी साहित्य",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 332,
+      "code": "24",
+      "subject": "Hindi Applied",
+      "subject_mr": "हिंदी व्यावहारिक",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 334,
+      "code": "25",
+      "subject": "Spanish",
+      "subject_mr": "स्पॅनिश",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 336,
+      "code": "26",
+      "subject": "Chinese",
+      "subject_mr": "चायनीज",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 338,
+      "code": "27",
+      "subject": "Maharashtri Prakrut",
+      "subject_mr": "महाराष्ट्री प्राकृत",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 340,
+      "code": "32",
+      "subject": "General Knowledge",
+      "subject_mr": "सामान्य ज्ञान",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 342,
+      "code": "33",
+      "subject": "Sanskrit",
+      "subject_mr": "संस्कृत",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 344,
+      "code": "35",
+      "subject": "Pali",
+      "subject_mr": "पाली",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 346,
+      "code": "36",
+      "subject": "Arabic",
+      "subject_mr": "अरबी",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 348,
+      "code": "37",
+      "subject": "Persian",
+      "subject_mr": "पर्शियन",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 350,
+      "code": "38",
+      "subject": "History",
+      "subject_mr": "इतिहास",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 352,
+      "code": "39",
+      "subject": "Geography",
+      "subject_mr": "भूगोल",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 354,
+      "code": "40",
+      "subject": "Mathematics & Statistics (For Arts and Science)",
+      "subject_mr": "गणित आणि सांख्यिकी (कला आणि विज्ञान शाखेसाठी)",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 356,
+      "code": "41",
+      "subject": "Geology",
+      "subject_mr": "भूशास्त्र",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 358,
+      "code": "42",
+      "subject": "Political Science",
+      "subject_mr": "राज्यशास्त्र",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 360,
+      "code": "43",
+      "subject": "Child Development",
+      "subject_mr": "बालविकास",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 362,
+      "code": "44",
+      "subject": "Textiles",
+      "subject_mr": "वस्त्रोद्योग",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 364,
+      "code": "45",
+      "subject": "Sociology",
+      "subject_mr": "समाजशास्त्र",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 366,
+      "code": "46",
+      "subject": "Philosophy",
+      "subject_mr": "तत्त्वज्ञान",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 368,
+      "code": "47",
+      "subject": "Logic",
+      "subject_mr": "तर्कशास्त्र",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 370,
+      "code": "48",
+      "subject": "Psychology",
+      "subject_mr": "मानसशास्त्र",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 372,
+      "code": "49",
+      "subject": "Economics",
+      "subject_mr": "अर्थशास्त्र",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 374,
+      "code": "50",
+      "subject": "Book Keeping & Accountancy",
+      "subject_mr": "लेखाशास्त्र",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 376,
+      "code": "51",
+      "subject": "Organization of Comm. & Mgmt.",
+      "subject_mr": "व्यवसाय संघटना आणि व्यवस्थापन",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 378,
+      "code": "52",
+      "subject": "Secretarial Practice",
+      "subject_mr": "सचिवीय सराव",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 380,
+      "code": "53",
+      "subject": "Co-operation",
+      "subject_mr": "सहकार",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 382,
+      "code": "54",
+      "subject": "Physics",
+      "subject_mr": "भौतिकशास्त्र",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 384,
+      "code": "55",
+      "subject": "Chemistry",
+      "subject_mr": "रसायनशास्त्र",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 386,
+      "code": "56",
+      "subject": "Biology",
+      "subject_mr": "जीवशास्त्र",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 388,
+      "code": "57",
+      "subject": "Drawing",
+      "subject_mr": "रेखाटन",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 390,
+      "code": "58",
+      "subject": "Design & Colour",
+      "subject_mr": "डिझाइन आणि रंग",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 392,
+      "code": "59",
+      "subject": "Pictorial Composition",
+      "subject_mr": "चित्रात्मक रचना",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 394,
+      "code": "60",
+      "subject": "History of Arts & Apprec.",
+      "subject_mr": "कला इतिहास आणि मूल्यमापन",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 396,
+      "code": "61",
+      "subject": "Home Management",
+      "subject_mr": "गृहव्यवस्था",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 398,
+      "code": "62",
+      "subject": "Food Science and Technology",
+      "subject_mr": "अन्न विज्ञान आणि तंत्रज्ञान",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 400,
+      "code": "65",
+      "subject": "Hist. & Dev. of Indian Music",
+      "subject_mr": "भारतीय संगीताचा इतिहास आणि विकास",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 402,
+      "code": "66",
+      "subject": "Vocal Light Music",
+      "subject_mr": "सुगम संगीत",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 404,
+      "code": "67",
+      "subject": "Vocal Classical Music",
+      "subject_mr": "शास्त्रीय संगीत",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 406,
+      "code": "68",
+      "subject": "Instrumental Music",
+      "subject_mr": "वाद्य संगीत",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 408,
+      "code": "69",
+      "subject": "Percussion",
+      "subject_mr": "तालवाद्य",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 410,
+      "code": "73",
+      "subject": "European Music",
+      "subject_mr": "युरोपियन संगीत",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 412,
+      "code": "75",
+      "subject": "Agriculture Science & Tech.",
+      "subject_mr": "कृषी विज्ञान आणि तंत्रज्ञान",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 414,
+      "code": "76",
+      "subject": "Animal Science & Tech.",
+      "subject_mr": "पशु विज्ञान आणि तंत्रज्ञान",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 416,
+      "code": "77",
+      "subject": "Defence Studies",
+      "subject_mr": "संरक्षण अभ्यास",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 418,
+      "code": "78",
+      "subject": "Education",
+      "subject_mr": "शिक्षण",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 420,
+      "code": "88",
+      "subject": "Maths & Stat. (Commerce)",
+      "subject_mr": "गणित आणि सांख्यिकी (वाणिज्य)",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 422,
+      "code": "90",
+      "subject": "General Foundation Course",
+      "subject_mr": "सामान्य पाया अभ्यासक्रम",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 424,
+      "code": "91",
+      "subject": "Dancing Theory",
+      "subject_mr": "नृत्य सिद्धांत",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 426,
+      "code": "97",
+      "subject": "Information Technology (Sci)",
+      "subject_mr": "माहिती तंत्रज्ञान (विज्ञान)",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 428,
+      "code": "98",
+      "subject": "Information Technology (Art)",
+      "subject_mr": "माहिती तंत्रज्ञान (कला)",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 430,
+      "code": "99",
+      "subject": "Information Technology (Com)",
+      "subject_mr": "माहिती तंत्रज्ञान (वाणिज्य)",
+      "category": "OPTIONAL SUBJECTS",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 541,
+      "code": "I1",
+      "subject": "ENGINEERING DRAWING",
+      "subject_mr": "अभियांत्रिकी रेखाटन",
+      "category": "Technical Science subjects",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 543,
+      "code": "I2",
+      "subject": "WORKSHOP SCI & CALCULATION",
+      "subject_mr": "कार्यशाळा विज्ञान आणि गणना",
+      "category": "Technical Science subjects",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 545,
+      "code": "I3",
+      "subject": "TRADE THEORY",
+      "subject_mr": "व्यापार सिद्धांत",
+      "category": "Technical Science subjects",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 547,
+      "code": "I4",
+      "subject": "EMPLOYBILITY SKILLS",
+      "subject_mr": "नोकरी कौशल्य",
+      "category": "Technical Science subjects",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 549,
+      "code": "I5",
+      "subject": "TRADE PRACTICAL",
+      "subject_mr": "व्यापार सराव",
+      "category": "Technical Science subjects",
+      "syllabus_pdf_hosted": false
+    },
+    {
+      "id": 551,
+      "code": "I6",
+      "subject": "ITI-6",
+      "subject_mr": "ITI-6",
+      "category": "Technical Science subjects",
+      "syllabus_pdf_hosted": false
+    }
+  ],
+  "featured_items": [
+    {
+      "id": "maha-scf-se-featured",
+      "class": "10",
+      "course": "SSC / HSC",
+      "subject": "Maharashtra SCF-SE 2024 Curriculum Framework",
+      "code": "SCF-2024",
+      "stream": "SCERT Maharashtra",
+      "academic_year": "2026-27",
+      "title": "State Curriculum Framework – School Education (SCF-SE 2024)",
+      "description": "Official curriculum policy & stage framework published by SCERT Maharashtra (maa.ac.in) governing Maharashtra schools.",
+      "official_url": "https://www.maa.ac.in/documents/curriculum/1.pdf",
+      "verification_status": "verified_official",
+      "is_official": true,
+      "last_verified": "2026-11-10"
+    },
+    {
+      "id": "maha-ssc-subject-directory",
+      "class": "10",
+      "course": "SSC (Std. 10)",
+      "subject": "MSBSHSE SSC 114 Official Subjects & Index Codes",
+      "code": "SSC-114",
+      "stream": "Std. 10th General & NSQF",
+      "academic_year": "2026-27",
+      "title": "MSBSHSE SSC (Class 10) Complete Subject & Code Catalogue (114 Subjects)",
+      "description": "Official subject index codes verified from mahahsscboard.in (First/2nd/3rd Languages, Maths, Science, Social Sciences, Divyang & NSQF).",
+      "official_url": "https://www.maa.ac.in/documents/curriculum/1.pdf",
+      "verification_status": "verified_official",
+      "is_official": true,
+      "last_verified": "2026-11-10"
+    },
+    {
+      "id": "maha-hsc-subject-directory",
+      "class": "12",
+      "course": "HSC (Std. 12)",
+      "subject": "MSBSHSE HSC 132 Official Subjects & Streams",
+      "code": "HSC-132",
+      "stream": "Science, Commerce, Arts & Bifocal",
+      "academic_year": "2026-27",
+      "title": "MSBSHSE HSC (Class 12) Complete Subject & Code Catalogue (132 Subjects)",
+      "description": "Official Std. 12 subject catalogue verified from mahahsscboard.in across Compulsory, Science, Commerce, Arts, Bifocal & Vocational streams.",
+      "official_url": "https://www.maa.ac.in/documents/curriculum/1.pdf",
+      "verification_status": "verified_official",
+      "is_official": true,
+      "last_verified": "2026-11-10"
+    },
+    {
+      "id": "maha-balbharati-featured",
+      "class": "12",
+      "course": "Std. 10 & 12",
+      "subject": "Balbharati Official E-Textbooks (All Mediums)",
+      "code": "EBAL",
+      "stream": "English / Marathi / Hindi / Urdu",
+      "academic_year": "2026-27",
+      "title": "Maharashtra State Balbharati Prescribed E-Textbooks Library",
+      "description": "Direct free official access to Balbharati textbooks for Std. 10 SSC and Std. 12 HSC subjects on books.ebalbharati.in.",
+      "official_url": "https://books.ebalbharati.in/ebook.aspx",
+      "verification_status": "verified_official",
+      "is_official": true,
+      "last_verified": "2026-11-10"
+    }
+  ]
+}

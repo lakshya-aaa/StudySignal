@@ -1,0 +1,276 @@
+{
+  "board_name": "Maharashtra State Board of Secondary and Higher Secondary Education (MSBSHSE)",
+  "board_name_mr": "महाराष्ट्र राज्य माध्यमिक व उच्च माध्यमिक शिक्षण मंडळ, पुणे",
+  "official_portal": "https://www.mahahsscboard.in/en",
+  "status_2027": "confirmed",
+  "status_label_2027": "Official Feb–Mar 2027 Timetable Confirmed",
+  "published_date": "2026-11-07",
+  "published_date_label": "07 November 2026",
+  "last_checked": "2026-11-10",
+  "last_checked_label": "10 November 2026",
+  "official_board_note": "Signed by Secretary, MSBSHSE Pune. Printed timetables distributed to schools/junior colleges before the examination shall be treated as final; verify seat-number wise exact paper timing with your school/college.",
+  "shifts": {
+    "first_half": "First Half (प्रथम सत्र): 11:00 AM to 02:00 PM (2-hr composite/science/maths papers: 11:00 AM – 01:00 PM)",
+    "second_half": "Second Half (द्वितीय सत्र): 03:00 PM to 06:00 PM (select 2.5-hr papers end at 05:30 PM)"
+  },
+  "classes": {
+    "10": {
+      "class_name": "SSC (Std. 10 — Secondary School Certificate)",
+      "class_name_mr": "माध्यमिक शालान्त प्रमाणपत्र परीक्षा (इ. १० वी) फेब्रुवारी-मार्च २०२७",
+      "exam_window": "Monday, 15 February 2027 to Monday, 15 March 2027",
+      "pdf_en": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/SSC_FEB_MAR_2027_TIME_TABLE_83eb2aa660.pdf",
+      "pdf_mr": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/SSC_FEB_MAR_2027_TIME_TABLE_c29334594b.pdf",
+      "pdf_size": "2.34 MB (6 pages)",
+      "schedule_items": [
+        {
+          "date": "15 Feb 2027",
+          "day": "Monday",
+          "first_half": "First Language: Marathi (01), Hindi (02), Urdu (04), Gujarati (05), Kannada (06), Tamil (07), Telugu (08), Malayalam (09), Sindhi (10), Bengali (11), Punjabi (12) [11:00 AM–2:00 PM]",
+          "second_half": "Second/Third Lang: German (34), French (35) [3:00–6:00 PM]"
+        },
+        {
+          "date": "16 Feb 2027",
+          "day": "Tuesday",
+          "first_half": "Pre-Vocational & NSQF Subjects (X1–X9, 91–99 incl. IT-ITeS, Mechanical, Electrical, Electronics, Beauty, Tourism) [11:00 AM–2:00 PM]",
+          "second_half": "---"
+        },
+        {
+          "date": "18 Feb 2027",
+          "day": "Thursday",
+          "first_half": "Second/Third Language: Marathi (16), Kannada (20), Tamil (21), Telugu (22), Malayalam (23), Sindhi (24), Bengali (25), Punjabi (26) [11–2 PM]; Marathi Composite (A) [11 AM–1 PM]",
+          "second_half": "---"
+        },
+        {
+          "date": "20 Feb 2027",
+          "day": "Saturday",
+          "first_half": "Second/Third Language: Urdu (18), Gujarati (19), Sanskrit (27), Pali (28), Ardhamagadhi (29), Persian (30), Arabic (31), Avesta (32), Pahalavi (33), Russian (36) [11:00 AM–2:00 PM]",
+          "second_half": "---"
+        },
+        {
+          "date": "22 Feb 2027",
+          "day": "Monday",
+          "first_half": "First Language English (03) & Third Language English (17) [11:00 AM–2:00 PM]",
+          "second_half": "---"
+        },
+        {
+          "date": "24 Feb 2027",
+          "day": "Wednesday",
+          "first_half": "Second/Third Language Hindi (15) [11:00 AM–2:00 PM]; Hindi Composite (B) [11:00 AM–1:00 PM]",
+          "second_half": "---"
+        },
+        {
+          "date": "26 Feb 2027",
+          "day": "Friday",
+          "first_half": "Composite Courses (C–T): Urdu, Sanskrit, Pali, Ardhamagadhi, Arabic, Persian, French, German, Russian, Kannada, Tamil, Telugu, Malayalam, Sindhi, Punjabi, Bengali, Gujarati [11:00 AM–1:00 PM]",
+          "second_half": "---"
+        },
+        {
+          "date": "02 Mar 2027",
+          "day": "Tuesday",
+          "first_half": "Mathematics Part-I: Algebra (71) [11:00 AM–1:00 PM]; Arithmetic for Eligible Divyang Candidates (76) [11:00 AM–1:00 PM]",
+          "second_half": "---"
+        },
+        {
+          "date": "04 Mar 2027",
+          "day": "Thursday",
+          "first_half": "Mathematics Part-II: Geometry (71) [11:00 AM–1:00 PM]",
+          "second_half": "---"
+        },
+        {
+          "date": "08 Mar 2027",
+          "day": "Monday",
+          "first_half": "Science and Technology Part-I (72) [11:00 AM–1:00 PM]; Physiology, Hygiene & Home Science for Divyang (77) [11:00 AM–1:30 PM]",
+          "second_half": "---"
+        },
+        {
+          "date": "11 Mar 2027",
+          "day": "Thursday",
+          "first_half": "Science and Technology Part-II (72) [11:00 AM–1:00 PM]",
+          "second_half": "---"
+        },
+        {
+          "date": "13 Mar 2027",
+          "day": "Saturday",
+          "first_half": "Social Sciences Paper-I: History and Political Science (73) [11:00 AM–1:00 PM]",
+          "second_half": "---"
+        },
+        {
+          "date": "15 Mar 2027",
+          "day": "Monday",
+          "first_half": "Social Sciences Paper-II: Geography (73) [11:00 AM–1:00 PM]",
+          "second_half": "---"
+        }
+      ]
+    },
+    "12": {
+      "class_name": "HSC (Std. 12 — General, Bifocal & Vocational)",
+      "class_name_mr": "उच्च माध्यमिक प्रमाणपत्र परीक्षा (इ. १२ वी) फेब्रुवारी-मार्च २०२७",
+      "exam_window": "General & Bifocal: 08 Feb – 11 Mar 2027 (IT Online: 12, 13, 15 Mar; GK Online: 16–18 Mar 2027) | Vocational: 08 Feb – 09 Mar 2027",
+      "pdf_gen_en": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/HSC_GENERAL_and_BIFOCAL_FEB_MAR_2027_TIME_TABLE_d9fad25a03.pdf",
+      "pdf_gen_mr": "https://state-board-strapi-upload.blr1.digitaloceanspaces.com/HSC_GENERAL_and_BIFOCAL_FEB_MAR_2027_TIME_TABLE_90ca655152.pdf",
+      "pdf_gen_size": "4.51 MB (12 pages)",
+      "pdf_voc_en": "https://blr1.digitaloceanspaces.com/state-board-strapi-upload/HSC_VOCATIONAL_FEB_MAR_2027_TIME_TABLE_b0b01eb232.pdf",
+      "pdf_voc_mr": "https://blr1.digitaloceanspaces.com/state-board-strapi-upload/HSC_VOCATIONAL_FEB_MAR_2027_TIME_TABLE_ebf045e3fd.pdf",
+      "pdf_voc_size": "5.26 MB (15 pages)",
+      "online_note": "Information Technology (IT) Online Exam: 12, 13 & 15 March 2027 (Morning 11:00 AM–1:30 PM & Afternoon 3:00–5:30 PM). General Knowledge (GK) Online Exam: 16, 17 & 18 March 2027 (Morning 11:00 AM–1:00 PM & Afternoon 3:00–5:00 PM).",
+      "schedule_items": [
+        {
+          "date": "08 Feb 2027",
+          "day": "Monday",
+          "first_half": "English (01) [11:00 AM–2:00 PM]",
+          "second_half": "---"
+        },
+        {
+          "date": "09 Feb 2027",
+          "day": "Tuesday",
+          "first_half": "Hindi (04) [11:00 AM–2:00 PM]",
+          "second_half": "German (14), Japanese (21), Chinese (26), Persian (37) [3:00–6:00 PM]"
+        },
+        {
+          "date": "10 Feb 2027",
+          "day": "Wednesday",
+          "first_half": "Marathi (02), Gujarati (03), Kannada (06), Sindhi (07), Malayalam (08), Tamil (09), Telugu (10), Punjabi (11), Bengali (12)",
+          "second_half": "Urdu (05), French (13), Spanish (25), Pali (35) [3:00–6:00 PM]"
+        },
+        {
+          "date": "11 Feb 2027",
+          "day": "Thursday",
+          "first_half": "Maharashtri Prakrut (27), Sanskrit (33)",
+          "second_half": "Ardhamagadhi (16), Russian (20), Arabic (36) [3:00–6:00 PM]"
+        },
+        {
+          "date": "12 Feb 2027",
+          "day": "Friday",
+          "first_half": "Logic (47), Physics (54) [11:00 AM–2:00 PM]",
+          "second_half": "---"
+        },
+        {
+          "date": "13 Feb 2027",
+          "day": "Saturday",
+          "first_half": "Organization of Commerce & Management / OCM (51) [11:00 AM–2:00 PM]",
+          "second_half": "---"
+        },
+        {
+          "date": "15 Feb 2027",
+          "day": "Monday",
+          "first_half": "---",
+          "second_half": "Secretarial Practice (52), Home Management (61), Education (78) [3:00–6:00 PM]"
+        },
+        {
+          "date": "16 Feb 2027",
+          "day": "Tuesday",
+          "first_half": "Chemistry (55) [11:00 AM–2:00 PM]",
+          "second_half": "Political Science (42) [3:00–6:00 PM]"
+        },
+        {
+          "date": "17 Feb 2027",
+          "day": "Wednesday",
+          "first_half": "Economics (49) [11:00 AM–2:00 PM]",
+          "second_half": "---"
+        },
+        {
+          "date": "18 Feb 2027",
+          "day": "Thursday",
+          "first_half": "Child Development (43), Agriculture Sci & Tech (75), Animal Sci & Tech (76)",
+          "second_half": "---"
+        },
+        {
+          "date": "20 Feb 2027",
+          "day": "Saturday",
+          "first_half": "Mathematics & Statistics (A/S: 40, C: 88) [11:00 AM–2:00 PM]",
+          "second_half": "Percussion Instruments (69) [3:00–5:30 PM]"
+        },
+        {
+          "date": "22 Feb 2027",
+          "day": "Monday",
+          "first_half": "Geology (41) [11:00 AM–2:00 PM]",
+          "second_half": "Co-operation (53) [3:00–6:00 PM]"
+        },
+        {
+          "date": "23 Feb 2027",
+          "day": "Tuesday",
+          "first_half": "Biology (56), History & Dev. of Indian Music (65) [11:00 AM–2:00 PM]",
+          "second_half": "---"
+        },
+        {
+          "date": "24 Feb 2027",
+          "day": "Wednesday",
+          "first_half": "Food Science & Technology (62) [11:00 AM–2:00 PM]",
+          "second_half": "Philosophy (46), History of Art & Appreciation (60) [3:00–6:00 PM]"
+        },
+        {
+          "date": "25 Feb 2027",
+          "day": "Thursday",
+          "first_half": "Book Keeping & Accountancy (50) [11:00 AM–2:00 PM]",
+          "second_half": "Textiles (44) [3:00–6:00 PM]"
+        },
+        {
+          "date": "26 Feb 2027",
+          "day": "Friday",
+          "first_half": "---",
+          "second_half": "Defence Studies (77) [3:00–6:00 PM]"
+        },
+        {
+          "date": "27 Feb 2027",
+          "day": "Saturday",
+          "first_half": "Psychology (48) [11:00 AM–2:00 PM]",
+          "second_half": "---"
+        },
+        {
+          "date": "02 Mar 2027",
+          "day": "Tuesday",
+          "first_half": "Vocational / Skill Trades E3, E6, F6, F8, G1–G9",
+          "second_half": "Bifocal Paper-I: Electrical Maint. (A1), Mechanical Maint. (A2), Scooter & MC (A3) [3:00–5:30 PM]; Civil (A4), Electronics (C2), Computer Science (D9), Commerce Banking/Office/Marketing/Small Ind. (A5, A7, A8, A9), Agri/Fishery Paper-I [3:00–6:00 PM]"
+        },
+        {
+          "date": "03 Mar 2027",
+          "day": "Wednesday",
+          "first_half": "Geography (39) [11:00 AM–2:00 PM]",
+          "second_half": "---"
+        },
+        {
+          "date": "04 Mar 2027",
+          "day": "Thursday",
+          "first_half": "Occupational Orientation / Library & Information Science (85) [11:00 AM–1:00 PM]",
+          "second_half": "Bifocal Paper-II: A1–A3 [3:00–5:30 PM]; Civil (A4), Electronics (C2), Computer Science (D9), Commerce Paper-II (A5–A9), Agri/Fishery Paper-II [3:00–6:00 PM]"
+        },
+        {
+          "date": "05 Mar 2027",
+          "day": "Friday",
+          "first_half": "History (38) [11:00 AM–2:00 PM]",
+          "second_half": "---"
+        },
+        {
+          "date": "08 Mar 2027",
+          "day": "Monday",
+          "first_half": "NSQF Bifocal Courses Paper-I (Groups 1–10: AA, BA, CA, AC, BC, CC, DC, AE, BE)",
+          "second_half": "---"
+        },
+        {
+          "date": "09 Mar 2027",
+          "day": "Tuesday",
+          "first_half": "Sociology (45) [11:00 AM–2:00 PM]",
+          "second_half": "---"
+        },
+        {
+          "date": "11 Mar 2027",
+          "day": "Thursday",
+          "first_half": "NSQF Bifocal Courses Paper-II (Groups 1–10: AB, BB, CB, DB, AD, BD, CD, DD, AF, BF)",
+          "second_half": "---"
+        },
+        {
+          "date": "12, 13 & 15 Mar 2027",
+          "day": "Fri, Sat & Mon",
+          "first_half": "Information Technology (IT) Online Examination — Morning Batch [11:00 AM–1:30 PM]",
+          "second_half": "Information Technology (IT) Online — Afternoon Batch [3:00–5:30 PM]"
+        },
+        {
+          "date": "16, 17 & 18 Mar 2027",
+          "day": "Tue, Wed & Thu",
+          "first_half": "General Knowledge (GK) Online Examination — Morning Batch [11:00 AM–1:00 PM]",
+          "second_half": "General Knowledge (GK) Online — Afternoon Batch [3:00–5:00 PM]"
+        }
+      ]
+    }
+  }
+}

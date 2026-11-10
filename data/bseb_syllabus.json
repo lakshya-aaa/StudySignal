@@ -1,0 +1,179 @@
+{
+  "metadata": {
+    "board": "Bihar School Examination Board (BSEB)",
+    "board_hindi": "बिहार विद्यालय परीक्षा समिति (BSEB), पटना",
+    "official_source": "https://biharboardonline.com/",
+    "last_verified": "2026-11-10",
+    "note": "BSEB hosts consolidated multi-subject syllabus PDFs for Matriculation (Class 10 / 9) and Intermediate (Classes XI–XII) prepared by SCERT Bihar & Bihar State Text Book Publishing Corporation. Individual subject-wise 2026–27 split PDFs are not published separately on biharboardonline.com."
+  },
+  "official_pdfs": [
+    {
+      "id": "bseb-syl-class-10",
+      "class": "10",
+      "course": "Matriculation (Class 10)",
+      "subject": "All Matriculation Subjects (Consolidated Syllabus PDF)",
+      "code": "101–124",
+      "academic_session": "Consolidated Board Archive (2023–25)",
+      "academic_year": "2026-27",
+      "title": "BSEB Class 10 Consolidated Syllabus PDF (All Core & Language Subjects)",
+      "description": "Official 19-page consolidated monthly/annual syllabus booklet for Class 10 covering Mother Tongue, Second Indian Language, Mathematics, Science, Social Science, English, and Optionals.",
+      "file_size": "4.96 MB (19 pages)",
+      "official_url": "https://biharboardonline.com/files/CLASS_10_SYLLABUS%20.pdf",
+      "source_portal": "https://biharboardonline.com/",
+      "verification_status": "verified_official",
+      "is_official": true,
+      "last_verified": "2026-11-10"
+    },
+    {
+      "id": "bseb-syl-class-11-12",
+      "class": "12",
+      "course": "Intermediate (+2 Classes XI & XII)",
+      "subject": "All Intermediate Streams — Science, Commerce, Arts & Languages (Consolidated PDF)",
+      "code": "105–329",
+      "academic_session": "Consolidated +2 Curriculum Archive",
+      "academic_year": "2026-27",
+      "title": "BSEB Classes XI–XII (+2) Complete Consolidated Curriculum & Syllabus PDF",
+      "description": "Comprehensive 216-page SCERT Bihar & BSEB +2 curriculum PDF covering compulsory Languages (Group-I), Science, Arts, and Commerce Elective subjects (Group-II), textbook rules, and evaluation framework.",
+      "file_size": "42.18 MB (216 pages — large file)",
+      "official_url": "https://biharboardonline.com/files/Class_XI%20-XII_Syllabus_2023-25_and_2024-26.pdf",
+      "source_portal": "https://biharboardonline.com/",
+      "verification_status": "verified_official",
+      "is_official": true,
+      "last_verified": "2026-11-10"
+    },
+    {
+      "id": "bseb-syl-class-9",
+      "class": "9",
+      "course": "Secondary Foundation (Class 9)",
+      "subject": "Class 9 Foundational Subjects (Consolidated PDF)",
+      "code": "Foundation",
+      "academic_session": "Consolidated Board Archive (2023–25)",
+      "academic_year": "2026-27",
+      "title": "BSEB Class 9 Foundational Syllabus PDF",
+      "description": "Official 15-page BSEB Secondary foundation curriculum booklet for Class 9 preparation prior to Class 10 Matriculation board registration.",
+      "file_size": "4.63 MB (15 pages)",
+      "official_url": "https://biharboardonline.com/files/CLASS_9_SYLLABUS%20.pdf",
+      "source_portal": "https://biharboardonline.com/",
+      "verification_status": "verified_official",
+      "is_official": true,
+      "last_verified": "2026-11-10"
+    }
+  ],
+  "curriculum_structure": {
+    "10": {
+      "course_name": "Matriculation (Secondary Class 10)",
+      "total_division_marks": 500,
+      "passing_rule": "Minimum >30% marks in each of the 5 compulsory division subjects and 150+ aggregate out of 500. English & Optional subject appearance is governed by BSEB Secondary Result Regulations.",
+      "division_thresholds": "1st Div: >= 300 | 2nd Div: 225–299 | 3rd Div: 150–224",
+      "subject_groups": [
+        {
+          "group": "Mother Tongue (MIL)",
+          "codes": "101 Hindi, 102 Bangla, 103 Urdu, 104 Maithili (2nd sitting: 201–204)",
+          "notes": "Compulsory 100 marks (counted in 500 aggregate)."
+        },
+        {
+          "group": "Second Indian Language (SIL)",
+          "codes": "105 Sanskrit, 106 Rashtrabhasha Hindi (for non-Hindi MIL), 107 Arabic, 108 Persian, 109 Bhojpuri (205–209)",
+          "notes": "Compulsory 100 marks (counted in 500 aggregate)."
+        },
+        {
+          "group": "Mathematics, Science & Social Science",
+          "codes": "110/210 Mathematics (100 M), 112/212 Science (Theory + Internal Assessment = 100 M), 111/211 Social Science (Theory + Project/Literacy = 100 M)",
+          "notes": "Must obtain >= 30 marks overall in each (Theory + Internal combined in Science & Social Science)."
+        },
+        {
+          "group": "English & Optional Subjects",
+          "codes": "113 English (Compulsory to appear); Optionals: 114 Adv. Math, 115 Commerce, 116 Economics, 117 Fine Arts, 118 Home Science, 119 Dance, 120 Music, 121 Persian, 122 Sanskrit, 123 Arabic, 124 Maithili",
+          "notes": "English & Optional marks are excluded from the 500-mark division calculation per official BSEB Secondary Regulations."
+        }
+      ],
+      "regulation_pdf": "https://biharboardonline.com/files/SECONDARY%20REGULATION%20REGARDING%20PUBLICATION%20OF%20RESULT.pdf"
+    },
+    "12": {
+      "course_name": "Intermediate (+2 Class 12 — Science, Commerce, Arts & Vocational)",
+      "total_division_marks": 500,
+      "passing_rule": "Must pass separately in Theory (min 30%) and Practical (min 40%) of each subject across minimum 5 subjects (2 Compulsory Languages + 3 Electives). Distinction at 75% (375 marks).",
+      "division_thresholds": "1st Div: >= 300 (60%) | 2nd Div: 225–299 (45%) | 3rd Div: 165–224 (33%) | Distinction: 375 (75%)",
+      "subject_groups": [
+        {
+          "group": "Group 1 — Compulsory Language Subjects (2 Papers, 200 Marks)",
+          "codes": "Hindi (106/206/306), English (105/205/305) & Regional/Classical Languages (Urdu, Maithili, Sanskrit, Prakrit, Magahi, Bhojpuri, Arabic, Persian, Pali, Bangla)",
+          "notes": "At least one compulsory language must be Hindi or English (valid across Science I.Sc, Commerce I.Com, Arts I.A)."
+        },
+        {
+          "group": "Group 2 — Elective Core Subjects (3 Papers, 300 Marks)",
+          "codes": "I.Sc: Physics (117), Chemistry (118), Biology (119), Maths (121), Agriculture (120) | I.Com: Business Studies (217), Entrepreneurship (218), Economics (219), Accountancy (220) | I.A: History (321), Pol. Sci (322), Geography (323), Economics (326), Sociology (325), Psychology (324), Philosophy (320), Home Sci (319), Music (318), Maths (327)",
+          "notes": "Textbooks for non-language electives follow NCERT +1/+2 textbooks prescribed by SCERT & Bihar State Text Book Corp."
+        },
+        {
+          "group": "Group 3 — Additional Subject (Optional 6th Paper)",
+          "codes": "Additional Language or Elective, plus Trade / CS / MMWT",
+          "notes": "Marks of passed 6th subject can replace a failed Group-1/Group-2 paper per BSEB Memo BSEB(SS)/KEN/50/2024-307 (except CS, MMWT, Yoga & Phy. Edu. which cannot be swapped)."
+        }
+      ],
+      "regulation_pdf": "https://biharboardonline.com/files/Passing%20Criteria.pdf"
+    }
+  },
+  "featured_items": [
+    {
+      "id": "bseb-10-syl-consolidated",
+      "class": "10",
+      "course": "Matriculation",
+      "subject": "BSEB Class 10 Consolidated Syllabus",
+      "code": "101–124",
+      "stream": "Matriculation (Class 10)",
+      "academic_year": "2026-27",
+      "title": "BSEB Class 10 Consolidated Syllabus PDF (All Subjects)",
+      "description": "Official 19-page Matriculation consolidated syllabus booklet hosted on biharboardonline.com.",
+      "official_url": "https://biharboardonline.com/files/CLASS_10_SYLLABUS%20.pdf",
+      "verification_status": "verified_official",
+      "is_official": true,
+      "last_verified": "2026-11-10"
+    },
+    {
+      "id": "bseb-12-syl-consolidated",
+      "class": "12",
+      "course": "Intermediate",
+      "subject": "BSEB Classes XI–XII (+2) Complete Curriculum",
+      "code": "105–329",
+      "stream": "Science, Commerce & Arts",
+      "academic_year": "2026-27",
+      "title": "BSEB Intermediate (+2) Complete Curriculum & Syllabus PDF",
+      "description": "Official 216-page SCERT Bihar +2 curriculum PDF covering I.Sc, I.Com, I.A., and Compulsory Languages.",
+      "official_url": "https://biharboardonline.com/files/Class_XI%20-XII_Syllabus_2023-25_and_2024-26.pdf",
+      "verification_status": "verified_official",
+      "is_official": true,
+      "last_verified": "2026-11-10"
+    },
+    {
+      "id": "bseb-10-regulation",
+      "class": "10",
+      "course": "Matriculation",
+      "subject": "Matriculation Evaluation & Result Regulation",
+      "code": "REG-10",
+      "stream": "Matriculation (Class 10)",
+      "academic_year": "2026-27",
+      "title": "BSEB Matriculation Passing Criteria & Subject Scheme",
+      "description": "Official Secondary Examination regulations covering 5-subject aggregate (500 marks), >30% passing threshold, and grace rules.",
+      "official_url": "https://biharboardonline.com/files/SECONDARY%20REGULATION%20REGARDING%20PUBLICATION%20OF%20RESULT.pdf",
+      "verification_status": "verified_official",
+      "is_official": true,
+      "last_verified": "2026-11-10"
+    },
+    {
+      "id": "bseb-12-regulation",
+      "class": "12",
+      "course": "Intermediate",
+      "subject": "Intermediate Passing Criteria (30% Theory / 40% Practical)",
+      "code": "REG-12",
+      "stream": "Intermediate (Class 12)",
+      "academic_year": "2026-27",
+      "title": "BSEB Intermediate Subject Groups & Passing Regulation",
+      "description": "Signed Circular BSEB(SS)/KEN/50/2024-307 defining Compulsory Group-1, Elective Group-2, Additional Group-3 swap rules, and division marks.",
+      "official_url": "https://biharboardonline.com/files/Passing%20Criteria.pdf",
+      "verification_status": "verified_official",
+      "is_official": true,
+      "last_verified": "2026-11-10"
+    }
+  ]
+}

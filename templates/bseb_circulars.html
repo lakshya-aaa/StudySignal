@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+
+{% block title %}Bihar Board (BSEB) Official Circulars, Regulations &amp; Notices | StudySignal{% endblock %}
+
+{% block meta_description %}
+Verified Bihar Board (BSEB Patna) official circulars, PR 329/330 examination routines, passing criteria memos, duplicate document fees, record correction rules, and 2026 Top 20 Percentile CSSS scholarship cut-off lists.
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [
+  {'title': 'Boards & Exams', 'url': '/boards'},
+  {'title': 'Bihar Board (BSEB)', 'url': '/bihar-board'},
+  {'title': 'Circulars & Notices', 'url': '/bihar-board/circulars'}
+] %}
+{% include 'components/breadcrumb.html' %}
+
+<div class="board-hub-container bseb-circulars">
+  <section class="section" style="padding-bottom: 1.5rem;">
+    <div class="container">
+      <div class="hub-hero-banner">
+        <div class="hub-hero-branding">
+          <img src="{{ url_for('static', filename='images/boards/bseb-logo.png') }}" alt="BSEB" class="hub-hero-logo" width="52" height="52">
+          <div>
+            <div class="hub-hero-badge">
+              <span>🇮🇳 BSEB Official Directives Archive &bull; <strong class="badge-status-active" style="margin-left: 4px; vertical-align: middle;">Active</strong></span>
+            </div>
+            <h1 class="hub-hero-title">Bihar Board Circulars &amp; Directives</h1>
+            <div style="color: #64748b; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.6rem;">
+              बिहार विद्यालय परीक्षा समिति विज्ञप्तियाँ, नियमावली एवं छात्रवृत्ति सूची
+            </div>
+          </div>
+        </div>
+        <p class="hub-hero-desc">
+          Official BSEB Patna circulars, examination routines, passing regulations (Memo BSEB(SS)/KEN/50/2024-307), student correction checklists, and NSP/CSSS Top 20 Percentile cut-off lists verified directly on <code>biharboardonline.com</code>.
+        </p>
+
+        <div class="hub-stats-row">
+          <div class="hub-stat-pill"><span>📢 <strong>{{ total_count }}</strong> Verified Official Circulars</span></div>
+          <div class="hub-stat-pill"><span>✓ <strong>100% Live PDFs:</strong> biharboardonline.com</span></div>
+        </div>
+
+        <div class="hub-hero-actions">
+          <a href="{{ official_urls.bseb_main }}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: auto;">Official BSEB Portal ↗</a>
+          <a href="/bihar-board" class="btn-secondary" style="width: auto;">BSEB Main Hub &rarr;</a>
+          <a href="/bihar-board/results" class="btn-secondary" style="width: auto;">Results &amp; Scholarships &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filters -->
+  <section class="section" style="padding: 0 0 2rem 0;">
+    <div class="container">
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem;">
+        <form method="GET" action="/bihar-board/circulars" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0.85rem; align-items: end;">
+          <div>
+            <label class="form-label" for="bseb-circ-q">Keyword Search</label>
+            <input type="text" id="bseb-circ-q" name="q" value="{{ search_q }}" placeholder="e.g. passing, duplicate, scholarship..." class="form-control">
+          </div>
+          <div>
+            <label class="form-label" for="bseb-circ-cat">Category</label>
+            <select id="bseb-circ-cat" name="category" class="form-control">
+              <option value="all" {% if category == 'all' %}selected{% endif %}>All Categories ({{ total_count }})</option>
+              {% for cat in available_categories %}
+              <option value="{{ cat }}" {% if category == cat %}selected{% endif %}>{{ cat }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div>
+            <label class="form-label" for="bseb-circ-class">Class Target</label>
+            <select id="bseb-circ-class" name="class" class="form-control">
+              <option value="all" {% if selected_class == 'all' %}selected{% endif %}>All Classes</option>
+              <option value="10" {% if selected_class == '10' %}selected{% endif %}>Class 10 (Matric)</option>
+              <option value="12" {% if selected_class == '12' %}selected{% endif %}>Class 12 (Intermediate)</option>
+            </select>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button type="submit" class="btn-primary" style="flex: 1;">Filter</button>
+            {% if category != 'all' or selected_class != 'all' or search_q %}
+            <a href="/bihar-board/circulars" class="btn-secondary">Reset</a>
+            {% endif %}
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Circulars List -->
+  <section class="section" style="padding-top: 0; padding-bottom: 3rem;">
+    <div class="container">
+      {% if circulars and circulars|length > 0 %}
+      <div style="display: flex; flex-direction: column; gap: 1.15rem;">
+        {% for c in circulars %}
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.35rem; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.65rem; margin-bottom: 0.5rem;">
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+              <span style="font-size: 0.75rem; background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 4px; font-weight: 700;">{{ c.category }}</span>
+              <span style="font-size: 0.75rem; background: #f1f5f9; color: #475569; padding: 2px 8px; border-radius: 4px; font-family: monospace; font-weight: 600;">{{ c.circular_no }}</span>
+              <span style="font-size: 0.75rem; background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 4px; font-weight: 600;">{{ c.class_target }}</span>
+              <span style="font-size: 0.75rem; color: #64748b;">Published: {{ c.published_date }}</span>
+            </div>
+            <span style="font-size: 0.75rem; color: #94a3b8;">Size: {{ c.file_size }} &bull; Verified: {{ c.last_verified }}</span>
+          </div>
+
+          <h2 style="font-size: 1.15rem; font-weight: 800; color: var(--primary); margin: 0 0 0.4rem 0;">{{ c.title }}</h2>
+          <p style="color: #475569; font-size: 0.9rem; line-height: 1.6; margin: 0 0 1rem 0;">{{ c.summary }}</p>
+
+          <div style="display: flex; justify-content: flex-end;">
+            <a href="{{ c.official_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary">
+              Download Official PDF ({{ c.file_size }}) ↗
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 3rem 1.5rem; text-align: center;">
+        <h3 style="font-size: 1.2rem; color: var(--primary); margin-bottom: 0.5rem;">No Circulars Match Your Filter</h3>
+        <a href="/bihar-board/circulars" class="btn-primary" style="width: auto;">Reset Filters &rarr;</a>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="disclaimer-callout" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; font-size: 0.8125rem; color: #64748b; line-height: 1.6;">
+        <strong style="color: var(--primary); display: block; margin-bottom: 0.35rem;">⚖️ BSEB Non-Affiliation Legal Notice</strong>
+        StudySignal is independent and NOT affiliated with BSEB Patna. Verify official notices on <a href="{{ official_urls.bseb_main }}" target="_blank" rel="noopener noreferrer" style="color: var(--brand-blue); text-decoration: underline;">biharboardonline.com</a>.
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

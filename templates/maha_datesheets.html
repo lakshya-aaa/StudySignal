@@ -1,0 +1,209 @@
+{% extends 'base.html' %}
+
+{% block title %}Maharashtra Board (MSBSHSE) Feb–Mar 2027 Confirmed Exam Timetable - SSC &amp; HSC | StudySignal{% endblock %}
+
+{% block meta_description %}
+Official confirmed February–March 2027 Maharashtra Board (MSBSHSE Pune) Time Table for SSC Std. 10 (15 Feb – 15 Mar 2027) and HSC Std. 12 General, Bifocal &amp; Vocational (08 Feb – 18 Mar 2027). Direct English &amp; Marathi official PDF downloads.
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [
+  {'title': 'Boards & Exams', 'url': '/boards'},
+  {'title': 'Maharashtra Board (MSBSHSE)', 'url': '/maharashtra-board'},
+  {'title': 'Feb–Mar 2027 Exam Timetable', 'url': '/maharashtra-board/datesheets'}
+] %}
+{% include 'components/breadcrumb.html' %}
+
+<div class="board-hub-container maha-datesheets">
+  <!-- Hero -->
+  <section class="section" style="padding-bottom: 1.5rem;">
+    <div class="container">
+      <div class="hub-hero-banner">
+        <div class="hub-hero-branding">
+          <img src="{{ url_for('static', filename='images/boards/msbshse-logo.png') }}" alt="MSBSHSE" class="hub-hero-logo" width="52" height="52">
+          <div>
+            <div class="hub-hero-badge">
+              <span>🇮🇳 MSBSHSE Official Timetable Declared &bull; <strong class="badge-status-active" style="margin-left: 4px; vertical-align: middle;">Confirmed 2027</strong></span>
+            </div>
+            <h1 class="hub-hero-title">Maharashtra Board Feb–Mar 2027 Examination Time Table</h1>
+            <div style="color: #64748b; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.6rem;">
+              माध्यमिक (SSC) व उच्च माध्यमिक (HSC) परीक्षा फेब्रुवारी-मार्च २०२७ अधिकृत वेळापत्रक
+            </div>
+          </div>
+        </div>
+        <p class="hub-hero-desc">
+          Official examination schedules published by the Maharashtra State Board of Secondary and Higher Secondary Education (MSBSHSE), Pune on <strong>{{ datesheets.published_date_label or '07 November 2026' }}</strong>. Covers SSC Std. 10, HSC Std. 12 General &amp; Bifocal (including Online IT &amp; GK sessions), and HSC Vocational.
+        </p>
+
+        <div class="hub-stats-row">
+          <div class="hub-stat-pill"><span>✓ <strong>Status:</strong> {{ datesheets.status_label_2027 }}</span></div>
+          <div class="hub-stat-pill"><span>📘 <strong>SSC (Std. 10):</strong> 15 Feb – 15 Mar 2027</span></div>
+          <div class="hub-stat-pill"><span>🎓 <strong>HSC (Std. 12):</strong> 08 Feb – 11 Mar 2027 (+ IT/GK Online)</span></div>
+          <div class="hub-stat-pill"><span>📅 <strong>Verified:</strong> {{ datesheets.last_checked_label or '10 November 2026' }}</span></div>
+        </div>
+
+        <div class="hub-hero-actions">
+          <a href="{{ official_urls.maha_timetables }}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: auto;">Official MSBSHSE Timetables Portal ↗</a>
+          <a href="/maharashtra-board/pyq" class="btn-secondary" style="width: auto;">Past Question Papers &rarr;</a>
+          <a href="/maharashtra-board" class="btn-secondary" style="width: auto;">MSBSHSE Main Hub &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Class Filter Pills -->
+  <section class="section" style="padding: 0 0 2rem 0;">
+    <div class="container">
+      <div class="board-selector-bar">
+        <a href="/maharashtra-board/datesheets?class=all" class="selector-pill {% if selected_class == 'all' %}active{% endif %}">All Timetables (SSC &amp; HSC)</a>
+        <a href="/maharashtra-board/datesheets?class=10" class="selector-pill {% if selected_class == '10' %}active{% endif %}">SSC Std. 10 (15 Feb – 15 Mar 2027)</a>
+        <a href="/maharashtra-board/datesheets?class=12" class="selector-pill {% if selected_class == '12' %}active{% endif %}">HSC Std. 12 (08 Feb – 18 Mar 2027)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Official Shifts & Board Signature Note -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="hub-alert-card" style="border-left-color: #15803d; background: #f0fdf4;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.5rem;">
+          <h2 style="font-size: 1.2rem; font-weight: 800; color: #14532d; margin: 0;">
+            Official Shift Timings &amp; Board Verification Advisory
+          </h2>
+          <span style="font-size: 0.75rem; color: #166534; font-weight: 600;">
+            Published: {{ datesheets.published_date_label or '07 November 2026' }}
+          </span>
+        </div>
+        {% if datesheets.shifts %}
+        <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 8px; padding: 0.85rem 1rem; margin-bottom: 0.75rem; font-size: 0.875rem; color: #14532d; line-height: 1.65;">
+          <div><strong>{{ datesheets.shifts.first_half }}</strong></div>
+          <div><strong>{{ datesheets.shifts.second_half }}</strong></div>
+        </div>
+        {% endif %}
+        <p style="color: #166534; font-size: 0.875rem; line-height: 1.6; margin: 0;">
+          {{ datesheets.official_board_note }}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SSC (Std. 10) Feb-Mar 2027 Schedule -->
+  {% if selected_class in ['all', '10'] and datesheets.classes and '10' in datesheets.classes %}
+    {% set ssc = datesheets.classes['10'] %}
+    <section class="section" style="padding-top: 0; padding-bottom: 3rem;">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: 1rem;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.25rem;">
+              <span class="verified-badge" style="background: #dcfce7; color: #166534; font-weight: 700;">Confirmed 2027</span>
+              <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary-headings); margin: 0;">
+                {{ ssc.class_name }}
+              </h2>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.875rem; margin: 0;">
+              {{ ssc.class_name_mr }} &bull; <strong>Window:</strong> {{ ssc.exam_window }} &bull; PDF Size: {{ ssc.pdf_size }}
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <a href="{{ ssc.pdf_en }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary">SSC Official PDF (English) ↗</a>
+            <a href="{{ ssc.pdf_mr }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">SSC Official PDF (मराठी) ↗</a>
+          </div>
+        </div>
+
+        <div class="table-scroll-hint"><span>↔️ Swipe horizontally to view full SSC 2027 timetable</span></div>
+        <div class="table-responsive" role="region" tabindex="0" aria-label="MSBSHSE SSC Std 10 February March 2027 Exam Time Table">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Exam Date</th>
+                <th>Day</th>
+                <th>First Half (11:00 AM onwards)</th>
+                <th>Second Half (03:00 PM onwards)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in ssc.schedule_items %}
+              <tr>
+                <td style="font-weight: 700; color: var(--primary); white-space: nowrap;">{{ row.date }}</td>
+                <td style="white-space: nowrap;">{{ row.day }}</td>
+                <td style="font-size: 0.85rem;">{{ row.first_half }}</td>
+                <td style="font-size: 0.85rem;">{{ row.second_half }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
+  <!-- HSC (Std. 12) Feb-Mar 2027 Schedule -->
+  {% if selected_class in ['all', '12'] and datesheets.classes and '12' in datesheets.classes %}
+    {% set hsc = datesheets.classes['12'] %}
+    <section class="section" style="padding-top: 0; padding-bottom: 3rem;">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: 1rem;">
+          <div>
+            <div style="display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.25rem;">
+              <span class="verified-badge" style="background: #dcfce7; color: #166534; font-weight: 700;">Confirmed 2027</span>
+              <h2 style="font-size: 1.35rem; font-weight: 800; color: var(--primary-headings); margin: 0;">
+                {{ hsc.class_name }}
+              </h2>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.875rem; margin: 0;">
+              {{ hsc.class_name_mr }} &bull; {{ hsc.exam_window }}
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <a href="{{ hsc.pdf_gen_en }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary">HSC Gen &amp; Bifocal PDF (EN) ↗</a>
+            <a href="{{ hsc.pdf_gen_mr }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">HSC Gen &amp; Bifocal PDF (MR) ↗</a>
+            <a href="{{ hsc.pdf_voc_en }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">HSC Vocational PDF (EN) ↗</a>
+            <a href="{{ hsc.pdf_voc_mr }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary">HSC Vocational PDF (MR) ↗</a>
+          </div>
+        </div>
+
+        {% if hsc.online_note %}
+        <div style="background: #f0f9ff; border: 1px solid #bae6fd; border-left: 4px solid var(--brand-blue); border-radius: 8px; padding: 0.9rem 1rem; margin-bottom: 1rem; font-size: 0.875rem; color: #0c4a6e;">
+          <strong>HSC IT &amp; General Knowledge Online Dates:</strong> {{ hsc.online_note }} &bull;
+          <span style="color: #475569;">(Gen/Bifocal PDF: {{ hsc.pdf_gen_size }} | Vocational PDF: {{ hsc.pdf_voc_size }})</span>
+        </div>
+        {% endif %}
+
+        <div class="table-scroll-hint"><span>↔️ Swipe horizontally to view full HSC 2027 timetable</span></div>
+        <div class="table-responsive" role="region" tabindex="0" aria-label="MSBSHSE HSC Std 12 February March 2027 Exam Time Table">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Exam Date</th>
+                <th>Day</th>
+                <th>First Half (11:00 AM onwards)</th>
+                <th>Second Half (03:00 PM onwards)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in hsc.schedule_items %}
+              <tr>
+                <td style="font-weight: 700; color: var(--primary); white-space: nowrap;">{{ row.date }}</td>
+                <td style="white-space: nowrap;">{{ row.day }}</td>
+                <td style="font-size: 0.85rem;">{{ row.first_half }}</td>
+                <td style="font-size: 0.85rem;">{{ row.second_half }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  {% endif %}
+
+  <!-- Disclaimer -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="disclaimer-callout" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; font-size: 0.8125rem; color: #64748b; line-height: 1.6;">
+        <strong style="color: var(--primary); display: block; margin-bottom: 0.35rem;">⚖️ MSBSHSE Non-Affiliation Legal Notice</strong>
+        StudySignal is independent and NOT affiliated with MSBSHSE Pune. Printed timetables distributed via your school/junior college and official announcements on <a href="{{ official_urls.maha_timetables }}" target="_blank" rel="noopener noreferrer" style="color: var(--brand-blue); text-decoration: underline;">mahahsscboard.in/en/studentCorner/timetables</a> remain final.
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

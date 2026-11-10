@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+
+{% block title %}Bihar Board (BSEB) Official 2026 Model Question Papers (57 Verified PDFs) | StudySignal{% endblock %}
+
+{% block meta_description %}
+Download all 57 verified Bihar Board (BSEB) Matriculation Class 10 (22 papers) and Intermediate Class 12 (35 papers) Official 2026 Model Question Papers directly from biharboardonline.com.
+{% endblock %}
+
+{% block content %}
+{% set breadcrumbs = [
+  {'title': 'Boards & Exams', 'url': '/boards'},
+  {'title': 'Bihar Board (BSEB)', 'url': '/bihar-board'},
+  {'title': 'Official Model Question Papers', 'url': '/bihar-board/sample-papers'}
+] %}
+{% include 'components/breadcrumb.html' %}
+
+<div class="board-hub-container bseb-sample-papers">
+  <!-- Hero Section -->
+  <section class="section" style="padding-bottom: 1.5rem;">
+    <div class="container">
+      <div class="hub-hero-banner">
+        <div class="hub-hero-branding">
+          <img src="{{ url_for('static', filename='images/boards/bseb-logo.png') }}" alt="BSEB" class="hub-hero-logo" width="52" height="52">
+          <div>
+            <div class="hub-hero-badge">
+              <span>🇮🇳 BSEB Official 2026 Model Question Papers &bull; <strong class="badge-status-active" style="margin-left: 4px; vertical-align: middle;">Active</strong></span>
+            </div>
+            <h1 class="hub-hero-title">Bihar Board Official Model Question Papers</h1>
+            <div style="color: #64748b; font-size: 1.05rem; font-weight: 600; margin-bottom: 0.6rem;">
+              मैट्रिक एवं इण्टरमीडिएट मॉडल प्रश्न पत्र 2026 (Sample Pattern Only — Not PYQs)
+            </div>
+          </div>
+        </div>
+        <p class="hub-hero-desc">
+          Complete verified directory of all <strong>{{ total_count }} official 2026 Model Question Papers</strong> published by Bihar School Examination Board (BSEB), Patna on <code>biharboardonline.com</code> (22 Matric Class 10 + 35 Intermediate Class 12 across I.Sc, I.Com, I.A., and Languages).
+        </p>
+
+        <div class="hub-stats-row">
+          <div class="hub-stat-pill"><span>📝 <strong>{{ total_count }}</strong> Total Verified Model Papers</span></div>
+          <div class="hub-stat-pill"><span>📘 <strong>22 Papers</strong> Class 10 Matriculation</span></div>
+          <div class="hub-stat-pill"><span>🎓 <strong>35 Papers</strong> Class 12 Intermediate</span></div>
+          <div class="hub-stat-pill"><span>🛡️ <strong>Strictly Sample Patterns (Not PYQs)</strong></span></div>
+        </div>
+
+        <div class="hub-hero-actions">
+          <a href="{{ official_urls.bseb_main }}" target="_blank" rel="noopener noreferrer" class="btn-primary" style="width: auto;">Official BSEB Portal ↗</a>
+          <a href="/bihar-board/syllabus" class="btn-secondary" style="width: auto;">Syllabus &amp; Passing Rules &rarr;</a>
+          <a href="/bihar-board/question-bank" class="btn-secondary" style="width: auto;">Question Bank Status &rarr;</a>
+          <a href="/bihar-board" class="btn-secondary" style="width: auto;">BSEB Main Hub &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clear Sample vs PYQ Integrity Notice -->
+  <section class="section" style="padding-top: 0; padding-bottom: 1.5rem;">
+    <div class="container">
+      <div class="alert-box" style="margin: 0; border-left: 4px solid #d97706; background-color: #fffbeb; color: #78350f;">
+        <strong>Important Authenticity Distinction:</strong>
+        These documents are <strong>official BSEB Model Question Papers (Sample Pattern for 2026 Examinations)</strong> — they are <strong>NOT</strong> Previous Year Question Papers (PYQs). BSEB does not host historical PYQ papers publicly on <code>biharboardonline.com</code>.
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter & Search Bar -->
+  <section class="section" style="padding: 0 0 2rem 0;">
+    <div class="container">
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem;">
+        <form method="GET" action="/bihar-board/sample-papers" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0.85rem; align-items: end;">
+          <div>
+            <label class="form-label" for="bseb-mp-q">Search Subject or Code</label>
+            <input type="text" id="bseb-mp-q" name="q" value="{{ search_q }}" placeholder="e.g. Hindi, 110, Physics, 220..." class="form-control">
+          </div>
+          <div>
+            <label class="form-label" for="bseb-mp-class">Class / Level</label>
+            <select id="bseb-mp-class" name="class" class="form-control">
+              <option value="all" {% if selected_class == 'all' %}selected{% endif %}>All Classes (57 Papers)</option>
+              <option value="10" {% if selected_class == '10' %}selected{% endif %}>Class 10 Matriculation (22)</option>
+              <option value="12" {% if selected_class == '12' %}selected{% endif %}>Class 12 Intermediate (35)</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label" for="bseb-mp-stream">Stream / Group</label>
+            <select id="bseb-mp-stream" name="stream" class="form-control">
+              <option value="all" {% if selected_stream == 'all' %}selected{% endif %}>All Streams &amp; Groups</option>
+              {% for st in available_streams %}
+              <option value="{{ st }}" {% if selected_stream == st %}selected{% endif %}>{{ st }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button type="submit" class="btn-primary" style="flex: 1;">Filter</button>
+            {% if selected_class != 'all' or selected_stream != 'all' or search_q %}
+            <a href="/bihar-board/sample-papers" class="btn-secondary">Reset</a>
+            {% endif %}
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sample Papers Grid -->
+  <section class="section" style="padding-top: 0; padding-bottom: 3rem;">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.5rem;">
+        <span style="font-weight: 700; color: var(--primary);">Showing {{ sample_papers|length }} of {{ total_count }} Official Model Question Papers</span>
+        <span style="font-size: 0.8rem; color: #64748b;">Every PDF URL verified live on biharboardonline.com</span>
+      </div>
+
+      {% if sample_papers and sample_papers|length > 0 %}
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 1.25rem;">
+        {% for paper in sample_papers %}
+        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.25rem; display: flex; flex-direction: column;">
+          <div style="display: flex; justify-content: space-between; align-items: center; gap: 0.4rem; margin-bottom: 0.5rem; flex-wrap: wrap;">
+            <div style="display: flex; gap: 0.35rem; align-items: center;">
+              <span class="class-badge" style="background: {% if paper.class == '10' %}#e0f2fe; color: #0369a1;{% else %}#f0fdf4; color: #166534;{% endif %} font-weight: 700; border-radius: 6px; padding: 2px 8px; font-size: 0.75rem;">
+                Class {{ paper.class }}
+              </span>
+              <span class="code-pill" style="font-size: 0.75rem;">Code {{ paper.code }}</span>
+            </div>
+            <span style="font-size: 0.68rem; background: #fef3c7; color: #92400e; padding: 2px 7px; border-radius: 4px; font-weight: 700;">
+              {{ paper.paper_badge }}
+            </span>
+          </div>
+
+          <h2 style="font-size: 1.1rem; font-weight: 700; color: var(--primary); margin: 0 0 0.35rem 0;">
+            {{ paper.subject }}
+          </h2>
+          <div style="font-size: 0.8rem; color: #64748b; margin-bottom: 0.85rem; line-height: 1.5; flex: 1 1 auto;">
+            <div><strong>Course:</strong> {{ paper.course }}</div>
+            <div><strong>Stream:</strong> {{ paper.stream }}</div>
+            <div><strong>Official Label:</strong> <code>{{ paper.raw_label }}</code></div>
+            <div><strong>Size:</strong> {{ paper.file_size }} &bull; <strong>Session:</strong> {{ paper.academic_session }}</div>
+          </div>
+
+          <div style="margin-top: auto; padding-top: 0.75rem; border-top: 1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center; gap: 0.5rem;">
+            <span style="font-size: 0.72rem; color: #94a3b8;">Verified: {{ paper.last_verified }}</span>
+            <a href="{{ paper.download_url }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-primary">
+              Download Official PDF ↗
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 3rem 1.5rem; text-align: center;">
+        <h3 style="font-size: 1.2rem; color: var(--primary); margin-bottom: 0.5rem;">No Model Papers Match Your Search</h3>
+        <p style="color: #64748b; font-size: 0.9rem; margin-bottom: 1.25rem;">Try resetting filters or searching another subject code (e.g., 101, 110, 117, 220, 321).</p>
+        <a href="/bihar-board/sample-papers" class="btn-primary" style="width: auto;">Reset Filters &rarr;</a>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+
+  <!-- Disclaimer -->
+  <section class="section" style="padding-top: 0; padding-bottom: 2.5rem;">
+    <div class="container">
+      <div class="disclaimer-callout" style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.25rem; font-size: 0.8125rem; color: #64748b; line-height: 1.6;">
+        <strong style="color: var(--primary); display: block; margin-bottom: 0.35rem;">⚖️ BSEB Non-Affiliation Legal Notice</strong>
+        StudySignal is independent and NOT affiliated with BSEB Patna. All model question paper PDFs link directly to <a href="{{ official_urls.bseb_main }}" target="_blank" rel="noopener noreferrer" style="color: var(--brand-blue); text-decoration: underline;">biharboardonline.com</a>.
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}
