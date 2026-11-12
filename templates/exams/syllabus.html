@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ exam.name }} Official Syllabus PDFs — {{ exam.syllabus.session_label }} | StudySignal{% endblock %}
+
+{% block meta_description %}{{ exam.syllabus.overview }} Direct official syllabus PDF downloads verified for {{ exam.name }}.{% endblock %}
+
+{% block content %}
+{% set active_tab = 'syllabus' %}
+{% set page_label = 'Syllabus' %}
+{% set page_heading = exam.name + ' Official Syllabus' %}
+{% set page_intro = exam.syllabus.overview %}
+{% include 'exams/_subnav.html' %}
+
+<div class="exam-page-body">
+  <section class="section exam-section-tight">
+    <div class="container">
+      <div class="exam-panel-card">
+        <div class="exam-panel-head">
+          <div>
+            <span class="code-pill">{{ exam.syllabus.session_label }}</span>
+            <h2>Official Syllabus Documents</h2>
+          </div>
+          {% if exam.syllabus.portal_url %}
+          <a href="{{ exam.syllabus.portal_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Official CUET Syllabus Portal ↗</a>
+          {% endif %}
+        </div>
+
+        {% if exam.syllabus.primary_pdfs %}
+        <div class="exam-doc-grid">
+          {% for doc in exam.syllabus.primary_pdfs %}
+          <div class="exam-doc-card">
+            <div class="exam-doc-badges">
+              <span class="badge-status-active">{{ doc.session }}</span>
+              {% if doc.pages %}<span class="code-pill">{{ doc.pages }}</span>{% endif %}
+            </div>
+            <h3>{{ doc.title }}</h3>
+            <p class="exam-doc-source">Source Host: <code>{{ doc.source_host }}</code> &bull; Verified {{ exam.last_verified }}</p>
+            <a href="{{ doc.pdf_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Download Official Syllabus PDF ↗</a>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if exam_slug == 'cuet-ug' %}
+        <!-- CUET UG: 37 Subject PDFs (Codes 101-501) -->
+        <div class="exam-filter-toolbar">
+          <div class="exam-filter-tabs" role="tablist" aria-label="Filter CUET Subjects">
+            <button type="button" class="exam-filter-btn active" data-group="all">All Subjects ({{ exam.syllabus.counts.total }})</button>
+            <button type="button" class="exam-filter-btn" data-group="Language">Languages 101–113 ({{ exam.syllabus.counts.languages }})</button>
+            <button type="button" class="exam-filter-btn" data-group="Domain Subject">Domain Subjects 301–326 ({{ exam.syllabus.counts.domain }})</button>
+            <button type="button" class="exam-filter-btn" data-group="General Aptitude Test">General Aptitude 501 ({{ exam.syllabus.counts.general_aptitude }})</button>
+          </div>
+          <div class="exam-search-box">
+            <label for="cuet-syl-search" class="sr-only">Filter subjects by name or code</label>
+            <input type="text" id="cuet-syl-search" class="form-control" placeholder="Search subject name or code (e.g. 306, Physics, Hindi)...">
+          </div>
+        </div>
+
+        <div class="exam-cuet-syl-grid" id="cuetSylGrid">
+          {% for item in exam.syllabus.subjects %}
+          <article class="exam-cuet-syl-card" data-group="{{ item.group }}" data-search="{{ (item.code + ' ' + item.subject + ' ' + item.group)|lower }}">
+            <div class="exam-doc-badges">
+              <span class="code-pill">Code {{ item.code }}</span>
+              <span class="exam-group-pill">{{ item.group }}</span>
+            </div>
+            <h3>{{ item.subject }}</h3>
+            <div class="exam-cuet-syl-footer">
+              <span class="exam-doc-source">{{ item.source_host }}</span>
+              <a href="{{ item.pdf_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Syllabus PDF ↗</a>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+        {% else %}
+        <!-- Unit-wise Syllabus Breakdown (JEE Main / JEE Advanced / NEET UG) -->
+        <div class="exam-subjects-stack">
+          {% for subj in exam.syllabus.subjects %}
+          <article class="exam-subject-block">
+            <div class="exam-subject-block-head">
+              <div>
+                <span class="code-pill">{{ subj.paper }}</span>
+                <h3>{{ subj.name }}</h3>
+              </div>
+              <span class="exam-unit-count">{{ subj.units_count }} Sections / Units</span>
+            </div>
+            <ul class="exam-unit-list">
+              {% for u in subj.units %}
+              <li>{{ u }}</li>
+              {% endfor %}
+            </ul>
+          </article>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+</div>
+
+{% if exam_slug == 'cuet-ug' %}
+<script>
+(function() {
+  const btns = document.querySelectorAll('.exam-filter-btn[data-group]');
+  const searchInput = document.getElementById('cuet-syl-search');
+  const cards = document.querySelectorAll('#cuetSylGrid .exam-cuet-syl-card');
+  let activeGroup = 'all';
+
+  function applyFilter() {
+    const q = (searchInput ? searchInput.value : '').trim().toLowerCase();
+    cards.forEach(function(card) {
+      const grp = card.getAttribute('data-group');
+      const txt = card.getAttribute('data-search') || '';
+      const okGroup = activeGroup === 'all' || grp === activeGroup;
+      const okSearch = !q || txt.indexOf(q) !== -1;
+      card.style.display = (okGroup && okSearch) ? '' : 'none';
+    });
+  }
+
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      btns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      activeGroup = btn.getAttribute('data-group');
+      applyFilter();
+    });
+  });
+  if (searchInput) searchInput.addEventListener('input', applyFilter);
+})();
+</script>
+{% endif %}
+{% endblock %}

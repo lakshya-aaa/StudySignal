@@ -1,0 +1,29 @@
+warning: in the working copy of 'app.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'config.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'static/css/style.css', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'templates/about.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'templates/base.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'templates/boards.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'templates/components/notice_banner.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'templates/contact.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'templates/disclaimer.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'templates/index.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'templates/privacy.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'templates/search.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'templates/terms.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'test_app.py', LF will be replaced by CRLF the next time Git touches it
+ app.py                                  | 579 [32m++++++++++++++++++++[m[31m--[m
+ config.py                               |  68 [32m++[m[31m-[m
+ static/css/style.css                    | 818 [32m++++++++++++++++++++++++++++++++[m
+ templates/about.html                    |  14 [32m+[m[31m-[m
+ templates/base.html                     |  85 [32m+++[m[31m-[m
+ templates/boards.html                   |  57 [32m++[m[31m-[m
+ templates/components/notice_banner.html |  18 [32m+[m[31m-[m
+ templates/contact.html                  |  12 [32m+[m[31m-[m
+ templates/disclaimer.html               |  40 [32m+[m[31m-[m
+ templates/index.html                    | 221 [32m++++++++[m[31m-[m
+ templates/privacy.html                  |   8 [32m+[m[31m-[m
+ templates/search.html                   |  50 [32m+[m[31m-[m
+ templates/terms.html                    |  12 [32m+[m[31m-[m
+ test_app.py                             | 355 [32m++++++++++++[m[31m--[m
+ 14 files changed, 2133 insertions(+), 204 deletions(-)

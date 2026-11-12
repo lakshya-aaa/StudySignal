@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+{% block title %}CUET UG Participating Universities Directory ({{ exam.universities.counts.total }} Verified Institutions) | StudySignal{% endblock %}
+
+{% block meta_description %}{{ exam.universities.overview }} Browse all {{ exam.universities.counts.total }} Central, State, Deemed, Other Government, and Private Universities participating in CUET (UG).{% endblock %}
+
+{% block content %}
+{% set active_tab = 'universities' %}
+{% set page_label = 'Participating Universities' %}
+{% set page_heading = 'CUET (UG) Participating Universities (' + (exam.universities.counts.total|string) + ' Institutions)' %}
+{% set page_intro = exam.universities.overview %}
+{% include 'exams/_subnav.html' %}
+
+<div class="exam-page-body">
+  <section class="section exam-section-tight">
+    <div class="container">
+      <!-- Category Summary Counters -->
+      <div class="exam-facts-grid">
+        <div class="exam-fact-card">
+          <span class="exam-fact-label">Central Universities</span>
+          <strong class="exam-fact-value">{{ exam.universities.counts.central }}</strong>
+        </div>
+        <div class="exam-fact-card">
+          <span class="exam-fact-label">State Universities</span>
+          <strong class="exam-fact-value">{{ exam.universities.counts.state }}</strong>
+        </div>
+        <div class="exam-fact-card">
+          <span class="exam-fact-label">Deemed Universities</span>
+          <strong class="exam-fact-value">{{ exam.universities.counts.deemed }}</strong>
+        </div>
+        <div class="exam-fact-card">
+          <span class="exam-fact-label">Other Govt ({{ exam.universities.counts.other_govt }}) + Private ({{ exam.universities.counts.private }})</span>
+          <strong class="exam-fact-value">{{ exam.universities.counts.other_govt + exam.universities.counts.private }}</strong>
+        </div>
+      </div>
+
+      <div class="exam-panel-card">
+        <div class="exam-panel-head">
+          <div>
+            <h2>Participating Institutions &amp; Course Mapping PDFs</h2>
+            <p>Each institution links to its official CUET (UG) course-eligibility mapping PDF on <code>cuet.nta.nic.in</code>.</p>
+          </div>
+          <a href="{{ exam.universities.portal_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Official CUET Universities Portal ↗</a>
+        </div>
+
+        <div class="exam-filter-toolbar">
+          <div class="exam-filter-tabs" role="tablist" aria-label="Filter universities by category">
+            <button type="button" class="exam-filter-btn active" data-ucat="all">All ({{ exam.universities.counts.total }})</button>
+            <button type="button" class="exam-filter-btn" data-ucat="central">Central ({{ exam.universities.counts.central }})</button>
+            <button type="button" class="exam-filter-btn" data-ucat="state">State ({{ exam.universities.counts.state }})</button>
+            <button type="button" class="exam-filter-btn" data-ucat="deemed">Deemed ({{ exam.universities.counts.deemed }})</button>
+            <button type="button" class="exam-filter-btn" data-ucat="other-govt">Other Govt ({{ exam.universities.counts.other_govt }})</button>
+            <button type="button" class="exam-filter-btn" data-ucat="private">Private ({{ exam.universities.counts.private }})</button>
+          </div>
+          <div class="exam-search-box">
+            <label for="cuet-uni-search" class="sr-only">Search university name</label>
+            <input type="text" id="cuet-uni-search" class="form-control" placeholder="Search university name (e.g. Delhi, BHU, Amity, NIFTEM)...">
+          </div>
+        </div>
+
+        <p class="exam-muted-line" id="uniVisibleCounter" style="margin-bottom: 1rem;">Showing {{ exam.universities.list|length }} of {{ exam.universities.counts.total }} universities</p>
+
+        <div class="exam-uni-grid" id="cuetUniGrid">
+          {% for u in exam.universities.list %}
+          <article class="exam-uni-card" data-ucat="{{ u.category }}" data-search="{{ (u.name + ' ' + u.category_label)|lower }}">
+            <div class="exam-doc-badges">
+              <span class="code-pill">{{ u.category_label }}</span>
+              {% if u.pdf_status == 'upstream_malformed_url' %}
+              <span class="badge-status-soon">Upstream Link Advisory</span>
+              {% endif %}
+            </div>
+            <h3>{{ u.name }}</h3>
+            <div class="exam-cuet-syl-footer">
+              {% if u.pdf_url %}
+              <a href="{{ u.pdf_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Mapping PDF ↗</a>
+              {% else %}
+              <a href="{{ u.fallback_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Deemed List Portal ↗</a>
+              {% endif %}
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+(function() {
+  const btns = document.querySelectorAll('.exam-filter-btn[data-ucat]');
+  const input = document.getElementById('cuet-uni-search');
+  const cards = document.querySelectorAll('#cuetUniGrid .exam-uni-card');
+  const counter = document.getElementById('uniVisibleCounter');
+  let activeCat = 'all';
+
+  function applyUniFilter() {
+    const q = (input ? input.value : '').trim().toLowerCase();
+    let visible = 0;
+    cards.forEach(function(card) {
+      const cat = card.getAttribute('data-ucat');
+      const txt = card.getAttribute('data-search') || '';
+      const okCat = activeCat === 'all' || cat === activeCat;
+      const okSearch = !q || txt.indexOf(q) !== -1;
+      const show = okCat && okSearch;
+      card.style.display = show ? '' : 'none';
+      if (show) visible += 1;
+    });
+    if (counter) counter.textContent = 'Showing ' + visible + ' of ' + cards.length + ' universities';
+  }
+
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      btns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      activeCat = btn.getAttribute('data-ucat');
+      applyUniFilter();
+    });
+  });
+  if (input) input.addEventListener('input', applyUniFilter);
+})();
+</script>
+{% endblock %}

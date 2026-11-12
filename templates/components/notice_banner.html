@@ -2,7 +2,7 @@
   <div class="container banner-inner">
     <div class="banner-badge">Official Advisory</div>
     <div class="banner-text">
-      <strong aria-label="Independent Portal Notice">INDEPENDENT PORTAL NOTICE:</strong> StudySignal is an independent educational platform and is not affiliated with, endorsed by, or connected to the Central Board of Secondary Education (CBSE), Uttar Pradesh Madhyamik Shiksha Parishad (UPMSP), Council for the Indian School Certificate Examinations (CISCE / ICSE / ISC), Bihar School Examination Board (BSEB), Maharashtra State Board of Secondary and Higher Secondary Education (MSBSHSE), SCERT Maharashtra, or any other government or statutory body. For official services, examinations, registrations, and notifications, always visit the respective official portals directly.
+      <strong aria-label="Independent Portal Notice">INDEPENDENT PORTAL NOTICE:</strong> StudySignal is an independent educational platform and is not affiliated with, endorsed by, or connected to the Central Board of Secondary Education (CBSE), Uttar Pradesh Madhyamik Shiksha Parishad (UPMSP), Council for the Indian School Certificate Examinations (CISCE / ICSE / ISC), Bihar School Examination Board (BSEB), Maharashtra State Board of Secondary and Higher Secondary Education (MSBSHSE), SCERT Maharashtra, National Testing Agency (NTA), Joint Admission Board (JAB / IITs), JoSAA, National Medical Commission (NMC), Medical Counselling Committee (MCC), or any other government or statutory body. For official services, examinations, registrations, and notifications, always visit the respective official portals directly.
     </div>
     <div class="banner-links">
       <span class="banner-links-label" style="font-size: 0.75rem; font-weight: 700; color: #475569; text-transform: uppercase;">Official Sources:</span>
@@ -19,12 +19,28 @@
       {% elif '/cbse' in request.path %}
         <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer" class="banner-link">CBSE Main ↗</a>
         <a href="{{ official_urls.cbse_academic }}" target="_blank" rel="noopener noreferrer" class="banner-link">CBSE Academics ↗</a>
+      {% elif '/jee-main' in request.path %}
+        <a href="{{ official_urls.jeemain_main }}" target="_blank" rel="noopener noreferrer" class="banner-link">JEE Main (jeemain.nta.nic.in) ↗</a>
+        <a href="{{ official_urls.nta_main }}" target="_blank" rel="noopener noreferrer" class="banner-link">NTA (nta.ac.in) ↗</a>
+      {% elif '/jee-advanced' in request.path %}
+        <a href="{{ official_urls.jeeadv_main }}" target="_blank" rel="noopener noreferrer" class="banner-link">JEE Advanced (jeeadv.ac.in) ↗</a>
+        <a href="{{ official_urls.josaa_main }}" target="_blank" rel="noopener noreferrer" class="banner-link">JoSAA ↗</a>
+      {% elif '/neet-ug' in request.path %}
+        <a href="{{ official_urls.neet_main }}" target="_blank" rel="noopener noreferrer" class="banner-link">NEET UG (neet.nta.nic.in) ↗</a>
+        <a href="{{ official_urls.mcc_ug }}" target="_blank" rel="noopener noreferrer" class="banner-link">MCC ↗</a>
+      {% elif '/cuet-ug' in request.path %}
+        <a href="{{ official_urls.cuet_main }}" target="_blank" rel="noopener noreferrer" class="banner-link">CUET UG (cuet.nta.nic.in) ↗</a>
+        <a href="{{ official_urls.nta_main }}" target="_blank" rel="noopener noreferrer" class="banner-link">NTA ↗</a>
       {% else %}
         <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer" class="banner-link">CBSE ↗</a>
         <a href="{{ official_urls.upmsp_main }}" target="_blank" rel="noopener noreferrer" class="banner-link">UPMSP ↗</a>
         <a href="{{ official_urls.cisce_main }}" target="_blank" rel="noopener noreferrer" class="banner-link">CISCE ↗</a>
         <a href="{{ official_urls.bseb_main }}" target="_blank" rel="noopener noreferrer" class="banner-link">BSEB ↗</a>
         <a href="{{ official_urls.maha_main }}" target="_blank" rel="noopener noreferrer" class="banner-link">MSBSHSE ↗</a>
+        <a href="{{ official_urls.jeemain_main }}" target="_blank" rel="noopener noreferrer" class="banner-link">JEE Main ↗</a>
+        <a href="{{ official_urls.jeeadv_main }}" target="_blank" rel="noopener noreferrer" class="banner-link">JEE Adv ↗</a>
+        <a href="{{ official_urls.neet_main }}" target="_blank" rel="noopener noreferrer" class="banner-link">NEET UG ↗</a>
+        <a href="{{ official_urls.cuet_main }}" target="_blank" rel="noopener noreferrer" class="banner-link">CUET UG ↗</a>
       {% endif %}
     </div>
   </div>

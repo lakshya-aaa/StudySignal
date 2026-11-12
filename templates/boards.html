@@ -3,7 +3,7 @@
 {% block title %}Educational Boards & Competitive Entrance Exams | StudySignal{% endblock %}
 
 {% block meta_description %}
-Explore StudySignal's coverage across Indian national and state school education boards (CBSE, ICSE, UP Board, Bihar Board BSEB, Maharashtra Board MSBSHSE) and competitive entrance examinations (JEE, NEET, CUET).
+Explore StudySignal's active coverage across 5 Indian school education boards (CBSE, UP Board UPMSP, CISCE ICSE & ISC, Bihar Board BSEB, Maharashtra Board MSBSHSE) and 4 national competitive entrance examinations (JEE Main, JEE Advanced, NEET UG, CUET UG).
 {% endblock %}
 
 {% block content %}
@@ -20,12 +20,15 @@ Explore StudySignal's coverage across Indian national and state school education
         </div>
         <h1 class="section-title">Educational Boards &amp; Competitive Examinations</h1>
         <p class="section-subtitle">
-          StudySignal provides student-first access to authentic curricula, sample papers, past question papers, exam notifications, and dates across Indian school boards and competitive entrance exams.
+          StudySignal provides student-first access to verified official curricula, sample/model papers, past question paper archives, exam notifications, and examination schedules across 5 Indian school boards and 4 independent competitive entrance examinations (JEE Main, JEE Advanced, NEET UG, CUET UG).
         </p>
       </div>
       <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
         <a href="/cbse/class-10" class="btn-sm btn-primary">
           Explore CBSE (Active) &rarr;
+        </a>
+        <a href="/jee-main" class="btn-sm btn-secondary">
+          Explore JEE Main (Active) &rarr;
         </a>
       </div>
     </div>
@@ -34,15 +37,11 @@ Explore StudySignal's coverage across Indian national and state school education
     <div class="boards-status-legend">
       <div class="legend-item">
         <span class="badge-status-active">Active</span>
-        <span class="legend-desc">Live portal with verified syllabi, official timetables, sample/model papers, or past question archives.</span>
+        <span class="legend-desc">Live portal with verified syllabi, official timetables/schedules, sample/model papers, bulletins, or past question paper archives.</span>
       </div>
       <div class="legend-item">
-        <span class="badge-status-dev">In Development</span>
-        <span class="legend-desc">Framework undergoing official verification; no speculative content published.</span>
-      </div>
-      <div class="legend-item">
-        <span class="badge-status-soon">Coming Soon</span>
-        <span class="legend-desc">Scheduled for upcoming phased integration on StudySignal's expansion roadmap.</span>
+        <span class="badge-status-dev">Verification Policy</span>
+        <span class="legend-desc">Every entry links exclusively to statutory domains (.gov.in / .nic.in / .ac.in / .edu.in / .org) without speculative or fabricated claims.</span>
       </div>
     </div>
 
@@ -115,36 +114,50 @@ Explore StudySignal's coverage across Indian national and state school education
         <div>
           <h2 class="section-title" style="font-size: 1.35rem;">National Competitive Examinations</h2>
           <p class="section-subtitle" style="font-size: 0.875rem;">
-            Major entrance examinations for undergraduate admissions in engineering, medicine, and university programs.
+            Four independent national entrance portals for engineering, architecture, medical, and central university admissions: JEE Main, JEE Advanced, NEET UG, and CUET UG.
           </p>
         </div>
       </div>
 
       <div class="board-selector-grid">
         {% for exam in competitive_exams %}
-        <div class="board-card is-coming-soon">
+        <div class="board-card {% if exam.status_code == 'active' %}is-active{% else %}is-coming-soon{% endif %}">
           <div class="board-card-header">
             <span class="board-scope">{{ exam.scope }}</span>
             <span class="{{ exam.badge_class }}">{{ exam.status_label }}</span>
           </div>
 
           <div class="board-card-title-group">
-            {% if exam.id == 'jee' %}
-              <img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="NTA" class="board-card-logo exam-logo" width="48" height="16">
-            {% elif exam.id == 'neet' %}
-              <img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="NTA" class="board-card-logo exam-logo" width="48" height="16">
-            {% elif exam.id == 'cuet' %}
-              <img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="NTA" class="board-card-logo exam-logo" width="48" height="16">
+            {% if exam.id == 'jee-advanced' %}
+              <img src="{{ url_for('static', filename=exam.logo or 'images/exams/jee-adv-logo.png') }}" alt="JEE Advanced IIT Roorkee" class="board-card-logo exam-logo" width="32" height="22">
+            {% else %}
+              <img src="{{ url_for('static', filename=exam.logo or 'images/exams/nta-logo.png') }}" alt="NTA" class="board-card-logo exam-logo" width="48" height="16">
             {% endif %}
             <h3 class="board-card-title">{{ exam.name }}</h3>
           </div>
-          <h4 class="board-card-fullname">{{ exam.full_name }}</h4>
+          <h4 class="board-card-fullname">
+            {{ exam.full_name }}
+            {% if exam.cycle_tag %}
+              <span class="exam-cycle-inline">({{ exam.cycle_tag }})</span>
+            {% endif %}
+          </h4>
           <p class="board-card-desc">{{ exam.description }}</p>
 
-          <div class="board-card-footer" style="margin-top: auto;">
-            <button class="btn-disabled-soon" disabled aria-disabled="true">
-              Coming Soon &bull; Planned on Roadmap
-            </button>
+          {% if exam.actions and exam.actions|length > 0 %}
+          <div class="board-card-links">
+            {% for act in exam.actions %}
+            <a href="{{ act.url }}" class="board-action-link">
+              <span>{{ act.label }}</span>
+              <span>&rarr;</span>
+            </a>
+            {% endfor %}
+          </div>
+          {% endif %}
+
+          <div class="board-card-footer">
+            <a href="{{ exam.url }}" class="btn-primary" style="width: 100%; text-align: center;">
+              Explore {{ exam.name }} Portal &rarr;
+            </a>
           </div>
         </div>
         {% endfor %}

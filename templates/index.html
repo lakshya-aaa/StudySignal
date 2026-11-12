@@ -3,7 +3,7 @@
 {% block title %}StudySignal – Multi-Board Educational Platform (CBSE, UP Board, CISCE, BSEB & MSBSHSE){% endblock %}
 
 {% block meta_description %}
-StudySignal is an independent, free-access educational platform providing verified syllabus PDFs, official date sheets, sample papers, past question papers, circulars, and notices across CBSE, UP Board (UPMSP), CISCE (ICSE & ISC), Bihar Board (BSEB), and Maharashtra Board (MSBSHSE).
+StudySignal is an independent, free-access educational platform providing verified syllabus PDFs, official date sheets, sample papers, past question papers, circulars, and notices across CBSE, UP Board (UPMSP), CISCE (ICSE & ISC), Bihar Board (BSEB), Maharashtra Board (MSBSHSE), JEE Main, JEE Advanced, NEET UG, and CUET UG.
 {% endblock %}
 
 {% block content %}
@@ -17,7 +17,7 @@ StudySignal is an independent, free-access educational platform providing verifi
       Verified Board &amp; Competitive Exam Information
     </h1>
     <p class="hero-subtitle">
-      StudySignal is an independent educational platform providing verified syllabus PDFs, official date sheets, sample papers, past question papers, circulars, and notices across CBSE, UP Board (UPMSP), CISCE (ICSE &amp; ISC), Bihar Board (BSEB), and Maharashtra Board (MSBSHSE).
+      StudySignal is an independent educational platform providing verified syllabus PDFs, official date sheets, sample papers, past question papers, circulars, and notices across CBSE, UP Board (UPMSP), CISCE (ICSE &amp; ISC), Bihar Board (BSEB), and Maharashtra Board (MSBSHSE). Also explore dedicated portals for <strong>JEE Main</strong>, <strong>JEE Advanced</strong>, <strong>NEET UG</strong>, and <strong>CUET UG</strong>.
     </p>
 
     <!-- Hero Search -->
@@ -52,6 +52,10 @@ StudySignal is an independent, free-access educational platform providing verifi
       <a href="/search?q=ISC+Class+12+Physics" class="quick-tag">ISC Class 12 Physics</a>
       <a href="/search?board=bihar-board&category=model_paper" class="quick-tag">Bihar Board Model Papers</a>
       <a href="/search?board=maharashtra-board&category=pyq" class="quick-tag">Maharashtra SSC &amp; HSC PYQs</a>
+      <a href="/jee-main/syllabus" class="quick-tag">JEE Main 2027 Syllabus</a>
+      <a href="/jee-advanced/pyq" class="quick-tag">JEE Advanced PYQs (66 PDFs)</a>
+      <a href="/neet-ug/counselling" class="quick-tag">NEET UG Counselling (MCC / AACCC)</a>
+      <a href="/cuet-ug/universities" class="quick-tag">CUET UG 244 Universities</a>
     </div>
   </div>
 </section>
@@ -360,6 +364,120 @@ StudySignal is an independent, free-access educational platform providing verifi
         </div>
       </div>
     </div>
+
+    <!-- Responsive 4 National Competitive Examination Portals -->
+    <div style="margin-top: 2.25rem; margin-bottom: 1rem;">
+      <h3 class="section-title" style="font-size: 1.25rem; margin-bottom: 0.25rem;">National Competitive Examination Portals</h3>
+      <p class="section-subtitle" style="font-size: 0.875rem;">
+        Dedicated official portals for national engineering, medical, and central university undergraduate admissions.
+      </p>
+    </div>
+
+    <div class="class-portal-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+      <!-- Card 1: JEE Main -->
+      <div class="class-card" style="border-top: 5px solid var(--brand-blue); background: #ffffff;">
+        <div class="class-card-header">
+          <span class="class-badge" style="background: #eef2ff; color: var(--brand-blue-dark);">Engineering &amp; Arch &bull; NTA</span>
+          <span class="badge-status-active">Active &bull; 2027 Session 1</span>
+        </div>
+        <div class="portal-card-title-wrap">
+          <img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="NTA JEE Main" class="portal-card-logo" style="width: auto; max-width: 72px; height: 24px; padding: 3px 6px;" width="72" height="20">
+          <h3 class="class-card-title">JEE Main – Joint Entrance Examination (Main)</h3>
+        </div>
+        <p class="class-card-desc">
+          Official NTA 2027 Information Bulletin &amp; Syllabus PDF, Session 1 dates (20–24 &amp; 28 Jan 2027), category fee slabs, 9 April 2026 shift PYQs, and 22 NTA notices.
+        </p>
+        <ul class="class-quick-links">
+          <li><a href="/jee-main/syllabus"><span>2027 Syllabus PDF &amp; Topic Scope</span><span>↗</span></a></li>
+          <li><a href="/jee-main/exam-pattern"><span>Paper 1 &amp; Paper 2 Pattern (+4/-1)</span><span>&rarr;</span></a></li>
+          <li><a href="/jee-main/important-dates"><span>2027 Session 1 &amp; Session 2 Dates</span><span>&rarr;</span></a></li>
+          <li><a href="/jee-main/information-bulletin"><span>2027 Information Bulletin &amp; Fee Slabs</span><span>↗</span></a></li>
+          <li><a href="/jee-main/pyq"><span>PYQ Archive (9 April 2026 Shift PDFs)</span><span>&rarr;</span></a></li>
+          <li><a href="/jee-main/notifications"><span>Official Public Notices (22)</span><span>&rarr;</span></a></li>
+        </ul>
+        <div class="class-card-footer">
+          <a href="/jee-main" class="btn-primary" style="width: 100%; text-align: center;">Explore JEE Main Portal &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Card 2: JEE Advanced -->
+      <div class="class-card" style="border-top: 5px solid #0f766e; background: #ffffff;">
+        <div class="class-card-header">
+          <span class="class-badge" style="background: #ccfbf1; color: #115e59;">23 IITs &amp; IISc &bull; JAB</span>
+          <span class="badge-status-active">Active &bull; 2026 Archive + Rules</span>
+        </div>
+        <div class="portal-card-title-wrap">
+          <img src="{{ url_for('static', filename='images/exams/jee-adv-logo.png') }}" alt="JEE Advanced IIT Roorkee" class="portal-card-logo" style="width: auto; max-width: 56px; height: 38px; padding: 3px 4px;" width="56" height="38">
+          <h3 class="class-card-title">JEE Advanced – IIT Admissions (JAB)</h3>
+        </div>
+        <p class="class-card-desc">
+          Official JAB / Organizing Institute IIT Roorkee portal featuring Criteria A1–A5 eligibility, Top 20 Percentile rules, 66 archive PDFs (2007–2026 + AAT), 23 IITs across 7 zones, and JoSAA documents.
+        </p>
+        <ul class="class-quick-links">
+          <li><a href="/jee-advanced/syllabus"><span>Physics, Chemistry, Maths &amp; AAT Syllabi</span><span>↗</span></a></li>
+          <li><a href="/jee-advanced/eligibility"><span>Criteria A1–A5 &amp; Top 20%ile / 75% Rules</span><span>&rarr;</span></a></li>
+          <li><a href="/jee-advanced/pyq"><span>PYQ Archive (66 PDFs: 2007–2026 &amp; AAT)</span><span>&rarr;</span></a></li>
+          <li><a href="/jee-advanced/information-bulletin"><span>2026 Information Brochure &amp; JoSAA Rules</span><span>↗</span></a></li>
+          <li><a href="/jee-advanced/result"><span>Qualifying Cutoffs, 23 IITs &amp; JoSAA</span><span>&rarr;</span></a></li>
+          <li><a href="/jee-advanced/important-dates"><span>2026 Cycle Dates &amp; Fee Structure</span><span>&rarr;</span></a></li>
+        </ul>
+        <div class="class-card-footer">
+          <a href="/jee-advanced" class="btn-primary" style="width: 100%; text-align: center;">Explore JEE Advanced Portal &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Card 3: NEET UG -->
+      <div class="class-card" style="border-top: 5px solid #059669; background: #ffffff;">
+        <div class="class-card-header">
+          <span class="class-badge" style="background: #d1fae5; color: #065f46;">MBBS / BDS / AYUSH &bull; NTA / NMC</span>
+          <span class="badge-status-active">Active &bull; 2026 + 2027 Awaited</span>
+        </div>
+        <div class="portal-card-title-wrap">
+          <img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="NTA NEET UG" class="portal-card-logo" style="width: auto; max-width: 72px; height: 24px; padding: 3px 6px;" width="72" height="20">
+          <h3 class="class-card-title">NEET UG – National Eligibility-cum-Entrance Test</h3>
+        </div>
+        <p class="class-card-desc">
+          Verified NMC UGMEB &amp; NTA syllabi, 180 compulsory MCQ scheme, Qualifying Codes 01–07, 75 multilingual 2020 question booklets, and MCC 15% AIQ &amp; AACCC AYUSH counselling guides.
+        </p>
+        <ul class="class-quick-links">
+          <li><a href="/neet-ug/syllabus"><span>NMC UGMEB &amp; NTA 2026 Syllabus PDFs</span><span>↗</span></a></li>
+          <li><a href="/neet-ug/counselling"><span>MCC 15% AIQ &amp; AACCC Counselling Guide</span><span>&rarr;</span></a></li>
+          <li><a href="/neet-ug/eligibility"><span>Age Rule &amp; Qualifying Codes 01–07</span><span>&rarr;</span></a></li>
+          <li><a href="/neet-ug/pyq"><span>75 Multilingual 2020 Booklet PYQs</span><span>&rarr;</span></a></li>
+          <li><a href="/neet-ug/information-bulletin"><span>2026 Information Bulletin &amp; Advisories</span><span>↗</span></a></li>
+          <li><a href="/neet-ug/notifications"><span>Official NTA Notices (10)</span><span>&rarr;</span></a></li>
+        </ul>
+        <div class="class-card-footer">
+          <a href="/neet-ug" class="btn-primary" style="width: 100%; text-align: center;">Explore NEET UG Portal &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Card 4: CUET UG -->
+      <div class="class-card" style="border-top: 5px solid #7c3aed; background: #ffffff;">
+        <div class="class-card-header">
+          <span class="class-badge" style="background: #ede9fe; color: #5b21b6;">244 Universities &bull; NTA</span>
+          <span class="badge-status-active">Active &bull; 37 Syllabi</span>
+        </div>
+        <div class="portal-card-title-wrap">
+          <img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="NTA CUET UG" class="portal-card-logo" style="width: auto; max-width: 72px; height: 24px; padding: 3px 6px;" width="72" height="20">
+          <h3 class="class-card-title">CUET UG – Common University Entrance Test</h3>
+        </div>
+        <p class="class-card-desc">
+          All 37 verified Appendix II subject syllabus PDFs (Codes 101–501), searchable directory of all 244 participating universities, +5/-1 CBT scheme, Information Bulletin, and PYQ status note.
+        </p>
+        <ul class="class-quick-links">
+          <li><a href="/cuet-ug/syllabus"><span>All 37 Official Subject Syllabus PDFs</span><span>↗</span></a></li>
+          <li><a href="/cuet-ug/universities"><span>244 Participating Universities Directory</span><span>&rarr;</span></a></li>
+          <li><a href="/cuet-ug/exam-pattern"><span>CBT Exam Scheme (+5/-1, 50 Questions)</span><span>&rarr;</span></a></li>
+          <li><a href="/cuet-ug/pyq"><span>Official PYQ Status &amp; Practice Portals</span><span>&rarr;</span></a></li>
+          <li><a href="/cuet-ug/information-bulletin"><span>2026 Information Bulletin &amp; FAQs</span><span>↗</span></a></li>
+          <li><a href="/cuet-ug/notifications"><span>Official NTA Notices (10)</span><span>&rarr;</span></a></li>
+        </ul>
+        <div class="class-card-footer">
+          <a href="/cuet-ug" class="btn-primary" style="width: 100%; text-align: center;">Explore CUET UG Portal &rarr;</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -472,43 +590,72 @@ StudySignal is an independent, free-access educational platform providing verifi
       <div class="selector-block">
         <h3 class="selector-block-heading">Competitive Examinations</h3>
         <div class="selector-cards-container">
-          <!-- JEE (Coming Soon) -->
-          <div class="board-mini-card is-coming-soon">
+          <!-- JEE Main (Active) -->
+          <div class="board-mini-card is-active" style="border-top-color: var(--brand-blue);">
             <div class="mini-card-top">
               <div class="mini-board-branding">
-                <img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="NTA" class="mini-logo exam-logo" width="36" height="14">
-                <span class="mini-board-name">JEE (Main &amp; Advanced)</span>
+                <img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="NTA" class="mini-logo exam-logo" width="36" height="10">
+                <span class="mini-board-name">JEE Main</span>
               </div>
-              <span class="badge-status-soon">Coming Soon</span>
+              <span class="badge-status-active">Active</span>
             </div>
-            <p class="mini-board-desc">National engineering entrance exam calendar and NTA syllabus tracking.</p>
-            <span class="mini-soon-label">Status Card &bull; Planned</span>
+            <p class="mini-board-desc">NTA 2027 Information Bulletin &amp; Syllabus PDF, Session 1 dates (20–24 &amp; 28 Jan 2027), 9 April 2026 shift PYQs, and 22 public notices.</p>
+            <div class="mini-card-links">
+              <a href="/jee-main" class="mini-link">JEE Main Hub &rarr;</a>
+              <a href="/jee-main/syllabus" class="mini-link">2027 Syllabus &rarr;</a>
+              <a href="/jee-main/pyq" class="mini-link">9 Shift PYQs &rarr;</a>
+            </div>
           </div>
 
-          <!-- NEET (Coming Soon) -->
-          <div class="board-mini-card is-coming-soon">
+          <!-- JEE Advanced (Active) -->
+          <div class="board-mini-card is-active" style="border-top-color: #0f766e;">
             <div class="mini-card-top">
               <div class="mini-board-branding">
-                <img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="NTA" class="mini-logo exam-logo" width="36" height="14">
-                <span class="mini-board-name">NEET (UG)</span>
+                <img src="{{ url_for('static', filename='images/exams/jee-adv-logo.png') }}" alt="JEE Advanced IIT Roorkee" class="mini-logo exam-logo" width="24" height="16">
+                <span class="mini-board-name">JEE Advanced</span>
               </div>
-              <span class="badge-status-soon">Coming Soon</span>
+              <span class="badge-status-active">Active</span>
             </div>
-            <p class="mini-board-desc">National medical entrance examination bulletin updates and eligibility criteria.</p>
-            <span class="mini-soon-label">Status Card &bull; Planned</span>
+            <p class="mini-board-desc">JAB / IIT Roorkee portal with Criteria A1–A5 eligibility, Top 20%ile / 75% Class XII rules, 66 PYQs (2007–2026 &amp; AAT), 23 IITs, and JoSAA docs.</p>
+            <div class="mini-card-links">
+              <a href="/jee-advanced" class="mini-link">JEE Advanced Hub &rarr;</a>
+              <a href="/jee-advanced/eligibility" class="mini-link">Criteria A1–A5 &rarr;</a>
+              <a href="/jee-advanced/pyq" class="mini-link">66 PYQs &rarr;</a>
+            </div>
           </div>
 
-          <!-- CUET (Coming Soon) -->
-          <div class="board-mini-card is-coming-soon">
+          <!-- NEET UG (Active) -->
+          <div class="board-mini-card is-active" style="border-top-color: #059669;">
             <div class="mini-card-top">
               <div class="mini-board-branding">
-                <img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="NTA" class="mini-logo exam-logo" width="36" height="14">
-                <span class="mini-board-name">CUET (UG)</span>
+                <img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="NTA" class="mini-logo exam-logo" width="36" height="10">
+                <span class="mini-board-name">NEET UG</span>
               </div>
-              <span class="badge-status-soon">Coming Soon</span>
+              <span class="badge-status-active">Active</span>
             </div>
-            <p class="mini-board-desc">Central university entrance domain test syllabus and timeline scheduled.</p>
-            <span class="mini-soon-label">Status Card &bull; Planned</span>
+            <p class="mini-board-desc">NMC UGMEB &amp; NTA syllabi, Qualifying Codes 01–07, 75 multilingual 2020 booklets, and MCC 15% AIQ &amp; AACCC counselling portal links.</p>
+            <div class="mini-card-links">
+              <a href="/neet-ug" class="mini-link">NEET UG Hub &rarr;</a>
+              <a href="/neet-ug/counselling" class="mini-link">MCC / AACCC &rarr;</a>
+              <a href="/neet-ug/pyq" class="mini-link">75 Booklets &rarr;</a>
+            </div>
+          </div>
+
+          <!-- CUET UG (Active) -->
+          <div class="board-mini-card is-active" style="border-top-color: #7c3aed;">
+            <div class="mini-card-top">
+              <div class="mini-board-branding">
+                <img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="NTA" class="mini-logo exam-logo" width="36" height="10">
+                <span class="mini-board-name">CUET UG</span>
+              </div>
+              <span class="badge-status-active">Active</span>
+            </div>
+            <p class="mini-board-desc">All 37 Appendix II subject syllabus PDFs (Codes 101–501), searchable directory of 244 participating universities, +5/-1 scheme, and PYQ status.</p>
+            <div class="mini-card-links">
+              <a href="/cuet-ug" class="mini-link">CUET UG Hub &rarr;</a>
+              <a href="/cuet-ug/syllabus" class="mini-link">37 Syllabi &rarr;</a>
+              <a href="/cuet-ug/universities" class="mini-link">244 Universities &rarr;</a>
+            </div>
           </div>
         </div>
       </div>
@@ -738,6 +885,22 @@ StudySignal is an independent, free-access educational platform providing verifi
           <img src="{{ url_for('static', filename='images/boards/msbshse-logo.png') }}" alt="" class="datesheet-board-logo" width="18" height="18">
           <span>MSBSHSE 2027 Timetables (Confirmed) &rarr;</span>
         </a>
+        <a href="/jee-main/important-dates" class="btn-sm btn-primary" style="width: auto; display: inline-flex; align-items: center; gap: 6px;">
+          <img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="" class="datesheet-board-logo" style="width: auto; max-width: 44px; height: 14px;" width="44" height="12">
+          <span>JEE Main 2027 Schedule &rarr;</span>
+        </a>
+        <a href="/jee-advanced/important-dates" class="btn-sm btn-primary" style="width: auto; display: inline-flex; align-items: center; gap: 6px;">
+          <img src="{{ url_for('static', filename='images/exams/jee-adv-logo.png') }}" alt="" class="datesheet-board-logo" style="width: auto; max-width: 24px; height: 16px;" width="24" height="16">
+          <span>JEE Advanced Dates &rarr;</span>
+        </a>
+        <a href="/neet-ug/important-dates" class="btn-sm btn-primary" style="width: auto; display: inline-flex; align-items: center; gap: 6px;">
+          <img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="" class="datesheet-board-logo" style="width: auto; max-width: 44px; height: 14px;" width="44" height="12">
+          <span>NEET UG Schedule &rarr;</span>
+        </a>
+        <a href="/cuet-ug/important-dates" class="btn-sm btn-primary" style="width: auto; display: inline-flex; align-items: center; gap: 6px;">
+          <img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="" class="datesheet-board-logo" style="width: auto; max-width: 44px; height: 14px;" width="44" height="12">
+          <span>CUET UG Schedule &rarr;</span>
+        </a>
         <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto; display: inline-flex; align-items: center; gap: 6px;">
           <img src="{{ url_for('static', filename='images/boards/cbse-logo.png') }}" alt="" class="datesheet-board-logo" width="16" height="16">
           <span>Official CBSE Website ↗</span>
@@ -757,6 +920,18 @@ StudySignal is an independent, free-access educational platform providing verifi
         <a href="{{ official_urls.maha_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto; display: inline-flex; align-items: center; gap: 6px;">
           <img src="{{ url_for('static', filename='images/boards/msbshse-logo.png') }}" alt="" class="datesheet-board-logo" width="16" height="16">
           <span>Official MSBSHSE Website ↗</span>
+        </a>
+        <a href="{{ official_urls.jeemain_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto; display: inline-flex; align-items: center; gap: 6px;">
+          <span>jeemain.nta.nic.in ↗</span>
+        </a>
+        <a href="{{ official_urls.jeeadv_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto; display: inline-flex; align-items: center; gap: 6px;">
+          <span>jeeadv.ac.in ↗</span>
+        </a>
+        <a href="{{ official_urls.neet_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto; display: inline-flex; align-items: center; gap: 6px;">
+          <span>neet.nta.nic.in ↗</span>
+        </a>
+        <a href="{{ official_urls.cuet_main }}" target="_blank" rel="noopener noreferrer" class="btn-sm btn-secondary" style="width: auto; display: inline-flex; align-items: center; gap: 6px;">
+          <span>cuet.nta.nic.in ↗</span>
         </a>
       </div>
     </div>

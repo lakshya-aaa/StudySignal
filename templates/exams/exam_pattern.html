@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ exam.name }} Exam Pattern, Marking Scheme &amp; Tie-Breaking Rules | StudySignal{% endblock %}
+
+{% block meta_description %}{{ exam.exam_pattern.overview }}{% endblock %}
+
+{% block content %}
+{% set active_tab = 'exam-pattern' %}
+{% set page_label = 'Exam Pattern' %}
+{% set page_heading = exam.name + ' Exam Pattern &amp; Marking Scheme' %}
+{% set page_intro = exam.exam_pattern.overview %}
+{% include 'exams/_subnav.html' %}
+
+<div class="exam-page-body">
+  <section class="section exam-section-tight">
+    <div class="container">
+      <!-- Paper Structure Cards -->
+      <div class="exam-panel-card">
+        <h2>Paper Structure &amp; Question Distribution</h2>
+        <div class="exam-papers-stack">
+          {% for p in exam.exam_pattern.papers %}
+          <article class="exam-subject-block">
+            <div class="exam-subject-block-head">
+              <div>
+                <h3>{{ p.paper_code or p.section }}</h3>
+                <p class="exam-muted-line">Mode: <strong>{{ p.mode }}</strong> &bull; Duration: <strong>{{ p.duration }}</strong></p>
+              </div>
+              <div class="exam-doc-badges">
+                {% if p.total_questions %}<span class="code-pill">{{ p.total_questions }} Questions</span>{% endif %}
+                {% if p.total_marks %}<span class="badge-status-active">{{ p.total_marks }} Marks</span>{% endif %}
+                {% if p.marks and not p.total_marks %}<span class="badge-status-active">{{ p.marks }}</span>{% endif %}
+              </div>
+            </div>
+
+            {% if p.shift_timings %}
+            <p class="exam-muted-line">Timings: {{ p.shift_timings }}</p>
+            {% endif %}
+            {% if p.subjects %}
+            <p class="exam-muted-line">Subjects Tested: <strong>{{ p.subjects }}</strong></p>
+            {% endif %}
+            {% if p.question_types %}
+            <p class="exam-muted-line">Question Formats: {{ p.question_types }}</p>
+            {% endif %}
+            {% if p.questions and not p.total_questions %}
+            <p class="exam-muted-line">Format: <strong>{{ p.questions }}</strong></p>
+            {% endif %}
+
+            {% if p.sections %}
+            <div class="exam-table-wrap">
+              <table class="exam-table">
+                <thead>
+                  <tr>
+                    <th>Subject</th>
+                    {% if p.sections[0].section_a is defined %}
+                    <th>Section A</th>
+                    <th>Section B</th>
+                    <th>Total</th>
+                    {% else %}
+                    <th>Questions</th>
+                    <th>Maximum Marks</th>
+                    {% endif %}
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for sec in p.sections %}
+                  <tr>
+                    <td><strong>{{ sec.subject }}</strong></td>
+                    {% if sec.section_a is defined %}
+                    <td>{{ sec.section_a }}</td>
+                    <td>{{ sec.section_b }}</td>
+                    <td><strong>{{ sec.total }}</strong></td>
+                    {% else %}
+                    <td>{{ sec.questions }}</td>
+                    <td><strong>{{ sec.marks }}</strong></td>
+                    {% endif %}
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+            {% endif %}
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Marking Scheme & Mediums -->
+      <div class="exam-two-col">
+        <div class="exam-panel-card">
+          <h2>Official Marking Scheme</h2>
+          <div class="exam-table-wrap">
+            <table class="exam-table">
+              <thead>
+                <tr>
+                  <th>Response Type</th>
+                  <th>Marks Awarded</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for row in exam.exam_pattern.marking_scheme %}
+                <tr>
+                  <td>{{ row.rule }}</td>
+                  <td><strong>{{ row.marks }}</strong></td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="exam-panel-card">
+          <h2>Question Paper Mediums</h2>
+          <ul class="exam-clean-list">
+            {% for m in exam.exam_pattern.mediums %}
+            <li>{{ m }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+      {% if exam.exam_pattern.rank_criteria %}
+      <div class="exam-panel-card">
+        <h2>Minimum Percentage Criteria for Inclusion in JEE (Advanced) Rank Lists</h2>
+        <div class="exam-table-wrap">
+          <table class="exam-table">
+            <thead>
+              <tr>
+                <th>Rank List Category</th>
+                <th>Minimum % in Each Subject</th>
+                <th>Minimum Aggregate %</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for rc in exam.exam_pattern.rank_criteria %}
+              <tr>
+                <td><strong>{{ rc.list }}</strong></td>
+                <td>{{ rc.min_subject }}</td>
+                <td><strong>{{ rc.min_aggregate }}</strong></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if exam.exam_pattern.tie_breaking %}
+      <div class="exam-panel-card">
+        <h2>Official Tie-Breaking Hierarchy</h2>
+        <ul class="exam-clean-list">
+          {% for tb in exam.exam_pattern.tie_breaking %}
+          <li>{{ tb }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      {% if exam.exam_pattern.normalization %}
+      <div class="exam-alert-box exam-alert-info">
+        <h2 class="exam-alert-title">Multi-Shift Percentile Normalization Method</h2>
+        <p class="exam-alert-text">{{ exam.exam_pattern.normalization }}</p>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+</div>
+{% endblock %}

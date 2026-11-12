@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ exam.name }} Eligibility Criteria, Age Limit &amp; Reservation Rules | StudySignal{% endblock %}
+
+{% block meta_description %}Complete verified official eligibility rules for {{ exam.name }}: age limit, attempts, qualifying exam criteria, and reservation policies.{% endblock %}
+
+{% block content %}
+{% set active_tab = 'eligibility' %}
+{% set page_label = 'Eligibility' %}
+{% set page_heading = exam.name + ' Official Eligibility Criteria' %}
+{% set page_intro = exam.eligibility.overview if exam.eligibility.overview else ('Verified statutory eligibility conditions, qualifying examination rules, and reservation norms for ' + exam.full_name + '.') %}
+{% include 'exams/_subnav.html' %}
+
+<div class="exam-page-body">
+  <section class="section exam-section-tight">
+    <div class="container">
+      {% if exam.eligibility.criteria_list %}
+      <!-- JEE Advanced A1–A5 Statutory Criteria -->
+      <div class="exam-panel-card">
+        <h2>Mandatory Eligibility Criteria (A1 – A5)</h2>
+        <div class="exam-criteria-grid">
+          {% for c in exam.eligibility.criteria_list %}
+          <article class="exam-criterion-card">
+            <span class="code-pill">{{ c.code }}</span>
+            <h3>{{ c.title }}</h3>
+            <p>{{ c.detail }}</p>
+          </article>
+          {% endfor %}
+        </div>
+
+        {% if exam.eligibility.admission_performance_rule %}
+        <div class="exam-alert-box exam-alert-active" style="margin-top: 1.5rem;">
+          <h3 class="exam-alert-title">Class XII Performance Requirement for IIT Admission (JoSAA)</h3>
+          <p class="exam-alert-text">{{ exam.eligibility.admission_performance_rule }}</p>
+        </div>
+        {% endif %}
+
+        {% if exam.eligibility.foreign_and_oci %}
+        <div class="exam-alert-box exam-alert-info">
+          <h3 class="exam-alert-title">Foreign Nationals &amp; OCI/PIO Rules</h3>
+          <p class="exam-alert-text">{{ exam.eligibility.foreign_and_oci }}</p>
+        </div>
+        {% endif %}
+
+        {% if exam.eligibility.official_links %}
+        <div class="exam-action-row">
+          {% for lnk in exam.eligibility.official_links %}
+          <a href="{{ lnk.url }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">{{ lnk.label }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+      {% else %}
+      <!-- Age Limit, Attempts, Qualifying Exam -->
+      <div class="exam-two-col">
+        {% if exam.eligibility.age_limit %}
+        <div class="exam-panel-card">
+          <h2>Age Limit</h2>
+          <p>{{ exam.eligibility.age_limit }}</p>
+        </div>
+        {% endif %}
+
+        {% if exam.eligibility.attempt_limit %}
+        <div class="exam-panel-card">
+          <h2>Number of Attempts</h2>
+          <p>{{ exam.eligibility.attempt_limit }}</p>
+        </div>
+        {% elif exam.eligibility.university_mapping_rule %}
+        <div class="exam-panel-card">
+          <h2>University Subject Mapping Rule</h2>
+          <p>{{ exam.eligibility.university_mapping_rule }}</p>
+        </div>
+        {% endif %}
+      </div>
+
+      {% if exam.eligibility.qualifying_exam %}
+      <div class="exam-panel-card">
+        <h2>Qualifying Examination Criteria</h2>
+        <p>{{ exam.eligibility.qualifying_exam }}</p>
+
+        {% if exam.eligibility.subject_requirements %}
+        <h3 style="margin-top: 1.25rem;">Paper-Wise Subject Requirements</h3>
+        <ul class="exam-clean-list">
+          {% for sr in exam.eligibility.subject_requirements %}
+          <li>{{ sr }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if exam.eligibility.state_of_eligibility %}
+        <div class="exam-alert-box exam-alert-info" style="margin-top: 1.25rem; margin-bottom: 0;">
+          <h3 class="exam-alert-title">State of Eligibility Rule</h3>
+          <p class="exam-alert-text">{{ exam.eligibility.state_of_eligibility }}</p>
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
+
+      {% if exam.eligibility.qualifying_codes %}
+      <div class="exam-panel-card">
+        <h2>NEET (UG) Qualifying Examination Codes (Codes 01 – 07)</h2>
+        <div class="exam-table-wrap">
+          <table class="exam-table">
+            <thead>
+              <tr>
+                <th>Code</th>
+                <th>Applicable Qualification</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for qc in exam.eligibility.qualifying_codes %}
+              <tr>
+                <td><span class="code-pill">{{ qc.code }}</span></td>
+                <td>{{ qc.description }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if exam.eligibility.qualifying_percentiles %}
+      <div class="exam-panel-card">
+        <h2>Category-Wise Minimum Qualifying Percentile (NMC / DCI Norms)</h2>
+        <div class="exam-table-wrap">
+          <table class="exam-table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Minimum Qualifying Percentile</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for qp in exam.eligibility.qualifying_percentiles %}
+              <tr>
+                <td><strong>{{ qp.category }}</strong></td>
+                <td><span class="badge-status-active">{{ qp.min_percentile }}</span></td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      {% endif %}
+
+      {% if exam.eligibility.reservation_policy %}
+      <div class="exam-panel-card">
+        <h2>Central Government Reservation Policy</h2>
+        <div class="exam-table-wrap">
+          <table class="exam-table">
+            <thead>
+              <tr>
+                <th>Category</th>
+                <th>Statutory Reservation Provision</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for rp in exam.eligibility.reservation_policy %}
+              <tr>
+                <td><strong>{{ rp.category }}</strong></td>
+                <td>{{ rp.quota }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      {% endif %}
+      {% endif %}
+    </div>
+  </section>
+</div>
+{% endblock %}

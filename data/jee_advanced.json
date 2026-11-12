@@ -1,0 +1,1472 @@
+{
+  "exam_id": "jee-advanced",
+  "name": "JEE Advanced",
+  "full_name": "Joint Entrance Examination (Advanced)",
+  "conducting_body": "Joint Admission Board (JAB) / IITs (2026 Organizing Institute: IIT Roorkee)",
+  "logo": "images/exams/jee-adv-logo.png",
+  "official_website": "https://jeeadv.ac.in/",
+  "last_verified": "2026-11-10",
+  "cycle_status": {
+    "active_cycle": "2026 Reference Cycle (2027 Awaiting Official Notification)",
+    "label": "2026 Verified Archive + Reference Rules",
+    "badge_class": "badge-status-info",
+    "summary": "JEE (Advanced) 2027 notification, organizing IIT, and examination schedule have not yet been published on jeeadv.ac.in. Complete verified 2026 rules, syllabi, JoSAA 2026 documents, and 66 official past question papers (2007–2026 + AAT 2016–2025) are provided below."
+  },
+  "hero": {
+    "subtitle": "Second-stage national CBT examination conducted by the seven Zonal Coordinating IITs under the Joint Admission Board (JAB) for admission to B.Tech., B.S., B.Arch., and Dual Degree programmes across all 23 IITs and IISc Bengaluru.",
+    "primary_cta_label": "Official jeeadv.ac.in Portal ↗",
+    "primary_cta_url": "https://jeeadv.ac.in/",
+    "secondary_cta_label": "JEE (Advanced) Archive (2007–2026) ↗",
+    "secondary_cta_url": "https://jeeadv.ac.in/archive.html",
+    "key_facts": [
+      {
+        "label": "Conducting Authority",
+        "value": "Joint Admission Board (JAB) / IITs"
+      },
+      {
+        "label": "2026 Organizing IIT",
+        "value": "IIT Roorkee (2027 Awaited)"
+      },
+      {
+        "label": "Papers",
+        "value": "Paper 1 & Paper 2 (Both Compulsory, 3h each)"
+      },
+      {
+        "label": "Participating IITs",
+        "value": "23 IITs (6 Zones) + IISc Bengaluru via JoSAA"
+      }
+    ]
+  },
+  "syllabus": {
+    "session_label": "JEE (Advanced) Syllabus (Information Brochure pp. 61–85)",
+    "overview": "The official JEE (Advanced) syllabus spans Chemistry, Mathematics, Physics (for Paper 1 & Paper 2) and the Architecture Aptitude Test (AAT) for B.Arch. aspirants at IIT Roorkee, IIT Kharagpur, and IIT (BHU) Varanasi.",
+    "primary_pdfs": [
+      {
+        "title": "JEE (Advanced) 2026 Information Brochure — Complete Official Syllabus (Pages 61–85)",
+        "session": "2026 Reference",
+        "pages": "118 Pages (Syllabus pp. 61–85)",
+        "pdf_url": "https://jeeadv.ac.in/documents/IBEnglish_2026.pdf",
+        "source_host": "jeeadv.ac.in"
+      }
+    ],
+    "subjects": [
+      {
+        "name": "Physics (Paper 1 & Paper 2)",
+        "paper": "Compulsory in Paper 1 & Paper 2",
+        "units_count": 7,
+        "units": [
+          "General: Units & dimensions, dimensional analysis, least count, significant figures, experimental error analysis (Vernier, screw gauge, simple pendulum, Young's modulus, surface tension, calorimeter, focal length, resonance column, Ohm's law, meter bridge/post office box)",
+          "Mechanics: 1D/2D kinematics, Newton's laws, friction, work-energy-power, centre of mass & collisions, rigid body rotation, SHM, gravitation, fluid mechanics & Bernoulli's theorem, mechanical waves & Doppler effect",
+          "Thermal Physics: Thermal expansion, calorimetry, 1D heat conduction, convection/radiation, Newton's law of cooling, ideal gas laws, 1st & 2nd laws of thermodynamics, Carnot engine, blackbody radiation",
+          "Electricity and Magnetism: Coulomb's law, Gauss's law, capacitance, Ohm's law & Kirchhoff's laws, Biot-Savart & Ampere's laws, moving coil galvanometer, Faraday's & Lenz's laws, RC/LR/LC/LCR circuits",
+          "Electromagnetic Waves: Characteristics and full electromagnetic spectrum (radio to gamma rays)",
+          "Optics: Reflection/refraction at plane & spherical surfaces, TIR, prisms, thin lenses, Huygens' principle, Young's double-slit interference, single-slit diffraction, polarization & Brewster's law",
+          "Modern Physics: Atomic nucleus, alpha/beta/gamma decay, binding energy, fission & fusion, photoelectric effect, Bohr's model, X-rays & Moseley's law, de Broglie wavelength"
+        ]
+      },
+      {
+        "name": "Chemistry (Paper 1 & Paper 2)",
+        "paper": "Compulsory in Paper 1 & Paper 2",
+        "units_count": 6,
+        "units": [
+          "General & Physical Chemistry: Concept of atoms/molecules, gaseous & liquid states, atomic structure & chemical bonding, energetics/thermodynamics, chemical & ionic equilibrium, electrochemistry, chemical kinetics, solid state, solutions, surface chemistry",
+          "Inorganic Chemistry: Isolation/preparation & properties of non-metals, transition elements (3d series), ores & minerals, extractive metallurgy, principles of qualitative analysis (Groups I–V)",
+          "Organic Chemistry — Concepts & Hydrocarbons: Hybridisation, isomerism, inductive/resonance/hyperconjugation effects, alkanes, alkenes, alkynes, benzene, phenols",
+          "Organic Chemistry — Functional Groups: Alkyl halides, alcohols, ethers, aldehydes & ketones, carboxylic acids, amines, haloarenes",
+          "Biomolecules, Polymers & Everyday Chemistry: Carbohydrates, amino acids/peptides, nucleic acids (DNA/RNA), polymers, therapeutic drug classes, soaps & detergents",
+          "Practical Organic Chemistry: Detection of N, S, halogens and alcoholic, phenolic, carbonyl, carboxyl, amino, and nitro functional groups"
+        ]
+      },
+      {
+        "name": "Mathematics (Paper 1 & Paper 2)",
+        "paper": "Compulsory in Paper 1 & Paper 2",
+        "units_count": 9,
+        "units": [
+          "Sets, Relations and Functions: Set algebra, De-Morgan's laws, equivalence relations, invertible/even/odd/one-one/onto functions, composition",
+          "Algebra: Complex numbers, quadratic equations, AP/GP, logarithms, permutations & combinations, binomial theorem",
+          "Matrices: Matrix operations, transpose, elementary transformations, determinants (up to order 3), adjoint, inverse, simultaneous linear equations",
+          "Probability and Statistics: Sample space, conditional probability, Bayes' theorem, mean/median/mode, variance & standard deviation, random variables",
+          "Trigonometry: Trigonometric functions, periodicity, multiple/sub-multiple angles, trigonometric equations, inverse trigonometric functions",
+          "Analytical Geometry (2D & 3D): Straight lines, circles, parabola, ellipse, hyperbola, locus problems; 3D lines, skew lines, planes, shortest distance",
+          "Differential Calculus: Limits, continuity, L'Hospital rule, derivatives, chain rule, tangents/normals, maxima/minima, Rolle's & Lagrange's MVT",
+          "Integral Calculus: Indefinite & definite integrals, fundamental theorem, integration by parts/substitution/partial fractions, area under curves, 1st-order ODEs",
+          "Vectors: Vector addition, scalar multiplication, dot & cross products, scalar & vector triple products"
+        ]
+      },
+      {
+        "name": "Architecture Aptitude Test (AAT)",
+        "paper": "Optional post-JEE (Advanced) test for B.Arch. at IITs",
+        "units_count": 5,
+        "units": [
+          "1. Freehand Drawing: Proportion, surface texture, relative location, and day-to-day objects from memory",
+          "2. Geometrical Drawing: Lines, angles, polygons, circles, plan (top view) & elevation (front/side views) of solids",
+          "3. Three-Dimensional Perception: Building elements, colour, volume, orientation, structuring objects in memory",
+          "4. Imagination and Aesthetic Sensitivity: Composition exercises, context mapping, colour grouping",
+          "5. Architectural Awareness: Famous national and international architectural creations, places, and architects/designers"
+        ]
+      }
+    ]
+  },
+  "exam_pattern": {
+    "overview": "JEE (Advanced) consists of two compulsory Computer Based Test (CBT) papers — Paper 1 and Paper 2 — held on the same day. Exact section-wise question counts and partial-marking rubrics are disclosed in the on-screen CBT instructions on examination day; both papers evaluate Physics, Chemistry, and Mathematics.",
+    "papers": [
+      {
+        "paper_code": "Paper 1 (Compulsory)",
+        "mode": "Computer Based Test (CBT)",
+        "duration": "3 Hours (09:00 – 12:00 IST) | PwD Compensatory Time: +1 Hour (up to 13:00 IST)",
+        "subjects": "Physics, Chemistry, Mathematics",
+        "question_types": "Single-choice MCQs, Multiple-correct MCQs (with partial marking), Numerical Value / Non-negative integer questions, Matching List / Matrix Match"
+      },
+      {
+        "paper_code": "Paper 2 (Compulsory)",
+        "mode": "Computer Based Test (CBT)",
+        "duration": "3 Hours (14:30 – 17:30 IST) | PwD Compensatory Time: +1 Hour (up to 18:30 IST)",
+        "subjects": "Physics, Chemistry, Mathematics",
+        "question_types": "Single-choice MCQs, Multiple-correct MCQs (with partial marking), Numerical Value / Non-negative integer questions, Matching List / Matrix Match"
+      },
+      {
+        "paper_code": "Architecture Aptitude Test (AAT)",
+        "mode": "Pen & Paper Test (Only for JEE Advanced qualified candidates seeking B.Arch.)",
+        "duration": "3 Hours (09:00 – 12:00 IST)",
+        "subjects": "Freehand & Geometrical Drawing, 3D Perception, Aesthetic Sensitivity, Architectural Awareness",
+        "question_types": "Qualifying test (cut-off marks decided by JIC; admission based on JEE Advanced CRL rank)"
+      }
+    ],
+    "marking_scheme": [
+      {
+        "rule": "Paper 1 & Paper 2 Requirement",
+        "marks": "Both Paper 1 and Paper 2 are mandatory; absence in either paper disqualifies the candidate"
+      },
+      {
+        "rule": "Question-level Marking",
+        "marks": "Full, partial, zero, and negative marks vary by section (e.g., +3/-1 or +4/-2 with partial +1/+2) as printed in each paper's instructions"
+      },
+      {
+        "rule": "Medium of Question Paper",
+        "marks": "Bilingual — English and Hindi (candidates can toggle between English and Hindi on screen during the CBT)"
+      }
+    ],
+    "mediums": [
+      "English",
+      "Hindi (Bilingual toggle available on CBT screen)"
+    ],
+    "tie_breaking": [
+      "1. Higher positive marks obtained in JEE (Advanced) across both papers combined",
+      "2. Higher marks in Mathematics",
+      "3. Higher marks in Physics",
+      "4. If tie still persists, candidates are awarded the same rank"
+    ],
+    "rank_criteria": [
+      {
+        "list": "Common Rank List (CRL)",
+        "min_subject": "10.0%",
+        "min_aggregate": "35.0%"
+      },
+      {
+        "list": "GEN-EWS Rank List",
+        "min_subject": "9.0%",
+        "min_aggregate": "31.5%"
+      },
+      {
+        "list": "OBC-NCL Rank List",
+        "min_subject": "9.0%",
+        "min_aggregate": "31.5%"
+      },
+      {
+        "list": "SC Rank List",
+        "min_subject": "5.0%",
+        "min_aggregate": "17.5%"
+      },
+      {
+        "list": "ST Rank List",
+        "min_subject": "5.0%",
+        "min_aggregate": "17.5%"
+      },
+      {
+        "list": "Common-PwD Rank List (CRL-PwD)",
+        "min_subject": "5.0%",
+        "min_aggregate": "17.5%"
+      },
+      {
+        "list": "Preparatory Course Rank Lists",
+        "min_subject": "2.5%",
+        "min_aggregate": "8.75%"
+      }
+    ]
+  },
+  "eligibility": {
+    "overview": "Indian Nationals and OCI/PIO (I) candidates must simultaneously satisfy all five official criteria (A1–A5) published on jeeadv.ac.in/eligibility.html (2026 rules shown as reference for 2027).",
+    "criteria_list": [
+      {
+        "code": "Criterion A1",
+        "title": "Performance in JEE (Main) B.E./B.Tech. Paper",
+        "detail": "Must be among the top 2,50,000 successful candidates (across all categories) in Paper 1 (B.E./B.Tech.) of JEE (Main): 40.5% OPEN (incl. 5% PwD), 10% GEN-EWS, 27% OBC-NCL, 15% SC, 7.5% ST (with 5% horizontal PwD within each category)."
+      },
+      {
+        "code": "Criterion A2",
+        "title": "Age Limit",
+        "detail": "For 2026: Born on or after October 1, 2001 (5 years relaxation for SC, ST, and PwD candidates: born on or after October 1, 1996)."
+      },
+      {
+        "code": "Criterion A3",
+        "title": "Number of Attempts",
+        "detail": "Maximum of TWO attempts in TWO consecutive years."
+      },
+      {
+        "code": "Criterion A4",
+        "title": "Appearance in Class XII (or Equivalent) Examination",
+        "detail": "Candidate should have appeared for the Class XII (or equivalent) examination for the first time in either the immediately preceding year or the current exam year with Physics, Chemistry, and Mathematics as compulsory subjects."
+      },
+      {
+        "code": "Criterion A5",
+        "title": "Earlier Admission at IITs",
+        "detail": "Candidate should NOT have been admitted to an IIT earlier (irrespective of whether they continued or accepted a seat via JoSAA), except candidates admitted to a preparatory course for the first time in the preceding year."
+      }
+    ],
+    "admission_performance_rule": "For IIT admission via JoSAA, candidates must also secure at least 75% aggregate marks in Class XII (65% for SC, ST, and PwD) OR be within the category-wise Top 20 Percentile of successful candidates in their respective Class XII Board examination.",
+    "foreign_and_oci": "Foreign National candidates and OCI/PIO (F) candidates register directly on jeeadv.ac.in (exempt from JEE Main Criterion A1) under supernumerary seats up to 10% of total seats per course. OCI/PIO (I) candidates compete under OPEN / OPEN-PwD.",
+    "official_links": [
+      {
+        "label": "JEE (Advanced) Eligibility Criteria ↗",
+        "url": "https://jeeadv.ac.in/eligibility.html"
+      },
+      {
+        "label": "IIT Admission Criteria & Top 20 Percentile Rules ↗",
+        "url": "https://jeeadv.ac.in/admission_criteria.html"
+      },
+      {
+        "label": "Foreign Nationals & OCI/PIO Candidates Portal ↗",
+        "url": "https://jeeadv.ac.in/foreign.html"
+      }
+    ]
+  },
+  "important_dates": {
+    "current_2027_status": "JEE (Advanced) 2027 dates are awaited on jeeadv.ac.in. Below is the complete verified JEE (Advanced) 2026 & JoSAA 2026 timeline for reference.",
+    "events": [
+      {
+        "cycle": "2026 Reference",
+        "event": "Direct Registration for Foreign Nationals & OCI/PIO (F)",
+        "date": "06 April 2026 (10:00 IST) – 02 May 2026 (23:59 IST)",
+        "status": "Completed (2026)"
+      },
+      {
+        "cycle": "2026 Reference",
+        "event": "Online Registration for JEE (Main) 2026 Qualified Candidates",
+        "date": "23 April 2026 (10:00 IST) – 05 May 2026 (extended from 02 May)",
+        "status": "Completed (2026)"
+      },
+      {
+        "cycle": "2026 Reference",
+        "event": "Admit Card Downloading Window",
+        "date": "11 May 2026 (10:00 IST) – 17 May 2026 (14:30 IST)",
+        "status": "Completed (2026)"
+      },
+      {
+        "cycle": "2026 Reference",
+        "event": "JEE (Advanced) 2026 Examination Date",
+        "date": "Sunday, 17 May 2026 (Paper 1: 09:00–12:00 | Paper 2: 14:30–17:30 IST)",
+        "status": "Completed (2026)"
+      },
+      {
+        "cycle": "2026 Reference",
+        "event": "Display of Candidate Responses & Provisional Answer Keys",
+        "date": "Responses: 21 May 2026 | Provisional Keys: 25 May 2026",
+        "status": "Completed (2026)"
+      },
+      {
+        "cycle": "2026 Reference",
+        "event": "Final Answer Key & JEE (Advanced) 2026 Result Declaration",
+        "date": "Monday, 01 June 2026 (10:00 IST)",
+        "status": "Completed (2026)"
+      },
+      {
+        "cycle": "2026 Reference",
+        "event": "Architecture Aptitude Test (AAT) 2026 Exam & Result",
+        "date": "Exam: 04 June 2026 (09:00–12:00 IST) | Result: 07 June 2026",
+        "status": "Completed (2026)"
+      },
+      {
+        "cycle": "2026 Reference",
+        "event": "JoSAA 2026 Registration & 5 Seat Allocation Rounds",
+        "date": "02 June 2026 – 20 July 2026",
+        "status": "Completed (2026)"
+      }
+    ],
+    "fee_structure": [
+      {
+        "centre_group": "Examination Centres in India",
+        "category": "Female Candidates (All Categories)",
+        "fee": "₹ 1,600"
+      },
+      {
+        "centre_group": "Examination Centres in India",
+        "category": "SC, ST, and PwD Candidates",
+        "fee": "₹ 1,600"
+      },
+      {
+        "centre_group": "Examination Centres in India",
+        "category": "All Other Indian Nationals & OCI/PIO (I) OPEN",
+        "fee": "₹ 3,200"
+      },
+      {
+        "centre_group": "Examination Centres in India",
+        "category": "OCI/PIO (F) / Foreign Nationals (SAARC Countries)",
+        "fee": "USD 100"
+      },
+      {
+        "centre_group": "Examination Centres in India",
+        "category": "OCI/PIO (F) / Foreign Nationals (Non-SAARC Countries)",
+        "fee": "USD 200"
+      },
+      {
+        "centre_group": "Examination Centres Outside India",
+        "category": "Indian Nationals / OCI/PIO (I) / SAARC Foreign Nationals",
+        "fee": "USD 200"
+      },
+      {
+        "centre_group": "Examination Centres Outside India",
+        "category": "Non-SAARC Foreign Nationals & OCI/PIO (F)",
+        "fee": "USD 300"
+      }
+    ]
+  },
+  "information_bulletin": {
+    "bulletins": [
+      {
+        "title": "JEE (Advanced) 2026 — Official Information Brochure (Organizing Institute: IIT Roorkee)",
+        "session": "2026 Reference",
+        "pages": "118 Pages",
+        "highlights": "Comprehensive brochure covering 23 IITs across 6 zones, eligibility rules, fee structure, rank list criteria (Clause 22), syllabus (pp. 61–85), AAT syllabus, and medical/disability annexures.",
+        "pdf_url": "https://jeeadv.ac.in/documents/IBEnglish_2026.pdf",
+        "source_host": "jeeadv.ac.in"
+      },
+      {
+        "title": "JEE (Advanced) 2026 — General Guidelines for Computer Based Examination",
+        "session": "2026 Reference",
+        "pages": "1 Page",
+        "highlights": "Prohibited items list, dress/reporting instructions, and scribble pad norms for exam day.",
+        "pdf_url": "https://jeeadv.ac.in/documents/General_Guidelines_for_Candidates.pdf",
+        "source_host": "jeeadv.ac.in"
+      },
+      {
+        "title": "JoSAA 2026 Business Rules (IITs, IISc, NITs, IIEST, IIITs & Other-GFTIs)",
+        "session": "2026-27 Admission Cycle",
+        "pages": "115 Pages",
+        "highlights": "Joint Seat Allocation rules, Freeze/Float/Slide options, seat acceptance fees, and document verification procedures.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s313111c20aee51aeb480ecbd988cd8cc9/uploads/2026/06/20260601632081678.pdf",
+        "source_host": "josaa.nic.in"
+      }
+    ]
+  },
+  "pyq": {
+    "pyq_available_officially": true,
+    "summary_note": "Complete official JEE (Advanced) archive from jeeadv.ac.in/archive.html covering 66 verified past question papers: 2026 Paper 1 & 2 (English & Hindi), 2019–2025 Paper 1 & 2 (English & Hindi), 2007–2018 Paper 1 & 2, and AAT 2016–2025 (AAT 2026 is marked 'To be announced soon' on jeeadv.ac.in). Official CBT mock tests and answer keys/solutions are separated below.",
+    "papers": [
+      {
+        "id": "ja-2026-p1-english",
+        "title": "JEE (Advanced) 2026 — Paper 1 (English)",
+        "year": 2026,
+        "paper": "Paper 1",
+        "language": "English",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/documents/p1_english.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2026-p1-hindi",
+        "title": "JEE (Advanced) 2026 — Paper 1 (Hindi)",
+        "year": 2026,
+        "paper": "Paper 1",
+        "language": "Hindi",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/documents/p1_hindi.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2026-p2-english",
+        "title": "JEE (Advanced) 2026 — Paper 2 (English)",
+        "year": 2026,
+        "paper": "Paper 2",
+        "language": "English",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/documents/p2_english.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2026-p2-hindi",
+        "title": "JEE (Advanced) 2026 — Paper 2 (Hindi)",
+        "year": 2026,
+        "paper": "Paper 2",
+        "language": "Hindi",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/documents/p2_hindi.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2025-p1-english",
+        "title": "JEE (Advanced) 2025 — Paper 1 (English)",
+        "year": 2025,
+        "paper": "Paper 1",
+        "language": "English",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2025_1_English.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2025-p1-hindi",
+        "title": "JEE (Advanced) 2025 — Paper 1 (Hindi)",
+        "year": 2025,
+        "paper": "Paper 1",
+        "language": "Hindi",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2025_1_Hindi.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2025-p2-english",
+        "title": "JEE (Advanced) 2025 — Paper 2 (English)",
+        "year": 2025,
+        "paper": "Paper 2",
+        "language": "English",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2025_2_English.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2025-p2-hindi",
+        "title": "JEE (Advanced) 2025 — Paper 2 (Hindi)",
+        "year": 2025,
+        "paper": "Paper 2",
+        "language": "Hindi",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2025_2_Hindi.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2024-p1-english",
+        "title": "JEE (Advanced) 2024 — Paper 1 (English)",
+        "year": 2024,
+        "paper": "Paper 1",
+        "language": "English",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2024_1_English.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2024-p1-hindi",
+        "title": "JEE (Advanced) 2024 — Paper 1 (Hindi)",
+        "year": 2024,
+        "paper": "Paper 1",
+        "language": "Hindi",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2024_1_Hindi.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2024-p2-english",
+        "title": "JEE (Advanced) 2024 — Paper 2 (English)",
+        "year": 2024,
+        "paper": "Paper 2",
+        "language": "English",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2024_2_English.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2024-p2-hindi",
+        "title": "JEE (Advanced) 2024 — Paper 2 (Hindi)",
+        "year": 2024,
+        "paper": "Paper 2",
+        "language": "Hindi",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2024_2_Hindi.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2023-p1-english",
+        "title": "JEE (Advanced) 2023 — Paper 1 (English)",
+        "year": 2023,
+        "paper": "Paper 1",
+        "language": "English",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2023_1_English.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2023-p1-hindi",
+        "title": "JEE (Advanced) 2023 — Paper 1 (Hindi)",
+        "year": 2023,
+        "paper": "Paper 1",
+        "language": "Hindi",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2023_1_Hindi.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2023-p2-english",
+        "title": "JEE (Advanced) 2023 — Paper 2 (English)",
+        "year": 2023,
+        "paper": "Paper 2",
+        "language": "English",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2023_2_English.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2023-p2-hindi",
+        "title": "JEE (Advanced) 2023 — Paper 2 (Hindi)",
+        "year": 2023,
+        "paper": "Paper 2",
+        "language": "Hindi",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2023_2_Hindi.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2022-p1-english",
+        "title": "JEE (Advanced) 2022 — Paper 1 (English)",
+        "year": 2022,
+        "paper": "Paper 1",
+        "language": "English",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2022_1_English.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2022-p1-hindi",
+        "title": "JEE (Advanced) 2022 — Paper 1 (Hindi)",
+        "year": 2022,
+        "paper": "Paper 1",
+        "language": "Hindi",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2022_1_Hindi.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2022-p2-english",
+        "title": "JEE (Advanced) 2022 — Paper 2 (English)",
+        "year": 2022,
+        "paper": "Paper 2",
+        "language": "English",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2022_2_English.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2022-p2-hindi",
+        "title": "JEE (Advanced) 2022 — Paper 2 (Hindi)",
+        "year": 2022,
+        "paper": "Paper 2",
+        "language": "Hindi",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2022_2_Hindi.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2021-p1-english",
+        "title": "JEE (Advanced) 2021 — Paper 1 (English)",
+        "year": 2021,
+        "paper": "Paper 1",
+        "language": "English",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2021_1_English.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2021-p1-hindi",
+        "title": "JEE (Advanced) 2021 — Paper 1 (Hindi)",
+        "year": 2021,
+        "paper": "Paper 1",
+        "language": "Hindi",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2021_1_Hindi.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2021-p2-english",
+        "title": "JEE (Advanced) 2021 — Paper 2 (English)",
+        "year": 2021,
+        "paper": "Paper 2",
+        "language": "English",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2021_2_English.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2021-p2-hindi",
+        "title": "JEE (Advanced) 2021 — Paper 2 (Hindi)",
+        "year": 2021,
+        "paper": "Paper 2",
+        "language": "Hindi",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2021_2_Hindi.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2020-p1-english",
+        "title": "JEE (Advanced) 2020 — Paper 1 (English)",
+        "year": 2020,
+        "paper": "Paper 1",
+        "language": "English",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2020_1_English.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2020-p1-hindi",
+        "title": "JEE (Advanced) 2020 — Paper 1 (Hindi)",
+        "year": 2020,
+        "paper": "Paper 1",
+        "language": "Hindi",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2020_1_Hindi.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2020-p2-english",
+        "title": "JEE (Advanced) 2020 — Paper 2 (English)",
+        "year": 2020,
+        "paper": "Paper 2",
+        "language": "English",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2020_2_English.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2020-p2-hindi",
+        "title": "JEE (Advanced) 2020 — Paper 2 (Hindi)",
+        "year": 2020,
+        "paper": "Paper 2",
+        "language": "Hindi",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2020_2_Hindi.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2019-p1-english",
+        "title": "JEE (Advanced) 2019 — Paper 1 (English)",
+        "year": 2019,
+        "paper": "Paper 1",
+        "language": "English",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2019_1_English.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2019-p1-hindi",
+        "title": "JEE (Advanced) 2019 — Paper 1 (Hindi)",
+        "year": 2019,
+        "paper": "Paper 1",
+        "language": "Hindi",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2019_1_Hindi.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2019-p2-english",
+        "title": "JEE (Advanced) 2019 — Paper 2 (English)",
+        "year": 2019,
+        "paper": "Paper 2",
+        "language": "English",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2019_2_English.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2019-p2-hindi",
+        "title": "JEE (Advanced) 2019 — Paper 2 (Hindi)",
+        "year": 2019,
+        "paper": "Paper 2",
+        "language": "Hindi",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2019_2_Hindi.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2018-p1",
+        "title": "JEE (Advanced) 2018 — Paper 1",
+        "year": 2018,
+        "paper": "Paper 1",
+        "language": "English / Bilingual Archive",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2018_1.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2018-p2",
+        "title": "JEE (Advanced) 2018 — Paper 2",
+        "year": 2018,
+        "paper": "Paper 2",
+        "language": "English / Bilingual Archive",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2018_2.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2017-p1",
+        "title": "JEE (Advanced) 2017 — Paper 1",
+        "year": 2017,
+        "paper": "Paper 1",
+        "language": "English / Bilingual Archive",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2017_1.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2017-p2",
+        "title": "JEE (Advanced) 2017 — Paper 2",
+        "year": 2017,
+        "paper": "Paper 2",
+        "language": "English / Bilingual Archive",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2017_2.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2016-p1",
+        "title": "JEE (Advanced) 2016 — Paper 1",
+        "year": 2016,
+        "paper": "Paper 1",
+        "language": "English / Bilingual Archive",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2016_1.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2016-p2",
+        "title": "JEE (Advanced) 2016 — Paper 2",
+        "year": 2016,
+        "paper": "Paper 2",
+        "language": "English / Bilingual Archive",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2016_2.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2015-p1",
+        "title": "JEE (Advanced) 2015 — Paper 1",
+        "year": 2015,
+        "paper": "Paper 1",
+        "language": "English / Bilingual Archive",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2015_1.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2015-p2",
+        "title": "JEE (Advanced) 2015 — Paper 2",
+        "year": 2015,
+        "paper": "Paper 2",
+        "language": "English / Bilingual Archive",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2015_2.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2014-p1",
+        "title": "JEE (Advanced) 2014 — Paper 1",
+        "year": 2014,
+        "paper": "Paper 1",
+        "language": "English / Bilingual Archive",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2014_1.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2014-p2",
+        "title": "JEE (Advanced) 2014 — Paper 2",
+        "year": 2014,
+        "paper": "Paper 2",
+        "language": "English / Bilingual Archive",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2014_2.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2013-p1",
+        "title": "JEE (Advanced) 2013 — Paper 1",
+        "year": 2013,
+        "paper": "Paper 1",
+        "language": "English / Bilingual Archive",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2013_1.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2013-p2",
+        "title": "JEE (Advanced) 2013 — Paper 2",
+        "year": 2013,
+        "paper": "Paper 2",
+        "language": "English / Bilingual Archive",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2013_2.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2012-p1",
+        "title": "JEE (Advanced) 2012 — Paper 1",
+        "year": 2012,
+        "paper": "Paper 1",
+        "language": "English / Bilingual Archive",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2012_1.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2012-p2",
+        "title": "JEE (Advanced) 2012 — Paper 2",
+        "year": 2012,
+        "paper": "Paper 2",
+        "language": "English / Bilingual Archive",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2012_2.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2011-p1",
+        "title": "JEE (Advanced) 2011 — Paper 1",
+        "year": 2011,
+        "paper": "Paper 1",
+        "language": "English / Bilingual Archive",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2011_1.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2011-p2",
+        "title": "JEE (Advanced) 2011 — Paper 2",
+        "year": 2011,
+        "paper": "Paper 2",
+        "language": "English / Bilingual Archive",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2011_2.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2010-p1",
+        "title": "JEE (Advanced) 2010 — Paper 1",
+        "year": 2010,
+        "paper": "Paper 1",
+        "language": "English / Bilingual Archive",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2010_1.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2010-p2",
+        "title": "JEE (Advanced) 2010 — Paper 2",
+        "year": 2010,
+        "paper": "Paper 2",
+        "language": "English / Bilingual Archive",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2010_2.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2009-p1",
+        "title": "JEE (Advanced) 2009 — Paper 1",
+        "year": 2009,
+        "paper": "Paper 1",
+        "language": "English / Bilingual Archive",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2009_1.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2009-p2",
+        "title": "JEE (Advanced) 2009 — Paper 2",
+        "year": 2009,
+        "paper": "Paper 2",
+        "language": "English / Bilingual Archive",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2009_2.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2008-p1",
+        "title": "JEE (Advanced) 2008 — Paper 1",
+        "year": 2008,
+        "paper": "Paper 1",
+        "language": "English / Bilingual Archive",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2008_1.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2008-p2",
+        "title": "JEE (Advanced) 2008 — Paper 2",
+        "year": 2008,
+        "paper": "Paper 2",
+        "language": "English / Bilingual Archive",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2008_2.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2007-p1",
+        "title": "JEE (Advanced) 2007 — Paper 1",
+        "year": 2007,
+        "paper": "Paper 1",
+        "language": "English / Bilingual Archive",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2007_1.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2007-p2",
+        "title": "JEE (Advanced) 2007 — Paper 2",
+        "year": 2007,
+        "paper": "Paper 2",
+        "language": "English / Bilingual Archive",
+        "exam_type": "JEE (Advanced)",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/2007_2.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-aat-2025",
+        "title": "Architecture Aptitude Test (AAT) 2025 Question Paper",
+        "year": 2025,
+        "paper": "AAT (B.Arch.)",
+        "language": "English",
+        "exam_type": "AAT",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/AAT-2025.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-aat-2024",
+        "title": "Architecture Aptitude Test (AAT) 2024 Question Paper",
+        "year": 2024,
+        "paper": "AAT (B.Arch.)",
+        "language": "English",
+        "exam_type": "AAT",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/AAT-2024.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-aat-2023",
+        "title": "Architecture Aptitude Test (AAT) 2023 Question Paper",
+        "year": 2023,
+        "paper": "AAT (B.Arch.)",
+        "language": "English",
+        "exam_type": "AAT",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/AAT-2023.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-aat-2022",
+        "title": "Architecture Aptitude Test (AAT) 2022 Question Paper",
+        "year": 2022,
+        "paper": "AAT (B.Arch.)",
+        "language": "English",
+        "exam_type": "AAT",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/AAT-2022.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-aat-2021",
+        "title": "Architecture Aptitude Test (AAT) 2021 Question Paper",
+        "year": 2021,
+        "paper": "AAT (B.Arch.)",
+        "language": "English",
+        "exam_type": "AAT",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/AAT-2021.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-aat-2020",
+        "title": "Architecture Aptitude Test (AAT) 2020 Question Paper",
+        "year": 2020,
+        "paper": "AAT (B.Arch.)",
+        "language": "English",
+        "exam_type": "AAT",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/AAT-2020.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-aat-2019",
+        "title": "Architecture Aptitude Test (AAT) 2019 Question Paper",
+        "year": 2019,
+        "paper": "AAT (B.Arch.)",
+        "language": "English",
+        "exam_type": "AAT",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/AAT-2019.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-aat-2018",
+        "title": "Architecture Aptitude Test (AAT) 2018 Question Paper",
+        "year": 2018,
+        "paper": "AAT (B.Arch.)",
+        "language": "English",
+        "exam_type": "AAT",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/AAT-2018.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-aat-2017",
+        "title": "Architecture Aptitude Test (AAT) 2017 Question Paper",
+        "year": 2017,
+        "paper": "AAT (B.Arch.)",
+        "language": "English",
+        "exam_type": "AAT",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/AAT-2017.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-aat-2016",
+        "title": "Architecture Aptitude Test (AAT) 2016 Question Paper",
+        "year": 2016,
+        "paper": "AAT (B.Arch.)",
+        "language": "English",
+        "exam_type": "AAT",
+        "pdf_url": "https://jeeadv.ac.in/past_qps/AAT-2016.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      }
+    ],
+    "official_practice_and_keys": [
+      {
+        "id": "ja-mock-p1",
+        "title": "JEE (Advanced) Official CBT Practice Test — Paper 1",
+        "resource_type": "Official CBT Mock Test",
+        "description": "Official computer-based practice interface linked on jeeadv.ac.in.",
+        "url": "https://cdn3.digialm.com//OnlineAssessment/index.html?32044@@M217",
+        "source_host": "jeeadv.ac.in / digialm",
+        "is_pyq": false,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-mock-p2",
+        "title": "JEE (Advanced) Official CBT Practice Test — Paper 2",
+        "resource_type": "Official CBT Mock Test",
+        "description": "Official computer-based practice interface for Paper 2 linked on jeeadv.ac.in.",
+        "url": "https://cdn3.digialm.com//OnlineAssessment/index.html?32044@@M219",
+        "source_host": "jeeadv.ac.in / digialm",
+        "is_pyq": false,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2026-sol-p1",
+        "title": "JEE (Advanced) 2026 — Final Answer Key & Solutions (Paper 1)",
+        "resource_type": "Final Answer Key / Solutions PDF",
+        "description": "Official final answer key and solutions PDF for Paper 1 (IIT Roorkee, 2026).",
+        "url": "https://jeeadv.ac.in/documents/p1_solutions_final.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": false,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2026-sol-p2",
+        "title": "JEE (Advanced) 2026 — Final Answer Key & Solutions (Paper 2)",
+        "resource_type": "Final Answer Key / Solutions PDF",
+        "description": "Official final answer key and solutions PDF for Paper 2 (IIT Roorkee, 2026).",
+        "url": "https://jeeadv.ac.in/documents/p2_solutions_final.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": false,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2026-prov-p1",
+        "title": "JEE (Advanced) 2026 — Provisional Answer Keys (Paper 1)",
+        "resource_type": "Provisional Answer Key PDF",
+        "description": "Official provisional answer key PDF for Paper 1.",
+        "url": "https://jeeadv.ac.in/documents/p1_provisional_keys.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": false,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2026-prov-p2",
+        "title": "JEE (Advanced) 2026 — Provisional Answer Keys (Paper 2)",
+        "resource_type": "Provisional Answer Key PDF",
+        "description": "Official provisional answer key PDF for Paper 2.",
+        "url": "https://jeeadv.ac.in/documents/p2_provisional_keys.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": false,
+        "last_verified": "2026-11-10"
+      }
+    ]
+  },
+  "admit_card": {
+    "status_label": "2027 Schedule Awaited | 2026 Candidate Portal & Guidelines Archived",
+    "portal_url": "https://cportal.jeeadv.ac.in/",
+    "steps": [
+      "Log in to the official JEE (Advanced) Candidate Portal (https://cportal.jeeadv.ac.in/) using your JEE (Advanced) Registration Number, Date of Birth, and Registered Mobile Number.",
+      "Download and print the e-Admit Card and verify your Zonal IIT, Test Centre address, and reporting time.",
+      "Follow the General Guidelines for Candidates strictly: smart/analog watches, phones, Bluetooth devices, and electronic gadgets are strictly prohibited."
+    ],
+    "related_notices": [
+      {
+        "id": "ja26-guidelines",
+        "title": "JEE (Advanced) 2026 Computer Based Examination — General Guidelines for Candidates",
+        "date": "16 May 2026",
+        "cycle": "2026",
+        "category": "Admit Card",
+        "summary": "Official centre reporting instructions, permissible items, and prohibited electronic devices list.",
+        "pdf_url": "https://jeeadv.ac.in/documents/General_Guidelines_for_Candidates.pdf",
+        "source_host": "jeeadv.ac.in"
+      }
+    ]
+  },
+  "answer_key": {
+    "status_label": "2026 Provisional & Final Solutions Available | 2027 Awaited",
+    "portal_url": "https://jeeadv.ac.in/",
+    "challenge_rules": "Provisional answer keys are published on jeeadv.ac.in along with candidate response sheets on cportal.jeeadv.ac.in. Feedback and comments on provisional answer keys are accepted exclusively online through the Candidate Portal during the notified window.",
+    "key_pdfs": [
+      {
+        "id": "ja-2026-sol-p1",
+        "title": "JEE (Advanced) 2026 — Final Answer Key & Solutions (Paper 1)",
+        "resource_type": "Final Answer Key / Solutions PDF",
+        "description": "Official final answer key and solutions PDF for Paper 1 (IIT Roorkee, 2026).",
+        "url": "https://jeeadv.ac.in/documents/p1_solutions_final.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": false,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2026-sol-p2",
+        "title": "JEE (Advanced) 2026 — Final Answer Key & Solutions (Paper 2)",
+        "resource_type": "Final Answer Key / Solutions PDF",
+        "description": "Official final answer key and solutions PDF for Paper 2 (IIT Roorkee, 2026).",
+        "url": "https://jeeadv.ac.in/documents/p2_solutions_final.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": false,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2026-prov-p1",
+        "title": "JEE (Advanced) 2026 — Provisional Answer Keys (Paper 1)",
+        "resource_type": "Provisional Answer Key PDF",
+        "description": "Official provisional answer key PDF for Paper 1.",
+        "url": "https://jeeadv.ac.in/documents/p1_provisional_keys.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": false,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "ja-2026-prov-p2",
+        "title": "JEE (Advanced) 2026 — Provisional Answer Keys (Paper 2)",
+        "resource_type": "Provisional Answer Key PDF",
+        "description": "Official provisional answer key PDF for Paper 2.",
+        "url": "https://jeeadv.ac.in/documents/p2_provisional_keys.pdf",
+        "source_host": "jeeadv.ac.in",
+        "is_pyq": false,
+        "last_verified": "2026-11-10"
+      }
+    ],
+    "related_notices": [
+      {
+        "id": "ja26-final-keys",
+        "title": "JEE (Advanced) 2026 Final Answer Keys & Solutions (Paper 1 & Paper 2)",
+        "date": "01 Jun 2026",
+        "cycle": "2026",
+        "category": "Answer Key",
+        "summary": "Official final answer keys and solutions released by Organizing Institute IIT Roorkee.",
+        "pdf_url": "https://jeeadv.ac.in/documents/p1_solutions_final.pdf",
+        "source_host": "jeeadv.ac.in"
+      },
+      {
+        "id": "ja26-prov-keys",
+        "title": "JEE (Advanced) 2026 Provisional Answer Keys (Paper 1 & Paper 2)",
+        "date": "25 May 2026",
+        "cycle": "2026",
+        "category": "Answer Key",
+        "summary": "Provisional answer keys displayed on 25 May 2026 with candidate feedback window up to 26 May 2026.",
+        "pdf_url": "https://jeeadv.ac.in/documents/p1_provisional_keys.pdf",
+        "source_host": "jeeadv.ac.in"
+      }
+    ]
+  },
+  "result": {
+    "status_label": "2026 Results & JoSAA Allocation Completed | 2027 Awaited",
+    "portal_url": "https://jeeadv.ac.in/",
+    "josaa_url": "https://josaa.nic.in/",
+    "rules": [
+      "JEE (Advanced) results include Common Rank List (CRL) and category-wise rank lists (GEN-EWS, OBC-NCL, SC, ST, PwD) subject to minimum subject and aggregate percentages.",
+      "Qualified candidates must register and fill choices on the JoSAA portal (https://josaa.nic.in/) to participate in seat allocation across all 23 IITs and IISc Bengaluru B.Tech. programmes.",
+      "B.Arch. aspirants at IIT Roorkee, IIT Kharagpur, and IIT (BHU) Varanasi must additionally qualify the Architecture Aptitude Test (AAT)."
+    ],
+    "related_notices": [
+      {
+        "id": "ja26-josaa-r5",
+        "title": "Round 5 Allotment and Deadline for JoSAA 2026 (Seat Acceptance Fee & Document Upload by 20 July 2026)",
+        "date": "16 Jul 2026",
+        "cycle": "2026",
+        "category": "Counselling",
+        "summary": "JoSAA Round 5 allotment declared on josaa.nic.in; mandatory document upload and seat acceptance fee deadline 5:00 PM on 20 July 2026.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s313111c20aee51aeb480ecbd988cd8cc9/uploads/2026/06/202606011735423571.pdf",
+        "source_host": "jeeadv.ac.in / josaa.nic.in"
+      },
+      {
+        "id": "ja26-josaa-rules",
+        "title": "JoSAA 2026 Business Rules for Joint Seat Allocation (IITs, IISc, NITs, IIEST, IIITs & Other-GFTIs)",
+        "date": "01 Jun 2026",
+        "cycle": "2026",
+        "category": "Counselling",
+        "summary": "Endorsed by JIC/JAB JEE (Advanced) 2026 and CSAB 2026 for academic year 2026-27 seat allocation.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s313111c20aee51aeb480ecbd988cd8cc9/uploads/2026/06/20260601632081678.pdf",
+        "source_host": "josaa.nic.in"
+      }
+    ]
+  },
+  "josaa_and_iits": {
+    "josaa_url": "https://josaa.nic.in/",
+    "josaa_login_url": "https://josaa.admissions.nic.in/applicant/root/candidatelogin.aspx",
+    "csab_url": "https://csab.nic.in/",
+    "schedule_pdf_url": "https://cdnbbsr.s3waas.gov.in/s313111c20aee51aeb480ecbd988cd8cc9/uploads/2026/06/202606011735423571.pdf",
+    "business_rules_pdf_url": "https://cdnbbsr.s3waas.gov.in/s313111c20aee51aeb480ecbd988cd8cc9/uploads/2026/06/20260601632081678.pdf",
+    "zones": [
+      {
+        "zone": "East Zone (Coordinating IIT: IIT Bhubaneswar)",
+        "institutes": [
+          "IIT Bhubaneswar (Bhubaneswar)",
+          "IIT Kharagpur (Kharagpur)",
+          "IIT (ISM) Dhanbad (Dhanbad)",
+          "IIT Bhilai (Bhilai)"
+        ]
+      },
+      {
+        "zone": "Central Zone (Coordinating IIT: IIT Kanpur)",
+        "institutes": [
+          "IIT Kanpur (Kanpur)",
+          "IIT (BHU) Varanasi (Varanasi)",
+          "IIT Indore (Indore)"
+        ]
+      },
+      {
+        "zone": "North-Central Zone (Coordinating IIT: IIT Delhi)",
+        "institutes": [
+          "IIT Delhi (New Delhi)",
+          "IIT Jammu (Jammu)",
+          "IIT Jodhpur (Jodhpur)"
+        ]
+      },
+      {
+        "zone": "North-East Zone (Coordinating IIT: IIT Guwahati)",
+        "institutes": [
+          "IIT Guwahati (Guwahati)",
+          "IIT Patna (Patna)"
+        ]
+      },
+      {
+        "zone": "North Zone (Coordinating IIT: IIT Roorkee — 2026 Organizing Institute)",
+        "institutes": [
+          "IIT Roorkee (Roorkee)",
+          "IIT Mandi (Mandi)",
+          "IIT Ropar (Ropar)"
+        ]
+      },
+      {
+        "zone": "South Zone (Coordinating IIT: IIT Madras)",
+        "institutes": [
+          "IIT Madras (Chennai)",
+          "IIT Hyderabad (Hyderabad)",
+          "IIT Palakkad (Palakkad)",
+          "IIT Tirupati (Tirupati)"
+        ]
+      },
+      {
+        "zone": "West Zone (Coordinating IIT: IIT Bombay)",
+        "institutes": [
+          "IIT Bombay (Mumbai)",
+          "IIT Dharwad (Dharwad)",
+          "IIT Gandhinagar (Gandhinagar)",
+          "IIT Goa (Goa)"
+        ]
+      }
+    ]
+  },
+  "notifications": [
+    {
+      "id": "ja26-josaa-r5",
+      "title": "Round 5 Allotment and Deadline for JoSAA 2026 (Seat Acceptance Fee & Document Upload by 20 July 2026)",
+      "date": "16 Jul 2026",
+      "cycle": "2026",
+      "category": "Counselling",
+      "summary": "JoSAA Round 5 allotment declared on josaa.nic.in; mandatory document upload and seat acceptance fee deadline 5:00 PM on 20 July 2026.",
+      "pdf_url": "https://cdnbbsr.s3waas.gov.in/s313111c20aee51aeb480ecbd988cd8cc9/uploads/2026/06/202606011735423571.pdf",
+      "source_host": "jeeadv.ac.in / josaa.nic.in"
+    },
+    {
+      "id": "ja26-josaa-rules",
+      "title": "JoSAA 2026 Business Rules for Joint Seat Allocation (IITs, IISc, NITs, IIEST, IIITs & Other-GFTIs)",
+      "date": "01 Jun 2026",
+      "cycle": "2026",
+      "category": "Counselling",
+      "summary": "Endorsed by JIC/JAB JEE (Advanced) 2026 and CSAB 2026 for academic year 2026-27 seat allocation.",
+      "pdf_url": "https://cdnbbsr.s3waas.gov.in/s313111c20aee51aeb480ecbd988cd8cc9/uploads/2026/06/20260601632081678.pdf",
+      "source_host": "josaa.nic.in"
+    },
+    {
+      "id": "ja26-final-keys",
+      "title": "JEE (Advanced) 2026 Final Answer Keys & Solutions (Paper 1 & Paper 2)",
+      "date": "01 Jun 2026",
+      "cycle": "2026",
+      "category": "Answer Key",
+      "summary": "Official final answer keys and solutions released by Organizing Institute IIT Roorkee.",
+      "pdf_url": "https://jeeadv.ac.in/documents/p1_solutions_final.pdf",
+      "source_host": "jeeadv.ac.in"
+    },
+    {
+      "id": "ja26-prov-keys",
+      "title": "JEE (Advanced) 2026 Provisional Answer Keys (Paper 1 & Paper 2)",
+      "date": "25 May 2026",
+      "cycle": "2026",
+      "category": "Answer Key",
+      "summary": "Provisional answer keys displayed on 25 May 2026 with candidate feedback window up to 26 May 2026.",
+      "pdf_url": "https://jeeadv.ac.in/documents/p1_provisional_keys.pdf",
+      "source_host": "jeeadv.ac.in"
+    },
+    {
+      "id": "ja26-guidelines",
+      "title": "JEE (Advanced) 2026 Computer Based Examination — General Guidelines for Candidates",
+      "date": "16 May 2026",
+      "cycle": "2026",
+      "category": "Admit Card",
+      "summary": "Official centre reporting instructions, permissible items, and prohibited electronic devices list.",
+      "pdf_url": "https://jeeadv.ac.in/documents/General_Guidelines_for_Candidates.pdf",
+      "source_host": "jeeadv.ac.in"
+    },
+    {
+      "id": "ja26-ib-release",
+      "title": "JEE (Advanced) 2026 Information Brochure (Organizing Institute: IIT Roorkee)",
+      "date": "30 Dec 2025",
+      "cycle": "2026",
+      "category": "Bulletin",
+      "summary": "Complete 118-page official Information Brochure covering eligibility criteria, fees, syllabus (pp. 61–85), and rank lists.",
+      "pdf_url": "https://jeeadv.ac.in/documents/IBEnglish_2026.pdf",
+      "source_host": "jeeadv.ac.in"
+    }
+  ]
+}

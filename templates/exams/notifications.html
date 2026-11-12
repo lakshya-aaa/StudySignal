@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ exam.name }} Official Notifications, Public Notices &amp; Press Releases | StudySignal{% endblock %}
+
+{% block meta_description %}All {{ exam.notifications|length }} verified official public notices, press releases, exam advisories, and schedule updates for {{ exam.name }}.{% endblock %}
+
+{% block content %}
+{% set active_tab = 'notifications' %}
+{% set page_label = 'Notifications' %}
+{% set page_heading = exam.name + ' Official Notifications &amp; Notices' %}
+{% set page_intro = 'Complete chronological log of ' + (exam.notifications|length|string) + ' verified official notices and press releases sourced from ' + exam.official_website %}
+{% include 'exams/_subnav.html' %}
+
+{% set categories = [] %}
+{% for n in exam.notifications %}
+  {% if n.category not in categories %}
+    {% set _ = categories.append(n.category) %}
+  {% endif %}
+{% endfor %}
+
+<div class="exam-page-body">
+  <section class="section exam-section-tight">
+    <div class="container">
+      <div class="exam-panel-card">
+        <div class="exam-filter-toolbar">
+          <div class="exam-filter-tabs" role="tablist" aria-label="Filter notices by category">
+            <button type="button" class="exam-filter-btn active" data-cat="all">All ({{ exam.notifications|length }})</button>
+            {% for cat in categories %}
+            <button type="button" class="exam-filter-btn" data-cat="{{ cat }}">{{ cat }}</button>
+            {% endfor %}
+          </div>
+          <div class="exam-search-box">
+            <label for="notice-search-input" class="sr-only">Filter notices</label>
+            <input type="text" id="notice-search-input" class="form-control" placeholder="Search notice title or date...">
+          </div>
+        </div>
+
+        <div class="exam-notice-list" id="examNoticeList">
+          {% for n in exam.notifications %}
+          <article class="exam-notice-item" data-cat="{{ n.category }}" data-search="{{ (n.title + ' ' + n.summary + ' ' + n.date + ' ' + n.category)|lower }}">
+            <div class="exam-notice-meta">
+              <span class="code-pill">{{ n.category }}</span>
+              <span class="exam-notice-date">{{ n.date }}</span>
+              <span class="exam-notice-cycle">{{ n.cycle }}</span>
+            </div>
+            <div class="exam-notice-body">
+              <h2>{{ n.title }}</h2>
+              <p>{{ n.summary }}</p>
+              <span class="exam-doc-source">Source Host: <code>{{ n.source_host }}</code></span>
+            </div>
+            <div class="exam-notice-cta">
+              <a href="{{ n.pdf_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Download Official PDF ↗</a>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+(function() {
+  const btns = document.querySelectorAll('.exam-filter-btn[data-cat]');
+  const input = document.getElementById('notice-search-input');
+  const items = document.querySelectorAll('#examNoticeList .exam-notice-item');
+  let activeCat = 'all';
+
+  function filterNotices() {
+    const q = (input ? input.value : '').trim().toLowerCase();
+    items.forEach(function(item) {
+      const cat = item.getAttribute('data-cat');
+      const txt = item.getAttribute('data-search') || '';
+      const okCat = activeCat === 'all' || cat === activeCat;
+      const okSearch = !q || txt.indexOf(q) !== -1;
+      item.style.display = (okCat && okSearch) ? '' : 'none';
+    });
+  }
+
+  btns.forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      btns.forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      activeCat = btn.getAttribute('data-cat');
+      filterNotices();
+    });
+  });
+  if (input) input.addEventListener('input', filterNotices);
+})();
+</script>
+{% endblock %}

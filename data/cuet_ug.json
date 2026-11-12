@@ -1,0 +1,2831 @@
+{
+  "exam_id": "cuet-ug",
+  "name": "CUET UG",
+  "full_name": "Common University Entrance Test [CUET (UG)]",
+  "conducting_body": "National Testing Agency (NTA)",
+  "logo": "images/exams/nta-logo.png",
+  "official_website": "https://cuet.nta.nic.in/",
+  "last_verified": "2026-11-10",
+  "cycle_status": {
+    "active_cycle": "2026 Verified Cycle (2027 Awaiting Official Notification)",
+    "label": "2026 Verified Cycle + 2027 Awaited",
+    "badge_class": "badge-status-info",
+    "summary": "CUET (UG) 2027 notification and dates are awaiting official publication on cuet.nta.nic.in. All 37 verified subject syllabus PDFs (Codes 101–501), 244 participating universities, 2026 Information Bulletin, and official notices are live below."
+  },
+  "hero": {
+    "subtitle": "Single-window national Computer Based Test (CBT) conducted by NTA for undergraduate admissions across Central Universities, State Universities, Deemed Universities, Other Government Institutions, and Private Universities.",
+    "primary_cta_label": "Official cuet.nta.nic.in Portal ↗",
+    "primary_cta_url": "https://cuet.nta.nic.in/",
+    "secondary_cta_label": "CUET (UG) 2026 Syllabi Portal ↗",
+    "secondary_cta_url": "https://cuet.nta.nic.in/cuetug-2026-syllabus/",
+    "key_facts": [
+      {
+        "label": "Conducting Body",
+        "value": "National Testing Agency (NTA)"
+      },
+      {
+        "label": "Total Subjects",
+        "value": "37 (13 Languages + 23 Domain + General Aptitude)"
+      },
+      {
+        "label": "Max Subject Choice",
+        "value": "Up to 5 Subjects | 50 Compulsory MCQs / Paper"
+      },
+      {
+        "label": "Participating Institutions",
+        "value": "244 Universities Mapped on CUET Portal"
+      }
+    ]
+  },
+  "syllabus": {
+    "session_label": "CUET (UG) Official Subject-Wise Syllabi (37 Subjects — Appendix II)",
+    "overview": "NTA prescribes 37 subjects under Appendix II of the CUET (UG) Information Bulletin: 13 Languages (Codes 101–113), 23 Domain-Specific Subjects (Codes 301–326), and 1 General Aptitude Test (Code 501). Every subject has a dedicated official syllabus PDF hosted on cuet.nta.nic.in.",
+    "portal_url": "https://cuet.nta.nic.in/cuetug-2026-syllabus/",
+    "counts": {
+      "total": 37,
+      "languages": 13,
+      "domain": 23,
+      "general_aptitude": 1
+    },
+    "subjects": [
+      {
+        "code": "101",
+        "subject": "English",
+        "group": "Language",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227980877010.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "102",
+        "subject": "Hindi",
+        "group": "Language",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271367681884.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "103",
+        "subject": "Assamese",
+        "group": "Language",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227237505054.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "104",
+        "subject": "Bengali",
+        "group": "Language",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271803368333.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "105",
+        "subject": "Gujarati",
+        "group": "Language",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271413553522.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "106",
+        "subject": "Kannada",
+        "group": "Language",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227946030806.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "107",
+        "subject": "Malayalam",
+        "group": "Language",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271352620716.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "108",
+        "subject": "Marathi",
+        "group": "Language",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227262140491.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "109",
+        "subject": "Odia",
+        "group": "Language",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227991376595.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "110",
+        "subject": "Punjabi",
+        "group": "Language",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227900793676.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "111",
+        "subject": "Tamil",
+        "group": "Language",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271178809232.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "112",
+        "subject": "Telugu",
+        "group": "Language",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/2025122713492501.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "113",
+        "subject": "Urdu",
+        "group": "Language",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227870466763.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "301",
+        "subject": "Accountancy / Book-Keeping",
+        "group": "Domain Subject",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227522720880.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "302",
+        "subject": "Agriculture",
+        "group": "Domain Subject",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227220683220.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "303",
+        "subject": "Anthropology",
+        "group": "Domain Subject",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512272060536755.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "304",
+        "subject": "Biology/ Biological Science/ Biotechnology /Biochemistry",
+        "group": "Domain Subject",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227553390532.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "305",
+        "subject": "Business Studies",
+        "group": "Domain Subject",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227259182286.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "306",
+        "subject": "Chemistry",
+        "group": "Domain Subject",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227437950608.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "307",
+        "subject": "Environmental Science",
+        "group": "Domain Subject",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271868030697.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "308",
+        "subject": "Computer Science / Information Practices",
+        "group": "Domain Subject",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271589155179.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "309",
+        "subject": "Economics / Business Economics",
+        "group": "Domain Subject",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271366341541.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "312",
+        "subject": "Fine Arts/Visual Arts/Commercial Arts",
+        "group": "Domain Subject",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227993225795.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "313",
+        "subject": "Geography / Geology",
+        "group": "Domain Subject",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227925964065.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "314",
+        "subject": "History",
+        "group": "Domain Subject",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227167662981.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "315",
+        "subject": "Home Science",
+        "group": "Domain Subject",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/20260120190240355.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "316",
+        "subject": "Knowledge Tradition-Practices in India",
+        "group": "Domain Subject",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271210828150.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "318",
+        "subject": "Mass Media / Mass Communication",
+        "group": "Domain Subject",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227328972301.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "319",
+        "subject": "Mathematics / Applied Mathematics",
+        "group": "Domain Subject",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271521179041.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "320",
+        "subject": "Performing Arts - (Dance, Drama and Music)",
+        "group": "Domain Subject",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271161227870.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "321",
+        "subject": "Physical Education (Yoga, Sports)",
+        "group": "Domain Subject",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271937553070.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "322",
+        "subject": "Physics",
+        "group": "Domain Subject",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271334142557.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "323",
+        "subject": "Political Science",
+        "group": "Domain Subject",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227158639183.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "324",
+        "subject": "Psychology",
+        "group": "Domain Subject",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271803303381.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "325",
+        "subject": "Sanskrit",
+        "group": "Domain Subject",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271597735514.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "326",
+        "subject": "Sociology",
+        "group": "Domain Subject",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227621541284.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      },
+      {
+        "code": "501",
+        "subject": "General Aptitude Test",
+        "group": "General Aptitude Test",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227140287889.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "last_verified": "2026-11-10"
+      }
+    ]
+  },
+  "exam_pattern": {
+    "overview": "CUET (UG) is conducted in Computer Based Test (CBT) mode across multiple shifts. Candidates can opt for up to 5 subjects/languages. Each subject paper consists of 50 compulsory Multiple Choice Questions to be attempted in 60 minutes.",
+    "papers": [
+      {
+        "section": "Section I — Languages (13 Languages: Codes 101–113)",
+        "mode": "Computer Based Test (CBT)",
+        "questions": "50 Compulsory MCQs per chosen language",
+        "duration": "60 Minutes per paper (+20 mins/hr compensatory time for eligible PwD/PwBD)",
+        "marks": "250 Marks per paper"
+      },
+      {
+        "section": "Section II — Domain-Specific Subjects (23 Subjects: Codes 301–326)",
+        "mode": "Computer Based Test (CBT)",
+        "questions": "50 Compulsory MCQs per chosen domain subject",
+        "duration": "60 Minutes per paper (+20 mins/hr compensatory time for eligible PwD/PwBD)",
+        "marks": "250 Marks per paper"
+      },
+      {
+        "section": "Section III — General Aptitude Test (Code 501)",
+        "mode": "Computer Based Test (CBT)",
+        "questions": "50 Compulsory MCQs (GK, Current Affairs, General Mental Ability, Numerical Ability, Quantitative Reasoning, Logical & Analytical Reasoning)",
+        "duration": "60 Minutes (+20 mins/hr compensatory time for eligible PwD/PwBD)",
+        "marks": "250 Marks"
+      }
+    ],
+    "marking_scheme": [
+      {
+        "rule": "Correct Answer",
+        "marks": "+5 Marks"
+      },
+      {
+        "rule": "Incorrect Answer",
+        "marks": "-1 Mark"
+      },
+      {
+        "rule": "Unanswered / Unattempted Question",
+        "marks": "0 Marks"
+      },
+      {
+        "rule": "Multiple Correct Options / Dropped Question",
+        "marks": "+5 Marks to those who marked any correct option; +5 Marks to all appeared candidates if dropped"
+      }
+    ],
+    "mediums": [
+      "English",
+      "Hindi",
+      "Assamese",
+      "Bengali",
+      "Gujarati",
+      "Kannada",
+      "Malayalam",
+      "Marathi",
+      "Odia",
+      "Punjabi",
+      "Tamil",
+      "Telugu",
+      "Urdu (13 Languages; Sanskrit 325 is not translated into other languages)"
+    ],
+    "normalization": "For multi-shift papers, raw marks obtained by candidates in different shifts are normalized into Percentile Scores (NTA Scores) per Appendix VI of the Information Bulletin. CUET (UG) NTA Scores are valid for admission to the respective academic year only."
+  },
+  "eligibility": {
+    "age_limit": "For appearing in CUET (UG), there is NO age limit set by NTA. However, candidates must satisfy the age criteria (if any) of the specific University / Institution / Organization to which they seek admission.",
+    "qualifying_exam": "Candidates who have passed the Class 12 / equivalent examination or are appearing in Class 12 in the current year are eligible to appear in CUET (UG), irrespective of age.",
+    "university_mapping_rule": "Merely appearing in CUET (UG) does not confer any right to admission. Subject combinations, minimum Class 12 percentage, and programme-specific eligibility vary by each Central/State/Deemed/Private University — candidates must verify course mapping on the respective university's website.",
+    "reservation_policy": [
+      {
+        "category": "GEN-EWS",
+        "quota": "10% in Central Universities / Central Government Institutions"
+      },
+      {
+        "category": "OBC-NCL (Central List)",
+        "quota": "27% in Central Universities / Central Government Institutions"
+      },
+      {
+        "category": "Scheduled Caste (SC)",
+        "quota": "15% in Central Universities / Central Government Institutions"
+      },
+      {
+        "category": "Scheduled Tribe (ST)",
+        "quota": "7.5% in Central Universities / Central Government Institutions"
+      },
+      {
+        "category": "PwD / PwBD (Horizontal)",
+        "quota": "5% horizontal reservation across each category (RPwD Act, 2016; compensatory time 20 mins/hour)"
+      }
+    ]
+  },
+  "important_dates": {
+    "current_2027_status": "CUET (UG) 2027 dates are awaiting official announcement on cuet.nta.nic.in. Below is the complete verified CUET (UG) 2026 schedule and fee structure.",
+    "events": [
+      {
+        "cycle": "2026 Verified",
+        "event": "Online Submission of Application Form",
+        "date": "03 January – 30 January 2026 (extended to 04 Feb 2026)",
+        "status": "Completed (2026)"
+      },
+      {
+        "cycle": "2026 Verified",
+        "event": "Correction in Particulars Window",
+        "date": "09 February – 11 February 2026",
+        "status": "Completed (2026)"
+      },
+      {
+        "cycle": "2026 Verified",
+        "event": "Advance Intimation of Examination City",
+        "date": "29 April 2026",
+        "status": "Completed (2026)"
+      },
+      {
+        "cycle": "2026 Verified",
+        "event": "Admit Card Release",
+        "date": "05 May 2026 (Rescheduled batches: 27 May & 01 June 2026)",
+        "status": "Completed (2026)"
+      },
+      {
+        "cycle": "2026 Verified",
+        "event": "CUET (UG) 2026 Examination Dates",
+        "date": "11 May – 31 May 2026 & 06 – 07 June 2026 (15,68,867 candidates, 321 cities)",
+        "status": "Completed (2026)"
+      },
+      {
+        "cycle": "2026 Verified",
+        "event": "Provisional Answer Keys & Recorded Response Challenge",
+        "date": "09 June 2026",
+        "status": "Completed (2026)"
+      },
+      {
+        "cycle": "2026 Verified",
+        "event": "Final Answer Keys & CUET (UG) 2026 Result / NTA Scores",
+        "date": "23 June 2026",
+        "status": "Completed (2026)"
+      },
+      {
+        "cycle": "2027 Cycle",
+        "event": "CUET (UG) 2027 Notification, Registration & Exam Schedule",
+        "date": "Awaiting Official Announcement on cuet.nta.nic.in",
+        "status": "Awaited"
+      }
+    ],
+    "fee_structure": [
+      {
+        "subjects_slab": "Up to 3 Subjects",
+        "category": "General (UR)",
+        "india_fee": "₹ 1,000",
+        "outside_india_fee": "₹ 4,500"
+      },
+      {
+        "subjects_slab": "Up to 3 Subjects",
+        "category": "OBC-NCL* / GEN-EWS",
+        "india_fee": "₹ 900",
+        "outside_india_fee": "₹ 4,500"
+      },
+      {
+        "subjects_slab": "Up to 3 Subjects",
+        "category": "SC / ST / PwD / PwBD / Third Gender",
+        "india_fee": "₹ 800",
+        "outside_india_fee": "₹ 4,500"
+      },
+      {
+        "subjects_slab": "For Each Additional Subject (4th & 5th)",
+        "category": "General (UR)",
+        "india_fee": "+ ₹ 400 / subject",
+        "outside_india_fee": "+ ₹ 1,800 / subject"
+      },
+      {
+        "subjects_slab": "For Each Additional Subject (4th & 5th)",
+        "category": "OBC-NCL* / GEN-EWS",
+        "india_fee": "+ ₹ 375 / subject",
+        "outside_india_fee": "+ ₹ 1,800 / subject"
+      },
+      {
+        "subjects_slab": "For Each Additional Subject (4th & 5th)",
+        "category": "SC / ST / PwD / PwBD / Third Gender",
+        "india_fee": "+ ₹ 350 / subject",
+        "outside_india_fee": "+ ₹ 1,800 / subject"
+      }
+    ]
+  },
+  "information_bulletin": {
+    "bulletins": [
+      {
+        "title": "Information Bulletin — Common University Entrance Test [CUET (UG)] – 2026",
+        "session": "2026 Reference",
+        "pages": "96 Pages",
+        "highlights": "Complete 96-page official brochure with fee slabs, +5/-1 marking scheme, Appendix I (Central Universities list), Appendix II (all 37 subject codes), and CBT guidelines.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601031633478370.pdf",
+        "source_host": "cuet.nta.nic.in"
+      },
+      {
+        "title": "Frequently Asked Questions (FAQs) — CUET (UG) – 2026",
+        "session": "2026 Reference",
+        "pages": "5 Pages",
+        "highlights": "Official NTA FAQ document covering registration, subject choices, helpline (011-40759000, cuet-ug@nta.ac.in), and exam pattern.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/2026011697237004.pdf",
+        "source_host": "cuet.nta.nic.in"
+      },
+      {
+        "title": "Information Bulletin — CUET (UG) – 2025 (Archive)",
+        "session": "2025 Archive",
+        "pages": "Archive PDF",
+        "highlights": "Archived 2025 official Information Bulletin hosted on cuet.nta.nic.in.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/03/2025030146.pdf",
+        "source_host": "cuet.nta.nic.in"
+      }
+    ]
+  },
+  "pyq": {
+    "pyq_available_officially": false,
+    "summary_note": "NTA does NOT publish standalone downloadable CUET (UG) past question paper PDF booklets on cuet.nta.nic.in (question papers are displayed individually inside candidate login windows during the provisional answer key challenge period). Verified Final Answer Keys, Provisional Key notices, and NTA's official CBT practice portals (nta.ac.in/Quiz & nta.ac.in/Abhyas) are provided below — clearly labeled as Answer Keys / Official Practice rather than PYQs.",
+    "papers": [],
+    "official_practice_and_keys": [
+      {
+        "id": "cuet-2026-final-key",
+        "title": "Final Answer Keys for CUET (UG) – 2026 (All Shifts & Subjects — 334 Pages)",
+        "resource_type": "Final Answer Key PDF",
+        "description": "Official NTA Final Answer Keys PDF for CUET (UG) 2026 across all 37 subjects and examination dates.",
+        "url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/06/202606231857909583.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "is_pyq": false,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "cuet-2026-prov-key-notice",
+        "title": "Display of Provisional Answer Keys and Question Papers with Recorded Responses for Answer Key Challenge of CUET (UG) – 2026",
+        "resource_type": "Provisional Answer Key Notice",
+        "description": "Official public notice regarding candidate response sheet and provisional key challenge window (09 June 2026).",
+        "url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/06/20260609478040431.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "is_pyq": false,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "cuet-2025-final-key",
+        "title": "CUET (UG) – 2025 Final Answer Keys (Archive)",
+        "resource_type": "Final Answer Key PDF",
+        "description": "Archived official Final Answer Keys PDF for CUET (UG) 2025.",
+        "url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/07/2025070416.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "is_pyq": false,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "cuet-practice-nta-quiz",
+        "title": "NTA Official CBT Mock / Practice Portal",
+        "resource_type": "Official CBT Practice Portal",
+        "description": "Official Computer Based Test (CBT) practice interface hosted on nta.ac.in.",
+        "url": "https://nta.ac.in/Quiz",
+        "source_host": "nta.ac.in",
+        "is_pyq": false,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "cuet-practice-nta-abhyas",
+        "title": "National Test Abhyas (NTA Official Practice Platform)",
+        "resource_type": "Official Practice Platform",
+        "description": "Official NTA mock test practice portal.",
+        "url": "https://nta.ac.in/Abhyas",
+        "source_host": "nta.ac.in",
+        "is_pyq": false,
+        "last_verified": "2026-11-10"
+      }
+    ]
+  },
+  "admit_card": {
+    "status_label": "2027 Schedule Awaited | Official Portal: cuet.nta.nic.in",
+    "portal_url": "https://cuet.nta.nic.in/",
+    "steps": [
+      "Visit https://cuet.nta.nic.in/ once the Advance City Intimation Slip and e-Admit Card links are published.",
+      "Log in with your CUET (UG) Application Number, Password / Date of Birth, and Security Pin.",
+      "Check all allotted subjects, dates, shifts, reporting times (report 2 hours before exam commencement), and centre dress-code rules."
+    ],
+    "related_notices": [
+      {
+        "id": "cuet26-conduct",
+        "title": "Successful Conduct of Common University Entrance Test (UG) – CUET (UG) 2026 (15,68,867 Unique Candidates across 321 Cities)",
+        "date": "08 Jun 2026",
+        "cycle": "2026",
+        "category": "Advisory",
+        "summary": "Press Release dated 07 June 2026 reporting successful conduct for 15,68,867 unique candidates across 321 cities (including 15 cities outside India) in 37 subjects.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/06/20260608323708178.pdf",
+        "source_host": "cuet.nta.nic.in"
+      },
+      {
+        "id": "cuet26-admit-resched",
+        "title": "Release of Admit Cards for Re-scheduled Candidates for CUET (UG) – 2026 on 06–07 June 2026 – Reg.",
+        "date": "01 Jun 2026",
+        "cycle": "2026",
+        "category": "Admit Card",
+        "summary": "Admit card release notice for candidates rescheduled on 06–07 June 2026.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/06/20260601958335840.pdf",
+        "source_host": "cuet.nta.nic.in"
+      },
+      {
+        "id": "cuet26-dress-code",
+        "title": "Advisory for Candidates Regarding Dress Code and Permissible Items at Examination Centres in CUET (UG) – 2026 – Reg.",
+        "date": "07 May 2026",
+        "cycle": "2026",
+        "category": "Advisory",
+        "summary": "Official centre dress code and permissible/barred items guidelines for CUET (UG) 2026.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/05/202605071997185883.pdf",
+        "source_host": "cuet.nta.nic.in"
+      },
+      {
+        "id": "cuet26-admit-main",
+        "title": "Release of Admit Card for the Candidates of Common University Entrance Test [CUET (UG)] – 2026 – Reg.",
+        "date": "05 May 2026",
+        "cycle": "2026",
+        "category": "Admit Card",
+        "summary": "Release of CUET (UG) 2026 Admit Cards on cuet.nta.nic.in.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/05/20260505818657360.pdf",
+        "source_host": "cuet.nta.nic.in"
+      },
+      {
+        "id": "cuet26-city-slip",
+        "title": "Advance Intimation for Allotment of Examination City to the Candidates of CUET (UG) – 2026 – Reg.",
+        "date": "29 Apr 2026",
+        "cycle": "2026",
+        "category": "Admit Card",
+        "summary": "Advance examination city intimation slip notification for CUET (UG) 2026.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/04/202604291825114087.pdf",
+        "source_host": "cuet.nta.nic.in"
+      }
+    ]
+  },
+  "answer_key": {
+    "status_label": "2026 Final Answer Keys (334 Pages) Available | 2027 Awaited",
+    "portal_url": "https://cuet.nta.nic.in/",
+    "challenge_rules": "NTA displays Provisional Answer Keys along with individual Question Papers and Recorded Responses on cuet.nta.nic.in for online challenge before compiling Final Answer Keys.",
+    "key_pdfs": [
+      {
+        "id": "cuet-2026-final-key",
+        "title": "Final Answer Keys for CUET (UG) – 2026 (All Shifts & Subjects — 334 Pages)",
+        "resource_type": "Final Answer Key PDF",
+        "description": "Official NTA Final Answer Keys PDF for CUET (UG) 2026 across all 37 subjects and examination dates.",
+        "url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/06/202606231857909583.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "is_pyq": false,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "cuet-2026-prov-key-notice",
+        "title": "Display of Provisional Answer Keys and Question Papers with Recorded Responses for Answer Key Challenge of CUET (UG) – 2026",
+        "resource_type": "Provisional Answer Key Notice",
+        "description": "Official public notice regarding candidate response sheet and provisional key challenge window (09 June 2026).",
+        "url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/06/20260609478040431.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "is_pyq": false,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "cuet-2025-final-key",
+        "title": "CUET (UG) – 2025 Final Answer Keys (Archive)",
+        "resource_type": "Final Answer Key PDF",
+        "description": "Archived official Final Answer Keys PDF for CUET (UG) 2025.",
+        "url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/07/2025070416.pdf",
+        "source_host": "cuet.nta.nic.in",
+        "is_pyq": false,
+        "last_verified": "2026-11-10"
+      }
+    ],
+    "related_notices": [
+      {
+        "id": "cuet26-final-key-notice",
+        "title": "Final Answer Keys for CUET (UG) – 2026",
+        "date": "23 Jun 2026",
+        "cycle": "2026",
+        "category": "Answer Key",
+        "summary": "Complete 334-page Final Answer Keys document for all CUET (UG) 2026 test dates and subjects.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/06/202606231857909583.pdf",
+        "source_host": "cuet.nta.nic.in"
+      },
+      {
+        "id": "cuet26-prov-key-notice",
+        "title": "Display of Provisional Answer Keys and Question Papers with Recorded Responses for Answer Key Challenge of CUET (UG) – 2026 – Reg.",
+        "date": "09 Jun 2026",
+        "cycle": "2026",
+        "category": "Answer Key",
+        "summary": "Official notice opening provisional answer key and recorded response verification.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/06/20260609478040431.pdf",
+        "source_host": "cuet.nta.nic.in"
+      }
+    ]
+  },
+  "result": {
+    "status_label": "2026 Result Declared (23 Jun 2026) | 2027 Awaited",
+    "portal_url": "https://cuet.nta.nic.in/",
+    "rules": [
+      "NTA declares subject-wise Normalized NTA Scores (Percentile Scores) on https://cuet.nta.nic.in/.",
+      "NTA does NOT prepare a centralized merit list or conduct centralized counselling for CUET (UG).",
+      "Candidates must apply separately to their chosen Central, State, Deemed, Other Govt, or Private Universities using their CUET (UG) NTA Scores."
+    ],
+    "related_notices": [
+      {
+        "id": "cuet26-toppers",
+        "title": "List of Toppers of CUET (UG) – 2026",
+        "date": "23 Jun 2026",
+        "cycle": "2026",
+        "category": "Result",
+        "summary": "Subject-wise and aggregate toppers list for CUET (UG) 2026 declared by NTA.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/06/20260623268704934.pdf",
+        "source_host": "cuet.nta.nic.in"
+      },
+      {
+        "id": "cuet26-result-pr",
+        "title": "NTA Declares the Result / NTA Scores of Common University Entrance Test [CUET (UG)] – 2026 – Reg.",
+        "date": "23 Jun 2026",
+        "cycle": "2026",
+        "category": "Result",
+        "summary": "Official NTA declaration of CUET (UG) 2026 Normalized NTA Scores across 37 subjects.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/06/20260623716111016.pdf",
+        "source_host": "cuet.nta.nic.in"
+      }
+    ]
+  },
+  "universities": {
+    "portal_url": "https://cuet.nta.nic.in/participating-universities/",
+    "overview": "Participating universities are dynamically mapped on cuet.nta.nic.in across five official categories. Each university links to its official course-eligibility mapping PDF published on the CUET (UG) portal.",
+    "counts": {
+      "total": 244,
+      "central": 49,
+      "state": 41,
+      "deemed": 27,
+      "other_govt": 7,
+      "private": 120
+    },
+    "list": [
+      {
+        "name": "ALIGARH MUSLIM UNIVERSITY",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227756733014.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "ASSAM UNIVERSITY, SILCHAR",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271873630584.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "BABASAHEB BHIMRAO AMBEDKAR UNIVERSITY",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/2025122738197355.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "BANARAS HINDU UNIVERSITY",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271556238922.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CENTRAL SANSKRIT UNIVERSITY, NEW DELHI",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601181418096708.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CENTRAL TRIBAL UNIVERSITY OF ANDHRA PRADESH",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227465940694.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CENTRAL UNIVERSITY OF ANDHRA PRADESH",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/2025122767163162.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CENTRAL UNIVERSITY OF GUJARAT",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227148453234.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CENTRAL UNIVERSITY OF HARYANA",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512272063864467.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CENTRAL UNIVERSITY OF HIMACHAL PRADESH",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227319538858.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CENTRAL UNIVERSITY OF JAMMU",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601051396054013.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CENTRAL UNIVERSITY OF JHARKHAND",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227673023518.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CENTRAL UNIVERSITY OF KARNATAKA",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601281557532856.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CENTRAL UNIVERSITY OF KASHMIR",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/20260105804083066.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CENTRAL UNIVERSITY OF KERALA",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271877204910.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CENTRAL UNIVERSITY OF ODISHA",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271820103382.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CENTRAL UNIVERSITY OF PUNJAB",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/20260113245767313.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CENTRAL UNIVERSITY OF RAJASTHAN",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601121699747678.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CENTRAL UNIVERSITY OF SOUTH BIHAR",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227469155859.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CENTRAL UNIVERSITY OF TAMIL NADU",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/03/20260319440452624.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "DR. HARISINGH GOUR VISHWAVIDYALAYA",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271342698893.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "GURU GHASIDAS VISHWAVIDYALAYA",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227155200951.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "HNB GARHWAL UNIVERSITY SRINAGAR GARHWAL",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271285359664.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "IIT DHARWAD",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/03/20260330998229543.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "INDIRA GANDHI NATIONAL TRIBAL UNIVERSITY",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271435339250.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "JAMIA MILLIA ISLAMIA",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271485295531.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "JAWAHARLAL NEHRU UNIVERSITY",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271361202712.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "MAHATMA GANDHI ANTARRASHTRIYA HINDI VISHWAVIDYALAYA",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227415600442.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "MAHATMA GANDHI CENTRAL UNIVERSITY",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271239936821.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "MANIPUR UNIVERSITY",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271570547470.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "MAULANA AZAD NATIONAL URDU UNIVERSITY",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227661073544.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "MIZORAM UNIVERSITY",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601071831278870.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "NAGALAND UNIVERSITY",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271066867596.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "NATIONAL SANSKRIT UNIVERSITY",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271502912035.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "NORTH-EASTERN HILL UNIVERSITY",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227122334008.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "PONDICHERRY UNIVERSITY",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/03/20260307496061.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "RAJIV GANDHI NATIONAL AVIATION UNIVERSITY",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271377958576.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "RAJIV GANDHI UNIVERSITY",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271384198368.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SAMMAKKA SARAKKA CENTRAL TRIBAL UNIVERSITY",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/20260112407901222.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SHRI LAL BAHADUR SHASTRI NATIONAL SANSKRIT UNIVERSITY",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271341168496.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SIKKIM UNIVERSITY, GANGTOK",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601181029248258.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SOUTH ASIAN UNIVERSITY",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601181856906598.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "TEZPUR UNIVERSITY",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271232796039.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "THE ENGLISH AND FOREIGN LANGUAGES UNIVERSITY, HYDERABAD",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227218108052.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "TRIPURA UNIVERSITY",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/02/20260218883918137.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "UNIVERSITY OF ALLAHABAD",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271187610393.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "UNIVERSITY OF DELHI",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512271200063091.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "UNIVERSITY OF HYDERABAD",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251227644446780.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "VISVA-BHARATI UNIVERSITY",
+        "category": "central",
+        "category_label": "Central University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601051610806556.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "BABA GHULAM SHAH UNIVERSITY",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281423364762.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "BARKATULLAH UNIVERSITY",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281231702878.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "BHATTADEV UNIVERSITY",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281786990241.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "BIRANGANA SATI SADHANI RAJYIK VISHWAVIDYALAYA, GOLAGHAT, ASSAM",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/05/2026052543862352.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CLUSTER UNIVERSITY OF JAMMU",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228313163903.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CLUSTER UNIVERSITY OF SRINAGAR",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281050228557.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "DELHI TEACHERS UNIVERSITY",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281665148997.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "DELHI TECHNOLOGICAL UNIVERSITY",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228416891416.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "DEVI AHILYA VISHWAVIDYALAYA, INDORE (M.P.)",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228108577754.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "DIBRUGARH UNIVERSITY, DIBRUGARH, ASSAM",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228729969125.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "DR. A.P.J. ABDUL KALAM TECHNICAL UNIVERSITY, UTTAR PRADESH, LUCKNOW",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281648977632.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "DR. B.R. AMBEDKAR UNIVERSITY DELHI",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/20260108662431529.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "DR. RAMMANOHAR LOHIA AVADH UNIVERSITY, AYODHYA(U.P.)",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601052084255795.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "DR. SHAKUNTALA MISRA NATIONAL REHABILITATION UNIVERSITY, LUCKNOW",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512282074857220.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "DR.B.R. AMBEDKAR SCHOOL OF ECONOMICS UNIVERSITY, BENGALURU",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601081913700948.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "GAUTAM BUDDHA UNIVERSITY",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/04/202604241824308065.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "GOVT. DEGREE COLLEGE (AUTONOMOUS) BARAMULLA",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/20260118759356064.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "GURU GOBIND SINGH INDRAPRASTHA UNIVERSITY",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512282051857860.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "HARCOURT BUTLER TECHNICAL UNIVERSITY KANPUR (UP)",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281384418568.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "INDIRA GANDHI DELHI TECHNICAL UNIVERSITY FOR WOMEN",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/06/202606171617307051.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "ISLAMIA COLLEGE OF SCIENCE AND COMMERCE SRINAGAR",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281162338157.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "ISLAMIC UNIVERSITY OF SCIENCE AND TECHNOLOGY, KASHMIR",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281557785700.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "JAGADGURU RAMBHADRACHARYA DIVYANG STATE UNIVERSITY",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601201220198639.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "JAGANNATH BAROOAH UNIVERSITY, JORHAT",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601052121402807.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "KUMAR BHASKAR VARMA SANSKRIT AND ANCIENT STUDIES UNIVERSITY",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/2025122898724131.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "MADAN MOHAN MALAVIYA UNIVERSITY OF TECHNOLOGY",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512282068601681.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "MADHABDEV UNIVERSITY",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512282063095477.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "MAHARAJA CHHATRASAL BUNDELKHAND UNIVERSITY",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228307849901.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "MAHARAJA SURAJMAL BRIJ UNIVERSITY BHARATPUR",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281589424605.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "MAHARANA PRATAP HORTICULTURAL UNIVERSITY, KARNAL",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228782579894.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "MAKHANLAL CHATURVEDI UNIVERSITY",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281036516600.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "NAGAON UNIVERSITY",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281530664109.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "NORTH LAKHIMPUR UNIVERSITY",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281545311163.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "RATAN TATA MAHRASHTRA STATE SKILLS UNIVERSITY",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281684561855.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SAMRAT VIKRMADITYA VISHWAVIDYALAY, UJJAIN (MP)",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281108453389.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SARDAR PATEL UNIVERSITY OF POLICE, SECURITY AND CRIMINAL JUSTICE",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/03/202603071371164675.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SHRI MATA VAISHNO DEVI UNIVERSITY",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281288169654.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SIBSAGAR UNIVERSITY",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281679431839.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "UNIVERSITY OF JAMMU",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228412871007.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "UNIVERSITY OF KASHMIR",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601281025948126.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "UNIVERSITY OF LADAKH",
+        "category": "state",
+        "category_label": "State University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/2025122834132186.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "AVINASHILINGAM INSTITUTE FOR HOME SCIENCE AND HIGHER EDUCATION FOR WOMEN",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512282124960213.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CHINMAYA VISHWAVIDYAPEETH",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601051264358581.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "DAYALBAGH EDUCATIONAL INSTITUTE",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228244767440.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "GITAM (VISHAKHAPATNAM)",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": null,
+        "pdf_status": "upstream_malformed_url",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/deemed-universities/"
+      },
+      {
+        "name": "GITAM(BLR)",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228852843312.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "GITAM(HYD)",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281230662880.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "GOKHALE INSTITUTE OF POLITICS AND ECONOMICS",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281170179813.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "GRAPHIC ERA UNIVERSITY, DEHRADUN, UTTARAKHAND",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/2026010564460177.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "GUJARAT VIDYAPITH UNIVERSITY",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/2025122885152350.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "GURUKULA KANGRI UNIVERSITY",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281397917425.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "ICFAI(HYDERABAD)",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601052058413543.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "IIS (DEEMED TO BE UNIVERSITY), JAIPUR",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228684082794.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "JAMIA HAMDARD",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281351889402.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "JAYPEE INSTITUTE OF INFORMATION TECHNOLOGY",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281124282887.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "KIET-KRISHNA INSTITUTE OF ENGINEERING & TECHNOLOGY",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601071245210806.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "LAKSHMIBAI NATIONAL INSTITUTE OF PHYSICAL EDUCATION",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601051526344018.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "LINGYA'S VIDYAPEETH UNIVERSITY",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281233969220.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "MAHARISHI MARKANDESHWAR (DEEMED TO BE UNIVERSITY), MULLANA - AMBALA",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281406964491.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "MALLA REDDY VISHWAVIDYAPEETH",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/20260118524131414.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "MANAV RACHNA INTERNATIONAL INSTITUTE OF RESEARCH AND STUDIES",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281147262195.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "NEHRU GRAM BHARATI (DEEMED TO BE UNIVERSITY)",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228829419209.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SHOBHIT INSTITUTE OF ENGINEERING AND TECHNOLOGY",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281839308131.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SRM INSTITUTE OF SCIENCE AND TECHNOLOGY",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281616320323.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "TATA INSTITUTE OF SOCIAL SCIENCES (TISS)",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228167381237.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "TERI SCHOOL OF ADVANCED STUDIES",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/2025122852009727.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "THE GANDHIGRAM RURAL INSTITUTE (DTBU)",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281266231273.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "VINAYAKA MISSION'S RESEARCH FOUNDATION",
+        "category": "deemed",
+        "category_label": "Deemed University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/2025122872127596.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "FOOTWEAR DESIGN AND DEVELOPMENT INSTITUTE",
+        "category": "other-govt",
+        "category_label": "Other Government Institution",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228228099352.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "GOVT. COLLEGE FOR WOMEN, PARADE GROUND, JAMMU",
+        "category": "other-govt",
+        "category_label": "Other Government Institution",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281074782264.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "INDIAN COUNCIL OF AGRICULTURAL RESEARCH (ICAR)",
+        "category": "other-govt",
+        "category_label": "Other Government Institution",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228917047543.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "INDIAN INSTITUTE OF TOURISM & TRAVEL MANAGEMENT UNIVERSITY",
+        "category": "other-govt",
+        "category_label": "Other Government Institution",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281883657630.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "NATIONAL FORENSIC SCIENCES UNIVERSITY (NFSU)",
+        "category": "other-govt",
+        "category_label": "Other Government Institution",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/20260106908555695.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "NATIONAL INSTITUTE OF FOOD TECHNOLOGY ENTREPRENEURSHIP AND MANAGEMENT, KUNDLI (NIFTEM-K)",
+        "category": "other-govt",
+        "category_label": "Other Government Institution",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/03/202603251828477652.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "RAJIV GANDHI INSTITUTE OF PETROLEUM TECHNOLOGY",
+        "category": "other-govt",
+        "category_label": "Other Government Institution",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228787019506.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "ABHYUDAY UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/2025122821152260.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "AJEENKYA DY PATIL UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601081283427804.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "AKS UNIVERSITY, SATNA (MP)",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601051392117525.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "ALLIANCE UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/02/20260223928884418.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "AMITY JHARKHAND",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601051224446691.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "AMITY UNIVERSITY (NOIDA CAMPUS)",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/20260105334616347.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "AMITY UNIVERSITY HYDERABAD",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228237501788.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "AMITY UNIVERSITY KOLKATA",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228521486537.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "AMITY UNIVERSITY PUNJAB",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228374385279.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "AMITY UNIVERSITY, GREATER NOIDA",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281811437395.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "AMITY UNIVERSITYPATNA",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228560243674.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "APEX UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601051828580177.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "ARKA JAIN UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/02/202602191308770074.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "ARUNACHAL UNIVERSITY OF STUDIES",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281674777548.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "ASBM UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/2026010568413665.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "ASSAM DOWN TOWN UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228983894346.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "AVANTIKA UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601082122686174.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "AZIM PREM JI UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228536984564.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "BABU BANARASI DAS UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281464292676.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "BENNET UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/02/202602061521727132.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "BHAGWANT GLOBAL UNIVERSITY KOTDWAR (UTTARAKHAND)",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/20260113235160278.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "BHAGWANT UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281686992841.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "BIRLA GLOBAL UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/20260105384063258.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "BML MUNJAL UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228944580753.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "BRAINWARE UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228708487236.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CARRER COLLEGE BHOPAL",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601051900908436.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CGC UNIVERSITY, MOHALI",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/03/202603061808622183.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CHANAKYA UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/2025122825422005.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CHANDIGARH UNIVERSITY -MAPPING",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228840226495.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CHHATRAPATI SHIVAJI MAHARAJ UNIVERSITY, PANVEL",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/20260105796818227.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CHITKARA UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228328729989.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CMR UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/05/20260505919752621.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "CT UNIVERSITY(LUDHIANA)",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512282091417043.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "DBS GLOBAL UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/20260107619038691.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "DIT DEHRADUN",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281927250346.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "FUTURE UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601081767126649.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "G D GOENKA UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228337160608.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "GALGOTIAS UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228654287139.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "GEETA UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281883027567.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "GLA UNIVERSITY(MATHURA)",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601052007668435.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "GOPAL NARAYAN SINGH UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228982418948.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "GRAPHIC ERA HILL UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/2026010588049415.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "HARIDWAR UNIVERSITY ROORKEE",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281428887059.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "HIMALAYAN UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281843740579.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "HRIT UNIVERSITY, GHAZIABAD",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/20260105562093835.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "IFTM UNIVERSITY, MORADABAD",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/2025122866566561.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "IILM UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228817440395.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "IILM UNIVERSITY, GURUGRAM",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512289894700.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "IIMT UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601051180367865.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "INVERTIS UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/02/202602161382271121.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "ITM SKILLS UNIVERSITY, NAVI MUMBAI",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/20260105285679094.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "ITM UNIVERSITY, RAIPUR",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/2026010534330313.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "ITM VOCATIONAL UNIVERSITY, VADODARA",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601051655431885.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "JAGAN NATH UNIVERSITY, JAIPUR",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228426543174.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "JAGANATH UNIVERSITY(DELHI NCR)",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281492181445.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "JAIPUR NATIONAL UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228676206980.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "JECRC UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281341703590.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "JIS UNIVERSITY, KOLKATA",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601131397285274.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "K.R. MANGALAM UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281227431825.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "KALINGA UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512282060907865.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "KARNAVATI UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281489703211.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "LOVELY PROFESSIONAL UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512282065344259.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "MADHAV UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228510392681.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "MAHATMA JYOTI RAO PHOOLE UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/02/20260202566992470.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "MAHINDRA UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281185403165.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "MANAV RACHNA UNIVERSITY, FARIDABAD",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601131522642223.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "MANGALAYATAN UNIVERSITY, ALIGARH",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228659582247.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "MANGALAYATAN UNIVERSITY, JABALPUR",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512282110225475.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "MANIPAL UNIVERSITY JAIPUR",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228663541429.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "MATS UNIVERSITY, RAIPUR",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/20260105251587744.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "MEWAR UNIVERSITY, CHITTORGARH (RAJASTHAN)",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/2025122876859733.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "MNR UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228221890805.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "MODY UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281075734954.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "NIIT UNIVERSITY, RAJASTHAN",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228221483137.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "NOIDA INTERNATIONAL UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228294698632.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "OM STERLING GLOBAL UNIVERSITY, HISAR, HARYANA",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/20260105850385146.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "PEARL ACADEMY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281997963094.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "POORNIMA UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228641228087.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "R V UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/20260107923987106.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "RABINDRANATH TAGORE UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281287550185.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "RAKSHPAL BAHADUR MANAGEMENT INSTITUTE",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/2025122876045160.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "RAMA UNIVERSITY UTTAR PRADESH KANPUR",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601051167515612.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "RAMAIAH UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601131048431462.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "RENAISSANCE UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228281843306.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "REVA UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601132141367851.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "RISHIHOOD UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228984586434.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "RNB GLOBAL UNIVERSITY, BIKANER ( RAJASTHAN)",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601051999656087.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SAGE UNIVERSITY, INDORE",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/20260105124527874.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SANSKRITI UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228259251873.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SANT BABA BHAG SINGH UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228527993843.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SARDAR BHAGWAN SINGH UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601132070637299.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SAROJ INTERNATIONAL UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228436021057.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SCHOOL OF MANAGEMENT SCIENCES(SMS)",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/20260107162511370.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SHARDA UNIVERSITY (AGRA)",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281673547178.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SHARDA UNIVERSITY NOIDA",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281059385893.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SHOOLINI UNIVERSITY OF BIOTECHNOLOGY AND MANAGEMENT SCIENCES",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281291695554.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SHREE GURU GOBIND SINGH TRICENTENARY (SGT) UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601051099250944.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SIKKIM GLOBAL TECHNICAL UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/03/202603101265893234.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SIKKIM MANIPAL UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/20260105470883510.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SINGHANIA UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/02/20260219928238942.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SIR PADAMPAT SINGHANIA UNIVERSITY, UDAIPUR",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/20260105293673985.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SISTER NIVEDITA UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281794321911.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SRM UNIVERSITY - AP",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228528653273.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SRM UNIVERSITY DELHI NCR SONEPAT",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228237951178.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SUNBEAM COLLEGE FOR WOMEN",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281331907124.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SURESH GYAN VIHAR UNIVERSITY JAIPUR",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281579703734.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SUSHANT UNIVERSITY(GURUGRAM)",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/02/202602101069972882.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SWAMI RAMA HIMALAYAN UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228164960438.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "SWAMI VIVEKANAND SUBHARTI UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228396528816.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "TECHNO INDIA UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/05/202605061375656343.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "TEERTHANKER MAHAVEER UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281356546852.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "THE NEOTIA UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281290381715.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "UNITED UNIVERSITY, PRAYAGRAJ",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281589644177.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "UNIVERSITY OF ENGINEERING & MANAGEMENT, JAIPUR",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/20260105209887869.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "UPES - DEHRADUN",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/202512281309948776.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "USHA MARTIN UNIVERSITY",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601071943204894.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "VIDYA UNIVERSITY, MEERUT",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601051782216816.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "VISHWA VISHWANI INSTITUTE OF SYSTEMS AND MANAGEMENT, HYDERABAD",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/20260105184335224.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "VIVEKANANDA GLOBAL UNIVERSITY, JAIPUR, RAJASTHAN",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/20260105522082086.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      },
+      {
+        "name": "WORLD UNIVERSITY OF DESIGN",
+        "category": "private",
+        "category_label": "Private University",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2025/12/20251228446999372.pdf",
+        "pdf_status": "verified",
+        "fallback_url": "https://cuet.nta.nic.in/participating-universities/"
+      }
+    ]
+  },
+  "notifications": [
+    {
+      "id": "cuet26-toppers",
+      "title": "List of Toppers of CUET (UG) – 2026",
+      "date": "23 Jun 2026",
+      "cycle": "2026",
+      "category": "Result",
+      "summary": "Subject-wise and aggregate toppers list for CUET (UG) 2026 declared by NTA.",
+      "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/06/20260623268704934.pdf",
+      "source_host": "cuet.nta.nic.in"
+    },
+    {
+      "id": "cuet26-result-pr",
+      "title": "NTA Declares the Result / NTA Scores of Common University Entrance Test [CUET (UG)] – 2026 – Reg.",
+      "date": "23 Jun 2026",
+      "cycle": "2026",
+      "category": "Result",
+      "summary": "Official NTA declaration of CUET (UG) 2026 Normalized NTA Scores across 37 subjects.",
+      "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/06/20260623716111016.pdf",
+      "source_host": "cuet.nta.nic.in"
+    },
+    {
+      "id": "cuet26-final-key-notice",
+      "title": "Final Answer Keys for CUET (UG) – 2026",
+      "date": "23 Jun 2026",
+      "cycle": "2026",
+      "category": "Answer Key",
+      "summary": "Complete 334-page Final Answer Keys document for all CUET (UG) 2026 test dates and subjects.",
+      "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/06/202606231857909583.pdf",
+      "source_host": "cuet.nta.nic.in"
+    },
+    {
+      "id": "cuet26-prov-key-notice",
+      "title": "Display of Provisional Answer Keys and Question Papers with Recorded Responses for Answer Key Challenge of CUET (UG) – 2026 – Reg.",
+      "date": "09 Jun 2026",
+      "cycle": "2026",
+      "category": "Answer Key",
+      "summary": "Official notice opening provisional answer key and recorded response verification.",
+      "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/06/20260609478040431.pdf",
+      "source_host": "cuet.nta.nic.in"
+    },
+    {
+      "id": "cuet26-conduct",
+      "title": "Successful Conduct of Common University Entrance Test (UG) – CUET (UG) 2026 (15,68,867 Unique Candidates across 321 Cities)",
+      "date": "08 Jun 2026",
+      "cycle": "2026",
+      "category": "Advisory",
+      "summary": "Press Release dated 07 June 2026 reporting successful conduct for 15,68,867 unique candidates across 321 cities (including 15 cities outside India) in 37 subjects.",
+      "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/06/20260608323708178.pdf",
+      "source_host": "cuet.nta.nic.in"
+    },
+    {
+      "id": "cuet26-admit-resched",
+      "title": "Release of Admit Cards for Re-scheduled Candidates for CUET (UG) – 2026 on 06–07 June 2026 – Reg.",
+      "date": "01 Jun 2026",
+      "cycle": "2026",
+      "category": "Admit Card",
+      "summary": "Admit card release notice for candidates rescheduled on 06–07 June 2026.",
+      "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/06/20260601958335840.pdf",
+      "source_host": "cuet.nta.nic.in"
+    },
+    {
+      "id": "cuet26-dress-code",
+      "title": "Advisory for Candidates Regarding Dress Code and Permissible Items at Examination Centres in CUET (UG) – 2026 – Reg.",
+      "date": "07 May 2026",
+      "cycle": "2026",
+      "category": "Advisory",
+      "summary": "Official centre dress code and permissible/barred items guidelines for CUET (UG) 2026.",
+      "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/05/202605071997185883.pdf",
+      "source_host": "cuet.nta.nic.in"
+    },
+    {
+      "id": "cuet26-admit-main",
+      "title": "Release of Admit Card for the Candidates of Common University Entrance Test [CUET (UG)] – 2026 – Reg.",
+      "date": "05 May 2026",
+      "cycle": "2026",
+      "category": "Admit Card",
+      "summary": "Release of CUET (UG) 2026 Admit Cards on cuet.nta.nic.in.",
+      "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/05/20260505818657360.pdf",
+      "source_host": "cuet.nta.nic.in"
+    },
+    {
+      "id": "cuet26-city-slip",
+      "title": "Advance Intimation for Allotment of Examination City to the Candidates of CUET (UG) – 2026 – Reg.",
+      "date": "29 Apr 2026",
+      "cycle": "2026",
+      "category": "Admit Card",
+      "summary": "Advance examination city intimation slip notification for CUET (UG) 2026.",
+      "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/04/202604291825114087.pdf",
+      "source_host": "cuet.nta.nic.in"
+    },
+    {
+      "id": "cuet26-apply-notice",
+      "title": "Inviting Online Application Form for CUET (UG) – 2026 for Admission to Undergraduate Programmes into Central & Participating Universities – Reg.",
+      "date": "03 Jan 2026",
+      "cycle": "2026",
+      "category": "Application",
+      "summary": "Official public notice opening CUET (UG) 2026 online applications (03 Jan – 30 Jan 2026).",
+      "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601031118382370.pdf",
+      "source_host": "cuet.nta.nic.in"
+    }
+  ]
+}

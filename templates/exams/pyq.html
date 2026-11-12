@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ exam.name }} {% if exam.pyq.pyq_available_officially %}Previous Year Question Papers ({{ exam.pyq.papers|length }} Official PDFs){% else %}PYQ Availability &amp; Official Practice Resources{% endif %} | StudySignal{% endblock %}
+
+{% block meta_description %}{{ exam.pyq.summary_note }}{% endblock %}
+
+{% block content %}
+{% set active_tab = 'pyq' %}
+{% set page_label = 'PYQ Status & Practice' if not exam.pyq.pyq_available_officially else 'Previous Year Papers (PYQ)' %}
+{% set page_heading = exam.name + (' PYQ Availability & Official Practice' if not exam.pyq.pyq_available_officially else ' Previous Year Question Papers (PYQ)') %}
+{% set page_intro = exam.pyq.summary_note %}
+{% include 'exams/_subnav.html' %}
+
+<div class="exam-page-body">
+  <section class="section exam-section-tight">
+    <div class="container">
+      {% if not exam.pyq.pyq_available_officially %}
+      <!-- Explicit transparent status when no standalone PYQ booklets exist officially (CUET UG) -->
+      <div class="exam-alert-box exam-alert-warn">
+        <div class="exam-alert-head">
+          <div>
+            <span class="badge-status-soon">No Standalone Official PYQ Booklets Hosted</span>
+            <h2 class="exam-alert-title">{{ exam.name }} Past Question Paper Availability Notice</h2>
+          </div>
+          <span class="exam-verified-meta">Checked {{ exam.last_verified }}</span>
+        </div>
+        <p class="exam-alert-text">{{ exam.pyq.summary_note }}</p>
+        <div class="exam-action-row">
+          <a href="{{ exam.official_website }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Visit {{ exam.official_website }} ↗</a>
+          <a href="/{{ exam_slug }}/answer-key" class="btn btn-secondary btn-sm">View Answer Keys Archive &rarr;</a>
+        </div>
+      </div>
+      {% else %}
+      <!-- Verified Official Past Question Papers (is_pyq == True) -->
+      <div class="exam-panel-card">
+        <div class="exam-panel-head">
+          <div>
+            <span class="pyq-badge-available">Official Past Question Papers Only (is_pyq: True)</span>
+            <h2>Verified {{ exam.name }} Past Question Papers ({{ exam.pyq.papers|length }} PDFs)</h2>
+            <p>{{ exam.pyq.summary_note }}</p>
+          </div>
+        </div>
+
+        {% if exam.pyq.papers|length > 10 %}
+        <div class="exam-filter-toolbar">
+          <div class="exam-search-box" style="flex: 1;">
+            <label for="pyq-filter-search" class="sr-only">Filter past question papers</label>
+            <input type="text" id="pyq-filter-search" class="form-control" placeholder="Filter by year, language, set code, or paper (e.g. 2025, Hindi, AAT, Set E1)...">
+          </div>
+          <span class="exam-filter-count" id="pyqVisibleCount">Showing {{ exam.pyq.papers|length }} of {{ exam.pyq.papers|length }} papers</span>
+        </div>
+        {% endif %}
+
+        <div class="pyq-grid" id="examPyqGrid">
+          {% for p in exam.pyq.papers %}
+          <article class="pyq-card exam-pyq-card" data-search="{{ (p.title + ' ' + (p.year|string if p.year is defined else '') + ' ' + (p.language if p.language is defined else '') + ' ' + (p.paper if p.paper is defined else '') + ' ' + (p.exam_type if p.exam_type is defined else ''))|lower }}">
+            <div class="pyq-card-header">
+              <div class="exam-doc-badges">
+                {% if p.year is defined %}<span class="pyq-year-badge">{{ p.year }}</span>{% endif %}
+                {% if p.session is defined %}<span class="pyq-year-badge">{{ p.session }}</span>{% endif %}
+                {% if p.language is defined %}<span class="code-pill">{{ p.language }}</span>{% endif %}
+                {% if p.paper is defined and not p.language %}<span class="code-pill">{{ p.paper }}</span>{% endif %}
+              </div>
+              <span class="pyq-badge-available">✓ Official PYQ</span>
+            </div>
+            <h3 class="pyq-card-title">{{ p.title }}</h3>
+            <div class="pyq-card-meta">
+              {% if p.exam_date is defined %}<span>{{ p.exam_date }}</span><span>&bull;</span><span>{{ p.shift }}</span>
+              {% elif p.paper is defined and p.language is defined %}<span>{{ p.paper }}</span><span>&bull;</span><span>{{ p.exam_type or 'Official Booklet' }}</span>
+              {% elif p.set_code is defined %}<span>Set {{ p.set_code }}</span><span>&bull;</span><span>{{ p.language }}</span>{% endif %}
+            </div>
+            <div class="exam-doc-footer">
+              <span class="exam-doc-source">Host: <code>{{ p.source_host }}</code></span>
+              <a href="{{ p.pdf_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Download Question Paper PDF ↗</a>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Strictly Separated Non-PYQ Section: Practice Portals, CBT Mocks & Answer Keys -->
+      <div class="exam-panel-card exam-nonpyq-panel">
+        <div class="exam-panel-head">
+          <div>
+            <span class="exam-badge-neutral">Official Practice &amp; Keys (Not Past Question Papers)</span>
+            <h2>Official Practice Portals, CBT Mock Tests &amp; Answer Keys (Non-PYQ)</h2>
+            <p>These official resources are separated from Past Question Papers (<code>is_pyq: False</code>) for complete transparency.</p>
+          </div>
+        </div>
+
+        <div class="exam-doc-grid">
+          {% for item in exam.pyq.official_practice_and_keys %}
+          <article class="exam-doc-card">
+            <div class="exam-doc-badges">
+              <span class="exam-badge-neutral">{{ item.resource_type }}</span>
+              <span class="code-pill">Non-PYQ</span>
+            </div>
+            <h3>{{ item.title }}</h3>
+            <p class="exam-doc-highlights">{{ item.description }}</p>
+            <div class="exam-doc-footer">
+              <span class="exam-doc-source">Source: <code>{{ item.source_host }}</code> &bull; Verified {{ item.last_verified }}</span>
+              <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Open Official Resource ↗</a>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+{% if exam.pyq.pyq_available_officially and exam.pyq.papers|length > 10 %}
+<script>
+(function() {
+  const input = document.getElementById('pyq-filter-search');
+  const cards = document.querySelectorAll('#examPyqGrid .exam-pyq-card');
+  const counter = document.getElementById('pyqVisibleCount');
+  if (!input) return;
+  input.addEventListener('input', function() {
+    const q = input.value.trim().toLowerCase();
+    let visible = 0;
+    cards.forEach(function(card) {
+      const match = !q || (card.getAttribute('data-search') || '').indexOf(q) !== -1;
+      card.style.display = match ? '' : 'none';
+      if (match) visible += 1;
+    });
+    if (counter) counter.textContent = 'Showing ' + visible + ' of ' + cards.length + ' papers';
+  });
+})();
+</script>
+{% endif %}
+{% endblock %}

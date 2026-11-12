@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+
+{% set meta_titles = {
+  'admit_card': exam.name + ' Admit Card, Advance City Slip & Hall Ticket Guide',
+  'answer_key': exam.name + ' Provisional & Final Answer Keys, Response Sheet & Challenge Rules',
+  'result': exam.name + ' Result, NTA Scorecards & Merit List Guidelines'
+} %}
+{% set labels = {
+  'admit_card': 'Admit Card',
+  'answer_key': 'Answer Key',
+  'result': 'Result'
+} %}
+
+{% block title %}{{ meta_titles[page_type] }} | StudySignal{% endblock %}
+
+{% block meta_description %}{{ tracker.status_label }} — Official verified links and step-by-step instructions for {{ exam.name }} {{ labels[page_type] }}.{% endblock %}
+
+{% block content %}
+{% set page_label = labels[page_type] %}
+{% set page_heading = meta_titles[page_type] %}
+{% set page_intro = tracker.status_label %}
+{% include 'exams/_subnav.html' %}
+
+<div class="exam-page-body">
+  <section class="section exam-section-tight">
+    <div class="container">
+      <!-- Status & Official Login Banner -->
+      <div class="exam-alert-box {% if exam_slug == 'jee-main' %}exam-alert-active{% else %}exam-alert-info{% endif %}">
+        <div class="exam-alert-head">
+          <div>
+            <span class="badge-status-active">{{ labels[page_type] }} Official Tracker</span>
+            <h2 class="exam-alert-title">{{ tracker.status_label }}</h2>
+          </div>
+          <a href="{{ tracker.portal_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+            Official Portal ({{ tracker.portal_url|replace('https://', '')|replace('/', '') }}) ↗
+          </a>
+        </div>
+        {% if tracker.challenge_rules %}
+        <p class="exam-alert-text">{{ tracker.challenge_rules }}</p>
+        {% endif %}
+      </div>
+
+      {% if page_type == 'admit_card' and tracker.steps %}
+      <div class="exam-panel-card">
+        <h2>Step-by-Step Instructions to Download {{ exam.name }} e-Admit Card</h2>
+        <ol class="exam-ordered-list">
+          {% for s in tracker.steps %}
+          <li>{{ s }}</li>
+          {% endfor %}
+        </ol>
+      </div>
+      {% endif %}
+
+      {% if page_type == 'answer_key' and tracker.key_pdfs %}
+      <div class="exam-panel-card">
+        <h2>Verified Official Answer Key Documents</h2>
+        <div class="exam-doc-grid">
+          {% for k in tracker.key_pdfs %}
+          <article class="exam-doc-card">
+            <div class="exam-doc-badges">
+              <span class="badge-status-active">{{ k.resource_type }}</span>
+              <span class="code-pill">{{ k.source_host }}</span>
+            </div>
+            <h3>{{ k.title }}</h3>
+            <p class="exam-doc-highlights">{{ k.description }}</p>
+            <div class="exam-doc-footer">
+              <span class="exam-doc-source">Verified {{ k.last_verified }}</span>
+              <a href="{{ k.url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Open Official Key PDF ↗</a>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      {% if page_type == 'result' %}
+      {% if tracker.rules %}
+      <div class="exam-panel-card">
+        <h2>Result Declaration &amp; Rank Preparation Rules</h2>
+        <ul class="exam-clean-list">
+          {% for r in tracker.rules %}
+          <li>{{ r }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
+
+      {% if tracker.archive_portals %}
+      <div class="exam-panel-card">
+        <h2>Official Archived Result Login Portals</h2>
+        <div class="exam-doc-grid">
+          {% for ap in tracker.archive_portals %}
+          <article class="exam-doc-card">
+            <div class="exam-doc-badges"><span class="code-pill">examinationservices.nic.in</span></div>
+            <h3>{{ ap.label }}</h3>
+            <a href="{{ ap.url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Open Result Login Portal ↗</a>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      {% if exam.josaa_and_iits %}
+      <div class="exam-panel-card">
+        <h2>JoSAA &amp; CSAB Centralized Counselling Portals</h2>
+        <p class="exam-muted-line">Joint Seat Allocation for 23 IITs, IISc, NITs, IIEST, IIITs, and Other-GFTIs.</p>
+        <div class="exam-action-row" style="margin-top: 1rem;">
+          <a href="{{ exam.josaa_and_iits.josaa_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">JoSAA Official Portal ↗</a>
+          <a href="{{ exam.josaa_and_iits.josaa_login_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">JoSAA Candidate Login ↗</a>
+          <a href="{{ exam.josaa_and_iits.csab_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">CSAB Official Portal ↗</a>
+          <a href="{{ exam.josaa_and_iits.schedule_pdf_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">JoSAA 2026 Schedule PDF ↗</a>
+          <a href="{{ exam.josaa_and_iits.business_rules_pdf_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Business Rules PDF ↗</a>
+        </div>
+      </div>
+      {% endif %}
+      {% endif %}
+
+      {% if tracker.related_notices %}
+      <div class="exam-panel-card">
+        <div class="exam-panel-head">
+          <h2>Related Official Notices ({{ exam.name }})</h2>
+          <a href="/{{ exam_slug }}/notifications" class="btn btn-secondary btn-sm">All Notifications &rarr;</a>
+        </div>
+        <div class="exam-notice-list">
+          {% for n in tracker.related_notices %}
+          <article class="exam-notice-item">
+            <div class="exam-notice-meta">
+              <span class="code-pill">{{ n.category }}</span>
+              <span class="exam-notice-date">{{ n.date }}</span>
+              <span class="exam-notice-cycle">{{ n.cycle }}</span>
+            </div>
+            <div class="exam-notice-body">
+              <h3>{{ n.title }}</h3>
+              <p>{{ n.summary }}</p>
+            </div>
+            <div class="exam-notice-cta">
+              <a href="{{ n.pdf_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Official PDF ↗</a>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </section>
+</div>
+{% endblock %}

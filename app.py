@@ -1,7 +1,8 @@
 """
-StudySignal - Multi-Board Education Information Portal
+StudySignal - Multi-Board & Competitive Exam Information Portal
 Core Flask Application covering CBSE, CISCE (ICSE/ISC), UP Board (UPMSP),
-Bihar Board (BSEB), and Maharashtra Board (MSBSHSE).
+Bihar Board (BSEB), Maharashtra Board (MSBSHSE), JEE Main, JEE Advanced,
+NEET UG, and CUET UG.
 """
 
 import os
@@ -132,6 +133,29 @@ def get_maha_circulars():
     )
     return {"circulars": sorted_circs, "publications": pubs}
 
+# National Competitive Examinations data loader helpers
+def get_jee_main_data():
+    return load_json_data("jee_main.json")
+
+def get_jee_advanced_data():
+    return load_json_data("jee_advanced.json")
+
+def get_neet_ug_data():
+    return load_json_data("neet_ug.json")
+
+def get_cuet_ug_data():
+    return load_json_data("cuet_ug.json")
+
+def get_competitive_exam_dataset(exam_slug):
+    loaders = {
+        "jee-main": get_jee_main_data,
+        "jee-advanced": get_jee_advanced_data,
+        "neet-ug": get_neet_ug_data,
+        "cuet-ug": get_cuet_ug_data,
+    }
+    fn = loaders.get(exam_slug)
+    return fn() if fn else {}
+
 def get_boards_and_exams():
     """Directory of educational boards and competitive entrance exams on StudySignal."""
     return {
@@ -247,46 +271,96 @@ def get_boards_and_exams():
         ],
         "competitive_exams": [
             {
-                "id": "jee",
-                "name": "JEE",
-                "full_name": "Joint Entrance Examination (Main & Advanced)",
-                "scope": "National Engineering Entrance • NTA / IITs",
-                "status": "Coming Soon",
-                "status_code": "coming_soon",
-                "status_label": "Coming Soon",
-                "url": None,
-                "is_clickable": False,
-                "badge_class": "badge-status-soon",
-                "description": "Official NTA information bulletin tracking, syllabus topic weightage, and entrance session updates in preparation.",
-                "actions": []
+                "id": "jee-main",
+                "name": "JEE Main",
+                "full_name": "Joint Entrance Examination (Main)",
+                "logo": "images/exams/nta-logo.png",
+                "scope": "National Engineering & Architecture Entrance • NTA",
+                "status": "Active",
+                "status_code": "active",
+                "status_label": "Active",
+                "cycle_tag": "2027 Session 1 Active",
+                "url": "/jee-main",
+                "is_clickable": True,
+                "badge_class": "badge-status-active",
+                "description": "Independent NTA JEE (Main) portal with verified 2027 Information Bulletin, 2027 Syllabus PDF, Session 1 confirmed dates (20–24 & 28 Jan 2027), category fee slabs, 9 Session 2 shift PYQs, admit card/answer key/result guides, and 22 official notices.",
+                "actions": [
+                    {"label": "JEE Main 2027 Syllabus PDF", "url": "/jee-main/syllabus"},
+                    {"label": "Exam Pattern (+4/-1)", "url": "/jee-main/exam-pattern"},
+                    {"label": "Important Dates & Fees", "url": "/jee-main/important-dates"},
+                    {"label": "Information Bulletin (2027)", "url": "/jee-main/information-bulletin"},
+                    {"label": "PYQ Archive (April 2026 Shifts)", "url": "/jee-main/pyq"},
+                    {"label": "Official Notices (22)", "url": "/jee-main/notifications"}
+                ]
             },
             {
-                "id": "neet",
-                "name": "NEET",
-                "full_name": "National Eligibility cum Entrance Test (UG)",
-                "scope": "National Medical Entrance • NTA",
-                "status": "Coming Soon",
-                "status_code": "coming_soon",
-                "status_label": "Coming Soon",
-                "url": None,
-                "is_clickable": False,
-                "badge_class": "badge-status-soon",
-                "description": "Undergraduate medical entrance eligibility guidelines, official NMC/NTA curriculum outlines, and exam alerts planned.",
-                "actions": []
+                "id": "jee-advanced",
+                "name": "JEE Advanced",
+                "full_name": "Joint Entrance Examination (Advanced)",
+                "logo": "images/exams/jee-adv-logo.png",
+                "scope": "23 IITs & IISc Entrance • JAB / Organizing IIT Roorkee",
+                "status": "Active",
+                "status_code": "active",
+                "status_label": "Active",
+                "cycle_tag": "2026 Verified Archive + Rules",
+                "url": "/jee-advanced",
+                "is_clickable": True,
+                "badge_class": "badge-status-active",
+                "description": "Independent JAB / IIT JEE (Advanced) portal featuring Criteria A1–A5 eligibility, Top 20 Percentile & 75% Class XII rules, CRL minimum rank thresholds, 66 verified archive papers (2007–2026 + AAT 2016–2025), 23 IITs across 7 zones, and JoSAA documents.",
+                "actions": [
+                    {"label": "JEE Advanced Syllabus & AAT", "url": "/jee-advanced/syllabus"},
+                    {"label": "Eligibility Criteria (A1–A5)", "url": "/jee-advanced/eligibility"},
+                    {"label": "PYQ Archive (66 Official PDFs)", "url": "/jee-advanced/pyq"},
+                    {"label": "Information Brochure & JoSAA Rules", "url": "/jee-advanced/information-bulletin"},
+                    {"label": "Result, 23 IITs & JoSAA", "url": "/jee-advanced/result"},
+                    {"label": "Important Dates & Fees", "url": "/jee-advanced/important-dates"}
+                ]
             },
             {
-                "id": "cuet",
-                "name": "CUET",
-                "full_name": "Common University Entrance Test (UG)",
-                "scope": "Central & State University Admissions • NTA",
-                "status": "Coming Soon",
-                "status_code": "coming_soon",
-                "status_label": "Coming Soon",
-                "url": None,
-                "is_clickable": False,
-                "badge_class": "badge-status-soon",
-                "description": "Undergraduate domain subjects and general test syllabus mapping scheduled for university entrance aspirants.",
-                "actions": []
+                "id": "neet-ug",
+                "name": "NEET UG",
+                "full_name": "National Eligibility-cum-Entrance Test [NEET (UG)]",
+                "logo": "images/exams/nta-logo.png",
+                "scope": "National Medical, Dental & AYUSH Entrance • NTA / NMC",
+                "status": "Active",
+                "status_code": "active",
+                "status_label": "Active",
+                "cycle_tag": "2026 Verified + 2027 Awaited",
+                "url": "/neet-ug",
+                "is_clickable": True,
+                "badge_class": "badge-status-active",
+                "description": "Independent NTA / NMC NEET (UG) portal featuring NMC UGMEB & NTA official syllabi, 180 compulsory MCQ pattern, Qualifying Codes 01–07, 75 official 2020 multilingual question paper booklets, MCC 15% AIQ & AACCC AYUSH counselling guides, and 10 public notices.",
+                "actions": [
+                    {"label": "NMC & NTA Official Syllabi", "url": "/neet-ug/syllabus"},
+                    {"label": "MCC & AACCC Counselling Guide", "url": "/neet-ug/counselling"},
+                    {"label": "Eligibility & Codes (01–07)", "url": "/neet-ug/eligibility"},
+                    {"label": "PYQ Booklets (75 Multilingual)", "url": "/neet-ug/pyq"},
+                    {"label": "2026 IB & Schedule", "url": "/neet-ug/information-bulletin"},
+                    {"label": "Official Notices (10)", "url": "/neet-ug/notifications"}
+                ]
+            },
+            {
+                "id": "cuet-ug",
+                "name": "CUET UG",
+                "full_name": "Common University Entrance Test [CUET (UG)]",
+                "logo": "images/exams/nta-logo.png",
+                "scope": "244 Participating Universities Admission Test • NTA",
+                "status": "Active",
+                "status_code": "active",
+                "status_label": "Active",
+                "cycle_tag": "2026 Verified + 2027 Awaited",
+                "url": "/cuet-ug",
+                "is_clickable": True,
+                "badge_class": "badge-status-active",
+                "description": "Independent NTA CUET (UG) portal offering all 37 verified Appendix II subject syllabus PDFs (Codes 101–501), searchable directory of all 244 participating universities, +5/-1 exam scheme, 2026 Information Bulletin & FAQs, PYQ status note, and official notices.",
+                "actions": [
+                    {"label": "All 37 Subject Syllabus PDFs", "url": "/cuet-ug/syllabus"},
+                    {"label": "244 Participating Universities", "url": "/cuet-ug/universities"},
+                    {"label": "Exam Pattern (+5/-1)", "url": "/cuet-ug/exam-pattern"},
+                    {"label": "Information Bulletin & FAQs", "url": "/cuet-ug/information-bulletin"},
+                    {"label": "PYQ Status & Practice Portals", "url": "/cuet-ug/pyq"},
+                    {"label": "Official Notices (10)", "url": "/cuet-ug/notifications"}
+                ]
             }
         ]
     }
@@ -439,8 +513,14 @@ def index():
     bseb_datesheets = get_bseb_datesheets()
     maha_datesheets = get_maha_datesheets()
 
-    # 8. Boards Directory
+    # 8. Boards & Competitive Examinations Directory
     boards_and_exams = get_boards_and_exams()
+    competitive_exam_portals = {
+        "jee-main": get_jee_main_data(),
+        "jee-advanced": get_jee_advanced_data(),
+        "neet-ug": get_neet_ug_data(),
+        "cuet-ug": get_cuet_ug_data(),
+    }
 
     return render_template(
         "index.html",
@@ -463,7 +543,8 @@ def index():
         icse_datesheets=icse_datesheets,
         bseb_datesheets=bseb_datesheets,
         maha_datesheets=maha_datesheets,
-        boards_and_exams=boards_and_exams
+        boards_and_exams=boards_and_exams,
+        competitive_exam_portals=competitive_exam_portals
     )
 
 @app.route("/cbse")
@@ -1571,6 +1652,107 @@ def maha_results_view():
         result_circulars=result_circulars
     )
 
+# ----------------- National Competitive Examinations Routes (46 Canonical Routes) -----------------
+
+@app.route("/<any('jee-main', 'jee-advanced', 'neet-ug', 'cuet-ug'):exam_slug>")
+def competitive_exam_hub(exam_slug):
+    """Overview hub for JEE Main, JEE Advanced, NEET UG, or CUET UG."""
+    exam = get_competitive_exam_dataset(exam_slug)
+    return render_template("exams/hub.html", exam=exam, exam_slug=exam_slug)
+
+@app.route("/<any('jee-main', 'jee-advanced', 'neet-ug', 'cuet-ug'):exam_slug>/syllabus")
+def competitive_exam_syllabus(exam_slug):
+    """Official syllabus page for JEE Main, JEE Advanced, NEET UG, or CUET UG."""
+    exam = get_competitive_exam_dataset(exam_slug)
+    return render_template("exams/syllabus.html", exam=exam, exam_slug=exam_slug)
+
+@app.route("/<any('jee-main', 'jee-advanced', 'neet-ug', 'cuet-ug'):exam_slug>/exam-pattern")
+def competitive_exam_pattern(exam_slug):
+    """Exam pattern, marking scheme, mediums, and tie-break rules."""
+    exam = get_competitive_exam_dataset(exam_slug)
+    return render_template("exams/exam_pattern.html", exam=exam, exam_slug=exam_slug)
+
+@app.route("/<any('jee-main', 'jee-advanced', 'neet-ug', 'cuet-ug'):exam_slug>/eligibility")
+def competitive_exam_eligibility(exam_slug):
+    """Eligibility criteria, qualifying rules, and reservation norms."""
+    exam = get_competitive_exam_dataset(exam_slug)
+    return render_template("exams/eligibility.html", exam=exam, exam_slug=exam_slug)
+
+@app.route("/<any('jee-main', 'jee-advanced', 'neet-ug', 'cuet-ug'):exam_slug>/important-dates")
+def competitive_exam_dates(exam_slug):
+    """Important examination dates and official category fee structure."""
+    exam = get_competitive_exam_dataset(exam_slug)
+    return render_template("exams/important_dates.html", exam=exam, exam_slug=exam_slug)
+
+@app.route("/<any('jee-main', 'jee-advanced', 'neet-ug', 'cuet-ug'):exam_slug>/information-bulletin")
+def competitive_exam_bulletin(exam_slug):
+    """Verified Information Bulletins, brochures, and official FAQs."""
+    exam = get_competitive_exam_dataset(exam_slug)
+    return render_template("exams/information_bulletin.html", exam=exam, exam_slug=exam_slug)
+
+@app.route("/<any('jee-main', 'jee-advanced', 'neet-ug', 'cuet-ug'):exam_slug>/pyq")
+def competitive_exam_pyq(exam_slug):
+    """Verified PYQ archive strictly separated from non-PYQ practice portals and answer keys."""
+    exam = get_competitive_exam_dataset(exam_slug)
+    return render_template("exams/pyq.html", exam=exam, exam_slug=exam_slug)
+
+@app.route("/<any('jee-main', 'jee-advanced', 'neet-ug', 'cuet-ug'):exam_slug>/admit-card")
+def competitive_exam_admit_card(exam_slug):
+    """Admit card and advance city intimation slip tracker."""
+    exam = get_competitive_exam_dataset(exam_slug)
+    return render_template(
+        "exams/portal_tracker.html",
+        exam=exam,
+        exam_slug=exam_slug,
+        active_tab="admit-card",
+        page_type="admit_card",
+        tracker=exam.get("admit_card", {}),
+    )
+
+@app.route("/<any('jee-main', 'jee-advanced', 'neet-ug', 'cuet-ug'):exam_slug>/answer-key")
+def competitive_exam_answer_key(exam_slug):
+    """Answer key, recorded response display, and challenge rules."""
+    exam = get_competitive_exam_dataset(exam_slug)
+    return render_template(
+        "exams/portal_tracker.html",
+        exam=exam,
+        exam_slug=exam_slug,
+        active_tab="answer-key",
+        page_type="answer_key",
+        tracker=exam.get("answer_key", {}),
+    )
+
+@app.route("/<any('jee-main', 'jee-advanced', 'neet-ug', 'cuet-ug'):exam_slug>/result")
+def competitive_exam_result(exam_slug):
+    """Result declaration, scorecards, and post-result portals."""
+    exam = get_competitive_exam_dataset(exam_slug)
+    return render_template(
+        "exams/portal_tracker.html",
+        exam=exam,
+        exam_slug=exam_slug,
+        active_tab="result",
+        page_type="result",
+        tracker=exam.get("result", {}),
+    )
+
+@app.route("/<any('jee-main', 'jee-advanced', 'neet-ug', 'cuet-ug'):exam_slug>/notifications")
+def competitive_exam_notifications(exam_slug):
+    """Verified public notices and official advisories."""
+    exam = get_competitive_exam_dataset(exam_slug)
+    return render_template("exams/notifications.html", exam=exam, exam_slug=exam_slug)
+
+@app.route("/neet-ug/counselling")
+def neet_ug_counselling():
+    """MCC (15% AIQ & Central/Deemed), AACCC AYUSH, and State Quota counselling guide."""
+    exam = get_neet_ug_data()
+    return render_template("exams/counselling.html", exam=exam, exam_slug="neet-ug")
+
+@app.route("/cuet-ug/universities")
+def cuet_ug_universities():
+    """Searchable directory of all 244 CUET (UG) participating universities."""
+    exam = get_cuet_ug_data()
+    return render_template("exams/universities.html", exam=exam, exam_slug="cuet-ug")
+
 # ----------------- Unified Multi-Board Search -----------------
 
 def _normalize_search_board(board_val):
@@ -1585,6 +1767,14 @@ def _normalize_search_board(board_val):
         return "bihar-board"
     if val in ("maharashtra-board", "msbshse", "maharashtra"):
         return "maharashtra-board"
+    if val in ("jee-main", "jeemain"):
+        return "jee-main"
+    if val in ("jee-advanced", "jeeadv", "jee-adv"):
+        return "jee-advanced"
+    if val in ("neet-ug", "neet"):
+        return "neet-ug"
+    if val in ("cuet-ug", "cuet"):
+        return "cuet-ug"
     return "all"
 
 @app.route("/search")
@@ -2135,6 +2325,264 @@ def search():
                                 "last_verified": maha_ds.get("last_checked")
                             })
 
+    # 7. Search in National Competitive Examinations (JEE Main, JEE Advanced, NEET UG, CUET UG)
+    if filter_board in ("all", "jee-main", "jee-advanced", "neet-ug", "cuet-ug") and filter_class == "all":
+        comp_exam_specs = [
+            ("jee-main", "JEE Main", get_jee_main_data()),
+            ("jee-advanced", "JEE Advanced", get_jee_advanced_data()),
+            ("neet-ug", "NEET UG", get_neet_ug_data()),
+            ("cuet-ug", "CUET UG", get_cuet_ug_data()),
+        ]
+        for slug, label, edata in comp_exam_specs:
+            if not isinstance(edata, dict) or not edata:
+                continue
+            if filter_board not in ("all", slug):
+                continue
+            last_ver = edata.get("last_verified", "2026-11-10")
+            exam_tokens = f"{slug} {label} {edata.get('full_name', '')}".lower()
+
+            def _year_ok(text_val):
+                if filter_year == "all":
+                    return True
+                tv = str(text_val or "").lower()
+                if filter_year.lower() in tv:
+                    return True
+                if filter_year == "2026-27":
+                    return ("2026" in tv or "2027" in tv)
+                return False
+
+            # 7a. Syllabus PDFs & Subject Lists
+            if filter_category in ("all", "syllabus"):
+                syl = edata.get("syllabus", {})
+                for pdf_doc in syl.get("primary_pdfs", []):
+                    title_txt = pdf_doc.get("title", "")
+                    sess_txt = pdf_doc.get("session", "")
+                    matches_q = (
+                        not query
+                        or query in title_txt.lower()
+                        or query in sess_txt.lower()
+                        or query in exam_tokens
+                        or "syllabus" in query
+                    )
+                    matches_subj = (filter_subject == "all" or filter_subject.lower() in title_txt.lower())
+                    if matches_q and matches_subj and _year_ok(sess_txt):
+                        results.append({
+                            "board": label,
+                            "type": f"{label} Syllabus",
+                            "badge_color": "primary",
+                            "title": title_txt,
+                            "subtitle": f"{label} Official Syllabus | {sess_txt} | {pdf_doc.get('pages', '')}",
+                            "description": syl.get("overview", ""),
+                            "url": f"/{slug}/syllabus",
+                            "official_pdf": pdf_doc.get("pdf_url"),
+                            "is_official": True,
+                            "verification_status": "verified_official",
+                            "last_verified": last_ver,
+                        })
+                for subj_item in syl.get("subjects", []):
+                    if slug == "cuet-ug":
+                        s_title = f"{subj_item.get('subject')} (Code {subj_item.get('code')})"
+                        s_desc = f"Official CUET (UG) {subj_item.get('group')} syllabus PDF hosted on cuet.nta.nic.in."
+                        s_pdf = subj_item.get("pdf_url")
+                    else:
+                        s_title = subj_item.get("name", "")
+                        s_desc = " | ".join(subj_item.get("units", [])[:3])
+                        s_pdf = None
+                    matches_q = (
+                        not query
+                        or query in s_title.lower()
+                        or query in s_desc.lower()
+                        or query in exam_tokens
+                        or "syllabus" in query
+                    )
+                    matches_subj = (filter_subject == "all" or filter_subject.lower() in s_title.lower())
+                    if matches_q and matches_subj and _year_ok("2026 2027"):
+                        results.append({
+                            "board": label,
+                            "type": f"{label} Syllabus Subject",
+                            "badge_color": "primary",
+                            "title": s_title,
+                            "subtitle": f"{label} | {subj_item.get('group') or subj_item.get('paper', 'Syllabus')}",
+                            "description": s_desc,
+                            "url": f"/{slug}/syllabus",
+                            "official_pdf": s_pdf,
+                            "is_official": True,
+                            "verification_status": "verified_official",
+                            "last_verified": last_ver,
+                        })
+
+            # 7b. Information Bulletins
+            if filter_category in ("all", "bulletin", "syllabus"):
+                for b in edata.get("information_bulletin", {}).get("bulletins", []):
+                    b_title = b.get("title", "")
+                    b_hl = b.get("highlights", "")
+                    b_sess = b.get("session", "")
+                    matches_q = (
+                        not query
+                        or query in b_title.lower()
+                        or query in b_hl.lower()
+                        or query in exam_tokens
+                        or "bulletin" in query or "brochure" in query
+                    )
+                    if matches_q and filter_subject == "all" and _year_ok(b_sess):
+                        results.append({
+                            "board": label,
+                            "type": f"{label} Information Bulletin",
+                            "badge_color": "info",
+                            "title": b_title,
+                            "subtitle": f"{label} | Session: {b_sess} | {b.get('pages', '')}",
+                            "description": b_hl,
+                            "url": f"/{slug}/information-bulletin",
+                            "official_pdf": b.get("pdf_url"),
+                            "is_official": True,
+                            "verification_status": "verified_official",
+                            "last_verified": last_ver,
+                        })
+
+            # 7c. Past Question Papers (Strictly is_pyq == True only)
+            if filter_category in ("all", "pyq"):
+                for p in edata.get("pyq", {}).get("papers", []):
+                    if p.get("is_pyq") is not True:
+                        continue
+                    p_title = p.get("title", "")
+                    p_meta = f"{p.get('year', '')} {p.get('session', '')} {p.get('language', '')} {p.get('paper', '')}".strip()
+                    matches_q = (
+                        not query
+                        or query in p_title.lower()
+                        or query in p_meta.lower()
+                        or query in exam_tokens
+                        or "pyq" in query or "question paper" in query
+                    )
+                    if matches_q and filter_subject == "all" and _year_ok(p_meta):
+                        results.append({
+                            "board": label,
+                            "type": f"{label} Official PYQ",
+                            "badge_color": "primary",
+                            "title": p_title,
+                            "subtitle": f"{label} | {p_meta} | Host: {p.get('source_host', '')}",
+                            "description": f"Verified official past question paper PDF hosted on {p.get('source_host', '')}.",
+                            "url": f"/{slug}/pyq",
+                            "official_pdf": p.get("pdf_url"),
+                            "is_official": True,
+                            "verification_status": "verified_official",
+                            "last_verified": p.get("last_verified", last_ver),
+                        })
+
+            # 7d. Notifications & Notices
+            if filter_category in ("all", "circular", "exam_notice"):
+                for n in edata.get("notifications", []):
+                    n_title = n.get("title", "")
+                    n_sum = n.get("summary", "")
+                    n_cat = n.get("category", "")
+                    n_cyc = n.get("cycle", "")
+                    matches_q = (
+                        not query
+                        or query in n_title.lower()
+                        or query in n_sum.lower()
+                        or query in n_cat.lower()
+                        or query in exam_tokens
+                        or "notice" in query or "notification" in query
+                    )
+                    if matches_q and filter_subject == "all" and _year_ok(f"{n_cyc} {n.get('date', '')}"):
+                        results.append({
+                            "board": label,
+                            "type": f"{label} Notice ({n_cat})",
+                            "badge_color": "success",
+                            "title": n_title,
+                            "subtitle": f"{n.get('date')} | Cycle: {n_cyc} | {n.get('source_host', '')}",
+                            "description": n_sum,
+                            "url": f"/{slug}/notifications",
+                            "official_pdf": n.get("pdf_url"),
+                            "is_official": True,
+                            "verification_status": "verified_official",
+                            "last_verified": last_ver,
+                        })
+
+            # 7e. Important Dates Milestones
+            if filter_category in ("all", "datesheet"):
+                for ev in edata.get("important_dates", {}).get("events", []):
+                    ev_title = ev.get("event", "")
+                    ev_date = ev.get("date", "")
+                    ev_cyc = ev.get("cycle", "")
+                    matches_q = (
+                        not query
+                        or query in ev_title.lower()
+                        or query in ev_date.lower()
+                        or query in ev_cyc.lower()
+                        or query in exam_tokens
+                        or "date" in query or "schedule" in query or "exam" in query
+                    )
+                    if matches_q and filter_subject == "all" and _year_ok(f"{ev_cyc} {ev_date}"):
+                        results.append({
+                            "board": label,
+                            "type": f"{label} Important Date",
+                            "badge_color": "info",
+                            "title": f"{label}: {ev_title}",
+                            "subtitle": f"{ev_date} | {ev_cyc} | Status: {ev.get('status')}",
+                            "description": edata.get("important_dates", {}).get("current_2027_status", ""),
+                            "url": f"/{slug}/important-dates",
+                            "official_pdf": edata.get("important_dates", {}).get("calendar_pdf_url"),
+                            "is_official": True,
+                            "verification_status": "verified_official",
+                            "last_verified": last_ver,
+                        })
+
+            # 7f. NEET UG Counselling Authorities
+            if slug == "neet-ug" and filter_category in ("all", "counselling"):
+                for auth in edata.get("counselling", {}).get("authorities", []):
+                    a_name = auth.get("name", "")
+                    a_scope = auth.get("scope", "")
+                    matches_q = (
+                        not query
+                        or query in a_name.lower()
+                        or query in a_scope.lower()
+                        or query in exam_tokens
+                        or "counselling" in query or "mcc" in query or "aaccc" in query or "aiq" in query
+                    )
+                    if matches_q and filter_subject == "all" and _year_ok("2026 2027"):
+                        docs = auth.get("documents", [])
+                        first_pdf = next((d.get("url") for d in docs if str(d.get("url", "")).endswith(".pdf")), None)
+                        results.append({
+                            "board": label,
+                            "type": "NEET UG Counselling Authority",
+                            "badge_color": "success",
+                            "title": a_name,
+                            "subtitle": "15% AIQ / Central / Deemed / AYUSH / 85% State Quotas",
+                            "description": a_scope,
+                            "url": "/neet-ug/counselling",
+                            "official_pdf": first_pdf,
+                            "is_official": True,
+                            "verification_status": "verified_official",
+                            "last_verified": last_ver,
+                        })
+
+            # 7g. CUET UG Participating Universities
+            if slug == "cuet-ug" and filter_category in ("all", "university"):
+                for u in edata.get("universities", {}).get("list", []):
+                    u_name = u.get("name", "")
+                    u_cat = u.get("category_label", "")
+                    matches_q = (
+                        not query
+                        or query in u_name.lower()
+                        or query in u_cat.lower()
+                        or query in exam_tokens
+                        or "university" in query or "universities" in query
+                    )
+                    if matches_q and filter_subject == "all" and _year_ok("2026 2027"):
+                        results.append({
+                            "board": label,
+                            "type": f"CUET Participating {u_cat}",
+                            "badge_color": "info",
+                            "title": u_name,
+                            "subtitle": f"CUET (UG) Participating Institution | {u_cat}",
+                            "description": "Official course-eligibility mapping verified from cuet.nta.nic.in.",
+                            "url": "/cuet-ug/universities",
+                            "official_pdf": u.get("pdf_url"),
+                            "is_official": True,
+                            "verification_status": "verified_official",
+                            "last_verified": last_ver,
+                        })
+
     # If AJAX request, return JSON
     if request.headers.get("X-Requested-With") == "XMLHttpRequest" or request.args.get("format") == "json":
         return jsonify({
@@ -2143,12 +2591,14 @@ def search():
         })
 
     # Unique subject list for dropdown filter
+    cuet_subjects = [s.get("subject") for s in get_cuet_ug_data().get("syllabus", {}).get("subjects", []) if s.get("subject")]
     all_subjects = sorted(list(set(
         [s.get("subject") for s in syllabus_items if s.get("subject")]
         + [s.get("subject") for s in icse_syllabus_items if s.get("subject")]
         + [s.get("subject") for s in up_syllabus_items if s.get("subject")]
         + [p.get("subject") for p in bseb_sample_papers if p.get("subject")]
         + [p.get("subject") for p in maha_pyqs if p.get("subject")]
+        + cuet_subjects
     )))
 
     return render_template(
@@ -2179,7 +2629,7 @@ def contact():
         message = (
             "Notice: Automated message delivery and storage are currently not configured on this portal. "
             "Your message was not stored or delivered, and no response can be sent. "
-            "Please refer directly to official board contacts on CBSE, CISCE, UPMSP, BSEB, or MSBSHSE portals."
+            "Please refer directly to official portals: CBSE, CISCE, UPMSP, BSEB, MSBSHSE, NTA (JEE Main, NEET UG, CUET UG), or JAB/IITs (JEE Advanced)."
         )
     return render_template("contact.html", submitted=submitted, message=message)
 
@@ -2283,6 +2733,53 @@ def sitemap_xml():
         {"loc": f"{base}/maharashtra-board/datesheets", "priority": "0.9", "changefreq": "daily", "lastmod": maha_lastmod},
         {"loc": f"{base}/maharashtra-board/circulars", "priority": "0.8", "changefreq": "daily", "lastmod": maha_lastmod},
         {"loc": f"{base}/maharashtra-board/results", "priority": "0.7", "changefreq": "weekly", "lastmod": maha_lastmod},
+        # Competitive Examinations (46 Canonical Routes)
+        {"loc": f"{base}/jee-main", "priority": "0.9", "changefreq": "daily", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/jee-main/syllabus", "priority": "0.8", "changefreq": "weekly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/jee-main/exam-pattern", "priority": "0.8", "changefreq": "monthly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/jee-main/eligibility", "priority": "0.8", "changefreq": "monthly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/jee-main/important-dates", "priority": "0.9", "changefreq": "daily", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/jee-main/information-bulletin", "priority": "0.8", "changefreq": "monthly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/jee-main/pyq", "priority": "0.8", "changefreq": "weekly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/jee-main/admit-card", "priority": "0.8", "changefreq": "daily", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/jee-main/answer-key", "priority": "0.8", "changefreq": "daily", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/jee-main/result", "priority": "0.8", "changefreq": "daily", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/jee-main/notifications", "priority": "0.8", "changefreq": "daily", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/jee-advanced", "priority": "0.9", "changefreq": "daily", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/jee-advanced/syllabus", "priority": "0.8", "changefreq": "weekly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/jee-advanced/exam-pattern", "priority": "0.8", "changefreq": "monthly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/jee-advanced/eligibility", "priority": "0.8", "changefreq": "monthly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/jee-advanced/important-dates", "priority": "0.8", "changefreq": "daily", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/jee-advanced/information-bulletin", "priority": "0.8", "changefreq": "monthly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/jee-advanced/pyq", "priority": "0.8", "changefreq": "weekly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/jee-advanced/admit-card", "priority": "0.7", "changefreq": "weekly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/jee-advanced/answer-key", "priority": "0.7", "changefreq": "weekly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/jee-advanced/result", "priority": "0.8", "changefreq": "weekly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/jee-advanced/notifications", "priority": "0.8", "changefreq": "daily", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/neet-ug", "priority": "0.9", "changefreq": "daily", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/neet-ug/syllabus", "priority": "0.8", "changefreq": "weekly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/neet-ug/exam-pattern", "priority": "0.8", "changefreq": "monthly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/neet-ug/eligibility", "priority": "0.8", "changefreq": "monthly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/neet-ug/important-dates", "priority": "0.8", "changefreq": "daily", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/neet-ug/information-bulletin", "priority": "0.8", "changefreq": "monthly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/neet-ug/pyq", "priority": "0.8", "changefreq": "weekly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/neet-ug/admit-card", "priority": "0.7", "changefreq": "weekly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/neet-ug/answer-key", "priority": "0.7", "changefreq": "weekly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/neet-ug/result", "priority": "0.8", "changefreq": "weekly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/neet-ug/counselling", "priority": "0.8", "changefreq": "weekly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/neet-ug/notifications", "priority": "0.8", "changefreq": "daily", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/cuet-ug", "priority": "0.9", "changefreq": "daily", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/cuet-ug/syllabus", "priority": "0.8", "changefreq": "weekly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/cuet-ug/exam-pattern", "priority": "0.8", "changefreq": "monthly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/cuet-ug/eligibility", "priority": "0.8", "changefreq": "monthly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/cuet-ug/important-dates", "priority": "0.8", "changefreq": "daily", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/cuet-ug/information-bulletin", "priority": "0.8", "changefreq": "monthly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/cuet-ug/pyq", "priority": "0.7", "changefreq": "monthly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/cuet-ug/admit-card", "priority": "0.7", "changefreq": "weekly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/cuet-ug/answer-key", "priority": "0.7", "changefreq": "weekly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/cuet-ug/result", "priority": "0.8", "changefreq": "weekly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/cuet-ug/universities", "priority": "0.8", "changefreq": "weekly", "lastmod": "2026-11-10"},
+        {"loc": f"{base}/cuet-ug/notifications", "priority": "0.8", "changefreq": "daily", "lastmod": "2026-11-10"},
         {"loc": f"{base}/about", "priority": "0.5", "changefreq": "monthly"},
         {"loc": f"{base}/contact", "priority": "0.5", "changefreq": "monthly"},
         {"loc": f"{base}/privacy-policy", "priority": "0.3", "changefreq": "yearly"},

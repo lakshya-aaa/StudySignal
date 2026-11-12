@@ -7,7 +7,7 @@
   
   <title>{% block title %}{{ site_name }} - {{ site_tagline }}{% endblock %}</title>
   <meta name="description" content="{% block meta_description %}{{ site_description }}{% endblock %}">
-  <meta name="keywords" content="{% block meta_keywords %}CBSE syllabus 2026-27, UP Board UPMSP, CISCE ICSE ISC, Bihar Board BSEB model papers, Maharashtra Board MSBSHSE SSC HSC PYQ, SCERT Maharashtra Prashnapedhi, board exam timetable{% endblock %}">
+  <meta name="keywords" content="{% block meta_keywords %}CBSE syllabus 2026-27, UP Board UPMSP, CISCE ICSE ISC, Bihar Board BSEB model papers, Maharashtra Board MSBSHSE SSC HSC PYQ, SCERT Maharashtra Prashnapedhi, JEE Main 2027, JEE Advanced 2026, NEET UG, CUET UG{% endblock %}">
   <meta name="robots" content="{% block robots %}index, follow{% endblock %}">
   <link rel="canonical" href="{% block canonical_url %}{{ canonical_base_url }}{{ request.path }}{% endblock %}">
 
@@ -73,8 +73,16 @@
             Maharashtra Board (MSBSHSE) &bull; SSC (Std. 10) &amp; HSC (Std. 12)
           {% elif '/cbse' in request.path %}
             CBSE Secondary &amp; Senior Secondary (Classes 10 &amp; 12)
+          {% elif '/jee-main' in request.path %}
+            JEE Main &bull; NTA Engineering &amp; Architecture Entrance (2027 Active)
+          {% elif '/jee-advanced' in request.path %}
+            JEE Advanced &bull; 23 IITs &amp; IISc Entrance (JAB / IIT Roorkee)
+          {% elif '/neet-ug' in request.path %}
+            NEET UG &bull; National Medical, Dental &amp; AYUSH Entrance (NTA / NMC)
+          {% elif '/cuet-ug' in request.path %}
+            CUET UG &bull; 244 Participating Universities Entrance (NTA)
           {% else %}
-            Multi-Board Coverage: CBSE &bull; UPMSP &bull; CISCE &bull; BSEB &bull; MSBSHSE
+            Coverage: 5 School Boards + JEE Main &bull; JEE Advanced &bull; NEET UG &bull; CUET UG
           {% endif %}
         </span>
       </div>
@@ -95,12 +103,26 @@
         {% elif '/cbse' in request.path %}
           <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer">cbse.gov.in ↗</a>
           <a href="{{ official_urls.cbse_academic }}" target="_blank" rel="noopener noreferrer">cbseacademic.nic.in ↗</a>
+        {% elif '/jee-main' in request.path %}
+          <a href="{{ official_urls.jeemain_main }}" target="_blank" rel="noopener noreferrer">jeemain.nta.nic.in ↗</a>
+          <a href="{{ official_urls.nta_main }}" target="_blank" rel="noopener noreferrer">nta.ac.in ↗</a>
+        {% elif '/jee-advanced' in request.path %}
+          <a href="{{ official_urls.jeeadv_main }}" target="_blank" rel="noopener noreferrer">jeeadv.ac.in ↗</a>
+          <a href="{{ official_urls.josaa_main }}" target="_blank" rel="noopener noreferrer">josaa.nic.in ↗</a>
+        {% elif '/neet-ug' in request.path %}
+          <a href="{{ official_urls.neet_main }}" target="_blank" rel="noopener noreferrer">neet.nta.nic.in ↗</a>
+          <a href="{{ official_urls.mcc_ug }}" target="_blank" rel="noopener noreferrer">mcc.nic.in ↗</a>
+        {% elif '/cuet-ug' in request.path %}
+          <a href="{{ official_urls.cuet_main }}" target="_blank" rel="noopener noreferrer">cuet.nta.nic.in ↗</a>
+          <a href="{{ official_urls.nta_main }}" target="_blank" rel="noopener noreferrer">nta.ac.in ↗</a>
         {% else %}
           <a href="{{ official_urls.cbse_main }}" target="_blank" rel="noopener noreferrer">cbse.gov.in ↗</a>
           <a href="{{ official_urls.upmsp_main }}" target="_blank" rel="noopener noreferrer">upmsp.edu.in ↗</a>
           <a href="{{ official_urls.cisce_main }}" target="_blank" rel="noopener noreferrer">cisce.org ↗</a>
-          <a href="{{ official_urls.bseb_main }}" target="_blank" rel="noopener noreferrer">biharboardonline.com ↗</a>
-          <a href="{{ official_urls.maha_main }}" target="_blank" rel="noopener noreferrer">mahahsscboard.in ↗</a>
+          <a href="{{ official_urls.jeemain_main }}" target="_blank" rel="noopener noreferrer">jeemain.nta.nic.in ↗</a>
+          <a href="{{ official_urls.jeeadv_main }}" target="_blank" rel="noopener noreferrer">jeeadv.ac.in ↗</a>
+          <a href="{{ official_urls.neet_main }}" target="_blank" rel="noopener noreferrer">neet.nta.nic.in ↗</a>
+          <a href="{{ official_urls.cuet_main }}" target="_blank" rel="noopener noreferrer">cuet.nta.nic.in ↗</a>
         {% endif %}
       </div>
     </div>
@@ -117,7 +139,7 @@
       <ul class="nav-menu" id="navMenu">
         <li><a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}">Home</a></li>
         <li class="nav-dropdown-item">
-          <a href="/boards" class="nav-link nav-dropdown-link {% if '/boards' in request.path or '/icse' in request.path or '/up-board' in request.path or '/bihar-board' in request.path or '/maharashtra-board' in request.path %}active{% endif %}">
+          <a href="/boards" class="nav-link nav-dropdown-link {% if '/boards' in request.path or '/icse' in request.path or '/up-board' in request.path or '/bihar-board' in request.path or '/maharashtra-board' in request.path or '/jee-main' in request.path or '/jee-advanced' in request.path or '/neet-ug' in request.path or '/cuet-ug' in request.path %}active{% endif %}">
             <span>Boards &amp; Exams</span> <span class="dropdown-arrow">▾</span>
           </a>
           <div class="nav-dropdown-box">
@@ -161,29 +183,36 @@
             </div>
             <div class="dropdown-group">
               <span class="dropdown-group-title">Competitive Exams</span>
-              <div class="dropdown-entry is-disabled">
+              <a href="/jee-main" class="dropdown-entry">
                 <span class="dropdown-title-with-logo">
                   <img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="" class="nav-board-logo exam-logo" width="28" height="12">
-                  <span>JEE (Main &amp; Adv)</span>
+                  <span>JEE Main</span>
                 </span>
-                <span class="badge-status-soon">Coming Soon</span>
-              </div>
-              <div class="dropdown-entry is-disabled">
+                <span class="badge-status-active">Active</span>
+              </a>
+              <a href="/jee-advanced" class="dropdown-entry">
+                <span class="dropdown-title-with-logo">
+                  <img src="{{ url_for('static', filename='images/exams/jee-adv-logo.png') }}" alt="" class="nav-board-logo exam-logo" width="28" height="12">
+                  <span>JEE Advanced</span>
+                </span>
+                <span class="badge-status-active">Active</span>
+              </a>
+              <a href="/neet-ug" class="dropdown-entry">
                 <span class="dropdown-title-with-logo">
                   <img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="" class="nav-board-logo exam-logo" width="28" height="12">
-                  <span>NEET (UG)</span>
+                  <span>NEET UG</span>
                 </span>
-                <span class="badge-status-soon">Coming Soon</span>
-              </div>
-              <div class="dropdown-entry is-disabled">
+                <span class="badge-status-active">Active</span>
+              </a>
+              <a href="/cuet-ug" class="dropdown-entry">
                 <span class="dropdown-title-with-logo">
                   <img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="" class="nav-board-logo exam-logo" width="28" height="12">
-                  <span>CUET (UG)</span>
+                  <span>CUET UG</span>
                 </span>
-                <span class="badge-status-soon">Coming Soon</span>
-              </div>
+                <span class="badge-status-active">Active</span>
+              </a>
               <div class="dropdown-hub-link">
-                <a href="/boards">View All Boards Hub &rarr;</a>
+                <a href="/boards">View All Boards &amp; Exams Hub &rarr;</a>
               </div>
             </div>
           </div>
@@ -223,6 +252,10 @@
         <li><a href="/icse" class="{% if '/icse' in request.path %}active{% endif %}"><img src="{{ url_for('static', filename='images/boards/cisce-logo.png') }}" alt="" class="nav-board-logo" width="16" height="16"> ICSE &amp; ISC <span class="badge-status-active" style="font-size: 0.65rem; margin-left: 0.25rem;">Active</span></a></li>
         <li><a href="/bihar-board" class="{% if '/bihar-board' in request.path %}active{% endif %}"><img src="{{ url_for('static', filename='images/boards/bseb-logo.png') }}" alt="" class="nav-board-logo" width="16" height="16"> Bihar Board (BSEB) <span class="badge-status-active" style="font-size: 0.65rem; margin-left: 0.25rem;">Active</span></a></li>
         <li><a href="/maharashtra-board" class="{% if '/maharashtra-board' in request.path %}active{% endif %}"><img src="{{ url_for('static', filename='images/boards/msbshse-logo.png') }}" alt="" class="nav-board-logo" width="16" height="16"> Maharashtra Board (MSBSHSE) <span class="badge-status-active" style="font-size: 0.65rem; margin-left: 0.25rem;">Active</span></a></li>
+        <li><a href="/jee-main" class="{% if '/jee-main' in request.path %}active{% endif %}"><img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="" class="nav-board-logo exam-logo" width="24" height="10"> JEE Main <span class="badge-status-active" style="font-size: 0.65rem; margin-left: 0.25rem;">Active</span></a></li>
+        <li><a href="/jee-advanced" class="{% if '/jee-advanced' in request.path %}active{% endif %}"><img src="{{ url_for('static', filename='images/exams/jee-adv-logo.png') }}" alt="" class="nav-board-logo exam-logo" width="24" height="14"> JEE Advanced <span class="badge-status-active" style="font-size: 0.65rem; margin-left: 0.25rem;">Active</span></a></li>
+        <li><a href="/neet-ug" class="{% if '/neet-ug' in request.path %}active{% endif %}"><img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="" class="nav-board-logo exam-logo" width="24" height="10"> NEET UG <span class="badge-status-active" style="font-size: 0.65rem; margin-left: 0.25rem;">Active</span></a></li>
+        <li><a href="/cuet-ug" class="{% if '/cuet-ug' in request.path %}active{% endif %}"><img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="" class="nav-board-logo exam-logo" width="24" height="10"> CUET UG <span class="badge-status-active" style="font-size: 0.65rem; margin-left: 0.25rem;">Active</span></a></li>
         <li><a href="/cbse/class-10" class="{% if '/class-10' in request.path %}active{% endif %}">CBSE Class 10</a></li>
         <li><a href="/cbse/class-12" class="{% if '/class-12' in request.path %}active{% endif %}">CBSE Class 12</a></li>
         <li><a href="/cbse/syllabus" class="{% if '/syllabus' in request.path %}active{% endif %}">Subject Syllabus</a></li>
@@ -267,10 +300,10 @@
           </a>
         </div>
         <p class="footer-desc">
-          StudySignal is an independent, free-access educational information platform and portal created to help Indian students, parents and educators access academic resources, syllabus information, sample papers, past question papers, examination updates and official notifications across CBSE, UP Board (UPMSP), CISCE, Bihar Board (BSEB) and Maharashtra Board (MSBSHSE).
+          StudySignal is an independent, free-access educational information platform and portal created to help Indian students, parents and educators access academic resources, syllabus information, sample papers, past question papers, examination updates and official notifications across CBSE, UP Board (UPMSP), CISCE, Bihar Board (BSEB), Maharashtra Board (MSBSHSE), JEE Main, JEE Advanced, NEET UG and CUET UG.
         </p>
         <div class="footer-badges">
-          <span class="f-badge">Multi-Board Educational Platform</span>
+          <span class="f-badge">Multi-Board &amp; Competitive Exams</span>
           <span class="f-badge">Zero Cost / Free Access</span>
           <span class="f-badge">Direct Official Sources</span>
         </div>
@@ -289,6 +322,12 @@
           <li><a href="/maharashtra-board/datesheets">MSBSHSE 2027 Timetables</a></li>
           <li><a href="/maharashtra-board/pyq">MSBSHSE SSC &amp; HSC PYQs</a></li>
           <li><a href="/maharashtra-board/question-bank">SCERT Prashnapedhi Bank</a></li>
+          <li><a href="/jee-main">JEE Main (NTA)</a></li>
+          <li><a href="/jee-advanced">JEE Advanced (JAB / IITs)</a></li>
+          <li><a href="/neet-ug">NEET UG (NTA / NMC)</a></li>
+          <li><a href="/neet-ug/counselling">NEET Counselling (MCC / AACCC)</a></li>
+          <li><a href="/cuet-ug">CUET UG (NTA)</a></li>
+          <li><a href="/cuet-ug/universities">CUET 244 Universities Directory</a></li>
           <li><a href="/boards">Boards &amp; Competitive Exams</a></li>
           <li><a href="/cbse/class-10">CBSE Class 10 Portal</a></li>
           <li><a href="/cbse/class-12">CBSE Class 12 Portal</a></li>
@@ -317,6 +356,10 @@
           <li><a href="{{ official_urls.bseb_main }}" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='images/boards/bseb-logo.png') }}" alt="" class="footer-source-logo" width="15" height="15">Bihar Board (biharboardonline.com) ↗</a></li>
           <li><a href="{{ official_urls.maha_main }}" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='images/boards/msbshse-logo.png') }}" alt="" class="footer-source-logo" width="15" height="15">MSBSHSE Portal (mahahsscboard.in) ↗</a></li>
           <li><a href="{{ official_urls.scert_maha_main }}" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='images/boards/msbshse-logo.png') }}" alt="" class="footer-source-logo" width="15" height="15">SCERT Maharashtra (maa.ac.in) ↗</a></li>
+          <li><a href="{{ official_urls.jeemain_main }}" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="" class="footer-source-logo" width="24" height="10">JEE Main (jeemain.nta.nic.in) ↗</a></li>
+          <li><a href="{{ official_urls.jeeadv_main }}" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='images/exams/jee-adv-logo.png') }}" alt="" class="footer-source-logo" width="20" height="14">JEE Advanced (jeeadv.ac.in) ↗</a></li>
+          <li><a href="{{ official_urls.neet_main }}" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="" class="footer-source-logo" width="24" height="10">NEET UG (neet.nta.nic.in) ↗</a></li>
+          <li><a href="{{ official_urls.cuet_main }}" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='images/exams/nta-logo.png') }}" alt="" class="footer-source-logo" width="24" height="10">CUET UG (cuet.nta.nic.in) ↗</a></li>
           <li><a href="{{ official_urls.cisce_regulations }}" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='images/boards/cisce-logo.png') }}" alt="" class="footer-source-logo" width="15" height="15">CISCE Regulations &amp; Syllabi ↗</a></li>
           <li><a href="{{ official_urls.upmsp_results }}" target="_blank" rel="noopener noreferrer"><img src="{{ url_for('static', filename='images/boards/upmsp-logo.png') }}" alt="" class="footer-source-logo" width="15" height="15">UPMSP Results &amp; Services ↗</a></li>
         </ul>
@@ -347,7 +390,7 @@
         <span>Important Legal Disclaimer</span>
       </div>
       <p>
-        {{ disclaimer_text }} All trademarks, logos, circular numbers, and syllabus documents mentioned on this website belong to their respective statutory education boards and examination authorities (including CBSE, UPMSP, CISCE, BSEB, MSBSHSE, SCERT Maharashtra, and Balbharati). Any sample timetables or mock circulars are strictly marked as demo data for layout testing.
+        {{ disclaimer_text }} All trademarks, logos, circular numbers, and syllabus documents mentioned on this website belong to their respective statutory education boards and examination authorities (including CBSE, UPMSP, CISCE, BSEB, MSBSHSE, SCERT Maharashtra, Balbharati, NTA, JAB / IITs, JoSAA, NMC, DCI, MCC, and AACCC). Any sample timetables or mock circulars are strictly marked as demo data for layout testing.
       </p>
     </div>
 

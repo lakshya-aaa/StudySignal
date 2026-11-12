@@ -1,0 +1,221 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ exam.name }} ({{ exam.full_name }}) — Syllabus, Pattern, Dates, PYQs &amp; Notifications | StudySignal{% endblock %}
+
+{% block meta_description %}{{ exam.hero.subtitle }} Access official verified syllabus PDFs, exam pattern, eligibility, important dates, information bulletin, past papers, and notices for {{ exam.name }}.{% endblock %}
+
+{% block content %}
+{% set active_tab = 'hub' %}
+{% set page_heading = exam.full_name %}
+{% set page_intro = exam.hero.subtitle %}
+{% include 'exams/_subnav.html' %}
+
+<div class="exam-page-body">
+  <section class="section exam-section-tight">
+    <div class="container">
+      <!-- Cycle Status Banner -->
+      <div class="exam-alert-box {% if exam_slug == 'jee-main' %}exam-alert-active{% else %}exam-alert-info{% endif %}">
+        <div class="exam-alert-head">
+          <div>
+            <span class="exam-cycle-tag">{{ exam.cycle_status.active_cycle }}</span>
+            <h2 class="exam-alert-title">{{ exam.name }} Official Cycle Status</h2>
+          </div>
+          <span class="exam-verified-meta">Source verified on {{ exam.last_verified }}</span>
+        </div>
+        <p class="exam-alert-text">{{ exam.cycle_status.summary }}</p>
+        <div class="exam-action-row">
+          <a href="{{ exam.hero.primary_cta_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">{{ exam.hero.primary_cta_label }}</a>
+          <a href="{{ exam.hero.secondary_cta_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">{{ exam.hero.secondary_cta_label }}</a>
+          <a href="/{{ exam_slug }}/important-dates" class="btn btn-secondary btn-sm">Schedule &amp; Fee Structure &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Key Facts Grid -->
+      <div class="exam-facts-grid">
+        {% for fact in exam.hero.key_facts %}
+        <div class="exam-fact-card">
+          <span class="exam-fact-label">{{ fact.label }}</span>
+          <strong class="exam-fact-value">{{ fact.value }}</strong>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete Resource Portals Grid -->
+  <section class="section exam-section-tight">
+    <div class="container">
+      <div class="exam-section-header">
+        <h2>{{ exam.name }} Complete Portal Directory</h2>
+        <p>Every sub-section below is populated exclusively from verified official publications.</p>
+      </div>
+
+      <div class="exam-directory-grid">
+        <a href="/{{ exam_slug }}/syllabus" class="exam-dir-card">
+          <div class="exam-dir-meta"><span class="code-pill">Official PDFs</span></div>
+          <h3>Official Syllabus</h3>
+          <p>{{ exam.syllabus.session_label }}</p>
+          <span class="exam-dir-link">Explore Syllabus &rarr;</span>
+        </a>
+
+        <a href="/{{ exam_slug }}/exam-pattern" class="exam-dir-card">
+          <div class="exam-dir-meta"><span class="code-pill">Marking &amp; Scheme</span></div>
+          <h3>Exam Pattern</h3>
+          <p>Papers, sections, duration, +/− marking rules, mediums, and tie-breaking hierarchy.</p>
+          <span class="exam-dir-link">View Exam Pattern &rarr;</span>
+        </a>
+
+        <a href="/{{ exam_slug }}/eligibility" class="exam-dir-card">
+          <div class="exam-dir-meta"><span class="code-pill">Criteria &amp; Quota</span></div>
+          <h3>Eligibility Criteria</h3>
+          <p>Age limit, attempts, qualifying exam conditions, and statutory reservation rules.</p>
+          <span class="exam-dir-link">Check Eligibility &rarr;</span>
+        </a>
+
+        <a href="/{{ exam_slug }}/important-dates" class="exam-dir-card">
+          <div class="exam-dir-meta"><span class="code-pill">Schedule &amp; Fees</span></div>
+          <h3>Important Dates &amp; Fees</h3>
+          <p>{{ exam.important_dates.events|length }} verified timeline milestones and full category fee table.</p>
+          <span class="exam-dir-link">View Dates &amp; Fees &rarr;</span>
+        </a>
+
+        <a href="/{{ exam_slug }}/information-bulletin" class="exam-dir-card">
+          <div class="exam-dir-meta"><span class="code-pill">Official Brochures</span></div>
+          <h3>Information Bulletin</h3>
+          <p>{{ exam.information_bulletin.bulletins|length }} official brochures, guidelines, and FAQ PDFs.</p>
+          <span class="exam-dir-link">Open Brochures &rarr;</span>
+        </a>
+
+        <a href="/{{ exam_slug }}/pyq" class="exam-dir-card">
+          <div class="exam-dir-meta">
+            {% if exam.pyq.pyq_available_officially %}
+            <span class="pyq-badge-available">{{ exam.pyq.papers|length }} Official Papers</span>
+            {% else %}
+            <span class="exam-badge-neutral">Status Notice</span>
+            {% endif %}
+          </div>
+          <h3>{% if exam_slug == 'cuet-ug' %}PYQ Status &amp; Official Practice{% else %}Previous Year Papers (PYQ){% endif %}</h3>
+          <p>{% if exam.pyq.pyq_available_officially %}Downloadable official past question paper PDFs strictly separated from mock tests &amp; keys.{% else %}Transparent status note on CUET (UG) PYQs plus official answer keys and NTA practice portals.{% endif %}</p>
+          <span class="exam-dir-link">{% if exam.pyq.pyq_available_officially %}Browse {{ exam.pyq.papers|length }} PYQs &rarr;{% else %}View Status &amp; Practice &rarr;{% endif %}</span>
+        </a>
+
+        <a href="/{{ exam_slug }}/admit-card" class="exam-dir-card">
+          <div class="exam-dir-meta"><span class="code-pill">Hall Ticket</span></div>
+          <h3>Admit Card &amp; City Slip</h3>
+          <p>{{ exam.admit_card.status_label }}</p>
+          <span class="exam-dir-link">Check Admit Card Info &rarr;</span>
+        </a>
+
+        <a href="/{{ exam_slug }}/answer-key" class="exam-dir-card">
+          <div class="exam-dir-meta"><span class="code-pill">Keys &amp; Challenges</span></div>
+          <h3>Answer Key &amp; Responses</h3>
+          <p>{{ exam.answer_key.status_label }}</p>
+          <span class="exam-dir-link">View Answer Keys &rarr;</span>
+        </a>
+
+        <a href="/{{ exam_slug }}/result" class="exam-dir-card">
+          <div class="exam-dir-meta"><span class="code-pill">Scorecard &amp; Rank</span></div>
+          <h3>Result &amp; Scorecards</h3>
+          <p>{{ exam.result.status_label }}</p>
+          <span class="exam-dir-link">View Result Guide &rarr;</span>
+        </a>
+
+        <a href="/{{ exam_slug }}/notifications" class="exam-dir-card">
+          <div class="exam-dir-meta"><span class="code-pill">{{ exam.notifications|length }} Notices</span></div>
+          <h3>Official Notifications</h3>
+          <p>Latest public notices, press releases, schedules, and advisories with direct PDFs.</p>
+          <span class="exam-dir-link">Read All Notices &rarr;</span>
+        </a>
+
+        {% if exam_slug == 'neet-ug' %}
+        <a href="/neet-ug/counselling" class="exam-dir-card exam-dir-highlight">
+          <div class="exam-dir-meta"><span class="badge-status-active">MCC &amp; AACCC</span></div>
+          <h3>Medical Counselling Guide</h3>
+          <p>15% AIQ &amp; Central/Deemed MCC counselling, 56-page User Guide, AACCC AYUSH &amp; 85% State Quotas.</p>
+          <span class="exam-dir-link">Explore Counselling &rarr;</span>
+        </a>
+        {% elif exam_slug == 'cuet-ug' %}
+        <a href="/cuet-ug/universities" class="exam-dir-card exam-dir-highlight">
+          <div class="exam-dir-meta"><span class="badge-status-active">{{ exam.universities.counts.total }} Institutions</span></div>
+          <h3>Participating Universities</h3>
+          <p>Browse all 244 mapped Central, State, Deemed, Other Govt, and Private Universities with PDFs.</p>
+          <span class="exam-dir-link">Browse 244 Universities &rarr;</span>
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  {% if exam.josaa_and_iits %}
+  <!-- JEE Advanced: 23 IITs & JoSAA Allocation Preview -->
+  <section class="section exam-section-tight">
+    <div class="container">
+      <div class="exam-panel-card">
+        <div class="exam-panel-head">
+          <div>
+            <h2>Participating 23 IITs Across 7 Zones &amp; JoSAA Seat Allocation</h2>
+            <p>Admissions to B.Tech., B.S., B.Arch., and Dual Degree programmes at the 23 IITs are conducted centrally through JoSAA.</p>
+          </div>
+          <div class="exam-action-row">
+            <a href="{{ exam.josaa_and_iits.josaa_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">JoSAA Portal ↗</a>
+            <a href="{{ exam.josaa_and_iits.business_rules_pdf_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">JoSAA 2026 Rules PDF ↗</a>
+          </div>
+        </div>
+        <div class="exam-zones-grid">
+          {% for z in exam.josaa_and_iits.zones %}
+          <div class="exam-zone-card">
+            <h3>{{ z.zone }}</h3>
+            <ul>
+              {% for inst in z.institutes %}
+              <li>{{ inst }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Recent Official Notifications -->
+  <section class="section exam-section-tight">
+    <div class="container">
+      <div class="exam-section-header exam-header-flex">
+        <div>
+          <h2>Latest Official {{ exam.name }} Notices</h2>
+          <p>Recent announcements verified from <code>{{ exam.official_website }}</code></p>
+        </div>
+        <a href="/{{ exam_slug }}/notifications" class="btn btn-secondary btn-sm">View All {{ exam.notifications|length }} Notices &rarr;</a>
+      </div>
+      <div class="exam-notice-list">
+        {% for n in exam.notifications[:5] %}
+        <article class="exam-notice-item">
+          <div class="exam-notice-meta">
+            <span class="code-pill">{{ n.category }}</span>
+            <span class="exam-notice-date">{{ n.date }}</span>
+            <span class="exam-notice-cycle">{{ n.cycle }}</span>
+          </div>
+          <div class="exam-notice-body">
+            <h3>{{ n.title }}</h3>
+            <p>{{ n.summary }}</p>
+          </div>
+          <div class="exam-notice-cta">
+            <a href="{{ n.pdf_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Official PDF ↗</a>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Non-affiliation Legal Card -->
+  <section class="section exam-section-tight">
+    <div class="container">
+      <div class="exam-disclaimer-card">
+        <strong>Independent Information Portal Notice:</strong> StudySignal is not affiliated with NTA, JAB/IITs, JoSAA, NMC, DCI, MCC, or AACCC. Always verify final registration forms, city slips, admit cards, answer key challenges, and scorecards directly on <a href="{{ exam.official_website }}" target="_blank" rel="noopener noreferrer">{{ exam.official_website }}</a>.
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ exam.name }} Information Bulletin, Official Brochure &amp; FAQs | StudySignal{% endblock %}
+
+{% block meta_description %}Download official {{ exam.name }} Information Bulletins, brochures, candidate guidelines, and FAQs verified from {{ exam.official_website }}.{% endblock %}
+
+{% block content %}
+{% set active_tab = 'information-bulletin' %}
+{% set page_label = 'Information Bulletin' %}
+{% set page_heading = exam.name + ' Official Information Bulletins' %}
+{% set page_intro = 'Verified current and archived official brochures, candidate guidelines, business rules, and FAQ PDFs published by ' + exam.conducting_body + '.' %}
+{% include 'exams/_subnav.html' %}
+
+<div class="exam-page-body">
+  <section class="section exam-section-tight">
+    <div class="container">
+      <div class="exam-doc-grid">
+        {% for b in exam.information_bulletin.bulletins %}
+        <article class="exam-doc-card exam-bulletin-card">
+          <div class="exam-doc-badges">
+            <span class="badge-status-active">{{ b.session }}</span>
+            {% if b.pages %}<span class="code-pill">{{ b.pages }}</span>{% endif %}
+          </div>
+          <h2>{{ b.title }}</h2>
+          <p class="exam-doc-highlights">{{ b.highlights }}</p>
+          <div class="exam-doc-footer">
+            <span class="exam-doc-source">Source: <code>{{ b.source_host }}</code> &bull; Verified {{ exam.last_verified }}</span>
+            <a href="{{ b.pdf_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Download Official PDF ↗</a>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

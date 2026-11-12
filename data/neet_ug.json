@@ -1,0 +1,1572 @@
+{
+  "exam_id": "neet-ug",
+  "name": "NEET UG",
+  "full_name": "National Eligibility-cum-Entrance Test [NEET (UG)]",
+  "conducting_body": "National Testing Agency (NTA) — under NMC / DCI / MoH&FW / Ministry of Ayush norms",
+  "logo": "images/exams/nta-logo.png",
+  "official_website": "https://neet.nta.nic.in/",
+  "last_verified": "2026-11-10",
+  "cycle_status": {
+    "active_cycle": "2026 Verified Cycle (2027 Awaiting Official Notification)",
+    "label": "2026 Verified Cycle + 2027 Awaited",
+    "badge_class": "badge-status-info",
+    "summary": "NEET (UG) 2027 notification and dates have not yet been published on neet.nta.nic.in. Complete verified 2026 schedule, NMC/NTA syllabi, eligibility codes, MCC/AACCC counselling resources, and 75 official 2020 multilingual question paper booklets are available below."
+  },
+  "hero": {
+    "subtitle": "Uniform national Pen & Paper (OMR) entrance test conducted by NTA under Section 14 of the NMC Act, 2019 for admission to MBBS, BDS, BAMS, BSMS, BUMS, BHMS, and B.Sc. (Hons.) Nursing (AFMS) across India.",
+    "primary_cta_label": "Official neet.nta.nic.in Portal ↗",
+    "primary_cta_url": "https://neet.nta.nic.in/",
+    "secondary_cta_label": "MCC UG Medical Counselling ↗",
+    "secondary_cta_url": "https://mcc.nic.in/ug-medical-counselling/",
+    "key_facts": [
+      {
+        "label": "Conducting Body",
+        "value": "National Testing Agency (NTA)"
+      },
+      {
+        "label": "Exam Mode & Pattern",
+        "value": "Pen & Paper OMR | 180 Compulsory MCQs (720 Marks)"
+      },
+      {
+        "label": "2026 Cycle Status",
+        "value": "Completed (11.21 Lakh Qualified on 16 Jul 2026)"
+      },
+      {
+        "label": "2027 Cycle Status",
+        "value": "Awaiting Official Announcement"
+      }
+    ]
+  },
+  "syllabus": {
+    "session_label": "NMC / NTA Official NEET (UG) Syllabus (Physics, Chemistry & Biology)",
+    "overview": "The NEET (UG) syllabus is finalized by the Under Graduate Medical Education Board (UGMEB) of the National Medical Commission (NMC) and published on neet.nta.nic.in. Both official syllabus PDFs hosted on neet.nta.nic.in are linked below.",
+    "primary_pdfs": [
+      {
+        "title": "NMC UGMEB Updated Syllabus for NEET (UG) – 2026 (Circular dated 22-12-2025)",
+        "session": "2026 (Latest NMC Circular)",
+        "pages": "18 Pages",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/01/202601081066816297.pdf",
+        "source_host": "neet.nta.nic.in / nmc.org.in"
+      },
+      {
+        "title": "NTA Portal Syllabus Document for NEET (UG) (Physics, Chemistry, Biology)",
+        "session": "2025–2026 Portal Reference",
+        "pages": "15 Pages",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/01/20260102588210790.pdf",
+        "source_host": "neet.nta.nic.in"
+      }
+    ],
+    "subjects": [
+      {
+        "name": "Physics (Units 1–20)",
+        "paper": "45 Compulsory MCQs / 180 Marks",
+        "units_count": 20,
+        "units": [
+          "Unit 1: Physics and Measurement",
+          "Unit 2: Kinematics",
+          "Unit 3: Laws of Motion",
+          "Unit 4: Work, Energy, and Power",
+          "Unit 5: Rotational Motion",
+          "Unit 6: Gravitation",
+          "Unit 7: Properties of Solids and Liquids",
+          "Unit 8: Thermodynamics",
+          "Unit 9: Kinetic Theory of Gases",
+          "Unit 10: Oscillations and Waves",
+          "Unit 11: Electrostatics",
+          "Unit 12: Current Electricity",
+          "Unit 13: Magnetic Effects of Current and Magnetism",
+          "Unit 14: Electromagnetic Induction and Alternating Currents",
+          "Unit 15: Electromagnetic Waves",
+          "Unit 16: Optics",
+          "Unit 17: Dual Nature of Matter and Radiation",
+          "Unit 18: Atoms and Nuclei",
+          "Unit 19: Electronic Devices",
+          "Unit 20: Experimental Skills"
+        ]
+      },
+      {
+        "name": "Chemistry (Units 1–20)",
+        "paper": "45 Compulsory MCQs / 180 Marks",
+        "units_count": 20,
+        "units": [
+          "Physical Chemistry (Units 1–8): Some Basic Concepts in Chemistry, Atomic Structure, Chemical Bonding & Molecular Structure, Chemical Thermodynamics, Solutions, Equilibrium, Redox Reactions & Electrochemistry, Chemical Kinetics",
+          "Inorganic Chemistry (Units 9–12): Classification of Elements & Periodicity in Properties, p-Block Elements, d- and f-Block Elements, Co-ordination Compounds",
+          "Organic Chemistry (Units 13–20): Purification & Characterisation of Organic Compounds, Some Basic Principles of Organic Chemistry, Hydrocarbons, Organic Compounds Containing Halogens, Organic Compounds Containing Oxygen, Organic Compounds Containing Nitrogen, Biomolecules, Principles Related to Practical Chemistry"
+        ]
+      },
+      {
+        "name": "Biology — Botany & Zoology (Units 1–10)",
+        "paper": "90 Compulsory MCQs / 360 Marks",
+        "units_count": 10,
+        "units": [
+          "Unit 1: Diversity in Living World",
+          "Unit 2: Structural Organisation in Animals and Plants",
+          "Unit 3: Cell Structure and Function",
+          "Unit 4: Plant Physiology",
+          "Unit 5: Human Physiology",
+          "Unit 6: Reproduction",
+          "Unit 7: Genetics and Evolution",
+          "Unit 8: Biology and Human Welfare",
+          "Unit 9: Biotechnology and Its Applications",
+          "Unit 10: Ecology and Environment"
+        ]
+      }
+    ]
+  },
+  "exam_pattern": {
+    "overview": "NEET (UG) is conducted in a single shift in offline Pen & Paper (OMR) mode with 180 compulsory Multiple Choice Questions (no optional Section B questions), carrying 720 maximum marks over 3 hours.",
+    "papers": [
+      {
+        "paper_code": "Single Paper — NEET (UG)",
+        "mode": "Pen & Paper (Offline OMR Sheet)",
+        "duration": "3 Hours (180 Minutes: 02:00 PM – 05:00 PM IST) | PwBD Compensatory Time: +1 Hour (02:00 PM – 06:00 PM IST)",
+        "total_questions": 180,
+        "total_marks": 720,
+        "sections": [
+          {
+            "subject": "Physics",
+            "questions": "45 Compulsory MCQs",
+            "marks": "180 Marks"
+          },
+          {
+            "subject": "Chemistry",
+            "questions": "45 Compulsory MCQs",
+            "marks": "180 Marks"
+          },
+          {
+            "subject": "Biology (Botany & Zoology)",
+            "questions": "90 Compulsory MCQs",
+            "marks": "360 Marks"
+          }
+        ]
+      }
+    ],
+    "marking_scheme": [
+      {
+        "rule": "Correct Answer",
+        "marks": "+4 Marks"
+      },
+      {
+        "rule": "Incorrect Answer (or more than one oval darkened)",
+        "marks": "-1 Mark"
+      },
+      {
+        "rule": "Unanswered / Unattempted Question",
+        "marks": "0 Marks"
+      },
+      {
+        "rule": "Dropped Question",
+        "marks": "+4 Marks awarded to all candidates"
+      }
+    ],
+    "mediums": [
+      "English",
+      "Hindi",
+      "Assamese",
+      "Bengali",
+      "Gujarati",
+      "Kannada",
+      "Malayalam",
+      "Marathi",
+      "Odia",
+      "Punjabi",
+      "Tamil",
+      "Telugu",
+      "Urdu (13 Languages total; English prevails in case of ambiguity)"
+    ],
+    "tie_breaking": [
+      "1. Higher marks/percentile score in Biology (Botany & Zoology)",
+      "2. Higher marks/percentile score in Chemistry",
+      "3. Higher marks/percentile score in Physics",
+      "4. Less proportion of attempted incorrect answers and correct answers in all subjects",
+      "5. Less proportion of attempted incorrect answers and correct answers in Biology (Botany & Zoology)",
+      "6. Less proportion of attempted incorrect answers and correct answers in Chemistry",
+      "7. Less proportion of attempted incorrect answers and correct answers in Physics",
+      "8. If tie still persists after criteria (a)–(g), resolved through a random process under the guidance of an independent expert committee (NMC UGMEB rule)"
+    ]
+  },
+  "eligibility": {
+    "age_limit": "Minimum Age: Candidate must have completed 17 years of age at the time of admission or will complete that age on or before 31st December of the year of admission to the first year of the Undergraduate Medical Course. Upper Age Limit: No upper age limit for appearing in NEET (UG) per NMC letter U-11022/2/2022-UGMEB.",
+    "attempt_limit": "No restriction on the number of attempts in NEET (UG).",
+    "qualifying_exam": "Passed 10+2 or equivalent with Physics, Chemistry, Biology/Biotechnology, and English individually (or appearing in Class 12). Candidates who passed 10+2 with Physics, Chemistry, Mathematics and subsequently passed Biology/Biotechnology as an additional subject from a recognized board are also eligible per NMC Public Notice dated 22.11.2023.",
+    "qualifying_codes": [
+      {
+        "code": "Code 01",
+        "description": "Candidates appearing in the Class 12 / qualifying examination in the current year whose result is awaited."
+      },
+      {
+        "code": "Code 02",
+        "description": "Higher/Senior Secondary Examination or Indian School Certificate Examination (10+2) after 12 years of study with Physics, Chemistry, Biology/Biotechnology, and English."
+      },
+      {
+        "code": "Code 03",
+        "description": "Intermediate / Pre-Degree Examination in Science of an Indian University/Board with Physics, Chemistry, Biology/Biotechnology (including practical tests) and English."
+      },
+      {
+        "code": "Code 04",
+        "description": "Pre-professional / Pre-medical Examination with Physics, Chemistry, Biology/Biotechnology, and English after passing Higher Secondary or Pre-University."
+      },
+      {
+        "code": "Code 05",
+        "description": "First year of the three-year degree course of a recognized University with Physics, Chemistry, and Biology/Biotechnology including practical tests."
+      },
+      {
+        "code": "Code 06",
+        "description": "B.Sc. Examination of an Indian University with not less than two of Physics, Chemistry, Biology (Botany/Zoology)/Biotechnology, having passed earlier qualifying exam with PCB & English."
+      },
+      {
+        "code": "Code 07",
+        "description": "Any other examination found equivalent to Intermediate Science Examination of an Indian University/Board (including foreign qualifications verified by AIU)."
+      }
+    ],
+    "qualifying_percentiles": [
+      {
+        "category": "Unreserved (UR) / General-EWS",
+        "min_percentile": "50th Percentile"
+      },
+      {
+        "category": "UR-PwBD / General-EWS-PwBD",
+        "min_percentile": "45th Percentile"
+      },
+      {
+        "category": "SC / ST / OBC-NCL (including PwBD of SC/ST/OBC-NCL)",
+        "min_percentile": "40th Percentile"
+      }
+    ]
+  },
+  "important_dates": {
+    "current_2027_status": "NEET (UG) 2027 dates are awaiting official announcement on neet.nta.nic.in. Verified NEET (UG) 2026 cycle milestones and fee structure are documented below.",
+    "events": [
+      {
+        "cycle": "2026 Verified",
+        "event": "Online Submission of Application Form",
+        "date": "08 February 2026 – 08 March 2026 (up to 09:00 PM)",
+        "status": "Completed (2026)"
+      },
+      {
+        "cycle": "2026 Verified",
+        "event": "Last Date of Fee Transaction",
+        "date": "08 March 2026 (up to 11:50 PM)",
+        "status": "Completed (2026)"
+      },
+      {
+        "cycle": "2026 Verified",
+        "event": "Correction in Particulars Window",
+        "date": "10 March 2026 – 12 March 2026",
+        "status": "Completed (2026)"
+      },
+      {
+        "cycle": "2026 Verified",
+        "event": "NEET (UG) 2026 Examination Date",
+        "date": "03 May 2026 (02:00 PM – 05:00 PM IST)",
+        "status": "Completed (2026)"
+      },
+      {
+        "cycle": "2026 Verified",
+        "event": "NEET (UG) 2026 Re-Examination Date",
+        "date": "21 June 2026",
+        "status": "Completed (2026)"
+      },
+      {
+        "cycle": "2026 Verified",
+        "event": "Provisional Answer Keys Display",
+        "date": "25 June 2026",
+        "status": "Completed (2026)"
+      },
+      {
+        "cycle": "2026 Verified",
+        "event": "Scanned OMR Answer Sheet & Recorded Response Display",
+        "date": "13 July 2026",
+        "status": "Completed (2026)"
+      },
+      {
+        "cycle": "2026 Verified",
+        "event": "Final Answer Keys & NEET (UG) 2026 Result Declaration",
+        "date": "16 July 2026 (11.21 lakh qualified)",
+        "status": "Completed (2026)"
+      },
+      {
+        "cycle": "2027 Cycle",
+        "event": "NEET (UG) 2027 Notification, Application & Exam Date",
+        "date": "Awaiting Official Announcement on neet.nta.nic.in",
+        "status": "Awaited"
+      }
+    ],
+    "fee_structure": [
+      {
+        "category": "General (Unreserved)",
+        "india_fee": "₹ 1,700",
+        "outside_india_fee": "₹ 9,500"
+      },
+      {
+        "category": "General-EWS / OBC-NCL (Central List)",
+        "india_fee": "₹ 1,600",
+        "outside_india_fee": "₹ 9,500"
+      },
+      {
+        "category": "SC / ST / PwBD / PwD / Third Gender",
+        "india_fee": "₹ 1,000",
+        "outside_india_fee": "₹ 9,500"
+      }
+    ],
+    "fee_note": "Processing charges and Goods & Services Tax (GST) are payable extra as applicable."
+  },
+  "information_bulletin": {
+    "bulletins": [
+      {
+        "title": "Information Bulletin — National Eligibility-cum-Entrance Test [NEET (UG)] – 2026",
+        "session": "2026 Reference",
+        "pages": "124 Pages",
+        "highlights": "Complete 124-page official brochure covering NMC/NCISM/NCH/DCI statutory framework, 180-MCQ pattern, Qualifying Codes 01–07, 8-step tie-breaker, reservation norms, and AIQ/State quota provisions.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/02/202602231394640855.pdf",
+        "source_host": "neet.nta.nic.in"
+      },
+      {
+        "title": "Information Bulletin — NEET (UG) – 2025 (Archive)",
+        "session": "2025 Archive",
+        "pages": "Archive PDF",
+        "highlights": "Archived 2025 official Information Bulletin hosted on neet.nta.nic.in.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2025/02/2025020754.pdf",
+        "source_host": "neet.nta.nic.in"
+      },
+      {
+        "title": "Candidate User Guide — NEET UG Counselling 2026 (Medical Counselling Committee / DGHS)",
+        "session": "2026 Counselling",
+        "pages": "56 Pages",
+        "highlights": "Step-by-step official MCC counselling registration, choice locking, seat allotment, and reporting manual.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s3e0f7a4d0ef9b84b83b693bbf3feb8e6e/uploads/2026/08/202608061435575744.pdf",
+        "source_host": "mcc.nic.in"
+      }
+    ]
+  },
+  "pyq": {
+    "pyq_available_officially": true,
+    "summary_note": "NTA hosts 75 official NEET (UG) 2020 multilingual question paper booklets on neet.nta.nic.in across 11 language editions (Assamese, Bengali, English & Hindi bilingual, English, Gujarati, Kannada, Marathi, Odia, Tamil, Telugu, and Urdu). Official answer keys and NTA practice platforms are listed separately below.",
+    "papers": [
+      {
+        "id": "neet-2020-assamese-set-e3-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Assamese (Set E3)",
+        "year": 2020,
+        "language": "Assamese",
+        "set_code": "E3",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021541.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-assamese-set-f3-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Assamese (Set F3)",
+        "year": 2020,
+        "language": "Assamese",
+        "set_code": "F3",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021571.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-assamese-set-g3-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Assamese (Set G3)",
+        "year": 2020,
+        "language": "Assamese",
+        "set_code": "G3",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021554.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-assamese-set-h3-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Assamese (Set H3)",
+        "year": 2020,
+        "language": "Assamese",
+        "set_code": "H3",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021548.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-bengali-set-e5-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Bengali (Set E5)",
+        "year": 2020,
+        "language": "Bengali",
+        "set_code": "E5",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021511.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-bengali-set-f5-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Bengali (Set F5)",
+        "year": 2020,
+        "language": "Bengali",
+        "set_code": "F5",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021565.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-bengali-set-g5-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Bengali (Set G5)",
+        "year": 2020,
+        "language": "Bengali",
+        "set_code": "G5",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021515.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-bengali-set-h5-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Bengali (Set H5)",
+        "year": 2020,
+        "language": "Bengali",
+        "set_code": "H5",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021587.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-eng-hindi-set-e1-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Eng & Hindi (Set E1)",
+        "year": 2020,
+        "language": "Eng & Hindi",
+        "set_code": "E1",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021530.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-eng-hindi-set-e2-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Eng & Hindi (Set E2)",
+        "year": 2020,
+        "language": "Eng & Hindi",
+        "set_code": "E2",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021575.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-eng-hindi-set-e3-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Eng & Hindi (Set E3)",
+        "year": 2020,
+        "language": "Eng & Hindi",
+        "set_code": "E3",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021562.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-eng-hindi-set-e4-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Eng & Hindi (Set E4)",
+        "year": 2020,
+        "language": "Eng & Hindi",
+        "set_code": "E4",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/20220215100.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-eng-hindi-set-f1-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Eng & Hindi (Set F1)",
+        "year": 2020,
+        "language": "Eng & Hindi",
+        "set_code": "F1",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021551.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-eng-hindi-set-f2-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Eng & Hindi (Set F2)",
+        "year": 2020,
+        "language": "Eng & Hindi",
+        "set_code": "F2",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021595.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-eng-hindi-set-f3-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Eng & Hindi (Set F3)",
+        "year": 2020,
+        "language": "Eng & Hindi",
+        "set_code": "F3",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021531.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-eng-hindi-set-f4-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Eng & Hindi (Set F4)",
+        "year": 2020,
+        "language": "Eng & Hindi",
+        "set_code": "F4",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021545.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-eng-hindi-set-g1-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Eng & Hindi (Set G1)",
+        "year": 2020,
+        "language": "Eng & Hindi",
+        "set_code": "G1",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021572.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-eng-hindi-set-g2-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Eng & Hindi (Set G2)",
+        "year": 2020,
+        "language": "Eng & Hindi",
+        "set_code": "G2",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021577.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-eng-hindi-set-g3-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Eng & Hindi (Set G3)",
+        "year": 2020,
+        "language": "Eng & Hindi",
+        "set_code": "G3",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021540.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-eng-hindi-set-g4-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Eng & Hindi (Set G4)",
+        "year": 2020,
+        "language": "Eng & Hindi",
+        "set_code": "G4",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021527.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-eng-hindi-set-h1-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Eng & Hindi (Set H1)",
+        "year": 2020,
+        "language": "Eng & Hindi",
+        "set_code": "H1",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021542.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-eng-hindi-set-h2-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Eng & Hindi (Set H2)",
+        "year": 2020,
+        "language": "Eng & Hindi",
+        "set_code": "H2",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021597.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-eng-hindi-set-h3-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Eng & Hindi (Set H3)",
+        "year": 2020,
+        "language": "Eng & Hindi",
+        "set_code": "H3",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021573.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-eng-hindi-set-h4-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Eng & Hindi (Set H4)",
+        "year": 2020,
+        "language": "Eng & Hindi",
+        "set_code": "H4",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021569.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-english-set-e1-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — English (Set E1)",
+        "year": 2020,
+        "language": "English",
+        "set_code": "E1",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021555.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-english-set-e2-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — English (Set E2)",
+        "year": 2020,
+        "language": "English",
+        "set_code": "E2",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021525.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-english-set-e3-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — English (Set E3)",
+        "year": 2020,
+        "language": "English",
+        "set_code": "E3",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021543.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-english-set-e4-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — English (Set E4)",
+        "year": 2020,
+        "language": "English",
+        "set_code": "E4",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021575-1.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-english-set-e5-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — English (Set E5)",
+        "year": 2020,
+        "language": "English",
+        "set_code": "E5",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021519.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-english-set-e6-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — English (Set E6)",
+        "year": 2020,
+        "language": "English",
+        "set_code": "E6",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021581.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-english-set-f1-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — English (Set F1)",
+        "year": 2020,
+        "language": "English",
+        "set_code": "F1",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021671.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-english-set-f3-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — English (Set F3)",
+        "year": 2020,
+        "language": "English",
+        "set_code": "F3",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021659.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-english-set-f4-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — English (Set F4)",
+        "year": 2020,
+        "language": "English",
+        "set_code": "F4",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021694.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-english-set-f5-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — English (Set F5)",
+        "year": 2020,
+        "language": "English",
+        "set_code": "F5",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021619.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-english-set-f6-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — English (Set F6)",
+        "year": 2020,
+        "language": "English",
+        "set_code": "F6",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021613.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-english-set-g1-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — English (Set G1)",
+        "year": 2020,
+        "language": "English",
+        "set_code": "G1",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021698.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-english-set-g2-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — English (Set G2)",
+        "year": 2020,
+        "language": "English",
+        "set_code": "G2",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021667.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-english-set-g3-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — English (Set G3)",
+        "year": 2020,
+        "language": "English",
+        "set_code": "G3",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021627.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-english-set-g4-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — English (Set G4)",
+        "year": 2020,
+        "language": "English",
+        "set_code": "G4",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021682.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-english-set-g5-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — English (Set G5)",
+        "year": 2020,
+        "language": "English",
+        "set_code": "G5",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021660.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-english-set-g6-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — English (Set G6)",
+        "year": 2020,
+        "language": "English",
+        "set_code": "G6",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021642.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-english-set-h1-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — English (Set H1)",
+        "year": 2020,
+        "language": "English",
+        "set_code": "H1",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021698-1.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-english-set-h2-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — English (Set H2)",
+        "year": 2020,
+        "language": "English",
+        "set_code": "H2",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021628.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-english-set-h3-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — English (Set H3)",
+        "year": 2020,
+        "language": "English",
+        "set_code": "H3",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021677.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-english-set-h4-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — English (Set H4)",
+        "year": 2020,
+        "language": "English",
+        "set_code": "H4",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021685.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-english-set-h5-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — English (Set H5)",
+        "year": 2020,
+        "language": "English",
+        "set_code": "H5",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/20220216100.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-english-set-h6-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — English (Set H6)",
+        "year": 2020,
+        "language": "English",
+        "set_code": "H6",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/20220216100-1.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-gujarati-set-e6-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Gujarati (Set E6)",
+        "year": 2020,
+        "language": "Gujarati",
+        "set_code": "E6",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021662.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-gujarati-set-f6-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Gujarati (Set F6)",
+        "year": 2020,
+        "language": "Gujarati",
+        "set_code": "F6",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021673.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-gujarati-set-g6-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Gujarati (Set G6)",
+        "year": 2020,
+        "language": "Gujarati",
+        "set_code": "G6",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021640.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-gujarati-set-h6-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Gujarati (Set H6)",
+        "year": 2020,
+        "language": "Gujarati",
+        "set_code": "H6",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021695.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-kannada-set-e1-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Kannada (Set E1)",
+        "year": 2020,
+        "language": "Kannada",
+        "set_code": "E1",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021693.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-kannada-set-f1-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Kannada (Set F1)",
+        "year": 2020,
+        "language": "Kannada",
+        "set_code": "F1",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021656.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-kannada-set-g1-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Kannada (Set G1)",
+        "year": 2020,
+        "language": "Kannada",
+        "set_code": "G1",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021635.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-kannada-set-h1-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Kannada (Set H1)",
+        "year": 2020,
+        "language": "Kannada",
+        "set_code": "H1",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021662-1.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-marathi-set-e3-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Marathi (Set E3)",
+        "year": 2020,
+        "language": "Marathi",
+        "set_code": "E3",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021698-2.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-marathi-set-f3-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Marathi (Set F3)",
+        "year": 2020,
+        "language": "Marathi",
+        "set_code": "F3",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021642-1.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-marathi-set-g3-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Marathi (Set G3)",
+        "year": 2020,
+        "language": "Marathi",
+        "set_code": "G3",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021685-1.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-marathi-set-h3-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Marathi (Set H3)",
+        "year": 2020,
+        "language": "Marathi",
+        "set_code": "H3",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021650.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-odia-set-e3-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Odia (Set E3)",
+        "year": 2020,
+        "language": "Odia",
+        "set_code": "E3",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021635-1.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-odia-set-f3-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Odia (Set F3)",
+        "year": 2020,
+        "language": "Odia",
+        "set_code": "F3",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021635-2.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-odia-set-g3-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Odia (Set G3)",
+        "year": 2020,
+        "language": "Odia",
+        "set_code": "G3",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021630.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-odia-set-h3-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Odia (Set H3)",
+        "year": 2020,
+        "language": "Odia",
+        "set_code": "H3",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021637.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-tamil-set-e4-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Tamil (Set E4)",
+        "year": 2020,
+        "language": "Tamil",
+        "set_code": "E4",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021697.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-tamil-set-f4-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Tamil (Set F4)",
+        "year": 2020,
+        "language": "Tamil",
+        "set_code": "F4",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021651.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-tamil-set-g4-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Tamil (Set G4)",
+        "year": 2020,
+        "language": "Tamil",
+        "set_code": "G4",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021680.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-tamil-set-h4-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Tamil (Set H4)",
+        "year": 2020,
+        "language": "Tamil",
+        "set_code": "H4",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021650-1.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-telugu-set-e2-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Telugu (Set E2)",
+        "year": 2020,
+        "language": "Telugu",
+        "set_code": "E2",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021675.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-telugu-set-f2-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Telugu (Set F2)",
+        "year": 2020,
+        "language": "Telugu",
+        "set_code": "F2",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021686.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-telugu-set-g2-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Telugu (Set G2)",
+        "year": 2020,
+        "language": "Telugu",
+        "set_code": "G2",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021619-1.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-telugu-set-h2-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Telugu (Set H2)",
+        "year": 2020,
+        "language": "Telugu",
+        "set_code": "H2",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021611.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-urdu-set-e5-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Urdu (Set E5)",
+        "year": 2020,
+        "language": "Urdu",
+        "set_code": "E5",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021641.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-urdu-set-f5-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Urdu (Set F5)",
+        "year": 2020,
+        "language": "Urdu",
+        "set_code": "F5",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021685-2.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-urdu-set-g5-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Urdu (Set G5)",
+        "year": 2020,
+        "language": "Urdu",
+        "set_code": "G5",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021635-3.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2020-urdu-set-h5-neet-qp-2020",
+        "title": "NEET (UG) 2020 Official Question Paper — Urdu (Set H5)",
+        "year": 2020,
+        "language": "Urdu",
+        "set_code": "H5",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2022/02/2022021622.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": true,
+        "last_verified": "2026-11-10"
+      }
+    ],
+    "official_practice_and_keys": [
+      {
+        "id": "neet-2026-final-key",
+        "title": "Final Answer Keys for NEET (UG) – 2026 Re-Examination (16 July 2026)",
+        "resource_type": "Final Answer Key PDF",
+        "description": "Official final answer key PDF published by NTA on neet.nta.nic.in.",
+        "url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/07/20260716131467523.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": false,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2026-prov-key",
+        "title": "Provisional Answer Keys for NEET (UG) – 2026 Re-Examination (25 June 2026)",
+        "resource_type": "Provisional Answer Key PDF",
+        "description": "Official provisional answer key notice for NEET (UG) 2026.",
+        "url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/06/20260625208933797.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": false,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2025-final-key",
+        "title": "Final Answer Keys for NEET (UG) – 2025 (Archive)",
+        "resource_type": "Final Answer Key PDF",
+        "description": "Official archived final answer keys for NEET (UG) 2025.",
+        "url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2025/06/2025061450.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": false,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-practice-abhyas",
+        "title": "National Test Abhyas (NTA Official Mock Practice Portal)",
+        "resource_type": "Official Practice Platform",
+        "description": "Official NTA mock test practice platform for NEET (UG) aspirants.",
+        "url": "https://nta.ac.in/Abhyas",
+        "source_host": "nta.ac.in",
+        "is_pyq": false,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-practice-quiz",
+        "title": "NTA Official Practice / Quiz Portal",
+        "resource_type": "Official Practice Portal",
+        "description": "Official NTA student practice portal hosted on nta.ac.in.",
+        "url": "https://nta.ac.in/Quiz",
+        "source_host": "nta.ac.in",
+        "is_pyq": false,
+        "last_verified": "2026-11-10"
+      }
+    ]
+  },
+  "admit_card": {
+    "status_label": "2027 Schedule Awaited | Official Portal: neet.nta.nic.in",
+    "portal_url": "https://neet.nta.nic.in/",
+    "steps": [
+      "Visit https://neet.nta.nic.in/ when the City Intimation Slip and e-Admit Card download windows open.",
+      "Sign in with your Application Number, Date of Birth, and Security Pin.",
+      "Print the Admit Card (with postcard-size photograph affixed as instructed) and check reporting time and dress-code guidelines."
+    ],
+    "related_notices": [
+      {
+        "id": "neet26-omr-social-warning",
+        "title": "Claims regarding OMR answer sheets of NEET (UG) 2026 being circulated on social media",
+        "date": "20 Jul 2026",
+        "cycle": "2026",
+        "category": "Advisory",
+        "summary": "NTA public clarification refuting fabricated OMR claims circulated on social media.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/07/20260720623209264.pdf",
+        "source_host": "neet.nta.nic.in"
+      },
+      {
+        "id": "neet26-fake-docs-notice",
+        "title": "Notice on Fake, Altered, or AI-Generated NEET (UG) 2026 Documents",
+        "date": "20 Jul 2026",
+        "cycle": "2026",
+        "category": "Advisory",
+        "summary": "Warning against altered or AI-generated scorecards/OMR documents; advises verification solely through neet.nta.nic.in.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/07/202607201141028453.pdf",
+        "source_host": "neet.nta.nic.in"
+      },
+      {
+        "id": "neet26-apply-notice",
+        "title": "Inviting Online Application Form for National Eligibility-cum-Entrance Test [NEET (UG)] – 2026 – Reg.",
+        "date": "08 Feb 2026",
+        "cycle": "2026",
+        "category": "Application",
+        "summary": "Official public notice opening NEET (UG) 2026 online registration (08 Feb – 08 Mar 2026) for exam on 03 May 2026.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/02/20260208399987696.pdf",
+        "source_host": "neet.nta.nic.in"
+      }
+    ]
+  },
+  "answer_key": {
+    "status_label": "2026 OMR & Final Keys Published | 2027 Awaited",
+    "portal_url": "https://neet.nta.nic.in/",
+    "challenge_rules": "NTA displays scanned OMR Answer Sheets, Recorded Responses, and Provisional Answer Keys on neet.nta.nic.in for candidate verification and online challenge before releasing Final Answer Keys.",
+    "key_pdfs": [
+      {
+        "id": "neet-2026-final-key",
+        "title": "Final Answer Keys for NEET (UG) – 2026 Re-Examination (16 July 2026)",
+        "resource_type": "Final Answer Key PDF",
+        "description": "Official final answer key PDF published by NTA on neet.nta.nic.in.",
+        "url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/07/20260716131467523.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": false,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2026-prov-key",
+        "title": "Provisional Answer Keys for NEET (UG) – 2026 Re-Examination (25 June 2026)",
+        "resource_type": "Provisional Answer Key PDF",
+        "description": "Official provisional answer key notice for NEET (UG) 2026.",
+        "url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/06/20260625208933797.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": false,
+        "last_verified": "2026-11-10"
+      },
+      {
+        "id": "neet-2025-final-key",
+        "title": "Final Answer Keys for NEET (UG) – 2025 (Archive)",
+        "resource_type": "Final Answer Key PDF",
+        "description": "Official archived final answer keys for NEET (UG) 2025.",
+        "url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2025/06/2025061450.pdf",
+        "source_host": "neet.nta.nic.in",
+        "is_pyq": false,
+        "last_verified": "2026-11-10"
+      }
+    ],
+    "related_notices": [
+      {
+        "id": "neet26-final-key-notice",
+        "title": "Final Answer Keys for NEET (UG) – 2026 Re-Examination",
+        "date": "16 Jul 2026",
+        "cycle": "2026",
+        "category": "Answer Key",
+        "summary": "Official final answer keys used for compiling NEET (UG) 2026 results.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/07/20260716131467523.pdf",
+        "source_host": "neet.nta.nic.in"
+      },
+      {
+        "id": "neet26-omr-display",
+        "title": "Display of Scanned Images of OMR Answer Sheet and Recorded Response for NEET (UG) – 2026 – Reg.",
+        "date": "13 Jul 2026",
+        "cycle": "2026",
+        "category": "Answer Key",
+        "summary": "Notice regarding display of scanned OMR answer sheets and recorded responses.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/07/20260713497007800.pdf",
+        "source_host": "neet.nta.nic.in"
+      },
+      {
+        "id": "neet26-prov-key-notice",
+        "title": "Provisional Answer Keys for NEET(UG) – 2026 Re-Examination",
+        "date": "25 Jun 2026",
+        "cycle": "2026",
+        "category": "Answer Key",
+        "summary": "Official provisional answer keys displayed on neet.nta.nic.in.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/06/20260625208933797.pdf",
+        "source_host": "neet.nta.nic.in"
+      }
+    ]
+  },
+  "result": {
+    "status_label": "2026 Result Declared (16 Jul 2026 — 11.21 Lakh Qualified) | 2027 Awaited",
+    "portal_url": "https://neet.nta.nic.in/",
+    "rules": [
+      "NTA prepares the All India Rank (AIR) merit list based on marks obtained in NEET (UG).",
+      "No re-evaluation or re-checking of OMR answer sheets is permitted once Final Answer Keys are finalized.",
+      "NTA forwards the All India Rank data to DGHS (MCC), NCISM/NCH (AACCC, Ministry of Ayush), and State Counselling Authorities."
+    ],
+    "related_notices": [
+      {
+        "id": "neet26-key-data",
+        "title": "KEY DATA POINTS OF NEET (UG) OVER YEARS",
+        "date": "16 Jul 2026",
+        "cycle": "2026",
+        "category": "Result",
+        "summary": "Multi-year statistical summary of NEET (UG) registrations, attendance, and qualification trends.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/07/202607161539405935.pdf",
+        "source_host": "neet.nta.nic.in"
+      },
+      {
+        "id": "neet26-toppers",
+        "title": "List of Toppers of NEET(UG) – 2026 (Held on 21st June, 2026)",
+        "date": "16 Jul 2026",
+        "cycle": "2026",
+        "category": "Result",
+        "summary": "Official list of NEET (UG) 2026 top-scoring candidates released by NTA.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/07/20260716180970800.pdf",
+        "source_host": "neet.nta.nic.in"
+      },
+      {
+        "id": "neet26-result-pr",
+        "title": "Press Release for NEET (UG) – 2026 Results (11.21 Lakh Candidates Qualify)",
+        "date": "16 Jul 2026",
+        "cycle": "2026",
+        "category": "Result",
+        "summary": "NTA declares NEET (UG) 2026 results; 11.21 lakh candidates qualify (>58% women) for medical/dental/AYUSH counselling.",
+        "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/07/20260716477215762.pdf",
+        "source_host": "neet.nta.nic.in"
+      }
+    ]
+  },
+  "counselling": {
+    "overview": "NTA conducts only the NEET (UG) examination and declares the All India Rank. Seat allocation and admissions are conducted separately by MCC (DGHS, MoH&FW), AACCC (Ministry of Ayush), and respective State/UT Counselling Authorities.",
+    "authorities": [
+      {
+        "name": "Medical Counselling Committee (MCC) — DGHS, Ministry of Health & Family Welfare",
+        "scope": "15% All India Quota (AIQ) MBBS/BDS seats in Government Medical/Dental Colleges, 100% MBBS/BDS seats in AIIMS, JIPMER, BHU, AMU, Deemed Universities, ESIC Insured Persons Quota, and B.Sc. (Hons.) Nursing (central/AFMS institutes).",
+        "portal_url": "https://mcc.nic.in/ug-medical-counselling/",
+        "documents": [
+          {
+            "title": "Candidate User Guide — NEET UG Counselling 2026 (56 Pages)",
+            "url": "https://cdnbbsr.s3waas.gov.in/s3e0f7a4d0ef9b84b83b693bbf3feb8e6e/uploads/2026/08/202608061435575744.pdf"
+          },
+          {
+            "title": "List of Medical Assessment Boards (PwBD Disability Certification)",
+            "url": "https://cdnbbsr.s3waas.gov.in/s3e0f7a4d0ef9b84b83b693bbf3feb8e6e/uploads/2026/10/202610051847554726.pdf"
+          },
+          {
+            "title": "MCC Participating Institute Details (NEET UG 2026 Live Directory)",
+            "url": "https://mcc.admissions.nic.in/Applicant/Report/ViewInstituteProfileDynamic.aspx?enc=b3y6S6rqn323+Rrps4aJmWq6uDzwcVyR2D994Iqx3miWKIwOHdAUl7I6zs1LI/bNHBuognKMJMYf4wgTJSa4VQ=="
+          }
+        ]
+      },
+      {
+        "name": "AYUSH Admissions Central Counseling Committee (AACCC) — Ministry of Ayush",
+        "scope": "All India Quota (AIQ) Government, Govt.-Aided, Central Universities, National Institutes, and Deemed University seats for BAMS, BSMS, BUMS, and BHMS.",
+        "portal_url": "https://aaccc.gov.in/",
+        "documents": [
+          {
+            "title": "AACCC UG Counselling Portal (BAMS / BSMS / BUMS / BHMS)",
+            "url": "https://aaccc.gov.in/aacccug/home/homepage"
+          }
+        ]
+      },
+      {
+        "name": "State / UT Counselling Authorities & Regulatory Councils (NMC / DCI)",
+        "scope": "85% State Quota seats in Government Medical/Dental Colleges and State Private Medical/Dental/AYUSH colleges as per respective State/UT domicile and reservation rules.",
+        "portal_url": "https://www.nmc.org.in/",
+        "documents": [
+          {
+            "title": "National Medical Commission (NMC)",
+            "url": "https://www.nmc.org.in/"
+          },
+          {
+            "title": "Dental Council of India (DCI)",
+            "url": "https://dciindia.gov.in/"
+          }
+        ]
+      }
+    ],
+    "quota_breakdown": [
+      {
+        "quota": "15% All India Quota (AIQ)",
+        "authority": "MCC (DGHS) / AACCC (Ministry of Ayush)",
+        "coverage": "15% MBBS/BDS/AYUSH seats in State Government Colleges (all States/UTs)"
+      },
+      {
+        "quota": "100% Central Institutions & Deemed Universities",
+        "authority": "MCC (DGHS) / AACCC",
+        "coverage": "AIIMS, JIPMER, BHU, AMU, Deemed Universities, and Central AYUSH Institutes"
+      },
+      {
+        "quota": "85% State / UT Quota & State Private Seats",
+        "authority": "Respective State DME / Counselling Authority",
+        "coverage": "Remaining 85% Government seats + State Private/Management seats"
+      },
+      {
+        "quota": "Armed Forces Medical College (AFMC), Pune",
+        "authority": "MCC Registration + AFMC Screening",
+        "coverage": "Candidates must register on MCC portal and undergo AFMC screening"
+      }
+    ],
+    "central_reservation": [
+      {
+        "category": "Scheduled Caste (SC)",
+        "percentage": "15%"
+      },
+      {
+        "category": "Scheduled Tribe (ST)",
+        "percentage": "7.5%"
+      },
+      {
+        "category": "OBC – Non-Creamy Layer (Central List)",
+        "percentage": "27%"
+      },
+      {
+        "category": "Economically Weaker Section (GEN-EWS)",
+        "percentage": "10%"
+      },
+      {
+        "category": "Persons with Benchmark Disabilities (PwBD)",
+        "percentage": "5% Horizontal Reservation across each category (with UDID & Medical Board assessment)"
+      }
+    ]
+  },
+  "notifications": [
+    {
+      "id": "neet26-omr-social-warning",
+      "title": "Claims regarding OMR answer sheets of NEET (UG) 2026 being circulated on social media",
+      "date": "20 Jul 2026",
+      "cycle": "2026",
+      "category": "Advisory",
+      "summary": "NTA public clarification refuting fabricated OMR claims circulated on social media.",
+      "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/07/20260720623209264.pdf",
+      "source_host": "neet.nta.nic.in"
+    },
+    {
+      "id": "neet26-fake-docs-notice",
+      "title": "Notice on Fake, Altered, or AI-Generated NEET (UG) 2026 Documents",
+      "date": "20 Jul 2026",
+      "cycle": "2026",
+      "category": "Advisory",
+      "summary": "Warning against altered or AI-generated scorecards/OMR documents; advises verification solely through neet.nta.nic.in.",
+      "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/07/202607201141028453.pdf",
+      "source_host": "neet.nta.nic.in"
+    },
+    {
+      "id": "neet26-key-data",
+      "title": "KEY DATA POINTS OF NEET (UG) OVER YEARS",
+      "date": "16 Jul 2026",
+      "cycle": "2026",
+      "category": "Result",
+      "summary": "Multi-year statistical summary of NEET (UG) registrations, attendance, and qualification trends.",
+      "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/07/202607161539405935.pdf",
+      "source_host": "neet.nta.nic.in"
+    },
+    {
+      "id": "neet26-toppers",
+      "title": "List of Toppers of NEET(UG) – 2026 (Held on 21st June, 2026)",
+      "date": "16 Jul 2026",
+      "cycle": "2026",
+      "category": "Result",
+      "summary": "Official list of NEET (UG) 2026 top-scoring candidates released by NTA.",
+      "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/07/20260716180970800.pdf",
+      "source_host": "neet.nta.nic.in"
+    },
+    {
+      "id": "neet26-result-pr",
+      "title": "Press Release for NEET (UG) – 2026 Results (11.21 Lakh Candidates Qualify)",
+      "date": "16 Jul 2026",
+      "cycle": "2026",
+      "category": "Result",
+      "summary": "NTA declares NEET (UG) 2026 results; 11.21 lakh candidates qualify (>58% women) for medical/dental/AYUSH counselling.",
+      "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/07/20260716477215762.pdf",
+      "source_host": "neet.nta.nic.in"
+    },
+    {
+      "id": "neet26-final-key-notice",
+      "title": "Final Answer Keys for NEET (UG) – 2026 Re-Examination",
+      "date": "16 Jul 2026",
+      "cycle": "2026",
+      "category": "Answer Key",
+      "summary": "Official final answer keys used for compiling NEET (UG) 2026 results.",
+      "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/07/20260716131467523.pdf",
+      "source_host": "neet.nta.nic.in"
+    },
+    {
+      "id": "neet26-omr-display",
+      "title": "Display of Scanned Images of OMR Answer Sheet and Recorded Response for NEET (UG) – 2026 – Reg.",
+      "date": "13 Jul 2026",
+      "cycle": "2026",
+      "category": "Answer Key",
+      "summary": "Notice regarding display of scanned OMR answer sheets and recorded responses.",
+      "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/07/20260713497007800.pdf",
+      "source_host": "neet.nta.nic.in"
+    },
+    {
+      "id": "neet26-prov-key-notice",
+      "title": "Provisional Answer Keys for NEET(UG) – 2026 Re-Examination",
+      "date": "25 Jun 2026",
+      "cycle": "2026",
+      "category": "Answer Key",
+      "summary": "Official provisional answer keys displayed on neet.nta.nic.in.",
+      "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/06/20260625208933797.pdf",
+      "source_host": "neet.nta.nic.in"
+    },
+    {
+      "id": "neet26-apply-notice",
+      "title": "Inviting Online Application Form for National Eligibility-cum-Entrance Test [NEET (UG)] – 2026 – Reg.",
+      "date": "08 Feb 2026",
+      "cycle": "2026",
+      "category": "Application",
+      "summary": "Official public notice opening NEET (UG) 2026 online registration (08 Feb – 08 Mar 2026) for exam on 03 May 2026.",
+      "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/02/20260208399987696.pdf",
+      "source_host": "neet.nta.nic.in"
+    },
+    {
+      "id": "neet26-nmc-syllabus",
+      "title": "NMC UGMEB Public Notice: Updated Syllabus for NEET (UG) – 2026 (Dated 22.12.2025)",
+      "date": "08 Jan 2026",
+      "cycle": "2026",
+      "category": "Syllabus",
+      "summary": "Under Graduate Medical Education Board (NMC) circular notifying the 18-page Physics, Chemistry, and Biology syllabus for NEET (UG) 2026.",
+      "pdf_url": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/01/202601081066816297.pdf",
+      "source_host": "neet.nta.nic.in / nmc.org.in"
+    }
+  ]
+}

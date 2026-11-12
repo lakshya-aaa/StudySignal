@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block title %}NEET UG Medical Counselling Guide (MCC 15% AIQ, AACCC AYUSH &amp; 85% State Quota) | StudySignal{% endblock %}
+
+{% block meta_description %}{{ exam.counselling.overview }} Verified official MCC UG Medical Counselling guides, PwBD Medical Assessment Boards, AACCC AYUSH portal, and reservation breakdown.{% endblock %}
+
+{% block content %}
+{% set active_tab = 'counselling' %}
+{% set page_label = 'MCC / AACCC Counselling' %}
+{% set page_heading = 'NEET (UG) Medical, Dental &amp; AYUSH Counselling' %}
+{% set page_intro = exam.counselling.overview %}
+{% include 'exams/_subnav.html' %}
+
+<div class="exam-page-body">
+  <section class="section exam-section-tight">
+    <div class="container">
+      <!-- Counselling Authorities & Official Guides -->
+      <div class="exam-panel-card">
+        <h2>Official Counselling Authorities &amp; Verification Portals</h2>
+        <div class="exam-authorities-stack">
+          {% for auth in exam.counselling.authorities %}
+          <article class="exam-subject-block">
+            <div class="exam-subject-block-head">
+              <div>
+                <h3>{{ auth.name }}</h3>
+                <p class="exam-muted-line">{{ auth.scope }}</p>
+              </div>
+              <a href="{{ auth.portal_url }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Official Website ↗</a>
+            </div>
+            {% if auth.documents %}
+            <div class="exam-action-row" style="margin-top: 0.75rem;">
+              {% for doc in auth.documents %}
+              <a href="{{ doc.url }}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">{{ doc.title }} ↗</a>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+
+      <!-- Seat Quota Distribution & Reservation -->
+      <div class="exam-two-col">
+        <div class="exam-panel-card">
+          <h2>AIQ, Central, AFMC &amp; State Quota Breakdown</h2>
+          <div class="exam-table-wrap">
+            <table class="exam-table">
+              <thead>
+                <tr>
+                  <th>Seat Quota</th>
+                  <th>Counselling Authority</th>
+                  <th>Coverage</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for q in exam.counselling.quota_breakdown %}
+                <tr>
+                  <td><strong>{{ q.quota }}</strong></td>
+                  <td>{{ q.authority }}</td>
+                  <td>{{ q.coverage }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="exam-panel-card">
+          <h2>Central Quota Reservation Policy (15% AIQ &amp; Central Institutions)</h2>
+          <div class="exam-table-wrap">
+            <table class="exam-table">
+              <thead>
+                <tr>
+                  <th>Category</th>
+                  <th>Reservation Quota</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for cr in exam.counselling.central_reservation %}
+                <tr>
+                  <td><strong>{{ cr.category }}</strong></td>
+                  <td><span class="badge-status-active">{{ cr.percentage }}</span></td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}

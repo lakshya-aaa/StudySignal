@@ -8,12 +8,12 @@ import os
 class Config:
     # Site Identity
     SITE_NAME = "StudySignal"
-    SITE_TAGLINE = "Independent Multi-Board Education Information Portal"
+    SITE_TAGLINE = "Independent Multi-Board & Competitive Exam Information Portal"
     SITE_DESCRIPTION = (
-        "StudySignal provides accurate, verified Class 10 and 12 curriculum, "
-        "syllabus documents, official date sheets, sample papers, PYQs, circulars, and "
-        "academic notifications across CBSE, UP Board (UPMSP), CISCE (ICSE/ISC), "
-        "Bihar Board (BSEB), and Maharashtra Board (MSBSHSE)."
+        "StudySignal provides accurate, verified Class 10 and 12 curriculum, syllabus documents, "
+        "official date sheets, sample papers, PYQs, circulars, and notifications across CBSE, "
+        "UP Board (UPMSP), CISCE (ICSE/ISC), Bihar Board (BSEB), and Maharashtra Board (MSBSHSE), "
+        "plus dedicated official portals for JEE Main, JEE Advanced, NEET UG, and CUET UG."
     )
     SECRET_KEY = os.environ.get("SECRET_KEY", "studysignal-default-dev-key")
     PRODUCTION_BASE_URL = os.environ.get("PRODUCTION_BASE_URL", "https://exampulse-india.onrender.com")
@@ -22,8 +22,9 @@ class Config:
     # Social Sharing Metadata (Representing full educational platform scope)
     DEFAULT_OG_IMAGE = f"{PRODUCTION_BASE_URL}/static/images/og-preview.png"
     DEFAULT_OG_IMAGE_ALT = (
-        "StudySignal - Independent Educational Information Portal for CBSE, UP Board, "
-        "CISCE, Bihar Board (BSEB), and Maharashtra Board (MSBSHSE) Class 10 & 12 Curriculum, Date Sheets, and Official Notices"
+        "StudySignal - Independent Educational Information Portal for CBSE Class 10 (Secondary) and "
+        "Class 12 (Senior Secondary), UP Board, CISCE, Bihar Board (BSEB), Maharashtra Board (MSBSHSE) "
+        "and National Competitive Exams (JEE Main, JEE Advanced, NEET UG, CUET UG)"
     )
     
     # Academic Year Settings (Current: Session 2026-27)
@@ -36,8 +37,10 @@ class Config:
         "students, parents and educators access academic resources, examination updates and educational "
         "information. StudySignal is not affiliated with, endorsed by, or officially connected to CBSE, "
         "UPMSP, CISCE, ICSE, ISC, BSEB (Bihar School Examination Board), MSBSHSE (Maharashtra State Board), "
-        "SCERT Maharashtra, any other education board, examination authority, Ministry of Education, "
-        "or Government of India. Always verify important information through the respective official websites."
+        "SCERT Maharashtra, NTA (National Testing Agency), JEE Main, JEE Advanced / JAB / IITs, "
+        "NEET UG, CUET UG, JoSAA, CSAB, NMC, DCI, MCC, AACCC, any education board, examination authority, "
+        "Ministry of Education, or Government of India. Always verify important information through the "
+        "respective official websites."
     )
     
     # Verified Official Board URLs
@@ -77,7 +80,52 @@ class Config:
         "scert_maha_main": "https://www.maa.ac.in",
         "scert_maha_qbank": "https://www.maa.ac.in/index.php?tcf=questionbank",
         "scert_maha_curriculum": "https://www.maa.ac.in/index.php?tcf=curriculum",
-        "ebalbharati": "https://books.ebalbharati.in/ebook.aspx"
+        "ebalbharati": "https://books.ebalbharati.in/ebook.aspx",
+        # National Testing Agency (NTA) & Shared Official Prep Portals
+        "nta_main": "https://nta.ac.in/",
+        "nta_abhyas": "https://nta.ac.in/Abhyas",
+        "nta_quiz": "https://nta.ac.in/Quiz",
+        "nta_lectures": "https://nta.ac.in/LecturesContent",
+        "nta_downloads": "https://nta.ac.in/Downloads",
+        "nta_calendar_revised": "https://nta.ac.in/Download/Notice/ExamcalendarRevised.pdf",
+        # JEE Main (NTA)
+        "jeemain_main": "https://jeemain.nta.nic.in/",
+        "jeemain_syllabus": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/10/20261024683680768.pdf",
+        "jeemain_bulletin": "https://cdnbbsr.s3waas.gov.in/s3f8e59f4b2fe7c5705bf878bbd494ccdf/uploads/2026/10/202610241890224107.pdf",
+        "jeemain_notices": "https://jeemain.nta.nic.in/public-notices/",
+        "jeemain_archive_2026": "https://jeemain.nta.nic.in/2026-archive/",
+        "jeemain_candidate_2026": "https://jeemain.nta.nic.in/candidate-activity-2026/",
+        "jeemain_apply_2027": "https://jeemain.nta.nic.in/online-application-form-for-jee-main-2027-session-1/",
+        # JEE Advanced (JAB / Organizing Institute: IIT Roorkee 2026) & JoSAA / CSAB
+        "jeeadv_main": "https://jeeadv.ac.in/",
+        "jeeadv_bulletin": "https://jeeadv.ac.in/documents/IBEnglish_2026.pdf",
+        "jeeadv_archive": "https://jeeadv.ac.in/archive.html",
+        "jeeadv_resources": "https://jeeadv.ac.in/resources.html",
+        "jeeadv_eligibility": "https://jeeadv.ac.in/eligibility.html",
+        "jeeadv_admission": "https://jeeadv.ac.in/admission_criteria.html",
+        "jeeadv_foreign": "https://jeeadv.ac.in/foreign.html",
+        "jeeadv_faq": "https://jeeadv.ac.in/faq.html",
+        "jeeadv_cportal": "https://cportal.jeeadv.ac.in/",
+        "josaa_main": "https://josaa.nic.in/",
+        "josaa_login": "https://josaa.admissions.nic.in/applicant/root/candidatelogin.aspx",
+        "csab_main": "https://csab.nic.in/",
+        # NEET UG (NTA / NMC / DCI / MCC / AACCC)
+        "neet_main": "https://neet.nta.nic.in/",
+        "neet_syllabus_2026": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/01/202601081066816297.pdf",
+        "neet_bulletin_2026": "https://cdnbbsr.s3waas.gov.in/s37bc1ec1d9c3426357e69acd5bf320061/uploads/2026/02/202602231394640855.pdf",
+        "neet_notices": "https://neet.nta.nic.in/public-notices/",
+        "neet_archive": "https://neet.nta.nic.in/archive/",
+        "nmc_main": "https://www.nmc.org.in/",
+        "dci_main": "https://dciindia.gov.in/",
+        "mcc_ug": "https://mcc.nic.in/ug-medical-counselling/",
+        "aaccc_main": "https://aaccc.gov.in/",
+        # CUET UG (NTA)
+        "cuet_main": "https://cuet.nta.nic.in/",
+        "cuet_syllabus_2026": "https://cuet.nta.nic.in/cuetug-2026-syllabus/",
+        "cuet_bulletin_2026": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/202601031633478370.pdf",
+        "cuet_faq_2026": "https://cdnbbsr.s3waas.gov.in/s3d1a21da7bca4abff8b0b61b87597de73/uploads/2026/01/2026011697237004.pdf",
+        "cuet_universities": "https://cuet.nta.nic.in/participating-universities/",
+        "cuet_notices": "https://cuet.nta.nic.in/document-category/public-notice/"
     }
 
     # Reusable & Configurable Ad Placements

@@ -1448,7 +1448,7 @@ class StudySignalTestCase(unittest.TestCase):
     # -------------------------------------------------------------
 
     def test_boards_hub_route_and_contents(self):
-        """Verify /boards directory displays active CBSE, in-development ICSE, and coming soon items without IBPS"""
+        """Verify /boards directory displays 5 active school boards and 4 active independent competitive exam portals"""
         res = self.client.get("/boards")
         self.assertEqual(res.status_code, 200)
         html = res.data.decode("utf-8")
@@ -1458,39 +1458,43 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn("School Education Boards", html)
         self.assertIn("National Competitive Examinations", html)
 
-        # 2. CBSE is Active and fully clickable
-        self.assertIn("CBSE", html)
+        # 2. All 5 School Boards are Active and clickable
+        for name, href in [
+            ("CBSE", 'href="/cbse"'),
+            ("ICSE", 'href="/icse"'),
+            ("UP Board", 'href="/up-board"'),
+            ("Bihar Board (BSEB)", 'href="/bihar-board"'),
+            ("Maharashtra Board (MSBSHSE)", 'href="/maharashtra-board"'),
+        ]:
+            self.assertIn(name, html)
+            self.assertIn(href, html)
+
         self.assertIn("Central Board of Secondary Education", html)
-        self.assertIn("Active", html)
+        self.assertIn("Council for the Indian School Certificate Examinations", html)
+        self.assertIn("Uttar Pradesh Madhyamik Shiksha Parishad", html)
+        self.assertIn("Bihar School Examination Board", html)
+        self.assertIn("Maharashtra State Board", html)
         self.assertIn('href="/cbse/class-10"', html)
         self.assertIn('href="/cbse/class-12"', html)
         self.assertIn('href="/cbse/pyq"', html)
 
-        # 3. ICSE is In Development with link to /icse
-        self.assertIn("ICSE", html)
-        self.assertIn("Council for the Indian School Certificate Examinations", html)
-        self.assertIn("In Development", html)
-        self.assertIn('href="/icse"', html)
+        # 3. All 4 Competitive Examinations are Active and Strictly Separate
+        for name, full_name, href in [
+            ("JEE Main", "Joint Entrance Examination (Main)", 'href="/jee-main"'),
+            ("JEE Advanced", "Joint Entrance Examination (Advanced)", 'href="/jee-advanced"'),
+            ("NEET UG", "National Eligibility-cum-Entrance Test [NEET (UG)]", 'href="/neet-ug"'),
+            ("CUET UG", "Common University Entrance Test [CUET (UG)]", 'href="/cuet-ug"'),
+        ]:
+            self.assertIn(name, html)
+            self.assertIn(full_name, html)
+            self.assertIn(href, html)
 
-        # 4. State Boards are Coming Soon as non-clickable status cards
-        self.assertIn("UP Board", html)
-        self.assertIn("Uttar Pradesh Madhyamik Shiksha Parishad", html)
-        self.assertIn("Bihar Board (BSEB)", html)
-        self.assertIn("Bihar School Examination Board", html)
-        self.assertIn("Maharashtra Board (MSBSHSE)", html)
-        self.assertIn("Maharashtra State Board", html)
-        self.assertIn("Coming Soon", html)
-        self.assertIn("btn-disabled-soon", html)
+        self.assertNotIn("Coming Soon", html)
+        self.assertNotIn("btn-disabled-soon", html)
+        self.assertNotIn("JEE (Main &amp; Advanced)", html)
+        self.assertNotIn("JEE (Main & Advanced)", html)
 
-        # 5. Competitive Exams are Coming Soon
-        self.assertIn("JEE", html)
-        self.assertIn("Joint Entrance Examination", html)
-        self.assertIn("NEET", html)
-        self.assertIn("National Eligibility cum Entrance Test", html)
-        self.assertIn("CUET", html)
-        self.assertIn("Common University Entrance Test", html)
-
-        # 6. Must NOT include IBPS
+        # 4. Must NOT include IBPS
         self.assertNotIn("IBPS", html)
         self.assertNotIn("Banking Personnel", html)
 
@@ -1760,8 +1764,7 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn("/icse/syllabus/icse-10-mathematics-2027", xml)
 
     def test_navigation_boards_and_exams_selector(self):
-        """Verify navigation bar dropdown, mobile drawer, and homepage selector section"""
-        # 1. Header Desktop Nav has Boards & Exams dropdown
+        """Verify navigation bar dropdown, mobile drawer, and homepage selector section for 5 boards + 4 exams"""
         res_home = self.client.get("/")
         self.assertEqual(res_home.status_code, 200)
         html_home = res_home.data.decode("utf-8")
@@ -1770,19 +1773,26 @@ class StudySignalTestCase(unittest.TestCase):
         self.assertIn("Boards &amp; Exams", html_home)
         self.assertIn('href="/icse"', html_home)
 
-        # 2. Homepage selector section exists with boards & competitive exams
+        # Homepage selector section exists with 5 boards & 4 independent active competitive exams
         self.assertIn('id="boards-exams"', html_home)
         self.assertIn("Explore Boards &amp; Competitive Examinations", html_home)
         self.assertIn("School Education Boards", html_home)
         self.assertIn("Competitive Examinations", html_home)
-        self.assertIn("JEE (Main &amp; Advanced)", html_home)
-        self.assertIn("NEET (UG)", html_home)
-        self.assertIn("CUET (UG)", html_home)
-        self.assertNotIn("IBPS", html_home)
+        for slug, label in [
+            ("/jee-main", "JEE Main"),
+            ("/jee-advanced", "JEE Advanced"),
+            ("/neet-ug", "NEET UG"),
+            ("/cuet-ug", "CUET UG"),
+        ]:
+            self.assertIn(f'href="{slug}"', html_home)
+            self.assertIn(label, html_home)
 
-        # 3. Mobile drawer contains Boards & Exams Hub and ICSE
-        self.assertIn('href="/boards"', html_home)
-        self.assertIn('href="/icse"', html_home)
+        self.assertIn("/static/images/exams/nta-logo.png", html_home)
+        self.assertIn("/static/images/exams/jee-adv-logo.png", html_home)
+        self.assertNotIn("JEE (Main &amp; Advanced)", html_home)
+        self.assertNotIn("JEE (Main & Advanced)", html_home)
+        self.assertNotIn("Coming Soon", html_home)
+        self.assertNotIn("IBPS", html_home)
 
     def test_sitemap_includes_boards_and_icse(self):
         """Verify /sitemap.xml lists /boards and /icse canonical URLs"""
@@ -2898,6 +2908,275 @@ class StudySignalTestCase(unittest.TestCase):
         for route in new_routes:
             self.assertIn(f"<loc>https://exampulse-india.onrender.com{route}</loc>", xml, f"Missing {route} in sitemap")
         self.assertNotIn("/bihar-board/pyq", xml)
+
+    # =========================================================================
+    # National Competitive Examinations Integration Tests (46 Canonical Routes)
+    # =========================================================================
+
+    def test_competitive_exams_46_canonical_routes_and_slashes(self):
+        """Verify all 46 canonical competitive exam routes return 200 OK, canonical meta, logos, and 301 slash redirects."""
+        exams = ["jee-main", "jee-advanced", "neet-ug", "cuet-ug"]
+        common_subs = [
+            "",
+            "/syllabus",
+            "/exam-pattern",
+            "/eligibility",
+            "/important-dates",
+            "/information-bulletin",
+            "/pyq",
+            "/admit-card",
+            "/answer-key",
+            "/result",
+            "/notifications",
+        ]
+        all_46_routes = [f"/{slug}{sub}" for slug in exams for sub in common_subs] + [
+            "/neet-ug/counselling",
+            "/cuet-ug/universities",
+        ]
+        self.assertEqual(len(all_46_routes), 46)
+
+        for route in all_46_routes:
+            res = self.client.get(route)
+            self.assertEqual(res.status_code, 200, f"Route {route} returned {res.status_code}")
+            html = res.data.decode("utf-8")
+            self.assertIn(f'<link rel="canonical" href="https://exampulse-india.onrender.com{route}">', html, f"Bad canonical on {route}")
+            self.assertIn('<meta property="og:image" content="https://exampulse-india.onrender.com/static/images/og-preview.png">', html)
+            self.assertIn("INDEPENDENT PORTAL NOTICE", html)
+            self.assertIn("2026-11-10", html)
+            self.assertNotIn('href=""', html, f"Empty href found on {route}")
+            self.assertNotIn("JEE (Main &amp; Advanced)", html, f"Merged JEE string on {route}")
+            self.assertNotIn("Coming Soon", html, f"Coming Soon leaked on {route}")
+            if route.startswith("/jee-advanced"):
+                self.assertIn("/static/images/exams/jee-adv-logo.png", html)
+            else:
+                self.assertIn("/static/images/exams/nta-logo.png", html)
+
+        # Representative 301 trailing-slash canonical redirects
+        for slash_route in ["/jee-main/", "/jee-advanced/pyq/", "/neet-ug/counselling/", "/cuet-ug/universities/"]:
+            res_redir = self.client.get(slash_route)
+            self.assertEqual(res_redir.status_code, 301)
+            self.assertTrue(res_redir.headers.get("Location", "").endswith(slash_route.rstrip("/")))
+
+    def test_competitive_exams_json_integrity_and_pyq_separation(self):
+        """Verify data integrity and strict is_pyq separation across jee_main, jee_advanced, neet_ug, and cuet_ug JSONs."""
+        data_dir = os.path.join(app.root_path, "data")
+
+        # 1. JEE Main
+        with open(os.path.join(data_dir, "jee_main.json"), "r", encoding="utf-8") as f:
+            jm = json.load(f)
+        self.assertEqual(jm["last_verified"], "2026-11-10")
+        self.assertTrue(jm["pyq"]["pyq_available_officially"])
+        self.assertEqual(len(jm["pyq"]["papers"]), 9)
+        self.assertEqual(len(jm["notifications"]), 22)
+        self.assertTrue(all(p.get("is_pyq") is True for p in jm["pyq"]["papers"]))
+        self.assertTrue(all(p.get("is_pyq") is False for p in jm["pyq"]["official_practice_and_keys"]))
+
+        # 2. JEE Advanced
+        with open(os.path.join(data_dir, "jee_advanced.json"), "r", encoding="utf-8") as f:
+            ja = json.load(f)
+        self.assertEqual(ja["last_verified"], "2026-11-10")
+        self.assertTrue(ja["pyq"]["pyq_available_officially"])
+        self.assertEqual(len(ja["pyq"]["papers"]), 66)
+        self.assertEqual(len(ja["notifications"]), 6)
+        self.assertTrue(all(p.get("is_pyq") is True for p in ja["pyq"]["papers"]))
+        self.assertTrue(all(p.get("is_pyq") is False for p in ja["pyq"]["official_practice_and_keys"]))
+        self.assertEqual(len(ja["josaa_and_iits"]["zones"]), 7)
+        self.assertEqual(sum(len(z["institutes"]) for z in ja["josaa_and_iits"]["zones"]), 23)
+
+        # 3. NEET UG
+        with open(os.path.join(data_dir, "neet_ug.json"), "r", encoding="utf-8") as f:
+            nu = json.load(f)
+        self.assertEqual(nu["last_verified"], "2026-11-10")
+        self.assertTrue(nu["pyq"]["pyq_available_officially"])
+        self.assertEqual(len(nu["pyq"]["papers"]), 75)
+        self.assertEqual(len(nu["notifications"]), 10)
+        self.assertTrue(all(p.get("is_pyq") is True for p in nu["pyq"]["papers"]))
+        self.assertTrue(all(p.get("is_pyq") is False for p in nu["pyq"]["official_practice_and_keys"]))
+        self.assertEqual(len(nu["eligibility"]["qualifying_codes"]), 7)
+
+        # 4. CUET UG
+        with open(os.path.join(data_dir, "cuet_ug.json"), "r", encoding="utf-8") as f:
+            cu = json.load(f)
+        self.assertEqual(cu["last_verified"], "2026-11-10")
+        self.assertFalse(cu["pyq"]["pyq_available_officially"])
+        self.assertEqual(len(cu["pyq"]["papers"]), 0)
+        self.assertTrue(all(p.get("is_pyq") is False for p in cu["pyq"]["official_practice_and_keys"]))
+        self.assertEqual(cu["syllabus"]["counts"]["total"], 37)
+        self.assertEqual(len(cu["syllabus"]["subjects"]), 37)
+        self.assertEqual(cu["universities"]["counts"]["total"], 244)
+        self.assertEqual(len(cu["universities"]["list"]), 244)
+        self.assertEqual(len(cu["notifications"]), 10)
+        gitam = [u for u in cu["universities"]["list"] if u.get("name") == "GITAM (VISHAKHAPATNAM)"]
+        self.assertEqual(len(gitam), 1)
+        self.assertIsNone(gitam[0]["pdf_url"])
+        self.assertEqual(gitam[0]["pdf_status"], "upstream_malformed_url")
+        self.assertEqual(gitam[0]["fallback_url"], "https://cuet.nta.nic.in/participating-universities/deemed-universities/")
+
+    def test_competitive_exams_specialized_pages_content(self):
+        """Verify domain-accurate content across JEE Main, JEE Advanced, NEET UG, and CUET UG portals."""
+        # JEE Main hub & dates
+        res_jm = self.client.get("/jee-main")
+        html_jm = res_jm.data.decode("utf-8")
+        self.assertIn("Jan 20–24 &amp; 28, 2027", html_jm)
+        self.assertIn("2027 Session 1 Active", html_jm)
+
+        res_jm_dates = self.client.get("/jee-main/important-dates")
+        html_jm_dates = res_jm_dates.data.decode("utf-8")
+        self.assertIn("2027 Session 2 (Apr)", html_jm_dates)
+        self.assertIn("20, 21, 22, 23, 24 &amp; 28 January 2027", html_jm_dates)
+
+        res_jm_pyq = self.client.get("/jee-main/pyq")
+        html_jm_pyq = res_jm_pyq.data.decode("utf-8")
+        self.assertIn("9 PDFs", html_jm_pyq)
+        self.assertIn("is_pyq: True", html_jm_pyq)
+        self.assertIn("is_pyq: False", html_jm_pyq)
+
+        # JEE Advanced hub, eligibility, PYQ & IITs
+        res_ja = self.client.get("/jee-advanced")
+        html_ja = res_ja.data.decode("utf-8")
+        self.assertIn("IIT Bombay", html_ja)
+        self.assertIn("West Zone", html_ja)
+
+        res_ja_elig = self.client.get("/jee-advanced/eligibility")
+        html_ja_elig = res_ja_elig.data.decode("utf-8")
+        self.assertIn("Criterion A1", html_ja_elig)
+        self.assertIn("Criterion A5", html_ja_elig)
+        self.assertIn("75%", html_ja_elig)
+        self.assertIn("Top 20 Percentile", html_ja_elig)
+
+        res_ja_pyq = self.client.get("/jee-advanced/pyq")
+        self.assertIn("66 PDFs", res_ja_pyq.data.decode("utf-8"))
+
+        res_ja_res = self.client.get("/jee-advanced/result")
+        html_ja_res = res_ja_res.data.decode("utf-8")
+        self.assertIn("IIT Roorkee", html_ja_res)
+        self.assertIn("josaa.nic.in", html_ja_res)
+
+        # NEET UG syllabus, PYQ & counselling
+        res_nu_syl = self.client.get("/neet-ug/syllabus")
+        html_nu_syl = res_nu_syl.data.decode("utf-8")
+        self.assertIn("NMC UGMEB", html_nu_syl)
+        self.assertIn("Botany", html_nu_syl)
+
+        res_nu_pyq = self.client.get("/neet-ug/pyq")
+        self.assertIn("75 PDFs", res_nu_pyq.data.decode("utf-8"))
+
+        res_nu_couns = self.client.get("/neet-ug/counselling")
+        html_nu_couns = res_nu_couns.data.decode("utf-8")
+        self.assertIn("Medical Counselling Committee (MCC)", html_nu_couns)
+        self.assertIn("AACCC", html_nu_couns)
+        self.assertIn("56 Pages", html_nu_couns)
+        self.assertIn("85% State Quota", html_nu_couns)
+
+        # CUET UG 37 syllabi, 244 universities (with GITAM fallback) & PYQ status
+        res_cu_syl = self.client.get("/cuet-ug/syllabus")
+        html_cu_syl = res_cu_syl.data.decode("utf-8")
+        self.assertIn("Code 101", html_cu_syl)
+        self.assertIn("Code 306", html_cu_syl)
+        self.assertIn("Code 501", html_cu_syl)
+        self.assertIn("All Subjects (37)", html_cu_syl)
+
+        res_cu_uni = self.client.get("/cuet-ug/universities")
+        html_cu_uni = res_cu_uni.data.decode("utf-8")
+        self.assertIn("244", html_cu_uni)
+        self.assertIn("UNIVERSITY OF DELHI", html_cu_uni)
+        self.assertIn("BANARAS HINDU UNIVERSITY", html_cu_uni)
+        self.assertIn("GITAM", html_cu_uni)
+        self.assertIn("Upstream Link Advisory", html_cu_uni)
+
+        res_cu_pyq = self.client.get("/cuet-ug/pyq")
+        html_cu_pyq = res_cu_pyq.data.decode("utf-8")
+        self.assertIn("No Standalone Official PYQ Booklets Hosted", html_cu_pyq)
+        self.assertIn("Not Past Question Papers", html_cu_pyq)
+
+    def test_competitive_exams_search_and_sitemap(self):
+        """Verify unified /search filtering (HTML & JSON) and /sitemap.xml coverage for all 4 competitive exams."""
+        # /search HTML renders separate optgroup options
+        res_s = self.client.get("/search")
+        self.assertEqual(res_s.status_code, 200)
+        html_s = res_s.data.decode("utf-8")
+        self.assertIn("National Competitive Examinations", html_s)
+        self.assertIn('value="jee-main"', html_s)
+        self.assertIn('value="jee-advanced"', html_s)
+        self.assertIn('value="neet-ug"', html_s)
+        self.assertIn('value="cuet-ug"', html_s)
+
+        # JEE Main PYQ filter returns exact 9 verified papers
+        r_jm = self.client.get("/search?board=jee-main&category=pyq&format=json").get_json()
+        self.assertEqual(r_jm["count"], 9)
+
+        # CUET UG PYQ filter strictly returns 0 (non-PYQ practice tools never impersonate PYQs)
+        r_cu_pyq = self.client.get("/search?board=cuet-ug&category=pyq&format=json").get_json()
+        self.assertEqual(r_cu_pyq["count"], 0)
+
+        # CUET UG University search
+        r_cu_uni = self.client.get("/search?board=cuet-ug&category=university&q=Delhi&format=json").get_json()
+        self.assertGreaterEqual(r_cu_uni["count"], 1)
+        self.assertTrue(any("DELHI" in item["title"].upper() for item in r_cu_uni["results"]))
+
+        # NEET UG Counselling search
+        r_nu_couns = self.client.get("/search?board=neet-ug&category=counselling&format=json").get_json()
+        self.assertGreaterEqual(r_nu_couns["count"], 2)
+
+        # JEE Advanced Syllabus search
+        r_ja_syl = self.client.get("/search?board=jee-advanced&category=syllabus&format=json").get_json()
+        self.assertGreaterEqual(r_ja_syl["count"], 4)
+
+        # Sitemap XML lists all 46 competitive exam URLs + excludes /bihar-board/pyq & /search
+        xml = self.client.get("/sitemap.xml").data.decode("utf-8")
+        self.assertIn("<loc>https://exampulse-india.onrender.com/jee-main</loc>", xml)
+        self.assertIn("<loc>https://exampulse-india.onrender.com/jee-advanced/pyq</loc>", xml)
+        self.assertIn("<loc>https://exampulse-india.onrender.com/neet-ug/counselling</loc>", xml)
+        self.assertIn("<loc>https://exampulse-india.onrender.com/cuet-ug/universities</loc>", xml)
+        self.assertIn("<lastmod>2026-11-10</lastmod>", xml)
+        self.assertNotIn("/bihar-board/pyq", xml)
+
+    def test_no_forbidden_exam_urls_or_merged_jee_anywhere(self):
+        """Ensure zero merged JEE labels, zero truncation ellipses in exam JSONs, and zero broken/guessed exam URLs."""
+        forbidden = [
+            "JEE (Main & Advanced)",
+            "JEE (Main &amp; Advanced)",
+            "JEE (Main & Adv)",
+            "JEE (Main &amp; Adv)",
+            "exams.nta.ac.in",
+            "www.nta.ac.in",
+            "score-card/",
+            "http://jeeadv.ac.in",
+            "seat_allocation.html",
+            "important_dates.html",
+            "s3waas.gov .s3waas.gov.in",
+        ]
+        for val in Config.OFFICIAL_URLS.values():
+            for bad in forbidden:
+                self.assertNotIn(bad, str(val), f"Forbidden {bad} in Config.OFFICIAL_URLS")
+
+        for fname in ["jee_main.json", "jee_advanced.json", "neet_ug.json", "cuet_ug.json"]:
+            with open(os.path.join(app.root_path, "data", fname), "r", encoding="utf-8") as f:
+                content = f.read()
+            for bad in forbidden:
+                self.assertNotIn(bad, content, f"Forbidden {bad} in {fname}")
+            self.assertNotIn("...", content, f"Truncation '...' found in {fname}")
+            self.assertNotIn("…", content, f"Ellipsis '…' found in {fname}")
+
+        for root_dir, _, files in os.walk(os.path.join(app.root_path, "templates")):
+            for fn in files:
+                if fn.endswith(".html"):
+                    with open(os.path.join(root_dir, fn), "r", encoding="utf-8") as f:
+                        tpl = f.read()
+                    for bad in forbidden:
+                        self.assertNotIn(bad, tpl, f"Forbidden {bad} found in template {fn}")
+
+        for route in [
+            "/", "/boards", "/search", "/about", "/disclaimer", "/contact",
+            "/privacy-policy", "/terms", "/jee-main", "/jee-advanced",
+            "/neet-ug", "/neet-ug/counselling", "/cuet-ug", "/cuet-ug/universities",
+        ]:
+            res = self.client.get(route)
+            self.assertEqual(res.status_code, 200)
+            html = res.data.decode("utf-8")
+            for bad in forbidden:
+                self.assertNotIn(bad, html, f"Forbidden {bad} rendered on {route}")
+
 
 if __name__ == "__main__":
     unittest.main()

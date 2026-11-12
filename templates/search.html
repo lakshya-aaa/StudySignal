@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %}Multi-Board Resource Search (CBSE, UP Board, CISCE, BSEB & MSBSHSE) - StudySignal{% endblock %}
+{% block title %}Multi-Board &amp; Competitive Exam Resource Search - StudySignal{% endblock %}
 
 {% block robots %}noindex, follow{% endblock %}
 
 {% block meta_description %}
-Multi-filter search across CBSE, UP Board (UPMSP), CISCE (ICSE & ISC), Bihar Board (BSEB), and Maharashtra Board (MSBSHSE) Class 10 & 12 subject syllabi, model papers, PYQs, question banks, date sheets, and official circulars.
+Multi-filter search across CBSE, UP Board (UPMSP), CISCE (ICSE & ISC), Bihar Board (BSEB), Maharashtra Board (MSBSHSE), JEE Main, JEE Advanced, NEET UG, and CUET UG syllabi, information bulletins, model papers, PYQs, university lists, and official notices.
 {% endblock %}
 
 {% block content %}
@@ -16,9 +16,9 @@ Multi-filter search across CBSE, UP Board (UPMSP), CISCE (ICSE & ISC), Bihar Boa
   <div class="container">
     <div class="section-header">
       <div>
-        <h1 class="section-title">Multi-Board Resource Search &amp; Filters</h1>
+        <h1 class="section-title">Multi-Board &amp; Exam Resource Search</h1>
         <p class="section-subtitle">
-          Search verified syllabi, official model/sample papers, past board PYQs, SCERT question banks, timetables, and circulars across all 5 active Indian boards.
+          Search verified syllabi, information bulletins, official model/sample papers, past question papers (PYQs), question banks, timetables, CUET participating universities, and notices across 5 active Indian school boards and 4 national competitive exams.
         </p>
       </div>
     </div>
@@ -34,27 +34,35 @@ Multi-filter search across CBSE, UP Board (UPMSP), CISCE (ICSE & ISC), Bihar Boa
               id="searchQ" 
               name="q" 
               class="filter-input" 
-              placeholder="e.g. Maths, Physics, SCERT, Model Paper" 
+              placeholder="e.g. Maths, Physics, JEE Main, CUET 301, SCERT" 
               value="{{ query }}"
             >
           </div>
 
           <div class="filter-group">
-            <label class="filter-title" for="filterBoard">Education Board</label>
+            <label class="filter-title" for="filterBoard">Education Board / Exam</label>
             <select id="filterBoard" name="board" class="filter-select">
-              <option value="all" {% if filter_board == 'all' %}selected{% endif %}>All Supported Boards</option>
-              <option value="cbse" {% if filter_board == 'cbse' %}selected{% endif %}>CBSE (Central Board)</option>
-              <option value="up-board" {% if filter_board == 'up-board' %}selected{% endif %}>UP Board (UPMSP)</option>
-              <option value="cisce" {% if filter_board == 'cisce' %}selected{% endif %}>CISCE (ICSE &amp; ISC)</option>
-              <option value="bihar-board" {% if filter_board == 'bihar-board' %}selected{% endif %}>Bihar Board (BSEB)</option>
-              <option value="maharashtra-board" {% if filter_board == 'maharashtra-board' %}selected{% endif %}>Maharashtra Board (MSBSHSE)</option>
+              <option value="all" {% if filter_board == 'all' %}selected{% endif %}>All Supported Boards &amp; Exams</option>
+              <optgroup label="School Education Boards">
+                <option value="cbse" {% if filter_board == 'cbse' %}selected{% endif %}>CBSE (Central Board)</option>
+                <option value="up-board" {% if filter_board == 'up-board' %}selected{% endif %}>UP Board (UPMSP)</option>
+                <option value="cisce" {% if filter_board == 'cisce' %}selected{% endif %}>CISCE (ICSE &amp; ISC)</option>
+                <option value="bihar-board" {% if filter_board == 'bihar-board' %}selected{% endif %}>Bihar Board (BSEB)</option>
+                <option value="maharashtra-board" {% if filter_board == 'maharashtra-board' %}selected{% endif %}>Maharashtra Board (MSBSHSE)</option>
+              </optgroup>
+              <optgroup label="National Competitive Examinations">
+                <option value="jee-main" {% if filter_board == 'jee-main' %}selected{% endif %}>JEE Main (NTA)</option>
+                <option value="jee-advanced" {% if filter_board == 'jee-advanced' %}selected{% endif %}>JEE Advanced (JAB / IITs)</option>
+                <option value="neet-ug" {% if filter_board == 'neet-ug' %}selected{% endif %}>NEET UG (NTA / NMC)</option>
+                <option value="cuet-ug" {% if filter_board == 'cuet-ug' %}selected{% endif %}>CUET UG (NTA)</option>
+              </optgroup>
             </select>
           </div>
 
           <div class="filter-group">
-            <label class="filter-title" for="filterClass">Target Class</label>
+            <label class="filter-title" for="filterClass">Target Class / Exam Level</label>
             <select id="filterClass" name="class" class="filter-select">
-              <option value="all" {% if filter_class == 'all' %}selected{% endif %}>All Classes (10 &amp; 12)</option>
+              <option value="all" {% if filter_class == 'all' %}selected{% endif %}>All Classes &amp; Exam Levels</option>
               <option value="10" {% if filter_class == '10' %}selected{% endif %}>Class 10 (Secondary / SSC / Matric)</option>
               <option value="12" {% if filter_class == '12' %}selected{% endif %}>Class 12 (Senior Sec / HSC / Inter)</option>
             </select>
@@ -75,12 +83,15 @@ Multi-filter search across CBSE, UP Board (UPMSP), CISCE (ICSE & ISC), Bihar Boa
             <select id="filterCategory" name="category" class="filter-select">
               <option value="all" {% if filter_category == 'all' %}selected{% endif %}>All Categories</option>
               <option value="syllabus" {% if filter_category == 'syllabus' %}selected{% endif %}>Subject Syllabus &amp; Curricula</option>
+              <option value="bulletin" {% if filter_category == 'bulletin' %}selected{% endif %}>Information Bulletins &amp; Brochures</option>
               <option value="model_paper" {% if filter_category == 'model_paper' %}selected{% endif %}>Official Model / Sample Papers</option>
               <option value="pyq" {% if filter_category == 'pyq' %}selected{% endif %}>Previous Year Question Papers (PYQs)</option>
               <option value="question_bank" {% if filter_category == 'question_bank' %}selected{% endif %}>Official Question Banks</option>
-              <option value="datesheet" {% if filter_category == 'datesheet' %}selected{% endif %}>Exam Date Sheets / Timetables</option>
-              <option value="circular" {% if filter_category == 'circular' %}selected{% endif %}>Circulars &amp; Policy</option>
+              <option value="datesheet" {% if filter_category == 'datesheet' %}selected{% endif %}>Exam Date Sheets / Schedules</option>
+              <option value="circular" {% if filter_category == 'circular' %}selected{% endif %}>Circulars &amp; Policy Notices</option>
               <option value="exam_notice" {% if filter_category == 'exam_notice' %}selected{% endif %}>Examination Notices</option>
+              <option value="counselling" {% if filter_category == 'counselling' %}selected{% endif %}>Counselling &amp; Seat Allocation</option>
+              <option value="university" {% if filter_category == 'university' %}selected{% endif %}>CUET Participating Universities</option>
             </select>
           </div>
 
@@ -88,11 +99,12 @@ Multi-filter search across CBSE, UP Board (UPMSP), CISCE (ICSE & ISC), Bihar Boa
             <label class="filter-title" for="filterYear">Academic Session / Exam Year</label>
             <select id="filterYear" name="year" class="filter-select">
               <option value="all" {% if filter_year == 'all' %}selected{% endif %}>All Sessions / Years</option>
+              <option value="2027" {% if filter_year == '2027' %}selected{% endif %}>2027 Confirmed Cycles &amp; Timetables</option>
               <option value="2026-27" {% if filter_year == '2026-27' %}selected{% endif %}>2026-27 (Current Session)</option>
-              <option value="2026" {% if filter_year == '2026' %}selected{% endif %}>2026 Exams &amp; Model Papers</option>
+              <option value="2026" {% if filter_year == '2026' %}selected{% endif %}>2026 Exams, Bulletins &amp; Model Papers</option>
               <option value="2025-26" {% if filter_year == '2025-26' %}selected{% endif %}>2025-26 Session</option>
-              <option value="2025" {% if filter_year == '2025' %}selected{% endif %}>2025 Board Archives</option>
-              <option value="2024" {% if filter_year == '2024' %}selected{% endif %}>2024 Board Archives</option>
+              <option value="2025" {% if filter_year == '2025' %}selected{% endif %}>2025 Archives</option>
+              <option value="2024" {% if filter_year == '2024' %}selected{% endif %}>2024 Archives</option>
             </select>
           </div>
 

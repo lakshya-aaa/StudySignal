@@ -1,0 +1,60 @@
+{# Shared breadcrumb, hero header banner, and horizontal navigation bar for competitive exam portals #}
+{% set breadcrumbs = [
+  {'title': 'Boards & Exams', 'url': '/boards'},
+  {'title': exam.name, 'url': '/' + exam_slug}
+] %}
+{% if active_tab != 'hub' and page_label %}
+  {% set breadcrumbs = breadcrumbs + [{'title': page_label, 'url': '/' + exam_slug + '/' + active_tab}] %}
+{% endif %}
+{% include 'components/breadcrumb.html' %}
+
+<section class="exam-hero-section">
+  <div class="container">
+    <div class="exam-hero-card">
+      <div class="exam-hero-top">
+        <div class="exam-hero-branding">
+          <div class="exam-hero-logo-wrap">
+            <img src="{{ url_for('static', filename=exam.logo) }}" alt="{{ exam.name }} official logo" class="exam-hero-logo" width="110" height="48">
+          </div>
+          <div class="exam-hero-titles">
+            <div class="exam-badge-row">
+              <span class="badge-status-active">Active Portal</span>
+              <span class="exam-cycle-pill">{{ exam.cycle_status.label }}</span>
+              <span class="exam-verified-pill">Verified {{ exam.last_verified }}</span>
+            </div>
+            <h1 class="exam-hero-title">{{ page_heading or exam.full_name }}</h1>
+            <p class="exam-hero-authority">{{ exam.conducting_body }}</p>
+          </div>
+        </div>
+        <div class="exam-hero-cta">
+          <a href="{{ exam.official_website }}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+            Official Portal ↗
+          </a>
+        </div>
+      </div>
+
+      <p class="exam-hero-subtitle">{{ page_intro or exam.hero.subtitle }}</p>
+
+      <nav class="exam-subnav-bar" aria-label="{{ exam.name }} Portal Navigation">
+        <a href="/{{ exam_slug }}" class="exam-subnav-pill {% if active_tab == 'hub' %}active{% endif %}">Overview</a>
+        <a href="/{{ exam_slug }}/syllabus" class="exam-subnav-pill {% if active_tab == 'syllabus' %}active{% endif %}">Syllabus</a>
+        <a href="/{{ exam_slug }}/exam-pattern" class="exam-subnav-pill {% if active_tab == 'exam-pattern' %}active{% endif %}">Exam Pattern</a>
+        <a href="/{{ exam_slug }}/eligibility" class="exam-subnav-pill {% if active_tab == 'eligibility' %}active{% endif %}">Eligibility</a>
+        <a href="/{{ exam_slug }}/important-dates" class="exam-subnav-pill {% if active_tab == 'important-dates' %}active{% endif %}">Important Dates &amp; Fees</a>
+        <a href="/{{ exam_slug }}/information-bulletin" class="exam-subnav-pill {% if active_tab == 'information-bulletin' %}active{% endif %}">Information Bulletin</a>
+        <a href="/{{ exam_slug }}/pyq" class="exam-subnav-pill {% if active_tab == 'pyq' %}active{% endif %}">
+          {% if exam_slug == 'cuet-ug' %}PYQ Status &amp; Practice{% else %}PYQ Archive{% endif %}
+        </a>
+        <a href="/{{ exam_slug }}/admit-card" class="exam-subnav-pill {% if active_tab == 'admit-card' %}active{% endif %}">Admit Card</a>
+        <a href="/{{ exam_slug }}/answer-key" class="exam-subnav-pill {% if active_tab == 'answer-key' %}active{% endif %}">Answer Key</a>
+        <a href="/{{ exam_slug }}/result" class="exam-subnav-pill {% if active_tab == 'result' %}active{% endif %}">Result</a>
+        <a href="/{{ exam_slug }}/notifications" class="exam-subnav-pill {% if active_tab == 'notifications' %}active{% endif %}">Notifications</a>
+        {% if exam_slug == 'neet-ug' %}
+        <a href="/neet-ug/counselling" class="exam-subnav-pill {% if active_tab == 'counselling' %}active{% endif %}">MCC / AACCC Counselling</a>
+        {% elif exam_slug == 'cuet-ug' %}
+        <a href="/cuet-ug/universities" class="exam-subnav-pill {% if active_tab == 'universities' %}active{% endif %}">Universities ({{ exam.universities.counts.total }})</a>
+        {% endif %}
+      </nav>
+    </div>
+  </div>
+</section>
